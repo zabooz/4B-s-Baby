@@ -1,0 +1,56 @@
+# Pflichtenheft für das Brute Force Programm "Majory Mad Monkeys"
+
+---
+
+## 1. Einleitung
+
+### 1.1 Projektübersicht
+- **Projektname:** Majory Mad Monkeys Brute Force Programm
+- **Projektbeschreibung:** Entwicklung einer Webseite mit einem Brute-Force-Programm, einem Passwort-Konverter und Informationen über Brute-Force-Attacken und Internetsicherheit.
+- **Auftraggeber:** [Lehrer/Schule]
+- **Auftragnehmer:** [Euer Teamname]
+
+### 1.2 Ziele
+- Ein funktionsfähiges Brute-Force-Programm in drei Modi (Simple, Hybrid, Library)
+- Passwort-Konverter für Leet-Speak
+- Bereitstellung von Informationen über Brute-Force-Attacken und Internetsicherheit
+- Unterstützung für mobile und Desktop-Versionen
+
+## 2. Funktionale Anforderungen
+
+### 2.1 Brute-Force-Programm
+- **Simple-Modus:** Durchsucht alle möglichen Zeichenkombinationen.
+- **Hybrid-Modus:** Kombination aus Wörterbuch und Zeichenkombinationen.
+- **Library-Modus:** Verwendet eine Bibliothek mit häufig genutzten Passwörtern.
+
+### 2.2 Passwort-Konverter
+- Konvertiert ein Passwort in Leet-Speak (z.B., "password" zu "p@ssw0rd").
+
+### 2.3 Informationsseiten
+- Infos über Brute-Force-Attacken und wie man sich schützt.
+- Infos über Internetsicherheit.
+
+## 3. Technische Spezifikationen
+
+- **Technologien:** HTML, CSS, JavaScript
+- **Plattform:** Unterstützt mobile und Desktop-Versionen
+
+## 4. Design und Logo
+
+- **Logo:** Das Logo der Majory Mad Monkeys wird verwendet.
+- **Design:** Eine benutzerfreundliche und intuitive Oberfläche.
+
+## 5. Tests
+
+- **Funktionalitätstests:** Testen, ob alle Funktionen korrekt arbeiten.
+- **Usability-Tests:** Sicherstellen, dass die Webseite leicht zu bedienen ist.
+
+## 6. Risiken und Maßnahmen
+
+- **Sicherheitsrisiken:** Keine Speicherung sensibler Daten.
+- **Performance-Probleme:** Optimierung des Codes.
+
+## 7. Dokumentation
+
+- **Benutzerdokumentation:** Kurze Anleitung zur Nutzung der Webseite.
+- **Entwicklerdokumentation:** Beschreibung des Codes und der Struktur.
