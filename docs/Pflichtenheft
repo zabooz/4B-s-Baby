@@ -1,14 +1,14 @@
-# Pflichtenheft für das Brute Force Programm "Majory Mad Monkeys"
+# Pflichtenheft für das Brute Force Programm "Majorly Mad Monkeys"
 
 ---
 
 ## 1. Einleitung
 
 ### 1.1 Projektübersicht
-- **Projektname:** Majory Mad Monkeys Brute Force Programm
+- **Projektname:** Majorly Mad Monkeys Brute Force Programm
 - **Projektbeschreibung:** Entwicklung einer Webseite mit einem Brute-Force-Programm, einem Passwort-Konverter und Informationen über Brute-Force-Attacken und Internetsicherheit.
 - **Auftraggeber:** [BBRZ]
-- **Auftragnehmer:** [Majory Mad Monkeys]
+- **Auftragnehmer:** [Majorly Mad Monkeys]
 
 ### 1.2 Ziele
 - Ein funktionsfähiges Brute-Force-Programm in drei Modi (Simple, Hybrid, Library)
