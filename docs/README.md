@@ -60,10 +60,32 @@ Willkommen zum Brute Force Programm von Majory Mad Monkeys! Diese Webseite biete
     ```
 5. Erstelle einen Pull Request.
 
-## Lizenz
+## Entwicklung mit GitHub Codespaces
 
-Dieses Projekt steht unter der [MIT Lizenz](LICENSE).
+1. **Codespace starten**
 
-## Kontakt
+   Öffne das Repository auf GitHub und klicke auf den grünen Button `Code`, dann wähle `Open with Codespaces` und `New Codespace`.
 
-Bei Fragen oder Problemen kannst du uns unter [deine-email@example.com
+2. **NVM und Node.js installieren**
+
+   Öffne das Terminal im Codespace und installiere NVM:
+   
+   ```sh
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+   source ~/.nvm/nvm.sh
+
+   
+3. installiere dann Node.ja
+
+    nvm install node
+    nvm use node
+
+4. Abhängikeiten isntallieren
+
+    npm i
+
+5. server Starten
+
+    npm run dev
+
+
