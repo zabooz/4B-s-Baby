@@ -88,4 +88,12 @@ Willkommen zum Brute Force Programm von Majory Mad Monkeys! Diese Webseite biete
 
     npm run dev
 
+## PasswortListe laden
 
+1. npm start
+
+2. öffne localhost:3001/password
+
+3. abwarten und tee trinken
+
+4. passwörter sind data/rockYou.json

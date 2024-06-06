@@ -11,14 +11,6 @@ const dropboxFileUrl = process.env.DROPBOX_FILE_URL; // Set the Dropbox file URL
 
 app.use(cors()); // Enable CORS for all routes
 
-// Middleware to log when the response is finished
-app.use((req, res, next) => {
-  res.on('finish', () => {
-    console.log(`Response sent for ${req.method} ${req.originalUrl}`);
-  });
-  next();
-});
-
 // Define a route for the root URL "/"
 app.get('/', (req, res) => {
   res.send('hello world'); // Send "hello world" as a response
