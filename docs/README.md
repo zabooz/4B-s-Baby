@@ -1,99 +1,63 @@
-# Majory Mad Monkeys Brute Force Programm
+# Pflichtenheft für das Brute Force Programm "Majorly Mad Monkeys"
 
-Willkommen zum Brute Force Programm von Majory Mad Monkeys! Diese Webseite bietet ein Brute-Force-Tool mit drei verschiedenen Modi, einen Passwort-Konverter und nützliche Informationen über Brute-Force-Attacken und Internetsicherheit.
+---
 
-## Funktionen
+## 1. Einleitung
 
-### 1. Brute-Force-Programm
+### 1.1 Projektübersicht
+- **Projektname:** Majorly Mad Monkeys Brute Force Programm
+- **Projektbeschreibung:** Entwicklung einer Webseite mit einem Brute-Force-Programm, einem Passwort-Konverter, einem Passwort-Generator und Informationen über Brute-Force-Attacken und Internetsicherheit.
+- **Auftraggeber:** [BBRZ]
+- **Auftragnehmer:** [Majorly Mad Monkeys]
+
+### 1.2 Ziele
+- Ein funktionsfähiges Brute-Force-Programm in drei Modi (Simple, Hybrid, Library)
+- Passwort-Generator für sichere Passwörter
+- Passwort-Konverter für Leet-Speak
+- Bereitstellung von Informationen über Brute-Force-Attacken und Internetsicherheit
+- Unterstützung für mobile und Desktop-Versionen
+
+## 2. Funktionale Anforderungen
+
+### 2.1 Brute-Force-Programm
 - **Simple-Modus:** Durchsucht alle möglichen Zeichenkombinationen.
 - **Hybrid-Modus:** Kombination aus Wörterbuch und Zeichenkombinationen.
 - **Library-Modus:** Verwendet eine Bibliothek mit häufig genutzten Passwörtern.
+- **Logo-Animation:** Während das Brute-Force-Programm läuft, wird das Logo in ein animiertes Logo geändert.
 
-### 2. Passwort-Konverter
-- Konvertiert ein Passwort in Leet-Speak (z.B., "password" zu "p@ssw0rd").
+### 2.2 Passwort-Generator
+- Generiert sichere Passwörter mit einstellbarer Länge und Komplexität.
 
-### 3. Informationsseiten
-- Infos über Brute-Force-Attacken und wie man sich davor schützen kann.
+### 2.3 Passwort-Konverter
+- Konvertiert ein vom Benutzer eingegebenes Passwort in Leet-Speak (z.B., "password" zu "p@ssw0rd").
+
+### 2.4 Informationsseiten
+- Infos über Brute-Force-Attacken und wie man sich schützt.
 - Infos über Internetsicherheit.
 
-## Technologien
+## 3. Technische Spezifikationen
 
-- HTML
-- CSS
-- JavaScript
+- **Technologien:** HTML, CSS, JavaScript
+- **Plattform:** Unterstützt mobile und Desktop-Versionen
 
-## Installation
+## 4. Design und Logo
 
-1. Clone das Repository:
-    ```bash
-    git clone https://github.com/dein-benutzername/majory-mad-monkeys.git
-    ```
+- **Logo:** Das Logo der Majory Mad Monkeys wird verwendet.
+- **Design:** Eine benutzerfreundliche und intuitive Oberfläche.
+- **Logo-Animation:** Das Logo wechselt zu einer animierten Version, während das Brute-Force-Programm läuft.
 
-2. Navigiere in das Projektverzeichnis:
-    ```bash
-    cd majory-mad-monkeys
-    ```
+## 5. Tests
 
-3. Öffne `index.html` in deinem bevorzugten Browser.
+- **Funktionalitätstests:** Testen, ob alle Funktionen korrekt arbeiten.
+- **Usability-Tests:** Sicherstellen, dass die Webseite leicht zu bedienen ist.
+- **Animationstests:** Überprüfen, ob das Logo korrekt animiert wird, während das Brute-Force-Programm läuft.
 
-## Verwendung
+## 6. Risiken und Maßnahmen
 
-1. Wähle den gewünschten Brute-Force-Modus und gib die notwendigen Informationen ein.
-2. Nutze den Passwort-Konverter, um ein Passwort in Leet-Speak zu konvertieren.
-3. Lies die Informationsseiten, um mehr über Brute-Force-Attacken und Internetsicherheit zu erfahren.
+- **Sicherheitsrisiken:** Keine Speicherung sensibler Daten.
+- **Performance-Probleme:** Optimierung des Codes.
 
-## Beitrag leisten
+## 7. Dokumentation
 
-1. Fork das Repository.
-2. Erstelle einen neuen Branch:
-    ```bash
-    git checkout -b mein-neuer-branch
-    ```
-3. Nimm deine Änderungen vor und committe diese:
-    ```bash
-    git add .
-    git commit -m "Beschreibung deiner Änderungen"
-    ```
-4. Push den Branch zu deinem Fork:
-    ```bash
-    git push origin mein-neuer-branch
-    ```
-5. Erstelle einen Pull Request.
-
-## Entwicklung mit GitHub Codespaces
-
-1. **Codespace starten**
-
-   Öffne das Repository auf GitHub und klicke auf den grünen Button `Code`, dann wähle `Open with Codespaces` und `New Codespace`.
-
-2. **NVM und Node.js installieren**
-
-   Öffne das Terminal im Codespace und installiere NVM:
-   
-   ```sh
-   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-   source ~/.nvm/nvm.sh
-
-   
-3. installiere dann Node.ja
-
-    nvm install node
-    nvm use node
-
-4. Abhängikeiten isntallieren
-
-    npm i
-
-5. server Starten
-
-    npm run dev
-
-## PasswortListe laden
-
-1. npm start
-
-2. öffne localhost:3001/password
-
-3. abwarten und tee trinken
-
-4. passwörter sind data/rockYou.json
+- **Benutzerdokumentation:** Kurze Anleitung zur Nutzung der Webseite.
+- **Entwicklerdokumentation:** Beschreibung des Codes und der Struktur.
