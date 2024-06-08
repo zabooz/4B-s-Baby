@@ -1,6 +1,6 @@
-# Majory Mad Monkeys Brute Force Programm
+# Majorly Mad Monkeys Brute Force Programm
 
-Willkommen zum Brute Force Programm von Majory Mad Monkeys! Diese Webseite bietet ein Brute-Force-Tool mit drei verschiedenen Modi, einen Passwort-Konverter und nützliche Informationen über Brute-Force-Attacken und Internetsicherheit.
+Willkommen zum Brute Force Programm von Majorly Mad Monkeys! Diese Webseite bietet ein Brute-Force-Tool mit drei verschiedenen Modi, einen Passwort-Konverter und nützliche Informationen über Brute-Force-Attacken und Internetsicherheit.
 
 ## Funktionen
 
@@ -26,12 +26,12 @@ Willkommen zum Brute Force Programm von Majory Mad Monkeys! Diese Webseite biete
 
 1. Clone das Repository:
     ```bash
-    git clone https://github.com/dein-benutzername/majory-mad-monkeys.git
+    git clone https://github.com/dein-benutzername/majorly-mad-monkeys.git
     ```
 
 2. Navigiere in das Projektverzeichnis:
     ```bash
-    cd majory-mad-monkeys
+    cd majorly-mad-monkeys
     ```
 
 3. Öffne `index.html` in deinem bevorzugten Browser.
