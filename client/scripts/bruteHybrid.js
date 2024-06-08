@@ -1,4 +1,4 @@
-import { all } from "axios";
+
 
 export async function bruteForceHybrid(pwd){
 
@@ -68,9 +68,6 @@ function fixes (index){
     for (let i = 0; i < allCharacters.length;i++){
 
         
-        fix.length < index ? fix += allCharacters[i]
-
-        const fix = allCharacters[i]
 
 
     }
