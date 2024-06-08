@@ -4,7 +4,7 @@ import { bruteForceLibrary } from '../scripts/bruteLibrary.js';
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve({
-      lines: ['password123', '123456', 'qwerty', 'rockyou']
+      lines: ['password123', '123456', 'qwerty', 'rockYou']
     }),
   })
 );

@@ -11,7 +11,6 @@ export async function bruteForceLibrary(pwd) {
         const passwords = await response.json();
         
         passwords.lines.forEach(pw => {
-
             if(pw === pwd){
                 pwdFound = true;
                 time = ((Date.now() - startTime)/1000) + ' sec';
@@ -19,7 +18,6 @@ export async function bruteForceLibrary(pwd) {
                 closeEnough.push(pw)
             }
         })
-
     } catch (err) {
         console.log(err);
         time = 'N/A';
