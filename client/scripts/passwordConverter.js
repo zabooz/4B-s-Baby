@@ -4,6 +4,9 @@ export function passwordConverter(password) {
     // Converts a given password to leetspeak.
     // Conversion substitutes are chosen by me since there are too many possibilities.
 
+    // Converting to upper case to catch lower case letters.
+    let uppercasepw = password.toUpperCase();
+
     let leettable = {
         //Selection based on most commonly used leetspeak and readability for a layman.
         "A": "4",
@@ -25,10 +28,18 @@ export function passwordConverter(password) {
         "V": "\\/",
         "W": "\\/\\/",
         "X": ")(",
+        "1": "i",
+        "3": "e",
+        "4": "a",
+        "5": "s",
+        "7": "t",
+        "!": "?",
+        "0": "o",
+        "(": "c"
 
     };
-
-    let newpassword = password.replace(/[ABCDEHIKLMNORSTUVWX]/g, match => leettable[match]);
+    
+    let newpassword = uppercasepw.replace(/[ABCDEHIKLMNORSTUVWX13457!0(]/g, match => leettable[match]);
     return newpassword;
 }
 
