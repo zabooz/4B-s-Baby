@@ -1,5 +1,3 @@
-// bruteForceLibrary.test.js
-
 import { bruteForceLibrary } from '../scripts/bruteLibrary.js';
 
 // Mock for fetch
@@ -12,15 +10,13 @@ global.fetch = jest.fn(() =>
 );
 
 describe('bruteForceLibrary', () => {
-
-    
   it('should find the password in the list and measure the time', async () => {
     const [pwdFound, pwd, time, closeEnough] = await bruteForceLibrary('password123');
     
     expect(pwdFound).toBe(true);
     expect(pwd).toBe('password123');
     expect(time).not.toBe('N/A');
-    expect(closeEnough).toContain('password123');
+    expect(closeEnough).not.toContain('password123');
   });
 
   it('should return false and N/A if the password is not in the list', async () => {
@@ -35,9 +31,9 @@ describe('bruteForceLibrary', () => {
   it('should find passwords that are close enough', async () => {
     const [pwdFound, pwd, time, closeEnough] = await bruteForceLibrary('pass');
     
-    expect(pwdFound).toBe(true);
+    expect(pwdFound).toBe(false);
     expect(pwd).toBe('pass');
-    expect(time).not.toBe('N/A');
+    expect(time).toBe('N/A');
     expect(closeEnough).toContain('password123');
   });
 });

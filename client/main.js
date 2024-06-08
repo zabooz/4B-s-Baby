@@ -6,7 +6,7 @@ import {bruteForceHybrid} from './scripts/bruteHybrid.js'
 
 
 
-const testPwd = 'abcde'
+const testPwd = 'pass'
 
 async function checkPassword(testPwd){
     const result = await bruteForceLibrary(testPwd)
