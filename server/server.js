@@ -13,7 +13,7 @@ app.use(cors()); // Enable CORS for all routes
 
 // Define a route for the root URL "/"
 app.get('/', (req, res) => {
-  res.send('hello world'); // Send "hello world" as a response
+  res.send('hello world');
 });
 
 // Define a route for "/password"
