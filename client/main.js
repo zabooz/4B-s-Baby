@@ -1,6 +1,17 @@
-import {generatePassword} from 'passwordGenerator.js'
-import {generateConverter} from 'passwordConverter,js'
-import {bruteForceSimple} from 'bruteSimple.js'
-import {bruteForceLibrary} from 'bruteLibrary.js'
-import {bruteForceHybrid} from 'bruteHybrid.js'
+import {generatePassword} from './scripts/passwordGenerator.js'
+import {passwordConverter} from './scripts/passwordConverter.js'
+import {bruteForceSimple} from './scripts/bruteSimple.js'
+import {bruteForceLibrary} from './scripts/bruteLibrary.js'
+import {bruteForceHybrid} from './scripts/bruteHybrid.js'
 
+
+
+const testPwd = 'pass'
+
+async function checkPassword(testPwd){
+    const result = await bruteForceLibrary(testPwd)
+    console.log(result)
+}
+
+
+checkPassword(testPwd)
