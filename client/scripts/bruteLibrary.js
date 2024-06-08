@@ -1,5 +1,4 @@
 
-
 export async function bruteForceLibrary(pwd) {
     const closeEnough = [];
     const normPwd = pwd.toLowerCase();
