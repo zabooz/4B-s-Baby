@@ -1,5 +1,13 @@
 
 
-export function bruteForceSimple(){
+export async function bruteForceSimple(){
+
+
+
+
+
+
+
+
 
 }
