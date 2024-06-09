@@ -5,4 +5,6 @@ export function generatePassword(){
     //loop
     //array['a',1']
 
+    
+
 }
