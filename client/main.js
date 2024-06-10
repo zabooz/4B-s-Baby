@@ -16,4 +16,3 @@ async function checkPassword(testPwd){
 
 checkPassword(testPwd)
 
-bruteForceHybrid(testPwd)
