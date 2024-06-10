@@ -1,8 +1,6 @@
-export function passwordConverter() {
-    document.getElementById('convertButton').addEventListener('click', function() {
-        const selectedConverter = document.getElementById('converterSelect').value;
-        const passwordInput = document.getElementById('passwordInput').value;
-        let convertedPassword = passwordInput;
+export function passwordConverter(password, selector) {
+    
+        let convertedPassword = password;
 
         const leetTables = {
             leetSimple: {
@@ -65,10 +63,10 @@ export function passwordConverter() {
         };
 
         // Converting to upper case to catch lower case letters for leetspeak.
-        let upperCasePw = passwordInput.toUpperCase();
+        let upperCasePw = password.toUpperCase();
 
         // Get the correct leetTable based on the selected converter.
-        const leetTable = leetTables[selectedConverter];
+        const leetTable = leetTables[selector];
 
         // Create a regex pattern from the keys of leetTable
         const pattern = new RegExp(`[${Object.keys(leetTable).join('')}]`, 'g');
@@ -76,7 +74,7 @@ export function passwordConverter() {
         // Use the pattern to replace characters based on the leetTable
         let newPassword = upperCasePw.replace(pattern, match => leetTable[match]);
         document.getElementById('newPassword').innerText = newPassword;
-    });
-}
+    };
+
 
 
