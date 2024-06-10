@@ -52,18 +52,25 @@
         </div>
 
         <div class="mainMiddle">
-        <div>
-            <label for="converterSelect">Select Password Converter:</label>
+        <div id="converterDiv">
+            <div><label for="converterSelect">Select Password Converter:</label>
             <select id="converterSelect">
                 <option value="leetSimple">Simple Leetspeak</option>
                 <option value="leetComplicated">Complicated Leetspeak</option>
             </select>
-
-            <input type="text" id="passwordInput" placeholder="Enter password">
-            <button id="convertButton">Convert</button>
-            <p>Converted Password: <span id="newPassword"></span></p>
-
+            </div>
+            <div>
+            <label>Enter a password:
+            </label>
+            <input type="text" id="passwordInput">
+            </div>
+            <button id="convertButton">Convert
+            </button>
+            <p>Converted Password: <span id="newPassword">
+            </span>
             
+            </p>
+
         </div>
 
 
