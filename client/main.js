@@ -13,19 +13,18 @@ convertButton.addEventListener('click', function() {
 passwordConverter(passwordInput, selectedConverter)
 })
 
-
-
-
-
 startBtn.addEventListener('click',()=> {
     
     const url = "http://localhost:3001/bruteForce"
     const pwd = document.getElementById('userPwd')
     const urlPara =`${url}?pwd=${encodeURIComponent(pwd.value)}`
-    
+
+    const img = document.getElementById('monkey')
+
+    img.src = "../img/animated_monkey.gif"
+
+
     let result;
-
-
     pwd.textContent=''
 
     fetch(urlPara)
@@ -35,9 +34,7 @@ startBtn.addEventListener('click',()=> {
                 throw new Error('I fucked up again')
             }
 
-
             return response.json()
-
 
         })
         .then(data => {
@@ -53,4 +50,3 @@ startBtn.addEventListener('click',()=> {
 
 })
 
-bruteForceLibrary("     markinho");

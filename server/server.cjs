@@ -60,10 +60,6 @@ app.get('/bruteForce', async(req,res) => {
 
 })
 
-
-
-
-
 // Start the server and log the URL to the console
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
