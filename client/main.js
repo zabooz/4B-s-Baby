@@ -9,6 +9,6 @@ const convertButton = document.getElementById('convertButton')
 convertButton.addEventListener('click', function() {
     const selectedConverter = document.getElementById('converterSelect').value;
     const passwordInput = document.getElementById('passwordInput').value
-
-passwordConverter(passwordInput, selectedConverter)
+    const newPassword = passwordConverter(passwordInput, selectedConverter)
+    document.getElementById('newPassword').innerText = newPassword
 })

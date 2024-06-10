@@ -81,6 +81,8 @@ export function passwordConverter(password, selector) {
 
         // Use the pattern to replace characters based on the leetTable
         let newPassword = upperCasePw.replace(pattern, match => leetTable[match]);
+
+
         // document.getElementById('newPassword').innerText = newPassword;
         return newPassword
         }
