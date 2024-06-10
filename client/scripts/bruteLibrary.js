@@ -22,6 +22,7 @@ export async function bruteForceLibrary(pwd) {
         console.log(err);
         time = 'N/A';
     }
-
+    
+    console.log([pwdFound, pwd, time, closeEnough])
     return [pwdFound, pwd, time, closeEnough];
 }
