@@ -9,3 +9,28 @@
 .mainTop{
     display: flex;
 }
+.mainMiddle{
+    display: flex;
+    
+}
+#converterSelect {
+    width: 220px;
+    padding: 2px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+#convertButton {
+    background-color: #a255d2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#converterDiv {
+    padding-bottom: 50px;
+}
