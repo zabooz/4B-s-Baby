@@ -1,5 +1,5 @@
 
-export function generatePassword(){
+export function generatePassword(num){
 
     //variabel für string aka password
     //loop
