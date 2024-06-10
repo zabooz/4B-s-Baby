@@ -4,15 +4,11 @@ import {bruteForceSimple} from './scripts/bruteSimple.js'
 import {bruteForceLibrary} from './scripts/bruteLibrary.js'
 import {bruteForceHybrid} from './scripts/bruteHybrid.js'
 
+const convertButton = document.getElementById('convertButton')
+    
+convertButton.addEventListener('click', function() {
+    const selectedConverter = document.getElementById('converterSelect').value;
+    const passwordInput = document.getElementById('passwordInput').value
 
-
-const testPwd = 'pass'
-
-async function checkPassword(testPwd){
-    const result = await bruteForceLibrary(testPwd)
-    console.log(result)
-}
-
-
-checkPassword(testPwd)
-
+passwordConverter(passwordInput, selectedConverter)
+})
