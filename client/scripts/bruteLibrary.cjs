@@ -1,4 +1,4 @@
-export async function bruteForceLibrary(pwd) {
+async function bruteForceLibrary(pwd,passwordList) {
     const closeEnough = [];
     const normPwd = pwd.toLowerCase();
 
@@ -6,11 +6,7 @@ export async function bruteForceLibrary(pwd) {
     let startTime = Date.now();
     let time = 'N/A'
 
-    try {
-        const response = await fetch('../data/rockYou.json'); 
-        const passwords = await response.json();
-        
-        passwords.lines.forEach(pw => {
+        passwordList.forEach(pw => {
             if(pw === pwd){
                 pwdFound = true;
                 time = ((Date.now() - startTime)/1000) + ' sec';
@@ -18,11 +14,8 @@ export async function bruteForceLibrary(pwd) {
                 closeEnough.push(pw)
             }
         })
-    } catch (err) {
-        console.log(err);
-        time = 'N/A';
-    }
-    
-    console.log([pwdFound, pwd, time, closeEnough])
+        
     return [pwdFound, pwd, time, closeEnough];
 }
+
+module.exports = bruteForceLibrary

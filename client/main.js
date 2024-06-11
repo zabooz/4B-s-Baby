@@ -1,10 +1,10 @@
 import {generatePassword} from './scripts/passwordGenerator.js'
 import {passwordConverter} from './scripts/passwordConverter.js'
-import {bruteForceLibrary} from './scripts/bruteLibrary.js'
 import {bruteForceHybrid} from './scripts/bruteHybrid.js'
 
 const convertButton = document.getElementById('convertButton')
-const startBtn = document.getElementById('startBtn') 
+const startBtn = document.getElementById('startBtn');
+const stopBtn = document.getElementById('stopBtn')
 
 convertButton.addEventListener('click', function() {
     const selectedConverter = document.getElementById('converterSelect').value;
@@ -14,19 +14,19 @@ convertButton.addEventListener('click', function() {
 })
 
 startBtn.addEventListener('click',()=> {
-    
-    const url = "http://localhost:3001/bruteForce"
+    const bruteType = document.querySelector('input[name="bruteType"]:checked').value
+    const url = "http://localhost:3001/"
     const pwd = document.getElementById('userPwd')
-    const urlPara =`${url}?pwd=${encodeURIComponent(pwd.value)}`
-
-    const img = document.getElementById('monkey')
-
-    img.src = "../img/animated_monkey.gif"
+    const urlPara =`${url}bruteforce${bruteType}?pwd=${encodeURIComponent(pwd.value)}`
 
 
+    changeImg();
+  
+
+    
+    
     let result;
-    pwd.textContent=''
-
+    
     fetch(urlPara)
         .then(response => {
 
@@ -38,15 +38,24 @@ startBtn.addEventListener('click',()=> {
 
         })
         .then(data => {
-            result = data
-            console.log(data)
+          result = data;
+          pwd.value = ''
+          console.log(data);
         })
         .catch(error => {
-            console.error('sdkghskjdgh',error)
+            console.error('Yeah nnonononono',error)
         })
 
-
-
-
 })
+
+
+function changeImg(){
+    const img = document.getElementById("monkey");
+    if(img.src[img.src.length-1] !== 'f'){
+  
+        img.src = "../img/animated_monkey.gif";
+    }else{
+        img.src = "../img/non_animated_monkey.png";
+    }
+}
 
