@@ -45,18 +45,22 @@
         </div>
 
         <div class="mainMiddle">
-        <div id="converterSelector">
-            <input type="text" id="passwordInput" placeholder="Enter password">
-            <button id="convertButton">Convert</button>
-            <label for="converterSelect">Select Password Converter:</label>
-            <select id="converterSelect">
-                <option value="leetSimple">Simple Leetspeak</option>
-                <option value="leetComplicated">Complicated Leetspeak</option>
-            </select>
-            <p>Converted Password: <span id="newPassword"></span></p>
-
-            
-        </div>
+            <div class="flexbox-converter">
+                <div id="converterSelector">
+                <div class="flexbox-item1"
+                    <label for="converterSelect">Converter:</label>
+                    <select id="converterSelect">
+                        <option value="leetSimple">Simple Leetspeak</option>
+                        <option value="leetComplicated">Complicated Leetspeak</option>
+                    </select>
+                    <button id="convertButton">Convert</button>
+                </div>
+                <div class="flexbox-item2">
+                    <input type="text" id="passwordInput" placeholder="Enter password">
+                    <span id="newPassword"></span>
+                </div>
+                </div>
+            </div>
         <div id="pwdGenDiv">
 
             <div id="pwdGen">
