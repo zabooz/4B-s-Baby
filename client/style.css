@@ -6,9 +6,79 @@
 }
 #header{
     display: flex;
+    margin: 2rem;
+    width: 50%;
+}
+#headerText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#headerText h1{
+    margin: 1rem;
+}
+#headerText p::first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+    float: left;
+    line-height: 1;
+    margin-right: 0.1em;
+}
+
+#headerText p {
+    text-align: justify;
+    margin: 0;
+    line-height: 1.5;
+}
+
+#imgDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+img{
+    width: 250px;    
 }
 .mainTop{
     display: flex;
+    width: 50%;
+}
+
+#bruteForce{
+    width: 50%;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    box-shadow: 0px 0px 10px 0px ;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+#bruteForce > label{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.bruteBtns{
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    justify-content: center;
+}
+.bruteBtns button{
+    padding: .5rem;
+    width: 4rem;
+}
+
+#stats{
+    background-color: grey;
+    width: 50%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: .5rem;
 
 }
 #stoppBtn {
