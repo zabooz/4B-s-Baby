@@ -89,7 +89,7 @@ img{
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s; transform 0.3s;
+    transition: background-color 0.3s transform 0.3s;
 }
 #stoppBtn:hover {
     background-color: #d3371f;
@@ -118,7 +118,7 @@ img{
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s; transform 0.3s;
+    transition: background-color 0.3s transform 0.3s;
 
 }
 #convertButton:hover, #startBtn:hover{
