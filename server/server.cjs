@@ -4,8 +4,6 @@
 require('dotenv').config(); // Load environment variables from a .env file into process.env
 const express = require('express'); // Import the Express framework
 const axios = require('axios'); // Import Axios, a library for making HTTP requests
-const fs = require('fs'); // Import the File System module from Node.js
-const path = require('path'); // Import the Path module from Node.js
 const cors = require('cors'); // Import CORS middleware
 const bruteForceSimple = require('../client/scripts/bruteSimple.cjs');
 const bruteForceLibrary = require('../client/scripts/bruteLibrary.cjs')
@@ -13,6 +11,7 @@ const app = express(); // Create an Express application
 const port = process.env.PORT || 3000; // Set the port from the environment variable or default to 3000
 const dropboxFileUrl = process.env.DROPBOX_FILE_URL; // Set the Dropbox file URL from the environment variable
 
+app.use(cors());
 
 let passwordList
 
@@ -39,9 +38,8 @@ loadPasswordList()
 
 
 
-app.use(cors()); // Enable CORS for all routes
 
-// Define a route for the root URL "/"
+
 app.get('/', (req, res) => {
   res.send('hello world');
 });
@@ -80,6 +78,8 @@ app.get('/bruteForceLibrary',async(req,res) => {
 })
 app.get('/bruteForceHybrid',async (req,res) => {
     const password = req.query.pwd || 'abc'
+
+    res.send('Not there yet')
 })      
 // Start the server and log the URL to the console
 app.listen(port, () => {
