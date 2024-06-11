@@ -9,7 +9,7 @@ for(let i=0;i<lenght;i++){
 }
  console.log(password);
 
-
+ crypto.getRandomValues()
     
    
 
