@@ -1,4 +1,4 @@
-function bruteforcePassword(targetPassword, charset, maxLength) {
+function bruteforcePassword(targetPassword, charset, maxLength,stop) {
   let count = 0;
   let found = false;
   let mode = 'simple'
@@ -7,8 +7,8 @@ function bruteforcePassword(targetPassword, charset, maxLength) {
   function generate(prefix, length) {
     if (found) return;
     count++;
-    if (length === 0) {
-      console.log(prefix, count);
+    if (length === 0 || stop) {
+      // console.log(prefix, count);
       if (prefix === targetPassword) {
         console.log(`Password found: ${prefix}`);
         found = true;

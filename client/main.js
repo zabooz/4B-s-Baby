@@ -22,6 +22,9 @@ startBtn.addEventListener('click',(e)=> {
 stopBtn.addEventListener('click',(e) => {
     changeImg(e)
 
+    fetch("http://localhost:3001/stopbruteforce").then(response => console.log(response))
+    
+
 })
 
 
