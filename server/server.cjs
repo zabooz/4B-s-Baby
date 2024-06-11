@@ -47,13 +47,13 @@ app.get('/', (req, res) => {
 
 
 app.get('/bruteForceSimple', async(req,res) => {
-
+  console.log('sdg')
     const password = req.query.pwd || 'abcd'
     const maxLength = 16; 
     const charset =
     'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:",.<>?/`~';
 
-    const result = bruteForceSimple(password,charset,maxLength)
+    const result = bruteForceSimple(password,charset,maxLength,stopBrute)
 
     res.send(result)
 
@@ -80,7 +80,16 @@ app.get('/bruteForceHybrid',async (req,res) => {
     const password = req.query.pwd || 'abc'
 
     res.send('Not there yet')
-})      
+})     
+
+
+
+app.get('/stopbruteforce',(req,res) => {
+
+})
+
+
+
 // Start the server and log the URL to the console
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
