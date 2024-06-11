@@ -11,48 +11,70 @@
     <body>
     
     <div id="header">
-        <div>
-            <h1>was ist BruteForce</h1>
-            <p>blab alba blab alb</p>
-            <p>sdliagasjkdgkjasdhgjkashdglkdagökladhkadökhkadjhkadfhkadfhkjadfkh</p>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+        <div id="headerText">
+            <h1>What is bruteforce?</h1>
+            <p>A brute-force attack is a fundamental technique used in cybersecurity to gain unauthorized access to a system. It involves systematically attempting every possible combination of characters to guess passwords or encryption keys until the correct one is found. Despite being a straightforward approach, brute-force attacks can be highly effective, particularly against weak passwords or inadequately protected systems. With the advent of high-performance computing, attackers can automate this process, making it faster and more efficient. This type of attack underscores the importance of robust security practices, such as using strong, complex passwords and implementing additional security measures like multi-factor authentication to safeguard sensitive information.</p>
         </div>
-        <div>
-            <img src="../img/MMM_non_animated_mesh.png" alt="monkey">
+        <div id="imgDiv">
+            <img  id="monkey" src="../img/non_animated_monkey.png" alt="monkey">
         </div>
     </div>
     <main>
 
         <div class="mainTop">
             <div id="bruteForce">
-                <label for="userPwd">Teste dein Passwort</label>
-                <input type="text" id="userPwd">
-                <div class="chooseBruteForce">
+                <label for="userPwd">Test your Password</label>
+                <input type="text" id="userPwd" placeholder="Enter your Password">
+                <div id="chooseBruteForce">
                     <label for="simple">simple</label>
-                    <input type="radio" name="bruteAlgo" value="simple" id="simple">
+                    <input type="radio" name="bruteType" value="simple" id="simple">
                     <label for="library" id="library">library</label>
-                    <input type="radio" name="bruteAlgo" value="library">
+                    <input type="radio" name="bruteType" value="library" checked>
                     <label for="hybrid">Hybrid</label>
-                    <input type="radio" name="bruteAlgo" value="hybrid" id="Hybrid">
+                    <input type="radio" name="bruteType" value="hybrid" id="Hybrid">
                 </div>
                 <div class="bruteBtns">
                     <button id="startBtn">Start</button>
-                    <button id="stoppBtn">Stopp</button>
+                    <button id="stopBtn">Stop</button>
                 </div>
             </div>
 
             <div id="stats">
-                <p>passwort -- attempts -- mode --close enough ---time</p>
-                <p>passwort -- attempts -- mode --close enough ---time</p>
-                <p>passwort -- attempts -- mode --close enough ---time</p>
-                <p>passwort -- attempts -- mode --close enough ---time</p>
-                <p>passwort -- attempts -- mode --close enough ---time</p>
-                <p>passwort -- attempts -- mode --close enough ---time</p>
+                <h3>passwort  attempts   Similar  mode  time</h3>
             </div>
         </div>
 
         <div class="mainMiddle">
+        <div>
+            <label for="converterSelect">Select Password Converter:</label>
+            <select id="converterSelect">
+                <option value="leetSimple">Simple Leetspeak</option>
+                <option value="leetComplicated">Complicated Leetspeak</option>
+            </select>
 
+            <input type="text" id="passwordInput" placeholder="Enter password">
+            <button id="convertButton">Convert</button>
+            <p>Converted Password: <span id="newPassword"></span></p>
+
+            
+        </div>
+        <div id="pwdGenDiv">
+
+            <div id="pwdGen">
+                <select name="pwdgen" id="selectPwd">
+                    <option value="dog">Dog</option>
+                    <option value="color">Color</option>
+                    <option value="Emotions">Emotions</option>
+                    <option value="candy">Candy</option>
+                </select>
+                <label for="genLength">Password length</label>
+                <input type="number" id="genLength">
+                <button id="startGen">Generate</button>
+            </div>
+
+
+
+        </div>
 
 
             

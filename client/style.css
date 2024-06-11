@@ -2,10 +2,134 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
 }
 #header{
     display: flex;
+    margin: 2rem;
+    width: 50%;
+}
+#headerText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#headerText h1{
+    margin: 1rem;
+}
+#headerText p::first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+    float: left;
+    line-height: 1;
+    margin-right: 0.1em;
+}
+
+#headerText p {
+    text-align: justify;
+    margin: 0;
+    line-height: 1.5;
+}
+
+#imgDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+img{
+    width: 250px;    
 }
 .mainTop{
     display: flex;
+    width: 50%;
+}
+
+#bruteForce{
+    width: 50%;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    box-shadow: 0px 0px 10px 0px ;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+#bruteForce > label{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.bruteBtns{
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+    justify-content: center;
+}
+.bruteBtns button{
+    padding: .5rem;
+    width: 4rem;
+}
+
+#stats{
+    background-color: grey;
+    width: 50%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: .5rem;
+
+}
+#stopBtn {
+    background-color: #f14024;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; transform 0.3s;
+}
+#stopBtn:hover {
+    background-color: #d3371f;
+}
+#stopBtn:active {
+    background-color:#ad2e1a;
+    transition: 0.05s;
+}
+.mainMiddle{
+    display: flex;
+    
+}
+#converterSelector {
+    width: 220px;
+    padding: 2px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+#convertButton, #startBtn {
+    background-color: #40aeb8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; transform 0.3s;
+
+}
+#convertButton:hover, #startBtn:hover{
+    background-color:#2e7d84;
+    
+}
+#convertButton:active, #startBtn:active {
+    background-color: #25646a;
+    transition: 0.05s;
+    
+}
+#converterDiv {
+    padding-bottom: 50px;
 }
