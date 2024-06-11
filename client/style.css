@@ -111,35 +111,37 @@ main{
 }
 .mainMiddle{
     display: flex;
-    justify-content: space-evenly;
-    background-color: #ddd;
+    justify-content: space-around;
+    
+    
     
 }
 .flexbox-converter {
     display: flex;
     justify-content: space-evenly;
+    box-shadow: 0px 0px 2px 0px ;
+    border-radius: .5rem;
+    background-color: #ffffff80;
+    max-width: 45%;
+    
 }
 #converterSelector input {
     margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     margin-right: 35px;
     padding: 2px;
     width: 242px;
 }
 #converterSelector select {
-    margin-right: 33px;
 }
 #converterSelector button {
-    margin-top: 25px;
-}
-#converterSelector p {
-    margin-bottom: 15px;
     margin-top: 15px;
 }
 #converterSelector span {
     font-weight: bold;
     font-size: 1.2rem;
-    
+    margin-top: 25px;
+    background-color: #ddd;
 }
 #converterSelector {
     width: 100%;
@@ -171,4 +173,7 @@ main{
 }
 #converterDiv {
     padding-bottom: 50px;
+}
+.flexbox-spacer {
+    width: 100px;
 }
