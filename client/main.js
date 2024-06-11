@@ -16,3 +16,4 @@ async function checkPassword(testPwd){
 
 checkPassword(testPwd)
 
+generatePassword('',5)
