@@ -113,15 +113,34 @@ main{
     display: flex;
     
 }
-#converterSelector {
-    width: 220px;
+#converterSelector input {
+    margin-top: 25px;
+    margin-bottom: 25px;
     padding: 2px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
+    width: 242px;
+}
+#converterSelector button {
+    margin-left: 33px;
+}
+#converterSelector p {
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+#converterSelector span {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 15px;
+}
+#converterSelector {
+    width: 100%;
+    padding: 50px;
+    margin-bottom: 15px;
+    border: 0px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
 }
-#convertButton, #startBtn {
+#convertButton, #startBtn, #startGen {
     background-color: #40aeb8;
     color: #fff;
     border: none;
@@ -132,11 +151,11 @@ main{
     transition: background-color 0.3s transform 0.3s;
 
 }
-#convertButton:hover, #startBtn:hover{
+#convertButton:hover, #startBtn:hover, #startGen:hover{
     background-color:#2e7d84;
     
 }
-#convertButton:active, #startBtn:active {
+#convertButton:active, #startBtn:active, #startGen:active {
     background-color: #25646a;
     transition: 0.05s;
     
