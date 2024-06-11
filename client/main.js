@@ -13,14 +13,14 @@ convertButton.addEventListener('click', function() {
     document.getElementById('newPassword').innerText = newPassword
 })
 
-startBtn.addEventListener('click',()=> {
+startBtn.addEventListener('click',(e)=> {
     const bruteType = document.querySelector('input[name="bruteType"]:checked').value
     const url = "http://localhost:3001/"
     const pwd = document.getElementById('userPwd')
     const urlPara =`${url}bruteforce${bruteType}?pwd=${encodeURIComponent(pwd.value)}`
 
     pwd.value = ''
-    changeImg();
+    changeImg(e);
   
     let result;
     
@@ -49,14 +49,23 @@ startBtn.addEventListener('click',()=> {
 })
 
 
-function changeImg(){
+stopBtn.addEventListener('click',(e) => {
+
+    changeImg(e)
+
+
+})
+
+
+
+function changeImg(e){
     const img = document.getElementById("monkey");
-    if(img.src[img.src.length-1] !== 'f'){
-  
-        img.src = "../img/animated_monkey.gif";
-    }else{
-        img.src = "../img/non_animated_monkey.png";
-    }
+
+    img.src =
+      e.target.id === "startBtn"
+        ? "../img/animated_monkey.gif"
+        : "../img/non_animated_monkey.png";
+
 }
 
 
@@ -66,10 +75,7 @@ function updateAttempts(result){
     const stats = document.getElementById('stats')
 
     const para = document.createElement('p')
-
      para.innerHTML = `${pwd}  ${count}  ${closeEnough.length}  ${mode}  ${time}`
-
-
 
     stats.append(para)
 
