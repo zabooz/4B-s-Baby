@@ -84,3 +84,4 @@ function updateAttempts(result){
 
 }
 
+generatePassword('',5)
