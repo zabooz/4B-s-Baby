@@ -81,20 +81,20 @@ img{
     padding: .5rem;
 
 }
-#stoppBtn {
+#stopBtn {
     background-color: #f14024;
     color: #fff;
     border: none;
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s; transform 0.3s;
 }
-#stoppBtn:hover {
+#stopBtn:hover {
     background-color: #d3371f;
 }
-#stoppBtn:active {
+#stopBtn:active {
     background-color:#ad2e1a;
     transition: 0.05s;
 }
@@ -115,7 +115,7 @@ img{
     color: #fff;
     border: none;
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s; transform 0.3s;
