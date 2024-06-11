@@ -1,6 +1,8 @@
 function bruteforcePassword(targetPassword, charset, maxLength) {
   let count = 0;
   let found = false;
+  let mode = 'simple'
+  let closeEnough = 'N/A'
   const startTime = Date.now()
   function generate(prefix, length) {
     if (found) return;
@@ -28,7 +30,7 @@ function bruteforcePassword(targetPassword, charset, maxLength) {
     const time = (Date.now() -startTime)/1000 + ' sec'
 
 
-    return [`Password found: ${targetPassword}`,count,time];
+    return [targetPassword,time,closeEnough,count,mode];
   } else {
     return "Password not found within the given length constraints.";
   }

@@ -19,12 +19,9 @@ startBtn.addEventListener('click',()=> {
     const pwd = document.getElementById('userPwd')
     const urlPara =`${url}bruteforce${bruteType}?pwd=${encodeURIComponent(pwd.value)}`
 
-
+    pwd.value = ''
     changeImg();
   
-
-    
-    
     let result;
     
     fetch(urlPara)
@@ -39,8 +36,11 @@ startBtn.addEventListener('click',()=> {
         })
         .then(data => {
           result = data;
-          pwd.value = ''
           console.log(data);
+
+          updateAttempts(result)
+
+
         })
         .catch(error => {
             console.error('Yeah nnonononono',error)
@@ -57,5 +57,21 @@ function changeImg(){
     }else{
         img.src = "../img/non_animated_monkey.png";
     }
+}
+
+
+function updateAttempts(result){
+
+    const [pwd,time,closeEnough,count,mode] = result
+    const stats = document.getElementById('stats')
+
+    const para = document.createElement('p')
+
+     para.innerHTML = `${pwd}  ${count}  ${closeEnough.length}  ${mode}  ${time}`
+
+
+
+    stats.append(para)
+
 }
 

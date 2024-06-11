@@ -25,7 +25,7 @@ async function loadPasswordList(){
       passwordList = response.data
         .split("\n")
         .filter((line) => line !== "");
-        console.log(response)
+        console.log('data loaded')
 
       
     }catch(error){
@@ -70,7 +70,7 @@ app.get('/bruteForceLibrary',async(req,res) => {
     
     const result = await bruteForceLibrary(password,passwordList)
     res.send(result)
-
+    console.log(result)
       }catch(error){
         console.error('Ah shit, here we go again')
         res.status(500).send('error')
