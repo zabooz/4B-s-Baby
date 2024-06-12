@@ -5,7 +5,7 @@ import {passwordConverter} from './scripts/passwordConverter.js'
 const convertButton = document.getElementById('convertButton')
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn')
-const img = document.getElementById("monkey");
+const monkeyImg = document.getElementById("monkeyAnimated");
 
 convertButton.addEventListener('click', function() {
     const selectedConverter = document.getElementById('converterSelect').value;
@@ -16,13 +16,12 @@ convertButton.addEventListener('click', function() {
 
 startBtn.addEventListener('click',(e)=> {
   fetchData();
-  img.src = "../img/animated_monkey.gif";
+  monkeyImg.src = "../img/animated_monkey.gif";
   })
   
   
   stopBtn.addEventListener('click',(e) => {
-    changeImg(e)
-    img.src = "../img/non_animated_monkey.png";
+    monkeyImg.src = "../img/monkeyCircle.jpg";
     fetch("http://localhost:3001/stopbruteforce").then(response => console.log(response))
     
 
@@ -55,7 +54,7 @@ const fetchData = () => {
           .then((data) => {
             result = data;
             updateAttempts(result);
-            img.src = "../img/non_animated_monkey.png";
+            monkeyImg.src = "../monkeyImg/non_animated_monkey.png";
 
           })
           .catch((error) => {

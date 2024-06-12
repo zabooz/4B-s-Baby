@@ -23,22 +23,26 @@
 
         <div class="mainTop">
             <div id="bruteForce">
-                <label for="userPwd">Test your Password</label>
-                <input type="text" id="userPwd" placeholder="Enter your Password">
-                <div id="chooseBruteForce">
-                    <H4>Choose Mode</H4>
-                    <label for="simple">Simple</label>
-                    <input type="radio" name="bruteType" value="simple" id="simple">
-                    <label for="library" id="library">Library</label>
-                    <input type="radio" name="bruteType" value="library" checked>
-                    <label for="hybrid">Hybrid</label>
-                    <input type="radio" name="bruteType" value="hybrid" id="Hybrid">
+                <div id="bruteForceProg">
+                    <label for="userPwd">Test your Password</label>
+                    <input type="text" id="userPwd" placeholder="Enter your Password">
+                    <div id="chooseBruteForce">
+                        <H4>Choose Mode</H4>
+                        <label for="simple">Simple</label>
+                        <input type="radio" name="bruteType" value="simple" id="simple">
+                        <label for="library" id="library">Library</label>
+                        <input type="radio" name="bruteType" value="library" checked>
+                        <label for="hybrid">Hybrid</label>
+                        <input type="radio" name="bruteType" value="hybrid" id="Hybrid">
+                    </div>
+                    <div class="bruteBtns">
+                        <button id="startBtn">Start</button>
+                        <button id="stopBtn">Stop</button>
+                    </div>
                 </div>
-                <div class="bruteBtns">
-                    <button id="startBtn">Start</button>
-                    <button id="stopBtn">Stop</button>
+                <img id="monkeyAnimated" src="../img/monkeyCircle.jpg" alt="monkey">
+                
                 </div>
-            </div>
 
             <div id="stats">
                 <div class="statsHeading">
