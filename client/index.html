@@ -9,7 +9,7 @@
     <script src="./main.js" type ="module" defer>c</script>
     </head>
     <body>
-    
+    <canvas id="matrixCanvas"></canvas>
     <div id="header">
         <div id="headerText">
             <h1>What is bruteforce?</h1>
@@ -46,9 +46,9 @@
 
             <div id="stats">
                 <div class="statsHeading">
-                    <h3>password</h3>
-                    <h3>attempt</h3>
-                    <h3>mode</h3>
+                    <h3>Password</h3>
+                    <h3>Attempt</h3>
+                    <h3>Mode</h3>
                     <h3>Time</h3>
 
                 </div>
@@ -57,9 +57,9 @@
 
         <div class="mainMiddle">
             <div class="flexbox-converter">
-                <h3></h3>
+                <h3>Password Wizard</h3>
                 <div id="converterSelector">
-                <div class="flexbox-item1"
+                <div class="flexbox-item1">
                     <label for="converterSelect">Converter:</label>
                     <select id="converterSelect">
                         <option value="leetSimple">Simple Leetspeak</option>
@@ -69,9 +69,8 @@
                 <div class="flexbox-item2">
                     <input type="text" id="passwordInput" placeholder="Enter password">
                     <button id="convertButton">Convert</button>
-                    <div><span id="newPassword"></span>
-                    </div>
-                    </div>
+                    <div><span id="newPassword"></span></div>
+                </div>
                 </div>
             </div>
             <div class="flexbox-spacer"></div>
@@ -108,6 +107,6 @@
 
 
 
-
+    <script src="./scripts/matrix.js"></script>
     </body>
 </html>

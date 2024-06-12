@@ -54,7 +54,7 @@ const fetchData = () => {
           .then((data) => {
             result = data;
             updateAttempts(result);
-            monkeyImg.src = "../monkeyImg/non_animated_monkey.png";
+            monkeyImg.src = "../img/monkeyCircle.jpg";
 
           })
           .catch((error) => {

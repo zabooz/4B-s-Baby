@@ -667,7 +667,6 @@ export function generatePassword(options, length) {
     password += symbols[randomIndex];
   }
 
-  console.log(password);
   return password;
 }
 
