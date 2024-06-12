@@ -133,15 +133,17 @@ main{
     width: 242px;
 }
 #converterSelector select {
+    margin-top: 20px;
 }
 #converterSelector button {
     margin-top: 15px;
+    margin-bottom: 25px;
 }
 #converterSelector span {
     font-weight: bold;
     font-size: 1.2rem;
     margin-top: 25px;
-    background-color: #ddd;
+    
 }
 #converterSelector {
     width: 100%;
