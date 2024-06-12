@@ -12,32 +12,46 @@ const passwordInput = document.getElementById('passwordInput')
 convertButton.addEventListener('click', function() {
     const newPassword = passwordConverter(passwordInput.value, selectedConverter.value)
     document.getElementById('newPassword').innerText = newPassword
+    passwordInput.value = ""
 })
-
-startBtn.addEventListener('click',(e)=> {
+passwordInput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+      event.preventDefault(); 
+      convertButton.click(); 
+  }
+});
+startBtn.addEventListener("keypress", function(event) {
   fetchData();
-  monkeyImg.src = "../img/animated_monkey.gif";
-  })
-  
-  
-  stopBtn.addEventListener('click',(e) => {
-    monkeyImg.src = "../img/monkeyCircle.jpg";
-    fetch("http://localhost:3001/stopbruteforce").then(response => console.log(response))
-    
-
-})
-
-
-const fetchData = () => {
-        const bruteType = document.querySelector(
-          'input[name="bruteType"]:checked'
-        ).value;
-        const url = "http://localhost:3001/";
-        const pwd = document.getElementById("userPwd");
-        const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
-          pwd.value
-        )}`;
-
+  if (event.key === "Enter") {
+    event.preventDefault(); 
+    startBtn.click(); 
+    }
+    });
+    startBtn.addEventListener('click',(e)=> {
+      fetchData();
+      
+      })
+      
+      
+      stopBtn.addEventListener('click',(e) => {
+        monkeyImg.src = "../img/monkeyCircle.jpg";
+        fetch("http://localhost:3001/stopbruteforce").then(response => console.log(response))
+        
+        
+        })
+        
+        
+        const fetchData = () => {
+          const bruteType = document.querySelector(
+            'passwordInput[name="bruteType"]:checked'
+            ).value;
+            const url = "http://localhost:3001/";
+            const pwd = document.getElementById("userPwd");
+            const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
+              pwd.value
+              )}`;
+              
+              monkeyImg.src = "../img/animated_monkey.gif";
         pwd.value = "";
         
         console.log(urlPara)
