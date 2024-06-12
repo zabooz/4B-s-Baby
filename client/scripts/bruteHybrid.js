@@ -60,18 +60,3 @@ export async function bruteForceHybrid(pwd){
 
 }
 
-
-function fixes (index){
-
-    let fix;
-
-    for (let i = 0; i < allCharacters.length;i++){
-
-        
-
-
-    }
-
-
-
-}

@@ -1,0 +1,236 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    overflow: auto;
+    color:white
+}
+#matrixCanvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+}
+#header{
+    display: flex;
+    width: 60%;
+    gap: 4rem;
+}
+#headerText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#headerText h1{
+    margin: 1rem;
+}
+#headerText p::first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+    float: left;
+    line-height: 1;
+    margin-right: 0.1em;
+}
+
+#headerText p {
+    text-align: justify;
+    margin: 0;
+    line-height: 1.5;
+}
+
+#imgDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+}
+img{
+    width: 250px;    
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+.mainTop{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+#bruteForce{
+    width: 80%;
+    display: flex;
+    height: 220px;
+    box-shadow: 0px 0px 10px 0px ;
+    border-radius: .5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+#bruteForceProg{
+    margin: 1rem;
+    gap: .5rem;
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+
+}
+#monkeyAnimated{
+    width: 10rem;
+    height: 10rem;
+    margin-right: 3rem;
+}
+#bruteForce > label{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+#bruteForce > input{
+    width: 10rem;
+}
+#bruteForce h4{
+    margin: .5rem 0;
+}
+.bruteBtns{
+    margin-top: .5rem;
+    width: 100%;
+    gap: 2rem;
+    justify-content: center;
+}
+.bruteBtns button{
+    padding: .5rem;
+    width: 4rem;
+}
+#stopBtn{
+    margin-left: .5rem;
+}
+.test{
+    height: 2000px;
+}
+#stats{
+    gap: .5rem;
+    box-shadow: 0px 0px 10px 0px;
+    height: 220px;
+    width: 50%;
+    border-radius: .5rem;
+}
+.statsHeading{
+    display: flex;
+    justify-content: space-between;
+    margin-right: .5rem;
+}
+.statsHeading p{
+    margin-left: 0.5rem;
+    width:6rem;
+    text-align: center;
+}
+#stats h3{
+    margin-top: .5rem;
+    margin-left: .5rem;
+    width:6rem;
+
+    text-align: center;
+}
+#stopBtn {
+    background-color: #f14024;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s transform 0.3s;
+}
+#stopBtn:hover {
+    background-color: #d3371f;
+}
+#stopBtn:active {
+    background-color:#ad2e1a;
+    transition: 0.05s;
+}
+.mainMiddle{
+    display: flex;
+    justify-content: space-around;
+    height: 20rem;
+}
+.flexbox-converter {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px 0px ;
+    border-radius: .5rem;
+    max-width: 45%;
+    
+}
+.flexbox-converter h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 22px;
+}
+#converterSelector input {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-right: 35px;
+    padding: 2px;
+    width: 246px;
+}
+#converterSelector select {
+    margin-top: 20px;
+}
+#converterSelector button {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+#converterSelector span {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 25px;
+    
+}
+#converterSelector {
+    width: 100%;
+    padding: 50px;
+    margin-bottom: 15px;
+    border: 0px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#convertButton, #startBtn, #startGen {
+    background-color: #40aeb8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s transform 0.3s;
+
+}
+#convertButton:hover, #startBtn:hover, #startGen:hover{
+    background-color:#2e7d84;
+    
+}
+#convertButton:active, #startBtn:active, #startGen:active {
+    background-color: #25646a;
+    transition: 0.05s;
+    
+}
+#converterDiv {
+    padding-bottom: 50px;
+}
+.flexbox-spacer {
+    width: 100px;
+}

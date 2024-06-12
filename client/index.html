@@ -9,6 +9,86 @@
     <script src="./main.js" type ="module" defer>c</script>
     </head>
     <body>
-    <script></script>
-</body>
+    <canvas id="matrixCanvas"></canvas>
+    <div id="header">
+        <div id="headerText">
+            <h1>What is bruteforce?</h1>
+            <p>A brute-force attack is a fundamental technique used in cybersecurity to gain unauthorized access to a system. It involves systematically attempting every possible combination of characters to guess passwords or encryption keys until the correct one is found. Despite being a straightforward approach, brute-force attacks can be highly effective, particularly against weak passwords or inadequately protected systems. With the advent of high-performance computing, attackers can automate this process, making it faster and more efficient. This type of attack underscores the importance of robust security practices, such as using strong, complex passwords and implementing additional security measures like multi-factor authentication to safeguard sensitive information.</p>
+        </div>
+        <div id="imgDiv">
+            <img  id="monkey" src="../img/non_animated_monkey.png" alt="monkey">
+        </div>
+    </div>
+    <main>
+        <div class="mainTop">
+            <div id="bruteForce">
+                <div id="bruteForceProg">
+                    <label for="userPwd">Test your Password</label>
+                    <input type="text" id="userPwd" placeholder="Enter your Password">
+                    <div id="chooseBruteForce">
+                        <labek>Choose Mode</label>
+                        <select id="bruteMode">
+                            <option value="simple">Simple</option>
+                            <option value="library">Library</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+
+                    </div>
+                    <div class="bruteBtns">
+                        <button id="startBtn">Start</button>
+                        <button id="stopBtn">Stop</button>
+                    </div>
+                </div>
+                <img id="monkeyAnimated" src="../img/monkeyCircle.jpg" alt="monkey">
+                
+                </div>
+
+            <div id="stats">
+                <div class="statsHeading">
+                    <h3>Password</h3>
+                    <h3>Attempt</h3>
+                    <h3>Mode</h3>
+                    <h3>Time</h3>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mainMiddle">
+            <div class="flexbox-converter">
+                <div id="converterSelector">
+                <div class="flexbox-item1">
+                    <h3>Password Converter</h3>
+                    <label for="converterSelect">Converter:</label>
+                    <select id="converterSelect">
+                        <option value="leetSimple">Simple Leetspeak</option>
+                        <option value="leetComplicated">Complicated Leetspeak</option>
+                    </select>
+                </div>
+                <div class="flexbox-item2">
+                    <input type="text" id="passwordInput" placeholder="Enter password">
+                    <button id="convertButton">Convert</button>
+                    <div><span id="newPassword"></span></div>
+                </div>
+                </div>
+            </div>
+            <div class="flexbox-spacer"></div>
+        <div id="pwdGenDiv">
+
+            <div id="pwdGen">
+                <select name="pwdgen" id="selectPwd">
+                    <option value="dog">Dog</option>
+                    <option value="color">Color</option>
+                    <option value="Emotions">Emotions</option>
+                    <option value="candy">Candy</option>
+                </select>
+                <label for="genLength">Password length</label>
+                <input type="number" id="genLength">
+                <button id="startGen">Generate</button>
+            </div>
+        </div> 
+        </div>
+    </main>
+    <script src="./scripts/matrix.js"></script>
+    </body>
 </html>
