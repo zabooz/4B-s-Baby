@@ -6,11 +6,11 @@ const convertButton = document.getElementById('convertButton')
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn')
 const monkeyImg = document.getElementById("monkeyAnimated");
+const selectedConverter = document.getElementById('converterSelect')
+const passwordInput = document.getElementById('passwordInput')
 
 convertButton.addEventListener('click', function() {
-    const selectedConverter = document.getElementById('converterSelect').value;
-    const passwordInput = document.getElementById('passwordInput').value
-    const newPassword = passwordConverter(passwordInput, selectedConverter)
+    const newPassword = passwordConverter(passwordInput.value, selectedConverter.value)
     document.getElementById('newPassword').innerText = newPassword
 })
 

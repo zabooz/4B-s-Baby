@@ -162,22 +162,27 @@ main{
 .mainMiddle{
     display: flex;
     justify-content: space-around;
+    height: 20rem;
 }
 .flexbox-converter {
     display: flex;
-    justify-content: space-evenly;
-    box-shadow: 0px 0px 2px 0px ;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px 0px ;
     border-radius: .5rem;
-    background-color: #ffffff80;
     max-width: 45%;
     
+}
+.flexbox-converter h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 22px;
 }
 #converterSelector input {
     margin-top: 25px;
     margin-bottom: 15px;
     margin-right: 35px;
     padding: 2px;
-    width: 242px;
+    width: 246px;
 }
 #converterSelector select {
     margin-top: 20px;
@@ -200,6 +205,7 @@ main{
     border-radius: 4px;
     font-size: 16px;
 }
+
 #convertButton, #startBtn, #startGen {
     background-color: #40aeb8;
     color: #fff;
