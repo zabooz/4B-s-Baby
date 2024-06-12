@@ -117,7 +117,9 @@ main{
 #stopBtn{
     margin-left: .5rem;
 }
-
+.test{
+    height: 2000px;
+}
 #stats{
     gap: .5rem;
     box-shadow: 0px 0px 10px 0px;

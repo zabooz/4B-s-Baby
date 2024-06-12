@@ -20,20 +20,19 @@
         </div>
     </div>
     <main>
-
         <div class="mainTop">
             <div id="bruteForce">
                 <div id="bruteForceProg">
                     <label for="userPwd">Test your Password</label>
                     <input type="text" id="userPwd" placeholder="Enter your Password">
                     <div id="chooseBruteForce">
-                        <H4>Choose Mode</H4>
-                        <label for="simple">Simple</label>
-                        <input type="radio" name="bruteType" value="simple" id="simple">
-                        <label for="library" id="library">Library</label>
-                        <input type="radio" name="bruteType" value="library" checked>
-                        <label for="hybrid">Hybrid</label>
-                        <input type="radio" name="bruteType" value="hybrid" id="Hybrid">
+                        <labek>Choose Mode</label>
+                        <select id="bruteMode">
+                            <option value="simple">Simple</option>
+                            <option value="library">Library</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+
                     </div>
                     <div class="bruteBtns">
                         <button id="startBtn">Start</button>
@@ -87,26 +86,9 @@
                 <input type="number" id="genLength">
                 <button id="startGen">Generate</button>
             </div>
-
-
-
+        </div> 
         </div>
-
-
-            
-        </div>
-
-
-
-
-
-
     </main>
-
-
-
-
-
     <script src="./scripts/matrix.js"></script>
     </body>
 </html>

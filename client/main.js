@@ -22,6 +22,7 @@ passwordInput.addEventListener("keypress", function(event) {
 });
 startBtn.addEventListener("keypress", function(event) {
   fetchData();
+
   if (event.key === "Enter") {
     event.preventDefault(); 
     startBtn.click(); 
@@ -52,6 +53,7 @@ startBtn.addEventListener("keypress", function(event) {
               )}`;
               
               monkeyImg.src = "../img/animated_monkey.gif";
+
         pwd.value = "";
         
         console.log(urlPara)
