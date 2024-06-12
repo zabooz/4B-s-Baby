@@ -1,4 +1,4 @@
-function bruteforcePassword(targetPassword, charset, maxLength,stop) {
+function bruteforcePassword(targetPassword, charset, maxLength) {
   let count = 0;
   let found = false;
   let mode = 'simple'

@@ -4,7 +4,7 @@ async function bruteForceLibrary(pwd,passwordList) {
     const mode = 'Library'
     let startTime = Date.now();
     let time = 'N/A'
-    let count
+    let count = 'N/A'
 
         passwordList.forEach((pw,i)=> {
             if(pw === pwd){
@@ -15,8 +15,8 @@ async function bruteForceLibrary(pwd,passwordList) {
                 closeEnough.push(pw)
             }
         })
-
-    return [ pwd, time, closeEnough,count,mode];
+        console.log(pwd,time,closeEnough,count,mode)
+    return [pwd,count,mode,time];
 }
 
 module.exports = bruteForceLibrary

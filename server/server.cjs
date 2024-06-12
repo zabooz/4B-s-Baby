@@ -53,7 +53,7 @@ app.get('/bruteForceSimple', async(req,res) => {
     const charset =
     'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:",.<>?/`~';
 
-    const result = bruteForceSimple(password,charset,maxLength,stopBrute)
+    const result = bruteForceSimple(password,charset,maxLength)
 
     res.send(result)
 

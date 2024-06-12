@@ -26,9 +26,10 @@
                 <label for="userPwd">Test your Password</label>
                 <input type="text" id="userPwd" placeholder="Enter your Password">
                 <div id="chooseBruteForce">
-                    <label for="simple">simple</label>
+                    <H4>Choose Mode</H4>
+                    <label for="simple">Simple</label>
                     <input type="radio" name="bruteType" value="simple" id="simple">
-                    <label for="library" id="library">library</label>
+                    <label for="library" id="library">Library</label>
                     <input type="radio" name="bruteType" value="library" checked>
                     <label for="hybrid">Hybrid</label>
                     <input type="radio" name="bruteType" value="hybrid" id="Hybrid">
@@ -40,7 +41,13 @@
             </div>
 
             <div id="stats">
-                <h3>passwort  attempts   Similar  mode  time</h3>
+                <div class="statsHeading">
+                    <h3>password</h3>
+                    <h3>attempt</h3>
+                    <h3>mode</h3>
+                    <h3>Time</h3>
+
+                </div>
             </div>
         </div>
 

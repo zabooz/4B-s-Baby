@@ -5,6 +5,7 @@ import {passwordConverter} from './scripts/passwordConverter.js'
 const convertButton = document.getElementById('convertButton')
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn')
+const img = document.getElementById("monkey");
 
 convertButton.addEventListener('click', function() {
     const selectedConverter = document.getElementById('converterSelect').value;
@@ -15,13 +16,13 @@ convertButton.addEventListener('click', function() {
 
 startBtn.addEventListener('click',(e)=> {
   fetchData();
-  changeImg(e);
-})
-
-
-stopBtn.addEventListener('click',(e) => {
+  img.src = "../img/animated_monkey.gif";
+  })
+  
+  
+  stopBtn.addEventListener('click',(e) => {
     changeImg(e)
-
+    img.src = "../img/non_animated_monkey.png";
     fetch("http://localhost:3001/stopbruteforce").then(response => console.log(response))
     
 
@@ -40,7 +41,7 @@ const fetchData = () => {
 
         pwd.value = "";
         
-
+        console.log(urlPara)
         let result;
 
         fetch(urlPara)
@@ -54,6 +55,8 @@ const fetchData = () => {
           .then((data) => {
             result = data;
             updateAttempts(result);
+            img.src = "../img/non_animated_monkey.png";
+
           })
           .catch((error) => {
             console.error("Yeah nnonononono", error);
@@ -63,28 +66,20 @@ const fetchData = () => {
 
 
 
-
-function changeImg(e){
-    const img = document.getElementById("monkey");
-    img.src =
-      e.target.id === "startBtn"
-        ? "../img/animated_monkey.gif"
-        : "../img/non_animated_monkey.png";
-}
-
-
 function updateAttempts(result){
 
-    const [pwd,time,closeEnough,count,mode] = result
+    const dataArr = result
     const stats = document.getElementById('stats')
+    const div = document.createElement('div')
+    div.className='statsHeading'
+    dataArr.forEach(item => {
 
-    const para = document.createElement('p')
-     para.innerHTML = `${pwd}  ${count}  ${closeEnough.length}  ${mode}  ${time}`
+      const para = document.createElement('p')
+      para.textContent = item
 
-    stats.append(para)
+      div.appendChild(para)
+    })
 
-
+    stats.append(div)
 
 }
-
-generatePassword('',5)
