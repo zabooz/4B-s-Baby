@@ -30,8 +30,9 @@ startBtn.addEventListener('click',(e)=> {
 
 const fetchData = () => {
         const bruteType = document.querySelector(
-          'input[name="bruteType"]:checked'
+          '#bruteMode'
         ).value;
+        console.log(bruteType)
         const url = "http://localhost:3001/";
         const pwd = document.getElementById("userPwd");
         const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(

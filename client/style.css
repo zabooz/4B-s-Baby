@@ -9,7 +9,7 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: black;
-    overflow: hidden;
+    overflow: auto;
     color:white
 }
 #matrixCanvas{
@@ -117,7 +117,9 @@ main{
 #stopBtn{
     margin-left: .5rem;
 }
-
+.test{
+    height: 2000px;
+}
 #stats{
     gap: .5rem;
     box-shadow: 0px 0px 10px 0px;
