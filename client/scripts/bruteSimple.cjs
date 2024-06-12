@@ -5,9 +5,10 @@ function bruteforcePassword(targetPassword, charset, maxLength) {
   let closeEnough = 'N/A'
   const startTime = Date.now()
   function generate(prefix, length) {
+    console.log(prefix)
     if (found) return;
     count++;
-    if (length === 0 || stop) {
+    if (length === 0) {
       // console.log(prefix, count);
       if (prefix === targetPassword) {
         console.log(`Password found: ${prefix}`);
