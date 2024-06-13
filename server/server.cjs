@@ -15,6 +15,7 @@ app.use(cors());
 
 let passwordList
 
+let requests = {}
 async function loadPasswordList(){
 
     try{
@@ -36,26 +37,31 @@ async function loadPasswordList(){
 
 loadPasswordList()
 
-
-
-
-
 app.get('/', (req, res) => {
   res.send('hello world');
 });
 
 
-
 app.get('/bruteForceSimple', async(req,res) => {
-  console.log('sdg')
-    const password = req.query.pwd || 'abcd'
+
+    const password = req.query.pwd || 'abc'
     const maxLength = 16; 
     const charset =
     'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:",.<>?/`~';
 
-    const result = bruteForceSimple(password,charset,maxLength)
+    const requestId = req.query.requestId
 
+    requests[requestId] = true
+
+
+  try{
+    const result = await bruteForceSimple(password,charset,maxLength, () => requests[requestId])
     res.send(result)
+
+  }catch(error){
+    console.log(error)
+  }
+
 
 })
 
@@ -64,12 +70,14 @@ app.get('/bruteForceLibrary',async(req,res) => {
   
   const password = req.query.pwd || 'abc'
 
+
   try {
     
     const result = await bruteForceLibrary(password,passwordList)
     res.send(result)
     console.log(result)
       }catch(error){
+        if(!passwordList) console.error('data not loaded')
         console.error('Ah shit, here we go again')
         res.status(500).send('error')
       }
@@ -86,6 +94,8 @@ app.get('/bruteForceHybrid',async (req,res) => {
 
 app.get('/stopbruteforce',(req,res) => {
 
+    const requestId = req.query.requestId
+    requests[requestId] = false
 })
 
 

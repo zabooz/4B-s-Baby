@@ -10,6 +10,8 @@ const monkeyImg = document.getElementById("monkeyAnimated");
 const userPwd = document.getElementById('userPwd');
 
 
+let requestId;
+main
 
 convertButton.addEventListener('click', function() {
   const selectedConverter = document.getElementById('converterSelect').value;
@@ -33,21 +35,24 @@ userPwd.addEventListener("keypress", function(event) {
     
     }
 });
-startBtn.addEventListener('click',()=> {
+startBtn.addEventListener("click", () => {
   fetchData();
-  
-  })
+});
       
       
 stopBtn.addEventListener('click',(e) => {
   monkeyImg.src = "../img/monkeyCircle.jpg";
-  fetch("http://localhost:3001/stopbruteforce").then(response => console.log(response))
+  fetch(`http://localhost:3001/stopbruteforce?requestId=${requestId}`).then(response => console.log(response))
   
   
   })
         
         
   const fetchData = () => {
+
+    requestId = Date.now()
+
+
     const bruteType = document.querySelector(
       '#bruteMode'
       ).value;
@@ -55,7 +60,7 @@ stopBtn.addEventListener('click',(e) => {
       const pwd = document.getElementById("userPwd");
       const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
         pwd.value
-        )}`;
+        )}&requestId=${requestId}`;
         
         monkeyImg.src = "../img/animated_monkey.gif";
 
