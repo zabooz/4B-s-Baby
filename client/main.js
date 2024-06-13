@@ -2,28 +2,30 @@ import {generatePassword} from './scripts/passwordGenerator.js'
 import {passwordConverter} from './scripts/passwordConverter.js'
 
 
-const convertButton = document.getElementById('convertButton')
+const convertButton = document.getElementById('convertButton');
 const startBtn = document.getElementById('startBtn');
-const stopBtn = document.getElementById('stopBtn')
+const stopBtn = document.getElementById('stopBtn');
 const monkeyImg = document.getElementById("monkeyAnimated");
-const userPwd = document.getElementById('userPwd')
+const userPwd = document.getElementById('userPwd');
 
 
 
 
 convertButton.addEventListener('click', function() {
-  const selectedConverter = document.getElementById('converterSelect').value
-  const passwordInput = document.getElementById('passwordInput').value
-    const newPassword = passwordConverter(passwordInput, selectedConverter)
-    document.getElementById('newPassword').innerText = newPassword
-    passwordInput = ""
-})
+  const selectedConverter = document.getElementById('converterSelect').value;
+  const passwordInput = document.getElementById('passwordInput');
+  const newPassword = passwordConverter(passwordInput.value, selectedConverter);
+  document.getElementById('newPassword').innerText = newPassword
+  passwordInput.value = "";
+});
+
 passwordInput.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
       event.preventDefault(); 
       convertButton.click(); 
   }
 });
+
 userPwd.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault(); 
