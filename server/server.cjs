@@ -35,16 +35,11 @@ async function loadPasswordList(){
 
 }
 
-// loadPasswordList()
-
-
-
-
+loadPasswordList()
 
 app.get('/', (req, res) => {
   res.send('hello world');
 });
-
 
 
 app.get('/bruteForceSimple', async(req,res) => {
@@ -82,6 +77,7 @@ app.get('/bruteForceLibrary',async(req,res) => {
     res.send(result)
     console.log(result)
       }catch(error){
+        if(!passwordList) console.error('data not loaded')
         console.error('Ah shit, here we go again')
         res.status(500).send('error')
       }
@@ -99,10 +95,7 @@ app.get('/bruteForceHybrid',async (req,res) => {
 app.get('/stopbruteforce',(req,res) => {
 
     const requestId = req.query.requestId
-
     requests[requestId] = false
-
-    console.log(req.query.requestId)
 })
 
 

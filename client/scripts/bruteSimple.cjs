@@ -4,15 +4,14 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 async function bruteforcePassword(targetPassword, charset, maxLength,shouldContinue) {
   let count = 0;
   let found = false;
-  let mode = 'simple'
-  let closeEnough = 'N/A'
+  const  mode = 'Simple'
   const startTime = Date.now()
 
   console.log('brute force started')
 
   
   async function generate(prefix, length) {
-    // console.log(prefix)
+
     if (found || !shouldContinue()) return;
    
     count++;
