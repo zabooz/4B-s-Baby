@@ -9,9 +9,7 @@ const stopBtn = document.getElementById('stopBtn');
 const monkeyImg = document.getElementById("monkeyAnimated");
 const userPwd = document.getElementById('userPwd');
 
-
 let requestId;
-main
 
 convertButton.addEventListener('click', function() {
   const selectedConverter = document.getElementById('converterSelect').value;
