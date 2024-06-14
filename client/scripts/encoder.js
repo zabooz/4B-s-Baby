@@ -11,8 +11,9 @@ const characters = [
 function generateEncodingKey () {
     return Math.floor(Math.random() * characters.length);
 }
-export function passwordEncoder (userPwd) {
+export function passwordEncoder (passwordInput) {
     // Encodes the user's password.
+    const passwordInput = document.getElementById('passwordInput');
     let encodedString = "";
     const encodingKey = generateEncodingKey();
 
