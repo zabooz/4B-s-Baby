@@ -8,16 +8,19 @@ const characters = [
     '-', '_', '=', '+', '[', ']', '{', '}', '|', '\\', '/', '<', '>', 
     ',', '.', '`', '~'
 ];
+
 function generateEncodingKey () {
     return Math.floor(Math.random() * characters.length);
 }
-export function passwordEncoder (input) {
+
+export function passwordEncoder (userPwd) {
     // Encodes the user's password.
     // const passwordInput = document.getElementById('passwordInput');
+
     let encodedString = "";
     const encodingKey = generateEncodingKey();
 
-    for (let char of input) {
+    for (let char of (userPwd)) {
         const charIndex = characters.indexOf(char);
 
         if (charIndex === -1) {
@@ -28,21 +31,19 @@ export function passwordEncoder (input) {
             encodedString += characters[newIndex];
         }
     }
-    console.log(encodedString, encodingKey)
     return { encodedString, encodingKey };
 }
 
 export function passwordDecoder(encodedString, encodingKey) {
-    // Decodes the encoded password.
     let decodedString = '';
 
     for (let char of encodedString) {
         const charIndex = characters.indexOf(char);
 
-        if(charIndex === -1) {
+        if (charIndex === -1) {
             // If char not found in the array, leave it unchanged.
             decodedString += char;
-        }else {
+        } else {
             let newIndex = charIndex - encodingKey;
             if (newIndex < 0) {
                 newIndex = characters.length + newIndex;
