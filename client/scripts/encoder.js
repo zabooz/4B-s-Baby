@@ -13,7 +13,10 @@ function generateEncodingKey () {
     return Math.floor(Math.random() * characters.length);
 }
 
-export function passwordEncoder  (userPwd) {
+export function passwordEncoder (userPwd) {
+    // Encodes the user's password.
+    // const passwordInput = document.getElementById('passwordInput');
+
     let encodedString = "";
     const encodingKey = generateEncodingKey();
 
