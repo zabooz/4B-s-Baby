@@ -1,14 +1,14 @@
 import {generatePassword} from './scripts/passwordGenerator.js'
 import {passwordConverter} from './scripts/passwordConverter.js'
 import {passwordEncoder, passwordDecoder} from './scripts/encoder.js'
-
+import { pictureToString } from './scripts/picturePwd.js';
 
 const convertButton = document.getElementById('convertButton');
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
 const monkeyImg = document.getElementById("monkeyAnimated");
 const userPwd = document.getElementById('userPwd');
-
+const picConBtn = document.getElementById('pictureConvert')
 let requestId;
 
 convertButton.addEventListener('click', function() {
@@ -36,7 +36,8 @@ userPwd.addEventListener("keypress", function(event) {
 startBtn.addEventListener("click", () => {
   fetchData();
 });
-      
+
+picConBtn.addEventListener('click',pictureToString)
       
 stopBtn.addEventListener('click',(e) => {
   monkeyImg.src = "../img/monkeyCircle.jpg";
@@ -106,3 +107,6 @@ function updateAttempts(result){
     stats.append(div)
 
 }
+
+
+
