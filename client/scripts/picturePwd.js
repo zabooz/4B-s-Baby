@@ -33,6 +33,7 @@ export function pictureToString(){
             
             
             console.log(password,password.length,key)
+            document.getElementById('picResult').textContent += ' ' + password
             return base64String
         }
 
