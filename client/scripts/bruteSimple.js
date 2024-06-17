@@ -1,7 +1,7 @@
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 
-async function bruteforcePassword(targetPassword, charset, maxLength,shouldContinue) {
+ export async function bruteForceSimple(targetPassword, charset, maxLength,shouldContinue) {
   let count = 0;
   let found = false;
   const  mode = 'Simple'
@@ -53,5 +53,3 @@ async function bruteforcePassword(targetPassword, charset, maxLength,shouldConti
     return "Password not found within the given length constraints.";
   }
 }
-
-module.exports = bruteforcePassword;

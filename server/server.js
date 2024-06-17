@@ -1,17 +1,18 @@
 
+import { config } from 'dotenv';
+import express from 'express'
+import axios from 'axios'
+import cors from 'cors'
+import{bruteForceSimple} from '../client/scripts/bruteSimple.js'
+import{bruteForceLibrary} from '../client/scripts/bruteLibrary.js'
+import { passwordDecoder } from '../client/scripts/encoder.js';
+config();
 
-
-
-require('dotenv').config(); // Load environment variables from a .env file into process.env
-const express = require('express'); // Import the Express framework
-const axios = require('axios'); // Import Axios, a library for making HTTP requests
-const cors = require('cors'); // Import CORS middleware
-const bruteForceSimple = require('../client/scripts/bruteSimple.cjs');
-const bruteForceLibrary = require('../client/scripts/bruteLibrary.cjs')
-const passwordDecoder = require('../client/scripts/encoder.cjs')
 const app = express(); // Create an Express application
 const port = process.env.PORT || 3000; // Set the port from the environment variable or default to 3000
 const dropboxFileUrl = process.env.DROPBOX_FILE_URL; // Set the Dropbox file URL from the environment variable
+
+
 
 app.use(cors());
 
@@ -52,7 +53,7 @@ app.get('/bruteForceSimple', async(req,res) => {
     const maxLength = 16; 
     const charset =
     'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:",.<>?/`~';
-
+    console.log(password,decodedPwd)
     const requestId = req.query.requestId
 
     requests[requestId] = true

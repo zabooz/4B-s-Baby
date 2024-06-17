@@ -1,7 +1,10 @@
 import {generatePassword} from './scripts/passwordGenerator.js'
 import {passwordConverter} from './scripts/passwordConverter.js'
-import {passwordEncoder, passwordDecoder} from './scripts/encoder.cjs'
+
 import { pictureToString } from './scripts/picturePwd.js';
+import { passwordEncoder } from './scripts/encoder.js';
+
+
 
 const convertButton = document.getElementById('convertButton');
 const startBtn = document.getElementById('startBtn');
