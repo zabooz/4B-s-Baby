@@ -13,7 +13,7 @@ function generateEncodingKey () {
     return Math.floor(Math.random() * characters.length);
 }
 
-function passwordEncoder (userPwd) {
+export function passwordEncoder (userPwd) {
     // Encodes the user's password.
     // const passwordInput = document.getElementById('passwordInput');
 
@@ -33,8 +33,7 @@ function passwordEncoder (userPwd) {
     }
     return [ encodedString, encodingKey ];
 }
-
-function passwordDecoder(encodedString, encodingKey) {
+export function passwordDecoder(encodedString, encodingKey) {
     let decodedString = '';
 
     for (let char of encodedString) {
@@ -53,4 +52,4 @@ function passwordDecoder(encodedString, encodingKey) {
     }
     return decodedString;
 }
-module.exports = { passwordEncoder, passwordDecoder };
+

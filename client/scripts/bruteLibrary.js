@@ -1,4 +1,4 @@
-async function bruteForceLibrary(pwd,passwordList) {
+ export async function bruteForceLibrary(pwd,passwordList) {
     const mode = 'Library'
     let startTime = Date.now();
     let time = 'N/A'
@@ -15,4 +15,3 @@ async function bruteForceLibrary(pwd,passwordList) {
       
 }
 
-module.exports = bruteForceLibrary
