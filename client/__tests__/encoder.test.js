@@ -1,4 +1,4 @@
-import { passwordEncoder, passwordDecoder } from '../scripts/encoder.js';
+import { passwordEncoder, passwordDecoder } from '../scripts/encoder.cjs';
 
 describe('Password Encoder and Decoder', () => {
   test('should encode and decode the password correctly', () => {
