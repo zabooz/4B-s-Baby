@@ -20,11 +20,6 @@ body{
     z-index: -1;
     opacity: 0.5;
 }
-#header{
-    display: flex;
-    width: 60%;
-    gap: 4rem;
-}
 #headerText{
     display: flex;
     flex-direction: column;
@@ -39,69 +34,14 @@ body{
     font-weight: bold;
     float: left;
     line-height: 1;
-    margin-right: 0.1em;
-}
-
-#headerText p {
-    text-align: justify;
-    margin: 0;
-    line-height: 1.5;
-}
-
-#imgDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 2rem;
-}
-img{
-    width: 250px;    
-}
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-}
-.mainTop{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-#bruteForce{
-    width: 80%;
-    display: flex;
-    height: 220px;
-    box-shadow: 0px 0px 10px 0px ;
-    border-radius: .5rem;
-    align-items: center;
-    justify-content: space-between;
-}
-#bruteForceProg{
-    margin: 1rem;
-    gap: .5rem;
-    padding: .5rem;
-    display: flex;
-    flex-direction: column;
+    margin-right: 0.1em; 
 
 }
 #monkeyAnimated{
     width: 10rem;
     height: 10rem;
     margin-right: 3rem;
-}
-#bruteForce > label{
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-#bruteForce > input{
-    width: 10rem;
-}
-#bruteForce h4{
-    margin: .5rem 0;
+
 }
 .bruteBtns{
     margin-top: .5rem;
@@ -116,33 +56,7 @@ main{
 #stopBtn{
     margin-left: .5rem;
 }
-.test{
-    height: 2000px;
-}
-#stats{
-    gap: .5rem;
-    box-shadow: 0px 0px 10px 0px;
-    height: 220px;
-    width: 50%;
-    border-radius: .5rem;
-}
-.statsHeading{
-    display: flex;
-    justify-content: space-between;
-    margin-right: .5rem;
-}
-.statsHeading p{
-    margin-left: 0.5rem;
-    width:6rem;
-    text-align: center;
-}
-#stats h3{
-    margin-top: .5rem;
-    margin-left: .5rem;
-    width:6rem;
 
-    text-align: center;
-}
 #stopBtn {
     background-color: #f14024;
     color: #fff;
@@ -229,7 +143,13 @@ main{
 }
 #converterDiv {
     padding-bottom: 50px;
+
 }
-.flexbox-spacer {
-    width: 100px;
-}
+/* @media (max-width: 800px) {
+    #header{
+        gap: 0;
+        display: flex;
+        flex-direction: column-reverse; 
+        align-items: center; 
+    }
+} */
