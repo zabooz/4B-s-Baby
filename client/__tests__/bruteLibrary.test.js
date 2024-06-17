@@ -1,4 +1,4 @@
-const bruteForceLibrary = require('../scripts/bruteLibrary.cjs');
+import {bruteForceLibrary} from '../scripts/bruteLibrary.js';
 
 describe('bruteForceLibrary', () => {
     test('should find the password and return correct details', async () => {
