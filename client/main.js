@@ -1,6 +1,6 @@
 import {generatePassword} from './scripts/passwordGenerator.js'
 import {passwordConverter} from './scripts/passwordConverter.js'
-import {passwordEncoder, passwordDecoder} from './scripts/encoder.js'
+import {passwordEncoder, passwordDecoder} from './scripts/encoder.cjs'
 import { pictureToString } from './scripts/picturePwd.js';
 
 const convertButton = document.getElementById('convertButton');
@@ -57,9 +57,10 @@ stopBtn.addEventListener('click',(e) => {
       ).value;
       const url = "http://localhost:3001/";
       const pwd = document.getElementById("userPwd");
+      const [encodedPwd, key] = passwordEncoder(pwd.value);
       const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
-        pwd.value
-        )}&requestId=${requestId}`;
+        encodedPwd
+        )}&requestId=${requestId}&key=${key}`;
         
         monkeyImg.src = "../img/animated_monkey.gif";
 
@@ -107,6 +108,3 @@ function updateAttempts(result){
     stats.append(div)
 
 }
-
-
-

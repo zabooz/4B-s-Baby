@@ -1,12 +1,14 @@
 
 
 
+
 require('dotenv').config(); // Load environment variables from a .env file into process.env
 const express = require('express'); // Import the Express framework
 const axios = require('axios'); // Import Axios, a library for making HTTP requests
 const cors = require('cors'); // Import CORS middleware
 const bruteForceSimple = require('../client/scripts/bruteSimple.cjs');
 const bruteForceLibrary = require('../client/scripts/bruteLibrary.cjs')
+const passwordDecoder = require('../client/scripts/encoder.cjs')
 const app = express(); // Create an Express application
 const port = process.env.PORT || 3000; // Set the port from the environment variable or default to 3000
 const dropboxFileUrl = process.env.DROPBOX_FILE_URL; // Set the Dropbox file URL from the environment variable
@@ -44,7 +46,9 @@ app.get('/', (req, res) => {
 
 app.get('/bruteForceSimple', async(req,res) => {
 
+    const key = req.query.key
     const password = req.query.pwd || 'abc'
+    const decodedPwd = passwordDecoder(password, key)
     const maxLength = 16; 
     const charset =
     'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:",.<>?/`~';
@@ -55,7 +59,7 @@ app.get('/bruteForceSimple', async(req,res) => {
 
 
   try{
-    const result = await bruteForceSimple(password,charset,maxLength, () => requests[requestId])
+    const result = await bruteForceSimple(decodedPwd,charset,maxLength, () => requests[requestId])
     res.send(result)
 
   }catch(error){
@@ -69,11 +73,11 @@ app.get('/bruteForceSimple', async(req,res) => {
 app.get('/bruteForceLibrary',async(req,res) => {
   
   const password = req.query.pwd || 'abc'
-
+  const decodedPwd = passwordDecoder(password)
 
   try {
     
-    const result = await bruteForceLibrary(password,passwordList)
+    const result = await bruteForceLibrary(decodedPwd,passwordList)
     res.send(result)
     console.log(result)
       }catch(error){
@@ -85,7 +89,9 @@ app.get('/bruteForceLibrary',async(req,res) => {
         
 })
 app.get('/bruteForceHybrid',async (req,res) => {
+    const key = req.query.key
     const password = req.query.pwd || 'abc'
+    const decodedPwd = passwordDecoder(password, key)
 
     res.send('Not there yet')
 })     
