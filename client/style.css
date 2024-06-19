@@ -87,29 +87,17 @@ main{
 
 }
 .bruteBtns{
-    margin-top: .5rem;
+    display: flex;
     width: 100%;
     gap: 2rem;
     justify-content: center;
+    align-items: center;
 }
 .bruteBtns button{
     padding: .5rem;
     width: 4rem;
 }
-#stopBtn{
-    margin-left: .5rem;
-}
 
-#stopBtn {
-    background-color: #f14024;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s transform 0.3s;
-}
 #stopBtn:hover {
     background-color: #d3371f;
 }
@@ -124,12 +112,11 @@ main{
     justify-content: space-between;
     gap: 2rem;
 }
-
-
 #convertButton,
 #startBtn,
 #startGen,
-#pictureConvert {
+#pictureConvert,
+#stopBtn {
     background-color: #40aeb8;
     color: #fff;
     border: none;
@@ -147,6 +134,9 @@ main{
 #pictureConvert:hover{
     background-color:#2e7d84;
     
+}
+#stopBtn{
+    background-color: red;
 }
 #convertButton:active, #startBtn:active, #startGen:active {
     background-color: #25646a;

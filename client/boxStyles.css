@@ -4,6 +4,8 @@
     flex-direction: column;
     width: 27rem;
     padding: 1rem;
+    gap: 1rem;
+    align-items: center
     /* background-color: black; */
 ;
 }
@@ -28,10 +30,10 @@
 .label label:hover{
     cursor: pointer;
 }
-#converterSelector{
-    display: flex;
-    gap: 1rem;
+#pictureMagic{
+
 }
+#converterSelector,
 .pictureMagicDiv{
     display: flex;
     gap: 1rem;
