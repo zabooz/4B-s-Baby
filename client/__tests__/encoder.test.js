@@ -5,7 +5,7 @@ describe('Password Encoder and Decoder', () => {
     const password = 'HelloWorld123!';
 
     // Encode the password
-    const [encodedString, encodingKey] = passwordEncoder(password);
+    const [ encodedString, encodingKey ] = passwordEncoder(password);
 
     // Ensure the encoded string is different from the input
     expect(encodedString).not.toBe(password);
