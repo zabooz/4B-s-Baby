@@ -147,7 +147,10 @@ main{
     padding-bottom: 50px;
 
 }
-
+#statsHeading{
+    display: flex;
+    gap: 1rem;
+}
 @media(max-width:1030px){
     .flexbox-item2{
         flex-direction: column;
