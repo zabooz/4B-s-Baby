@@ -145,11 +145,21 @@ body{
     padding-bottom: 50px;
 
 }
-/* @media (max-width: 800px) {
-    #header{
+@media (max-width: 800px) {
+    /* #header{
         gap: 0;
         display: flex;
         flex-direction: column-reverse; 
         align-items: center; 
+    } */
+
+    .mainMiddle,
+    .mainTop{
+        display: flex;
+        flex-direction: column;
     }
-} */
+    #bruteForceApp{
+        display: flex;
+        flex-direction: column;
+    }
+}
