@@ -17,7 +17,7 @@ convertButton.addEventListener('click', function() {
   const selectedConverter = document.getElementById('converterSelect').value;
   const passwordInput = document.getElementById('passwordInput');
   const newPassword = passwordConverter(passwordInput.value, selectedConverter);
-  document.getElementById('newPassword').innerText = newPassword
+  document.getElementById('newPassword').innerText = `Your new Rune: ${newPassword}`
   passwordInput.value = "";
 });
 

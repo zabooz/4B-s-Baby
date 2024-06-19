@@ -17,21 +17,21 @@ const columns = canvas.width / fontSize;
 const rainDrops = [];
 
 for (let x = 0; x < columns; x++) {
-  rainDrops[x] = 1;
+  rainDrops[x] = 0;
 }
 
 const draw = () => {
   ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#0F5";
+  ctx.fillStyle = "#40aeb8";
   ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < rainDrops.length; i++) {
     const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
     ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
 
-    if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+    if (rainDrops[i] * fontSize > canvas.height && Math.random() > .985) {
       rainDrops[i] = 0;
     }
     rainDrops[i]++;

@@ -23,73 +23,80 @@
     <main>
         <div class="mainTop">
                 <div id="bruteForceApp" class="appBox">
-                    <label for="userPwd">Test your Password</label>
+                    <h3>Test your Mojo</h3>
                     <input type="text" id="userPwd" placeholder="Enter your Password">
                     <div id="chooseBruteForce">
                         <labek>Choose Mode</label>
-                        <select id="bruteMode">
-                            <option value="simple">Simple</option>
-                            <option value="library">Library</option>
-                            <option value="hybrid">Hybrid</option>
-                        </select>
+                            <select id="bruteMode">
+                                <option value="simple">Simple</option>
+                                <option value="library">Library</option>
+                                <option value="hybrid">Hybrid</option>
+                            </select>
+                            
+                        </div>
+                        <div class="bruteBtns">
+                            <button id="startBtn">Start</button>
+                            <button id="stopBtn">Stop</button>
+                        </div>
+                        <div id="stats" >
+                            <div id="statsHeading">
+                                <h3>Password</h3>
+                                <h3>Attempt</h3>
+                                <h3>Mode</h3>
+                                <h3>Time</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pwdGenDiv" class="appBox">
 
-                    </div>
-                    <div class="bruteBtns">
-                        <button id="startBtn">Start</button>
-                        <button id="stopBtn">Stop</button>
-                    </div>
-                </div>
-                <div id="stats" class="appBox">
-                    <div id="statsHeading">
-                        <h3>Password</h3>
-                        <h3>Attempt</h3>
-                        <h3>Mode</h3>
-                        <h3>Time</h3>
-                    </div>
-                </div>
+                            <h3>Identity Wizardry</h3>
+                      
+                            <select name="pwdGen" id="selectPwd">
+                                <option value="dog">Dog</option>
+                                <option value="color">Color</option>
+                                <option value="Emotions">Emotions</option>
+                                <option value="candy">Candy</option>
+                            </select>
+                            <label for="genLength">Password length</label>
+                            <input type="number" id="genLength">
+                            <button id="startGen">Generate</button>
+                
+                    </div> 
                 
         </div>
 
         <div class="mainMiddle">
                 <div id="converterSelector" class="appBox">
                 <div class="flexbox-item1">
-                    <h3>Password Converter</h3>
-                    <label for="converterSelect">Converter:</label>
-                    <select id="converterSelect">
-                        <option value="leetSimple">Simple Leetspeak</option>
-                        <option value="leetComplicated">Complicated Leetspeak</option>
-                    </select>
+                    <h3>Rune Translator</h3>
+                    <div class="flexbox-item2">
+                        <input type="text" id="passwordInput" placeholder="Enter your password">
+                        <select id="converterSelect">
+                            <option value="leetSimple">Simple Leetspeak</option>
+                            <option value="leetComplicated">Complicated Leetspeak</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="flexbox-item2">
-                    <input type="text" id="passwordInput" placeholder="Enter password">
-                    <button id="convertButton">Convert</button>
-                    <div><span id="newPassword"></span></div>
-                </div>
+                <button id="convertButton">Convert</button>
+                <div><span id="newPassword">Your new Rune: </span></div>
             </div>
 
-        <!-- <div id="pwdGenDiv">
-
-            <div id="pwdGen">
-                <select name="pwdGen" id="selectPwd">
-                    <option value="dog">Dog</option>
-                    <option value="color">Color</option>
-                    <option value="Emotions">Emotions</option>
-                    <option value="candy">Candy</option>
-                </select>
-                <label for="genLength">Password length</label>
-                <input type="number" id="genLength">
-                <button id="startGen">Generate</button>
-            </div>
-        </div>  -->
-        <div class="picturePwd appBox">
+        <div  id="pictureMagic" class="appBox">
             <h3>Picture Magic</h3>
-            <label for="uploadFile">Upload your Picture</label>
-            <input type="file" id="uploadFile" name="uploadFile">
-            <button id="pictureConvert">Convert</button>
+            <div class="pictureMagicDiv">
+                <div class="label"><label for="uploadFile">Upload your Picture</label></div>
+                <input type="file" value="value" id="uploadFile" style="display: none;" name="uploadFile">
+                <button id="pictureConvert">Convert</button>
+            </div>
             <p id="picResult">Your Password:</p>
         </div>
         </div>
+
+
     </main>
+    <footer>
+            <img  id="monkeyFooter" src="../img/non_animated_monkey.png" alt="monkey">
+    </footer>
     <script src="./scripts/matrix.js"></script>
     </body>
 </html>

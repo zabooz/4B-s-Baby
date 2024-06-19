@@ -8,7 +8,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: black;
+    background-color: rgb(5, 5, 5);
     color:white
 }
 #matrixCanvas{
@@ -20,14 +20,44 @@ body{
     z-index: -1;
     opacity: 0.5;
 }
-#headerText{
+main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap:3rem;
+ 
+}
+
+#monkey {
+    margin-top: 0;
+    width: 300px; /* Example width */
+    height: auto; /* Maintain aspect ratio */
+}
+#monkeyFooter{
+    display: none;
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; /* Add padding to the sides if needed */
+    max-width: 80%;
+    box-sizing: border-box;
+    /* margin-top: 100px; */
+
+}
+#headerText{
+    flex: 1; /* Allow content to take up remaining space */
+    margin-right: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: black;
+    
 }
 #headerText h1{
     margin: 1rem;
+    
 }
 #headerText p::first-letter {
     font-size: 3rem;
@@ -74,54 +104,17 @@ body{
     background-color:#ad2e1a;
     transition: 0.05s;
 }
-.mainMiddle{
+.mainMiddle,
+.mainTop{
     display: flex;
-    /* justify-content: space-around; */
-    /* height: 20rem; */
+    gap: 3rem;
 }
-/* .flexbox-converter {
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 0px 0px 10px 0px ;
-    border-radius: .5rem;
-    max-width: 45%;
-    
-} */
-/* .flexbox-converter h3 {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-bottom: 22px;
-}
-#converterSelector input {
-    margin-top: 25px;
-    margin-bottom: 15px;
-    margin-right: 35px;
-    padding: 2px;
-    width: 246px;
-}
-#converterSelector select {
-    margin-top: 20px;
-}
-#converterSelector button {
-    margin-top: 15px;
-    margin-bottom: 25px;
-}
-#converterSelector span {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: 25px;
-    
-}
-/* #converterSelector {
-    width: 100%;
-    padding: 50px;
-    margin-bottom: 15px;
-    border: 0px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-} */ */
 
-#convertButton, #startBtn, #startGen {
+
+#convertButton,
+#startBtn,
+#startGen,
+#pictureConvert {
     background-color: #40aeb8;
     color: #fff;
     border: none;
@@ -130,9 +123,13 @@ body{
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s transform 0.3s;
+    width: 7rem;
 
 }
-#convertButton:hover, #startBtn:hover, #startGen:hover{
+#convertButton:hover,
+#startBtn:hover,
+#startGen:hover,
+#pictureConvert:hover{
     background-color:#2e7d84;
     
 }
@@ -152,7 +149,13 @@ body{
         flex-direction: column-reverse; 
         align-items: center; 
     } */
+    #monkey{
+        display: none;
 
+    }
+    #monkeyFooter{
+        display: block;
+    }
     .mainMiddle,
     .mainTop{
         display: flex;
