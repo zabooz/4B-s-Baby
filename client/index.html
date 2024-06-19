@@ -10,93 +10,90 @@
     <link rel="stylesheet" href="./boxStyles.css">
     </head>
     <body>
-    <canvas id="matrixCanvas"></canvas>
-    <div id="header">
-        <div id="headerText">
-            <h1>What is bruteforce?</h1>
-            <p>A brute-force attack is a fundamental technique used in cybersecurity to gain unauthorized access to a system. It involves systematically attempting every possible combination of characters to guess passwords or encryption keys until the correct one is found. Despite being a straightforward approach, brute-force attacks can be highly effective, particularly against weak passwords or inadequately protected systems. With the advent of high-performance computing, attackers can automate this process, making it faster and more efficient. This type of attack underscores the importance of robust security practices, such as using strong, complex passwords and implementing additional security measures like multi-factor authentication to safeguard sensitive information.</p>
+    <div class="allDiv">
+        <canvas id="matrixCanvas"></canvas>
+        <div id="header">
+            <div id="headerText">
+                <h1>What is bruteforce?</h1>
+                <p>A brute-force attack is a fundamental technique used in cybersecurity to gain unauthorized access to a system. It involves systematically attempting every possible combination of characters to guess passwords or encryption keys until the correct one is found. Despite being a straightforward approach, brute-force attacks can be highly effective, particularly against weak passwords or inadequately protected systems. With the advent of high-performance computing, attackers can automate this process, making it faster and more efficient. This type of attack underscores the importance of robust security practices, such as using strong, complex passwords and implementing additional security measures like multi-factor authentication to safeguard sensitive information.</p>
+            </div>
+            <div id="imgDiv">
+                <img  id="monkey" src="../img/non_animated_monkey.png" alt="monkey">
+            </div>
         </div>
-        <div id="imgDiv">
-            <img  id="monkey" src="../img/non_animated_monkey.png" alt="monkey">
-        </div>
-    </div>
-    <main>
-        <div class="mainTop">
-                <div id="bruteForceApp" class="appBox">
-                    <h3>Test your Mojo</h3>
-                    <input type="text" id="userPwd" placeholder="Enter your Password">
-                    <div id="chooseBruteForce">
-                        <labek>Choose Mode</label>
-                            <select id="bruteMode">
-                                <option value="simple">Simple</option>
-                                <option value="library">Library</option>
-                                <option value="hybrid">Hybrid</option>
-                            </select>
-                            
-                        </div>
-                        <div class="bruteBtns">
-                            <button id="startBtn">Start</button>
-                            <button id="stopBtn">Stop</button>
-                        </div>
-                        <div id="stats" >
-                            <div id="statsHeading">
-                                <h3>Password</h3>
-                                <h3>Attempt</h3>
-                                <h3>Mode</h3>
-                                <h3>Time</h3>
+        <main>
+            <div class="mainTop">
+                    <div id="bruteForceApp" class="appBox">
+                        <h3>Test your Mojo</h3>
+                        <input type="text" id="userPwd" placeholder="Enter your Password">
+                        <div id="chooseBruteForce">
+                            <labek>Choose Mode</label>
+                                <select id="bruteMode">
+                                    <option value="simple">Simple</option>
+                                    <option value="library">Library</option>
+                                    <option value="hybrid">Hybrid</option>
+                                </select>
+        
+                            </div>
+                            <div class="bruteBtns">
+                                <button id="startBtn">Start</button>
+                                <button id="stopBtn">Stop</button>
+                            </div>
+                            <div id="stats" >
+                                <div id="statsHeading">
+                                    <h3>Password</h3>
+                                    <h3>Attempt</h3>
+                                    <h3>Mode</h3>
+                                    <h3>Time</h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="pwdGenDiv" class="appBox">
-
-                            <h3>Identity Wizardry</h3>
-                      
-                            <select name="pwdGen" id="selectPwd">
-                                <option value="dog">Dog</option>
-                                <option value="color">Color</option>
-                                <option value="Emotions">Emotions</option>
-                                <option value="candy">Candy</option>
+                        <div id="pwdGenDiv" class="appBox">
+                                <h3>Identity Wizardry</h3>
+        
+                                <select name="pwdGen" id="selectPwd">
+                                    <option value="dog">Dog</option>
+                                    <option value="color">Color</option>
+                                    <option value="Emotions">Emotions</option>
+                                    <option value="candy">Candy</option>
+                                </select>
+                                <label for="genLength">Password length</label>
+                                <input type="number" id="genLength">
+                                <button id="startGen">Generate</button>
+        
+                        </div>
+        
+            </div>
+            <div class="mainMiddle">
+                    <div id="converterSelector" class="appBox">
+                    <div class="flexbox-item1">
+                        <h3>Rune Translator</h3>
+                        <div class="flexbox-item2">
+                            <input type="text" id="passwordInput" placeholder="Enter your password">
+                            <select id="converterSelect">
+                                <option value="leetSimple">Simple Leetspeak</option>
+                                <option value="leetComplicated">Complicated Leetspeak</option>
                             </select>
-                            <label for="genLength">Password length</label>
-                            <input type="number" id="genLength">
-                            <button id="startGen">Generate</button>
-                
-                    </div> 
-                
-        </div>
-
-        <div class="mainMiddle">
-                <div id="converterSelector" class="appBox">
-                <div class="flexbox-item1">
-                    <h3>Rune Translator</h3>
-                    <div class="flexbox-item2">
-                        <input type="text" id="passwordInput" placeholder="Enter your password">
-                        <select id="converterSelect">
-                            <option value="leetSimple">Simple Leetspeak</option>
-                            <option value="leetComplicated">Complicated Leetspeak</option>
-                        </select>
+                        </div>
                     </div>
+                    <button id="convertButton">Convert</button>
+                    <div><span id="newPassword">Your new Rune: </span></div>
                 </div>
-                <button id="convertButton">Convert</button>
-                <div><span id="newPassword">Your new Rune: </span></div>
+            <div  id="pictureMagic" class="appBox">
+                <h3>Picture Magic</h3>
+                <div class="pictureMagicDiv">
+                    <div class="label"><label for="uploadFile">Upload your Picture</label></div>
+                    <input type="file" value="value" id="uploadFile" style="display: none;" name="uploadFile">
+                    <button id="pictureConvert">Convert</button>
+                </div>
+                <p id="picResult">Your Password:</p>
             </div>
-
-        <div  id="pictureMagic" class="appBox">
-            <h3>Picture Magic</h3>
-            <div class="pictureMagicDiv">
-                <div class="label"><label for="uploadFile">Upload your Picture</label></div>
-                <input type="file" value="value" id="uploadFile" style="display: none;" name="uploadFile">
-                <button id="pictureConvert">Convert</button>
             </div>
-            <p id="picResult">Your Password:</p>
-        </div>
-        </div>
-
-
-    </main>
-    <footer>
-            <img  id="monkeyFooter" src="../img/non_animated_monkey.png" alt="monkey">
-    </footer>
+        </main>
+        <footer>
+                <img  id="monkeyFooter" src="../img/non_animated_monkey.png" alt="monkey">
+        </footer>
+    </div>
     <script src="./scripts/matrix.js"></script>
     </body>
 </html>
