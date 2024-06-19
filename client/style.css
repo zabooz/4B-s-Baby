@@ -76,18 +76,18 @@ body{
 }
 .mainMiddle{
     display: flex;
-    justify-content: space-around;
-    height: 20rem;
+    /* justify-content: space-around; */
+    /* height: 20rem; */
 }
-.flexbox-converter {
+/* .flexbox-converter {
     display: flex;
     justify-content: space-between;
     box-shadow: 0px 0px 10px 0px ;
     border-radius: .5rem;
     max-width: 45%;
     
-}
-.flexbox-converter h3 {
+} */
+/* .flexbox-converter h3 {
     font-size: 1.2rem;
     text-align: center;
     margin-bottom: 22px;
@@ -112,14 +112,14 @@ body{
     margin-top: 25px;
     
 }
-#converterSelector {
+/* #converterSelector {
     width: 100%;
     padding: 50px;
     margin-bottom: 15px;
     border: 0px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
-}
+} */ */
 
 #convertButton, #startBtn, #startGen {
     background-color: #40aeb8;

@@ -1,0 +1,11 @@
+.appBox{
+    box-shadow: 0px 0px 10px 1px #40aeb8;
+    display: flex;
+    width: 40%;
+}
+#statsHeading{
+    display: flex;
+}
+.mainTop{
+    display:flex;
+}

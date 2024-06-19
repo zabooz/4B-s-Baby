@@ -7,6 +7,7 @@
     <title>BruteForce</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./main.js" type ="module" defer>c</script>
+    <link rel="stylesheet" href="./boxStyles.css">
     </head>
     <body>
     <canvas id="matrixCanvas"></canvas>
@@ -21,8 +22,7 @@
     </div>
     <main>
         <div class="mainTop">
-            <div id="bruteForce">
-                <div id="bruteForceProg">
+                <div id="bruteForceProg" class="appBox">
                     <label for="userPwd">Test your Password</label>
                     <input type="text" id="userPwd" placeholder="Enter your Password">
                     <div id="chooseBruteForce">
@@ -39,24 +39,19 @@
                         <button id="stopBtn">Stop</button>
                     </div>
                 </div>
-                <img id="monkeyAnimated" src="../img/monkeyCircle.jpg" alt="monkey">
+                <div id="stats" class="appBox">
+                    <div id="statsHeading">
+                        <h3>Password</h3>
+                        <h3>Attempt</h3>
+                        <h3>Mode</h3>
+                        <h3>Time</h3>
+                    </div>
+                </div>
                 
-                </div>
-
-            <div id="stats">
-                <div class="statsHeading">
-                    <h3>Password</h3>
-                    <h3>Attempt</h3>
-                    <h3>Mode</h3>
-                    <h3>Time</h3>
-
-                </div>
-            </div>
         </div>
 
         <div class="mainMiddle">
-            <div class="flexbox-converter">
-                <div id="converterSelector">
+                <div id="converterSelector" class="appBox">
                 <div class="flexbox-item1">
                     <h3>Password Converter</h3>
                     <label for="converterSelect">Converter:</label>
@@ -70,10 +65,9 @@
                     <button id="convertButton">Convert</button>
                     <div><span id="newPassword"></span></div>
                 </div>
-                </div>
             </div>
-            <div class="flexbox-spacer"></div>
-        <div id="pwdGenDiv">
+
+        <!-- <div id="pwdGenDiv">
 
             <div id="pwdGen">
                 <select name="pwdGen" id="selectPwd">
@@ -86,8 +80,8 @@
                 <input type="number" id="genLength">
                 <button id="startGen">Generate</button>
             </div>
-        </div> 
-        <div class="picturePwd">
+        </div>  -->
+        <div class="picturePwd appBox">
             <h3>Picture Magic</h3>
             <label for="uploadFile">Upload your Picture</label>
             <input type="file" id="uploadFile" name="uploadFile">

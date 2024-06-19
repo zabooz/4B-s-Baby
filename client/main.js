@@ -9,7 +9,6 @@ import { passwordEncoder } from './scripts/encoder.js';
 const convertButton = document.getElementById('convertButton');
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
-const monkeyImg = document.getElementById("monkeyAnimated");
 const userPwd = document.getElementById('userPwd');
 const picConBtn = document.getElementById('pictureConvert')
 let requestId;
@@ -43,7 +42,6 @@ startBtn.addEventListener("click", () => {
 picConBtn.addEventListener('click',pictureToString)
       
 stopBtn.addEventListener('click',(e) => {
-  monkeyImg.src = "../img/monkeyCircle.jpg";
   fetch(`http://localhost:3001/stopbruteforce?requestId=${requestId}`).then(response => console.log(response))
   
   
@@ -65,7 +63,6 @@ stopBtn.addEventListener('click',(e) => {
         encodedPwd
         )}&requestId=${requestId}&key=${key}`;
         
-        monkeyImg.src = "../img/animated_monkey.gif";
 
   pwd.value = "";
   
@@ -83,7 +80,7 @@ stopBtn.addEventListener('click',(e) => {
     .then((data) => {
       result = data;
       updateAttempts(result);
-      monkeyImg.src = "../img/monkeyCircle.jpg";
+
 
     })
     .catch((error) => {
