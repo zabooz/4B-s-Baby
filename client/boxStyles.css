@@ -30,9 +30,7 @@
 .label label:hover{
     cursor: pointer;
 }
-#pictureMagic{
 
-}
 #converterSelector,
 .pictureMagicDiv{
     display: flex;
