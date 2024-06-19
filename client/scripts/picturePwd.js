@@ -1,6 +1,6 @@
 
 export function pictureToString(){
-
+    
     const input = document.getElementById('uploadFile')
     const file = input.files[0]
 
@@ -36,7 +36,6 @@ export function pictureToString(){
             document.getElementById('picResult').textContent += ' ' + password
             return base64String
         }
-
 
 
         reader.readAsDataURL(file)

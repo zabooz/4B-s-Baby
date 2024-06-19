@@ -86,13 +86,7 @@ main{
     margin-right: 3rem;
 
 }
-.bruteBtns{
-    display: flex;
-    width: 100%;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-}
+
 .bruteBtns button{
     padding: .5rem;
     width: 4rem;

@@ -39,6 +39,25 @@ td{
     border-right: 1px solid white;
 
 }
+.bruteBtns{
+    display: flex;
+    gap: 2rem;
+    justify-content: left
+    align-items: center;
+}
+.bruteInput{
+    display: flex;
+    gap: 2rem;
+}
+.wizardInput{
+    display: flex;
+    gap: 2rem;
+}
+.wizardLength{
+    display: flex;
+    gap: 4.5rem;
+    align-items: center;
+}
 #converterSelector,
 .pictureMagicDiv{
     display: flex;
@@ -57,4 +76,17 @@ input,
 select{
     width: 10rem;
     height: 2rem;
+}
+@media(max-width : 1050px){
+    .bruteInput,
+    .wizardInput,
+    .wizardLength{
+        flex-direction: column;
+    }
+    .wizardLength{
+        gap: 1rem;
+    }
+    .flexbox-item2{
+        align-items: center;
+    }
 }

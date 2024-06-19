@@ -55,7 +55,6 @@ app.get("/bruteForceSimple", async (req, res) => {
       () => requests[requestId]
     );
     if(requests[requestId] === false) result[3] = 'stopped'
-    console.log(result)
     res.send(result);
   } catch (error) {
     console.log(error);

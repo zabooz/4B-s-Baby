@@ -27,15 +27,17 @@
                         <h3>Test your Mojo</h3>
                         <p>Dummy text Dummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy text</p>
                         <p>Dummy text Dummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy text</p>
-                        <input type="text" id="userPwd" placeholder="Enter your Password">
-                        <div id="chooseBruteForce">
-                                <select id="bruteMode">
-                                    <option value="simple">Mode Simple</option>
-                                    <option value="library">Mode Library</option>
-                                    <option value="hybrid">Mode Hybrid</option>
-                                </select>
-        
-                            </div>
+                        <div class="bruteInput">
+                            <input type="text" id="userPwd" placeholder="Enter your Password">
+                            <div id="chooseBruteForce">
+                                    <select id="bruteMode">
+                                        <option value="simple">Mode Simple</option>
+                                        <option value="library">Mode Library</option>
+                                        <option value="hybrid">Mode Hybrid</option>
+                                    </select>
+            
+                                </div>
+                        </div>
                             <div class="bruteBtns">
                                 <button id="startBtn">Start</button>
                                 <button id="stopBtn">Stop</button>
@@ -56,41 +58,44 @@
                         <div id="pwdGenDiv" class="appBox">
                                 <h3>Identity Wizardry</h3>
                                 <p>Dummy text Dummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy text</p><p>Dummy text Dummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy text</p>
-                                <select id="adjective">
-                                    <option value="shapes">Shape</option>
-                                    <option value="colors">Color</option>
-                                    <option value="textures">Texture</option>
-                                    <option value="sizes">Size</option>
-                                    <option value="tastes">Taste</option>
-                                    <option value="emotions">Emotion</option>
-                                    <option value="sounds">Sound</option>
-                                    <option value="temperatures">Temperature</option>
-                                    <option value="speeds">Speed</option>
-                                    <option value="qualities">Quality</option>
-                                    <option value="WeatherTypes">Weather</option>
+                                <div class="wizardInput">
+                                    <select id="adjective">
+                                        <option value="shapes">Shape</option>
+                                        <option value="colors">Color</option>
+                                        <option value="textures">Texture</option>
+                                        <option value="sizes">Size</option>
+                                        <option value="tastes">Taste</option>
+                                        <option value="emotions">Emotion</option>
+                                        <option value="sounds">Sound</option>
+                                        <option value="temperatures">Temperature</option>
+                                        <option value="speeds">Speed</option>
+                                        <option value="qualities">Quality</option>
+                                        <option value="WeatherTypes">Weather</option>
+                                    </select>
+                                    <select name="pwdGen" id="noun">
+                                        <option value="instruments">Intrument</option>
+                                        <option value="fruits">Fruit</option>
+                                        <option value="vegetables">Vegetable</option>
+                                        <option value="animals">Animal</option>
+                                        <option value="fantasyCreatures">Fantasy Creature</option>
+                                        <option value="rpgClasses">Rpg Class</option>
+                                        <option value="fantasyRaces">Race</option>
+                                        <option value="occupations">Jobs</option>
+                                        <option value="vehicles">Vehicle</option>
+                                        <option value="sports">Sport</option>
+                                        <option value="tooles">Tool</option>
+                                        <option value="beverages">Beverage</option>
+                                        <option value="clothingItems">Clothes</option>
+                                        <option value="bodyParts">Bodypart</option>
+                                        <option value="flowers">Flower</option>
+                                        <option value="desserts">dessert</option>
+                                    </select>
+                                </div>
 
-                                </select>
-                                <select name="pwdGen" id="noun">
-                                    <option value="instruments">Intrument</option>
-                                    <option value="fruits">Fruit</option>
-                                    <option value="vegetables">Vegetable</option>
-                                    <option value="animals">Animal</option>
-                                    <option value="fantasyCreatures">Fantasy Creature</option>
-                                    <option value="rpgClasses">Rpg Class</option>
-                                    <option value="fantasyRaces">Race</option>
-                                    <option value="occupations">Jobs</option>
-                                    <option value="vehicles">Vehicle</option>
-                                    <option value="sports">Sport</option>
-                                    <option value="tooles">Tool</option>
-                                    <option value="beverages">Beverage</option>
-                                    <option value="clothingItems">Clothes</option>
-                                    <option value="bodyParts">Bodypart</option>
-                                    <option value="flowers">Flower</option>
-                                    <option value="desserts">dessert</option>
-
-                                </select>
-                                <label for="genLength">Password length</label>
-                                <input type="number" id="genLength">
+                                <div class="wizardLength">
+                                    <label for="genLength">Password length:</label>
+                                    <input type="number" id="genLength">
+                                </div>
                                 <button id="startGen">Generate</button>
         
                         </div>
@@ -117,7 +122,7 @@
                 <h3>Picture Magic</h3>
                 <p>Dummy text Dummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy text <p>Dummy text Dummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy textDummy text</p></p>
                 <div class="pictureMagicDiv">
-                    <div class="label"><label for="uploadFile">Upload your Picture</label></div>
+                    <div class="label"><label id="uploadLabel" for="uploadFile">Upload your Picture</label></div>
                     <input type="file" value="value" id="uploadFile" style="display: none;" name="uploadFile">
                     <button id="pictureConvert">Convert</button>
                 </div>
