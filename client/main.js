@@ -11,7 +11,22 @@ const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
 const userPwd = document.getElementById('userPwd');
 const picConBtn = document.getElementById('pictureConvert')
+const startGen = document.getElementById('startGen');
 let requestId;
+
+startGen.addEventListener('click', function() {
+  
+  //Retrieves all selected adjective values 
+  //and turns them into an array.
+  let dropdown = document.getElementById('adjective');
+  const selectedAdjectives = Array.from(dropdown.selectedOptions).map(option => option.value);
+
+  const selectedNoun = document.getElementById('noun');
+  const lengthInput = document.getElementById('genLength') || 99;
+  generateUser(selectedAdjectives, selectedNoun, lengthInput);
+  document.getElementById('newUser').innerText = `Username: ${newUser}`
+  lengthInput.value = "";
+});
 
 convertButton.addEventListener('click', function() {
   const selectedConverter = document.getElementById('converterSelect').value;
