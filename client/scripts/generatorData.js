@@ -1,6 +1,6 @@
 // Contains the data for the generator.
 
-const colors = [
+export const colors = [
     "Aquamarine", "Azure", "Beige", "Black", "Blue",
     "Bronze", "Brown", "Burgundy", "Cyan", "Gold",
     "Gray", "Green", "Indigo", "Ivory", "Lavender",
@@ -22,7 +22,7 @@ const colors = [
 ];
 
 
-const shapes = [
+export const shapes = [
     "Circular", "Curved", "Cylindrical", "Diamond", "Elliptical",
     "Hexagonal", "Oval", "Pentagonal", "Polygonal", "Rectangular",
     "Round", "Spherical", "Square", "Symmetrical", "Tetrahedral",
@@ -44,7 +44,7 @@ const shapes = [
 
 
 
-const textures = [
+export const textures = [
     "Smooth", "Rough", "Soft", "Hard", "Fuzzy",
     "Slippery", "Grainy", "Velvety", "Bumpy", "Slick",
     "Silky", "Coarse", "Prickly", "Satin", "Polished",
@@ -68,7 +68,7 @@ const textures = [
 ];
 
 
-const sizes = [
+export const sizes = [
     "Tiny", "Small", "Miniature", "Petite", "Compact",
     "Mini", "Little", "Micro", "Minute", "Diminutive",
     "Slight", "Wee", "Pint-sized", "Lilliputian", "Nano",
@@ -87,7 +87,7 @@ const sizes = [
 ];
 
 
-const emotions = [
+export const emotions = [
     "Happy", "Sad", "Angry", "Excited", "Nervous",
     "Calm", "Frustrated", "Joyful", "Anxious", "Relaxed",
     "Confident", "Surprised", "Hopeful", "Proud", "Grateful",
@@ -109,7 +109,7 @@ const emotions = [
 ];
 
 
-const tastes = [
+export const tastes = [
     "Sweet", "Sour", "Bitter", "Salty", "Spicy",
     "Savory", "Tangy", "Zesty", "Mild", "Rich",
     "Sharp", "Refreshing", "Tart", "Pungent", "Peppery",
@@ -128,7 +128,7 @@ const tastes = [
 ];
 
 
-const sounds = [
+export const sounds = [
     "Loud", "Soft", "Quiet", "Noisy", "Melodic",
     "Harsh", "Gentle", "Harmonious", "Dissonant", "Crisp",
     "Clear", "Muffled", "Echoing", "Rhythmic", "Faint",
@@ -151,7 +151,7 @@ const sounds = [
 ];
 
 
-const temperatures = [
+export const temperatures = [
     "Hot", "Cool", "Chilly", "Freezing", "Scorching",
     "Frigid", "Icy", "Balmy", "Mild", "Blistering",
     "Brisk", "Breezy", "Sweltering", "Searing", "Sultry",
@@ -171,7 +171,7 @@ const temperatures = [
 ];
 
 
-const speeds = [
+export const speeds = [
     "Fast", "Slow", "Quick", "Swift", "Rapid",
     "Brisk", "Lively", "Speedy", "Zippy", "Nimble",
     "Hasty", "Snappy", "Fleet", "Spirited", "Vigorous",
@@ -191,7 +191,7 @@ const speeds = [
 ];
 
 
-const qualities = [
+export const qualities = [
     "Good", "Bad", "Great", "Excellent", "Wonderful", 
     "Fantastic", "Superb", "Amazing", "Incredible", "Outstanding", 
     "Awesome", "Terrific", "Fabulous", "Brilliant", "Marvelous", 
@@ -216,7 +216,7 @@ const qualities = [
 ];
 
 
-const weatherTypes = [
+export const weatherTypes = [
     "Sunny", "Cloudy", "Rainy", "Stormy", "Windy", 
     "Foggy", "Snowy", "Hazy", "Misty", "Showery", 
     "Drizzly", "Thunderous", "Overcast", "Blustery", "Gusty", 
@@ -236,7 +236,7 @@ const weatherTypes = [
 
 
 
-const instruments = [
+export const instruments = [
     "Piano", "Guitar", "Violin", "Cello", "Flute", 
     "Trumpet", "Saxophone", "Clarinet", "Drums", "Harp", 
     "Accordion", "Banjo", "Bass", "Organ", "Oboe", 
@@ -249,7 +249,7 @@ const instruments = [
     "Shakuhachi", "Sitar", "Tambourine", "Zither"
 ];
 
-const fruits = [
+export const fruits = [
     "Apple", "Banana", "Orange", "Pear", "Grape", 
     "Strawberry", "Blueberry", "Raspberry", "Blackberry", "Cherry", 
     "Pineapple", "Watermelon", "Kiwi", "Mango", "Peach", 
@@ -272,7 +272,7 @@ const fruits = [
 
 
 
-const animals = [
+export const animals = [
     "Dog", "Cat", "Bird", "Fish", "Lion", 
     "Tiger", "Elephant", "Monkey", "Giraffe", "Horse", 
     "Bear", "Wolf", "Fox", "Rabbit", "Mouse", 
@@ -295,7 +295,7 @@ const animals = [
 ];
 
 
-const fantasyCreatures = [
+export const fantasyCreatures = [
     "Dragon", "Phoenix", "Griffin", "Unicorn", "Mermaid", 
     "Centaur", "Fairy", "Goblin", "Orc", "Troll", 
     "Sphinx", "Yeti", "Werewolf", "Banshee", "Pegasus", 
@@ -315,7 +315,7 @@ const fantasyCreatures = [
 ];
 
 
-const vegetables = [
+export const vegetables = [
     "Carrot", "Broccoli", "Lettuce", "Spinach", "Cabbage", 
     "Tomato", "Potato", "Onion", "Garlic", "Pepper", 
     "Cucumber", "Zucchini", "Eggplant", "Radish", "Celery", 
@@ -330,7 +330,7 @@ const vegetables = [
 ];
 
 
-const rpgClasses = [
+export const rpgClasses = [
     "Warrior", "Mage", "Rogue", "Paladin", "Barbarian", 
     "Ranger", "Cleric", "Druid", "Monk", "Bard", 
     "Sorcerer", "Wizard", "Fighter", "Thief", "Assassin", 
@@ -351,7 +351,7 @@ const rpgClasses = [
 ];
 
 
-const fantasyRaces = [
+export const fantasyRaces = [
     "Elf", "Dwarf", "Orc", "Goblin", "Halfling", 
     "Gnome", "Dragonborn", "Tiefling", "Half-elf", "Half-orc", 
     "Human", "Fairy", "Centaur", "Lizardfolk", "Aasimar", 
@@ -371,7 +371,7 @@ const fantasyRaces = [
 ];
 
 
-const occupations = [
+export const occupations = [
     "Teacher", "Doctor", "Engineer", "Lawyer", "Artist", 
     "Nurse", "Chef", "Writer", "Musician", "Police", 
     "Firefighter", "Actor", "Carpenter", "Plumber", "Electrician", 
@@ -395,7 +395,7 @@ const occupations = [
 ];
 
 
-[
+export const vehicles = [
     'Car', 'Truck', 'Bus', 'Motorcycle', 'Bicycle',
     'Train', 'Boat', 'Ship', 'Airplane', 'Helicopter',
     'Subway', 'Taxi', 'Van', 'Scooter', 'Jet',
@@ -416,7 +416,7 @@ const occupations = [
 ]
 
 
-[
+export const sports = [
     'Football', 'Basketball', 'Soccer', 'Tennis', 'Baseball',
     'Golf', 'Hockey', 'Volleyball', 'Rugby', 'Cricket',
     'Boxing', 'Swimming', 'Wrestling', 'Athletics', 'Cycling',
@@ -437,7 +437,7 @@ const occupations = [
 ]
 
 
-const tools = [
+export const tools = [
     "Hammer", "Screwdriver", "Wrench", "Pliers", "Saw",
     "Drill", "Chisel", "File", "Level", "Tape", 
     "Clamp", "Vice", "Ruler", "Square", "Knife", 
@@ -460,7 +460,7 @@ const tools = [
     "Nut", "Screw", "Nail", "Pin", "Fastener"
 ];
 
-const beverages = [
+export const beverages = [
     "Water", "Tea", "Coffee", "Milk", "Juice", 
     "Soda", "Wine", "Beer", "Cider", "Lemonade", 
     "Whiskey", "Vodka", "Gin", "Rum", "Brandy", 
@@ -483,7 +483,7 @@ const beverages = [
 ];
 
 
-const clothingItems = [
+export const clothingItems = [
     "Shirt", "Pants", "Dress", "Skirt", "Jacket", 
     "Coat", "Hat", "Cap", "Scarf", "Gloves", 
     "Socks", "Shoes", "Boots", "Sweater", "T-shirt", 
@@ -506,7 +506,7 @@ const clothingItems = [
 ];
 
 
-const bodyParts = [
+export const bodyParts = [
     "Head", "Hair", "Eye", "Ear", "Nose",
     "Mouth", "Lip", "Tooth", "Tongue", "Cheek",
     "Chin", "Neck", "Shoulder", "Arm", "Elbow",
@@ -529,7 +529,7 @@ const bodyParts = [
 ];
 
 
-const flowers = [
+export const flowers = [
     "Rose", "Tulip", "Lily", "Daisy", "Orchid",
     "Sunflower", "Iris", "Daffodil", "Marigold", "Poppy",
     "Violet", "Peony", "Chrysanthemum", "Begonia", "Hyacinth",
@@ -552,7 +552,7 @@ const flowers = [
 ];
 
 
-const desserts = [
+export const desserts = [
     "Cake", "Pie", "Tart", "Brownie", "Cupcake",
     "Cookie", "Donut", "Muffin", "Pastry", "Pudding",
     "Sundae", "Sorbet", "Gelato", "Parfait", "Trifle",
