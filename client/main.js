@@ -23,6 +23,7 @@ startGen.addEventListener('click', function() {
 
   const selectedNoun = document.getElementById('noun');
   const lengthInput = document.getElementById('genLength') || 99;
+  
   generateUser(selectedAdjectives, selectedNoun, lengthInput);
   document.getElementById('newUser').innerText = `Username: ${newUser}`
   lengthInput.value = "";

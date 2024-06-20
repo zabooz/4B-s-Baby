@@ -1,5 +1,6 @@
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
+import fs from 'fs'
+import path from 'path'
 
  export async function bruteForceSimple(targetPassword, charset, maxLength,shouldContinue) {
   let count = 0;
@@ -29,6 +30,8 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     for (let char of charset) {
       await generate(prefix + char, length - 1);
+
+      
       if (found || !shouldContinue){
         console.log('bruteForce stopped')
         return;

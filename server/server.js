@@ -5,6 +5,10 @@ import cors from "cors";
 import { bruteForceSimple } from "../client/scripts/bruteSimple.js";
 import { bruteForceLibrary } from "../client/scripts/bruteLibrary.js";
 import { passwordDecoder } from "../client/scripts/encoder.js";
+
+
+
+
 config();
 
 const app = express(); // Create an Express application
