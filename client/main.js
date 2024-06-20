@@ -15,18 +15,12 @@ const startGen = document.getElementById('startGen');
 let requestId;
 
 startGen.addEventListener('click', function() {
-  
-  //Retrieves all selected adjective values 
-  //and turns them into an array.
-  let dropdown = document.getElementById('adjective');
-  const selectedAdjectives = Array.from(dropdown.selectedOptions).map(option => option.value);
 
-  const selectedNoun = document.getElementById('noun');
-  const lengthInput = document.getElementById('genLength') || 99;
-  
-  generateUser(selectedAdjectives, selectedNoun, lengthInput);
+  const adjective1 = document.getElementById('adjective1').value;
+  const adjective2 = document.getElementById('adjective2').value;
+  const selectedNoun = document.getElementById('noun').value;
+  generateUser(adjective1, adjective2, selectedNoun);
   document.getElementById('newUser').innerText = `Username: ${newUser}`
-  lengthInput.value = "";
 });
 
 convertButton.addEventListener('click', function() {
