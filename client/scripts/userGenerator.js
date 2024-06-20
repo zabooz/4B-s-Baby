@@ -1,8 +1,7 @@
-import {colors, shapes, textures, sizes, emotions, tastes, sounds, temperatures, speeds, qualities, weatherTypes, instruments, fruits, animals, fantasyCreatures, vegetables, rpgClasses, fantasyRaces, occupations, vehicles, sports, tools, beverages, clothingItems, bodyParts, flowers, desserts} from './generator.Data.js'
-import { generateEncodingKey } from './scripts/encoder.js'
+import {colors, shapes, textures, sizes, emotions, tastes, sounds, temperatures, speeds, qualities, weatherTypes, instruments, fruits, animals, fantasyCreatures, vegetables, rpgClasses, fantasyRaces, occupations, vehicles, sports, tools, beverages, clothingItems, bodyParts, flowers, desserts} from './generator.data.js'
+import { generateEncodingKey } from './encoder.js';
 
-
-function generateUser(adjective1, adjective2, selectedNoun) {
+export function generateUser(adjective1, adjective2, selectedNoun) {
     let newUser = "";
     
     const myArraysObj = {
@@ -23,7 +22,7 @@ function generateUser(adjective1, adjective2, selectedNoun) {
         fantasyCreatures: fantasyCreatures, 
         vegetables: vegetables, 
         rpgClasses: rpgClasses, 
-        fantasyRaces: fantasyCreatures, 
+        fantasyRaces: fantasyRaces, 
         occupations: occupations, 
         vehicles: vehicles, 
         sports: sports, 
@@ -57,13 +56,13 @@ function generateUser(adjective1, adjective2, selectedNoun) {
         return;
     }
     // Determine which array to select based on noun
-    if (myArraysObj.hasOwnProperty(noun)) {
-        selectedNounArray = myArraysObj[noun];
+    if (myArraysObj.hasOwnProperty(selectedNoun)) {
+        selectedNounArray = myArraysObj[selectedNoun];
         const randomNoun = selectedNounArray[generateEncodingKey(selectedNounArray)];
         
     } else {
         // Handle default case or error if needed
-        console.error(`Array for noun "${noun}" not found.`);
+        console.error(`Array for noun "${selectedNoun}" not found.`);
         return;
     }
     newUser = `${randomAdjective1} ${randomAdjective2} ${randomnoun}`;

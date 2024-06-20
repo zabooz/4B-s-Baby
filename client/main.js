@@ -1,6 +1,5 @@
-import {generatePassword} from './scripts/passwordGenerator.js'
 import {passwordConverter} from './scripts/passwordConverter.js'
-
+import {generateUser} from './scripts/userGenerator.js'
 import { pictureToString } from './scripts/picturePwd.js';
 import { passwordEncoder } from './scripts/encoder.js';
 
