@@ -393,49 +393,49 @@ const occupations = [
     "Caretaker", "Cartographer", "Chemist", "Clerk", 
     "Consultant"
 ];
-//Arrays below need to be optimized.
 
-const vehicles = [
-    "Car", "Truck", "Bus", "Motorcycle", "Bicycle", 
-    "Train", "Boat", "Ship", "Airplane", "Helicopter", 
-    "Subway", "Taxi", "Van", "Scooter", "Jet", 
-    "Yacht", "Cruise", "Tank", "Spaceship", "Sailboat", 
-    "Ferry", "RV", "Ambulance", "Firetruck", "Policecar", 
-    "Blimp", "Hovercraft", "Hotairballoon", "Trolley", "Segway", 
-    "Golfcart", "Dumptruck", "Forklift", "Bulldozer", "Tractor", 
-    "Glider", "Cablecar", "Zamboni", "Go-kart", "Catamaran", 
-    "Speedboat", "Rowboat", "Canoe", "Kayak", "Barge", 
-    "Gondola", "Rickshaw", "Wheelchair", "Limo", "Hearse", 
-    "Dunebuggy", "Monstertruck", "Snowmobile", "Jetski", "Motorboat", 
-    "Sidecar", "Tandembike", "Skateboard", "Rollerblade", "Jetpack", 
-    "Rocket", "Segway", "Moped", "Lawnmower", "Backhoe", 
-    "Steamship", "Zeppelin", "Lift", "Ski lift", "Gyroscope", 
-    "Escalator", "Parachute", "Sled", "Tuktuk", "Rickshaw", 
-    "Bicycle", "Hangglider", "Scooter", "Electricbike", "Carriage", 
-    "Monstertruck", "Trolley", "Convertible", "Camper", "Sailboat", 
-    "Glidplane", "Litter", "Solarcar", "Submarine", "Snowplow"
-];
 
-const sports = [
-    "Football", "Basketball", "Soccer", "Tennis", "Baseball", 
-    "Golf", "Hockey", "Volleyball", "Rugby", "Cricket", 
-    "Boxing", "Swimming", "Wrestling", "Athletics", "Cycling", 
-    "Gymnastics", "Martialarts", "Tabletennis", "Badminton", "Skiing", 
-    "Snowboarding", "Surfing", "Rowing", "Canoeing", "Sailing", 
-    "Track", "Field", "Archery", "Fencing", "Shooting", 
-    "Triathlon", "Weightlifting", "Taekwondo", "Karate", "Judo", 
-    "Handball", "Polo", "Pentathlon", "Bobsleigh", "Skeleton", 
-    "Lacrosse", "Ultimate", "Squash", "Curling", "Waterpolo", 
-    "Paddleboarding", "Kiteboarding", "Skydiving", "Paragliding", "Bungeejumping", 
-    "Rockclimbing", "Parkour", "Rallying", "Motocross", "Formula", 
-    "Drifting", "Wingsuit", "Waterskiing", "Wakeboarding", "Freerunning", 
-    "Cricket", "Racquetball", "Dodgeball", "Juggling", "Jujitsu", 
-    "Muaythai", "Aikido", "Sumo", "Canoeing", "Kayaking", 
-    "Paddleboarding", "Rollerderby", "Skateboarding", "Bodyboarding", "Windsurfing", 
-    "Equestrian", "Bullfighting", "Rodeo", "Dressage", "Horse racing", 
-    "Motorcycling", "Go-karting", "Sledging", "Bob-sleigh", "Skiing", 
-    "Snowboarding", "Bouldering", "Hanggliding", "Ballooning", "Skiing"
-];
+[
+    'Car', 'Truck', 'Bus', 'Motorcycle', 'Bicycle',
+    'Train', 'Boat', 'Ship', 'Airplane', 'Helicopter',
+    'Subway', 'Taxi', 'Van', 'Scooter', 'Jet',
+    'Yacht', 'Cruise', 'Tank', 'Spaceship', 'Sailboat',
+    'Ferry', 'RV', 'Ambulance', 'Firetruck', 'Policecar',
+    'Blimp', 'Hovercraft', 'Hotairballoon', 'Trolley', 'Segway',
+    'Golfcart', 'Dumptruck', 'Forklift', 'Bulldozer', 'Tractor',
+    'Glider', 'Cablecar', 'Zamboni', 'Go-kart', 'Catamaran',
+    'Speedboat', 'Rowboat', 'Canoe', 'Kayak', 'Barge',
+    'Gondola', 'Rickshaw', 'Wheelchair', 'Limo', 'Hearse',
+    'Dunebuggy', 'Monstertruck', 'Snowmobile', 'Jetski', 'Motorboat',
+    'Sidecar', 'Tandembike', 'Skateboard', 'Rollerblade', 'Jetpack',
+    'Rocket', 'Moped', 'Lawnmower', 'Backhoe', 'Steamship',
+    'Zeppelin', 'Lift', 'Ski lift', 'Gyroscope', 'Escalator',
+    'Parachute', 'Sled', 'Tuktuk', 'Hangglider', 'Electricbike',
+    'Carriage', 'Convertible', 'Camper', 'Glidplane', 'Litter',
+    'Solarcar', 'Submarine', 'Snowplow'
+]
+
+
+[
+    'Football', 'Basketball', 'Soccer', 'Tennis', 'Baseball',
+    'Golf', 'Hockey', 'Volleyball', 'Rugby', 'Cricket',
+    'Boxing', 'Swimming', 'Wrestling', 'Athletics', 'Cycling',
+    'Gymnastics', 'Martialarts', 'Tabletennis', 'Badminton', 'Skiing',
+    'Snowboarding', 'Surfing', 'Rowing', 'Canoeing', 'Sailing',
+    'Track', 'Field', 'Archery', 'Fencing', 'Shooting',
+    'Triathlon', 'Weightlifting', 'Taekwondo', 'Karate', 'Judo',
+    'Handball', 'Polo', 'Pentathlon', 'Bobsleigh', 'Skeleton',
+    'Lacrosse', 'Ultimate', 'Squash', 'Curling', 'Waterpolo',
+    'Paddleboarding', 'Kiteboarding', 'Skydiving', 'Paragliding', 'Bungeejumping',
+    'Rockclimbing', 'Parkour', 'Rallying', 'Motocross', 'Formula',
+    'Drifting', 'Wingsuit', 'Waterskiing', 'Wakeboarding', 'Freerunning',
+    'Racquetball', 'Dodgeball', 'Juggling', 'Jujitsu', 'Muaythai',
+    'Aikido', 'Sumo', 'Kayaking', 'Rollerderby', 'Skateboarding',
+    'Bodyboarding', 'Windsurfing', 'Equestrian', 'Bullfighting', 'Rodeo',
+    'Dressage', 'Horse racing', 'Motorcycling', 'Go-karting', 'Sledging',
+    'Bob-sleigh', 'Bouldering', 'Hanggliding', 'Ballooning'
+]
+
 
 const tools = [
     "Hammer", "Screwdriver", "Wrench", "Pliers", "Saw",
@@ -469,18 +469,19 @@ const beverages = [
     "Espresso", "Cappuccino", "Mocha", "Americano", "Macchiato", 
     "Matcha", "Smoothie", "Shake", "Margarita", "Martini", 
     "Daiquiri", "Mimosa", "Punch", "Sangria", "Ale", 
-    "Lager", "Stout", "Cider", "Porter", "Pilsner", 
+    "Lager", "Stout", "Porter", "Pilsner", 
     "Mead", "Kombucha", "Kefir", "Sake", "Julep", 
     "Toddy", "Negus", "Flip", "Nog", "Spritzer", 
     "Sarsaparilla", "Lassi", "Buttermilk", "Claret", "Sauvignon", 
     "Chardonnay", "Merlot", "Shiraz", "Malbec", "Cabernet", 
     "Rosé", "Zinfandel", "Prosecco", "Riesling", "Moscato", 
     "Vermouth", "Bourbon", "Cognac", "Armagnac", "Grappa", 
-    "Tequila", "Liqueur", "Absinthe", "Anisette", "Amaretto", 
+    "Tequila", "Liqueur", "Anisette", "Amaretto", 
     "Sambuca", "Raki", "Pastis", "Arrack", "Bitters", 
     "Curacao", "Triple", "Sec", "Frangelico", "Tia", 
     "Maria", "Kahlua", "Baileys", "Campari", "Galliano"
 ];
+
 
 const clothingItems = [
     "Shirt", "Pants", "Dress", "Skirt", "Jacket", 
@@ -504,6 +505,7 @@ const clothingItems = [
     "Turban", "Fez", "Gaiters", "Spats"
 ];
 
+
 const bodyParts = [
     "Head", "Hair", "Eye", "Ear", "Nose",
     "Mouth", "Lip", "Tooth", "Tongue", "Cheek",
@@ -520,11 +522,12 @@ const bodyParts = [
     "Gum", "Pupil", "Iris", "Eyelid", "Eyelash",
     "Palm", "Knuckle", "Forearm", "Bicep", "Tricep",
     "Armpit", "Hamstring", "Quadricep", "Achilles", "Uterus",
-    "Ovary", "Testicle", "Penis", "Vagina", "Urethra",
+    "Ovary", "Testicle", "Urethra",
     "Esophagus", "Intestine", "Colon", "Rectum", "Larynx",
     "Pharynx", "Tonsil", "Appendix", "Spleen", "Pancreas",
     "Gallbladder", "Aorta", "Atrium", "Ventricle", "Cornea"
 ];
+
 
 const flowers = [
     "Rose", "Tulip", "Lily", "Daisy", "Orchid",
@@ -538,15 +541,16 @@ const flowers = [
     "Snapdragon", "Verbena", "Wisteria", "Yarrow", "Amaryllis",
     "Buttercup", "Cosmos", "Crocus", "Cyclamen", "Delphinium",
     "Edelweiss", "Freesia", "Gaillardia", "Hellebore", "Hosta",
-    "Lobelia", "Lupine", "Narcissus", "Petunia",
+    "Lobelia", "Lupine", "Narcissus",
     "Plumeria", "Ranunculus", "Rhododendron", "Saxifrage", "Sedum",
-    "Tithonia", "Trillium", "Verbena", "Viola", "Yucca",
+    "Tithonia", "Trillium", "Viola", "Yucca",
     "Zantedeschia", "Agapanthus", "Allium", "Alyssum", "Anthurium",
     "Calendula", "Coreopsis", "Dianthus", "Echinacea", "Fuchsia",
     "Heliotrope", "Liatris", "Monarda", "Nigella", "Osteospermum",
     "Penstemon", "Portulaca", "Salvia", "Scabiosa", "Strelitzia",
     "Torenia", "Tropaeolum", "Veronica", "Zephyranthes", "Balsam"
 ];
+
 
 const desserts = [
     "Cake", "Pie", "Tart", "Brownie", "Cupcake",
@@ -558,14 +562,15 @@ const desserts = [
     "Strudel", "Biscotti", "Gingersnap", "Madeleine",
     "Churro", "Zeppole", "Linzer", "Graham", "Scone",
     "Cobbler", "Rugelach", "Stollen", "Lebkuchen", "Clafoutis",
-    "Pavlova", "Zabaglione", "Kugel", "Panettone",
+    "Zabaglione", "Kugel", "Panettone",
     "Panforte", "Tresleches", "Kheer", "Kulfi", "Gulabjamun",
     "Falooda", "Jalebi", "Rasgulla", "Ladoo", "Modak",
     "Mochi", "Dorayaki", "Taiyaki", "Dango", "Castella",
     "Brigadeiro", "Quindim", "Picarones", "Chocotorta", "Turron",
     "Polvoron", "Sopapilla", "Empanada", "Syrniki",
-    "Blini", "Napoleon", "Pavlova", "RolyPoly", "EtonMess",
-    "Baklava", "Lokma", "Qatayef", "Basbousa", "Kunafa",
+    "Blini", "Napoleon", "RolyPoly", "EtonMess",
+    "Lokma", "Qatayef", "Basbousa", "Kunafa",
     "Sfouf", "Halva", "Maamoul", "Awameh",
     "Chikki", "Tilgul", "Peda", "Barfi", "Sandesh"
 ];
+
