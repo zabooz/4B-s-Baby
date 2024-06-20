@@ -2,19 +2,13 @@
     box-shadow: 0px 0px 10px 1px #40aeb8;
     display: flex;
     flex-direction: column;
-    width: 27rem;
+    width: 70%;
     padding: 1rem;
     gap: 1rem;
-    align-items: center
-    /* background-color: black; */
-;
-}
-#statsHeading{
-    display: flex;
+    align-items: center;
 }
 
 .label{
-
     border: px solid #000;
     background-color:#40aeb8;
     padding: .2rem;
@@ -30,7 +24,40 @@
 .label label:hover{
     cursor: pointer;
 }
+table{
+    border: 1px solid #ffffff;
+}
+th{
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    padding: .5rem;
+}
+td{
+    width: 6rem;
+    text-align: center;
+    padding: .5rem;
+    border-right: 1px solid white;
 
+}
+.bruteBtns{
+    display: flex;
+    gap: 2rem;
+    justify-content: left
+    align-items: center;
+}
+.bruteInput{
+    display: flex;
+    gap: 2rem;
+}
+.wizardInput{
+    display: flex;
+    gap: 2rem;
+}
+.wizardLength{
+    display: flex;
+    gap: 4.5rem;
+    align-items: center;
+}
 #converterSelector,
 .pictureMagicDiv{
     display: flex;
@@ -45,7 +72,21 @@
     display: flex;
     gap: 2rem;
 }
-input,select{
+input,
+select{
     width: 10rem;
     height: 2rem;
+}
+@media(max-width : 1050px){
+    .bruteInput,
+    .wizardInput,
+    .wizardLength{
+        flex-direction: column;
+    }
+    .wizardLength{
+        gap: 1rem;
+    }
+    .flexbox-item2{
+        align-items: center;
+    }
 }

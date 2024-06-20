@@ -86,13 +86,7 @@ main{
     margin-right: 3rem;
 
 }
-.bruteBtns{
-    display: flex;
-    width: 100%;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-}
+
 .bruteBtns button{
     padding: .5rem;
     width: 4rem;
@@ -110,7 +104,7 @@ main{
     display: flex;
     width: 80%;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 3rem;
 }
 #convertButton,
 #startBtn,

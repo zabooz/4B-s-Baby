@@ -94,17 +94,17 @@ stopBtn.addEventListener('click',(e) => {
 function updateAttempts(result){
 
     const dataArr = result
-    const stats = document.getElementById('stats')
-    const div = document.createElement('div')
-    div.className='statsHeading'
+    const stats = document.getElementById('statsBody')
+    const tr = document.createElement('tr')
+    tr.className='statsResult'
     dataArr.forEach(item => {
 
-      const para = document.createElement('p')
-      para.textContent = item
+      const td = document.createElement('td')
+      td.textContent = item
 
-      div.appendChild(para)
+      tr.appendChild(td)
     })
 
-    stats.append(div)
+    stats.append(tr)
 
 }
