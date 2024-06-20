@@ -1,3 +1,4 @@
+import { log } from 'console';
 import {colors, shapes, textures, sizes, emotions, tastes, sounds, temperatures, speeds, qualities, weatherTypes, instruments, fruits, animals, fantasyCreatures, vegetables, rpgClasses, fantasyRaces, occupations, vehicles, sports, tools, beverages, clothingItems, bodyParts, flowers, desserts} from './generator.Data.js'
 import { generateEncodingKey } from './scripts/encoder.js'
 
@@ -36,10 +37,18 @@ function generateUser(adjective1, adjective2, selectedNoun) {
     }
     let selectedAdjectiveArray, selectedNounArray;
 
+    const rdm = (arr) => {
+        console.log(Math.floor(Math.random()*arr.length))
+        l
+}
+
+    
+      
+
     // Determine which array to select based on adjective1
     if (myArraysObj.hasOwnProperty(adjective1)) {
         selectedAdjectiveArray = myArraysObj[adjective1];
-        const randomAdjective1 = selectedAdjectiveArray[generateEncodingKey(selectedAdjectiveArray)];
+        const randomAdjective1 = selectedAdjectiveArray[rdm(selectedAdjectiveArray)];
         
     } else {
         // Handle default case or error if needed
