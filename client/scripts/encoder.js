@@ -9,8 +9,8 @@ const characters = [
     ',', '.', '`', '~'
 ];
 
-function generateEncodingKey () {
-    return Math.floor(Math.random() * characters.length);
+function generateEncodingKey (array) {
+    return Math.floor(Math.random() * array.length);
 }
 
 export function passwordEncoder (userPwd) {
@@ -18,7 +18,7 @@ export function passwordEncoder (userPwd) {
     // const passwordInput = document.getElementById('passwordInput');
 
     let encodedString = "";
-    const encodingKey = generateEncodingKey();
+    const encodingKey = generateEncodingKey(characters);
 
     for (let char of (userPwd)) {
         const charIndex = characters.indexOf(char);
