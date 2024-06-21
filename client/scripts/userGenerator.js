@@ -5,6 +5,8 @@ import { generateEncodingKey } from './encoder.js';
 
 export function generateUser(adjective1, adjective2, selectedNoun) {
     let newUser = "";
+    let randomAdjective1, randomAdjective2, randomNoun;
+    
     
     const myArraysObj = {
         colors: colors,
@@ -37,18 +39,12 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     }
     let selectedAdjectiveArray, selectedNounArray;
 
-    const rdm = (arr) => {
-        console.log(Math.floor(Math.random()*arr.length))
-        l
-}
 
-    
-      
 
     // Determine which array to select based on adjective1
     if (myArraysObj.hasOwnProperty(adjective1)) {
         selectedAdjectiveArray = myArraysObj[adjective1];
-        const randomAdjective1 = selectedAdjectiveArray[rdm(selectedAdjectiveArray)];
+        randomAdjective1 = selectedAdjectiveArray[generateEncodingKey(selectedAdjectiveArray)];
         
     } else {
         // Handle default case or error if needed
@@ -58,7 +54,7 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     // Determine which array to select based on adjective2
     if (myArraysObj.hasOwnProperty(adjective2)) {
         selectedAdjectiveArray = myArraysObj[adjective2];
-        const randomAdjective2 = selectedAdjectiveArray[generateEncodingKey(selectedAdjectiveArray)];
+        randomAdjective2 = selectedAdjectiveArray[generateEncodingKey(selectedAdjectiveArray)];
         
     } else {
         // Handle default case or error if needed
@@ -68,7 +64,7 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     // Determine which array to select based on noun
     if (myArraysObj.hasOwnProperty(selectedNoun)) {
         selectedNounArray = myArraysObj[selectedNoun];
-        const randomNoun = selectedNounArray[generateEncodingKey(selectedNounArray)];
+        randomNoun = selectedNounArray[generateEncodingKey(selectedNounArray)];
         
     } else {
         // Handle default case or error if needed
@@ -76,7 +72,7 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
         return;
     }
     newUser = `${randomAdjective1} ${randomAdjective2} ${randomnoun}`;
-
+    console.log(newUser);
     return newUser;
 }
 
