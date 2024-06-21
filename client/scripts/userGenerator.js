@@ -61,6 +61,8 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
         selectedAdjectiveArray = myArraysObj[adjective2];
         randomAdjective2 = selectedAdjectiveArray[generateEncodingKey(selectedAdjectiveArray)];
         
+    } else if(adjective2===""){
+        randomAdjective2 = "";
     } else {
         // Handle default case or error if needed
         console.error(`Array for adjective2 "${adjective2}" not found.`);
@@ -71,9 +73,7 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
         selectedNounArray = myArraysObj[selectedNoun];
         randomNoun = selectedNounArray[generateEncodingKey(selectedNounArray)];
         
-    } else if(adjective2===""){
-        randomAdjective2 = "";
-    } else {
+    }  else {
         // Handle default case or error if needed
         console.error(`Array for noun "${selectedNoun}" not found.`);
         return;
