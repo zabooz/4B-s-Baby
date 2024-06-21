@@ -18,8 +18,8 @@ startGen.addEventListener('click', function() {
   const adjective1 = document.getElementById('adjective1').value;
   const adjective2 = document.getElementById('adjective2').value;
   const selectedNoun = document.getElementById('noun').value;
-  generateUser(adjective1, adjective2, selectedNoun);
-  document.getElementById('newUser').innerText = `Username: ${newUser}`
+  const userOutput = generateUser(adjective1, adjective2, selectedNoun);
+  document.getElementById('newUser').innerText = `Username: ${userOutput}`
 });
 
 convertButton.addEventListener('click', function() {

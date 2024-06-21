@@ -4,6 +4,7 @@ import { generateEncodingKey } from './encoder.js';
 
 
 export function generateUser(adjective1, adjective2, selectedNoun) {
+    
     let newUser = "";
     let randomAdjective1, randomAdjective2, randomNoun;
     
@@ -46,7 +47,11 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
         selectedAdjectiveArray = myArraysObj[adjective1];
         randomAdjective1 = selectedAdjectiveArray[generateEncodingKey(selectedAdjectiveArray)];
         
-    } else {
+    } 
+    else if(adjective1===""){
+        randomAdjective1 = "";
+    }
+    else {
         // Handle default case or error if needed
         console.error(`Array for adjective1 "${adjective1}" not found.`);
         return;
@@ -66,12 +71,14 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
         selectedNounArray = myArraysObj[selectedNoun];
         randomNoun = selectedNounArray[generateEncodingKey(selectedNounArray)];
         
+    } else if(adjective2===""){
+        randomAdjective2 = "";
     } else {
         // Handle default case or error if needed
         console.error(`Array for noun "${selectedNoun}" not found.`);
         return;
     }
-    newUser = `${randomAdjective1} ${randomAdjective2} ${randomnoun}`;
+    newUser = `${randomAdjective1}${randomAdjective2}${randomNoun}`;
     console.log(newUser);
     return newUser;
 }
