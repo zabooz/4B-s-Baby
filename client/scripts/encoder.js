@@ -9,7 +9,7 @@ const characters = [
     ',', '.', '`', '~'
 ];
 
-function generateEncodingKey (array) {
+export function generateEncodingKey (array) {
     return Math.floor(Math.random() * array.length);
 }
 
