@@ -1,5 +1,5 @@
 import {passwordConverter} from './scripts/passwordConverter.js'
-import {generateUser} from './scripts/userGenerator.js'
+import {generateUser, generateRndUser} from './scripts/userGenerator.js'
 import { pictureToString } from './scripts/picturePwd.js';
 import { passwordEncoder } from './scripts/encoder.js';
 
@@ -11,6 +11,7 @@ const stopBtn = document.getElementById('stopBtn');
 const userPwd = document.getElementById('userPwd');
 const picConBtn = document.getElementById('pictureConvert')
 const startGen = document.getElementById('startGen');
+const startRndGen = document.getElementById('startRndGen');
 let requestId;
 
 startGen.addEventListener('click', function() {
@@ -19,6 +20,11 @@ startGen.addEventListener('click', function() {
   const adjective2 = document.getElementById('adjective2').value;
   const selectedNoun = document.getElementById('noun').value;
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
+  document.getElementById('newUser').innerText = `Username: ${userOutput}`
+});
+
+startRndGen.addEventListener('click', function() {
+  const userOutput = generateRndUser();
   document.getElementById('newUser').innerText = `Username: ${userOutput}`
 });
 

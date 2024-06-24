@@ -1,5 +1,5 @@
 
-import {colors, shapes, textures, sizes, emotions, tastes, sounds, temperatures, speeds, qualities, weatherTypes, instruments, fruits, animals, fantasyCreatures, vegetables, rpgClasses, fantasyRaces, occupations, vehicles, sports, tools, beverages, clothingItems, bodyParts, flowers, desserts} from './generator.data.js'
+import {colors, shapes, textures, sizes, emotions, tastes, sounds, temperatures, speeds, qualities, weatherTypes, instruments, fruits, animals, fantasyCreatures, vegetables, rpgClasses, fantasyRaces, occupations, vehicles, sports, tools, beverages, clothingItems, bodyParts, flowers, desserts, contentArray1, contentArray2} from './generator.data.js'
 import { generateEncodingKey } from './encoder.js';
 
 
@@ -84,7 +84,13 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     return newUser;
 }
 
-
+export function generateRndUser () {
+    let adjective1 = contentArray1[generateEncodingKey(contentArray1)]
+    let adjective2 = contentArray1[generateEncodingKey(contentArray1)]
+    let selectedNoun = contentArray2[generateEncodingKey(contentArray2)]
+    const temporay = generateUser(adjective1, adjective2, selectedNoun)
+    return temporay;
+}
 
 
 
