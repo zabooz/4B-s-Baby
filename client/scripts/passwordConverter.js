@@ -1,9 +1,26 @@
 export function passwordConverter(password, selector) {
     // Converts a strings content based on dropdown menu choice ("selector")
-        let convertedPassword = password;
+        let newPassword;
 
         const leetTables = {
             leetSimple: {
+                // Easily readable leetspeak here.
+                "A": "4",
+                "a": "4",
+                "C": "(",
+                "c": "(",
+                "E": "3",
+                "e": "3",
+                "I": "1",
+                "i": "1",
+                "O": "0",
+                "o": "0",
+                "S": "5",
+                "s": "5",
+                "T": "7",
+                "t": "7"
+            },
+            leetAdvanced: {
                 // Easily readable leetspeak here.
                 "A": "4",
                 "B": "|3",
@@ -81,12 +98,13 @@ export function passwordConverter(password, selector) {
         const pattern = new RegExp(`[${Object.keys(leetTable).join('')}]`, 'g');
 
         // Use the pattern to replace characters based on the leetTable
-        let newPassword = upperCasePw.replace(pattern, match => leetTable[match]);
-
-        // document.getElementById('newPassword').innerText = newPassword;
-        return newPassword
+        if (selector === 'leetSimple') {
+            newPassword = password.replace(pattern, match => leetTable[match]);
+        } else {
+            newPassword = upperCasePw.replace(pattern, match => leetTable[match]);
         }
-    ;
+        return newPassword;
+ };
 
 
 

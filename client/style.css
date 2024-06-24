@@ -126,14 +126,19 @@ main{
 #convertButton:hover,
 #startBtn:hover,
 #startGen:hover,
-#pictureConvert:hover{
+#pictureConvert:hover,
+#startRndGen:hover{
     background-color:#2e7d84;
     
 }
 #stopBtn{
     background-color: red;
 }
-#convertButton:active, #startBtn:active, #startGen:active {
+#convertButton:active, 
+#startBtn:active, 
+#startGen:active,
+#pictureConvert:active,
+#startRndGen:active {
     background-color: #25646a;
     transition: 0.05s;
     

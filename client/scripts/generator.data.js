@@ -275,7 +275,7 @@ export const animals = [
     "Deer", "Kangaroo", "Zebra", "Penguin", "Dolphin", 
     "Whale", "Shark", "Snake", "Crocodile", "Frog", 
     "Turtle", "Eagle", "Owl", "Parrot", "Squirrel", 
-    "Bat", "Gorilla", "Panda", "Koala", "Polar bear", 
+    "Bat", "Gorilla", "Panda", "Koala", "Polarbear", 
     "Otter", "Seal", "Walrus", "Hippo", "Rhino", 
     "Buffalo", "Cheetah", "Leopard", "Panther", "Jaguar", 
     "Coyote", "Hedgehog", "Lynx", "Moose", "Raccoon", 

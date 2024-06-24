@@ -85,11 +85,12 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
 }
 
 export function generateRndUser () {
+    //Generates a random Username using the generateUser function.
     let adjective1 = contentArray1[generateEncodingKey(contentArray1)]
     let adjective2 = contentArray1[generateEncodingKey(contentArray1)]
     let selectedNoun = contentArray2[generateEncodingKey(contentArray2)]
-    const temporay = generateUser(adjective1, adjective2, selectedNoun)
-    return temporay;
+    const newUser = generateUser(adjective1, adjective2, selectedNoun)
+    return newUser;
 }
 
 
