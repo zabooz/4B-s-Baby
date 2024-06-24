@@ -23,6 +23,24 @@ startGen.addEventListener('click', function() {
   document.getElementById('newUser').innerText = `Username: ${userOutput}`
 });
 
+
+document.getElementById('adjective1').addEventListener('change', (e) => {
+
+  if(e.target.value !== ''){
+    document.getElementById('adjective2').disabled = false
+    document.getElementById('adjective2')[0].textContent = 'Choose...'
+
+  }else{
+    document.getElementById('adjective2').disabled = true
+    document.getElementById('adjective2')[0].textContent = ''
+
+
+  }
+
+  console.log('#sdgsgd')
+})
+
+
 startRndGen.addEventListener('click', function() {
   const userOutput = generateRndUser();
   document.getElementById('newUser').innerText = `Username: ${userOutput}`
