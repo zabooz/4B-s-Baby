@@ -59,8 +59,8 @@ export const textures = [
     "Woolen", "Knotted", "Twisted", "Layered", "Thready",
     "Spongy", "Fluffy", "Crumbly", "Powdery", "Felt",
     "Ribbed", "Hairy", "Chiseled", "Fibrous", "Raspy",
-    "Veined", "Silk", "Cotton", "Linen",
-    "Waxy", "Rubber", "Plastic", "Metallic", "Wooden",
+    "Veined", "Silky", "Cotton", "Linen",
+    "Waxy", "Rubbery", "Plastic", "Metallic", "Wooden",
     "Velvet", "Canvas", "Parchment", "Varnished",
     "Coated", "Glazed", "Clay", "Ceramic", "Brick",
     "Concrete", "Marble", "Stone", "Glass", "Porcelain",
@@ -71,7 +71,7 @@ export const textures = [
 export const sizes = [
     "Tiny", "Small", "Miniature", "Petite", "Compact",
     "Mini", "Little", "Micro", "Minute", "Diminutive",
-    "Slight", "Wee", "Pint-sized", "Lilliputian", "Nano",
+    "Slight", "Wee", "Lilliputian", "Nano",
     "Short", "Tall", "Big", "Large", "Huge",
     "Giant", "Enormous", "Gigantic", "Massive", "Colossal",
     "Immense", "Vast", "Mammoth", "Monumental", "Titanic",
@@ -119,7 +119,7 @@ export const tastes = [
     "Delicious", "Nutty", "Robust", "Mellow", "Velvety",
     "Tender", "Tantalizing", "Palatable", "Exquisite", "Mouthwatering",
     "Sensational", "Wholesome", "Zingy", "Bland", "Acidic",
-    "Sizzling", "Sugary", "Umami", "Bite-sized", "Bittersweet",
+    "Sizzling", "Sugary", "Umami", "Bittersweet",
     "Crunchy", "Flaky", "Gooey", "Hearty", "Luscious",
     "Sapid", "Silky", "Smokey", "Smooth", "Sourish",
     "Subtle", "Sugared", "Sweetish", "Syrupy", "Tartish",
@@ -164,10 +164,9 @@ export const temperatures = [
     "Roasting", "Cooling", "Moderate", "Burning", "Blazing",
     "Tropical", "Comfortable", "Heated", "Melted", "Glacial",
     "Overheated", "Overcast", "Calm", "Shaded", "Sunny",
-    "Humid", "Dry", "Chill", "Warm", "Freeze",
-    "Frozen", "Numb", "Bite", "Shiver", "Breeze",
-    "Warmth", "Bitter", "Thaw", "Overheat", "Tropics",
-    "Furnace", "Sizzled"
+    "Humid", "Dry", "Chill", "Warm",
+    "Frozen", "Numb", "Bite", "Shiver", "Breezy",
+    "Sizzled"
 ];
 
 
@@ -181,13 +180,11 @@ export const speeds = [
     "Direct", "Dynamic", "Energetic", "Active", "Bursting",
     "Continuous", "Cruising", "Driven", "Ebullient", "Effortless",
     "Elastic", "Elevated", "Expeditive", "Expressive", "Flexible",
-    "Frantic", "High-speed", "Instantaneous", "Instantspeed", "Intense",
-    "Lightning", "Manic", "Onrush", "Quasi", "Rocket",
-    "Sonic", "Speedster", "Speedwell", "Super", "Unhurried",
-    "Velocity", "Whirlwind", "Zealous", "Afoot", "Apt",
-    "Barefaced", "Best", "Blithe", "Cursory", "Drive",
-    "Fleeting", "Flit", "Fresh", "Glib", "Headlong",
-    "Hotfoot", "Inhale", "Mild", "Nippy", "Occasional"
+    "Frantic", "Instantaneous", "Intense",
+    "Manic", "Onrush", "Quasi", "Rocket",
+    "Sonic", "Speedster", "Speedwell",
+    "Headlong",
+    "Hotfooted"
 ];
 
 
@@ -228,9 +225,8 @@ export const weatherTypes = [
     "Sunlit", "Dazzling", "Rays", "Frosty", "Nippy", 
     "Glistening", "Inclement", "Mild", "Precipitating", "Bleak", 
     "Calm", "Sleet", "Slushy", "Sweltering", "Torrential", 
-    "Vernal", "Wintry", "Seasonal", "Spring", "Summer", 
-    "Autumn", "Winter", "Waterlogged", "Pleasant", "Unpleasant", 
-    "Showers", "Snowing", "Sleeting", "Sleety", "Blizzardy", 
+    "Vernal", "Wintry", "Waterlogged", "Pleasant", "Unpleasant", 
+    "Snowing", "Sleeting", "Sleety", "Blizzardy", 
     "Drifting", "Thundering"
 ];
 
@@ -266,8 +262,8 @@ export const fruits = [
     "Cupuaçu", "Damson", "Gac", "Jabuticaba", "Longan", 
     "Pitaya", "Rowan", "Sapodilla", "Sapote", "Tamarillo", 
     "Tamarind", "Ugni", "Yangmei", "Atemoya", "Bael", 
-    "Carissa", "Ginkgo", "Kei apple", "Monstera deliciosa", "Pepino", 
-    "Surinam cherry", "Wampee"
+    "Carissa", "Ginkgo", "Kei apple", "Pepino", 
+    "Wampee"
 ];
 
 
@@ -288,7 +284,7 @@ export const animals = [
     "Bison", "Armadillo", "Chimpanzee", "Orangutan", "Sloth", 
     "Meerkat", "Mongoose", "Hyena", "Porcupine", "Vulture", 
     "Condor", "Ostrich", "Cassowary", "Tapir", "Boar", 
-    "Iguana", "Komodo dragon", "Gecko", "Chameleon", "Toad", 
+    "Iguana", "Gecko", "Chameleon", "Toad", 
     "Salamander", "Axolotl", "Cobra", "Kingfisher", "Stingray", 
     "Bee", "Butterfly", "Ladybug", "Ant", "Crab", 
     "Octopus", "Squid", "Starfish", "Jellyfish", "Cuttlefish"
@@ -309,7 +305,7 @@ export const fantasyCreatures = [
     "Hippogriff", "Incubus", "Naga", "Oni", "Quetzalcoatl", 
     "Rakshasa", "Sasquatch", "Tanuki", "Tengu", "Vodyanoy", 
     "Xorn", "Yaksha", "Zaratan", "Amphisbaena", "Bunyip", 
-    "Cockatrice", "Ettin", "Fomorian", "Gorgon", "Hyppocampus", 
+    "Cockatrice", "Ettin", "Fomorian", "Gorgon", 
     "Jabberwock", "Kappa", "Lamia", "Mandragora", "Nuckelavee", 
     "Peryton", "Qilin", "Ziz"
 ];
@@ -363,10 +359,10 @@ export const fantasyRaces = [
     "Revenant", "Gargoyle", "Troll", "Giant", "Dryad", 
     "Naga", "Sprite", "Faun", "Gorgon", "Hag", 
     "Lycanthrope", "Undead", "Doppelganger", "Duergar", "Svirfneblin", 
-    "Githzerai", "Thri-kreen", "Quaggoth", "Blink dog", "Banshee", 
+    "Githzerai", "Quaggoth", "Blink dog", "Banshee", 
     "Specter", "Wight", "Ghost", "Mummy", "Sphinx", 
     "Cyclops", "Chimera", "Hydra", "Beholder", "Mind flayer", 
-    "Otyugh", "Aboleth", "Behir", "Basilisk", "Umber hulk", 
+    "Otyugh", "Aboleth", "Behir", "Basilisk", 
     "Cloaker", "Bulette", "Remorhaz", "Kraken", "Tarrasque"
 ];
 
@@ -403,7 +399,7 @@ export const vehicles = [
     'Ferry', 'RV', 'Ambulance', 'Firetruck', 'Policecar',
     'Blimp', 'Hovercraft', 'Hotairballoon', 'Trolley', 'Segway',
     'Golfcart', 'Dumptruck', 'Forklift', 'Bulldozer', 'Tractor',
-    'Glider', 'Cablecar', 'Zamboni', 'Go-kart', 'Catamaran',
+    'Glider', 'Cablecar', 'Zamboni', 'Catamaran',
     'Speedboat', 'Rowboat', 'Canoe', 'Kayak', 'Barge',
     'Gondola', 'Rickshaw', 'Wheelchair', 'Limo', 'Hearse',
     'Dunebuggy', 'Monstertruck', 'Snowmobile', 'Jetski', 'Motorboat',
@@ -432,8 +428,8 @@ export const sports = [
     'Racquetball', 'Dodgeball', 'Juggling', 'Jujitsu', 'Muaythai',
     'Aikido', 'Sumo', 'Kayaking', 'Rollerderby', 'Skateboarding',
     'Bodyboarding', 'Windsurfing', 'Equestrian', 'Bullfighting', 'Rodeo',
-    'Dressage', 'Horse racing', 'Motorcycling', 'Go-karting', 'Sledging',
-    'Bob-sleigh', 'Bouldering', 'Hanggliding', 'Ballooning'
+    'Dressage', 'Motorcycling', 'Sledging',
+    'Bouldering', 'Hanggliding', 'Ballooning'
 ]
 
 
