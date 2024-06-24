@@ -570,3 +570,35 @@ export const desserts = [
     "Chikki", "Tilgul", "Peda", "Barfi", "Sandesh"
 ];
 
+export const contentArray1 = [
+    "colors", 
+    "shapes", 
+    "textures", 
+    "sizes", 
+    "emotions", 
+    "tastes", 
+    "sounds", 
+    "temperatures", 
+    "speeds", 
+    "qualities", 
+    "weatherTypes", 
+];
+
+export const contentArray2 = [
+    "instruments", 
+    "fruits", 
+    "animals", 
+    "fantasyCreatures", 
+    "vegetables", 
+    "rpgClasses", 
+    "fantasyRaces", 
+    "occupations", 
+    "vehicles", 
+    "sports", 
+    "tools", 
+    "beverages", 
+    "clothingItems", 
+    "bodyParts", 
+    "flowers", 
+    "desserts"
+];

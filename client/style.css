@@ -110,7 +110,8 @@ main{
 #startBtn,
 #startGen,
 #pictureConvert,
-#stopBtn {
+#stopBtn,
+#startRndGen {
     background-color: #40aeb8;
     color: #fff;
     border: none;
