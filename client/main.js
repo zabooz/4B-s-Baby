@@ -2,6 +2,7 @@ import { passwordConverter } from './scripts/passwordConverter.js'
 import { generateUser } from './scripts/userGenerator.js'
 import { pictureToString } from './scripts/picturePwd.js';
 import { passwordEncoder } from './scripts/encoder.js';
+import { passwordStrength } from './scripts/passwordStrengthCalc.js';
 
 
 
@@ -11,6 +12,7 @@ const stopBtn = document.getElementById('stopBtn');
 const userPwd = document.getElementById('userPwd');
 const picConBtn = document.getElementById('pictureConvert')
 const startGen = document.getElementById('startGen');
+const strengthCalc = document.getElementById('strengthInput')
 let requestId;
 
 startGen.addEventListener('click', function() {
@@ -21,7 +23,13 @@ startGen.addEventListener('click', function() {
   document.getElementById('newUser').innerText = `Username: ${userOutput}`
 });
 
+strengthCalc.addEventListener('input', () => {
 
+  const value = strengthCalc.value
+  passwordStrength(value)
+
+
+})
 convertButton.addEventListener('click', function() {
   const selectedConverter = document.getElementById('converterSelect').value;
   const passwordInput = document.getElementById('passwordInput');
