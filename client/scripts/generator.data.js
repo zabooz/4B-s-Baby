@@ -343,7 +343,7 @@ export const rpgClasses = [
     "Warden", "Witchdoctor", "Zealot", "Dragoon", "Arcane", 
     "Darkknight", "Fencer", "Skald", "Artisan", "Stalker", 
     "Ninja", "Scribe", "Runekeeper", "Spellsword", "Tinkerer", 
-    "Champion", "Guardian"
+    "Champion", "Guardian", "Deathknight", "Priest"
 ];
 
 
