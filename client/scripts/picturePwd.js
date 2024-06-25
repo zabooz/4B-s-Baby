@@ -1,4 +1,6 @@
 
+import { passwordConverter } from "./passwordConverter"
+
 export function pictureToString(){
     
     const input = document.getElementById('uploadFile')
@@ -29,10 +31,17 @@ export function pictureToString(){
             }
             
 
+            for(let i = 0; i<password.length;i++ ){
 
+                if(i%2 === 0){
+                    password[i] = passwordConverter(password[i],"leetAdvanced")
+                }
+
+
+            }
             
             
-            console.log(password,password.length,key)
+            
             document.getElementById('picResult').textContent += ' ' + password
             return base64String
         }
