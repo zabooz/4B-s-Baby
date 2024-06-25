@@ -1,29 +1,40 @@
 export function passwordStrength(pwd) {
   let result;
-  let count = pwd.length * 2;
+  let count = pwd.length * 2.5;
 
   const pointsForDiffrentSigns = 5;
   const malusForConsecutiveIdenticalSigns = 2;
   const malusForConsecutiveSigns = 1;
   const malusForRepeatedIdenticalSigns = 2;
   const malusForRepeatedSigns = 1;
-  const repeatMalus = 3
+  const malusForMissingSigns = 4;
+  let missingSigns = 5;
+  const repeatMalus = 3;
   let timesRepeated = 0;
-
-
 
   const weak = 20;
   const mediocre = 30;
   const strong = 40;
   const veryStrong = 50;
 
-  if (sonderzeichen.some((z) => pwd.includes(z)))
+  if (sonderzeichen.some((z) => pwd.includes(z))) {
     count += pointsForDiffrentSigns;
-  if (kleinbuchstaben.some((z) => pwd.includes(z)))
+    missingSigns--;
+  }
+  if (kleinbuchstaben.some((z) => pwd.includes(z))) {
     count += pointsForDiffrentSigns;
-  if (grossbuchstaben.some((z) => pwd.includes(z)))
+    missingSigns--;
+  }
+  if (grossbuchstaben.some((z) => pwd.includes(z))) {
     count += pointsForDiffrentSigns;
-  if (zahlen.some((z) => pwd.includes(z))) count += pointsForDiffrentSigns;
+    missingSigns--;
+  }
+  if (zahlen.some((z) => pwd.includes(z))) {
+    count += pointsForDiffrentSigns;
+    missingSigns--;
+  }
+
+
 
   for (let i = 0; i < pwd.length - 2; i++) {
     const charCodeOne = pwd.charCodeAt(i);
@@ -34,36 +45,42 @@ export function passwordStrength(pwd) {
     const charCodeTwoCaseInsensitive = pwd.toLowerCase().charCodeAt(i + 1);
     const charCodeThreeCaseInsensitive = pwd.toLowerCase().charCodeAt(i + 2);
 
-    if (charCodeOne === charCodeTwo && charCodeThree === charCodeTwo){
-        count -= malusForRepeatedIdenticalSigns;
-        timesRepeated++
-    }
-    else if (
+    test = pwd.toLowerCase().slice(i,i+3)
+
+
+    if (charCodeOne === charCodeTwo && charCodeThree === charCodeTwo) {
+      count -= malusForRepeatedIdenticalSigns;
+      timesRepeated++;
+    } else if (
       charCodeOneCaseInsensitive === charCodeTwoCaseInsensitive &&
       charCodeTwoCaseInsensitive === charCodeThreeCaseInsensitive
-    ){
-        count -= malusForRepeatedSigns;
-        timesRepeated++
-    }
-    else if (!sonderzeichen.some((z) => pwd[i].includes(z))) {
-      if (charCodeOne + 1 === charCodeTwo && charCodeTwo + 1 === charCodeThree){
-          count -= malusForConsecutiveIdenticalSigns;
-        timesRepeated++
-
-      }
-      else if (
+    ) {
+      count -= malusForRepeatedSigns;
+      timesRepeated++;
+    } else if (!sonderzeichen.some((z) => pwd[i].includes(z))) {
+      if (
+        charCodeOne + 1 === charCodeTwo &&
+        charCodeTwo + 1 === charCodeThree
+      ) {
+        count -= malusForConsecutiveIdenticalSigns;
+        timesRepeated++;
+      } else if (
         charCodeOneCaseInsensitive + 1 === charCodeTwoCaseInsensitive &&
         charCodeTwoCaseInsensitive + 1 === charCodeThreeCaseInsensitive
-      ){
-          count -= malusForConsecutiveSigns;
-        timesRepeated++
-
+      ) {
+        count -= malusForConsecutiveSigns;
+        timesRepeated++;
       }
     }
+
+
   }
 
+  count -= Math.round((repeatMalus * timesRepeated) +(malusForMissingSigns*missingSigns))
+  console.log(pwd, pwd.length, count, timesRepeated);
 
-  count -= (repeatMalus* timesRepeated)
+  count = count < 0 ? 0 : count
+
 
 
   if (count <= weak) {
@@ -78,8 +95,7 @@ export function passwordStrength(pwd) {
     result = "extremely strong";
   }
 
-  console.log(pwd, pwd.length, count,timesRepeated);
-  document.getElementById("strengthResult").textContent = `Result: ${result}`;
+  document.getElementById("strengthResult").textContent = `Result: ${result} (${count.toFixed()})`;
 }
 const sonderzeichen = [
   "!",
