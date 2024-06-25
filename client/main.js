@@ -1,7 +1,7 @@
 import {passwordConverter} from './scripts/passwordConverter.js'
 import {generateUser} from './scripts/userGenerator.js'
 import { pictureToString } from './scripts/picturePwd.js';
-import { passwordEncoder } from './scripts/encoder.js';
+import { passwordEncoder, generateEncodingKey } from './scripts/encoder.js';
 import { contentArray1, contentArray2 } from './scripts/generator.data.js';
 
 
@@ -19,17 +19,17 @@ startGen.addEventListener('click', function() {
   let adjective1 = document.getElementById('adjective1').value;
   if (adjective1 === 'random'){
     adjective1 = contentArray1[generateEncodingKey(contentArray1)]
-    return adjective1;
+    
   }
   let adjective2 = document.getElementById('adjective2').value;
   if (adjective2 === 'random'){
     adjective2 = contentArray1[generateEncodingKey(contentArray1)]
-    return adjective2;
+    
   }
   let selectedNoun = document.getElementById('noun').value;
   if (selectedNoun === 'random'){
     selectedNoun = contentArray2[generateEncodingKey(contentArray2)]
-    return selectedNoun;
+    
   }
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
   document.getElementById('newUser').innerText = `Username: ${userOutput}`
@@ -52,11 +52,6 @@ document.getElementById('adjective1').addEventListener('change', (e) => {
   console.log('#sdgsgd')
 })
 
-
-startRndGen.addEventListener('click', function() {
-  const userOutput = generateRndUser();
-  document.getElementById('newUser').innerText = `Username: ${userOutput}`
-});
 
 convertButton.addEventListener('click', function() {
   const selectedConverter = document.getElementById('converterSelect').value;
