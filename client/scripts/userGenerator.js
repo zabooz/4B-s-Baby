@@ -4,6 +4,7 @@ import { generateEncodingKey } from './encoder.js';
 export function generateUser(adjective1, adjective2, selectedNoun) {
     
     let newUser = "";
+    let randomAdjective1, randomAdjective2, randomNoun;
     if (adjective1 === 'random'){
         adjective1 = contentArray1[generateEncodingKey(contentArray1)]
     }
