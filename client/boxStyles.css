@@ -24,6 +24,9 @@
 .label label:hover{
     cursor: pointer;
 }
+#uploadLabel{
+    color: white
+}
 table{
     border: 1px solid #ffffff;
 }
@@ -75,6 +78,8 @@ td{
 }
 .flexbox-item2{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     gap: 2rem;
 }
 input,
@@ -87,13 +92,14 @@ select{
 @media(max-width:800px){
     .appBox {
         width: 100%;
-        color: green;
+        
     }
 }
 @media(max-width:500px){
     .bruteInput,
     .wizardInput,
-    .wizardLength{
+    .wizardLength,
+    .flexbox-item2{
         flex-direction: column;
     }
     .wizardLength{

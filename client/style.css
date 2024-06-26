@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family:Arial, Helvetica, sans-serif;
+    color:#2e7d84
 }
 body{
     display: flex;
@@ -110,7 +111,8 @@ main{
 #startBtn,
 #startGen,
 #pictureConvert,
-#stopBtn{
+#stopBtn
+{
     background-color: #40aeb8;
     color: #fff;
     border: none;
@@ -122,6 +124,7 @@ main{
     width: 7rem;
 
 }
+
 #convertButton:hover,
 #startBtn:hover,
 #startGen:hover,
