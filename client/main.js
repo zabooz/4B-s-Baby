@@ -83,7 +83,6 @@ stopBtn.addEventListener('click',(e) => {
 
   pwd.value = "";
   
-  console.log(urlPara)
   let result;
 
   fetch(urlPara)
@@ -112,8 +111,9 @@ function updateAttempts(result){
 
     const dataArr = result
     const stats = document.getElementById('statsBody')
-    const tr = document.createElement('tr')
-    tr.className='statsResult'
+    const tr = document.getElementById('statOutput')
+
+    tr.innerHTML =''
     dataArr.forEach(item => {
 
       const td = document.createElement('td')
@@ -121,7 +121,6 @@ function updateAttempts(result){
 
       tr.appendChild(td)
     })
-
     stats.append(tr)
 
 }
