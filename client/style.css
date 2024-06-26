@@ -12,6 +12,10 @@ body{
     background-color: rgb(5, 5, 5);
     color:white;
 }
+input,
+select{
+    color: black;
+}
 .allDiv{
     max-width: 1200px;
     display: flex;
