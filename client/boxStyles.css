@@ -6,6 +6,8 @@
     padding: 1rem;
     gap: 1rem;
     align-items: center;
+    background: rgb(0, 0,0,.5);
+  
 }
 
 .label{
