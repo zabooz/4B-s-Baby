@@ -156,6 +156,9 @@ main{
         justify-content: center;
         align-items: center;
     }
+    .wizardInput{
+        flex-direction: column;
+    }
 }
 
 
