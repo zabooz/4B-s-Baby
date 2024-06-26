@@ -56,7 +56,7 @@ td{
 }
 .wizardInput{
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 #wizardInput2{
     display: flex;
