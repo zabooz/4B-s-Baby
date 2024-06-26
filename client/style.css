@@ -13,7 +13,8 @@ body{
     color:white;
 }
 input,
-select{
+select,
+option{
     color: black;
 }
 .allDiv{
