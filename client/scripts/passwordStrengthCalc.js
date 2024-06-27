@@ -34,8 +34,7 @@ export function passwordStrength(pwd) {
        const response = await fetch (url)
        if(!response.ok) throw new Error('sldJGHsg', response.Error)
        if(response.ok) {
-        console.log(pwdSlice)
-        usedWords = 10
+        usedWords = 20
         
         break
        }
@@ -49,11 +48,6 @@ export function passwordStrength(pwd) {
     }
 
     }
-
-
-    
-
-
 
   if (sonderzeichen.some((z) => pwd.includes(z))) {
     count += pointsForDiffrentSigns;

@@ -112,11 +112,7 @@ main{
     justify-content: space-between;
     gap: 3rem;
 }
-#convertButton,
-#startBtn,
-#startGen,
-#pictureConvert,
-#stopBtn
+.startBtn
 {
     background-color: #40aeb8;
     color: #fff;
