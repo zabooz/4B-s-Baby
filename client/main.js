@@ -12,7 +12,7 @@ const stopBtn = document.getElementById('stopBtn');
 const userPwd = document.getElementById('userPwd');
 const picConBtn = document.getElementById('pictureConvert')
 const startGen = document.getElementById('startGen');
-const strengthCalc = document.getElementById('strengthInput')
+const strengthCalc = document.getElementById('testStartBtn')
 let requestId;
 
 startGen.addEventListener('click', function() {
@@ -23,7 +23,7 @@ startGen.addEventListener('click', function() {
   document.getElementById('newUser').innerText = `Username: ${userOutput}`
 });
 
-strengthCalc.addEventListener('input', () => {
+strengthCalc.addEventListener('click', () => {
 
   const value = strengthCalc.value
   passwordStrength(value)
