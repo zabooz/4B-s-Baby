@@ -1,18 +1,18 @@
 import {colors, shapes, textures, sizes, emotions, tastes, sounds, temperatures, speeds, qualities, weatherTypes, instruments, fruits, animals, fantasyCreatures, vegetables, rpgClasses, fantasyRaces, occupations, vehicles, food, tools, beverages, clothingItems, bodyParts, flowers, desserts, contentArray1, contentArray2, allAdjectives, allNouns} from './generator.data.js'
-import { generateEncodingKey } from './encoder.js';
+import { rndNumInLen } from './encoder.js';
 
 export function generateUser(adjective1, adjective2, selectedNoun) {
     
     let newUser = "";
     let randomAdjective1, randomAdjective2, randomNoun;
     if (adjective1 === 'random'){
-        adjective1 = contentArray1[generateEncodingKey(contentArray1)]
+        adjective1 = contentArray1[rndNumInLen(contentArray1)]
     }
     if (adjective2 === 'random'){
-        adjective2 = contentArray1[generateEncodingKey(contentArray1)]
+        adjective2 = contentArray1[rndNumInLen(contentArray1)]
     }
     if (selectedNoun === 'random'){
-        selectedNoun = contentArray2[generateEncodingKey(contentArray2)]
+        selectedNoun = contentArray2[rndNumInLen(contentArray2)]
     }
     function capitalizeFirstLetter(str) {
         // Check if the input is not empty
@@ -59,7 +59,7 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     function getUniqueRandomWord(array, ...existingWords) {
         let randomWord;
         do {
-            randomWord = array[generateEncodingKey(array)];
+            randomWord = array[rndNumInLen(array)];
         } while (existingWords.includes(randomWord));
         return randomWord;
     }
