@@ -7,12 +7,12 @@ import { passwordStrength } from './scripts/passwordStrengthCalc.js';
 
 
 const convertButton = document.getElementById('convertButton');
-const startBtn = document.getElementById('startBtn');
+const startBrute= document.getElementById('startBrute');
 const stopBtn = document.getElementById('stopBtn');
 const userPwd = document.getElementById('userPwd');
 const picConBtn = document.getElementById('pictureConvert')
 const startGen = document.getElementById('startGen');
-const strengthCalc = document.getElementById('testStartBtn')
+const strengthCalcBtn = document.getElementById('testStartBtn')
 let requestId;
 
 startGen.addEventListener('click', function() {
@@ -23,9 +23,9 @@ startGen.addEventListener('click', function() {
   document.getElementById('newUser').innerText = `Username: ${userOutput}`
 });
 
-strengthCalc.addEventListener('click', () => {
+strengthCalcBtn.addEventListener('click', () => {
 
-  const value = strengthCalc.value
+  const value = document.getElementById('strengthInput').value
   passwordStrength(value)
 
 
@@ -52,7 +52,7 @@ userPwd.addEventListener("keypress", function(event) {
     
     }
 });
-startBtn.addEventListener("click", () => {
+startBrute.addEventListener("click", () => {
   fetchData();
 });
 
