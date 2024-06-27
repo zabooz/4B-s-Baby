@@ -9,7 +9,7 @@ const characters = [
     ',', '.', '`', '~'
 ];
 
-export function generateEncodingKey (array) {
+export function rndNumInLen (array) {
     return Math.floor(Math.random() * array.length);
 }
 
@@ -18,7 +18,7 @@ export function passwordEncoder (userPwd) {
     // const passwordInput = document.getElementById('passwordInput');
 
     let encodedString = "";
-    const encodingKey = generateEncodingKey(characters);
+    const encodingKey = rndNumInLen(characters);
 
     for (let char of (userPwd)) {
         const charIndex = characters.indexOf(char);
