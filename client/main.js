@@ -4,8 +4,6 @@ import { pictureToString } from './scripts/picturePwd.js';
 import { passwordEncoder } from './scripts/encoder.js';
 import { passwordStrength } from './scripts/passwordStrengthCalc.js';
 
-window.addEventListener('resize',)
-
 const convertButton = document.getElementById('convertButton');
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');

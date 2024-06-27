@@ -37,12 +37,17 @@ th{
     border-right: 1px solid white;
     padding: .5rem;
 }
+#lastTh{
+    border-right: none;
+}
 td{
     width: 6rem;
     text-align: center;
     padding: .5rem;
     border-right: 1px solid white;
-
+}
+#statOutput :last-child{
+    border-right: none;
 }
 .bruteBtns{
     display: flex;

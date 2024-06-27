@@ -1,37 +1,75 @@
+
+
 export function passwordStrength(pwd) {
   let result;
-  let count = pwd.length * 2.5;
-
-  const pointsForDiffrentSigns = 5;
+  let count = pwd.length * 2;
+  const pointsForDiffrentSigns = 3;
   const malusForConsecutiveIdenticalSigns = 2;
   const malusForConsecutiveSigns = 1;
   const malusForRepeatedIdenticalSigns = 2;
   const malusForRepeatedSigns = 1;
-  const malusForMissingSigns = 4;
-  let missingSigns = 5;
+
+  let usedWords = 0
+
   const repeatMalus = 3;
   let timesRepeated = 0;
-
+  
   const weak = 20;
   const mediocre = 30;
   const strong = 40;
   const veryStrong = 50;
+  
+  
+
+  const checkIfWord = async (pwd) =>{
+
+
+    pwd = pwd.toLowerCase()
+
+    let startIndex = 0
+    for(let i= 0;i < pwd.length;i++){
+      const pwdSlice = pwd.slice(startIndex,i+3)
+      try{
+       const url= `https://api.dictionaryapi.dev/api/v2/entries/en/${pwdSlice}`
+       const response = await fetch (url)
+       if(!response.ok) throw new Error('sldJGHsg', response.Error)
+       if(response.ok) {
+        console.log(pwdSlice)
+        usedWords = 10
+        
+        break
+       }
+
+      }catch(error){
+        console.log(error.message)
+        
+      }
+
+      
+    }
+
+    }
+
+
+    
+
+
 
   if (sonderzeichen.some((z) => pwd.includes(z))) {
     count += pointsForDiffrentSigns;
-    missingSigns--;
+ 
   }
   if (kleinbuchstaben.some((z) => pwd.includes(z))) {
     count += pointsForDiffrentSigns;
-    missingSigns--;
+
   }
   if (grossbuchstaben.some((z) => pwd.includes(z))) {
     count += pointsForDiffrentSigns;
-    missingSigns--;
+ 
   }
   if (zahlen.some((z) => pwd.includes(z))) {
     count += pointsForDiffrentSigns;
-    missingSigns--;
+ 
   }
 
 
@@ -45,7 +83,7 @@ export function passwordStrength(pwd) {
     const charCodeTwoCaseInsensitive = pwd.toLowerCase().charCodeAt(i + 1);
     const charCodeThreeCaseInsensitive = pwd.toLowerCase().charCodeAt(i + 2);
 
-    test = pwd.toLowerCase().slice(i,i+3)
+
 
 
     if (charCodeOne === charCodeTwo && charCodeThree === charCodeTwo) {
@@ -75,27 +113,33 @@ export function passwordStrength(pwd) {
 
 
   }
+ 
+  checkIfWord(pwd).then(() => {
 
-  count -= Math.round((repeatMalus * timesRepeated) +(malusForMissingSigns*missingSigns))
-  console.log(pwd, pwd.length, count, timesRepeated);
+    count -= ((repeatMalus * timesRepeated)  + (usedWords))
+    console.log(pwd, pwd.length, count, timesRepeated,'Userwords: ',usedWords);
+  
+    count = count < 0 ? 0 : count
+  
+  
+  
+    if (count <= weak) {
+      result = "weak";
+    } else if (count < mediocre) {
+      result = "mediocre";
+    } else if (count < strong) {
+      result = "strong";
+    } else if (count < veryStrong) {
+      result = "very strong";
+    } else {
+      result = "extremely strong";
+    }
+  
+    document.getElementById("strengthResult").textContent = `Result: ${result} (${count.toFixed()})`;
 
-  count = count < 0 ? 0 : count
+  })
 
 
-
-  if (count <= weak) {
-    result = "weak";
-  } else if (count < mediocre) {
-    result = "mediocre";
-  } else if (count < strong) {
-    result = "strong";
-  } else if (count < veryStrong) {
-    result = "very strong";
-  } else {
-    result = "extremely strong";
-  }
-
-  document.getElementById("strengthResult").textContent = `Result: ${result} (${count.toFixed()})`;
 }
 const sonderzeichen = [
   "!",
