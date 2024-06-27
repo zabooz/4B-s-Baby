@@ -1,4 +1,4 @@
-import {colors, shapes, textures, sizes, emotions, tastes, sounds, temperatures, speeds, qualities, weatherTypes, instruments, fruits, animals, fantasyCreatures, vegetables, rpgClasses, fantasyRaces, occupations, vehicles, sports, tools, beverages, clothingItems, bodyParts, flowers, desserts, contentArray1, contentArray2} from './generator.data.js'
+import {colors, shapes, textures, sizes, emotions, tastes, sounds, temperatures, speeds, qualities, weatherTypes, instruments, fruits, animals, fantasyCreatures, vegetables, rpgClasses, fantasyRaces, occupations, vehicles, food, tools, beverages, clothingItems, bodyParts, flowers, desserts, contentArray1, contentArray2, allAdjectives, allNouns} from './generator.data.js'
 import { generateEncodingKey } from './encoder.js';
 
 export function generateUser(adjective1, adjective2, selectedNoun) {
@@ -13,6 +13,13 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     }
     if (selectedNoun === 'random'){
         selectedNoun = contentArray2[generateEncodingKey(contentArray2)]
+    }
+    function capitalizeFirstLetter(str) {
+        // Check if the input is not empty
+        if (str.length === 0) return '';
+    
+        // Capitalize the first letter and concatenate with the rest of the string
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
     
     const myArraysObj = {
@@ -36,13 +43,15 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
         fantasyRaces: fantasyRaces, 
         occupations: occupations, 
         vehicles: vehicles, 
-        sports: sports, 
+        food: food, 
         tools: tools, 
         beverages: beverages, 
         clothingItems: clothingItems, 
         bodyParts: bodyParts, 
         flowers: flowers, 
-        desserts: desserts
+        desserts: desserts,
+        allAdjectives: allAdjectives,
+        allNouns: allNouns
     };
     let selectedAdjectiveArray, selectedNounArray;
 
@@ -58,7 +67,7 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     // Determine which array to select based on adjective1
     if (myArraysObj.hasOwnProperty(adjective1)) {
         selectedAdjectiveArray = myArraysObj[adjective1];
-        randomAdjective1 = getUniqueRandomWord(selectedAdjectiveArray);
+        randomAdjective1 = capitalizeFirstLetter(getUniqueRandomWord(selectedAdjectiveArray));
     } else if(adjective1 === "") {
         randomAdjective1 = "";
     } else {
@@ -69,7 +78,7 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     // Determine which array to select based on adjective2
     if (myArraysObj.hasOwnProperty(adjective2)) {
         selectedAdjectiveArray = myArraysObj[adjective2];
-        randomAdjective2 = getUniqueRandomWord(selectedAdjectiveArray, randomAdjective1);
+        randomAdjective2 = capitalizeFirstLetter(getUniqueRandomWord(selectedAdjectiveArray, randomAdjective1));
     } else if(adjective2 === "") {
         randomAdjective2 = "";
     } else {
@@ -80,7 +89,7 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     // Determine which array to select based on noun
     if (myArraysObj.hasOwnProperty(selectedNoun)) {
         selectedNounArray = myArraysObj[selectedNoun];
-        randomNoun = getUniqueRandomWord(selectedNounArray, randomAdjective1, randomAdjective2);
+        randomNoun = capitalizeFirstLetter(getUniqueRandomWord(selectedNounArray, randomAdjective1, randomAdjective2));
     } else {
         console.error(`Array for noun "${selectedNoun}" not found.`);
         return;
