@@ -269,26 +269,28 @@ export const fruits = [
 
 
 export const animals = [
-    "Dog", "Cat", "Bird", "Fish", "Lion", 
-    "Tiger", "Elephant", "Monkey", "Giraffe", "Horse", 
-    "Bear", "Wolf", "Fox", "Rabbit", "Mouse", 
-    "Deer", "Kangaroo", "Zebra", "Penguin", "Dolphin", 
-    "Whale", "Shark", "Snake", "Crocodile", "Frog", 
-    "Turtle", "Eagle", "Owl", "Parrot", "Squirrel", 
-    "Bat", "Gorilla", "Panda", "Koala", "Polarbear", 
-    "Otter", "Seal", "Walrus", "Hippo", "Rhino", 
-    "Buffalo", "Cheetah", "Leopard", "Panther", "Jaguar", 
-    "Coyote", "Hedgehog", "Lynx", "Moose", "Raccoon", 
-    "Antelope", "Camel", "Llama", "Alpaca", "Dingo", 
-    "Emu", "Kookaburra", "Platypus", "Wombat", "Dromedary", 
-    "Bison", "Armadillo", "Chimpanzee", "Orangutan", "Sloth", 
-    "Meerkat", "Mongoose", "Hyena", "Porcupine", "Vulture", 
-    "Condor", "Ostrich", "Cassowary", "Tapir", "Boar", 
-    "Iguana", "Gecko", "Chameleon", "Toad", 
-    "Salamander", "Axolotl", "Cobra", "Kingfisher", "Stingray", 
-    "Bee", "Butterfly", "Ladybug", "Ant", "Crab", 
-    "Octopus", "Squid", "Starfish", "Jellyfish", "Cuttlefish"
+    'Cat', 'Dog', 'Fish', 'Bird', 'Horse',
+    'Sheep', 'Goat', 'Cow', 'Pig', 'Duck',
+    'Frog', 'Mouse', 'Rat', 'Snake', 'Lizard',
+    'Hawk', 'Eagle', 'Owl', 'Bat', 'Bee',
+    'Ant', 'Fly', 'Wasp', 'Moth', 'Crab',
+    'Shrimp', 'Prawn', 'Clam', 'Squid', 'Octopus',
+    'Whale', 'Shark', 'Dolphin', 'Seal', 'Otter',
+    'Wolf', 'Fox', 'Bear', 'Lion', 'Tiger',
+    'Cheetah', 'Puma', 'Leopard', 'Jaguar', 'Hyena',
+    'Zebra', 'Giraffe', 'Moose', 'Deer', 'Elk',
+    'Bison', 'Buffalo', 'Camel', 'Llama', 'Alpaca',
+    'Koala', 'Panda', 'Sloth', 'Ape', 'Gorilla',
+    'Monkey', 'Baboon', 'Orangutan', 'Lemur', 'Tarsier',
+    'Penguin', 'Parrot', 'Swan', 'Goose', 'Flamingo',
+    'Peacock', 'Robin', 'Sparrow', 'Finch', 'Pigeon',
+    'Crow', 'Raven', 'Magpie', 'Heron', 'Crane',
+    'Stork', 'Ibis', 'Duck', 'Turkey', 'Chicken',
+    'Rooster', 'Hedgehog', 'Beaver', 'Squirrel', 'Chipmunk',
+    'Rabbit', 'Hare', 'Mole', 'Weasel', 'Ferret',
+    'Otter', 'Raccoon'
 ];
+
 
 
 export const fantasyCreatures = [
@@ -354,12 +356,12 @@ export const fantasyRaces = [
     "Tabaxi", "Kenku", "Goliath", "Genasi", "Firbolg", 
     "Triton", "Yuan-ti", "Kobold", "Satyr", "Minotaur", 
     "Aarakocra", "Warforged", "Changeling", "Shifter", "Kalashtar", 
-    "Gith", "Tortle", "Grung", "Kuo-toa", "Bullywug", 
+    "Gith", "Tortle", "Grung", "Bullywug", 
     "Sahuagin", "Merfolk", "Vedalken", "Vampire", "Werewolf", 
     "Revenant", "Gargoyle", "Troll", "Giant", "Dryad", 
     "Naga", "Sprite", "Faun", "Gorgon", "Hag", 
     "Lycanthrope", "Undead", "Doppelganger", "Duergar", "Svirfneblin", 
-    "Githzerai", "Quaggoth", "Blink dog", "Banshee", 
+    "Githzerai", "Quaggoth", "Banshee", 
     "Specter", "Wight", "Ghost", "Mummy", "Sphinx", 
     "Cyclops", "Chimera", "Hydra", "Beholder", "Mind flayer", 
     "Otyugh", "Aboleth", "Behir", "Basilisk", 
@@ -382,7 +384,7 @@ export const occupations = [
     "Judge", "Lecturer", "Miner", "Optician", "Paralegal", 
     "Pharmacist", "Physicist", "Professor", "Researcher", "Salesperson", 
     "Social worker", "Surgeon", "Technician", "Therapist", "Translator", 
-    "Truck driver", "Zookeeper", "Acrobat", "Actuary", 
+    "Zookeeper", "Acrobat", "Actuary", 
     "Advisor", "Agent", "Ambassador", "Analyst", 
     "Animator", "Appraiser", "Arborist", "Astronomer", 
     "Attendant", "Author", "Biologist", "Broker", 
@@ -405,32 +407,28 @@ export const vehicles = [
     'Dunebuggy', 'Monstertruck', 'Snowmobile', 'Jetski', 'Motorboat',
     'Sidecar', 'Tandembike', 'Skateboard', 'Rollerblade', 'Jetpack',
     'Rocket', 'Moped', 'Lawnmower', 'Backhoe', 'Steamship',
-    'Zeppelin', 'Lift', 'Ski lift', 'Gyroscope', 'Escalator',
+    'Zeppelin', 'Lift', 'Gyroscope', 'Escalator',
     'Parachute', 'Sled', 'Tuktuk', 'Hangglider', 'Electricbike',
     'Carriage', 'Convertible', 'Camper', 'Glidplane', 'Litter',
     'Solarcar', 'Submarine', 'Snowplow'
 ]
 
 
-export const sports = [
-    'Football', 'Basketball', 'Soccer', 'Tennis', 'Baseball',
-    'Golf', 'Hockey', 'Volleyball', 'Rugby', 'Cricket',
-    'Boxing', 'Swimming', 'Wrestling', 'Athletics', 'Cycling',
-    'Gymnastics', 'Martialarts', 'Tabletennis', 'Badminton', 'Skiing',
-    'Snowboarding', 'Surfing', 'Rowing', 'Canoeing', 'Sailing',
-    'Track', 'Field', 'Archery', 'Fencing', 'Shooting',
-    'Triathlon', 'Weightlifting', 'Taekwondo', 'Karate', 'Judo',
-    'Handball', 'Polo', 'Pentathlon', 'Bobsleigh', 'Skeleton',
-    'Lacrosse', 'Ultimate', 'Squash', 'Curling', 'Waterpolo',
-    'Paddleboarding', 'Kiteboarding', 'Skydiving', 'Paragliding', 'Bungeejumping',
-    'Rockclimbing', 'Parkour', 'Rallying', 'Motocross', 'Formula',
-    'Drifting', 'Wingsuit', 'Waterskiing', 'Wakeboarding', 'Freerunning',
-    'Racquetball', 'Dodgeball', 'Juggling', 'Jujitsu', 'Muaythai',
-    'Aikido', 'Sumo', 'Kayaking', 'Rollerderby', 'Skateboarding',
-    'Bodyboarding', 'Windsurfing', 'Equestrian', 'Bullfighting', 'Rodeo',
-    'Dressage', 'Motorcycling', 'Sledging',
-    'Bouldering', 'Hanggliding', 'Ballooning'
-]
+export const food = [
+    'Ginger', 'Olive', 'Nuts', 'Almond', 'Pistachio',
+    'Walnut', 'Cashew', 'Hazelnut', 'Peanut', 'Pecan',
+    'Quinoa', 'Barley', 'Oats', 'Rice', 'Wheat',
+    'Bread', 'Bagel', 'Toast', 'Cheese', 'Butter',
+    'Yogurt', 'Milk', 'Cream', 'Sugar', 'Honey',
+    'Syrup', 'Jam', 'Jelly', 'Coffee', 'Tea',
+    'Juice', 'Water', 'Soda', 'Cola', 'Pizza', 'Pasta',
+    'Soup', 'Stew', 'Sauce', 'Dip', 'Chips',
+    'Taco', 'Burrito', 'Sandwich', 'Burger', 'Sushi',
+    'Steak', 'Egg', 'Bacon', 'Ham', 'Fish',
+    'Shrimp', 'Crab', 'Lobster', 'Salad', 'Fries',
+    'Noodles', 'Bun', 'Hotdog', 
+];
+
 
 
 export const tools = [
@@ -497,7 +495,7 @@ export const clothingItems = [
     "Headband", "Watch", "Cufflinks", "Brooch", "Choker", 
     "Bangle", "Earrings", "Necklace", "Ring", "Bracelet", 
     "Bandana", "Band", "Sash", "Sweats", "Cloak", 
-    "Cummerbund", "Garters", "Toga", "Beret", "Headscarf", 
+    "Garters", "Toga", "Beret", "Headscarf", 
     "Turban", "Fez", "Gaiters", "Spats"
 ];
 
@@ -544,7 +542,7 @@ export const flowers = [
     "Calendula", "Coreopsis", "Dianthus", "Echinacea", "Fuchsia",
     "Heliotrope", "Liatris", "Monarda", "Nigella", "Osteospermum",
     "Penstemon", "Portulaca", "Salvia", "Scabiosa", "Strelitzia",
-    "Torenia", "Tropaeolum", "Veronica", "Zephyranthes", "Balsam"
+    "Torenia", "Veronica", "Balsam"
 ];
 
 
@@ -558,7 +556,7 @@ export const desserts = [
     "Strudel", "Biscotti", "Gingersnap", "Madeleine",
     "Churro", "Zeppole", "Linzer", "Graham", "Scone",
     "Cobbler", "Rugelach", "Stollen", "Lebkuchen", "Clafoutis",
-    "Zabaglione", "Kugel", "Panettone",
+    "Kugel", "Panettone",
     "Panforte", "Tresleches", "Kheer", "Kulfi", "Gulabjamun",
     "Falooda", "Jalebi", "Rasgulla", "Ladoo", "Modak",
     "Mochi", "Dorayaki", "Taiyaki", "Dango", "Castella",
@@ -594,7 +592,7 @@ export const contentArray2 = [
     "fantasyRaces", 
     "occupations", 
     "vehicles", 
-    "sports", 
+    "food", 
     "tools", 
     "beverages", 
     "clothingItems", 
