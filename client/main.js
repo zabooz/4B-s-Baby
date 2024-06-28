@@ -13,6 +13,7 @@ const userPwd = document.getElementById('userPwd');
 const picConBtn = document.getElementById('pictureConvert')
 const startGen = document.getElementById('startGen');
 const strengthCalcBtn = document.getElementById('testStartBtn')
+const uploadFile = document.getElementById('uploadFile')
 let requestId;
 
 startGen.addEventListener('click', function() {
@@ -57,8 +58,15 @@ startBrute.addEventListener("click", () => {
 });
 
 picConBtn.addEventListener('click',pictureToString)
-      
-stopBtn.addEventListener('click',(e) => {
+
+uploadFile.addEventListener('change',() => {
+
+    const label = document.getElementById('uploadLabel')
+    label.textContent ='Picture Uploaded!'
+})
+
+
+stopBtn.addEventListener('click',() => {
   fetch(`http://localhost:3001/stopbruteforce?requestId=${requestId}`).then(response => console.log(response))
   
   
