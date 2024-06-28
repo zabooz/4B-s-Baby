@@ -4,7 +4,8 @@ export function pictureToString(){
     
     const input = document.getElementById('uploadFile')
     const file = input.files[0]
-
+    const label = document.getElementById('uploadLabel')
+    label.textContent ='Upload your picture'
 
     if(file){
         const reader = new FileReader()

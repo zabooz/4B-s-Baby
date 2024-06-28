@@ -8,12 +8,13 @@ import { generatePassword } from './scripts/passwordGenerator.js';
 
 
 const convertButton = document.getElementById('convertButton');
-const startBtn = document.getElementById('startBtn');
+const startBrute= document.getElementById('startBrute');
 const stopBtn = document.getElementById('stopBtn');
 const userPwd = document.getElementById('userPwd');
 const picConBtn = document.getElementById('pictureConvert')
 const startGen = document.getElementById('startGen');
-const strengthCalc = document.getElementById('strengthInput');
+const strengthCalcBtn = document.getElementById('testStartBtn')
+const uploadFile = document.getElementById('uploadFile');
 const startPwGen = document.getElementById('startPwGen');
 let requestId;
 
@@ -31,9 +32,9 @@ startGen.addEventListener('click', function() {
   document.getElementById('newUser').innerText = `Username: ${userOutput}`
 });
 
-strengthCalc.addEventListener('input', () => {
+strengthCalcBtn.addEventListener('click', () => {
 
-  const value = strengthCalc.value
+  const value = document.getElementById('strengthInput').value
   passwordStrength(value)
 
 
@@ -60,13 +61,20 @@ userPwd.addEventListener("keypress", function(event) {
     
     }
 });
-startBtn.addEventListener("click", () => {
+startBrute.addEventListener("click", () => {
   fetchData();
 });
 
 picConBtn.addEventListener('click',pictureToString)
-      
-stopBtn.addEventListener('click',(e) => {
+
+uploadFile.addEventListener('change',() => {
+
+    const label = document.getElementById('uploadLabel')
+    label.textContent ='Picture Uploaded!'
+})
+
+
+stopBtn.addEventListener('click',() => {
   fetch(`http://localhost:3001/stopbruteforce?requestId=${requestId}`).then(response => console.log(response))
   
   
