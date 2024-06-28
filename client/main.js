@@ -3,6 +3,7 @@ import { generateUser } from './scripts/userGenerator.js'
 import { pictureToString } from './scripts/picturePwd.js';
 import { passwordEncoder } from './scripts/encoder.js';
 import { passwordStrength } from './scripts/passwordStrengthCalc.js';
+import { generatePassword } from './scripts/passwordGenerator.js';
 
 
 
@@ -13,8 +14,15 @@ const userPwd = document.getElementById('userPwd');
 const picConBtn = document.getElementById('pictureConvert')
 const startGen = document.getElementById('startGen');
 const strengthCalcBtn = document.getElementById('testStartBtn')
-const uploadFile = document.getElementById('uploadFile')
+const uploadFile = document.getElementById('uploadFile');
+const startPwGen = document.getElementById('startPwGen');
 let requestId;
+
+startPwGen.addEventListener('click', function() {
+  let pwLength = document.getElementById('pwLength').value;
+  const generatedPassword = generatePassword(pwLength);
+  document.getElementById('generatedPassword').innerText = `Your password: ${generatedPassword}`
+});
 
 startGen.addEventListener('click', function() {
   let adjective1 = document.getElementById('adjective1').value;
