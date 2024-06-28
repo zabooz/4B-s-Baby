@@ -97,6 +97,10 @@ main{
     padding: .5rem;
     width: 4rem;
 }
+#startPwGenDiv select{
+    margin: 1rem;
+    width: 2.5rem;
+}
 
 #stopBtn:hover {
     background-color: #d3371f;
@@ -129,6 +133,7 @@ main{
 #convertButton:hover,
 #startBtn:hover,
 #startGen:hover,
+#startPwGen:hover,
 #pictureConvert:hover{
     background-color:#2e7d84;
     
@@ -139,6 +144,7 @@ main{
 #convertButton:active, 
 #startBtn:active, 
 #startGen:active,
+#startPwGen:active,
 #pictureConvert:active{
     background-color: #25646a;
     transition: 0.05s;
