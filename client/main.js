@@ -4,6 +4,7 @@ import { pictureToString } from './scripts/picturePwd.js';
 import { passwordEncoder } from './scripts/encoder.js';
 import { passwordStrength } from './scripts/passwordStrengthCalc.js';
 import { generatePassword } from './scripts/passwordGenerator.js';
+import { copyButton } from './scripts/copybutton.js';
 
 
 
@@ -20,6 +21,7 @@ const startPwGen = document.getElementById('startPwGen');
 
 const copyButtons = document.querySelectorAll('.copyButton')
 const copyText = document.querySelectorAll('.copyText')
+
 let requestId;
 
 
@@ -36,17 +38,27 @@ copyButtons.forEach((button,i) => {
 
 
 startPwGen.addEventListener('click', function() {
-  let pwLength = document.getElementById('pwLength').value;
+
+  const textId = 'generatedPassword'
+  const textElement = document.getElementById(textId)
+
+  const pwLength = document.getElementById('pwLength').value;
   const generatedPassword = generatePassword(pwLength);
-  document.getElementById('generatedPassword').innerText = `Your password: ${generatedPassword}`
+  textElement.innerText = `Your password: ${generatedPassword}`
+  textElement.append(copyButton(textId))
 });
 
-startGen.addEventListener('click', function() {
-  let adjective1 = document.getElementById('adjective1').value;
-  let adjective2 = document.getElementById('adjective2').value;
-  let selectedNoun = document.getElementById('noun').value;
+startGen.addEventListener('click', function(e) {
+  e.preventDefault()
+  const textId = 'newUser'
+  const textElement = document.getElementById(textId)
+
+  const adjective1 = document.getElementById('adjective1').value;
+  const adjective2 = document.getElementById('adjective2').value;
+  const selectedNoun = document.getElementById('noun').value;
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
-  document.getElementById('newUser').innerText = `Username: ${userOutput}`
+  textElement.innerText = `Username: ${userOutput}`
+  textElement.append(copyButton(textId))
 });
 
 strengthCalcBtn.addEventListener('click', () => {
@@ -57,10 +69,15 @@ strengthCalcBtn.addEventListener('click', () => {
 
 })
 convertButton.addEventListener('click', function() {
+
+  const textId = 'newPassword'
+  const textElement = document.getElementById(textId)
+
   const selectedConverter = document.getElementById('converterSelect').value;
   const passwordInput = document.getElementById('passwordInput');
   const newPassword = passwordConverter(passwordInput.value, selectedConverter);
-  document.getElementById('newPassword').innerText = `Your new Rune: ${newPassword}`
+  textElement.innerText = `Your new Rune: ${newPassword}`
+  textElement.append(copyButton(textId))
   passwordInput.value = "";
 });
 
@@ -82,10 +99,26 @@ startBrute.addEventListener("click", () => {
   fetchData();
 });
 
-picConBtn.addEventListener('click',pictureToString)
+picConBtn.addEventListener('click', async(e) => {
+  e.preventDefault()
+  const textId = "picResult"
+  const textElement = document.getElementById(textId)
+
+  
+  try{
+    const result  = await pictureToString()
+    textElement.innerText = `Your Password: ${result}`
+    textElement.append(copyButton(textId))
+    console.log(result)
+  }catch(error){
+    console.log(error)
+  }
+
+
+})
 
 uploadFile.addEventListener('change',() => {
-
+    
     const label = document.getElementById('uploadLabel')
     label.textContent ='Picture Uploaded!'
 })

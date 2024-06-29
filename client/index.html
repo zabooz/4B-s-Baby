@@ -124,11 +124,7 @@
                                     </div>
                                 </div>
                                 <button id="startGen" class="startBtn">Generate</button>
-                                <div><span id="newUser" class="copyText">Username: </span>
-                                    <button id="copyButton1" class="copyButton">
-                                        <img src="/img/copyToClipBoard.png" alt="Copy Icon">
-                                    </button>
-                                </div>
+                                <span id="newUser" class="copyText">Username: </span>
                         </div>
         
             </div>
@@ -148,24 +144,21 @@
                         </div>
                     </div>
                     <button id="convertButton" class="startBtn">Convert</button>
-                    <div><span id="newPassword" class="copyText">Your runeword: </span>
-                        <button id="copyButton2" class="copyButton">
-                            <img src="/img/copyToClipBoard.png" alt="Copy Icon">
-                        </button>
-                    </div>
-                </div>
+                    <span id="newPassword" class="copyText">Your runeword: </span>
+               </div>
             <div  id="pictureMagic" class="appBox" >
                 <h3>Picture Magic</h3>
                 <p>Upload a photo, and our app will convert it into a secure password.</p><p>This unique method transforms visual information into a strong, complex password, enhancing your online security with ease.</p>
                 <div class="pictureMagicDiv">
                     <div class="label"><label id="uploadLabel" for="uploadFile">Upload your Picture</label></div>
-                    <input type="file" value="value" id="uploadFile" style="display: none;" name="uploadFile">
-                    <button id="pictureConvert" class="startBtn">Convert</button>
+                    <form action="#">
+                        <input type="file" value="value" id="uploadFile" style="display: none;" name="uploadFile">
+                        <button id="pictureConvert" class="startBtn">Convert</button>
+
+                    </form>
                 </div>
-                <p id="picResult" class="copyText">Your Password: 
-                <button id="copyButton3" class="copyButton">
-                    <img src="/img/copyToClipBoard.png" alt="Copy Icon">
-                </button></p>
+                    <p id="picResult" class="copyText">Your Password:</p>
+
             </div>
         </div>
         <div class="mainBottom mainMiddle" style="margin-bottom: 3rem;">
@@ -200,9 +193,6 @@
                     <button id="startPwGen" class="startBtn">Generate</button>
                 </div>
                 <p id="generatedPassword" class="copyText">Your Password: </p>
-                <button id="copyButton4" class="copyButton">
-                    <img src="/img/copyToClipBoard.png" alt="Copy Icon">
-                </button>
             </div>
         </main>
         <footer>
