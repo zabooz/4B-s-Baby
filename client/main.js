@@ -19,24 +19,6 @@ const uploadFile = document.getElementById('uploadFile');
 const startPwGen = document.getElementById('startPwGen');
 
 
-const copyButtons = document.querySelectorAll('.copyButton')
-const copyText = document.querySelectorAll('.copyText')
-
-let requestId;
-
-
-copyButtons.forEach((button,i) => {
-  
-  button.addEventListener('click',()=> {
-    
-    const index = copyText[i].innerText.indexOf(':') + 2 
-    const text = copyText[i].innerText.slice(index)
-    navigator.clipboard.writeText(text)
-  })
-
-})
-
-
 startPwGen.addEventListener('click', function() {
 
   const textId = 'generatedPassword'
