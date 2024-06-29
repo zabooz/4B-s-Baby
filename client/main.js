@@ -17,10 +17,28 @@ const strengthCalcBtn = document.getElementById('testStartBtn')
 const uploadFile = document.getElementById('uploadFile');
 const startPwGen = document.getElementById('startPwGen');
 const copyButton1 = document.getElementById('copyButton1');
+const copyButton2 = document.getElementById('copyButton2');
+const copyButton3 = document.getElementById('copyButton3');
+const copyButton4 = document.getElementById('copyButton4');
 let requestId;
 
 copyButton1.addEventListener('click', function() {
   let copyText = document.getElementById('newUser').innerText.slice(10);
+  navigator.clipboard.writeText(copyText)
+});
+
+copyButton2.addEventListener('click', function() {
+  let copyText = document.getElementById('newPassword').innerText.slice(15);
+  navigator.clipboard.writeText(copyText)
+});
+
+copyButton3.addEventListener('click', function() {
+  let copyText = document.getElementById('picResult').innerText.slice(15);
+  navigator.clipboard.writeText(copyText)
+});
+
+copyButton4.addEventListener('click', function() {
+  let copyText = document.getElementById('generatedPassword').innerText.slice(15);
   navigator.clipboard.writeText(copyText)
 });
 
