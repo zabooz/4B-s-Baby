@@ -16,7 +16,13 @@ const startGen = document.getElementById('startGen');
 const strengthCalcBtn = document.getElementById('testStartBtn')
 const uploadFile = document.getElementById('uploadFile');
 const startPwGen = document.getElementById('startPwGen');
+const copyButton1 = document.getElementById('copyButton1');
 let requestId;
+
+copyButton1.addEventListener('click', function() {
+  let copyText = document.getElementById('newUser').innerText.slice(10);
+  navigator.clipboard.writeText(copyText)
+});
 
 startPwGen.addEventListener('click', function() {
   let pwLength = document.getElementById('pwLength').value;

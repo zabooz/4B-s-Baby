@@ -116,8 +116,7 @@ main{
     justify-content: space-between;
     gap: 3rem;
 }
-.startBtn
-{
+.startBtn {
     background-color: #40aeb8;
     color: #fff;
     border: none;
@@ -127,9 +126,21 @@ main{
     cursor: pointer;
     transition: background-color 0.3s transform 0.3s;
     width: 7rem;
-
 }
-
+#copyButton1 {
+    background-color: transparent;
+    border: hidden;
+    height: 1rem;
+    width: 1rem;
+}
+#copyButton1:active {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+}
+#copyButton1 img{
+    height: 1rem;
+    width: 1rem;
+}
 #convertButton:hover,
 #startBtn:hover,
 #startGen:hover,
