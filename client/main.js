@@ -16,31 +16,24 @@ const startGen = document.getElementById('startGen');
 const strengthCalcBtn = document.getElementById('testStartBtn')
 const uploadFile = document.getElementById('uploadFile');
 const startPwGen = document.getElementById('startPwGen');
-const copyButton1 = document.getElementById('copyButton1');
-const copyButton2 = document.getElementById('copyButton2');
-const copyButton3 = document.getElementById('copyButton3');
-const copyButton4 = document.getElementById('copyButton4');
+
+
+const copyButtons = document.querySelectorAll('.copyButton')
+const copyText = document.querySelectorAll('.copyText')
 let requestId;
 
-copyButton1.addEventListener('click', function() {
-  let copyText = document.getElementById('newUser').innerText.slice(10);
-  navigator.clipboard.writeText(copyText)
-});
 
-copyButton2.addEventListener('click', function() {
-  let copyText = document.getElementById('newPassword').innerText.slice(15);
-  navigator.clipboard.writeText(copyText)
-});
+copyButtons.forEach((button,i) => {
+  
+  button.addEventListener('click',()=> {
+    
+    const index = copyText[i].innerText.indexOf(':') + 2 
+    const text = copyText[i].innerText.slice(index)
+    navigator.clipboard.writeText(text)
+  })
 
-copyButton3.addEventListener('click', function() {
-  let copyText = document.getElementById('picResult').innerText.slice(15);
-  navigator.clipboard.writeText(copyText)
-});
+})
 
-copyButton4.addEventListener('click', function() {
-  let copyText = document.getElementById('generatedPassword').innerText.slice(15);
-  navigator.clipboard.writeText(copyText)
-});
 
 startPwGen.addEventListener('click', function() {
   let pwLength = document.getElementById('pwLength').value;
