@@ -34,7 +34,6 @@ startGen.addEventListener('click', function(e) {
   e.preventDefault()
   const textId = 'newUser'
   const textElement = document.getElementById(textId)
-
   const adjective1 = document.getElementById('adjective1').value;
   const adjective2 = document.getElementById('adjective2').value;
   const selectedNoun = document.getElementById('noun').value;
@@ -44,7 +43,6 @@ startGen.addEventListener('click', function(e) {
 });
 
 strengthCalcBtn.addEventListener('click', () => {
-
   const value = document.getElementById('strengthInput').value
   passwordStrength(value)
 
