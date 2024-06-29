@@ -5,6 +5,8 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     
     let newUser = "";
     let randomAdjective1, randomAdjective2, randomNoun;
+
+    //Randomize select.
     if (adjective1 === 'random'){
         adjective1 = contentArray1[rndNumInLen(contentArray1)]
     }
@@ -95,7 +97,14 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
         return;
     }
 
-    newUser = `${randomAdjective1}${randomAdjective2}${randomNoun}`;
+    let handOverUser = `${randomAdjective1}${randomAdjective2}${randomNoun}`;
+    
+    //Filter out dashes/spaces.
+    for (let i = 0; i < handOverUser.length; i++) {
+        if (handOverUser[i] !== "-" && handOverUser[i] !== " ") {
+            newUser += handOverUser[i];
+        }
+    }
     console.log(newUser);
     return newUser;
 }
