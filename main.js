@@ -8,6 +8,9 @@ import { copyButton } from './scripts/copybutton.js';
 
 
 
+
+
+
 const convertBtn = document.getElementById('convertBtn');
 const startBrute= document.getElementById('startBrute');
 const stopBrute = document.getElementById('stopBrute');
@@ -42,9 +45,26 @@ userGenBtn.addEventListener('click', function(e) {
   textElement.append(copyButton(textId))
 });
 
-CalcStrengthBtn.addEventListener('click', () => {
+CalcStrengthBtn.addEventListener('click', async () => {
   const value = document.getElementById('strengthInput').value
-  passwordStrength(value)
+  const calcSpinner = document.getElementById('calcSpinner')
+  calcSpinner.classList.add('lds-dual-ring')
+
+  try{
+
+  const {result,count} = await passwordStrength(value)
+
+  document.getElementById("strengthResult").textContent = `Result: ${result} (${count.toFixed()})`;
+    
+  console.log(result)
+  }catch(error){
+    console.log(error)
+  }finally{
+    calcSpinner.classList.remove('lds-dual-ring')
+  }
+
+
+  
 
 
 })
@@ -76,6 +96,19 @@ userPwdInput.addEventListener("keypress", function(event) {
     }
 });
 startBrute.addEventListener("click", () => {
+  const tds = document.querySelectorAll('#statOutput td')
+  
+  tds.forEach(td => {
+    td.innerHTML = ''
+    const spinner = document.createElement('div')
+
+    spinner.className='lds-dual-ring'
+
+    td.append(spinner)
+
+  })
+
+
   fetchData();
 });
 
@@ -115,6 +148,8 @@ stopBrute.addEventListener('click',() => {
   const fetchData = () => {
 
     requestId = Date.now()
+
+
 
 
     const bruteType = document.querySelector(
@@ -157,17 +192,16 @@ stopBrute.addEventListener('click',() => {
 function updateAttempts(result){
 
     const dataArr = result
-    const stats = document.getElementById('statsBody')
-    const tr = document.getElementById('statOutput')
 
-    tr.innerHTML =''
-    dataArr.forEach(item => {
+    const tds = document.querySelectorAll('#statOutput td')
 
-      const td = document.createElement('td')
-      td.textContent = item
 
-      tr.appendChild(td)
+    dataArr.forEach((item,index) => {
+
+      tds[index].textContent = item
+
+
     })
-    stats.append(tr)
+
 
 }

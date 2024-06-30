@@ -1,6 +1,6 @@
 
 
-export function passwordStrength(pwd) {
+export async function passwordStrength (pwd) {
   let result;
   let count = pwd.length * 2;
   const pointsForDiffrentSigns = 3;
@@ -108,7 +108,7 @@ export function passwordStrength(pwd) {
 
   }
  
-  checkIfWord(pwd).then(() => {
+  await checkIfWord(pwd)
 
     count -= ((repeatMalus * timesRepeated)  + (usedWords))
     console.log(pwd, pwd.length, count, timesRepeated,'Userwords: ',usedWords);
@@ -128,11 +128,12 @@ export function passwordStrength(pwd) {
     } else {
       result = "extremely strong";
     }
+    
+    // document.getElementById("strengthResult").textContent = `Result: ${result} (${count.toFixed()})`;
+    
+
   
-    document.getElementById("strengthResult").textContent = `Result: ${result} (${count.toFixed()})`;
-
-  })
-
+  return {result,count}
 
 }
 const sonderzeichen = [

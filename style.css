@@ -192,7 +192,10 @@ main{
         display: block;
     }
     .mainMiddle,
-    .mainTop{
+    .mainTop,
+    #startPwGenDiv,
+    .pictureMagicDiv,
+    .flexbox-item2{
         display: flex;
         flex-direction: column;
         justify-content: center;

@@ -53,10 +53,10 @@
                                         <th id="lastTh">Time</th>
                                     </tr>
                                     <tr id="statOutput">
-                                        <td>--</td>
-                                        <td>--</td>
-                                        <td>--</td>
-                                        <td>--</td>
+                                        <td><div class="bruteLoad"></div></td>
+                                        <td><div class="bruteLoad"></div></td>
+                                        <td><div class="bruteLoad"></div></td>
+                                        <td><div class="bruteLoad"></div></td>
                                     </tr>
                                 </tbody>
            
@@ -150,7 +150,9 @@
                 <h3>Picture Magic</h3>
                 <p>Upload a photo, and our app will convert it into a secure password.</p><p>This unique method transforms visual information into a strong, complex password, enhancing your online security with ease.</p>
                 <div class="pictureMagicDiv">
-                    <div class="label"><label id="uploadLabel" for="uploadFile">Upload your Picture</label></div>
+                    <div class="label">
+                        <label id="uploadLabel" for="uploadFile">Upload your Picture</label>
+                    </div>
                     <form action="#">
                         <input type="file" value="value" id="uploadFile" style="display: none;" name="uploadFile">
                         <button id="pictureConvertBtn" class="startBtn">Convert</button>
@@ -167,29 +169,30 @@
                 <p>dummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy text</p>
                 <p>dummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy text</p>
                 <div id="passwordCalc">
-                    <label for="pwdCalc">Test your password</label>
                     <input type="text" id="strengthInput" placeholder="Enter your password">
                 </div>
                 <Button id="CalcStrengthBtn" class="startBtn">Test it</Button>
-                <p id="strengthResult">Result: </p>
+                <p id="strengthResult">Result:<span><Div id="calcSpinner"></Div></span></p>
 
             </div>
             <div class="appBox">
                 <h3>Glyph Sorcery</h3>
                 <p>Generate your own safe password with a length of your choice. The password is a random combination of letters, numbers and symbols to ensure the safety of your account.</p>
                 <div id="startPwGenDiv">
-                    <label for="pwLength">Password length:</label>
-                    <select id="pwLength">
-                        <option value="4">4</option>
-                        <option value="6">6</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                        <option value="12">12</option>
-                        <option value="14">14</option>
-                        <option value="16">16</option>
-                        <option value="18">18</option>
-                        <option value="20">20</option>
-                    </select>
+                    <div>
+                        <label for="pwLength">Password length:</label>
+                        <select id="pwLength">
+                            <option value="4">4</option>
+                            <option value="6">6</option>
+                            <option value="8">8</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                            <option value="14">14</option>
+                            <option value="16">16</option>
+                            <option value="18">18</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
                     <button id="rdmPwdBtn" class="startBtn">Generate</button>
                 </div>
                 <p id="generatedPassword" class="copyText">Your Password: </p>
