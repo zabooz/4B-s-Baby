@@ -30,7 +30,7 @@
                         <p>Choose a mode to test your password against brute force attacks. The Simple Brute Force mode tests all possible character combinations, the Dictionary Attack mode uses common passwords and phrases, and the Hybrid Attack mode combines dictionary words with variations like numbers and symbols. </p>
                         <p>Ensure your password is strong and unique for optimal security!<p>
                         <div class="bruteInput">
-                            <input type="text" id="userPwd" placeholder="Enter your Password">
+                            <input type="text" id="userPwdInput" placeholder="Enter your Password">
                             <div id="chooseBruteForce">
                                     <select id="bruteMode">
                                         <option value="simple">Mode Simple</option>
@@ -42,7 +42,7 @@
                         </div>
                             <div class="bruteBtns">
                                 <button id="startBrute" class="startBtn">Start</button>
-                                <button id="stopBtn" class="startBtn">Stop</button>
+                                <button id="stopBrute" class="startBtn">Stop</button>
                             </div>
                             <table id="stats" >
                                 <tbody id="statsBody">
@@ -123,7 +123,7 @@
                                     </select>
                                     </div>
                                 </div>
-                                <button id="startGen" class="startBtn">Generate</button>
+                                <button id="userGeneratorBtn" class="startBtn">Generate</button>
                                 <span id="newUser" class="copyText">Username: </span>
                         </div>
         
@@ -143,7 +143,7 @@
                             </select>
                         </div>
                     </div>
-                    <button id="convertButton" class="startBtn">Convert</button>
+                    <button id="convertBtn" class="startBtn">Convert</button>
                     <span id="newPassword" class="copyText">Your runeword: </span>
                </div>
             <div  id="pictureMagic" class="appBox" >
@@ -153,11 +153,11 @@
                     <div class="label"><label id="uploadLabel" for="uploadFile">Upload your Picture</label></div>
                     <form action="#">
                         <input type="file" value="value" id="uploadFile" style="display: none;" name="uploadFile">
-                        <button id="pictureConvert" class="startBtn">Convert</button>
+                        <button id="pictureConvertBtn" class="startBtn">Convert</button>
 
                     </form>
                 </div>
-                    <p id="picResult" class="copyText">Your Password:</p>
+                    <p id="picResult" class="copyText">Your Password: </p>
 
             </div>
         </div>
@@ -170,8 +170,8 @@
                     <label for="pwdCalc">Test your password</label>
                     <input type="text" id="strengthInput" placeholder="Enter your password">
                 </div>
-                <Button id="testStartBtn" class="startBtn">Test it</Button>
-                <p id="strengthResult"> Result:</p>
+                <Button id="CalcStrengthBtn" class="startBtn">Test it</Button>
+                <p id="strengthResult">Result: </p>
 
             </div>
             <div class="appBox">
@@ -190,7 +190,7 @@
                         <option value="18">18</option>
                         <option value="20">20</option>
                     </select>
-                    <button id="startPwGen" class="startBtn">Generate</button>
+                    <button id="rdmPwdBtn" class="startBtn">Generate</button>
                 </div>
                 <p id="generatedPassword" class="copyText">Your Password: </p>
             </div>

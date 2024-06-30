@@ -9,9 +9,9 @@ export const copyButton = (textId) => {
     button.append(img)
 
     const textElement = document.getElementById(textId)
-    const index = textElement.innerText.indexOf(':') + 2
+    const index = textElement.innerText.lastIndexOf(' ') 
     const text = textElement.innerText.slice(index)
-
+    console.log(index)
     button.addEventListener('click',() => {
         navigator.clipboard.writeText(text)
     })

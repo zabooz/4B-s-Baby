@@ -2,9 +2,9 @@ import { config } from "dotenv";
 import express from "express";
 import axios from "axios";
 import cors from "cors";
-import { bruteForceSimple } from "../client/scripts/bruteSimple.js";
-import { bruteForceLibrary } from "../client/scripts/bruteLibrary.js";
-import { passwordDecoder } from "../client/scripts/encoder.js";
+import { bruteForceSimple } from "../scripts/bruteSimple.js";
+import { bruteForceLibrary } from "../scripts/bruteLibrary.js";
+import { passwordDecoder } from "../scripts/encoder.js";
 
 
 

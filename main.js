@@ -8,18 +8,18 @@ import { copyButton } from './scripts/copybutton.js';
 
 
 
-const convertButton = document.getElementById('convertButton');
+const convertBtn = document.getElementById('convertBtn');
 const startBrute= document.getElementById('startBrute');
-const stopBtn = document.getElementById('stopBtn');
-const userPwd = document.getElementById('userPwd');
-const picConBtn = document.getElementById('pictureConvert')
-const startGen = document.getElementById('startGen');
-const strengthCalcBtn = document.getElementById('testStartBtn')
+const stopBrute = document.getElementById('stopBrute');
+const userPwdInput = document.getElementById('userPwdInput');
+const picConBtn = document.getElementById('pictureConvertBtn')
+const userGenBtn = document.getElementById('userGeneratorBtn');
+const CalcStrengthBtn = document.getElementById('CalcStrengthBtn')
 const uploadFile = document.getElementById('uploadFile');
-const startPwGen = document.getElementById('startPwGen');
+const rdmPwdBtn = document.getElementById('rdmPwdBtn');
 
 
-startPwGen.addEventListener('click', function() {
+rdmPwdBtn.addEventListener('click', function() {
 
   const textId = 'generatedPassword'
   const textElement = document.getElementById(textId)
@@ -30,7 +30,7 @@ startPwGen.addEventListener('click', function() {
   textElement.append(copyButton(textId))
 });
 
-startGen.addEventListener('click', function(e) {
+userGenBtn.addEventListener('click', function(e) {
   e.preventDefault()
   const textId = 'newUser'
   const textElement = document.getElementById(textId)
@@ -42,13 +42,13 @@ startGen.addEventListener('click', function(e) {
   textElement.append(copyButton(textId))
 });
 
-strengthCalcBtn.addEventListener('click', () => {
+CalcStrengthBtn.addEventListener('click', () => {
   const value = document.getElementById('strengthInput').value
   passwordStrength(value)
 
 
 })
-convertButton.addEventListener('click', function() {
+convertBtn.addEventListener('click', function() {
 
   const textId = 'newPassword'
   const textElement = document.getElementById(textId)
@@ -64,11 +64,11 @@ convertButton.addEventListener('click', function() {
 passwordInput.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
       event.preventDefault(); 
-      convertButton.click(); 
+      convertBtn.click(); 
   }
 });
 
-userPwd.addEventListener("keypress", function(event) {
+userPwdInput.addEventListener("keypress", function(event) {
   if (event.key === "Enter") {
     event.preventDefault(); 
     fetchData();
@@ -105,7 +105,7 @@ uploadFile.addEventListener('change',() => {
 
  let requestId
 
-stopBtn.addEventListener('click',() => {
+stopBrute.addEventListener('click',() => {
   fetch(`http://localhost:3001/stopbruteforce?requestId=${requestId}`).then(response => console.log(response))
   
   
@@ -121,7 +121,7 @@ stopBtn.addEventListener('click',() => {
       '#bruteMode'
       ).value;
       const url = "http://localhost:3001/";
-      const pwd = document.getElementById("userPwd");
+      const pwd = document.getElementById("userPwdInput");
       const [encodedPwd, key] = passwordEncoder(pwd.value);
       const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
         encodedPwd
