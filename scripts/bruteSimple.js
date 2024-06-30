@@ -1,58 +1,57 @@
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-import fs from 'fs'
-import path from 'path'
-
- export async function bruteForceSimple(targetPassword, charset, maxLength,shouldContinue) {
+export function bruteForceSimple(targetPassword) {
+  const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:",.<>?/`~';
+  const maxLength = 16;
   let count = 0;
   let found = false;
-  const  mode = 'Simple'
-  const startTime = Date.now()
+  const mode = 'Simple';
+  const startTime = Date.now();
+  let abort = false;
 
-  console.log('brute force started')
+  console.log('brute force started');
 
-  
-  async function generate(prefix, length) {
-
-    if (found || !shouldContinue()) return;
-   
-    count++;
+  function generate(prefix, length, resolve) {
+    if (found || abort) return resolve();
 
     if (length === 0) {
-
+      count++;
       if (prefix === targetPassword) {
         console.log(`Password found: ${prefix}`);
         found = true;
-        }
-        
-      return;
+        return resolve();
+      }
+      return resolve();
     }
 
+    (function iterateChars(index) {
+      if (index === charset.length) {
+        return resolve();
+      }
+      if (found || abort) {
+        return resolve();
+      }
+      const char = charset[index];
+      setImmediate(() => {
+        generate(prefix + char, length - 1, () => {
+          iterateChars(index + 1);
+        });
+      });
+    })(0);
+  }
 
-    for (let char of charset) {
-      await generate(prefix + char, length - 1);
+  async function run() {
+    for (let length = 1; length <= maxLength && !found; length++) {
+      await new Promise((resolve) => generate("", length, resolve));
+      if (found || abort){
+        const time = (Date.now() - startTime) / 1000 + ' sec';
+        console.log(targetPassword, count, mode, time);
+        return [targetPassword, count, mode, time];
+      }
 
-      
-      if (found || !shouldContinue){
-        console.log('bruteForce stopped')
-        return;
-      } 
     }
-
-
-    await sleep(1)
   }
 
-  for (let length = 1; length <= maxLength && !found; length++) {
-    await generate("", length);
-  }
-
-  if (found || !shouldContinue()) {
-
-    const time = (Date.now() -startTime)/1000 + ' sec'
-
-    console.log(targetPassword,count,mode,time)
-    return [targetPassword,count,mode,time];
-  } else {
-    return "Password not found within the given length constraints.";
-  }
+  return {
+    promise: run(),
+    abort: () => { abort = true; }
+  };
 }

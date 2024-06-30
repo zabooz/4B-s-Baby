@@ -5,9 +5,7 @@ import cors from "cors";
 import { bruteForceSimple } from "../scripts/bruteSimple.js";
 import { bruteForceLibrary } from "../scripts/bruteLibrary.js";
 import { passwordDecoder } from "../scripts/encoder.js";
-
-
-
+import { spawn } from "child_process";
 
 config();
 
@@ -19,7 +17,6 @@ app.use(cors());
 
 let passwordList;
 
-let requests = {};
 async function loadPasswordList() {
   try {
     const response = await axios.get(dropboxFileUrl, {
@@ -35,41 +32,41 @@ async function loadPasswordList() {
 
 loadPasswordList();
 
+
 app.get("/", (req, res) => {
   res.send("hello world");
 });
+
+
+let currentProcess = null
 
 app.get("/bruteForceSimple", async (req, res) => {
   const key = req.query.key;
   const password = req.query.pwd || "abc";
   const decodedPwd = passwordDecoder(password, key);
-  const maxLength = 16;
-  const charset =
-    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:",.<>?/`~';
-  console.log(password, decodedPwd);
-  const requestId = req.query.requestId;
-
-  requests[requestId] = true;
-
-  try {
-    const result = await bruteForceSimple(
-      decodedPwd,
-      charset,
-      maxLength,
-      () => requests[requestId]
-    );
-    if(requests[requestId] === false) result[3] = 'stopped'
-    res.send(result);
-  } catch (error) {
-    console.log(error);
+  if (currentProcess) {
+    return res.status(400).send('Ein Prozess läuft bereits.');
   }
+
+  currentProcess = bruteForceSimple(decodedPwd)
+
+  currentProcess.promise.then(result => {
+    res.send(result)
+    currentProcess = null
+  }).catch(error => {
+    console.error(error)
+    res.status(500).send('error occured during brute force process')
+    currentProcess = null
+  })
+
+
 });
 
 app.get("/bruteForceLibrary", async (req, res) => {
   const key = req.query.key;
   const password = req.query.pwd || "abc";
-  const decodedPwd = passwordDecoder(password,key);
-  console.log("PWD:",password,"decoded:",decodedPwd)
+  const decodedPwd = passwordDecoder(password, key);
+  console.log("PWD:", password, "decoded:", decodedPwd);
   try {
     const result = await bruteForceLibrary(decodedPwd, passwordList);
     res.send(result);
@@ -88,11 +85,15 @@ app.get("/bruteForceHybrid", async (req, res) => {
   res.send("Not there yet");
 });
 
-app.get("/stopbruteforce", (req, res) => {
-  const requestId = req.query.requestId;
-  requests[requestId] = false;
-});
-
+app.get("/stopBruteForce", (req,res) => {
+    if(currentProcess){
+      currentProcess.abort()
+      currentProcess = null
+      res.send('process stopped')
+    }else{
+      res.status(400).send('no process running')
+    }
+})
 // Start the server and log the URL to the console
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
