@@ -103,6 +103,7 @@ uploadFile.addEventListener('change',() => {
     label.textContent ='Picture Uploaded!'
 })
 
+ let requestId
 
 stopBtn.addEventListener('click',() => {
   fetch(`http://localhost:3001/stopbruteforce?requestId=${requestId}`).then(response => console.log(response))
