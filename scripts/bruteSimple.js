@@ -1,13 +1,14 @@
 export function bruteForceSimple(targetPassword) {
-  const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:",.<>?/`~';
+  const charset =
+    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:",.<>?/`~';
   const maxLength = 16;
   let count = 0;
   let found = false;
-  const mode = 'Simple';
+  const mode = "Simple";
   const startTime = Date.now();
   let abort = false;
 
-  console.log('brute force started');
+  console.log("brute force started");
 
   function generate(prefix, length, resolve) {
     if (found || abort) return resolve();
@@ -41,17 +42,17 @@ export function bruteForceSimple(targetPassword) {
   async function run() {
     for (let length = 1; length <= maxLength && !found; length++) {
       await new Promise((resolve) => generate("", length, resolve));
-      if (found || abort){
-        const time = (Date.now() - startTime) / 1000 + ' sec';
-        console.log(targetPassword, count, mode, time);
+      if (found || abort) {
+        const time = (Date.now() - startTime) / 1000 + " sec";
         return [targetPassword, count, mode, time];
       }
-
     }
   }
 
   return {
     promise: run(),
-    abort: () => { abort = true; }
+    abort: () => {
+      abort = true;
+    },
   };
 }

@@ -79,6 +79,10 @@ td{
 #statOutput :last-child{
     border-right: none;
 }
+#statOutput{
+    height: 4rem;
+}
+
 .bruteBtns{
     display: flex;
     gap: 2rem;

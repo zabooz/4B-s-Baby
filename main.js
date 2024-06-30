@@ -6,6 +6,8 @@ import { passwordStrength } from "./scripts/passwordStrengthCalc.js";
 import { generatePassword } from "./scripts/passwordGenerator.js";
 import { copyButton } from "./scripts/copybutton.js";
 
+
+
 const convertBtn = document.getElementById("convertBtn");
 const startBrute = document.getElementById("startBrute");
 const stopBrute = document.getElementById("stopBrute");
