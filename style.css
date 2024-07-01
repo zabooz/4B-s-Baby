@@ -2,7 +2,9 @@
     --primaryColor:#2e7d84;
     --secondaryColor: white;
     --thirdColor:#ff1493;
+    --forthColor:rgb(65, 175, 185)
 }
+
 *{
     box-sizing: border-box;
     padding: 0;
@@ -10,8 +12,6 @@
     font-family:Arial, Helvetica, sans-serif;
     color: var(--primaryColor)
 }
-
-
 body{
     display: flex;
     flex-direction: column;
@@ -66,13 +66,27 @@ main{
     box-sizing: border-box;
     margin-bottom: 3rem;
 }
+.highlight{
+    font-style: italic;
+    font-weight: bold;
+    margin: 0 .3rem;
+    
+}
 .headings{
     width: 80%;
     background-color:rgb(0, 0,0,.5);
 }
+.headings p{
+    margin-left:  0.5rem;
+    line-height: 1.2;
+}
 .headings h4{
     color: var(--secondaryColor);
     margin-bottom: 1rem;
+}
+.headings h3{
+    margin: 2rem 0.5rem;
+    font-size: 1.4rem;
 }
 .headings p{
     margin-bottom: 1rem;
@@ -136,8 +150,8 @@ main{
 .mainTop{
     display: flex;
     width: 80%;
+    justify-content: space-between;
     gap: 3rem;
-    
 }
 .startBtn {
     background-color: rgb(65, 175, 185);
