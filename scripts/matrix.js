@@ -24,10 +24,11 @@ const draw = () => {
   ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#40aeb8";
   ctx.font = fontSize + "px monospace";
-
+  
   for (let i = 0; i < rainDrops.length; i++) {
+    ctx.fillStyle = i % 3 !== 0 ? "#40aeb8" : '#ff1493'
+   
     const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
     ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
 
