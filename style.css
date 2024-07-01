@@ -131,7 +131,7 @@ main{
     gap: 3rem;
 }
 .startBtn {
-    background-color: #40aeb8;
+    background-color: rgb(65, 175, 185);
     color: #fff;
     border: none;
     border-radius: 8px;
