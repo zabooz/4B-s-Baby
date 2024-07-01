@@ -1,16 +1,20 @@
+:root{
+    --primaryColor:#2e7d84;
+    --secondaryColor: white
+}
+
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family:Arial, Helvetica, sans-serif;
-    color:#2e7d84
+    color: var(--primaryColor)
 }
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(5, 5, 5);
-    color:white;
 }
 input,
 select,
@@ -64,14 +68,15 @@ main{
     width: 80%;
 }
 .headings h4{
-    color: white;
+    color: var(--secondaryColor);
     margin-bottom: 1rem;
 }
 .headings p{
     margin-bottom: 1rem;
 }
-.headings h3{
-    color: white
+.headings h2{
+    color: var(--secondaryColor);
+    margin-bottom: 1rem;
 }
 #headerText{
     overflow: hidden;
@@ -86,7 +91,7 @@ main{
 }
 #headerText h1{
     margin: 1rem;
-    color:rgba(255, 255, 255, 0.863);
+    color: var(--secondaryColor);
     
 }
 #headerText p::first-letter {
@@ -95,6 +100,7 @@ main{
     float: left;
     line-height: 1;
     margin-right: 0.1em; 
+    color: var(--secondaryColor)
 
 }
 .input{
@@ -132,7 +138,7 @@ main{
 }
 .startBtn {
     background-color: rgb(65, 175, 185);
-    color: #fff;
+    color: var(--secondaryColor);
     border: none;
     border-radius: 8px;
     padding: 10px 15px;
@@ -158,7 +164,7 @@ main{
     width: 1rem;
 }
 .startBtn:hover{
-    background-color:#2e7d84;
+    background-color: var(--primaryColor)
     
 }
 #stopBrute{
@@ -173,6 +179,166 @@ main{
     padding-bottom: 50px;
 
 }
+
+.appBox{
+    box-shadow: 0px 0px 10px 1px #40aeb8;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 1rem;
+    gap: 1rem;
+    align-items: center;
+    background: rgb(0, 0,0,.5);
+  
+}
+h3{
+    color:rgb(217, 217, 217)
+}
+.label{
+    background-color:#40aeb8;
+    padding: .2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    padding: .5rem;
+}
+.label:hover{
+    cursor: pointer;
+}
+.label label:hover{
+    cursor: pointer;
+}
+#uploadLabel{
+    color: var(--secondaryColor)
+}
+table{
+    border: 1px solid #ffffff;
+}
+th{
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    padding: .5rem;
+}
+#lastTh{
+    border-right: none;
+}
+.loading{
+    border-width: .2rem;
+}
+td{
+    width: 6rem;
+    text-align: center;
+    padding: .5rem;
+    border-right: 1px solid white;
+}
+#statOutput :last-child{
+    border-right: none;
+}
+#statOutput{
+    height: 2.5rem;
+}
+
+.lds-dual-ring,
+.lds-dual-ring:after {
+  box-sizing: border-box;
+}
+.lds-dual-ring {
+  display: inline-block;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 6.4px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.bruteBtns{
+    display: flex;
+    gap: 2rem;
+    justify-content: left;
+    align-items: center;
+}
+.bruteInput{
+    display: flex;
+    gap: 2rem;
+}
+.wizardInput{
+    display: flex;
+    gap: 1rem;
+}
+#wizardInput2{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.wizardLength{
+    display: flex;
+    gap: 4.5rem;
+    align-items: center;
+}
+#converterSelector,
+.pictureMagicDiv{
+    display: flex;
+    gap: 1rem;
+}
+.flexbox-item1{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.flexbox-item2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+input,
+select{
+    width: 10rem;
+    height: 2rem;
+}
+
+
+@media(max-width:800px){
+    .appBox {
+        width: 100%;
+        
+    }
+}
+@media(max-width:500px){
+    .bruteInput,
+    .wizardInput,
+    .wizardLength,
+    .flexbox-item2{
+        flex-direction: column;
+    }
+    .wizardLength{
+        gap: 1rem;
+    }
+    .flexbox-item2{
+        align-items: center;
+    }
+    .appBox{
+        width: 80%;
+    }
+}
+
+
 
 @media(max-width:1030px){
     .flexbox-item2{

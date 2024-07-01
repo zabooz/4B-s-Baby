@@ -4,7 +4,7 @@ export const copyButton = (textId) => {
     button.className = 'copyButton'
     
     const img = document.createElement('img')
-    img.src = "/img/copyToClipBoard3.png"
+    img.src = "/img/copyToClipBoard2.png"
 
     button.append(img)
 
