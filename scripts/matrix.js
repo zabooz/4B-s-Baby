@@ -27,7 +27,9 @@ const draw = () => {
   ctx.font = fontSize + "px monospace";
   
   for (let i = 0; i < rainDrops.length; i++) {
-    ctx.fillStyle = i % 3 !== 0 ? "#40aeb8" : '#ff1493'
+    ctx.fillStyle = i % 3 !== 0 ? "#40aeb8" 
+                                : i % 4 === 0 ? '#25646a' 
+                                : '#41AFB9'
    
     const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
     ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
