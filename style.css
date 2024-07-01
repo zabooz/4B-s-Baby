@@ -136,6 +136,7 @@ main{
     display: flex;
     width: 80%;
     gap: 3rem;
+    
 }
 .startBtn {
     background-color: rgb(65, 175, 185);
