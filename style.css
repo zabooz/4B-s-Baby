@@ -152,13 +152,15 @@ main{
     gap: 3rem;
 
 }
-.mainMiddle{
+.mainMiddle {
     margin-top: 2rem;
 }
-.mainTop{
+.mainTop {
     margin-top: 2rem;
     margin-bottom: 2rem;
-
+}
+.mainBottom {
+    margin-bottom: 5rem;
 }
 .startBtn {
     background-color: rgb(65, 175, 185);
@@ -171,6 +173,13 @@ main{
     transition: background-color 0.3s transform 0.3s;
     width: 7rem;
     height: 2.5rem;
+}
+#userGeneratorBtn {
+    margin-top: 1.7rem;
+    align-self: center;
+}
+#newUser {
+    align
 }
 .copyButton {
     background-color: transparent;
