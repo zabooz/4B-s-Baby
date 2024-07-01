@@ -11,7 +11,7 @@ const nums = "0123456789";
 
 const alphabet = katakana + latin + nums;
 
-const fontSize = 16;
+const fontSize = 18;
 const columns = canvas.width / fontSize;
 
 const rainDrops = [];
