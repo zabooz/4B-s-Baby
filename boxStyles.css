@@ -9,7 +9,9 @@
     background: rgb(0, 0,0,.5);
   
 }
-
+h3{
+    color:rgb(217, 217, 217)
+}
 .label{
     background-color:#40aeb8;
     padding: .2rem;
@@ -48,6 +50,12 @@ td{
     padding: .5rem;
     border-right: 1px solid white;
 }
+#statOutput :last-child{
+    border-right: none;
+}
+#statOutput{
+    height: 2.5rem;
+}
 
 .lds-dual-ring,
 .lds-dual-ring:after {
@@ -76,12 +84,6 @@ td{
 }
 
 
-#statOutput :last-child{
-    border-right: none;
-}
-#statOutput{
-    height: 4rem;
-}
 
 .bruteBtns{
     display: flex;

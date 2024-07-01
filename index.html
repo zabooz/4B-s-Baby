@@ -13,7 +13,7 @@
     <div class="allDiv">
         <canvas id="matrixCanvas"></canvas>
         <div id="header">
-            <div id="headerText">
+            <div id="headerText" class="headings">
                 <h1>Ensuring Digital Safety: The Importance of Strong Passwords and Data Security</h1>
                 <p>In our digital age, internet safety is essential to protect ourselves from cyber threats. Strong, unique passwords are crucial for securing our accounts against unauthorized access. Regular updates and the use of complex passwords can significantly enhance our online security.
                 Data security involves safeguarding digital information from unauthorized access and breaches. This includes using encryption, secure networks, and keeping software updated.
@@ -24,15 +24,30 @@
             </div>
         </div>
         <main>
+            <div id="passwordSafetyHeading" class="headings">
+                How to Create Safe Passwords
+In our digital age, creating and maintaining secure passwords is crucial to protect your personal and financial information from cyber threats. Here’s a concise guide on how to create robust passwords that can effectively safeguard your online accounts.
+Why Password Security Matters
+Passwords are your first defense against unauthorized access. Weak passwords can be easily guessed or cracked, leading to stolen information or fraud. Thus, knowing how to create strong passwords is vital.
+Characteristics of a Strong Password
+A strong password should be long, complex, unpredictable, and unique. Aim for at least 12-16 characters with a mix of uppercase and lowercase letters, numbers, and special characters. Avoid easily guessable information like birthdays or common words. Each password should be unique to a specific account to prevent multiple accounts from being compromised.
+
+Steps to Create a Strong Password
+Start with a memorable base phrase, then add complexity by substituting some letters with numbers and symbols. For example, "GreenDolphinSwims2024!" becomes "Gr33nD0lph!nSw!ms2024!" This method ensures your password is both strong and memorable.
+
+Managing Multiple Passwords
+Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include LastPass, 1Password, and Bitwarden.
+            </div>
             <div class="mainTop">
+                    <p></p>
                     <div id="bruteForceApp" class="appBox">
                         <h3>Test your Mojo</h3>
                         <p>Choose a mode to test your password against brute force attacks. The Simple Brute Force mode tests all possible character combinations, the Dictionary Attack mode uses common passwords and phrases, and the Hybrid Attack mode combines dictionary words with variations like numbers and symbols. </p>
                         <p>Ensure your password is strong and unique for optimal security!<p>
                         <div class="bruteInput">
-                            <input type="text" id="userPwdInput" placeholder="Enter your Password">
+                            <input type="text" id="userPwdInput" class="input" placeholder="Enter your Password">
                             <div id="chooseBruteForce">
-                                    <select id="bruteMode">
+                                    <select id="bruteMode" class=" input">
                                         <option value="simple">Mode Simple</option>
                                         <option value="library">Mode Library</option>
                                         <option value="hybrid" disabled="true">Mode Hybrid</option>
@@ -48,7 +63,7 @@
                                 <tbody id="statsBody">
                                     <tr id="statsHeading">
                                         <th>Password</th>
-                                        <th>Attempat</th>
+                                        <th>Attempts</th>
                                         <th>Mode</th>
                                         <th id="lastTh">Time</th>
                                     </tr>
@@ -68,7 +83,7 @@
                                 <div class="wizardInput">
                                     <div id="wizardInput2">
                                         <label>First adjective:</label>
-                                        <select id="adjective1" >
+                                        <select id="adjective1" class="input" >
                                             <option value="random">Random</option>
                                             <option value="shapes">Shape</option>
                                             <option value="colors">Color</option>
@@ -84,7 +99,7 @@
                                             <option value="">-None-</option>
                                         </select>
                                         <label>Second adjective:</label>
-                                        <select id="adjective2">
+                                        <select id="adjective2" class="input">
                                             <option value="random">Random</option>
                                             <option value="shapes">Shape</option>
                                             <option value="colors">Color</option>
@@ -102,7 +117,7 @@
                                     </div>
                                     <div id="wizardInput2">
                                         <label>Choose a noun:</label>
-                                        <select name="pwdGen" id="noun">
+                                        <select name="pwdGen" id="noun" class="input">
                                         <option value="random">Random</option>
                                         <option value="instruments">Instrument</option>
                                         <option value="fruits">Fruit</option>
@@ -128,6 +143,22 @@
                         </div>
         
             </div>
+            <div class="headings">
+                How to Create Safe Passwords
+In our digital age, creating and maintaining secure passwords is crucial to protect your personal and financial information from cyber threats. Here’s a concise guide on how to create robust passwords that can effectively safeguard your online accounts.
+
+Why Password Security Matters
+Passwords are your first defense against unauthorized access. Weak passwords can be easily guessed or cracked, leading to stolen information or fraud. Thus, knowing how to create strong passwords is vital.
+
+Characteristics of a Strong Password
+A strong password should be long, complex, unpredictable, and unique. Aim for at least 12-16 characters with a mix of uppercase and lowercase letters, numbers, and special characters. Avoid easily guessable information like birthdays or common words. Each password should be unique to a specific account to prevent multiple accounts from being compromised.
+
+Steps to Create a Strong Password
+Start with a memorable base phrase, then add complexity by substituting some letters with numbers and symbols. For example, "GreenDolphinSwims2024!" becomes "Gr33nD0lph!nSw!ms2024!" This method ensures your password is both strong and memorable.
+
+Managing Multiple Passwords
+Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include LastPass, 1Password, and Bitwarden.
+            </div>
             <div class="mainMiddle">
                     <div id="converterSelector" class="appBox">
                     <div class="flexbox-item1">
@@ -135,8 +166,8 @@
                         <p>Transform your password into leetspeak for added security. Simply enter your password, and the converter will change it into a more secure, leetspeak version. </p>
                         <p>This enhances your password's strength by replacing common characters with numbers and symbols.</p>
                         <div class="flexbox-item2">
-                            <input type="text" id="passwordInput" placeholder="Enter your password">
-                            <select id="converterSelect">
+                            <input type="text" id="passwordInput" class="input" placeholder="Enter your password">
+                            <select id="converterSelect" class="input">
                                 <option value="leetSimple">Simple Leetspeak</option>
                                 <option value="leetAdvanced">Advanced Leetspeak</option>
                                 <option value="leetComplicated">Complicated Leetspeak</option>
@@ -163,13 +194,29 @@
 
             </div>
         </div>
+        <div class="headings">
+            <h2>How to Create Safe Passwords</h2>
+<p>In our digital age, creating and maintaining secure passwords is crucial to protect your personal and financial information from cyber threats. Here’s a concise guide on how to create robust passwords that can effectively safeguard your online accounts.</p>
+
+<h4>Why Password Security Matters</h4>
+<p>Passwords are your first defense against unauthorized access. Weak passwords can be easily guessed or cracked, leading to stolen information or fraud. Thus, knowing how to create strong passwords is vital.</p>
+
+<h4>Characteristics of a Strong Password</h4>
+<p>A strong password should be long, complex, unpredictable, and unique. Aim for at least 12-16 characters with a mix of uppercase and lowercase letters, numbers, and special characters. Avoid easily guessable information like birthdays or common words. Each password should be unique to a specific account to prevent multiple accounts from being compromised.</p>
+
+<h4>Steps to Create a Strong Password</h4>
+<p>Start with a memorable base phrase, then add complexity by substituting some letters with numbers and symbols. For example, "GreenDolphinSwims2024!" becomes "Gr33nD0lph!nSw!ms2024!" This method ensures your password is both strong and memorable.</p>
+
+<h4>Managing Multiple Passwords</h4>
+<p>Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include LastPass, 1Password, and Bitwarden.</p>
+        </div>
         <div class="mainBottom mainMiddle" style="margin-bottom: 3rem;">
             <div class="appBox" id="passwordStrengt calc"  >
                 <h3>Password Excalibur</h3>
                 <p>dummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy text</p>
                 <p>dummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy text</p>
                 <div id="passwordCalc">
-                    <input type="text" id="strengthInput" placeholder="Enter your password">
+                    <input type="text" id="strengthInput" class="input" placeholder="Enter your password">
                 </div>
                 <Button id="calcStrengthBtn" class="startBtn">Test it</Button>
                 <p id="strengthResult">Result:<span><Div id="calcSpinner"></Div></span></p>
@@ -180,8 +227,8 @@
                 <p>Generate your own safe password with a length of your choice. The password is a random combination of letters, numbers and symbols to ensure the safety of your account.</p>
                 <div id="startPwGenDiv">
                     <div>
-                        <label for="pwLength">Password length:</label>
-                        <select id="pwLength">
+                        <label for="pwLength" >Password length:</label>
+                        <select id="pwLength" class="input">
                             <option value="4">4</option>
                             <option value="6">6</option>
                             <option value="8">8</option>

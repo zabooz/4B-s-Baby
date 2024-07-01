@@ -22,7 +22,6 @@ option{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color:white;
 }
 #matrixCanvas{
     position: fixed;
@@ -61,11 +60,22 @@ main{
     box-sizing: border-box;
     margin-bottom: 3rem;
 }
+.headings{
+    width: 80%;
+}
+.headings h4{
+    color: white;
+    margin-bottom: 1rem;
+}
+.headings p{
+    margin-bottom: 1rem;
+}
+.headings h3{
+    color: white
+}
 #headerText{
-    flex: 1; /* Allow content to take up remaining space */
     overflow: hidden;
     text-overflow: ellipsis;
-    text-transform: capitalize;
     
 }
 #headerText p{
@@ -76,6 +86,7 @@ main{
 }
 #headerText h1{
     margin: 1rem;
+    color:rgba(255, 255, 255, 0.863);
     
 }
 #headerText p::first-letter {
@@ -85,6 +96,9 @@ main{
     line-height: 1;
     margin-right: 0.1em; 
 
+}
+.input{
+    background: rgba(255, 255, 255, 0.925);
 }
 #monkeyAnimated{
     width: 10rem;

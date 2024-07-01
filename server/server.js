@@ -44,7 +44,6 @@ app.get("/bruteForceSimple", async (req, res) => {
   const key = req.query.key;
   const password = req.query.pwd || "abc";
   const decodedPwd = passwordDecoder(password, key);
-  console.log(decodedPwd)
   if (currentProcess) {
     return res.status(400).send('Ein Prozess läuft bereits.');
   }
