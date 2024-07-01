@@ -42,7 +42,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:3rem;
+    gap: 2rem;
     width: 100%;
  
 }
@@ -112,9 +112,7 @@ main{
     width: 10rem;
     height: 10rem;
     margin-right: 3rem;
-
 }
-
 #stopBrute button{
     padding: .5rem;
     width: 4rem;
@@ -123,7 +121,6 @@ main{
     margin: 1rem;
     width: 2.5rem;
 }
-
 #stopBrute:hover {
     background-color: #d3371f;
 }
@@ -132,11 +129,18 @@ main{
     transition: 0.05s;
 }
 .mainMiddle,
+.mainBottom,
 .mainTop{
     display: flex;
     width: 80%;
     gap: 3rem;
-    
+}
+.mainMiddle{
+    margin-top: 2rem;
+}
+.mainTop{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 .startBtn {
     background-color: rgb(65, 175, 185);
@@ -148,6 +152,7 @@ main{
     cursor: pointer;
     transition: background-color 0.3s transform 0.3s;
     width: 7rem;
+    height: 2.5rem;
 }
 .copyButton {
     background-color: transparent;
@@ -266,9 +271,6 @@ td{
     transform: rotate(360deg);
   }
 }
-
-
-
 .bruteBtns{
     display: flex;
     gap: 2rem;
@@ -367,6 +369,7 @@ select{
     }
     .mainMiddle,
     .mainTop,
+    .mainBottom,
     #startPwGenDiv,
     .pictureMagicDiv,
     .flexbox-item2{
