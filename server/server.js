@@ -90,6 +90,7 @@ app.get("/stopBruteForce", (req,res) => {
       currentProcess.abort()
       currentProcess = null
       res.send('process stopped')
+      console.log('brute force stopped')
     }else{
       res.status(400).send('no process running')
     }
