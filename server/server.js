@@ -2,10 +2,11 @@ import { config } from "dotenv";
 import express from "express";
 import axios from "axios";
 import cors from "cors";
+
 import { bruteForceSimple } from "../scripts/bruteSimple.js";
 import { bruteForceLibrary } from "../scripts/bruteLibrary.js";
 import { passwordDecoder } from "../scripts/encoder.js";
-import { spawn } from "child_process";
+
 
 config();
 
@@ -24,9 +25,9 @@ async function loadPasswordList() {
     });
     passwordList = response.data.split("\n").filter((line) => line !== "");
     console.log("data loaded");
+    console.log(passwordList)
   } catch (error) {
     console.error("dropbbox fail", error);
-    response.status(500).send("dropbox failure");
   }
 }
 
