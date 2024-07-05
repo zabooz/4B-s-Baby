@@ -178,7 +178,9 @@ main{
     margin-top: 1.7rem;
     align-self: center;
 }
-
+#generatedPassword {
+    margin-top: 2rem;
+}
 .copyButton {
     background-color: transparent;
     border: hidden;
