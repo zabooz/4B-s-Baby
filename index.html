@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>BruteForce</title>
-    <link rel="stylesheet" href="./style.css">
+    <link id="themeStylesheet" rel="stylesheet" href="./serious.style.css">
     <script src="./main.js" type ="module" defer>c</script>
     </head>
     <body>
-    <div class="allDiv">
-        <canvas id="matrixCanvas"></canvas>
-        <div id="header">
+        <div class="navbar">
+            <div id="toggleDiv">
+            <label class="switch">
+                <input type="checkbox" id="toggleSwitch">
+                <span class="slider"></span>
+            </label>
+            </div>
+            <button id="go-to-top">Home</button>
+            <button id="go-to-test">Test your password</button>
+            <button id="go-to-convert">Convert your password</button>
+            <button id="go-to-generate">Generate your Login</button>
+            </div>
+        <div class="allDiv">
+            <canvas id="matrixCanvas"></canvas>
+            <div id="header">
             <div id="headerText" class="headings">
                 <h1>Ensuring Digital Safety: The Importance of Strong Passwords and Data Security</h1>
                 <p>In our digital age, internet safety is essential to protect ourselves from cyber threats. Strong, unique passwords are crucial for securing our accounts against unauthorized access. Regular updates and the use of complex passwords can significantly enhance our online security.
@@ -19,7 +30,7 @@
                 By practicing good internet safety, password management, and data security, we can protect our personal information and maintain privacy in the digital world.</p>
             </div>
             <div id="imgDiv">
-                <img  id="monkey" src="../img/non_animated_monkey.png" alt="monkey">
+                <img  id="logo" src="./img/Security-Logo-Teal.png" alt="Logo">
             </div>
         </div>
         <main>
@@ -245,10 +256,10 @@
             </div>
             </div>
         </main>
-        <footer>
-                <img  id="monkeyFooter" src="../img/non_animated_monkey.png" alt="monkey">
+        <footer id="logoFooter">
+                <img  id="logoFooter" src="./img/Security-Logo-Teal.png" alt="Logo">
         </footer>
     </div>
-    <script src="./scripts/matrix.js"></script>
+    <script id="matrixScript" src="./scripts/matrix.js"></script>
     </body>
 </html>
