@@ -9,6 +9,7 @@
     --eigthColor: #d3d3d3;
     --ninthColor: #c5c5c5;
     --tenthColor: #e5e5e5;
+    --eleventhColor: #1b8ebc;
 }
 
 *{
@@ -95,17 +96,12 @@ transform: translateX(26px);
     cursor: pointer;
     transition: background-color 0.3s transform 0.3s;
 }
-#go-to-bottom {
-    
-}
-#go-to-top {
-    
-}
+
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--sixthColor);
+    background-color: var(--eleventhColor);
 }
 input,
 select,
@@ -130,6 +126,7 @@ option{
     height: 100%;
     z-index: -1;
     opacity: 0.5;
+    display: none;
 }
 main{
     display: flex;
@@ -235,7 +232,7 @@ main{
 .input{
     background: rgba(255, 255, 255, 0.925);
 }
-#monkeyAnimated{
+#logoAnimated{
     width: 10rem;
     height: 10rem;
     margin-right: 3rem;
@@ -310,14 +307,14 @@ main{
     width: 1rem;
 }
 .startBtn:hover{
-    background-color: var(--primaryColor)
+    background-color: var(--seventhColor);
     
 }
 #stopBrute{
     background-color: red;
 }
 .startBtn:active{
-    background-color: #25646a;
+    background-color: var(--eleventhColor);
     transition: 0.05s;
     
 }
