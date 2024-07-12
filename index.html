@@ -11,17 +11,18 @@
   </head>
   <body>
     <div class="allDiv">
-      <div class="navbar">
+        <div id="top"></div>
+      <div  id="navbar" class="navbar">
         <div id="toggleDiv">
           <label class="switch">
             <input type="checkbox" id="toggleSwitch" />
             <span class="slider"></span>
           </label>
         </div>
-        <button id="go-to-top">Home</button>
-        <button id="go-to-test">Test</button>
-        <button id="go-to-convert">Convert</button>
-        <button id="go-to-generate">Generate</button>
+        <button id="go-to-top" data-target="top" class="scrollBtn">Home</button>
+        <button id="go-to-test" data-target="passwordSafetyHeading" class="scrollBtn">Test</button>
+        <button id="go-to-convert" data-target="passwordCreationHeading" class="scrollBtn">Convert</button>
+        <button id="go-to-generate" data-target="usernameCreationHeading" class="scrollBtn">Generate</button>
         <div id="languageSwitcherDiv">
             <a id="flag" href="flag" class="flag-icon uk-icon"></a>
             <select id="languageSwitcher">

@@ -23,6 +23,27 @@ const calcStrengthBtn = document.getElementById("calcStrengthBtn");
 const uploadFile = document.getElementById("uploadFile");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
 
+const scrollBtns = document.querySelectorAll(".scrollBtn");
+
+
+
+
+scrollBtns.forEach(btn => {
+
+
+  btn.addEventListener("click", () => {
+    const targetId = btn.getAttribute("data-target");
+    console.log(targetId);
+    const targetElement = document.getElementById(targetId);
+    targetElement.scrollIntoView({behavior: "smooth"});
+  })
+
+
+
+})
+
+
+
 document.getElementById('toggleSwitch').addEventListener('change', function() {
   var themeStylesheet = document.getElementById('themeStylesheet');
   var logo = document.getElementById('logo');
