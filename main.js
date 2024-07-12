@@ -5,6 +5,11 @@ import { passwordEncoder } from "./scripts/encoder.js";
 import { passwordStrength } from "./scripts/passwordStrengthCalc.js";
 import { generatePassword } from "./scripts/passwordGenerator.js";
 import { copyButton } from "./scripts/copybutton.js";
+import { initTranslation } from "./scripts/translations.js";
+
+document.addEventListener('DOMContentLoaded', () => {
+  initTranslation();
+
 
 
 
@@ -202,3 +207,4 @@ function updateAttempts(result) {
     tds[index].textContent = item;
   });
 }
+});

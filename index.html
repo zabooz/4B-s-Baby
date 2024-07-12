@@ -20,6 +20,12 @@
                 <button id="go-to-test">Test</button>
                 <button id="go-to-convert">Convert</button>
                 <button id="go-to-generate">Generate</button>
+                <select id="languageSwitcher">
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="es">Español</option>
+                </select>
                 </div>
             <canvas id="matrixCanvas"></canvas>
             <div id="header">
@@ -100,7 +106,7 @@
                         
                     
             </div>
-            <div class="headings">
+            <div class="headings" id="passwordCreationHeading">
                 <h2>How to Create or Generate a Strong Password</h2>
                 <p>Creating a strong password is crucial to protect your personal and financial information from cyber threats. Here’s a concise guide on how to create robust passwords that can effectively safeguard your online accounts.</p>
                 
@@ -149,7 +155,7 @@
 
             </div>
         </div>
-        <div class="headings">
+        <div class="headings" id="usernameCreationHeading">
             <h2>Creating Unique Usernames</h2>
             <p>Creating a unique and memorable username is important for your online identity. A good username should reflect your personality while being secure and difficult to guess.</p>
             
@@ -179,7 +185,7 @@
                             <option value="temperatures">Temperature</option>
                             <option value="speeds">Speed</option>
                             <option value="qualities">Quality</option>
-                            <option value="WeatherTypes">Weather</option>
+                            <option value="weatherTypes">Weather</option>
                             <option value="">-None-</option>
                         </select>
                         <label>Second adjective:</label>
@@ -195,11 +201,11 @@
                             <option value="temperatures">Temperature</option>
                             <option value="speeds">Speed</option>
                             <option value="qualities">Quality</option>
-                            <option value="WeatherTypes">Weather</option>
+                            <option value="weatherTypes">Weather</option>
                             <option value="">-None-</option>
                         </select>
                     </div>
-                    <div id="wizardInput2">
+                    <div id="wizardInput3">
                         <label>Choose a noun:</label>
                         <select name="pwdGen" id="noun" class="input">
                         <option value="random">Random</option>
@@ -225,7 +231,7 @@
                 </div>
                 <span id="newUser" class="copyText">Username: </span>
         </div>
-            <div class="appBox">
+            <div class="appBox" id="glyphSorcery">
                 <h3>Glyph Sorcery</h3>
                 <p>Generate your own safe password with a length of your choice. The password is a random combination of letters, numbers and symbols to ensure the safety of your account.</p>
                 <div id="startPwGenDiv">
