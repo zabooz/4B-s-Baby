@@ -76,7 +76,7 @@ document.querySelector('.navbar').addEventListener('click', function(event) {
           changeTheme(theme, logo);
           break;
       case 'matrix':
-          theme = './style.css';
+          theme = './matrix.style.css';
           logo = './img/non_animated_monkey.png';
           changeTheme(theme, logo);
           break;
