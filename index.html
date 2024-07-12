@@ -12,24 +12,25 @@
   <body>
     <div class="allDiv">
       <div class="navbar">
-        <div id="toggleDiv">
-          <label class="switch">
-            <input type="checkbox" id="toggleSwitch" />
-            <span class="slider"></span>
-          </label>
-        </div>
         <button id="go-to-top">Home</button>
         <button id="go-to-test">Test</button>
         <button id="go-to-convert">Convert</button>
         <button id="go-to-generate">Generate</button>
+        <div class="navDropdown">
+        <button id="languageBtn">Language</button>
         <div id="languageSwitcherDiv">
-            <a id="flag" href="flag" class="flag-icon uk-icon"></a>
-            <select id="languageSwitcher">
-                <option value="en">en</option>
-                <option value="de">de</option>
-                <option value="fr">fr</option>
-                <option value="es">ss</option>
-            </select>
+          <a id="flag" href="flag" class="flag-icon uk-icon"></a>
+          <select id="languageSwitcher">
+            <option value="en">en</option>
+            <option value="de">de</option>
+            <option value="fr">fr</option>
+            <option value="es">ss</option>
+          </select>
+        </div>
+        <button id="themeBtn">Theme</button>
+          <div class="themeSwitcherDiv">
+          </div>
+          </div>
         </div>
         </div>
       <canvas id="matrixCanvas"></canvas>

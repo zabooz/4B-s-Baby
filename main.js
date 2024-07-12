@@ -23,7 +23,7 @@ const calcStrengthBtn = document.getElementById("calcStrengthBtn");
 const uploadFile = document.getElementById("uploadFile");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
 
-document.getElementById('toggleSwitch').addEventListener('change', function() {
+document.getElementById('themeBtn').addEventListener('hover', function() {
   var themeStylesheet = document.getElementById('themeStylesheet');
   var logo = document.getElementById('logo');
   if(this.checked) {
