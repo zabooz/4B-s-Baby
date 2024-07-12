@@ -66,7 +66,7 @@ document.querySelector('.navbar').addEventListener('click', function(event) {
       case 'enLang':
       case 'deLang':
       case 'frLang':
-      case 'ssLang':
+      case 'esLang':
           const selectedLanguage = event.target.value;
           translatePage(translations, selectedLanguage);
           break;
