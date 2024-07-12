@@ -23,13 +23,11 @@ const calcStrengthBtn = document.getElementById("calcStrengthBtn");
 const uploadFile = document.getElementById("uploadFile");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
 
+
 const scrollBtns = document.querySelectorAll(".scrollBtn");
 
 
-
-
 scrollBtns.forEach(btn => {
-
 
   btn.addEventListener("click", () => {
     const targetId = btn.getAttribute("data-target");
@@ -38,11 +36,7 @@ scrollBtns.forEach(btn => {
     targetElement.scrollIntoView({behavior: "smooth"});
   })
 
-
-
 })
-
-
 
 document.getElementById('toggleSwitch').addEventListener('change', function() {
   var themeStylesheet = document.getElementById('themeStylesheet');
