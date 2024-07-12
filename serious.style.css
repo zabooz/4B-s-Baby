@@ -555,4 +555,34 @@ select{
         width: 20%;
     }
 }
+#languageSwitcherDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.flag-icon {
+    display: inline-block;
+    width: 25px;
+    height: 15px;
+    background-size: cover;
+    margin: 5px;
+    cursor: pointer;
+  }
+  .en-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg');
+  }
+  .fr-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg');
+  }
+  .de-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg');
+  }
+  .es-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg');
+  }
+  #languageSwitcher{
+    width: 3rem;
+    height: 1.5rem;
+    border: none;
+  }

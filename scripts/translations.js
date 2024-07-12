@@ -20,14 +20,12 @@ export function getUserLanguage() {
 }
 
 export function translatePage(translations, language) {
-    console.log(translations);
-    console.log(language);
     // Navbar
     document.getElementById('go-to-top').textContent = translations.navbar.home[language];
     document.getElementById('go-to-test').textContent = translations.navbar.test[language];
     document.getElementById('go-to-convert').textContent = translations.navbar.convert[language];
     document.getElementById('go-to-generate').textContent = translations.navbar.generate[language];
-
+    document.getElementById('flag').className = "flag-icon " + language + "-icon";
     // Header
     document.querySelector('#headerText h1').textContent = translations.header.title[language];
     document.querySelector('#headerText p').textContent = translations.header.description[language];
@@ -165,7 +163,6 @@ export async function initTranslation() {
     const translations = await loadTranslations();
     const language = getUserLanguage();
     translatePage(translations, language);
-    console.log('3434')
     // Add event listener for language switcher
     const languageSwitcher = document.getElementById('languageSwitcher');
     languageSwitcher.addEventListener('change', (event) => {
