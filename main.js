@@ -18,6 +18,19 @@ const calcStrengthBtn = document.getElementById("calcStrengthBtn");
 const uploadFile = document.getElementById("uploadFile");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
 
+document.getElementById('toggleSwitch').addEventListener('change', function() {
+  var themeStylesheet = document.getElementById('themeStylesheet');
+  var logo = document.getElementById('logo');
+  if(this.checked) {
+      themeStylesheet.href = "./style.css"; // Switch to style2.css
+      logo.src = './img/non_animated_monkey.png'
+  } else {
+      themeStylesheet.href = './serious.style.css'; // Switch to style1.css
+      logo.src = './img/Security-Logo-Teal.png'
+  }
+});
+
+
 rdmPwdBtn.addEventListener("click", function () {
   const textId = "generatedPassword";
   const textElement = document.getElementById(textId);
