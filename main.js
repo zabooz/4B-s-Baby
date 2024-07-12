@@ -5,6 +5,11 @@ import { passwordEncoder } from "./scripts/encoder.js";
 import { passwordStrength } from "./scripts/passwordStrengthCalc.js";
 import { generatePassword } from "./scripts/passwordGenerator.js";
 import { copyButton } from "./scripts/copybutton.js";
+import { initTranslation } from "./scripts/translations.js";
+
+document.addEventListener('DOMContentLoaded', () => {
+  initTranslation();
+
 
 
 
@@ -18,7 +23,7 @@ const calcStrengthBtn = document.getElementById("calcStrengthBtn");
 const uploadFile = document.getElementById("uploadFile");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
 
-document.getElementById('toggleSwitch').addEventListener('change', function() {
+document.getElementById('themeBtn').addEventListener('hover', function() {
   var themeStylesheet = document.getElementById('themeStylesheet');
   var logo = document.getElementById('logo');
   if(this.checked) {
@@ -202,3 +207,4 @@ function updateAttempts(result) {
     tds[index].textContent = item;
   });
 }
+});
