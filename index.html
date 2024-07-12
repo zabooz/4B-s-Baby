@@ -35,28 +35,27 @@
         </div>
         <main>
             <div id="passwordSafetyHeading" class="headings">
-                <h2>How to Create Safe Passwords</h2>
-                <p>In our digital age, creating and maintaining secure passwords is crucial to protect your personal and financial information from cyber threats. Here’s a concise guide on how to create robust passwords that can effectively safeguard your online accounts.</p>
+                <h2>Brute Force and Testing Your Password</h2>
+                <p>It's essential to understand how brute force attacks work and how to test the strength of your passwords. Brute force attacks involve systematically trying every possible combination of characters until the correct password is found. By testing your passwords against such attacks, you can ensure they are robust and secure.</p>
                 
-                <h4>Why Password Security Matters</h4>
-                <p>Passwords are your first defense against unauthorized access. Weak passwords can be easily guessed or cracked, leading to stolen information or fraud. Thus, knowing how to create strong passwords is vital.</p>
+                <h4>Testing Your Password</h4>
+                <p>Choose a mode to test your password against brute force attacks. The Simple Brute Force mode tests all possible character combinations, the Dictionary Attack mode uses common passwords and phrases, and the Hybrid Attack mode combines dictionary words with variations like numbers and symbols.</p>
                 
-                <h4>Characteristics of a Strong Password</h4>
-                <p>A strong password should be long, complex, unpredictable, and unique. Aim for at least 12-16 characters with a mix of uppercase and lowercase letters, numbers, and special characters. Avoid easily guessable information like birthdays or common words. Each password should be unique to a specific account to prevent multiple accounts from being compromised.</p>
+                <h4>The Excalibur Method</h4>
+                <p>The Excalibur method calculates the strength of your password by analyzing its complexity and predictability. Enter your password to check its strength. This method ensures your password is strong enough to withstand various types of attacks.</p>
                 
-                <h4>Steps to Create a Strong Password</h4>
-                <p>Start with a memorable base phrase, then add complexity by substituting some letters with numbers and symbols. For example, "GreenDolphinSwims2024!" becomes "Gr33nD0lph!nSw!ms2024!" This method ensures your password is both strong and memorable.</p>
-                
-                <h4>Managing Multiple Passwords</h4>
-                <p>Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include LastPass, 1Password, and Bitwarden.</p>
+                <h4>Why Brute Force Testing Matters</h4>
+                <p>Brute force testing helps you understand the resilience of your password. Weak passwords can be easily cracked, leading to unauthorized access and potential data breaches. Regularly testing and updating your passwords enhances your security.</p>
             </div>
+            
+           
             <div class="mainTop">
                     <div id="bruteForceApp" class="appBox">
                         <h3>Test your Mojo</h3>
                         <p>Choose a mode to test your password against brute force attacks. The Simple Brute Force mode tests all possible character combinations, the Dictionary Attack mode uses common passwords and phrases, and the Hybrid Attack mode combines dictionary words with variations like numbers and symbols. </p>
                         <p>Ensure your password is strong and unique for optimal security!<p>
                         <div class="bruteInput">
-                            <input type="text" id="userPwdInput" class="input" placeholder="Enter your Password">
+                            <input type="text" id="userPwdInput" class="input" placeholder=" Enter your Password">
                             <div id="chooseBruteForce">
                                     <select id="bruteMode" class=" input">
                                         <option value="simple">Mode Simple</option>
@@ -88,34 +87,33 @@
            
                             </table>
                         </div>
-                        <div class="appBox" id="passwordStrengt calc"  >
+                        <div class="appBox" id="passwordStrengthCalc">
                             <h3>Password Excalibur</h3>
-                            <p>dummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy text</p>
-                            <p>dummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy textdummy text</p>
+                            <p>Password Excalibur is a tool designed to assess the strength of your password. It evaluates various factors including length, complexity, and predictability to give you a comprehensive strength score.</p>
+                            <p>To use Password Excalibur, simply enter your password and click the "Test it" button. The tool will analyze your password and provide a detailed result, highlighting areas where your password is strong and suggestions for improvement.</p>
                             <div id="passwordCalc">
-                                <input type="text" id="strengthInput" class="input" placeholder="Enter your password">
+                                <input type="text" id="strengthInput" class="input" placeholder=" Enter your password">
                             </div>
-                            <Button id="calcStrengthBtn" class="startBtn">Test it</Button>
-                            <p id="strengthResult">Result:<span><Div id="calcSpinner"></Div></span></p>
-            
+                            <button id="calcStrengthBtn" class="startBtn">Test it</button>
+                            <p id="strengthResult">Result: <span><div id="calcSpinner"></div></span></p>
                         </div>
+                        
                     
             </div>
             <div class="headings">
-                <h2>Why Password Security Matters</h2>
-                <p>In our digital age, creating and maintaining secure passwords is crucial to protect your personal and financial information from cyber threats. Here’s a concise guide on how to create robust passwords that can effectively safeguard your online accounts.</p>
-                <p>Passwords are your first defense against unauthorized access. Weak passwords can be easily guessed or cracked, leading to stolen information or fraud. Thus, knowing how to create strong passwords is vital.</p>
+                <h2>How to Create or Generate a Strong Password</h2>
+                <p>Creating a strong password is crucial to protect your personal and financial information from cyber threats. Here’s a concise guide on how to create robust passwords that can effectively safeguard your online accounts.</p>
                 
-                <h3>How to Create Safe Passwords</h3>
+                <h3>Characteristics of a Strong Password</h3>
+                <p>A strong password should be long, complex, unpredictable, and unique. Aim for at least 12-16 characters with a mix of uppercase and lowercase letters, numbers, and special characters. Avoid easily guessable information like birthdays or common words. Each password should be unique to a specific account to prevent multiple accounts from being compromised.</p>
                 
-                <p>A <span class="highlight">strong password</span> should be long, complex, unpredictable, and unique. Aim for at <span class="highlight">least 12-16 characters</span> with a mix of uppercase and lowercase letters, numbers, and special characters. <span class="highlight">Avoid easily guessable information</span> like birthdays or common words. Each password should be unique to a specific account to prevent multiple accounts from being compromised.</p>
+                <h3>Steps to Create a Strong Password</h3>
+                <p>Start with a memorable base phrase, then add complexity by substituting some letters with numbers and symbols. For example, "GreenDolphinSwims2024!" becomes "Gr33nD0lph!nSw!ms2024!" This method ensures your password is both strong and memorable.</p>
                 
-              
-                <p>Start with a memorable base phrase, then add complexity by substituting some letters with numbers and symbols. For example, <span class="highlight">"GreenDolphinSwims2024!"</span> becomes <span class="highlight">"Gr33nD0lph!nSw!ms2024!"</span> This method ensures your password is both strong and memorable.</p>
-                
-
+                <h3>Managing Multiple Passwords</h3>
                 <p>Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include LastPass, 1Password, and Bitwarden.</p>
             </div>
+            
             <div class="mainMiddle">
                     <div id="converterSelector" class="appBox">
                     <div class="flexbox-item1">
@@ -123,7 +121,7 @@
                         <p>Transform your password into leetspeak for added security. Simply enter your password, and the converter will change it into a more secure, leetspeak version. </p>
                         <p>This enhances your password's strength by replacing common characters with numbers and symbols.</p>
                         <div class="flexbox-item2">
-                            <input type="text" id="passwordInput" class="input" placeholder="Enter your password">
+                            <input type="text" id="passwordInput" class="input" placeholder=" Enter your password">
                             <select id="converterSelect" class="input">
                                 <option value="leetSimple">Simple Leetspeak</option>
                                 <option value="leetAdvanced">Advanced Leetspeak</option>
@@ -152,19 +150,14 @@
             </div>
         </div>
         <div class="headings">
-            <h2>Why Password Security Matters</h2>
-                <p>In our digital age, creating and maintaining secure passwords is crucial to protect your personal and financial information from cyber threats. Here’s a concise guide on how to create robust passwords that can effectively safeguard your online accounts.</p>
-                <p>Passwords are your first defense against unauthorized access. Weak passwords can be easily guessed or cracked, leading to stolen information or fraud. Thus, knowing how to create strong passwords is vital.</p>
-                
-                <h3>How to Create Safe Passwords</h3>
-                
-                <p>A <span class="highlight">strong password</span> should be long, complex, unpredictable, and unique. Aim for at <span class="highlight">least 12-16 characters</span> with a mix of uppercase and lowercase letters, numbers, and special characters. <span class="highlight">Avoid easily guessable information</span> like birthdays or common words. Each password should be unique to a specific account to prevent multiple accounts from being compromised.</p>
-                
-              
-                <p>Start with a memorable base phrase, then add complexity by substituting some letters with numbers and symbols. For example, <span class="highlight">"GreenDolphinSwims2024!"</span> becomes <span class="highlight">"Gr33nD0lph!nSw!ms2024!"</span> This method ensures your password is both strong and memorable.</p>
-                
-
-                <p>Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include LastPass, 1Password, and Bitwarden.</p>
+            <h2>Creating Unique Usernames</h2>
+            <p>Creating a unique and memorable username is important for your online identity. A good username should reflect your personality while being secure and difficult to guess.</p>
+            
+            <h3>Tips for Creating Usernames</h3>
+            <p>Use a combination of adjectives and nouns to create unique usernames. Consider using descriptive words that reflect your interests or characteristics. Avoid using personal information such as your real name or birthdate.</p>
+            
+            <h3>Username Generators</h3>
+            <p>Username generators can help create unique usernames by combining random adjectives and nouns. These tools ensure that your username is distinctive and not easily guessed. You can select up to two groups of adjectives and a group of nouns, or let the generator create a random combination for you.</p>
         </div>
         
         <div class="mainBottom">
