@@ -6,7 +6,6 @@
     <title>BruteForce</title>
     <link id="themeStylesheet" rel="stylesheet" href="./serious.style.css" />
     <script src="./main.js" type="module" defer>
-      c
     </script>
   </head>
   <body>
@@ -17,23 +16,24 @@
         <button id="go-to-test">Test</button>
         <button id="go-to-convert">Convert</button>
         <button id="go-to-generate">Generate</button>
-        <div class="navDropdown">
-        <button id="languageBtn">Language</button>
-        <div id="languageSwitcherDiv">
-          <a id="flag" href="flag" class="flag-icon uk-icon"></a>
-          <select id="languageSwitcher">
-            <option value="en">en</option>
-            <option value="de">de</option>
-            <option value="fr">fr</option>
-            <option value="es">ss</option>
-          </select>
+        <div class="switcherDiv" id="languageSwitcherDiv">
+            <button id="languageBtn">Language</button>
+            <div class="switcherContentL">
+                <button class="languageContentBtn" id="enLang" value="en">en</button>
+                <button class="languageContentBtn" id="deLang" value="de">de</button>
+                <button class="languageContentBtn" id="frLang" value="fr">fr</button>
+                <button class="languageContentBtn" id="ssLang" value="ss">ss</button>
+            </div>
         </div>
-        <button id="themeBtn">Theme</button>
-          <div class="themeSwitcherDiv">
-          </div>
-          </div>
+        <div class="switcherDiv" id="themeSwitcherDiv">
+            <button id="themeBtn">Theme</button>
+            <div class="switcherContentT">
+                <button class="themeContentBtn" id="modern">Modern</button>
+                <button class="themeContentBtn" id="matrix">Matrix</button>
+                <button class="themeContentBtn" id="16bit">16 Bit</button>
+            </div>
         </div>
-        </div>
+      </div>
       <canvas id="matrixCanvas"></canvas>
       <div id="header">
         <div id="headerText" class="headings">

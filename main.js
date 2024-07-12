@@ -5,11 +5,13 @@ import { passwordEncoder } from "./scripts/encoder.js";
 import { passwordStrength } from "./scripts/passwordStrengthCalc.js";
 import { generatePassword } from "./scripts/passwordGenerator.js";
 import { copyButton } from "./scripts/copybutton.js";
-import { initTranslation } from "./scripts/translations.js";
+import { translatePage, initTranslation, translations } from "./scripts/translations.js";
+import { changeTheme } from "./scripts/themeSelect.js";
 
-document.addEventListener('DOMContentLoaded', () => {
-  initTranslation();
 
+document.addEventListener('DOMContentLoaded', async () => {
+  await initTranslation();
+});
 
 
 
@@ -38,18 +40,55 @@ scrollBtns.forEach(btn => {
 
 })
 
-document.getElementById('toggleSwitch').addEventListener('change', function() {
-  var themeStylesheet = document.getElementById('themeStylesheet');
-  var logo = document.getElementById('logo');
-  if(this.checked) {
-      themeStylesheet.href = "./style.css"; // Switch to style2.css
-      logo.src = './img/non_animated_monkey.png'
-  } else {
-      themeStylesheet.href = './serious.style.css'; // Switch to style1.css
-      logo.src = './img/Security-Logo-Teal.png'
+let theme, logo;
+document.querySelector('.navbar').addEventListener('click', function(event) {
+  const targetId = event.target.id;
+
+  switch (targetId) {
+      case 'go-to-top':
+          console.log('Home button clicked');
+          break;
+      case 'go-to-test':
+          console.log('Test button clicked');
+          break;
+      case 'go-to-convert':
+          console.log('Convert button clicked');
+          break;
+      case 'go-to-generate':
+          console.log('Generate button clicked');
+          break;
+      case 'languageBtn':
+          document.getElementById('languageSwitcherDiv').classList.toggle('show');
+          break;
+      case 'themeBtn':
+          document.getElementById('themeSwitcherDiv').classList.toggle('show');
+          break;
+      case 'enLang':
+      case 'deLang':
+      case 'frLang':
+      case 'ssLang':
+          const selectedLanguage = event.target.value;
+          translatePage(translations, selectedLanguage);
+          break;
+      case 'modern':
+          theme = './serious.style.css';
+          logo = './img/Security-Logo-Teal.png';
+          changeTheme(theme, logo);
+          break;
+      case 'matrix':
+          theme = './style.css';
+          logo = './img/non_animated_monkey.png';
+          changeTheme(theme, logo);
+          break;
+      case '16bit':
+          theme = './serious.style.css';
+          logo = './img/Security-Logo-Teal.png';
+          changeTheme(theme, logo);
+          break;
+      default:
+          break;
   }
 });
-
 
 rdmPwdBtn.addEventListener("click", function () {
   const textId = "generatedPassword";
@@ -222,4 +261,3 @@ function updateAttempts(result) {
     tds[index].textContent = item;
   });
 }
-});

@@ -19,63 +19,6 @@
     font-family:Arial, Helvetica, sans-serif;
     color: var(--fifthColor)
 }
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    top: 1rem;
-    left: 1rem;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-/* Hide the default HTML checkbox */
-.switch input {
-opacity: 0;
-width: 0;
-height: 0;
-}
-
-/* The slider */
-.slider {
-position: absolute;
-cursor: pointer;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: var(--seventhColor);
-transition: .4s;
-border-radius: 34px;
-}
-
-/* The slider before the toggle */
-.slider:before {
-position: absolute;
-content: "";
-height: 26px;
-width: 26px;
-left: 4px;
-bottom: 4px;
-background-color: var(--eigthColor);
-transition: .4s;
-border-radius: 50%;
-}
-
-/* When the checkbox is checked, the background is green */
-input:checked + .slider {
-background-color: var(--fifthColor);
-}
-
-/* Move the slider when the checkbox is checked */
-input:checked + .slider:before {
-transform: translateX(26px);
-}
-#themeSwitcherDiv {
-    position: fixed;
-    top: -0.5rem;
-    right: 1.5rem;
-}
 .navbar {
     height: 3rem;
     position: sticky;
@@ -85,18 +28,46 @@ transform: translateX(26px);
     background-color: var(--eigthColor);
     border-bottom: 2px solid var(--sixthColor);
     width: 100%;
-    overflow: hidden;
 }
-.navbar button {
+.navbar button,
+.switcherDiv {
     margin-left: 0.2px;
-    width: 10rem;
+    height: 100%;
+    width: 100%;
     border-left: 0.5px var(--ninthColor);
     border-radius: 2px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s transform 0.3s;
 }
+.switcherDiv {
+    position: relative;
+    display: inline-block;
+}
 
+
+/* Show the dropdown menu on hover */
+.switcherDiv:hover .switcherContentL,
+.switcherDiv:hover .switcherContentT {
+    display: block;
+}
+.switcherContentL {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    height: 2rem;
+    width: 100%;
+    left: 0;
+    margin-top: 4.9rem;
+}
+.switcherContentT {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    height: 2rem;
+    width: 100%;
+    left: 0;
+}
 body{
     display: flex;
     flex-direction: column;

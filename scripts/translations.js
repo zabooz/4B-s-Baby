@@ -25,7 +25,7 @@ export function translatePage(translations, language) {
     document.getElementById('go-to-test').textContent = translations.navbar.test[language];
     document.getElementById('go-to-convert').textContent = translations.navbar.convert[language];
     document.getElementById('go-to-generate').textContent = translations.navbar.generate[language];
-    document.getElementById('flag').className = "flag-icon " + language + "-icon";
+    // document.getElementById('flag').className = "flag-icon " + language + "-icon";
     // Header
     document.querySelector('#headerText h1').textContent = translations.header.title[language];
     document.querySelector('#headerText p').textContent = translations.header.description[language];
@@ -164,8 +164,8 @@ export async function initTranslation() {
     const language = getUserLanguage();
     translatePage(translations, language);
     // Add event listener for language switcher
-    const languageSwitcher = document.getElementById('languageSwitcher');
-    languageSwitcher.addEventListener('change', (event) => {
+    const themeSwitcherDiv = document.getElementById('themeSwitcherDiv');
+    themeSwitcherDiv.addEventListener('change', (event) => {
         console.log(event.target.value);
         const selectedLanguage = event.target.value;
         translatePage(translations, selectedLanguage);
@@ -173,3 +173,4 @@ export async function initTranslation() {
 }
 
 
+export const translations = await loadTranslations();
