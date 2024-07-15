@@ -26,11 +26,12 @@
     display: flex;
     align-content: center;
     border-bottom: 2px solid var(--sixthColor);
+    border-left: 2px solid var(--sixthColor);
+    border-right: 2px solid var(--sixthColor);
     width: 100%;
 }
 .navbar button,
 .switcherDiv {
-    margin-left: 0.2px;
     height: 100%;
     width: 100%;
     border: none;
@@ -60,12 +61,7 @@
     padding: .5rem 0;
      
 }
-#themeBtn{
-    border-right: 2px solid var(--sixthColor);
-}
-#go-to-top{
-    border-left: 2px solid var(--sixthColor);
-}
+
 .switcherContentT,
 .switcherContentL {
     display: none;
