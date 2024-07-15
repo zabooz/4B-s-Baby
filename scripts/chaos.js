@@ -1,10 +1,21 @@
 
+const initialStyles = [];
+
+
+
+const all = document.querySelectorAll('.allDiv *');
 
 export const chaos = () => {
     
-    const all = document.querySelectorAll('.allDiv *');
     
-    all.forEach(element => {
+    all.forEach((element,index) => {
+
+        if (!initialStyles[index]) {
+            initialStyles[index] = {
+                backgroundColor: element.style.backgroundColor,
+                fontSize: element.style.fontSize
+            };
+        }
 
         const arr = ['green', 'blue', 'red', 'yellow', 'purple', 'orange', 'pink', 'brown', 'gray', 'black', 'white'];
         const arr2 = [5,4,3,2,1];
@@ -14,5 +25,11 @@ export const chaos = () => {
         element.style.backgroundColor = arr[rdm];
         element.style.fontSize = `${rdm2}rem`;
 
+    });
+}
+export const reset = () => {
+    all.forEach((element,index) => {
+        element.style.backgroundColor = initialStyles[index].backgroundColor;
+        element.style.fontSize = initialStyles[index].fontSize;
     });
 }
