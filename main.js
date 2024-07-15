@@ -7,7 +7,7 @@ import { generatePassword } from "./scripts/passwordGenerator.js";
 import { copyButton } from "./scripts/copybutton.js";
 import { translatePage, initTranslation, translations } from "./scripts/translations.js";
 import { changeTheme } from "./scripts/themeSelect.js";
-
+import { chaos } from "./scripts/chaos.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
   await initTranslation();
@@ -24,10 +24,13 @@ const userGenBtn = document.getElementById("userGeneratorBtn");
 const calcStrengthBtn = document.getElementById("calcStrengthBtn");
 const uploadFile = document.getElementById("uploadFile");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
-
+const chaosBtn = document.getElementById("chaos");
 
 const scrollBtns = document.querySelectorAll(".scrollBtn");
 
+chaosBtn.addEventListener("click", () => {
+  chaos();
+});
 
 scrollBtns.forEach(btn => {
 
