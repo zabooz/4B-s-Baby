@@ -7,7 +7,7 @@ const all = document.querySelectorAll('.allDiv *');
 
 export const chaos = () => {
     
-    
+  
     all.forEach((element,index) => {
 
         if (!initialStyles[index]) {
@@ -28,8 +28,14 @@ export const chaos = () => {
     });
 }
 export const reset = () => {
-    all.forEach((element,index) => {
-        element.style.backgroundColor = initialStyles[index].backgroundColor;
-        element.style.fontSize = initialStyles[index].fontSize;
-    });
+   
+    
+        all.forEach((element,index) => {
+            if(element.style.backgroundColor && element.style.fontSize){
+                element.style.backgroundColor = initialStyles[index].backgroundColor;
+                element.style.fontSize = initialStyles[index].fontSize;
+            }
+        });
+     
+   
 }
