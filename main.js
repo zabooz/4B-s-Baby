@@ -27,71 +27,40 @@ const rdmPwdBtn = document.getElementById("rdmPwdBtn");
 const chaosBtn = document.getElementById("chaos");
 
 const scrollBtns = document.querySelectorAll(".scrollBtn");
+const languageBtns = document.querySelectorAll(".languageContentBtn");
+const themeBtns = document.querySelectorAll(".themeContentBtn");
 
 chaosBtn.addEventListener("click", () => {
   chaos();
 });
 
 scrollBtns.forEach(btn => {
-
   btn.addEventListener("click", () => {
     const targetId = btn.getAttribute("data-target");
-    console.log(targetId);
     const targetElement = document.getElementById(targetId);
     targetElement.scrollIntoView({behavior: "smooth"});
   })
-
 })
 
-let theme, logo;
-document.querySelector('.navbar').addEventListener('click', function(event) {
-  const targetId = event.target.id;
 
-  switch (targetId) {
-      case 'go-to-top':
-          console.log('Home button clicked');
-          break;
-      case 'go-to-test':
-          console.log('Test button clicked');
-          break;
-      case 'go-to-convert':
-          console.log('Convert button clicked');
-          break;
-      case 'go-to-generate':
-          console.log('Generate button clicked');
-          break;
-      case 'languageBtn':
-          document.getElementById('languageSwitcherDiv').classList.toggle('show');
-          break;
-      case 'themeBtn':
-          document.getElementById('themeSwitcherDiv').classList.toggle('show');
-          break;
-      case 'enLang':
-      case 'deLang':
-      case 'frLang':
-      case 'esLang':
-          const selectedLanguage = event.target.value;
-          translatePage(translations, selectedLanguage);
-          break;
-      case 'modern':
-          theme = './serious.style.css';
-          logo = './img/Security-Logo-Teal.png';
-          changeTheme(theme, logo);
-          break;
-      case 'matrix':
-          theme = './matrix.style.css';
-          logo = './img/non_animated_monkey.png';
-          changeTheme(theme, logo);
-          break;
-      case '16bit':
-          theme = './serious.style.css';
-          logo = './img/Security-Logo-Teal.png';
-          changeTheme(theme, logo);
-          break;
-      default:
-          break;
-  }
-});
+languageBtns.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    const selectedLanguage = e.target.value;
+    translatePage(translations, selectedLanguage);
+  })
+})
+
+themeBtns.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    const selectedTheme = e.target.id;
+    if(selectedTheme === "serious"){
+      changeTheme("./serious.style.css", "./img/Security-Logo-Teal.png");
+    } else if(selectedTheme === "matrix"){
+      changeTheme("./matrix.style.css", "./img/non_animated_monkey.png");
+    }
+  })
+})
+
 
 rdmPwdBtn.addEventListener("click", function () {
   const textId = "generatedPassword";
