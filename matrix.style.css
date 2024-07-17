@@ -27,7 +27,6 @@
     align-content: center;
     border-bottom: 2px solid var(--sixthColor);
     border-left: 2px solid var(--sixthColor);
-    /* border-right: 2px solid var(--sixthColor); */
     width: 100%;
 }
 #themeBtn{
