@@ -1,4 +1,4 @@
-import {colors, shapes, textures, sizes, emotions, tastes, sounds, temperatures, speeds, qualities, weatherTypes, instruments, fruits, animals, fantasyCreatures, vegetables, rpgClasses, fantasyRaces, occupations, vehicles, food, tools, beverages, clothingItems, bodyParts, flowers, desserts, contentArray1, contentArray2, allAdjectives, allNouns} from './generator.data.js'
+import {colors, shapes, textures, sizes, emotions, tastes, sounds, temperatures, speeds, qualities, weatherTypes, instruments, fruits, animals, fantasyCreatures, vegetables, rpgClasses, fantasyRaces, occupations, vehicles, food, tools, beverages, clothingItems, bodyParts, flowers, desserts, contentArray1, contentArray2, allAdjectives, allNouns} from '../data/generator.data.js'
 import { rndNumInLen } from './encoder.js';
 
 export function generateUser(adjective1, adjective2, selectedNoun) {
