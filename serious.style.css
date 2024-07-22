@@ -142,7 +142,7 @@ main{
     width: 80%;
     background-color:#e5e5e5;
     border-radius: 1rem;
-    box-shadow: 3px -3px 4px 0.5px var(--sixthColor);
+    /* box-shadow: 3px -3px 4px 0.5px var(--sixthColor); */
     
 }
 .headings h4{
@@ -163,11 +163,8 @@ main{
     margin-bottom: 1rem;
     margin-right: 1rem;
     margin-left: 1rem;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
     margin-left:  0.5rem;
     line-height: 1.2;
-    box-shadow: 1px 2px 3px #c5c5c5;
     padding: 0.5rem;
 }
 .headings h2{
@@ -184,7 +181,6 @@ main{
     border-radius: 1rem;
 }
 #headerText p{
-    box-shadow: 1px 2px 3px #c5c5c5;
     line-height: 1.5rem;
     padding: 0.5rem;
 }
@@ -299,7 +295,6 @@ main{
 
 .appBox{
     border-radius: 1rem;
-    box-shadow: 3px -3px 4px 0.5px var(--sixthColor);
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -333,11 +328,11 @@ h3{
     color: var(--secondaryColor)
 }
 table{
-    border: 1px solid #ffffff;
+    border: 1px solid #030303;
 }
 th{
-    border-bottom: 1px solid white;
-    border-right: 1px solid white;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(0, 0, 0);
     padding: .5rem;
 }
 #lastTh{
@@ -350,7 +345,7 @@ td{
     width: 6rem;
     text-align: center;
     padding: .5rem;
-    border-right: 1px solid white;
+    border-right: 1px solid rgb(0, 0, 0);
 }
 #statOutput :last-child{
     border-right: none;
