@@ -32,6 +32,22 @@
 #themeBtn{
     border-right: 2px solid var(--sixthColor);
 }
+#burgerBtn{
+    display: none;
+    background-color: #0700008c;
+}
+#burgerContent{
+    display: flex;
+    width: 100%;
+
+}
+#burgerContent button{
+    height: 100%;
+    background-color:var(--tenthColor);
+
+}
+
+
 
 .navbar button,
 .switcherDiv {
@@ -502,24 +518,145 @@ select{
     }
 
 }
-/* .flag-icon {
-    display: inline-block;
-    width: 50px;
-    height: 30px;
-    background-size: cover;
-    margin: 10px;
-    cursor: pointer;
-  }
-  .uk-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg');
-  }
-  .france-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg');
-  }
-  .germany-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg');
-  }
-  .spain-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg');
-  } */
+#strengthBarDiv{
+    display: flex;
+    gap: 1rem;
+    visibility: hidden;
 
+    width: 100%;
+
+}
+#strengthBar{
+    height: 1rem;
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+}
+.strengthBarFill{
+    border-top: 1px solid var(--fifthColor);
+    border-bottom: 1px solid var(--fifthColor);
+    height: 1rem;
+    width: 20%;
+    border-left: 1px solid var(--fifthColor);
+}
+.strengthBarFill:last-child{
+    border-right: 1px solid var(--fifthColor);
+}
+
+.strengthBar span{
+    font-size: .8rem;
+    color: black;
+    white-space: nowrap;
+    margin:0 1rem
+}
+@media (max-width: 500px) {
+
+    .navbar{
+        
+        background-color: #0700008c;
+    }
+    .switcherDiv{
+        width: 100%;
+        position: relative;
+    }
+    .switcherContentL{
+        position: absolute;
+        left: 6.85rem;
+        top: -1.9rem;
+        background-color: #0c0b0b2d;
+        width: 6rem;
+        border-top: 2px solid var(--sixthColor);
+        border-left: none;
+        
+ 
+    }
+    .switcherContentL::after{
+        content: "";
+        position: absolute;
+        bottom: 2.8rem;
+        transform:rotate(90deg);
+        left: -3rem;
+        width: 95px; 
+        height: 2px;
+        background-color: var(--sixthColor);
+    }
+    .switcherContentL button{
+        margin: .3rem 0;
+    }
+    .switcherContentL:hover{
+        display: flex;
+    }
+    .switcherContentT{
+        position: absolute;
+        left: 6.9rem;
+        top: -4.1rem;
+        background-color: #fff;
+        width: 6rem;
+        border-top: 2px solid var(--sixthColor);
+        border-left: none
+   
+    }
+
+    .switcherContentT::after{
+        content: "";
+        position: absolute;
+        bottom: 1.4rem;
+        transform:rotate(90deg);
+        left: -1.53rem;
+        width: 52px; 
+        height: 2px;
+        background-color: var(--sixthColor);
+    }
+
+
+    .switcherContentT button{
+        margin: .3rem 0;
+    }
+
+
+
+    #burgerBtn{
+        display: flex;
+        padding: 1rem 2rem;
+        background-color: #020202;
+        width: 6rem;
+        
+    }
+
+    #burgerContent{
+        position: absolute;
+        left:0px;
+        top: 2.9rem;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 7rem;
+        background-color: #00000067;
+        border-bottom: 2px solid var(--sixthColor);
+     
+    }
+
+    #burgerContent::after{
+        content: "";
+        position: absolute;
+        bottom: 8.4rem;
+        left: 3.8rem;
+        width: 92%;
+        height: 2px;
+        background-color: var(--sixthColor);
+        transform: rotate(90deg);
+    }
+
+
+    #burgerContent.active {
+        display: flex;
+        gap: 1rem;
+    }
+    #burgerContent button{
+        background-color: #00000067;
+        width: 100%;
+        border: none;
+    }
+}

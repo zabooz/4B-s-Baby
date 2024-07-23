@@ -12,26 +12,29 @@
     <div class="allDiv">
       <div id="top"></div>
       <div class="navbar">
-        <button id="go-to-top" class="scrollBtn" data-target="top">Home</button>
-        <button id="go-to-test" class="scrollBtn" data-target="testd">Test</button>
-        <button id="go-to-convert" class="scrollBtn" data-target="convert">Convert</button>
-        <button id="go-to-generate" class="scrollBtn" data-target="newPassword">Generate</button>
-        <div class="switcherDiv" id="languageSwitcherDiv">
-            <button id="languageBtn">Language</button>
-            <div class="switcherContentL">
-                <button class="languageContentBtn" id="enLang" value="en">English</button>
-                <button class="languageContentBtn" id="deLang" value="de">Deutsch</button>
-                <button class="languageContentBtn" id="frLang" value="fr">French</button>
-                <button class="languageContentBtn" id="esLang" value="es">Español</button>
-            </div>
-        </div>
-        <div class="switcherDiv" id="themeSwitcherDiv">
-            <button id="themeBtn">Theme</button>
-            <div class="switcherContentT">
-                <button class="themeContentBtn" id="serious">Modern</button>
-                <button class="themeContentBtn" id="matrix">Matrix</button>
-                <button class="themeContentBtn" id="chaos">Chaos</button>
-            </div>
+        <button id="burgerBtn" class="burgerBtn">☰</button>
+        <div id="burgerContent">
+          <button id="go-to-top" class="scrollBtn" data-target="top">Home</button>
+          <button id="go-to-test" class="scrollBtn" data-target="testd">Test</button>
+          <button id="go-to-convert" class="scrollBtn" data-target="convert">Convert</button>
+          <button id="go-to-generate" class="scrollBtn" data-target="newPassword">Generate</button>
+          <div class="switcherDiv" id="languageSwitcherDiv">
+              <button id="languageBtn">Language</button>
+              <div class="switcherContentL">
+                  <button class="languageContentBtn" id="enLang" value="en">English</button>
+                  <button class="languageContentBtn" id="deLang" value="de">Deutsch</button>
+                  <button class="languageContentBtn" id="frLang" value="fr">French</button>
+                  <button class="languageContentBtn" id="esLang" value="es">Español</button>
+              </div>
+          </div>
+          <div class="switcherDiv" id="themeSwitcherDiv">
+              <button id="themeBtn">Theme</button>
+              <div class="switcherContentT">
+                  <button class="themeContentBtn" id="serious">Modern</button>
+                  <button class="themeContentBtn" id="matrix">Matrix</button>
+                  <button class="themeContentBtn" id="chaos">Chaos</button>
+              </div>
+          </div>
         </div>
       </div>
       <canvas id="matrixCanvas"></canvas>

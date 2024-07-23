@@ -31,7 +31,7 @@
 .navbar  button{
     border: none;
     height: 100%;
-    width: 100%;
+    width: 20%;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s transform 0.3s;
@@ -40,46 +40,35 @@
 .navbar > button:first-child{
     border-left: none;
 }
-#strengthBarDiv{
+
+
+#burgerBtn{
+    display: none;
+}
+#burgerContent{
     display: flex;
-    gap: 1rem;
-    visibility: hidden;
-    background-color: var(--tenthColor);
     width: 100%;
 
 }
-#strengthBar{
-    height: 1rem;
-    width: 100%;
-    display: flex;
-    background-color: var(--tenthColor);
-    align-items: center;
-}
-.strengthBarFill{
-    border-top: 1px solid var(--fifthColor);
-    border-bottom: 1px solid var(--fifthColor);
-    height: 1rem;
-    width: 20%;
-    border-left: 1px solid var(--fifthColor);
-}
-.strengthBarFill:last-child{
-    border-right: 1px solid var(--fifthColor);
+#burgerContent button{
+    height: 100%;
+    background-color:var(--tenthColor);
+
 }
 
-.strengthBar span{
-    font-size: .8rem;
-    color: black;
-    white-space: nowrap;
-    margin:0 1rem
-}
 .switcherDiv {
     border: none;
-    width: 100%;
+    width: 15%;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s transform 0.3s;
     position: relative;
     display: inline-block;
+    
+}
+.switcherDiv button{
+    width:100%;
+    background-color:var(--tenthColor);
 }
 .switcherDiv button:last-child{
     border-bottom: 1px solid var(--fifthColor);
@@ -88,20 +77,21 @@
 .themeContentBtn{
     border-left: none !important;
     border-bottom: none !important;
+    margin:0.3rem 0;
 }
 
 .switcherDiv:hover .switcherContentL,
 .switcherDiv:hover .switcherContentT {
     display: block;
+    background-color: var(--tenthColor);
 }
 
 .switcherContentT,
 .switcherContentL {
     display: none;
-    height: 2rem;
     width: 100%;
-
-
+    
+    
 }
 body{
     display: flex;
@@ -141,7 +131,7 @@ main{
     align-items: center;
     gap: 2rem;
     width: 100%;
- 
+    
 }
 #imgDiv{
     display: flex;
@@ -182,14 +172,14 @@ main{
     margin-bottom: 1rem;
     padding: 1rem;
     text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0, 0.5);
-
+    
 }
 .headings h3{
     padding: 1rem;
     font-size: 1.4rem;
     color: var(--seventhColor);
     text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0, 0.5);
-
+    
 }
 .headings p{
     margin-bottom: 1rem;
@@ -204,7 +194,7 @@ main{
     margin-bottom: 1rem;
     padding: 1rem;
     text-shadow: 0.5px 0.5px 0px rgba(0, 0, 0, 0.5);
-
+    
 }
 #headerText{
     overflow: hidden;
@@ -229,7 +219,7 @@ main{
     line-height: 1;
     margin-right: 0.1em; 
     color: var(--sixthColor);
-
+    
 }
 .headings a{
     text-decoration: none;
@@ -261,6 +251,38 @@ main{
     background-color:#ad2e1a;
     transition: 0.05s;
 }
+#strengthBarDiv{
+    display: flex;
+    gap: 1rem;
+    visibility: hidden;
+    background-color: var(--tenthColor);
+    width: 100%;
+
+}
+#strengthBar{
+    height: 1rem;
+    width: 100%;
+    display: flex;
+    background-color: var(--tenthColor);
+    align-items: center;
+}
+.strengthBarFill{
+    border-top: 1px solid var(--fifthColor);
+    border-bottom: 1px solid var(--fifthColor);
+    height: 1rem;
+    width: 20%;
+    border-left: 1px solid var(--fifthColor);
+}
+.strengthBarFill:last-child{
+    border-right: 1px solid var(--fifthColor);
+}
+
+.strengthBar span{
+    font-size: .8rem;
+    color: black;
+    white-space: nowrap;
+    margin:0 1rem
+}
 .mainMiddle,
 .mainBottom,
 .mainTop{
@@ -268,7 +290,7 @@ main{
     width: 80%;
     justify-content: space-between;
     gap: 3rem;
-
+    
 }
 .mainMiddle {
     margin-top: 2rem;
@@ -556,40 +578,74 @@ select{
         width: 100%;
     }
     .navbar {
-        justify-content:flex-start;
+        justify-content:space-between
     }
-    .navbar button {
+    .switcherDiv {
         width: 20%;
     }
-}
-/* #languageSwitcherDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.flag-icon {
-    display: inline-block;
-    width: 25px;
-    height: 15px;
-    background-size: cover;
-    margin: 5px;
-    cursor: pointer;
-  }
-  .en-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg');
-  }
-  .fr-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg');
-  }
-  .de-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg');
-  }
-  .es-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg');
-  }
-  #languageSwitcher{
-    width: 3rem;
-    height: 1.5rem;
-    border: none;
-  } */
+}
+@media (max-width: 500px) {
+
+    .navbar{
+        border-bottom: none;
+        background-color: #fff;
+    }
+    .switcherDiv{
+        width: 100%;
+        position: relative;
+    }
+    .switcherContentL{
+        position: absolute;
+        left: 6rem;
+        top: -3.65rem;
+        background-color: #fff;
+        
+ 
+    }
+    .switcherContentL button{
+        margin: .3rem 0;
+    }
+    .switcherContentL:hover{
+        display: flex;
+    }
+    .switcherContentT{
+        position: absolute;
+        left: 6rem;
+        top: -4.1rem;
+        background-color: #fff;
+    }
+    .switcherContentT button{
+        margin: .3rem 0;
+    }
+
+
+
+    #burgerBtn{
+        display: flex;
+        padding: 1rem;
+        background-color: #fffefe;
+        width: 6rem;
+    }
+
+    #burgerContent{
+        position: absolute;
+        left:0px;
+        top: 2.9rem;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 6rem;
+        background-color: #fffefe;
+    }
+    #burgerContent.active {
+        display: flex;
+        gap: 1rem;
+    }
+    #burgerContent button{
+        background-color: #fffefe00;
+        width: 100%;
+        border: none;
+    }
+}

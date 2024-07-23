@@ -134,8 +134,6 @@ export async function passwordStrength (pwd) {
       color = "green"
     }
     
-  
-    console.log(result)
     for (let i = 0; i < result; i++) {
       document.getElementById("strengthBar").children[i].style.backgroundColor = color;
     }

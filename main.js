@@ -85,6 +85,13 @@ userGenBtn.addEventListener("click", function (e) {
   textElement.append(copyButton(textId));
 });
 
+
+document.getElementById('burgerBtn').addEventListener('click', function() {
+  document.getElementById('burgerContent').classList.toggle('active');
+});
+
+
+
 calcStrengthBtn.addEventListener("click", async () => {
   const value = document.getElementById("strengthInput").value;
   const calcSpinner = document.getElementById("calcSpinner");
