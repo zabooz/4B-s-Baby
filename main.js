@@ -36,12 +36,9 @@ chaosBtn.addEventListener("click", () => {
 
 scrollBtns.forEach(btn => {
   btn.addEventListener("click", () => {
-
     
     const targetId = btn.getAttribute("data-target");
-    console.log(targetId);
     const targetElement = document.getElementById(targetId);
-    console.log(targetElement);
     targetElement.scrollIntoView({behavior: "smooth"});
   })
 })
@@ -184,7 +181,7 @@ picConBtn.addEventListener("click", async (e) => {
     const result = await pictureToString();
     textElement.innerText = `Your Password: ${result}`;
     textElement.append(copyButton(textId));
-    console.log(result);
+
   } catch (error) {
     console.log(error);
   }

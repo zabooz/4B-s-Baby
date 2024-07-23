@@ -166,7 +166,7 @@ export async function initTranslation() {
     // Add event listener for language switcher
     const languageSwitcherDiv = document.getElementById('languageSwitcherDiv');
     languageSwitcherDiv.addEventListener('change', (event) => {
-        console.log(event.target.value);
+     
         const selectedLanguage = event.target.value;
         translatePage(translations, selectedLanguage);
     });

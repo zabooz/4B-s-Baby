@@ -105,7 +105,7 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
             newUser += handOverUser[i];
         }
     }
-    console.log(newUser);
+
     return newUser;
 }
 

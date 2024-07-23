@@ -78,13 +78,7 @@ app.get("/bruteForceLibrary", async (req, res) => {
     res.status(500).send("error");
   }
 });
-app.get("/bruteForceHybrid", async (req, res) => {
-  const key = req.query.key;
-  const password = req.query.pwd || "abc";
-  const decodedPwd = passwordDecoder(password, key);
 
-  res.send("Not there yet");
-});
 
 app.get("/stopBruteForce", (req,res) => {
     if(currentProcess){

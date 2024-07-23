@@ -15,7 +15,7 @@ export function generatePassword (length) {
         generatedPassword += charArray[rndNumInLen(charArray)]
 
     }
-    console.log(generatedPassword);
+    
     return generatedPassword;
 }
 
