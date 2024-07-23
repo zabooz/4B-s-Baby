@@ -111,23 +111,27 @@
             </p>
             <p></p>
             <div class="bruteInput">
+              
               <input
                 type="text"
                 id="userPwdInput"
                 class="input"
                 placeholder=" Enter your Password"
-              />
-              <div id="chooseBruteForce">
-                <select id="bruteMode" class="input">
-                  <option value="library">Mode Library</option>
-                  <option value="simple">Mode Simple</option>
-                </select>
+                    required
+                />
+      
+                <div id="chooseBruteForce">
+                  <select id="bruteMode" class="input" required>
+                    <option value="library">Mode Library</option>
+                    <option value="simple">Mode Simple</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div class="bruteBtns">
-              <button id="startBrute" class="startBtn">Start</button>
-              <button id="stopBrute" class="startBtn">Stop</button>
-            </div>
+              <div class="bruteBtns">
+                <button type="submit" id="startBrute" class="startBtn">Start</button>
+                <button id="stopBrute" class="startBtn">Stop</button>
+              </div>
+        
             <table id="stats">
               <tbody id="statsBody">
                 <tr id="statsHeading">
@@ -145,6 +149,7 @@
               </tbody>
             </table>
           </div>
+  
           <div class="appBox" id="passwordStrengthCalc">
             <h3>Password Excalibur</h3>
             <p>

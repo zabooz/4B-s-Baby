@@ -65,7 +65,7 @@ app.get("/bruteForceSimple", async (req, res) => {
 
 app.get("/bruteForceLibrary", async (req, res) => {
   const key = req.query.key;
-  const password = req.query.pwd || "abc";
+  const password = req.query.pwd
   const decodedPwd = passwordDecoder(password, key);
   console.log("PWD:", password, "decoded:", decodedPwd);
   try {

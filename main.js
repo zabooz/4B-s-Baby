@@ -141,7 +141,8 @@ userPwdInput.addEventListener("keypress", function (event) {
 }
 });
 
-startBrute.addEventListener("click", () => {
+startBrute.addEventListener("click", (e) => {
+  e.preventDefault();
   const tds = document.querySelectorAll("#statOutput td");
 
   tds.forEach((td) => {
@@ -152,8 +153,6 @@ startBrute.addEventListener("click", () => {
     
     td.append(spinner);
   });
-  
-  
   
   
   fetchData();
@@ -209,7 +208,7 @@ const fetchData = (signal) => {
   fetch(urlPara)
     .then((response) => {
       if (!response.ok) {
-        throw new Error("I fucked up again");
+        throw new Error(response.statusText);
       }
 
       return response.json();
