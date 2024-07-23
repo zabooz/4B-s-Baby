@@ -2,8 +2,8 @@
 
 export async function passwordStrength (pwd) {
   let result;
-  let count = pwd.length * 2;
-  const pointsForDiffrentSigns = 3;
+  let count = pwd.length * 1.5;
+  const pointsForDiffrentSigns = 5;
   const malusForConsecutiveIdenticalSigns = 2;
   const malusForConsecutiveSigns = 1;
   const malusForRepeatedIdenticalSigns = 2;
@@ -32,9 +32,9 @@ export async function passwordStrength (pwd) {
       try{
        const url= `https://api.dictionaryapi.dev/api/v2/entries/en/${pwdSlice}`
        const response = await fetch (url)
-       if(!response.ok) throw new Error('sldJGHsg', response.Error)
+       if(!response.ok) throw new Error('word not found', response.Error)
        if(response.ok) {
-        usedWords = 20
+        usedWords = 10
         
         break
        }
@@ -111,7 +111,7 @@ export async function passwordStrength (pwd) {
   await checkIfWord(pwd)
 
     count -= ((repeatMalus * timesRepeated)  + (usedWords))
-
+    console.log(pwd, pwd.length, count, timesRepeated,'Userwords: ',usedWords);
   
     count = count < 0 ? 0 : count
   

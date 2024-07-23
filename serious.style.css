@@ -199,6 +199,13 @@ main{
     color: var(--sixthColor);
 
 }
+.headings a{
+    text-decoration: none;
+    color: var(--fourthColor);
+}
+.headings a:hover{
+    text-decoration: underline;
+}
 .input{
     background: rgba(255, 255, 255, 0.925);
 }
