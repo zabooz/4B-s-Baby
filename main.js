@@ -36,8 +36,12 @@ chaosBtn.addEventListener("click", () => {
 
 scrollBtns.forEach(btn => {
   btn.addEventListener("click", () => {
+
+    
     const targetId = btn.getAttribute("data-target");
+    console.log(targetId);
     const targetElement = document.getElementById(targetId);
+    console.log(targetElement);
     targetElement.scrollIntoView({behavior: "smooth"});
   })
 })
