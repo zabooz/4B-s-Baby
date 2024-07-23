@@ -1,4 +1,4 @@
-import {bruteForceLibrary} from '../scripts/bruteLibrary.js';
+import {bruteForceLibrary} from '../server/serverScripts/bruteLibrary.js';
 
 test('should return correct values when the password is not found', async () => {
     const password = 'notInList';

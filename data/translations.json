@@ -178,10 +178,10 @@
         "es": "Gestionar múltiples contraseñas"
       },
       "managementDescription": {
-        "en": "Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include LastPass, 1Password, and Bitwarden.",
-        "de": "Die Verwendung eines Passwort-Managers hilft bei der Verwaltung mehrerer eindeutiger Passwörter. Diese Tools speichern und füllen Passwörter automatisch aus, sodass Sie sich nur ein Master-Passwort merken müssen. Beliebte Optionen sind LastPass, 1Password und Bitwarden.",
-        "fr": "L'utilisation d'un gestionnaire de mots de passe aide à gérer plusieurs mots de passe uniques. Ces outils stockent et remplissent automatiquement les mots de passe, vous n'avez donc besoin de vous souvenir que d'un seul mot de passe principal. Les options populaires incluent LastPass, 1Password et Bitwarden.",
-        "es": "El uso de un administrador de contraseñas ayuda a gestionar múltiples contraseñas únicas. Estas herramientas almacenan y rellenan automáticamente las contraseñas, por lo que solo necesita recordar una contraseña maestra. Las opciones populares incluyen LastPass, 1Password y Bitwarden."
+        "en": "Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>",
+        "de": "Die Verwendung eines Passwort-Managers hilft bei der Verwaltung mehrerer eindeutiger Passwörter. Diese Tools speichern und füllen Passwörter automatisch aus, sodass Sie sich nur ein Master-Passwort merken müssen. Beliebte Optionen sind  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>.",
+        "fr": "L'utilisation d'un gestionnaire de mots de passe aide à gérer plusieurs mots de passe uniques. Ces outils stockent et remplissent automatiquement les mots de passe, vous n'avez donc besoin de vous souvenir que d'un seul mot de passe principal. Les options populaires incluent  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>.",
+        "es": "El uso de un administrador de contraseñas ayuda a gestionar múltiples contraseñas únicas. Estas herramientas almacenan y rellenan automáticamente las contraseñas, por lo que solo necesita recordar una contraseña maestra. Las opciones populares incluyen  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>."
       }
     },
     "runeTranslatorApp": {

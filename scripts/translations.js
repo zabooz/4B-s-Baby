@@ -47,7 +47,6 @@ export function translatePage(translations, language) {
     document.getElementById('userPwdInput').placeholder = translations.bruteForceApp.placeholder[language];
     document.querySelector('#bruteMode option[value="simple"]').textContent = translations.bruteForceApp.simpleMode[language];
     document.querySelector('#bruteMode option[value="library"]').textContent = translations.bruteForceApp.libraryMode[language];
-    document.querySelector('#bruteMode option[value="hybrid"]').textContent = translations.bruteForceApp.hybridMode[language];
     document.getElementById('startBrute').textContent = translations.bruteForceApp.startButton[language];
     document.getElementById('stopBrute').textContent = translations.bruteForceApp.stopButton[language];
     document.querySelector('#statsHeading th:nth-of-type(1)').textContent = translations.bruteForceApp.statsHeading.password[language];
@@ -71,7 +70,7 @@ export function translatePage(translations, language) {
     document.querySelector('#passwordCreationHeading h3:nth-of-type(2)').textContent = translations.passwordCreationHeading.stepsTitle[language];
     document.querySelector('#passwordCreationHeading p:nth-of-type(3)').textContent = translations.passwordCreationHeading.stepsDescription[language];
     document.querySelector('#passwordCreationHeading h3:nth-of-type(3)').textContent = translations.passwordCreationHeading.managementTitle[language];
-    document.querySelector('#passwordCreationHeading p:nth-of-type(4)').textContent = translations.passwordCreationHeading.managementDescription[language];
+    document.querySelector('#passwordCreationHeading p:nth-of-type(4)').innerHTML = translations.passwordCreationHeading.managementDescription[language];
 
     // Rune Translator
     document.querySelector('#converterSelector h3').textContent = translations.runeTranslatorApp.title[language];

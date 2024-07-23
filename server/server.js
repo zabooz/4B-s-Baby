@@ -3,8 +3,8 @@ import express from "express";
 import axios from "axios";
 import cors from "cors";
 
-import { bruteForceSimple } from "../scripts/bruteSimple.js";
-import { bruteForceLibrary } from "../scripts/bruteLibrary.js";
+import { bruteForceSimple } from "./serverScripts/bruteSimple.js";
+import { bruteForceLibrary } from "./serverScripts/bruteLibrary.js";
 import { passwordDecoder } from "../scripts/encoder.js";
 
 
