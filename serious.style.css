@@ -40,6 +40,38 @@
 .navbar > button:first-child{
     border-left: none;
 }
+#strengthBarDiv{
+    display: flex;
+    gap: 1rem;
+    visibility: hidden;
+    background-color: var(--tenthColor);
+    width: 100%;
+
+}
+#strengthBar{
+    height: 1rem;
+    width: 100%;
+    display: flex;
+    background-color: var(--tenthColor);
+    align-items: center;
+}
+.strengthBarFill{
+    border-top: 1px solid var(--fifthColor);
+    border-bottom: 1px solid var(--fifthColor);
+    height: 1rem;
+    width: 20%;
+    border-left: 1px solid var(--fifthColor);
+}
+.strengthBarFill:last-child{
+    border-right: 1px solid var(--fifthColor);
+}
+
+.strengthBar span{
+    font-size: .8rem;
+    color: black;
+    white-space: nowrap;
+    margin:0 1rem
+}
 .switcherDiv {
     border: none;
     width: 100%;

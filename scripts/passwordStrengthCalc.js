@@ -115,25 +115,35 @@ export async function passwordStrength (pwd) {
   
     count = count < 0 ? 0 : count
   
-  
+    let color;
   
     if (count <= weak) {
-      result = "weak";
+      result = 1;
+      color = "red"
     } else if (count < mediocre) {
-      result = "mediocre";
+      result = 2;
+      color = "orange"
     } else if (count < strong) {
-      result = "strong";
+      result = 3;
+      color = "yellow"
     } else if (count < veryStrong) {
-      result = "very strong";
+      result = 4;
+      color = "green"
     } else {
-      result = "extremely strong";
+      result = 5; 
+      color = "green"
     }
     
-    // document.getElementById("strengthResult").textContent = `Result: ${result} (${count.toFixed()})`;
-    
+  
+    console.log(result)
+    for (let i = 0; i < result; i++) {
+      document.getElementById("strengthBar").children[i].style.backgroundColor = color;
+    }
+
+
 
   
-  return {result,count}
+  return {result}
 
 }
 const sonderzeichen = [

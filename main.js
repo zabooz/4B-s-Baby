@@ -88,19 +88,17 @@ userGenBtn.addEventListener("click", function (e) {
 calcStrengthBtn.addEventListener("click", async () => {
   const value = document.getElementById("strengthInput").value;
   const calcSpinner = document.getElementById("calcSpinner");
+  const bar = document.getElementById("strengthBarDiv");
+  bar.style.visibility="hidden"
   calcSpinner.classList.add("lds-dual-ring");
 
   try {
-    const { result, count } = await passwordStrength(value);
+    await passwordStrength(value);
 
-    document.getElementById(
-      "strengthResult"
-    ).textContent = `Result: ${result} (${count.toFixed()})`;
-
-    console.log(result);
   } catch (error) {
     console.log(error);
   } finally {
+    bar.style.visibility = "visible"
     calcSpinner.classList.remove("lds-dual-ring");
   }
 });
