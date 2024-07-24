@@ -8,12 +8,13 @@ import { copyButton } from "./scripts/copybutton.js";
 import { translatePage, initTranslation, translations } from "./scripts/translations.js";
 import { changeTheme } from "./scripts/themeSelect.js";
 import { chaos } from "./scripts/chaos.js";
+import { tooltip } from "./scripts/tooltip.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
   await initTranslation();
 });
 
-
+tooltip()
 
 const convertBtn = document.getElementById("convertBtn");
 const startBrute = document.getElementById("startBrute");
@@ -31,15 +32,6 @@ const languageBtns = document.querySelectorAll(".languageContentBtn");
 const themeBtns = document.querySelectorAll(".themeContentBtn");
 const burgerBtn = document.getElementById('burgerBtn');
 const burgerContent = document.getElementById('burgerContent');
-const bruteDescription = document.querySelectorAll('.bruteDescription');
-
-
-bruteDescription.forEach(description => {
-  description.addEventListener("mouseover", () => {
-    const  styleSheet  = document.styleSheets[0];
-    styleSheet.insertRule(`#${description.id}::after { content: attr(data-tooltip);display: block; }`, styleSheet.cssRules.length);
-  })
-})
 
 
 
@@ -59,6 +51,7 @@ scrollBtns.forEach(btn => {
 
 languageBtns.forEach(btn => {
   btn.addEventListener("click", (e) => {
+    tooltip()
     const selectedLanguage = e.target.value;
     translatePage(translations, selectedLanguage);
   })
@@ -66,6 +59,7 @@ languageBtns.forEach(btn => {
 
 themeBtns.forEach(btn => {
   btn.addEventListener("click", (e) => {
+    tooltip()
     const selectedTheme = e.target.id;
     if(selectedTheme === "serious"){
       changeTheme("./serious.style.css", "./img/Security-Logo-Teal.png");
