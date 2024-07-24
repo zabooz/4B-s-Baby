@@ -29,9 +29,9 @@
       },
       "bruteLibrary":{
         "de" :"Ein Bibiliotheksangriff verwendet häufige Passwörter und Phrasen, um das Passwort oder die Verschlüsselung zu knacken. Dieser Ansatz ist schneller als der einfache Brute-Force-Angriff, aber erfordert eine große Anzahl von Versuchen und ist nicht so sicher wie der Hybridangriff.",
-        "en" :"A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts and is not as secure as the hybrid attack.",
-        "fr" :"Un attaque par dictionnaire utilise des mots de passe et des phrases courants pour craquer un mot de passe ou une cryptographie. Cette approche est plus rapide que l'attaque par force brute simple, mais nécessite un grand nombre d'essais et n'est pas aussi sûre que l'attaque hybride.",
-        "es" :"Un ataque de diccionario utiliza contraseñas y frases comunes para descifrar una contraseña o una criptografía. Este enfoque es más rápido que el ataque de fuerza bruta simple, pero requiere un gran número de intentos y no es tan seguro como el ataque híbrido."
+        "en" :"A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts.",
+        "fr" :"Un attaque par dictionnaire utilise des mots de passe et des phrases courants pour craquer un mot de passe ou une cryptographie. Cette approche est plus rapide que l'attaque par force brute simple, mais nécessite un grand nombre d'essais.",
+        "es" :"Un ataque de diccionario utiliza contraseñas y frases comunes para descifrar una contraseña o una criptografía. Este enfoque es más rápido que el ataque de fuerza bruta simple, pero requiere un gran número de intentos."
       }
     },
     "passwordSafetyHeading": {
