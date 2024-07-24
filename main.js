@@ -211,7 +211,7 @@ uploadFile.addEventListener("change", () => {
 
 const fetchData = (signal) => {
   const bruteType = document.querySelector("#bruteMode").value;
-  const url = "http://localhost:3001/";
+  const url = "https://9f09-2a02-8388-c2c0-de80-f53a-18f-91b1-10ab.ngrok-free.app/";
   const pwd = document.getElementById("userPwdInput");
   const [encodedPwd, key] = passwordEncoder(pwd.value);
   const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
@@ -222,7 +222,7 @@ const fetchData = (signal) => {
 
   let result =[pwd.value,'--','--','--']
 
-  fetch(urlPara)
+  fetch(urlPara,{method:'GET',headers:{'ngrok-skip-browser-warning': true}})
     .then((response) => {
       if (!response.ok) {
         throw new Error(response.statusText);
