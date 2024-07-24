@@ -43,7 +43,7 @@
 }
 #burgerContent button{
     height: 100%;
-    background-color:var(--tenthColor);
+    background-color:black;
 
 }
 
@@ -510,12 +510,8 @@ select{
     .appBox {
         width: 100%;
     }
-    .navbar {
-        justify-content:flex-start;
-    }
-    .navbar button {
-        width: 20%;
-    }
+
+
 
 }
 #strengthBarDiv{
@@ -551,7 +547,7 @@ select{
     margin:0 1rem
 }
 @media (max-width: 500px) {
-
+    
     .navbar{
         
         background-color: #0700008c;
