@@ -31,6 +31,18 @@ const languageBtns = document.querySelectorAll(".languageContentBtn");
 const themeBtns = document.querySelectorAll(".themeContentBtn");
 const burgerBtn = document.getElementById('burgerBtn');
 const burgerContent = document.getElementById('burgerContent');
+const bruteDescription = document.querySelectorAll('.bruteDescription');
+
+
+bruteDescription.forEach(description => {
+  description.addEventListener("mouseover", () => {
+    const  styleSheet  = document.styleSheets[0];
+    styleSheet.insertRule(`#${description.id}::after { content: attr(data-tooltip);display: block; }`, styleSheet.cssRules.length);
+  })
+})
+
+
+
 chaosBtn.addEventListener("click", () => {
   chaos();
 });

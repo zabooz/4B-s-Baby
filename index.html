@@ -15,9 +15,9 @@
         <button id="burgerBtn" class="burgerBtn">☰</button>
         <div id="burgerContent">
           <button id="go-to-top" class="scrollBtn" data-target="top">Home</button>
-          <button id="go-to-test" class="scrollBtn" data-target="testd">Test</button>
-          <button id="go-to-convert" class="scrollBtn" data-target="convert">Convert</button>
-          <button id="go-to-generate" class="scrollBtn" data-target="newPassword">Generate</button>
+          <button id="go-to-test" class="scrollBtn" data-target="testd">Bruteforce</button>
+          <button id="go-to-convert" class="scrollBtn" data-target="convert">Password converter</button>
+          <button id="go-to-generate" class="scrollBtn" data-target="newPassword">Generate password</button>
           <div class="switcherDiv" id="languageSwitcherDiv">
               <button id="languageBtn">Language</button>
               <div class="switcherContentL">
@@ -28,7 +28,7 @@
               </div>
           </div>
           <div class="switcherDiv" id="themeSwitcherDiv">
-              <button id="themeBtn">Theme</button>
+              <button id="themeBtn">Design</button>
               <div class="switcherContentT">
                   <button class="themeContentBtn" id="serious">Modern</button>
                   <button class="themeContentBtn" id="matrix">Matrix</button>
@@ -104,13 +104,9 @@
             <h3>Test your Mojo</h3>
             <p>
               Choose a mode to test your password against brute force attacks.
-              The Simple Brute Force mode tests all possible character
-              combinations, the Dictionary Attack mode uses common passwords and
-              phrases, and the Hybrid Attack mode combines dictionary words with
-              variations like numbers and symbols.
-            </p>
-            <p>
-              Ensure your password is strong and unique for optimal security!
+              The Simple <span id="bruteSimpleDescription" class="bruteDescription" data-tooltip="A brute force attack systematically tries all possible character combinations to crack a password or encryption. This approach is simple, but time-consuming and resource-intensive, especially with strong passwords.">Brute Force mode</span> tests all possible character
+              combinations, the <span id="bruteLibraryDescription" class="bruteDescription" data-tooltip="A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts and is not as secure as the hybrid attack.">Dictionary Attack mode</span> uses common passwords and
+              phrases.
             </p>
             <p></p>
             <div class="bruteInput">
@@ -119,7 +115,7 @@
                 type="text"
                 id="userPwdInput"
                 class="input"
-                placeholder=" Enter your Password"
+                placeholder=" Enter password"
                     required
                 />
       
@@ -172,7 +168,7 @@
                 type="text"
                 id="strengthInput"
                 class="input"
-                placeholder=" Enter your password"
+                placeholder=" Enter password"
               />
             </div>
             <button id="calcStrengthBtn" class="startBtn">Test it</button>
@@ -250,7 +246,7 @@
                   type="text"
                   id="passwordInput"
                   class="input"
-                  placeholder=" Enter your password"
+                  placeholder=" Enter password"
                 />
                 <select id="converterSelect" class="input">
                   <option value="leetSimple">Simple Leetspeak</option>
