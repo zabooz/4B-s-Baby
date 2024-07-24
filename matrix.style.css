@@ -553,7 +553,7 @@ select{
     }
 
     .navbar{
-      
+        border-right: 2px solid var(--sixthColor);
         background-color: #0700008c;
     }
     .switcherDiv{
@@ -562,7 +562,7 @@ select{
     }
     .switcherContentL{
         position: absolute;
-        left: 6.79rem;
+        left: 6.818rem;
         z-index: 1;
         top: -1.9rem;
         background-color: #0c0b0b2d;
@@ -596,8 +596,8 @@ select{
         background-color: #fff;
         width: 5.9rem;
         border-top: 2px solid var(--sixthColor);
-        border-left: none
-   
+        border-left: none;
+        border-right: 3px solid var(--sixthColor);
     }
 
     .switcherContentT::after{
@@ -620,8 +620,8 @@ select{
 
     #burgerBtn{
         display: flex;
-        padding: 1rem 2rem;
-        background-color: #020202;
+        padding: .8rem 1rem;
+        background-color: #02020227;
         width: 6rem;
         
     }
@@ -645,8 +645,8 @@ select{
         content: "";
         position: absolute;
         bottom: 5.95rem;
-        left: .8rem;
-        width: 175%;
+        left: 1.05rem;
+        width: 170%;
         height: 2px;
         background-color: var(--sixthColor);
         transform: rotate(90deg);
