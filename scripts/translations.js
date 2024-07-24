@@ -2,7 +2,7 @@
 
 export async function loadTranslations() {
     try {
-        const response = await fetch('../data/translations.json'); // Replace with your actual path
+        const response = await fetch('data/translations.json'); 
         if (!response.ok) {
             throw new Error('Failed to load translations');
         }
