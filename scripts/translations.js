@@ -20,6 +20,10 @@ export function getUserLanguage() {
 }
 
 export function translatePage(translations, language) {
+    const burgerBtn = document.getElementById('burgerBtn');
+    const burgerContent = document.getElementById('burgerContent');
+    burgerContent.classList.remove('active');
+    burgerBtn.textContent = '☰';
     // Navbar
     document.getElementById('go-to-top').textContent = translations.navbar.home[language];
     document.getElementById('go-to-test').textContent = translations.navbar.test[language];
@@ -60,7 +64,7 @@ export function translatePage(translations, language) {
     document.querySelector('#passwordStrengthCalc p:nth-of-type(2)').textContent = translations.passwordStrengthCalc.description2[language];
     document.getElementById('strengthInput').placeholder = translations.passwordStrengthCalc.placeholder[language];
     document.getElementById('calcStrengthBtn').textContent = translations.passwordStrengthCalc.testButton[language];
-    document.getElementById('strengthResult').textContent = translations.passwordStrengthCalc.result[language];
+    // document.getElementById('strengthResult').textContent = translations.passwordStrengthCalc.result[language];
 
     // Password Creation Heading
     document.querySelector('#passwordCreationHeading h2').textContent = translations.passwordCreationHeading.title[language];

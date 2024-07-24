@@ -29,7 +29,8 @@ const chaosBtn = document.getElementById("chaos");
 const scrollBtns = document.querySelectorAll(".scrollBtn");
 const languageBtns = document.querySelectorAll(".languageContentBtn");
 const themeBtns = document.querySelectorAll(".themeContentBtn");
-
+const burgerBtn = document.getElementById('burgerBtn');
+const burgerContent = document.getElementById('burgerContent');
 chaosBtn.addEventListener("click", () => {
   chaos();
 });
@@ -59,6 +60,9 @@ themeBtns.forEach(btn => {
     } else if(selectedTheme === "matrix"){
       changeTheme("./matrix.style.css", "./img/non_animated_monkey.png");
     }
+
+
+
   })
 })
 
@@ -86,8 +90,10 @@ userGenBtn.addEventListener("click", function (e) {
 });
 
 
-document.getElementById('burgerBtn').addEventListener('click', function() {
-  document.getElementById('burgerContent').classList.toggle('active');
+burgerBtn.addEventListener('click', function() {
+  
+  burgerContent.classList.toggle('active');
+  burgerBtn.textContent = burgerBtn.textContent === '☰' ? 'X' : '☰';
 });
 
 

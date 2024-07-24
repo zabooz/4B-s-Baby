@@ -548,8 +548,12 @@ select{
 }
 @media (max-width: 500px) {
     
+    #logoFooter{
+        width: 300px;
+    }
+
     .navbar{
-        
+      
         background-color: #0700008c;
     }
     .switcherDiv{
@@ -558,7 +562,8 @@ select{
     }
     .switcherContentL{
         position: absolute;
-        left: 6.85rem;
+        left: 6.79rem;
+        z-index: 1;
         top: -1.9rem;
         background-color: #0c0b0b2d;
         width: 6rem;
@@ -585,10 +590,11 @@ select{
     }
     .switcherContentT{
         position: absolute;
-        left: 6.9rem;
+        left: 6.79rem;
         top: -4.1rem;
+        z-index: 1;
         background-color: #fff;
-        width: 6rem;
+        width: 5.9rem;
         border-top: 2px solid var(--sixthColor);
         border-left: none
    
@@ -597,10 +603,10 @@ select{
     .switcherContentT::after{
         content: "";
         position: absolute;
-        bottom: 1.4rem;
+        bottom: 1.45rem;
         transform:rotate(90deg);
-        left: -1.53rem;
-        width: 52px; 
+        left: -1.6rem;
+        width: 51px; 
         height: 2px;
         background-color: var(--sixthColor);
     }
@@ -622,24 +628,25 @@ select{
 
     #burgerContent{
         position: absolute;
-        left:0px;
+        left:-1.5px;
         top: 2.9rem;
         display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 7rem;
-        background-color: #00000067;
+        background-color: #000000fe;
         border-bottom: 2px solid var(--sixthColor);
+        border-left: 2px solid var(--sixthColor);
      
     }
 
     #burgerContent::after{
         content: "";
         position: absolute;
-        bottom: 8.4rem;
-        left: 3.8rem;
-        width: 92%;
+        bottom: 5.95rem;
+        left: .8rem;
+        width: 175%;
         height: 2px;
         background-color: var(--sixthColor);
         transform: rotate(90deg);
