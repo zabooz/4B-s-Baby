@@ -258,12 +258,20 @@ main{
     margin-top: 2rem;
 }
 .copyButton {
+    position: relative;
     background-color: transparent;
     border: hidden;
     height: 1rem;
     width: 1rem;
     cursor: pointer;
     margin-left: 0.5rem;
+}
+.confirmBubble{
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    top: -1.5rem;
+    left: 1.5rem;
 }
 .copyButton:active {
     -webkit-transform: translateY(1px);
