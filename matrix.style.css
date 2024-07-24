@@ -562,7 +562,7 @@ select{
     }
     .switcherContentL{
         position: absolute;
-        left: 6.818rem;
+        left: 6.89rem;
         z-index: 1;
         top: -1.9rem;
         background-color: #0c0b0b2d;
@@ -590,14 +590,13 @@ select{
     }
     .switcherContentT{
         position: absolute;
-        left: 6.79rem;
+        left: 6.89rem;
         top: -4.1rem;
         z-index: 1;
-        background-color: #fff;
         width: 5.9rem;
         border-top: 2px solid var(--sixthColor);
         border-left: none;
-        border-right: 3px solid var(--sixthColor);
+        border-right: 2px solid var(--sixthColor);
     }
 
     .switcherContentT::after{
@@ -628,8 +627,8 @@ select{
 
     #burgerContent{
         position: absolute;
-        left:-1.5px;
-        top: 2.9rem;
+        left:-2px;
+        top: 2.8rem;
         display: none;
         flex-direction: column;
         justify-content: center;
@@ -644,9 +643,9 @@ select{
     #burgerContent::after{
         content: "";
         position: absolute;
-        bottom: 5.95rem;
-        left: 1.05rem;
-        width: 170%;
+        bottom: 5.85rem;
+        left: 1.01rem;
+        width: 173%;
         height: 2px;
         background-color: var(--sixthColor);
         transform: rotate(90deg);
