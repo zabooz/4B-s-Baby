@@ -715,7 +715,6 @@ select{
 
 .chaos,
 #chaos {
-    font-size: 1rem;
     font-weight: bold;
     background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
     background-size: 200% 100%;
@@ -723,5 +722,34 @@ select{
     background-clip: text;
     -webkit-background-clip: text;
     animation: shimmer 3s infinite linear;
+}
+@keyframes wabber {
+    0% { transform: translateX(-5px); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(-5px); }
+}
+
+
+.wabbling-text {
+    display: inline-block;
+    font-size: 24px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    animation: wabber 1s ease-in-out infinite;
+}
+.animated-text {
+    display: inline-block;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: rotateText 10s linear infinite;
+}
+
+@keyframes rotateText {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
 }
 

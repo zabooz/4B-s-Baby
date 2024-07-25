@@ -58,7 +58,6 @@
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s transform 0.3s;
-    background: rgb(0, 0, 0);
 }
 .switcherDiv {
     position: relative;
@@ -717,12 +716,27 @@ select{
 
 .chaos,
 #chaos {
-    font-size: 1rem;
     font-weight: bold;
     background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
-    background-size: 200% 100%;
+    /* background-size: 200% 100%; */
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
     animation: shimmer 3s infinite linear;
 }
+@keyframes wabber {
+    0% { transform: translateX(-5px); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(-5px); }
+}
+
+
+.wabbling-text {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    animation: wabber 1s ease-in-out infinite;
+}
+
+

@@ -8,33 +8,26 @@ const all = document.querySelectorAll('.allDiv *');
 export const chaos = () => {
     
   
-    all.forEach((element,index) => {
+    all.forEach((element) => {
 
-        if (!initialStyles[index]) {
-            initialStyles[index] = {
-                backgroundColor: element.style.backgroundColor,
-                fontSize: element.style.fontSize,
-            };
+        console.log(element.tagName)
+        if(element.tagName === "P"){
+            element.classList.add('chaos')
+        }else{
+            element.classList.add('wabbling-text')
         }
-        element.classList.add('chaos')
-        const arr = ['green', 'blue', 'red', 'yellow', 'purple', 'orange', 'pink', 'brown', 'gray', 'black', 'white'];
-        const arr2 = [5,4,3,2,1];
-
-        const rdm = Math.floor(Math.random() * arr.length);
-        const rdm2 = Math.floor(Math.random() * arr2.length);
-        element.style.backgroundColor = arr[rdm];
-        element.style.fontSize = `${rdm2}rem`;
-
+    
+    
     });
 }
 export const reset = () => {
    
     
-        all.forEach((element,index) => {
-            element.classList.remove('chaos')
-            if(element.style.backgroundColor && element.style.fontSize){
-                element.style.backgroundColor = initialStyles[index].backgroundColor;
-                element.style.fontSize = initialStyles[index].fontSize;
+        all.forEach((element) => {
+            if(element.tagName === "P"){
+                element.classList.remove('chaos')
+            }else{
+                element.classList.remove('wabbling-text')
             }
         });
      
