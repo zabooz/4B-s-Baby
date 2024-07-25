@@ -718,7 +718,7 @@ select{
 #chaos {
     font-weight: bold;
     background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
-    /* background-size: 200% 100%; */
+    background-size: 200% 100%;
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -734,9 +734,7 @@ select{
 
 
 .wabbling-text {
-    display: inline-block;
-    font-family: Arial, sans-serif;
-    animation: wabber 1s ease-in-out infinite;
+    animation: wabber 1.5s ease-in-out infinite;
 }
 
 

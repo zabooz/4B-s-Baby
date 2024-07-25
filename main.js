@@ -170,6 +170,7 @@ startBrute.addEventListener("click", (e) => {
 
     td.innerHTML = "";
     const spinner = document.createElement("div");
+    spinner.className = "lds-dual-ring";
     
 
     if (timer) {
@@ -185,7 +186,6 @@ startBrute.addEventListener("click", (e) => {
 
 
 
-    spinner.className = "lds-dual-ring";
     
     if(i !== tds.length -1  && i !== 0){
       td.append(spinner);
