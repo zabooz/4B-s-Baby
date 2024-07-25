@@ -712,6 +712,7 @@ select{
     }
 }
 
+.chaos,
 #chaos {
     font-size: 1rem;
     font-weight: bold;
@@ -722,3 +723,4 @@ select{
     -webkit-background-clip: text;
     animation: shimmer 3s infinite linear;
 }
+

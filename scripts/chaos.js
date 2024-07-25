@@ -13,10 +13,10 @@ export const chaos = () => {
         if (!initialStyles[index]) {
             initialStyles[index] = {
                 backgroundColor: element.style.backgroundColor,
-                fontSize: element.style.fontSize
+                fontSize: element.style.fontSize,
             };
         }
-
+        element.classList.add('chaos')
         const arr = ['green', 'blue', 'red', 'yellow', 'purple', 'orange', 'pink', 'brown', 'gray', 'black', 'white'];
         const arr2 = [5,4,3,2,1];
 
@@ -31,6 +31,7 @@ export const reset = () => {
    
     
         all.forEach((element,index) => {
+            element.classList.remove('chaos')
             if(element.style.backgroundColor && element.style.fontSize){
                 element.style.backgroundColor = initialStyles[index].backgroundColor;
                 element.style.fontSize = initialStyles[index].fontSize;
