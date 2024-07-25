@@ -51,9 +51,9 @@ scrollBtns.forEach(btn => {
 
 languageBtns.forEach(btn => {
   btn.addEventListener("click", (e) => {
-    tooltip()
     const selectedLanguage = e.target.value;
     translatePage(translations, selectedLanguage);
+    tooltip()
   })
 })
 

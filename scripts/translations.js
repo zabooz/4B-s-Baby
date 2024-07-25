@@ -1,4 +1,5 @@
 // translations.js
+import { tooltip } from "./tooltip.js";
 
 export async function loadTranslations() {
     try {
@@ -24,6 +25,7 @@ export function translatePage(translations, language) {
     const burgerContent = document.getElementById('burgerContent');
     burgerContent.classList.remove('active');
     burgerBtn.textContent = '☰';
+    tooltip()
     // Navbar
     document.getElementById('go-to-top').textContent = translations.navbar.home[language];
     document.getElementById('go-to-test').textContent = translations.navbar.test[language];
