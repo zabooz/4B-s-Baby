@@ -714,7 +714,8 @@ select{
     }
 }
 
-.chaos {
+.chaos,
+#chaos {
     font-size: 1rem;
     font-weight: bold;
     background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
