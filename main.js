@@ -175,7 +175,7 @@ startBrute.addEventListener("click", (e) => {
   fetchData();
 });
 stopBrute.addEventListener("click", () => {
-  fetch("http://localhost:3001/stopBruteForce")
+  fetch("https://e6f7-85-31-21-51.ngrok-free.app/stopBruteForce")
     .then(response => {
       if (!response.ok) {
         throw new Error("Request to stop brute force process failed");
@@ -211,7 +211,7 @@ uploadFile.addEventListener("change", () => {
 
 const fetchData = (signal) => {
   const bruteType = document.querySelector("#bruteMode").value;
-  const url = "https://80ec-85-31-21-51.ngrok-free.app";
+  const url = "https://e6f7-85-31-21-51.ngrok-free.app/";
   const pwd = document.getElementById("userPwdInput");
   const [encodedPwd, key] = passwordEncoder(pwd.value);
   const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
