@@ -703,3 +703,22 @@ select{
     padding: 1rem;
 
 }
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+#chaos {
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
+    background-size: 200% 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shimmer 3s infinite linear;
+}

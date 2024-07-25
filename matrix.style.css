@@ -270,7 +270,7 @@ main{
     position: absolute;
     top: -0.1rem;
     left: 1.5rem;
-    background-color: #fff;
+    background-color: #1f1a1a;
     padding: .2rem;
     border-radius: .5rem;
     display: none;
@@ -675,10 +675,10 @@ select{
 #bruteSimpleDescription,
 #bruteLibraryDescription{
     color: #23a6db;
+    position: relative;
 }
 #bruteSimpleDescription:hover,
 #bruteLibraryDescription:hover{
-    position: relative;
     cursor: pointer;
 }
 #bruteSimpleDescription::after,
@@ -689,9 +689,9 @@ select{
     top: -12rem;
     left: 4rem;
     width: 15rem;
-    background-color: #fff;
+    background-color: black;
     border-radius: 5px;
-    border: 1px solid #000;
+    border: 1px solid #ffffff;
     padding: 1rem;
 
 }
@@ -703,4 +703,24 @@ select{
     0% { opacity: 0; display: block; }
     50% { opacity: 1; }
     100% { opacity: 0; display: none; }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+#chaos {
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
+    background-size: 200% 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shimmer 3s infinite linear;
 }
