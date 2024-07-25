@@ -3,9 +3,9 @@ import express from "express";
 import axios from "axios";
 import cors from "cors";
 
-import { bruteForceSimple } from "../scripts/bruteSimple.js";
-import { bruteForceLibrary } from "../scripts/bruteLibrary.js";
-import { passwordDecoder } from "../scripts/encoder.js";
+import { bruteForceSimple } from "./serverScripts/bruteSimple.js";
+import { bruteForceLibrary } from "./serverScripts/bruteLibrary.js";
+import { passwordDecoder } from "./serverScripts/encoder.js";
 
 
 config();
@@ -65,7 +65,7 @@ app.get("/bruteForceSimple", async (req, res) => {
 
 app.get("/bruteForceLibrary", async (req, res) => {
   const key = req.query.key;
-  const password = req.query.pwd || "abc";
+  const password = req.query.pwd
   const decodedPwd = passwordDecoder(password, key);
   console.log("PWD:", password, "decoded:", decodedPwd);
   try {
@@ -78,13 +78,7 @@ app.get("/bruteForceLibrary", async (req, res) => {
     res.status(500).send("error");
   }
 });
-app.get("/bruteForceHybrid", async (req, res) => {
-  const key = req.query.key;
-  const password = req.query.pwd || "abc";
-  const decodedPwd = passwordDecoder(password, key);
 
-  res.send("Not there yet");
-});
 
 app.get("/stopBruteForce", (req,res) => {
     if(currentProcess){

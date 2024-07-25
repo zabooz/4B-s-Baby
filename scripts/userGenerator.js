@@ -134,14 +134,14 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     return;
   }
 
-  let handOverUser = `${randomAdjective1}${randomAdjective2}${randomNoun}`;
-
-  //Filter out dashes/spaces.
-  for (let i = 0; i < handOverUser.length; i++) {
-    if (handOverUser[i] !== "-" && handOverUser[i] !== " ") {
-      newUser += handOverUser[i];
+    let handOverUser = `${randomAdjective1}${randomAdjective2}${randomNoun}`;
+    
+    //Filter out dashes/spaces.
+    for (let i = 0; i < handOverUser.length; i++) {
+        if (handOverUser[i] !== "-" && handOverUser[i] !== " ") {
+            newUser += handOverUser[i];
+        }
     }
-  }
-  console.log(newUser);
-  return newUser;
+
+    return newUser;
 }

@@ -12,26 +12,29 @@
     <div class="allDiv">
       <div id="top"></div>
       <div class="navbar">
-        <button id="go-to-top" class="scrollBtn" data-target="top">Home</button>
-        <button id="go-to-test" class="scrollBtn" data-target="testd">Test</button>
-        <button id="go-to-convert" class="scrollBtn" data-target="convert">Convert</button>
-        <button id="go-to-generate" class="scrollBtn" data-target="newPassword">Generate</button>
-        <div class="switcherDiv" id="languageSwitcherDiv">
-            <button id="languageBtn">Language</button>
-            <div class="switcherContentL">
-                <button class="languageContentBtn" id="enLang" value="en">English</button>
-                <button class="languageContentBtn" id="deLang" value="de">Deutsch</button>
-                <button class="languageContentBtn" id="frLang" value="fr">French</button>
-                <button class="languageContentBtn" id="esLang" value="es">Español</button>
-            </div>
-        </div>
-        <div class="switcherDiv" id="themeSwitcherDiv">
-            <button id="themeBtn">Theme</button>
-            <div class="switcherContentT">
-                <button class="themeContentBtn" id="serious">Modern</button>
-                <button class="themeContentBtn" id="matrix">Matrix</button>
-                <button class="themeContentBtn" id="chaos">Chaos</button>
-            </div>
+        <button id="burgerBtn" class="burgerBtn">☰</button>
+        <div id="burgerContent">
+          <button id="go-to-top" class="scrollBtn" data-target="top">Home</button>
+          <button id="go-to-test" class="scrollBtn" data-target="testd">Bruteforce</button>
+          <button id="go-to-convert" class="scrollBtn" data-target="convert">Password converter</button>
+          <button id="go-to-generate" class="scrollBtn" data-target="newPassword">Generate password</button>
+          <div class="switcherDiv" id="languageSwitcherDiv">
+              <button id="languageBtn">Language</button>
+              <div class="switcherContentL">
+                  <button class="languageContentBtn" id="enLang" value="en">English</button>
+                  <button class="languageContentBtn" id="deLang" value="de">Deutsch</button>
+                  <button class="languageContentBtn" id="frLang" value="fr">French</button>
+                  <button class="languageContentBtn" id="esLang" value="es">Español</button>
+              </div>
+          </div>
+          <div class="switcherDiv" id="themeSwitcherDiv">
+              <button id="themeBtn">Design</button>
+              <div class="switcherContentT">
+                  <button class="themeContentBtn" id="serious">Modern</button>
+                  <button class="themeContentBtn" id="matrix">Matrix</button>
+                  <button class="themeContentBtn" id="chaos">Chaos</button>
+              </div>
+          </div>
         </div>
       </div>
       <canvas id="matrixCanvas"></canvas>
@@ -52,8 +55,8 @@
             practicing good internet safety, password management, and data
             security, we can protect our personal information and maintain
             privacy in the digital world.
-            <span id="testd"></span>
           </p>
+          <span id="testd"></span>
         </div>
         <div id="imgDiv">
           <img id="logo" src="./img/Security-Logo-Teal.png" alt="Logo" />
@@ -101,34 +104,33 @@
             <h3>Test your Mojo</h3>
             <p>
               Choose a mode to test your password against brute force attacks.
-              The Simple Brute Force mode tests all possible character
-              combinations, the Dictionary Attack mode uses common passwords and
-              phrases, and the Hybrid Attack mode combines dictionary words with
-              variations like numbers and symbols.
-            </p>
-            <p>
-              Ensure your password is strong and unique for optimal security!
+              The Simple <span id="bruteSimpleDescription" class="bruteDescription" data-tooltip="A brute force attack systematically tries all possible character combinations to crack a password or encryption. This approach is simple, but time-consuming and resource-intensive, especially with strong passwords.">Brute Force mode</span> tests all possible character
+              combinations, the <span id="bruteLibraryDescription" class="bruteDescription" data-tooltip="A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts and is not as secure as the hybrid attack.">Dictionary Attack mode</span> uses common passwords and
+              phrases.
             </p>
             <p></p>
             <div class="bruteInput">
+              
               <input
                 type="text"
                 id="userPwdInput"
                 class="input"
-                placeholder=" Enter your Password"
-              />
-              <div id="chooseBruteForce">
-                <select id="bruteMode" class="input">
-                  <option value="library">Mode Library</option>
-                  <option value="simple">Mode Simple</option>
-                  <option value="hybrid" disabled="true">Mode Hybrid</option>
-                </select>
+                placeholder=" Enter password"
+                    required
+                />
+      
+                <div id="chooseBruteForce">
+                  <select id="bruteMode" class="input" required>
+                    <option value="library">Mode Library</option>
+                    <option value="simple">Mode Simple</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div class="bruteBtns">
-              <button id="startBrute" class="startBtn">Start</button>
-              <button id="stopBrute" class="startBtn">Stop</button>
-            </div>
+              <div class="bruteBtns">
+                <button type="submit" id="startBrute" class="startBtn">Start</button>
+                <button id="stopBrute" class="startBtn">Stop</button>
+              </div>
+        
             <table id="stats">
               <tbody id="statsBody">
                 <tr id="statsHeading">
@@ -146,6 +148,7 @@
               </tbody>
             </table>
           </div>
+  
           <div class="appBox" id="passwordStrengthCalc">
             <h3>Password Excalibur</h3>
             <p>
@@ -165,13 +168,24 @@
                 type="text"
                 id="strengthInput"
                 class="input"
-                placeholder=" Enter your password"
+                placeholder=" Enter password"
               />
             </div>
             <button id="calcStrengthBtn" class="startBtn">Test it</button>
-            <p id="strengthResult">
-              Result: <span><div id="calcSpinner"></div></span>
-            </p>
+            
+            <div id="strengthBarDiv">
+              <span><b>weak</b></span>
+              <div id="strengthBar">
+                <div class="strengthBarFill"></div>
+                <div class="strengthBarFill"></div>
+                <div class="strengthBarFill"></div>
+                <div class="strengthBarFill"></div>
+                <div class="strengthBarFill"></div>
+              </div>
+              <span><b>strong</b></span>
+            </div>
+          
+            <span><div id="calcSpinner"></div></span>
             <div id="convert"></div>
           </div>
         </div>
@@ -206,8 +220,11 @@
           <p>
             Using a password manager helps manage multiple unique passwords.
             These tools store and autofill passwords, so you only need to
-            remember one master password. Popular options include LastPass,
-            1Password, and Bitwarden.
+            remember one master password. Popular options include 
+            
+            <a href="https://www.lastpass.com/" target="_blank">LastPass</a>,
+            <a href="https://1password.com/" target="_blank">1Password</a> and
+            <a href="https://bitwarden.com/" target="_blank">Bitwarden</a>
           </p>
         </div>
 
@@ -229,7 +246,7 @@
                   type="text"
                   id="passwordInput"
                   class="input"
-                  placeholder=" Enter your password"
+                  placeholder=" Enter password"
                 />
                 <select id="converterSelect" class="input">
                   <option value="leetSimple">Simple Leetspeak</option>
@@ -399,7 +416,7 @@
           </div>
         </div>
       </main>
-      <footer id="logoFooter">
+      <footer id="logoFooterDiv">
         <img id="logoFooter" src="./img/Security-Logo-Teal.png" alt="Logo" />
       </footer>
     </div>

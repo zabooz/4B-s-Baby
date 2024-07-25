@@ -8,12 +8,13 @@ import { copyButton } from "./scripts/copybutton.js";
 import { translatePage, initTranslation, translations } from "./scripts/translations.js";
 import { changeTheme } from "./scripts/themeSelect.js";
 import { chaos } from "./scripts/chaos.js";
+import { tooltip } from "./scripts/tooltip.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
   await initTranslation();
 });
 
-
+tooltip()
 
 const convertBtn = document.getElementById("convertBtn");
 const startBrute = document.getElementById("startBrute");
@@ -29,6 +30,10 @@ const chaosBtn = document.getElementById("chaos");
 const scrollBtns = document.querySelectorAll(".scrollBtn");
 const languageBtns = document.querySelectorAll(".languageContentBtn");
 const themeBtns = document.querySelectorAll(".themeContentBtn");
+const burgerBtn = document.getElementById('burgerBtn');
+const burgerContent = document.getElementById('burgerContent');
+
+
 
 chaosBtn.addEventListener("click", () => {
   chaos();
@@ -36,6 +41,7 @@ chaosBtn.addEventListener("click", () => {
 
 scrollBtns.forEach(btn => {
   btn.addEventListener("click", () => {
+    
     const targetId = btn.getAttribute("data-target");
     const targetElement = document.getElementById(targetId);
     targetElement.scrollIntoView({behavior: "smooth"});
@@ -45,6 +51,7 @@ scrollBtns.forEach(btn => {
 
 languageBtns.forEach(btn => {
   btn.addEventListener("click", (e) => {
+    tooltip()
     const selectedLanguage = e.target.value;
     translatePage(translations, selectedLanguage);
   })
@@ -52,12 +59,16 @@ languageBtns.forEach(btn => {
 
 themeBtns.forEach(btn => {
   btn.addEventListener("click", (e) => {
+    tooltip()
     const selectedTheme = e.target.id;
     if(selectedTheme === "serious"){
       changeTheme("./serious.style.css", "./img/Security-Logo-Teal.png");
     } else if(selectedTheme === "matrix"){
       changeTheme("./matrix.style.css", "./img/non_animated_monkey.png");
     }
+
+
+
   })
 })
 
@@ -84,22 +95,29 @@ userGenBtn.addEventListener("click", function (e) {
   textElement.append(copyButton(textId));
 });
 
+
+burgerBtn.addEventListener('click', function() {
+  
+  burgerContent.classList.toggle('active');
+  burgerBtn.textContent = burgerBtn.textContent === '☰' ? 'X' : '☰';
+});
+
+
+
 calcStrengthBtn.addEventListener("click", async () => {
   const value = document.getElementById("strengthInput").value;
   const calcSpinner = document.getElementById("calcSpinner");
+  const bar = document.getElementById("strengthBarDiv");
+  bar.style.visibility="hidden"
   calcSpinner.classList.add("lds-dual-ring");
 
   try {
-    const { result, count } = await passwordStrength(value);
+    await passwordStrength(value);
 
-    document.getElementById(
-      "strengthResult"
-    ).textContent = `Result: ${result} (${count.toFixed()})`;
-
-    console.log(result);
   } catch (error) {
     console.log(error);
   } finally {
+    bar.style.visibility = "visible"
     calcSpinner.classList.remove("lds-dual-ring");
   }
 });
@@ -140,7 +158,8 @@ userPwdInput.addEventListener("keypress", function (event) {
 }
 });
 
-startBrute.addEventListener("click", () => {
+startBrute.addEventListener("click", (e) => {
+  e.preventDefault();
   const tds = document.querySelectorAll("#statOutput td");
 
   tds.forEach((td) => {
@@ -151,8 +170,6 @@ startBrute.addEventListener("click", () => {
     
     td.append(spinner);
   });
-  
-  
   
   
   fetchData();
@@ -180,7 +197,7 @@ picConBtn.addEventListener("click", async (e) => {
     const result = await pictureToString();
     textElement.innerText = `Your Password: ${result}`;
     textElement.append(copyButton(textId));
-    console.log(result);
+
   } catch (error) {
     console.log(error);
   }
@@ -208,7 +225,7 @@ const fetchData = (signal) => {
   fetch(urlPara)
     .then((response) => {
       if (!response.ok) {
-        throw new Error("I fucked up again");
+        throw new Error(response.statusText);
       }
 
       return response.json();

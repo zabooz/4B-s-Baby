@@ -2,7 +2,7 @@
 
 export async function loadTranslations() {
     try {
-        const response = await fetch('../data/translations.json'); // Replace with your actual path
+        const response = await fetch('data/translations.json'); 
         if (!response.ok) {
             throw new Error('Failed to load translations');
         }
@@ -20,16 +20,20 @@ export function getUserLanguage() {
 }
 
 export function translatePage(translations, language) {
+    const burgerBtn = document.getElementById('burgerBtn');
+    const burgerContent = document.getElementById('burgerContent');
+    burgerContent.classList.remove('active');
+    burgerBtn.textContent = '☰';
     // Navbar
     document.getElementById('go-to-top').textContent = translations.navbar.home[language];
     document.getElementById('go-to-test').textContent = translations.navbar.test[language];
     document.getElementById('go-to-convert').textContent = translations.navbar.convert[language];
     document.getElementById('go-to-generate').textContent = translations.navbar.generate[language];
-    // document.getElementById('flag').className = "flag-icon " + language + "-icon";
+    document.getElementById('languageBtn').textContent = translations.navbar.language[language];
     // Header
     document.querySelector('#headerText h1').textContent = translations.header.title[language];
     document.querySelector('#headerText p').textContent = translations.header.description[language];
-
+    //bruteforce
     // Password Safety Heading
     document.querySelector('#passwordSafetyHeading h2').textContent = translations.passwordSafetyHeading.title[language];
     document.querySelector('#passwordSafetyHeading p').textContent = translations.passwordSafetyHeading.description[language];
@@ -39,30 +43,31 @@ export function translatePage(translations, language) {
     document.querySelector('#passwordSafetyHeading p:nth-of-type(3)').textContent = translations.passwordSafetyHeading.excaliburDescription[language];
     document.querySelector('#passwordSafetyHeading h4:nth-of-type(3)').textContent = translations.passwordSafetyHeading.importanceTitle[language];
     document.querySelector('#passwordSafetyHeading p:nth-of-type(4)').textContent = translations.passwordSafetyHeading.importanceDescription[language];
-
+    
     // Brute Force App
     document.querySelector('#bruteForceApp h3').textContent = translations.bruteForceApp.title[language];
-    document.querySelector('#bruteForceApp p:nth-of-type(1)').textContent = translations.bruteForceApp.description1[language];
-    document.querySelector('#bruteForceApp p:nth-of-type(2)').textContent = translations.bruteForceApp.description2[language];
+    document.querySelector('#bruteForceApp p:nth-of-type(1)').innerHTML = translations.bruteForceApp.description1[language];
+    // document.querySelector('#bruteForceApp p:nth-of-type(2)').innerHTML = translations.bruteForceApp.description2[language];
     document.getElementById('userPwdInput').placeholder = translations.bruteForceApp.placeholder[language];
     document.querySelector('#bruteMode option[value="simple"]').textContent = translations.bruteForceApp.simpleMode[language];
     document.querySelector('#bruteMode option[value="library"]').textContent = translations.bruteForceApp.libraryMode[language];
-    document.querySelector('#bruteMode option[value="hybrid"]').textContent = translations.bruteForceApp.hybridMode[language];
     document.getElementById('startBrute').textContent = translations.bruteForceApp.startButton[language];
     document.getElementById('stopBrute').textContent = translations.bruteForceApp.stopButton[language];
     document.querySelector('#statsHeading th:nth-of-type(1)').textContent = translations.bruteForceApp.statsHeading.password[language];
     document.querySelector('#statsHeading th:nth-of-type(2)').textContent = translations.bruteForceApp.statsHeading.attempts[language];
     document.querySelector('#statsHeading th:nth-of-type(3)').textContent = translations.bruteForceApp.statsHeading.mode[language];
     document.querySelector('#statsHeading th:nth-of-type(4)').textContent = translations.bruteForceApp.statsHeading.time[language];
-
+    document.getElementById('bruteSimpleDescription').setAttribute("data-tooltip", translations.bruteDescription.bruteSimple[language]);
+    document.getElementById('bruteLibraryDescription').setAttribute("data-tooltip", translations.bruteDescription.bruteLibrary[language]);
+    
     // Password Excalibur
     document.querySelector('#passwordStrengthCalc h3').textContent = translations.passwordStrengthCalc.title[language];
     document.querySelector('#passwordStrengthCalc p:nth-of-type(1)').textContent = translations.passwordStrengthCalc.description1[language];
     document.querySelector('#passwordStrengthCalc p:nth-of-type(2)').textContent = translations.passwordStrengthCalc.description2[language];
     document.getElementById('strengthInput').placeholder = translations.passwordStrengthCalc.placeholder[language];
     document.getElementById('calcStrengthBtn').textContent = translations.passwordStrengthCalc.testButton[language];
-    document.getElementById('strengthResult').textContent = translations.passwordStrengthCalc.result[language];
-
+    // document.getElementById('strengthResult').textContent = translations.passwordStrengthCalc.result[language];
+    
     // Password Creation Heading
     document.querySelector('#passwordCreationHeading h2').textContent = translations.passwordCreationHeading.title[language];
     document.querySelector('#passwordCreationHeading p').textContent = translations.passwordCreationHeading.description[language];
@@ -71,7 +76,7 @@ export function translatePage(translations, language) {
     document.querySelector('#passwordCreationHeading h3:nth-of-type(2)').textContent = translations.passwordCreationHeading.stepsTitle[language];
     document.querySelector('#passwordCreationHeading p:nth-of-type(3)').textContent = translations.passwordCreationHeading.stepsDescription[language];
     document.querySelector('#passwordCreationHeading h3:nth-of-type(3)').textContent = translations.passwordCreationHeading.managementTitle[language];
-    document.querySelector('#passwordCreationHeading p:nth-of-type(4)').textContent = translations.passwordCreationHeading.managementDescription[language];
+    document.querySelector('#passwordCreationHeading p:nth-of-type(4)').innerHTML = translations.passwordCreationHeading.managementDescription[language];
 
     // Rune Translator
     document.querySelector('#converterSelector h3').textContent = translations.runeTranslatorApp.title[language];
@@ -166,7 +171,7 @@ export async function initTranslation() {
     // Add event listener for language switcher
     const languageSwitcherDiv = document.getElementById('languageSwitcherDiv');
     languageSwitcherDiv.addEventListener('change', (event) => {
-        console.log(event.target.value);
+     
         const selectedLanguage = event.target.value;
         translatePage(translations, selectedLanguage);
     });

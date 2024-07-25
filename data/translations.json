@@ -1,9 +1,10 @@
 {
     "navbar": {
       "home": { "en": "Home", "de": "Startseite", "fr": "Accueil", "es": "Inicio" },
-      "test": { "en": "Test", "de": "Test", "fr": "Test", "es": "Prueba" },
-      "convert": { "en": "Convert", "de": "Konvertieren", "fr": "Convertir", "es": "Convertir" },
-      "generate": { "en": "Generate", "de": "Erzeugen", "fr": "Générer", "es": "Generar" }
+      "test": { "en": "Bruteforce", "de": "Bruteforce", "fr": "Bruteforce", "es": "Bruteforce" },
+      "convert": { "en": "Password convert", "de": "Passwort konvertieren", "fr": "Convertir mot de passe", "es": "Convertir contraseña" },
+      "generate": { "en": "Generate Password", "de": "Passwort erzeugen", "fr": "Générer mot de passe", "es": "Generar contraseña" },
+      "language": { "en": "Language", "de": "Sprache", "fr": "Langue", "es": "Idioma" }
     },
     "header": {
       "title": {
@@ -17,6 +18,20 @@
         "de": "In unserem digitalen Zeitalter ist Internetsicherheit unerlässlich, um uns vor Cyber-Bedrohungen zu schützen. Starke, einzigartige Passwörter sind entscheidend, um unsere Konten vor unbefugtem Zugriff zu sichern. Regelmäßige Aktualisierungen und die Verwendung komplexer Passwörter können unsere Online-Sicherheit erheblich verbessern. Datensicherheit umfasst den Schutz digitaler Informationen vor unbefugtem Zugriff und Datenverletzungen. Dazu gehören die Verwendung von Verschlüsselung, sicheren Netzwerken und die Aktualisierung von Software. Durch gute Internetsicherheit, Passwortverwaltung und Datensicherheit können wir unsere persönlichen Informationen schützen und die Privatsphäre in der digitalen Welt wahren.",
         "fr": "À notre époque numérique, la sécurité internet est essentielle pour nous protéger contre les menaces cybernétiques. Des mots de passe forts et uniques sont cruciaux pour sécuriser nos comptes contre tout accès non autorisé. Des mises à jour régulières et l'utilisation de mots de passe complexes peuvent améliorer considérablement notre sécurité en ligne. La sécurité des données consiste à protéger les informations numériques contre les accès non autorisés et les violations. Cela inclut l'utilisation du cryptage, de réseaux sécurisés et de logiciels à jour. En pratiquant une bonne sécurité internet, une gestion des mots de passe et une sécurité des données, nous pouvons protéger nos informations personnelles et préserver la vie privée dans le monde numérique.",
         "es": "En nuestra era digital, la seguridad en internet es esencial para protegernos de las amenazas cibernéticas. Las contraseñas fuertes y únicas son cruciales para asegurar nuestras cuentas contra el acceso no autorizado. Las actualizaciones regulares y el uso de contraseñas complejas pueden mejorar significativamente nuestra seguridad en línea. La seguridad de los datos implica proteger la información digital contra el acceso no autorizado y las violaciones. Esto incluye el uso de cifrado, redes seguras y mantener el software actualizado. Al practicar una buena seguridad en internet, la gestión de contraseñas y la seguridad de los datos, podemos proteger nuestra información personal y mantener la privacidad en el mundo digital."
+      }
+    },
+    "bruteDescription":{
+      "bruteSimple":{
+        "de" :"Ein Brute-Force-Angriff probiert systematisch alle möglichen Zeichenkombinationen aus, um ein Passwort oder eine Verschlüsselung zu knacken. Dieser Ansatz ist einfach, aber zeitaufwendig und ressourcenintensiv, besonders bei starken Passwörtern.",
+        "en" :"A brute force attack systematically tries all possible character combinations to crack a password or encryption. This approach is simple, but time-consuming and resource-intensive, especially with strong passwords.",
+        "fr" :"Un attaque de force brute tente systématiquement toutes les combinaisons possibles de caractères pour craquer un mot de passe ou une cryptographie. Cette approche est simple, mais chronophage et intensive en ressources, surtout avec des mots de passe forts.",
+        "es" :"Un ataque de fuerza bruta intenta sistemáticamente todas las combinaciones posibles de caracteres para descifrar una contraseña o una criptografía. Este enfoque es simple, pero requiere mucho tiempo y recursos, especialmente con contraseñas fuertes."
+      },
+      "bruteLibrary":{
+        "de" :"Ein Bibiliotheksangriff verwendet häufige Passwörter und Phrasen, um das Passwort oder die Verschlüsselung zu knacken. Dieser Ansatz ist schneller als der einfache Brute-Force-Angriff, aber erfordert eine große Anzahl von Versuchen und ist nicht so sicher wie der Hybridangriff.",
+        "en" :"A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts.",
+        "fr" :"Un attaque par dictionnaire utilise des mots de passe et des phrases courants pour craquer un mot de passe ou une cryptographie. Cette approche est plus rapide que l'attaque par force brute simple, mais nécessite un grand nombre d'essais.",
+        "es" :"Un ataque de diccionario utiliza contraseñas y frases comunes para descifrar una contraseña o una criptografía. Este enfoque es más rápido que el ataque de fuerza bruta simple, pero requiere un gran número de intentos."
       }
     },
     "passwordSafetyHeading": {
@@ -40,7 +55,7 @@
       },
       "testingDescription": {
         "en": "Choose a mode to test your password against brute force attacks. The Simple Brute Force mode tests all possible character combinations, the Dictionary Attack mode uses common passwords and phrases, and the Hybrid Attack mode combines dictionary words with variations like numbers and symbols.",
-        "de": "Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe zu testen. Der einfache Brute-Force-Modus testet alle möglichen Zeichenkombinationen, der Wörterbuchangriffsmodus verwendet gängige Passwörter und Phrasen, und der Hybridangriffsmodus kombiniert Wörter aus dem Wörterbuch mit Variationen wie Zahlen und Symbolen.",
+        "de": "Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe zu testen. Der einfache Brute-Force-Modus testet alle möglichen Zeichenkombinationen, der Bilbiotheksangriffsmodus verwendet gängige Passwörter und Phrasen.",
         "fr": "Choisissez un mode pour tester votre mot de passe contre les attaques par force brute. Le mode Force brute simple teste toutes les combinaisons possibles de caractères, le mode Attaque par dictionnaire utilise des mots de passe et des phrases courants, et le mode Attaque hybride combine des mots du dictionnaire avec des variations comme des chiffres et des symboles.",
         "es": "Elija un modo para probar su contraseña contra ataques de fuerza bruta. El modo de fuerza bruta simple prueba todas las combinaciones posibles de caracteres, el modo de ataque de diccionario utiliza contraseñas y frases comunes, y el modo de ataque híbrido combina palabras del diccionario con variaciones como números y símbolos."
       },
@@ -77,20 +92,14 @@
         "es": "Pruebe su Mojo"
       },
       "description1": {
-        "en": "Choose a mode to test your password against brute force attacks. The Simple Brute Force mode tests all possible character combinations, the Dictionary Attack mode uses common passwords and phrases, and the Hybrid Attack mode combines dictionary words with variations like numbers and symbols.",
-        "de": "Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe zu testen. Der einfache Brute-Force-Modus testet alle möglichen Zeichenkombinationen, der Wörterbuchangriffsmodus verwendet gängige Passwörter und Phrasen, und der Hybridangriffsmodus kombiniert Wörter aus dem Wörterbuch mit Variationen wie Zahlen und Symbolen.",
-        "fr": "Choisissez un mode pour tester votre mot de passe contre les attaques par force brute. Le mode Force brute simple teste toutes les combinaisons possibles de caractères, le mode Attaque par dictionnaire utilise des mots de passe et des phrases courants, et le mode Attaque hybride combine des mots du dictionnaire avec des variations comme des chiffres et des symboles.",
-        "es": "Elija un modo para probar su contraseña contra ataques de fuerza bruta. El modo de fuerza bruta simple prueba todas las combinaciones posibles de caracteres, el modo de ataque de diccionario utiliza contraseñas y frases comunes, y el modo de ataque híbrido combina palabras del diccionario con variaciones como números y símbolos."
-      },
-      "description2": {
-        "en": "Ensure your password is strong and unique for optimal security!",
-        "de": "Stellen Sie sicher, dass Ihr Passwort stark und einzigartig ist, um optimale Sicherheit zu gewährleisten!",
-        "fr": "Assurez-vous que votre mot de passe est fort et unique pour une sécurité optimale!",
-        "es": "¡Asegúrese de que su contraseña sea fuerte y única para una seguridad óptima!"
+        "en": "Choose a mode to test your password against brute force attacks.The Simple <span id='bruteSimpleDescription' class='bruteDescription' data-tooltip='A brute force attack systematically tries all possible character combinations to crack a password or encryption. This approach is simple, but time-consuming and resource-intensive, especially with strong passwords.'>Brute Force mode</span> tests all possible character combinations, the <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts and is not as secure as the hybrid attack.'>Dictionary Attack mode</span> uses common passwords and phrases.",
+        "de": "Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe zu testen. Der <span id='bruteSimpleDescription' class='bruteDescription' data-tooltop='Ein Brute-Force-Angriff probiert systematisch alle möglichen Zeichenkombinationen aus, um ein Passwort oder eine Verschlüsselung zu knacken. Dieser Ansatz ist einfach, aber zeitaufwendig und ressourcenintensiv, insbesondere bei starken Passwörtern.'>einfache Brute-Force-Modus</span> testet alle möglichen Zeichenkombinationen, der <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='Ein Bibiliotheksangriff verwendet häufige Passwörter und Phrasen, um ein Passwort oder eine Verschlüsselung zu knacken. Dieser Ansatz ist schneller als ein einfacher Brute-Force-Angriff, erfordert jedoch eine große Anzahl von Versuchen und ist nicht so sicher wie ein Hybridangriff'>Bibliothek-modus</span> verwendet gängige Passwörter und Phrasen.",
+        "fr": "Choisissez un mode pour tester votre mot de passe contre les attaques par force brute. Le mode <span id='bruteSimpleDescription' class='bruteDescription' data-tooltop='Une attaque par force brute essaie systématiquement toutes les combinaisons possibles de caractères pour craquer un mot de passe ou une cryptographie. Cette méthode est simple, mais longue et gourmande en ressources, surtout avec des mots de passe forts.'>Force brute simple</span> teste toutes les combinaisons possibles de caractères, le mode <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='Une attaque par dictionnaire utilise des mots de passe et des phrases courants pour craquer un mot de passe ou une cryptographie. Cette méthode est plus rapide que l'attaque par force brute simple, mais nécessite un grand nombre de tentatives et n'est pas aussi sécurisée qu'une attaque hybride'>Attaque par dictionnaire</span> utilise des mots de passe et des phrases courants.",
+        "es": "Elija un modo para probar su contraseña contra ataques de fuerza bruta. El modo de <span id='bruteSimpleDescription' class='bruteDescription' data-tooltop='Un ataque de fuerza bruta prueba sistemáticamente todas las combinaciones posibles de caracteres para descifrar una contraseña o una cifrada. Este enfoque es simple, pero lento y requiere muchos recursos, especialmente con contraseñas fuertes.'> fuerza bruta simple</span> prueba todas las combinaciones posibles de caracteres, el modo de <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='Un ataque de diccionario utiliza contraseñas y frases comunes para descifrar una contraseña o una cifrada. Este enfoque es más rápido que un ataque de fuerza bruta simple, pero requiere un gran número de intentos y no es tan seguro como un ataque híbrido'> ataque de diccionario</span> utiliza contraseñas y frases comunes."
       },
       "placeholder": {
-        "en": "Enter your Password",
-        "de": "Geben Sie Ihr Passwort ein",
+        "en": "Enter password",
+        "de": "Gib ein Passwort ein",
         "fr": "Entrez votre mot de passe",
         "es": "Ingrese su contraseña"
       },
@@ -126,9 +135,9 @@
         "es": "Para usar Contraseña Excalibur, simplemente ingrese su contraseña y haga clic en el botón 'Probar'. La herramienta analizará su contraseña y proporcionará un resultado detallado, destacando las áreas donde su contraseña es fuerte y sugerencias para mejorar."
       },
       "placeholder": {
-        "en": "Enter your password",
-        "de": "Geben Sie Ihr Passwort ein",
-        "fr": "Entrez votre mot de passe",
+        "en": "Enter  password",
+        "de": "Gib ein Passwort ein",
+        "fr": "Entrez  de passe",
         "es": "Ingrese su contraseña"
       },
       "testButton": { "en": "Test it", "de": "Testen", "fr": "Tester", "es": "Probar" },
@@ -178,10 +187,10 @@
         "es": "Gestionar múltiples contraseñas"
       },
       "managementDescription": {
-        "en": "Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include LastPass, 1Password, and Bitwarden.",
-        "de": "Die Verwendung eines Passwort-Managers hilft bei der Verwaltung mehrerer eindeutiger Passwörter. Diese Tools speichern und füllen Passwörter automatisch aus, sodass Sie sich nur ein Master-Passwort merken müssen. Beliebte Optionen sind LastPass, 1Password und Bitwarden.",
-        "fr": "L'utilisation d'un gestionnaire de mots de passe aide à gérer plusieurs mots de passe uniques. Ces outils stockent et remplissent automatiquement les mots de passe, vous n'avez donc besoin de vous souvenir que d'un seul mot de passe principal. Les options populaires incluent LastPass, 1Password et Bitwarden.",
-        "es": "El uso de un administrador de contraseñas ayuda a gestionar múltiples contraseñas únicas. Estas herramientas almacenan y rellenan automáticamente las contraseñas, por lo que solo necesita recordar una contraseña maestra. Las opciones populares incluyen LastPass, 1Password y Bitwarden."
+        "en": "Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>",
+        "de": "Die Verwendung eines Passwort-Managers hilft bei der Verwaltung mehrerer eindeutiger Passwörter. Diese Tools speichern und füllen Passwörter automatisch aus, sodass Sie sich nur ein Master-Passwort merken müssen. Beliebte Optionen sind  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>.",
+        "fr": "L'utilisation d'un gestionnaire de mots de passe aide à gérer plusieurs mots de passe uniques. Ces outils stockent et remplissent automatiquement les mots de passe, vous n'avez donc besoin de vous souvenir que d'un seul mot de passe principal. Les options populaires incluent  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>.",
+        "es": "El uso de un administrador de contraseñas ayuda a gestionar múltiples contraseñas únicas. Estas herramientas almacenan y rellenan automáticamente las contraseñas, por lo que solo necesita recordar una contraseña maestra. Las opciones populares incluyen  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>."
       }
     },
     "runeTranslatorApp": {
@@ -204,9 +213,9 @@
         "es": "Esto mejora la fortaleza de su contraseña al reemplazar caracteres comunes con números y símbolos."
       },
       "placeholder": {
-        "en": "Enter your password",
-        "de": "Geben Sie Ihr Passwort ein",
-        "fr": "Entrez votre mot de passe",
+        "en": "Enter password",
+        "de": "Gib ein Passwort ein",
+        "fr": "Entrez de passe",
         "es": "Ingrese su contraseña"
       },
       "simpleLeet": { "en": "Simple Leetspeak", "de": "Einfaches Leetspeak", "fr": "Leetspeak simple", "es": "Leetspeak simple" },

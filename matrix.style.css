@@ -32,6 +32,22 @@
 #themeBtn{
     border-right: 2px solid var(--sixthColor);
 }
+#burgerBtn{
+    display: none;
+    background-color: #0700008c;
+}
+#burgerContent{
+    display: flex;
+    width: 100%;
+
+}
+#burgerContent button{
+    height: 100%;
+    background-color:black;
+
+}
+
+
 
 .navbar button,
 .switcherDiv {
@@ -242,12 +258,20 @@ main{
     margin-top: 2rem;
 }
 .copyButton {
+    position: relative;
     background-color: transparent;
     border: hidden;
     height: 1rem;
     width: 1rem;
     cursor: pointer;
     margin-left: 0.5rem;
+}
+.confirmBubble{
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    top: -1.5rem;
+    left: 1.5rem;
 }
 .copyButton:active {
     -webkit-transform: translateY(1px);
@@ -494,32 +518,178 @@ select{
     .appBox {
         width: 100%;
     }
-    .navbar {
-        justify-content:flex-start;
-    }
-    .navbar button {
-        width: 20%;
-    }
+
+
 
 }
-/* .flag-icon {
-    display: inline-block;
-    width: 50px;
-    height: 30px;
-    background-size: cover;
-    margin: 10px;
-    cursor: pointer;
-  }
-  .uk-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg');
-  }
-  .france-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg');
-  }
-  .germany-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg');
-  }
-  .spain-icon {
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg');
-  } */
+#strengthBarDiv{
+    display: flex;
+    gap: 1rem;
+    visibility: hidden;
 
+    width: 100%;
+
+}
+#strengthBar{
+    height: 1rem;
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+}
+.strengthBarFill{
+    border-top: 1px solid var(--fifthColor);
+    border-bottom: 1px solid var(--fifthColor);
+    height: 1rem;
+    width: 20%;
+    border-left: 1px solid var(--fifthColor);
+}
+.strengthBarFill:last-child{
+    border-right: 1px solid var(--fifthColor);
+}
+
+.strengthBar span{
+    font-size: .8rem;
+    color: black;
+    white-space: nowrap;
+    margin:0 1rem
+}
+@media (max-width: 500px) {
+    
+    #logoFooter{
+        width: 300px;
+    }
+
+    .navbar{
+        border-right: 2px solid var(--sixthColor);
+        background-color: #0700008c;
+    }
+    .switcherDiv{
+        width: 100%;
+        position: relative;
+    }
+    .switcherContentL{
+        position: absolute;
+        left: 6.89rem;
+        z-index: 1;
+        top: -1.9rem;
+        background-color: #0c0b0b2d;
+        width: 6rem;
+        border-top: 2px solid var(--sixthColor);
+        border-left: none;
+        
+ 
+    }
+    .switcherContentL::after{
+        content: "";
+        position: absolute;
+        bottom: 2.8rem;
+        transform:rotate(90deg);
+        left: -3rem;
+        width: 95px; 
+        height: 2px;
+        background-color: var(--sixthColor);
+    }
+    .switcherContentL button{
+        margin: .3rem 0;
+    }
+    .switcherContentL:hover{
+        display: flex;
+    }
+    .switcherContentT{
+        position: absolute;
+        left: 6.89rem;
+        top: -4.1rem;
+        z-index: 1;
+        width: 5.9rem;
+        border-top: 2px solid var(--sixthColor);
+        border-left: none;
+        border-right: 2px solid var(--sixthColor);
+    }
+
+    .switcherContentT::after{
+        content: "";
+        position: absolute;
+        bottom: 1.45rem;
+        transform:rotate(90deg);
+        left: -1.6rem;
+        width: 51px; 
+        height: 2px;
+        background-color: var(--sixthColor);
+    }
+
+
+    .switcherContentT button{
+        margin: .3rem 0;
+    }
+
+
+
+    #burgerBtn{
+        display: flex;
+        padding: .8rem 1rem;
+        background-color: #02020227;
+        width: 6rem;
+        
+    }
+
+    #burgerContent{
+        position: absolute;
+        left:-2px;
+        top: 2.8rem;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 7rem;
+        background-color: #000000fe;
+        border-bottom: 2px solid var(--sixthColor);
+        border-left: 2px solid var(--sixthColor);
+     
+    }
+
+    #burgerContent::after{
+        content: "";
+        position: absolute;
+        bottom: 5.85rem;
+        left: 1.01rem;
+        width: 173%;
+        height: 2px;
+        background-color: var(--sixthColor);
+        transform: rotate(90deg);
+    }
+
+
+    #burgerContent.active {
+        display: flex;
+        gap: 1rem;
+    }
+    #burgerContent button{
+        background-color: #00000067;
+        width: 100%;
+        border: none;
+    }
+}
+#bruteSimpleDescription,
+#bruteLibraryDescription{
+    color: #23a6db;
+}
+#bruteSimpleDescription:hover,
+#bruteLibraryDescription:hover{
+    position: relative;
+    cursor: pointer;
+}
+#bruteSimpleDescription::after,
+#bruteLibraryDescription::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    display: none;
+    top: -12rem;
+    left: 4rem;
+    width: 15rem;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #000;
+    padding: 1rem;
+
+}
