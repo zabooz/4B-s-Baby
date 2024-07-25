@@ -211,7 +211,7 @@ uploadFile.addEventListener("change", () => {
 
 const fetchData = (signal) => {
   const bruteType = document.querySelector("#bruteMode").value;
-  const url = "https://9f09-2a02-8388-c2c0-de80-f53a-18f-91b1-10ab.ngrok-free.app/";
+  const url = "https://80ec-85-31-21-51.ngrok-free.app/";
   const pwd = document.getElementById("userPwdInput");
   const [encodedPwd, key] = passwordEncoder(pwd.value);
   const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
