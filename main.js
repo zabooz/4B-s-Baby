@@ -66,9 +66,9 @@ themeBtns.forEach(btn => {
     } else if(selectedTheme === "matrix"){
       changeTheme("./matrix.style.css", "./img/non_animated_monkey.png");
     }
-
-
-
+    
+    
+    
   })
 })
 
@@ -76,7 +76,7 @@ themeBtns.forEach(btn => {
 rdmPwdBtn.addEventListener("click", function () {
   const textId = "generatedPassword";
   const textElement = document.getElementById(textId);
-
+  
   const pwLength = document.getElementById("pwLength").value;
   const generatedPassword = generatePassword(pwLength);
   textElement.innerText = `Your password: ${generatedPassword}`;
@@ -110,10 +110,10 @@ calcStrengthBtn.addEventListener("click", async () => {
   const bar = document.getElementById("strengthBarDiv");
   bar.style.visibility="hidden"
   calcSpinner.classList.add("lds-dual-ring");
-
+  
   try {
     await passwordStrength(value);
-
+    
   } catch (error) {
     console.log(error);
   } finally {
@@ -124,7 +124,7 @@ calcStrengthBtn.addEventListener("click", async () => {
 convertBtn.addEventListener("click", function () {
   const textId = "newPassword";
   const textElement = document.getElementById(textId);
-
+  
   const selectedConverter = document.getElementById("converterSelect").value;
   const passwordInput = document.getElementById("passwordInput");
   const newPassword = passwordConverter(passwordInput.value, selectedConverter);
@@ -144,38 +144,67 @@ userPwdInput.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     fetchData();
-  
-  const tds = document.querySelectorAll("#statOutput td");
-
-  tds.forEach((td) => {
-    td.innerHTML = "";
-    const spinner = document.createElement("div");
     
-    spinner.className = "lds-dual-ring";
-    
-    td.append(spinner);
-  });
-}
+    const tds = document.querySelectorAll("#statOutput td");
+    tds.forEach((td) => {
+      td.innerHTML = "";
+      const spinner = document.createElement("div");
+      
+      spinner.className = "lds-dual-ring";
+      
+      td.append(spinner);
+    });
+  }
 });
+
+
+let timer;
 
 startBrute.addEventListener("click", (e) => {
   e.preventDefault();
   const tds = document.querySelectorAll("#statOutput td");
+  const pwd = document.getElementById("userPwdInput").value
+  
+  tds.forEach((td,i) => {
 
-  tds.forEach((td) => {
+
     td.innerHTML = "";
     const spinner = document.createElement("div");
     
+
+    if (timer) {
+      clearInterval(timer);
+    }
+
+
+    let seconds = 0;
+    timer = setInterval(() => {
+        seconds++;
+        tds[tds.length - 1].innerHTML = seconds + ' s';
+    }, 1000);
+
+
+
     spinner.className = "lds-dual-ring";
     
-    td.append(spinner);
+    if(i !== tds.length -1  && i !== 0){
+      td.append(spinner);
+    }else if(i === 0){
+      td.append(pwd)
+    }
+    
+    
+
   });
   
   
   fetchData();
 });
 stopBrute.addEventListener("click", () => {
-  fetch("https://e6f7-85-31-21-51.ngrok-free.app/stopBruteForce")
+  const url = "https://e6f7-85-31-21-51.ngrok-free.app/stopBruteForce";
+  // const url = "http://localhost:3001/stopBruteForce";
+
+  fetch(url,{method:'GET',headers:{'ngrok-skip-browser-warning': true}})
     .then(response => {
       if (!response.ok) {
         throw new Error("Request to stop brute force process failed");
@@ -211,6 +240,8 @@ uploadFile.addEventListener("change", () => {
 
 const fetchData = (signal) => {
   const bruteType = document.querySelector("#bruteMode").value;
+  // const url="http://localhost:3001/"
+
   const url = "https://e6f7-85-31-21-51.ngrok-free.app/";
   const pwd = document.getElementById("userPwdInput");
   const [encodedPwd, key] = passwordEncoder(pwd.value);
@@ -236,7 +267,7 @@ const fetchData = (signal) => {
     .catch((error) => {
       console.error("fetch data:", error);
     }).finally( () => {
-  
+      clearInterval(timer)
       updateAttempts(result);
     })
 };
