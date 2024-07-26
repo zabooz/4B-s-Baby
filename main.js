@@ -5,16 +5,20 @@ import { passwordEncoder } from "./scripts/encoder.js";
 import { passwordStrength } from "./scripts/passwordStrengthCalc.js";
 import { generatePassword } from "./scripts/passwordGenerator.js";
 import { copyButton } from "./scripts/copybutton.js";
-import { translatePage, initTranslation, translations } from "./scripts/translations.js";
+import {
+  translatePage,
+  initTranslation,
+  translations,
+} from "./scripts/translations.js";
 import { changeTheme } from "./scripts/themeSelect.js";
 import { chaos } from "./scripts/chaos.js";
 import { tooltip } from "./scripts/tooltip.js";
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   await initTranslation();
 });
 
-tooltip()
+tooltip();
 
 const convertBtn = document.getElementById("convertBtn");
 const startBrute = document.getElementById("startBrute");
@@ -30,53 +34,45 @@ const chaosBtn = document.getElementById("chaos");
 const scrollBtns = document.querySelectorAll(".scrollBtn");
 const languageBtns = document.querySelectorAll(".languageContentBtn");
 const themeBtns = document.querySelectorAll(".themeContentBtn");
-const burgerBtn = document.getElementById('burgerBtn');
-const burgerContent = document.getElementById('burgerContent');
-
-
+const burgerBtn = document.getElementById("burgerBtn");
+const burgerContent = document.getElementById("burgerContent");
 
 chaosBtn.addEventListener("click", () => {
   chaos();
 });
 
-scrollBtns.forEach(btn => {
+scrollBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    
     const targetId = btn.getAttribute("data-target");
     const targetElement = document.getElementById(targetId);
-    targetElement.scrollIntoView({behavior: "smooth"});
-  })
-})
+    targetElement.scrollIntoView({ behavior: "smooth" });
+  });
+});
 
-
-languageBtns.forEach(btn => {
+languageBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const selectedLanguage = e.target.value;
     translatePage(translations, selectedLanguage);
-    tooltip()
-  })
-})
+    tooltip();
+  });
+});
 
-themeBtns.forEach(btn => {
+themeBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    tooltip()
+    tooltip();
     const selectedTheme = e.target.id;
-    if(selectedTheme === "serious"){
+    if (selectedTheme === "serious") {
       changeTheme("./serious.style.css", "./img/Security-Logo-Teal.png");
-    } else if(selectedTheme === "matrix"){
+    } else if (selectedTheme === "matrix") {
       changeTheme("./matrix.style.css", "./img/non_animated_monkey.png");
     }
-    
-    
-    
-  })
-})
-
+  });
+});
 
 rdmPwdBtn.addEventListener("click", function () {
   const textId = "generatedPassword";
   const textElement = document.getElementById(textId);
-  
+
   const pwLength = document.getElementById("pwLength").value;
   const generatedPassword = generatePassword(pwLength);
   textElement.innerText = `Your password: ${generatedPassword}`;
@@ -95,36 +91,31 @@ userGenBtn.addEventListener("click", function (e) {
   textElement.append(copyButton(textId));
 });
 
-
-burgerBtn.addEventListener('click', function() {
-  
-  burgerContent.classList.toggle('active');
-  burgerBtn.textContent = burgerBtn.textContent === '☰' ? 'X' : '☰';
+burgerBtn.addEventListener("click", function () {
+  burgerContent.classList.toggle("active");
+  burgerBtn.textContent = burgerBtn.textContent === "☰" ? "X" : "☰";
 });
-
-
 
 calcStrengthBtn.addEventListener("click", async () => {
   const value = document.getElementById("strengthInput").value;
   const calcSpinner = document.getElementById("calcSpinner");
   const bar = document.getElementById("strengthBarDiv");
-  bar.style.visibility="hidden"
+  bar.style.visibility = "hidden";
   calcSpinner.classList.add("lds-dual-ring");
-  
+
   try {
     await passwordStrength(value);
-    
   } catch (error) {
     console.log(error);
   } finally {
-    bar.style.visibility = "visible"
+    bar.style.visibility = "visible";
     calcSpinner.classList.remove("lds-dual-ring");
   }
 });
 convertBtn.addEventListener("click", function () {
   const textId = "newPassword";
   const textElement = document.getElementById(textId);
-  
+
   const selectedConverter = document.getElementById("converterSelect").value;
   const passwordInput = document.getElementById("passwordInput");
   const newPassword = passwordConverter(passwordInput.value, selectedConverter);
@@ -144,77 +135,64 @@ userPwdInput.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     fetchData();
-    
+
     const tds = document.querySelectorAll("#statOutput td");
     tds.forEach((td) => {
       td.innerHTML = "";
       const spinner = document.createElement("div");
-      
+
       spinner.className = "lds-dual-ring";
-      
+
       td.append(spinner);
     });
   }
 });
-
 
 let timer;
 
 startBrute.addEventListener("click", (e) => {
   e.preventDefault();
   const tds = document.querySelectorAll("#statOutput td");
-  const pwd = document.getElementById("userPwdInput").value
-  
-  tds.forEach((td,i) => {
+  const pwd = document.getElementById("userPwdInput").value;
 
-
+  tds.forEach((td, i) => {
     td.innerHTML = "";
     const spinner = document.createElement("div");
     spinner.className = "lds-dual-ring";
-    
 
     if (timer) {
       clearInterval(timer);
     }
 
-
     let seconds = 0;
     timer = setInterval(() => {
-        seconds++;
-        tds[tds.length - 1].innerHTML = seconds + ' s';
+      seconds++;
+      tds[tds.length - 1].innerHTML = seconds + " s";
     }, 1000);
 
-
-
-    
-    if(i !== tds.length -1  && i !== 0){
+    if (i !== tds.length - 1 && i !== 0) {
       td.append(spinner);
-    }else if(i === 0){
-      td.append(pwd)
+    } else if (i === 0) {
+      td.append(pwd);
     }
-    
-    
-
   });
-  
-  
+
   fetchData();
 });
 stopBrute.addEventListener("click", () => {
   const url = "https://e6f7-85-31-21-51.ngrok-free.app/stopBruteForce";
   // const url = "http://localhost:3001/stopBruteForce";
 
-  fetch(url,{method:'GET',headers:{'ngrok-skip-browser-warning': true}})
-    .then(response => {
+  fetch(url, { method: "GET", headers: { "ngrok-skip-browser-warning": true } })
+    .then((response) => {
       if (!response.ok) {
         throw new Error("Request to stop brute force process failed");
       }
-      console.log('Brute force process stopped');
+      console.log("Brute force process stopped");
     })
-    .catch(error => {
+    .catch((error) => {
       console.error("Stop brute force process:", error);
     });
-  
 });
 
 picConBtn.addEventListener("click", async (e) => {
@@ -226,7 +204,6 @@ picConBtn.addEventListener("click", async (e) => {
     const result = await pictureToString();
     textElement.innerText = `Your Password: ${result}`;
     textElement.append(copyButton(textId));
-
   } catch (error) {
     console.log(error);
   }
@@ -236,7 +213,6 @@ uploadFile.addEventListener("change", () => {
   const label = document.getElementById("uploadLabel");
   label.textContent = "Picture Uploaded!";
 });
-
 
 const fetchData = (signal) => {
   const bruteType = document.querySelector("#bruteMode").value;
@@ -251,9 +227,12 @@ const fetchData = (signal) => {
 
   pwd.value = "";
 
-  let result =[pwd.value,'--','--','--']
+  let result = [pwd.value, "--", "--", "--"];
 
-  fetch(urlPara,{method:'GET',headers:{'ngrok-skip-browser-warning': true}})
+  fetch(urlPara, {
+    method: "GET",
+    headers: { "ngrok-skip-browser-warning": true },
+  })
     .then((response) => {
       if (!response.ok) {
         throw new Error(response.statusText);
@@ -266,10 +245,11 @@ const fetchData = (signal) => {
     })
     .catch((error) => {
       console.error("fetch data:", error);
-    }).finally( () => {
-      clearInterval(timer)
-      updateAttempts(result);
     })
+    .finally(() => {
+      clearInterval(timer);
+      updateAttempts(result);
+    });
 };
 
 function updateAttempts(result) {
