@@ -180,8 +180,8 @@ startBrute.addEventListener("click", (e) => {
   fetchData();
 });
 stopBrute.addEventListener("click", () => {
-  const url = "https://e6f7-85-31-21-51.ngrok-free.app/stopBruteForce";
-  // const url = "http://localhost:3001/stopBruteForce";
+  // const url = "https://e6f7-85-31-21-51.ngrok-free.app/stopBruteForce";
+  const url = "http://localhost:3001/stopBruteForce";
 
   fetch(url, { method: "GET", headers: { "ngrok-skip-browser-warning": true } })
     .then((response) => {
@@ -216,9 +216,9 @@ uploadFile.addEventListener("change", () => {
 
 const fetchData = (signal) => {
   const bruteType = document.querySelector("#bruteMode").value;
-  // const url="http://localhost:3001/"
+  const url="http://localhost:3001/"
+  // const url = "https://e6f7-85-31-21-51.ngrok-free.app/";
 
-  const url = "https://e6f7-85-31-21-51.ngrok-free.app/";
   const pwd = document.getElementById("userPwdInput");
   const [encodedPwd, key] = passwordEncoder(pwd.value);
   const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
