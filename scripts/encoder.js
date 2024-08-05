@@ -8,14 +8,13 @@ const characters = [
     '-', '_', '=', '+', '[', ']', '{', '}', '|', '\\', '/', '<', '>', 
     ',', '.', '`', '~'
 ];
-
+//Returns a random number based on the length of a given array.
 export function rndNumInLen (array) {
     return Math.floor(Math.random() * array.length);
 }
 
+// Encodes the user's password.
 export function passwordEncoder (userPwd) {
-    // Encodes the user's password.
-    // const passwordInput = document.getElementById('passwordInput');
 
     let encodedString = "";
     const encodingKey = rndNumInLen(characters);
