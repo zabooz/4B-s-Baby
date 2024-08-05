@@ -32,11 +32,14 @@ const draw = () => {
                                 : '#41AFB9'
    
     const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+   
+  
     ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
 
     if (rainDrops[i] * fontSize > canvas.height && Math.random() > .985) {
       rainDrops[i] = 0;
     }
+    
     rainDrops[i]++;
   }
 };

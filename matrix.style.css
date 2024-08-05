@@ -23,6 +23,7 @@
     height: 3rem;
     position: sticky;
     top: 0;
+    z-index: 2;
     display: flex;
     align-content: center;
     border-bottom: 2px solid var(--sixthColor);
@@ -57,7 +58,6 @@
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s transform 0.3s;
-    background: rgb(0, 0, 0);
 }
 .switcherDiv {
     position: relative;
@@ -268,10 +268,12 @@ main{
 }
 .confirmBubble{
     position: absolute;
-    width: 20rem;
-    height: 20rem;
-    top: -1.5rem;
+    top: -0.1rem;
     left: 1.5rem;
+    background-color: #1f1a1a;
+    padding: .2rem;
+    border-radius: .5rem;
+    display: none;
 }
 .copyButton:active {
     -webkit-transform: translateY(1px);
@@ -673,10 +675,10 @@ select{
 #bruteSimpleDescription,
 #bruteLibraryDescription{
     color: #23a6db;
+    position: relative;
 }
 #bruteSimpleDescription:hover,
 #bruteLibraryDescription:hover{
-    position: relative;
     cursor: pointer;
 }
 #bruteSimpleDescription::after,
@@ -687,9 +689,72 @@ select{
     top: -12rem;
     left: 4rem;
     width: 15rem;
-    background-color: #fff;
+    background-color: black;
     border-radius: 5px;
-    border: 1px solid #000;
+    border: 1px solid #ffffff;
     padding: 1rem;
 
 }
+.fadeIn{
+    display: block;
+    animation: fadeIn 2s forwards ;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; display: block; }
+    50% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.chaos,
+#chaos {
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ff0000);
+    background-size: 200% 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: shimmer 3s infinite linear;
+}
+@keyframes wabber {
+    0% { transform: translateX(-5px); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(-5px); }
+}
+
+
+.wabbling-text {
+    animation: wabber 1.5s infinite cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.scale{
+    animation: scaleImage 3s infinite;
+}
+
+@keyframes scaleImage {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(.5);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75%{
+      transform: scale(1.5);
+    }
+    100%{
+        transform:scale(1)
+    }
+  }
