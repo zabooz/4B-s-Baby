@@ -30,7 +30,7 @@ import {
   contentArray2,
   allAdjectives,
   allNouns,
-} from "../data/generator.data.js";
+} from "../data/englishGenerator.data.js";
 import { rndNumInLen } from "./encoder.js";
 
 //Generates a random Username based on user input.
