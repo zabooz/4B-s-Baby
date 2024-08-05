@@ -33,11 +33,12 @@ import {
 } from "../data/generator.data.js";
 import { rndNumInLen } from "./encoder.js";
 
+//Generates a random Username based on user input.
 export function generateUser(adjective1, adjective2, selectedNoun) {
   let newUser = "";
   let randomAdjective1, randomAdjective2, randomNoun;
 
-  //Randomize select.
+  //Randomize select if user input = random.
   if (adjective1 === "random") {
     adjective1 = contentArray1[rndNumInLen(contentArray1)];
   }

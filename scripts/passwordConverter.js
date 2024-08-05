@@ -21,7 +21,7 @@ export function passwordConverter(password, selector) {
                 "t": "7"
             },
             leetAdvanced: {
-                // Easily readable leetspeak here.
+                // Somewhat readable leetspeak here.
                 "A": "4",
                 "B": "|3",
                 "C": "(",
