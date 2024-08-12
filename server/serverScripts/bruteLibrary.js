@@ -13,7 +13,7 @@
                 time = ((Date.now() - startTime)/1000) + ' sec';
                 break;
             }else if(i === passwordList.length - 1){
-                count = "not found"
+                count = "not in list"
                 time = ((Date.now() - startTime)/1000) + ' sec';
             }
 

@@ -10,13 +10,13 @@ export function bruteForceSimple(targetPassword) {
 
   console.log("brute force started");
 
-  function generate(prefix, length, resolve) {
+  function generate(attempt, length, resolve) {
     if (found || abort) return resolve();
 
     if (length === 0) {
       count++;
-      if (prefix === targetPassword) {
-        console.log(`Password found: ${prefix}`);
+      if (attempt === targetPassword) {
+        console.log(`Password found: ${attempt}`);
         found = true;
         return resolve();
       }
@@ -32,7 +32,7 @@ export function bruteForceSimple(targetPassword) {
       }
       const char = charset[index];
       setImmediate(() => {
-        generate(prefix + char, length - 1, () => {
+        generate(attempt + char, length - 1, () => {
           iterateChars(index + 1);
         });
       });

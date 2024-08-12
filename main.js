@@ -121,7 +121,7 @@ convertBtn.addEventListener("click", function () {
   const newPassword = passwordConverter(passwordInput.value, selectedConverter);
   textElement.innerText = `Your new Rune: ${newPassword}`;
   textElement.append(copyButton(textId));
-  passwordInput.value = "";
+  // passwordInput.value = "";
 });
 
 passwordInput.addEventListener("keypress", function (event) {
