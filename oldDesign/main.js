@@ -1,18 +1,18 @@
-import { passwordConverter } from "./scripts/passwordConverter.js";
-import { generateUser } from "./scripts/userGenerator.js";
-import { pictureToString } from "./scripts/picturePwd.js";
-import { passwordEncoder } from "./scripts/encoder.js";
-import { passwordStrength } from "./scripts/passwordStrengthCalc.js";
-import { generatePassword } from "./scripts/passwordGenerator.js";
-import { copyButton } from "./scripts/copybutton.js";
+import { passwordConverter } from "../scripts/passwordConverter.js";
+import { generateUser } from "../scripts/userGenerator.js";
+import { pictureToString } from "../scripts/picturePwd.js";
+import { passwordEncoder } from "../scripts/encoder.js";
+import { passwordStrength } from "../scripts/passwordStrengthCalc.js";
+import { generatePassword } from "../scripts/passwordGenerator.js";
+import { copyButton } from "../scripts/copybutton.js";
 import {
   translatePage,
   initTranslation,
   translations,
-} from "./scripts/translations.js";
-import { changeTheme } from "./scripts/themeSelect.js";
-import { chaos } from "./scripts/chaos.js";
-import { tooltip } from "./scripts/tooltip.js";
+} from "../scripts/translations.js";
+import { changeTheme } from "../scripts/themeSelect.js";
+import { chaos } from "../scripts/chaos.js";
+import { tooltip } from "../scripts/tooltip.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   await initTranslation();
