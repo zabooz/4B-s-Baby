@@ -1,15 +1,18 @@
 const config = {
+  home: {
+    link: "index.html",
+  },
   testing: {
     text: "Password Testing",
-    link: "#",
+    link: "featureHtmls/testing.html",
   },
   userGen: {
     text: "User Generator",
-    link: "#",
+    link: "featureHtmls/userGenerating.html",
   },
   pwGen: {
     text: "Password Generator",
-    link: "#",
+    link: "featureHtmls/pwGenerating.html",
   },
   logo: {
     text: "Mayo Monkeys",
@@ -22,8 +25,10 @@ createNavBar = (config) => {
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
     <div class="d-flex align-items-center">
+    <a href=${config.home.link}>
     <img src=${config.logo.link} />
     <p class="navbar-brand mb-0 ms-3" href="#">${config.logo.text}</p>
+    </a>
     </div>
   <button class="navbar-toggler ms-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
