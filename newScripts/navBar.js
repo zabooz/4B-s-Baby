@@ -66,4 +66,4 @@ createNavBar = (config) => {
   return navBar;
 };
 
-document.querySelector("header").innerHTML = createNavBar(config);
+document.querySelector("#navBar").innerHTML = createNavBar(config);
