@@ -5,5 +5,13 @@
 }
 main{
     height: 300rem;
-    background: red;
+}
+.img-container img{
+    width: 7rem;
+    height: 5rem;
+}
+
+.content-container {
+  overflow-wrap: break-word; /* Ensures text will wrap and break */
+  word-break: break-word; /* Breaks long words */
 }
