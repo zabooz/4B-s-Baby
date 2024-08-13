@@ -1,22 +1,22 @@
 const config = {
   home: {
-    link: "index.html",
+    link: "/index.html",
   },
   testing: {
     text: "Password Testing",
-    link: "featureHtmls/testing.html",
+    link: "/featureHtmls/testing.html",
   },
   userGen: {
     text: "User Generator",
-    link: "featureHtmls/userGenerating.html",
+    link: "/featureHtmls/userGenerating.html",
   },
   pwGen: {
     text: "Password Generator",
-    link: "featureHtmls/pwGenerating.html",
+    link: "/featureHtmls/pwGenerating.html",
   },
   logo: {
     text: "Mayo Monkeys",
-    link: "./img/animated_monkey.gif",
+    link: "/img/animated_monkey.gif",
   },
 };
 
@@ -44,7 +44,7 @@ createNavBar = (config) => {
         <a class="nav-link" href=${config.pwGen.link}>${config.pwGen.text}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./oldDesign/index.html">Old Design</a>
+        <a class="nav-link" href="/oldDesign/index.html">Old Design</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
