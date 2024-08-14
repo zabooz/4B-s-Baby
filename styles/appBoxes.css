@@ -1,0 +1,8 @@
+.bruteBox{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 1rem;
+    gap: 1rem;
+    align-items: center;
+}

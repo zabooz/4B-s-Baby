@@ -22,6 +22,7 @@ export const copyButton = (textId) => {
 
     button.append(img, confirmBubble)
     const textElement = document.getElementById(textId)
+    
     const index = textElement.innerText.lastIndexOf(' ') 
     const text = textElement.innerText.slice(index)
 

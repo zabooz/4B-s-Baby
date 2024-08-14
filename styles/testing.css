@@ -1,0 +1,36 @@
+
+.description{
+    width: 25rem;
+}
+
+.custom-img{
+    border-radius: 1rem;
+}
+main{
+    display: flex;
+    flex-direction: column;
+
+}
+section{
+    padding: 5rem 0;
+ 
+}
+.sectionDiv{
+    width: 80%;
+}  
+@media(max-width: 991px){
+
+    .custom-img{
+        width: 7rem;
+        height: 5rem;
+    }
+}
+@media(min-width:992px){
+
+    .custom-img{
+        width: 7rem;
+        height: 5rem;
+    }
+
+
+}

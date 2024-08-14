@@ -1,4 +1,7 @@
-const config = {
+const configNav = {
+
+  targetId: "nav",
+
   home: {
     link: "/index.html",
   },
@@ -20,13 +23,13 @@ const config = {
   },
 };
 
-createNavBar = (config) => {
+createNavBar = (configNav) => {
   const navBar = `
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div>
-        <a href="${config.home.link}" class="d-flex align-items-center" style="text-decoration: none;">
-          <img src="${config.logo.link}" alt="logo" />
-          <p class="navbar-brand mb-0 ms-3">${config.logo.text}</p>
+        <a href="${configNav.home.link}" class="d-flex align-items-center" style="text-decoration: none;">
+          <img src="${configNav.logo.link}" alt="logo" />
+          <p class="navbar-brand mb-0 ms-3">${configNav.logo.text}</p>
         </a>
       </div>
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,13 +38,13 @@ createNavBar = (config) => {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto d-flex justify-content-end px-5 w-100">
           <li class="nav-item">
-            <a class="nav-link" href="${config.testing.link}">${config.testing.text}</a>
+            <a class="nav-link" href="${configNav.testing.link}">${configNav.testing.text}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${config.userGen.link}">${config.userGen.text}</a>
+            <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${config.pwGen.link}">${config.pwGen.text}</a>
+            <a class="nav-link" href="${configNav.pwGen.link}">${configNav.pwGen.text}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/oldDesign/index.html">Old Design</a>
@@ -64,4 +67,4 @@ createNavBar = (config) => {
   return navBar;
 };
 
-document.querySelector("#navBar").innerHTML = createNavBar(config);
+document.querySelector(configNav.targetId).innerHTML = createNavBar(configNav);
