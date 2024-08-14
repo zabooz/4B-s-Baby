@@ -13,6 +13,7 @@ import {
 import { changeTheme } from "../scripts/themeSelect.js";
 import { chaos } from "../scripts/chaos.js";
 import { tooltip } from "../scripts/tooltip.js";
+import {updateRecentInputs} from "../scripts/inputList.js"
 
 document.addEventListener("DOMContentLoaded", async () => {
   await initTranslation();
@@ -81,14 +82,11 @@ rdmPwdBtn.addEventListener("click", function () {
 
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  const textId = "newUser";
-  const textElement = document.getElementById(textId);
   const adjective1 = document.getElementById("adjective1").value;
   const adjective2 = document.getElementById("adjective2").value;
   const selectedNoun = document.getElementById("noun").value;
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
-  textElement.innerText = `Username: ${userOutput}`;
-  textElement.append(copyButton(textId));
+  updateRecentInputs(userOutput);
 });
 
 burgerBtn.addEventListener("click", function () {

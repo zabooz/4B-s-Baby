@@ -21,9 +21,17 @@ export const copyButton = (textId) => {
     }
 
     button.append(img, confirmBubble)
+
     const textElement = document.getElementById(textId)
-    const index = textElement.innerText.lastIndexOf(' ') 
-    const text = textElement.innerText.slice(index)
+    let text;
+    console.log(textElement)
+    if (textElement.innerText.includes(' ')) {
+    const index = textElement.innerText.lastIndexOf(' ');
+    text = textElement.innerText.slice(index+1);    
+    }
+    else {
+    text = textElement.innerText;    
+    }
 
     button.addEventListener('click',() => {
         navigator.clipboard.writeText(text)
