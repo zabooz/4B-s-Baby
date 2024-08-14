@@ -3,7 +3,7 @@ import { tooltip } from "./tooltip.js";
 
 export async function loadTranslations() {
     try {
-        const response = await fetch('data/translations.json'); 
+        const response = await fetch('/data/translations.json'); 
         if (!response.ok) {
             throw new Error('Failed to load translations');
         }

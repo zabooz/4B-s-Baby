@@ -63,9 +63,9 @@ themeBtns.forEach((btn) => {
     tooltip();
     const selectedTheme = e.target.id;
     if (selectedTheme === "serious") {
-      changeTheme("./serious.style.css", "./img/Security-Logo-Teal.png");
+      changeTheme("./serious.style.css", "/img/Security-Logo-Teal.png");
     } else if (selectedTheme === "matrix") {
-      changeTheme("./matrix.style.css", "./img/non_animated_monkey.png");
+      changeTheme("./matrix.style.css", "/img/non_animated_monkey.png");
     }
   });
 });

@@ -4,10 +4,30 @@
     margin: 0;
 }
 main{
-    height: 300rem;
+    display: flex;
+    flex-direction: column;
+
 }
-
-
+section{
+    padding: 5rem 0;
+ 
+}
+main section :first-child{
+    background: #77B6EA;
+}
+main section:nth-child(2n-1){
+    background: #e8eef2;
+}
+main section:nth-child(2n-2){
+    
+    background: #c7d3dd;
+}
+.sectionDiv{
+    width: 60%;
+}   
+.custom-img{
+    border-radius: 1rem;
+}
 
 @media(max-width: 991px){
 
@@ -19,8 +39,8 @@ main{
 @media(min-width:992px){
 
     .custom-img{
-        width: 7rem;
-        height: 5rem;
+        width: 15rem;
+        height: 10rem;
     }
 
 
