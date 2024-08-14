@@ -24,8 +24,8 @@ createNavBar = (config) => {
   const navBar = `
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-    <div class="d-flex align-items-center">
-    <a href=${config.home.link}>
+    <div>
+    <a href=${config.home.link} class="d-flex align-items-center" style="text-decoration: none;" >
     <img src=${config.logo.link} />
     <p class="navbar-brand mb-0 ms-3" href="#">${config.logo.text}</p>
     </a>

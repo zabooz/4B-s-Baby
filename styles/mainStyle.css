@@ -6,12 +6,23 @@
 main{
     height: 300rem;
 }
-.img-container img{
-    width: 7rem;
-    height: 5rem;
+
+
+
+@media(max-width: 991px){
+
+    .custom-img{
+        width: 10rem;
+        height: 7rem;
+    }
+}
+@media(min-width:992px){
+
+    .custom-img{
+        width: 7rem;
+        height: 5rem;
+    }
+
+
 }
 
-.content-container {
-  overflow-wrap: break-word; /* Ensures text will wrap and break */
-  word-break: break-word; /* Breaks long words */
-}
