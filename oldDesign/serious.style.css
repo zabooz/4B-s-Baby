@@ -492,6 +492,22 @@ td{
     gap: 4.5rem;
     align-items: center;
 }
+#qwertz {
+    display:flex;
+    gap: 0.5rem;
+    margin-left: 1.5rem;
+}
+#newUser {
+    width:fit-content;
+}
+#input-output {
+    text-align: left;
+    width: 17rem;
+}
+#input-output p:first-of-type {
+    margin-bottom: 1rem;
+
+}
 #converterSelector,
 .pictureMagicDiv{
     display: flex;
