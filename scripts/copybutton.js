@@ -15,9 +15,9 @@ export const copyButton = (textId) => {
 
 
     if(boolean){
-        img.src = "img/copyToClipBoard.png"
+        img.src = "../img/copyToClipBoard.png"
     }else{
-        img.src = "img/copyToClipBoard2.png"
+        img.src = "../img/copyToClipBoard2.png"
     }
 
     button.append(img, confirmBubble)
