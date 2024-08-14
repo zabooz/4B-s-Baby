@@ -1,4 +1,5 @@
-createFooter = () => {
+
+const createFooter = () => {
 
 
 return `

@@ -1,4 +1,6 @@
-.bruteBox{
+.bruteBox,
+.excalibur,
+.appBox{
     display: flex;
     flex-direction: column;
     width: 70%;

@@ -12,10 +12,13 @@
     <link rel="stylesheet" href="/styles/navBar.css" />
     <link rel="stylesheet" href="/styles/testing.css" />
     <link rel="stylesheet" href="/styles/appBoxes.css" />
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    rel="stylesheet"
+  />
     <title>Test your password</title>
   </head>
   <body>
-    <h1>testing</h1>
     <nav id="navBar" class="sticky-top"></nav>
     <script src="/newScripts/navBar.js"></script>
     <header>
@@ -23,9 +26,9 @@
     </header>
     <main>
       <section class="d-flex border justify-content-center">
-        <div class="d-flex flex-column p-5 sectionDiv">
+        <div class="d-flex flex-column sectionDiv">
           <div
-            class="img-container d-flex p-5 justify-content-center align-items-center gap-5"
+            class="img-container d-flex p-5 flex-column flex-lg-row justify-content-center align-items-center gap-5"
           >
             <img
               src="/img/lockPickAxe.jpg"
@@ -147,7 +150,7 @@
       <section class="d-flex justify-content-center border" >
                 <div class="d-flex flex-lg-row flex-column p-5 sectionDiv">
           <div
-            class="img-container d-flex p-5 justify-content-center align-items-center"
+            class="img-container d-flex p-5 flex-column flex-lg-row justify-content-center align-items-center"
           >
             <img
               src="/img/lockPickAxe.jpg"
@@ -171,19 +174,13 @@
         </div>
       </section>
       <section class="d-flex justify-content-center border" >
-                  <div class="appBox" id="passwordStrengthCalc">
+              <div class="excalibur" id="passwordStrengthCalc border w-50">
             <h3>Password Excalibur</h3>
             <p>
               Password Excalibur is a tool designed to assess the strength of
               your password. It evaluates various factors including length,
               complexity, and predictability to give you a comprehensive
               strength score.
-            </p>
-            <p>
-              To use Password Excalibur, simply enter your password and click
-              the "Test it" button. The tool will analyze your password and
-              provide a detailed result, highlighting areas where your password
-              is strong and suggestions for improvement.
             </p>
             <div id="passwordCalc">
               <input
