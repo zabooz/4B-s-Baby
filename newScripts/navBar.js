@@ -46,17 +46,18 @@ createNavBar = (config) => {
       <li class="nav-item">
         <a class="nav-link" href="/oldDesign/index.html">Old Design</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Language
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">English</a>
-          <a class="dropdown-item" href="#">German</a>
-          <a class="dropdown-item" href="#">Spain</a>
-          <a class="dropdown-item" href="#">France</a>
-        </div>
-      </li>
+<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Language
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">France</a></li>
+            <li><a class="dropdown-item" href="#">German</a></li>
+            <li><a class="dropdown-item" href="#">Spain</a></li>
+            
+          </ul>
+        </li>
     </ul>
   </div>
 
