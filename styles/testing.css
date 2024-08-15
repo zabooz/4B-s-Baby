@@ -1,18 +1,30 @@
 
-.description{
-    width: 25rem;
-}
-
 .custom-img{
     border-radius: 1rem;
 }
+
+#bruteInput,
+#bruteBtns{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 80%;
+
+}
+#bruteInput{
+    width: 80%;
+}
+#bruteForceApp p{
+    text-align: center;
+}
+
 main{
     display: flex;
     flex-direction: column;
 
 }
 section{
-    padding: 5rem 0;
+    padding: 1rem 0;
  
 }
 .sectionDiv{
@@ -23,6 +35,9 @@ section{
     .custom-img{
         width: 7rem;
         height: 5rem;
+    }
+    #bruteInput{
+    flex-direction: column;
     }
 }
 @media(min-width:992px){

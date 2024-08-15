@@ -6,6 +6,8 @@ import cors from "cors";
 import { bruteForceSimple } from "./serverScripts/bruteSimple.js";
 import { bruteForceLibrary } from "./serverScripts/bruteLibrary.js";
 import { passwordDecoder } from "./serverScripts/encoder.js";
+import OpenAI from 'openai';
+
 
 
 config();
@@ -25,13 +27,48 @@ async function loadPasswordList() {
     });
     passwordList = response.data.split("\n").filter((line) => line !== "");
     console.log("data loaded");
-    console.log(passwordList)
   } catch (error) {
     console.error("dropbbox fail", error);
   }
 }
 
 loadPasswordList();
+
+app.get("/apiCall", async (req,res)=> {
+  const openai = new OpenAI({
+    apiKey: "d547239b0a3d4ab2a40d3ffea5cfd612",
+    baseURL: "https://api.aimlapi.com",
+  });
+
+  const key = req.query.key
+  const pwd = req.query.pwd || "abc"
+  const sysContent = req.query.sysContent
+  const decodedPwd = passwordDecoder(pwd,key)
+
+  try{
+        const chatCompletion = await openai.chat.completions.create({
+        model: "mistralai/Mistral-7B-Instruct-v0.2",
+        messages: [
+          { role: "system", content: sysContent },
+          { role: "user", content: decodedPwd }
+        ],
+        temperature: 0.7,
+        max_tokens: 128,
+      });
+
+      const result = chatCompletion.choices[0].message.content
+ 
+        res.send(result)
+ 
+ 
+  }catch(error)  {
+    console.log(error)
+    res.send("no")
+  }
+
+
+})
+
 
 
 app.get("/", (req, res) => {

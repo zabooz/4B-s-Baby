@@ -16,13 +16,15 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     rel="stylesheet"
   />
+    <script src="/featureHtmlScripts/testing.js" defer type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Test your password</title>
   </head>
   <body>
     <nav id="navBar" class="sticky-top"></nav>
-    <script src="/newScripts/navBar.js"></script>
+    <script src="/components/navBar.js"></script>
     <header>
-      <script src="/newScripts/heroText.js"></script>
+      <script src="/components/heroText.js"></script>
     </header>
     <main>
       <section class="d-flex border justify-content-center">
@@ -45,8 +47,8 @@
           </div>
 
           <div class="container text-center">
-            <div class="row justify-content-center">
-              <div class="col-3">
+            <div class="row g-4 justify-content-center">
+              <div class="col-lg-3 col-sm-8 col-10">
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -62,7 +64,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-lg-3 col-sm-8 col-10">
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -78,7 +80,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-3">
+              <div class="col-lg-3 col-sm-8 col-10">
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -99,51 +101,43 @@
         </div>
       </section>
       <section class="d-flex justify-content-center">
-        <div id="bruteForceApp" class="bruteBox">
+        <div id="bruteForceApp" class="appBox d-flex">
           <h3>Test your Mojo</h3>
-          <p>
+          <p  >
             Choose a mode to test your password against brute force attacks. The
             Simple Brute force mode combinations, the library mode uses a list
             of leaked passwords.
           </p>
-          <p></p>
-          <div class="bruteInput">
+          <div id="bruteInput">
             <input
               type="text"
               id="userPwdInput"
-              class="input"
-              placeholder=" Enter password"
+              class="form-control"
+              placeholder="Gib ein Passwort ein"
             />
-
-            <div id="chooseBruteForce">
-              <select id="bruteMode" class="input" required>
-                <option value="library">Mode Library</option>
-                <option value="simple">Mode Simple</option>
+              <select id="bruteMode" class="form-select" aria-label="Default select example">
+                <option value="library" selected>Listen Modus</option>
+                <option value="simple">Simpler Modus</option>
               </select>
-            </div>
+  
           </div>
-          <div class="bruteBtns">
-            <button type="submit" id="startBrute" class="startBtn">
-              Start
+          <div id="bruteBtns">
+            <button class="btn btn-primary btn-lg" type="button" id="startBrute" >
+                Start
             </button>
-            <button id="stopBrute" class="startBtn">Stop</button>
+            <button id="stopBrute" class="btn btn-danger btn-lg">Stop</button>
           </div>
-
-          <table id="stats">
-            <tbody id="statsBody">
-              <tr id="statsHeading">
-                <th>Password</th>
-                <th>Attempts</th>
-                <th>Mode</th>
-                <th id="lastTh">Time</th>
+          <table class="table mb-5" id="stats">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Password</th>
+                <th scope="col">Versuche</th>
+                <th scope="col">Modus</th>
+                <th scope="col" id="lastTh">Zeit</th>
               </tr>
-              <tr id="statOutput">
-                <td><div class="bruteLoad"></div></td>
-                <td><div class="bruteLoad"></div></td>
-                <td><div class="bruteLoad"></div></td>
-                <td><div class="bruteLoad"></div></td>
-              </tr>
-            </tbody>
+            </thead>
+            <tbody id="statsBody" ></tbody>
           </table>
         </div>
       </section>
@@ -162,7 +156,7 @@
             <h4 class="mb-2">Why a safe password matters.</h4>
             <p class="mb-3">
               Dies ist ein kurzer
-              Tefffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffxt,
+              Teffffffffffffffff fffffffffffffffffffffffff ffffffffffffffffffffffffffxt,
               der unter der Überschrift angezeigt wird.
             </p>
             <ul class="list-group mb-3 list-group-flush">
@@ -182,35 +176,35 @@
               complexity, and predictability to give you a comprehensive
               strength score.
             </p>
-            <div id="passwordCalc">
+            <div id="passwordCalc" class="d-flex gap-4">
               <input
                 type="text"
                 id="strengthInput"
-                class="input"
-                placeholder=" Enter password"
+                class="form-control"
+                placeholder="Gib ein Passwort ein"
               />
+              <button id="calcStrengthBtn" class=" btn btn-primary">Teste!</button>
             </div>
-            <button id="calcStrengthBtn" class="startBtn">Test it</button>
             
-            <div id="strengthBarDiv">
-              <span><b>weak</b></span>
-              <div id="strengthBar">
-                <div class="strengthBarFill"></div>
-                <div class="strengthBarFill"></div>
-                <div class="strengthBarFill"></div>
-                <div class="strengthBarFill"></div>
-                <div class="strengthBarFill"></div>
-              </div>
-              <span><b>strong</b></span>
+            <div id="strengthBarDiv" class="w-100 d-flex align-items-center border d-flex p-2">
+              <span class="mx-3"><b>Schwach</b></span>
+                <div class="progress flex-grow-1" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                  <div id="progressBar" class="progress-bar" style="width: 1%;background-color: red;"></div>
+                </div>
+           
+              
+              <span class="mx-3"><b>Stark</b></span>
             </div>
-          
-            <span><div id="calcSpinner"></div></span>
-            <div id="convert"></div>
+            <div class="container d-flex flex-column flex-lg-row g-2 ">
+              <ul class="list-group-flush list-group" id="success"></ul>
+              <ul class="list-group-flush list-group" id="suggestions"></ul>
+
+            </div>
           </div>
       </section>
     </main>
     <footer>
-        <script src="/newScripts/footer.js"></script>
+        <script src="/components/footer.js"></script>
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

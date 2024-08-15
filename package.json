@@ -12,9 +12,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "axios": "^1.7.2",
+    "axios": "^1.7.4",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -22,6 +21,7 @@
     "jsdom": "^24.1.0",
     "multer": "^1.4.5-lts.1",
     "node-fetch": "^3.3.2",
+    "openai": "^4.55.7",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
@@ -43,5 +43,6 @@
     ],
     "ext": "js,json",
     "exec": "node server/server.js"
-  }
+  },
+  "description": ""
 }

@@ -17,11 +17,11 @@ heroText = () => {
           It uses utility classes for typography and spacing to space content
           out within the larger container.
         </p>
-        <p>sdlhgaskjhdgkjadhkjhasdkjghakdjghkjsahdgkjahdgj</p>
+        <p>sdlhgaskjhdgkjadhkjhas dkjghakdjghkjsahdgkjahdgj</p>
       </div>
     `;
 
 
 }
-console.log(configHero.targetElementId)
+
 document.querySelector(configHero.targetElementId).innerHTML = heroText()
