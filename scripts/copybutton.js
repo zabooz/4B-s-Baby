@@ -11,20 +11,31 @@ export const copyButton = (textId) => {
 
     const img = document.createElement('img')
 
-    const boolean = document.getElementById('themeStylesheet').getAttribute('href').includes('serious')
 
-
-    if(boolean){
-        img.src = "../img/copyToClipBoard.png"
+    if(document.getElementById("themStylesheet")){
+        const boolean = document.getElementById('themeStylesheet').getAttribute('href').includes('serious')
+    
+        if(boolean){
+            img.src = "/img/copyToClipBoard.png"
+        }else{
+            img.src = "/img/copyToClipBoard2.png"
+        }
+        button.append(img, confirmBubble)
+        
     }else{
-        img.src = "../img/copyToClipBoard2.png"
-    }
 
-    button.append(img, confirmBubble)
+        
+        const text = "Kopiert!"
+        const i = document.createElement("i")
+        i.className ="fa-regular fa-clipboard"
+        button.append(i,confirmBubble) 
+    }
+    
+
 
     const textElement = document.getElementById(textId)
     let text;
-    console.log(textElement)
+
     if (textElement.innerText.includes(' ')) {
     const index = textElement.innerText.lastIndexOf(' ');
     text = textElement.innerText.slice(index+1);    

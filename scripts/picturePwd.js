@@ -3,11 +3,16 @@ export async function pictureToString() {
     const file = input.files[0];
     const label = document.getElementById('uploadLabel');
     label.textContent = 'Upload your picture';
-
+    
+    
+    
+    
+    
+    
     if (!file) {
         throw new Error("No file selected");
     }
-
+    
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
 

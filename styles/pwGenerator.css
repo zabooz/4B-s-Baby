@@ -13,7 +13,24 @@ main{
 }
 section{
     padding: 5rem 0;
- 
+}
+
+#picResult{
+    width: 30%;
+    padding: .2rem;
+    border-radius: .5rem;
+}
+
+.label{
+    border-radius: 5px;
+}
+#uploadLabel{
+    color: white;
+}
+#previewImage{
+    width: 10rem;
+    height: 10rem;
+
 }
 .sectionDiv{
     width: 80%;
