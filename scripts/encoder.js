@@ -18,7 +18,7 @@ export function passwordEncoder (userPwd) {
 
     let encodedString = "";
     const encodingKey = rndNumInLen(characters);
-
+    
     for (let char of (userPwd)) {
         const charIndex = characters.indexOf(char);
 

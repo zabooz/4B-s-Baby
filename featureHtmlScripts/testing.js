@@ -148,7 +148,7 @@ const fetchData = () => {
 
     const bar = document.getElementById("progressBar")
 
-
+    console.log(234)
     const value = document.getElementById("strengthInput").value;
     try {
        const {result,points} = await newPwStrength(value);

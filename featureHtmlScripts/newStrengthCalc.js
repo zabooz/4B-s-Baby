@@ -49,8 +49,6 @@ export async function newPwStrength(pwd) {
     },
   };
   
-
-  // Punktesystem für Zeichenarten
   if (sonderzeichen.some(z => pwd.includes(z))) {
     points.pointForSigns.value = true;
   }
@@ -71,16 +69,19 @@ export async function newPwStrength(pwd) {
     const charCodeTwo = pwd.charCodeAt(i + 1);
     const charCodeThree = pwd.charCodeAt(i + 2);
     
-    if (charCodeOne === charCodeTwo && charCodeTwo === charCodeThree) {
-      points.noRepeat.value = false;
-    } else {
+    if (!(charCodeOne === charCodeTwo && charCodeTwo === charCodeThree)) {
       points.noRepeat.value = true;
     }
     
     if (!sonderzeichen.some(z => pwd[i] === z)) {
-      if (charCodeOne + 1 === charCodeTwo && charCodeTwo + 1 === charCodeThree) {
-        points.noSequence.value = false;
-      } else {
+      if (!(charCodeOne + 1 === charCodeTwo && charCodeTwo + 1 === charCodeThree)) {
+        points.noSequence.value = true;
+      }
+    }
+
+
+    if (!sonderzeichen.some(z => pwd[i] === z)) {
+      if (!(charCodeOne -1  === charCodeTwo && charCodeTwo -1 === charCodeThree)) {
         points.noSequence.value = true;
       }
     }
@@ -88,6 +89,7 @@ export async function newPwStrength(pwd) {
 
 
   try {
+    console.log(pwd,sysContent)
     const response = await aiApiCall(pwd,sysContent);
     points.hasNoWord.value = !response.includes("Yes");
     console.log(points.hasNoWord.value)

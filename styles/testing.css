@@ -27,9 +27,11 @@ section{
     padding: 1rem 0;
  
 }
-.sectionDiv{
-    width: 80%;
-}  
+
+
+
+
+
 @media(max-width: 991px){
 
     .custom-img{

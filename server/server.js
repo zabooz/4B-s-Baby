@@ -44,10 +44,10 @@ app.get("/apiCall", async (req,res)=> {
   const pwd = req.query.pwd || "abc"
   const sysContent = req.query.sysContent
   const decodedPwd = passwordDecoder(pwd,key)
-
+  console.log(decodedPwd)
   try{
         const chatCompletion = await openai.chat.completions.create({
-        model: "mistralai/Mistral-7B-Instruct-v0.2",
+        model: "meta-llama/Meta-Llama-3-70B-Instruct-Lite",
         messages: [
           { role: "system", content: sysContent },
           { role: "user", content: decodedPwd }
@@ -57,7 +57,7 @@ app.get("/apiCall", async (req,res)=> {
       });
 
       const result = chatCompletion.choices[0].message.content
- 
+      console.log(result)
         res.send(result)
  
  

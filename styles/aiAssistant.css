@@ -1,0 +1,28 @@
+#aiAssistant{
+    position: fixed;
+    left:-2.5rem;
+    top:50%;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+
+}
+#aiAssistant:hover{
+    animation: moveBtnAi .5s ease-out forwards; /* Wende die Animation an */
+}
+@keyframes moveBtnAi {
+        0% {
+            left: -2.5rem;
+        }
+        100% {
+            left: 0;   
+        }   
+}
+
+.sectionDiv{
+    width: 80%;
+}
