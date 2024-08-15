@@ -15,7 +15,8 @@ section{
     padding: 5rem 0;
 }
 
-#picResult{
+#picResult,
+.input{
     width: 30%;
     padding: .2rem;
     border-radius: .5rem;

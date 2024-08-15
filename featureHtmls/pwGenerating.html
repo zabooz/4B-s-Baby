@@ -49,81 +49,8 @@
                 </div>
               </div>
           </section>
-        <section class="d-flex border justify-content-center">
-            <div class="d-flex flex-column  sectionDiv">
-              <div
-                class="img-container d-flex p-5 flex-column flex-lg-row justify-content-center align-items-center gap-5"
-              >
-                <img
-                  src="/img/pictureMagic.jpg"
-                  class="custom-img"
-                  alt="lockPickAxe"
-                />
-                <div class="description">
-                  <h3>Ablauf Picture Magic</h3>
-                  <p>
-                    sldaghkasj sdgsg s gsdg sdg sgs dg sdg sdg sdg sdg sgd sdg sdg
-                    sdg sgs dg
-                  </p>
-                </div>
-              </div>
-    
-              <div class="container text-center">
-                <div class="row justify-content-center g-4">
-                  <div class="col-10 col-md-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <img
-                          src="/img/uploadPhoto.jpg"
-                          class="custom-img"
-                          alt="bruteTarget"
-                        />
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-10 col-md-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <img
-                          src="/img/convertPhoto.jpg"
-                          class="custom-img"
-                          alt="autoattack"
-                        />
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-10 col-md-4">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <img
-                          src="/img/getPhotoPassword.jpg"
-                          class="custom-img"
-                          alt="gaining access"
-                        />
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
           <section class="d-flex border justify-content-center">
-            <div id="pictureMagic" class="container d-flex g-0 flex-column justify-content-center align-items-center border" >
+            <div id="pictureMagic" class=" appBox container d-flex g-0 flex-column justify-content-center align-items-center" >
                 <h3>Picture Magic</h3>
                 <p>
                   Upload a photo, and our app will convert it into a secure
@@ -151,11 +78,11 @@
                         style="display: none"
                         name="uploadFile"
                       />
-                      <button id="pictureConvertBtn" type="button" class="btn btn-primary ">Convert</button>
+                      <button id="pictureConvertBtn" type="button" class="btn btn-primary btn-lg ">Convert</button>
                     </form>
                   </div>
                 </div>
-                <p id="picResult" class="copyText border border-secondary border-2  mt-3 text-center">Sample Text</p>
+                <p id="picResult" class=" border border-secondary border-2  mt-3 text-center">Sample Text</p>
               </div>
           </section>
 
@@ -171,21 +98,23 @@
                     This enhances your password's strength by replacing common
                     characters with numbers and symbols.
                   </p>
-                  <div class="flexbox-item2">
+                  <div class="d-flex flex-column flex-lg-row gap-3">
                     <input
                       type="text"
                       id="passwordInput"
-                      class="input"
+                      class="form-control"
                       placeholder=" Enter password"
                     />
-                    <select id="converterSelect" class="input">
+                    <select id="converterSelect" class="form-select">
                       <option value="leetSimple">Simple Leetspeak</option>
                       <option value="leetAdvanced">Advanced Leetspeak</option>
                       <option value="leetComplicated">Complicated Leetspeak</option>
                     </select>
                 </div>
-                <button id="convertBtn" class="startBtn">Convert</button>
-                <span id="newPassword" class="copyText">Your runeword: </span>
+               
+                  <button id="convertBtn" class="btn btn-primary mt-3 input btn-lg">Convert</button>
+                  <p  id="leetResult" class="input border border-secondary  border-2  mt-1 text-center">Sample Text</p>
+           
                 
               </div>
           </section>
@@ -197,23 +126,23 @@
                   password is a random combination of letters, numbers and symbols
                   to ensure the safety of your account.
                 </p>
-                <div id="startPwGenDiv">
-                  <div>
-                    <label for="pwLength">Password length:</label>
-                    <select id="pwLength" class="input">
-                      <option value="4">4</option>
-                      <option value="6">6</option>
-                      <option value="8">8</option>
-                      <option value="10">10</option>
-                      <option value="12">12</option>
-                      <option value="14">14</option>
-                      <option value="16">16</option>
-                      <option value="18">18</option>
-                      <option value="20">20</option>
-                    </select>
-                    <button id="rdmPwdBtn" class="startBtn">Generate</button>
-                    <p id="generatedPassword" class="copyText">Your Password:</p>
-                  </div>
+                <div id="startPwGenDiv" class="d-flex flex-column w-100 justify-content-center align-items-center">
+                    <div class="d-flex w-50 justify-content-center w-50 align-items-center mb-3">
+                      <label for="pwLength" class=" label  p-1 d-flex w-50 justify-content-evenly w-100 gap-3 align-items-center mb-3 ">Password length:
+                       
+                      <select id="pwLength" class="input">
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="16">16</option>
+                        <option value="20">20</option>
+                        <option value="24">24</option>
+                      </select>
+                      </label>
+                    </div>
+                    <button id="rdmPwdBtn" class="btn btn-primary btn-lg input">Generate</button>
+                    <p  id="generatedPassword" class=" d-flex justify-content-evenly border border-secondary  border-2  mt-3 text-center input">Sample Text</p>
                 </div>
               </div>
           </section>

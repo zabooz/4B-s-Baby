@@ -45,7 +45,7 @@ export async function newPwStrength(pwd) {
     },
     hasNoWord: {
       value: false,
-      text: "Does not contain common words."
+      text: "Does contain common words."
     },
   };
   
@@ -90,13 +90,13 @@ export async function newPwStrength(pwd) {
   try {
     const response = await aiApiCall(pwd,sysContent);
     points.hasNoWord.value = !response.includes("Yes");
-    console.log(response)
+    console.log(points.hasNoWord.value)
   } catch (error) {
     console.error('API call error:', error);
     points.hasNoWord.value = false;
   }
 
-  // Berechne das Ergebnis
+
   for (const key in points) {
     if (points[key].value === true) {
       result += 12.5;
