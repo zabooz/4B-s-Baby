@@ -13,7 +13,7 @@ import {
 import { changeTheme } from "../scripts/themeSelect.js";
 import { chaos } from "../scripts/chaos.js";
 import { tooltip } from "../scripts/tooltip.js";
-import {updateRecentInputs} from "../scripts/inputList.js"
+import { updateRecentInputs } from "../scripts/inputList.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   await initTranslation();
@@ -72,21 +72,21 @@ themeBtns.forEach((btn) => {
 
 rdmPwdBtn.addEventListener("click", function () {
   const textId = "generatedPassword";
-  const textElement = document.getElementById(textId);
-
   const pwLength = document.getElementById("pwLength").value;
   const generatedPassword = generatePassword(pwLength);
-  textElement.innerText = `Your password: ${generatedPassword}`;
-  textElement.append(copyButton(textId));
+  // textElement.innerText = `Your password: ${generatedPassword}`;
+  // textElement.append(copyButton(textId));
+  updateRecentInputs(generatedPassword, textId);
 });
 
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
+  const textId = "user-output";
   const adjective1 = document.getElementById("adjective1").value;
   const adjective2 = document.getElementById("adjective2").value;
   const selectedNoun = document.getElementById("noun").value;
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
-  updateRecentInputs(userOutput);
+  updateRecentInputs(userOutput, textId);
 });
 
 burgerBtn.addEventListener("click", function () {
@@ -214,7 +214,7 @@ uploadFile.addEventListener("change", () => {
 
 const fetchData = (signal) => {
   const bruteType = document.querySelector("#bruteMode").value;
-  const url="http://localhost:3001/"
+  const url = "http://localhost:3001/";
   // const url = "https://e6f7-85-31-21-51.ngrok-free.app/";
 
   const pwd = document.getElementById("userPwdInput");

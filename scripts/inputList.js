@@ -1,40 +1,32 @@
 import { copyButton } from "./copybutton.js";
 
-const recentInputs = [];
+const recentUserGens = [];
+const recentPwdGens = [];
+let recentInputs;
 
-export function updateRecentInputs(newInput) {
+export function updateRecentInputs(newInput, textId) {
+  if (textId === "user-output") {
+    recentInputs = recentUserGens;
+  }
+  if (textId === "generatedPassword") {
+    recentInputs = recentPwdGens;
+  }
+
   recentInputs.unshift(newInput);
-
 
   if (recentInputs.length > 4) {
     recentInputs.pop();
   }
 
-  displayRecentInputs();
+  displayRecentInputs(textId);
 }
 
-function displayRecentInputs() {
-
-  if (recentInputs.length > 0) {
-    document.getElementById("input-output0").innerText = recentInputs[0];
-    document.getElementById("input-output0").appendChild(copyButton("input-output0"))
-  if (recentInputs.length > 1) {
-    document.getElementById("input-output1").innerText = recentInputs[1];
-    document
-    .getElementById("input-output1")
-    .appendChild(copyButton("input-output1"));
-
+function displayRecentInputs(textId) {
+  for (let i = 0; i < recentInputs.length; i++) {
+    const element = document.getElementById(textId + i);
+    if (element) {
+      element.innerText = recentInputs[i];
+      element.appendChild(copyButton(textId + i));
+    }
   }
-  if (recentInputs.length > 2) {
-    document.getElementById("input-output2").innerText = recentInputs[2];
-    document
-      .getElementById("input-output2")
-      .appendChild(copyButton("input-output2"));
-  }
-  if (recentInputs.length > 3) {
-    document.getElementById("input-output3").innerText = recentInputs[3];
-    document
-      .getElementById("input-output3")
-      .appendChild(copyButton("input-output3"));  
-    }};
 }

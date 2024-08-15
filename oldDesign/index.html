@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BruteForce</title>
     <link id="themeStylesheet" rel="stylesheet" href="./serious.style.css" />
-    <script src="./main.js" type="module" defer>
-    </script>
+    <script src="./main.js" type="module" defer></script>
   </head>
   <body>
     <div class="allDiv">
@@ -14,29 +13,57 @@
       <div class="navbar">
         <button id="burgerBtn" class="burgerBtn">☰</button>
         <div id="burgerContent">
-          <button id="go-to-top" class="scrollBtn" data-target="top">Home</button>
-          <button id="go-to-test" class="scrollBtn" data-target="testd">Bruteforce</button>
-          <button id="go-to-convert" class="scrollBtn" data-target="convert">Password converter</button>
-          <button id="go-to-generate" class="scrollBtn" data-target="newPassword">Generate password</button>
+          <button id="go-to-top" class="scrollBtn" data-target="top">
+            Home
+          </button>
+          <button id="go-to-test" class="scrollBtn" data-target="testd">
+            Bruteforce
+          </button>
+          <button id="go-to-convert" class="scrollBtn" data-target="convert">
+            Password converter
+          </button>
+          <button
+            id="go-to-generate"
+            class="scrollBtn"
+            data-target="newPassword"
+          >
+            Generate password
+          </button>
           <div class="switcherDiv" id="languageSwitcherDiv">
-              <button id="languageBtn">Language</button>
-              <div class="switcherContentL">
-                  <button class="languageContentBtn" id="enLang" value="en">English</button>
-                  <button class="languageContentBtn" id="deLang" value="de">Deutsch</button>
-                  <button class="languageContentBtn" id="frLang" value="fr">French</button>
-                  <button class="languageContentBtn" id="esLang" value="es">Español</button>
-              </div>
+            <button id="languageBtn">Language</button>
+            <div class="switcherContentL">
+              <button class="languageContentBtn" id="enLang" value="en">
+                English
+              </button>
+              <button class="languageContentBtn" id="deLang" value="de">
+                Deutsch
+              </button>
+              <button class="languageContentBtn" id="frLang" value="fr">
+                French
+              </button>
+              <button class="languageContentBtn" id="esLang" value="es">
+                Español
+              </button>
+            </div>
           </div>
           <div class="switcherDiv" id="themeSwitcherDiv">
-              <button id="themeBtn">Design</button>
-              <div class="switcherContentT">
-                  <button class="themeContentBtn" id="serious">Modern</button>
-                  <button class="themeContentBtn" id="matrix">Matrix</button>
-                  <button class="themeContentBtn" id="newDesign">
-                    <a href="../index.html" style="text-decoration: none;" >new Design</a>
-                  </button>
-                  <button class="themeContentBtn" id="chaos" class="chaos wabbling-text">Don't Click me</button>
-              </div>
+            <button id="themeBtn">Design</button>
+            <div class="switcherContentT">
+              <button class="themeContentBtn" id="serious">Modern</button>
+              <button class="themeContentBtn" id="matrix">Matrix</button>
+              <button class="themeContentBtn" id="newDesign">
+                <a href="../index.html" style="text-decoration: none"
+                  >new Design</a
+                >
+              </button>
+              <button
+                class="themeContentBtn"
+                id="chaos"
+                class="chaos wabbling-text"
+              >
+                Don't Click me
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -107,33 +134,45 @@
             <h3>Test your Mojo</h3>
             <p>
               Choose a mode to test your password against brute force attacks.
-              The Simple <span id="bruteSimpleDescription" class="bruteDescription" data-tooltip="A brute force attack systematically tries all possible character combinations to crack a password or encryption. This approach is simple, but time-consuming and resource-intensive, especially with strong passwords.">Brute Force mode</span> tests all possible character
-              combinations, the <span id="bruteLibraryDescription" class="bruteDescription" data-tooltip="A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts and is not as secure as the hybrid attack.">Dictionary Attack mode</span> uses common passwords and
-              phrases.
+              The Simple
+              <span
+                id="bruteSimpleDescription"
+                class="bruteDescription"
+                data-tooltip="A brute force attack systematically tries all possible character combinations to crack a password or encryption. This approach is simple, but time-consuming and resource-intensive, especially with strong passwords."
+                >Brute Force mode</span
+              >
+              tests all possible character combinations, the
+              <span
+                id="bruteLibraryDescription"
+                class="bruteDescription"
+                data-tooltip="A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts and is not as secure as the hybrid attack."
+                >Dictionary Attack mode</span
+              >
+              uses common passwords and phrases.
             </p>
             <p></p>
             <div class="bruteInput">
-              
               <input
                 type="text"
                 id="userPwdInput"
                 class="input"
                 placeholder=" Enter password"
-  
-                />
-      
-                <div id="chooseBruteForce">
-                  <select id="bruteMode" class="input" required>
-                    <option value="library">Mode Library</option>
-                    <option value="simple">Mode Simple</option>
-                  </select>
-                </div>
+              />
+
+              <div id="chooseBruteForce">
+                <select id="bruteMode" class="input" required>
+                  <option value="library">Mode Library</option>
+                  <option value="simple">Mode Simple</option>
+                </select>
               </div>
-              <div class="bruteBtns">
-                <button type="submit" id="startBrute" class="startBtn">Start</button>
-                <button id="stopBrute" class="startBtn">Stop</button>
-              </div>
-        
+            </div>
+            <div class="bruteBtns">
+              <button type="submit" id="startBrute" class="startBtn">
+                Start
+              </button>
+              <button id="stopBrute" class="startBtn">Stop</button>
+            </div>
+
             <table id="stats">
               <tbody id="statsBody">
                 <tr id="statsHeading">
@@ -151,7 +190,7 @@
               </tbody>
             </table>
           </div>
-  
+
           <div class="appBox" id="passwordStrengthCalc">
             <h3>Password Excalibur</h3>
             <p>
@@ -175,7 +214,7 @@
               />
             </div>
             <button id="calcStrengthBtn" class="startBtn">Test it</button>
-            
+
             <div id="strengthBarDiv">
               <span><b>weak</b></span>
               <div id="strengthBar">
@@ -187,7 +226,7 @@
               </div>
               <span><b>strong</b></span>
             </div>
-          
+
             <span><div id="calcSpinner"></div></span>
             <div id="convert"></div>
           </div>
@@ -223,8 +262,8 @@
           <p>
             Using a password manager helps manage multiple unique passwords.
             These tools store and autofill passwords, so you only need to
-            remember one master password. Popular options include 
-            
+            remember one master password. Popular options include
+
             <a href="https://www.lastpass.com/" target="_blank">LastPass</a>,
             <a href="https://1password.com/" target="_blank">1Password</a> and
             <a href="https://bitwarden.com/" target="_blank">Bitwarden</a>
@@ -260,7 +299,6 @@
             </div>
             <button id="convertBtn" class="startBtn">Convert</button>
             <span id="newPassword" class="copyText">Your runeword: </span>
-            
           </div>
           <div id="pictureMagic" class="appBox">
             <h3>Picture Magic</h3>
@@ -389,15 +427,15 @@
                 <button id="userGeneratorBtn" class="startBtn">Generate</button>
               </div>
             </div>
-            <div id="qwertz">
-            <div id="newUser" class="copyText">Username: </div>
-            <div id="input-output">
-              <p id="input-output0"></p>
-              <p id="input-output1"></p>
-              <p id="input-output2"></p>
-              <p id="input-output3"></p>
+            <div class="qwertz">
+              <div id="newUser" class="copyText">Username:</div>
+              <div id="user-output">
+                <p id="user-output0"></p>
+                <p id="user-output1"></p>
+                <p id="user-output2"></p>
+                <p id="user-output3"></p>
+              </div>
             </div>
-          </div>
           </div>
           <div class="appBox" id="glyphSorcery">
             <h3>Glyph Sorcery</h3>
@@ -407,21 +445,29 @@
               to ensure the safety of your account.
             </p>
             <div id="startPwGenDiv">
-              <div>
-                <label for="pwLength">Password length:</label>
-                <select id="pwLength" class="input">
-                  <option value="4">4</option>
-                  <option value="6">6</option>
-                  <option value="8">8</option>
-                  <option value="10">10</option>
-                  <option value="12">12</option>
-                  <option value="14">14</option>
-                  <option value="16">16</option>
-                  <option value="18">18</option>
-                  <option value="20">20</option>
-                </select>
-                <button id="rdmPwdBtn" class="startBtn">Generate</button>
-                <p id="generatedPassword" class="copyText">Your Password:</p>
+              <label for="pwLength">Password length:</label>
+              <select id="pwLength" class="input">
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+              </select>
+              <button id="rdmPwdBtn" class="startBtn">Generate</button>
+              <div class="qwertz">
+                <div id="generatedPasswordDiv" class="copyText">
+                  Your Password:
+                </div>
+                <div id="generatedPassword">
+                  <p id="generatedPassword0"></p>
+                  <p id="generatedPassword1"></p>
+                  <p id="generatedPassword2"></p>
+                  <p id="generatedPassword3"></p>
+                </div>
               </div>
             </div>
           </div>
