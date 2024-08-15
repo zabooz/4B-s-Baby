@@ -74,8 +74,6 @@ rdmPwdBtn.addEventListener("click", function () {
   const textId = "generatedPassword";
   const pwLength = document.getElementById("pwLength").value;
   const generatedPassword = generatePassword(pwLength);
-  // textElement.innerText = `Your password: ${generatedPassword}`;
-  // textElement.append(copyButton(textId));
   updateRecentInputs(generatedPassword, textId);
 });
 
