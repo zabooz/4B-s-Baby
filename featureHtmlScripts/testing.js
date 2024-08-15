@@ -88,7 +88,7 @@ const fetchData = () => {
     const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
       encodedPwd
     )}&key=${key}`;
-  
+    
     pwd.value = "";
   
     let result = [pwd.value, "--", "--", "--"];

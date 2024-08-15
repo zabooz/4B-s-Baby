@@ -18,7 +18,7 @@ const configNav = {
     link: "/featureHtmls/pwGenerating.html",
   },
   logo: {
-    text: "Mayo Monkeys",
+    text: "Password Playground",
     link: "/img/animated_monkey.gif",
   },
 };
