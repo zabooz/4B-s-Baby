@@ -3,15 +3,13 @@ import { copyButton } from "./copybutton.js";
 const recentInputs = [];
 
 export function updateRecentInputs(newInput) {
-  // Add the new input to the beginning of the array
   recentInputs.unshift(newInput);
 
-  // Keep only the last 3 Inputs
+
   if (recentInputs.length > 4) {
     recentInputs.pop();
   }
 
-  // Update the displayed list of recent Inputs
   displayRecentInputs();
 }
 

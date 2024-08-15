@@ -124,7 +124,7 @@ const fetchData = () => {
 
   function updateAttempts(result) {
     const dataArr = result;
-  
+    console.log(dataArr)
     const tBody = document.querySelector("#statsBody")
 
     const tr =  document.createElement("tr")

@@ -9,7 +9,13 @@
     rel="stylesheet"
   />
     <link rel="stylesheet" href="/styles/navBar.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles/appBoxes.css" />
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <script src="/featureHtmlScripts/userGen.js" defer type="module"></script>
+    <title>User Generator</title>
 </head>
 <body>
 
@@ -31,10 +37,10 @@
                   Ensure your username is unique and reflects your identity for a
                   personalized online experience.
                 </p>
-                <div class="wizardInput">
-                  <div id="wizardInput2">
+                <div class="d-flex flex-lg-row flex-column gap-lg-5 gap-2">
+                  <div id="wizardInput2" class="d-flex flex-column gap-2">
                     <label>First adjective:</label>
-                    <select id="adjective1" class="input">
+                    <select id="adjective1" class="form-control">
                       <option value="random">Random</option>
                       <option value="shapes">Shape</option>
                       <option value="colors">Color</option>
@@ -50,7 +56,7 @@
                       <option value="">-None-</option>
                     </select>
                     <label>Second adjective:</label>
-                    <select id="adjective2" class="input">
+                    <select id="adjective2" class="form-control">
                       <option value="random">Random</option>
                       <option value="shapes">Shape</option>
                       <option value="colors">Color</option>
@@ -66,9 +72,9 @@
                       <option value="">-None-</option>
                     </select>
                   </div>
-                  <div id="wizardInput3">
+                  <div id="wizardInput3" class="d-flex  flex-column gap-2">
                     <label>Choose a noun:</label>
-                    <select name="pwdGen" id="noun" class="input">
+                    <select name="pwdGen" id="noun" class="form-control">
                       <option value="random">Random</option>
                       <option value="instruments">Instrument</option>
                       <option value="fruits">Fruit</option>
@@ -87,18 +93,20 @@
                       <option value="flowers">Flower</option>
                       <option value="desserts">Dessert</option>
                     </select>
-                    <button id="userGeneratorBtn" class="startBtn">Generate</button>
+                    <button id="userGeneratorBtn" class="btn btn-primary btn-lg mt-4">Generate</button>
                   </div>
                 </div>
-                <div id="qwertz">
-                <div id="newUser" class="copyText">Username: </div>
-                <div id="input-output">
-                  <p id="input-output0"></p>
-                  <p id="input-output1"></p>
-                  <p id="input-output2"></p>
-                  <p id="input-output3"></p>
-                </div>
-              </div>
+                <table class="table mb-5" id="stats">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center">#</th>
+                      <th scope="col"class="text-center">Username</th>
+                      <th scope="col" class="text-center">Nomen</th>
+                      <th scope="col" class="text-center">Eigenschaften</th>
+                    </tr>
+                  </thead>
+                  <tbody id="statsBody" ></tbody>
+                </table>
               </div>
         </section>
     </main>

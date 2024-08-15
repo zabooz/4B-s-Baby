@@ -41,10 +41,10 @@ createNavBar = (configNav) => {
             <a class="nav-link" href="${configNav.testing.link}">${configNav.testing.text}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
+          <a class="nav-link" href="${configNav.pwGen.link}">${configNav.pwGen.text}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${configNav.pwGen.link}">${configNav.pwGen.text}</a>
+            <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/oldDesign/index.html">Old Design</a>

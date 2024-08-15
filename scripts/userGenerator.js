@@ -143,6 +143,6 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
             newUser += handOverUser[i];
         }
     }
-
+    
     return newUser;
 }
