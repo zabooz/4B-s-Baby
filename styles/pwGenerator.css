@@ -11,9 +11,9 @@ main{
     flex-direction: column;
 
 }
-section{
+/* section{
     padding: 5rem 0;
-}
+} */
 
 #picResult,
 .input{

@@ -8,11 +8,11 @@ main{
     flex-direction: column;
 
 }
-section{
+/* section{
     padding: 5rem 0;
  
-}
-main section :first-child{
+} */
+/* main section :first-child{
     background: #77B6EA;
 }
 main section:nth-child(2n-1){
@@ -21,7 +21,7 @@ main section:nth-child(2n-1){
 main section:nth-child(2n-2){
     
     background: #c7d3dd;
-}
+} */
 .sectionDiv{
     width: 70%;
 }   

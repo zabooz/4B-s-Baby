@@ -43,7 +43,52 @@
           "lead": "Finde den idealen Benutzernamen für deine digitale Präsenz!",
           "p": "Nutze unsere kreativen Tools, um einen einzigartigen und unvergesslichen Benutzernamen zu erstellen. Egal, ob du etwas Lustiges, Originelles oder Mystisches suchst – hier wirst du fündig.",
           "p2": "Unsere Tools helfen dir, den perfekten Namen zu generieren, der dich in der Online-Welt hervorhebt. Entdecke jetzt, wie einfach es ist, einen Namen zu finden, der wirklich zu dir passt!"
-      }
+      },
+      
+        "zitate": [
+          {
+            "person": "Bruce Schneier",
+            "zitat": "Sicherheit ist kein Produkt, sondern ein Prozess."
+          },
+          {
+            "person": "Edward Snowden",
+            "zitat": "Zu sagen, dass man sich nicht um das Recht auf Privatsphäre kümmert, weil man nichts zu verbergen hat, ist wie zu sagen, dass man sich nicht um freie Meinungsäußerung kümmert, weil man nichts zu sagen hat."
+          },
+          {
+            "person": "Kevin Mitnick",
+            "zitat": "Man kann die beste Technologie haben, aber wenn nicht die richtige Kultur und Verantwortung dahinterstehen, wird sie trotzdem scheitern."
+          },
+          {
+            "person": "Bill Gates",
+            "zitat": "Sicherheit ist, würde ich sagen, unsere oberste Priorität, denn bei all den aufregenden Dingen, die man mit Computern machen kann – sein Leben organisieren, in Kontakt bleiben, kreativ sein – wenn wir diese Sicherheitsprobleme nicht lösen, werden die Menschen zurückhaltend sein."
+          },
+          {
+            "person": "Tim Berners-Lee",
+            "zitat": "Wir brauchen Vielfalt im Denken, um den neuen Herausforderungen zu begegnen."
+          },
+          {
+            "person": "Vint Cerf",
+            "zitat": "Je mehr wir uns auf Technologie verlassen, desto verletzlicher sind wir."
+          },
+          {
+            "person": "John McAfee",
+            "zitat": "Die Privatsphäre ist tot, und soziale Medien halten die rauchende Waffe in der Hand."
+          },
+          {
+            "person": "Eric Schmidt",
+            "zitat": "Das Internet ist das erste, was die Menschheit gebaut hat, das die Menschheit nicht versteht, das größte Experiment in Anarchie, das wir je hatten."
+          },
+          {
+            "person": "Richard Clarke",
+            "zitat": "Wenn Sie mehr für Kaffee als für IT-Sicherheit ausgeben, werden Sie gehackt. Was noch schlimmer ist, Sie verdienen es, gehackt zu werden."
+          },
+          {
+            "person": "James Comey",
+            "zitat": "Die gefährlichsten Cyber-Bedrohungen sind die, an die wir noch nicht gedacht haben."
+          }
+        ]
+      
+      
   
   }
   

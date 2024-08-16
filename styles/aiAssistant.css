@@ -1,14 +1,14 @@
 #aiAssistant{
     position: fixed;
-    left:-2.5rem;
+    left:-5rem;
     top:40%;
-    border-radius: 50%;
-    width: 5rem;
+    border-top-right-radius: 40%;
+    border-bottom-right-radius: 40%;
+    width: 7rem;
     height: 5rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    text-align: start;
 
 }
 #aiAssistant:hover{
@@ -19,7 +19,7 @@
             left: -2.5rem;
         }
         100% {
-            left: 0;   
+            left: -.5rem;   
         }   
 }
 

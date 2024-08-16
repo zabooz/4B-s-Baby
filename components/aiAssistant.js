@@ -4,7 +4,7 @@ import { aiApiCall } from "/utilities/aiApiCall.js";
 const aiAssistant = () => {
   return `
         <button class="btn btn-primary" id="aiAssistant" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-  Ai
+  Security Ai
 </button>
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
