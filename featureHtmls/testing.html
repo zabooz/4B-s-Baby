@@ -26,7 +26,10 @@
     <nav id="navBar" class="sticky-top"></nav>
     <script src="/components/navBar.js"></script>
     <header>
-      <!-- <script src="/components/heroText.js"></script> -->
+      <script type="module">
+        import {heroText} from "/components/heroText.js"
+        heroText("header","heroTest")
+      </script>
     </header>
     <main>
       <section class="d-flex border justify-content-center">
