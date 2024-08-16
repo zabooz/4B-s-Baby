@@ -14,15 +14,16 @@
     <link rel="stylesheet" href="/styles/appBoxes.css" />
     <link rel="stylesheet" href="/styles/aiAssistant.css">
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    rel="stylesheet"
     />
-    <script src="/components/aiAssistant.js" type="module" defer></script>
-    <script src="/featureHtmlScripts/testing.js" defer type="module"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Test your password</title>
   </head>
-  <body>
+  <body class="bg-custom">
+
     <nav id="navBar" class="sticky-top"></nav>
     <script src="/components/navBar.js"></script>
     <header>
@@ -32,8 +33,8 @@
       </script>
     </header>
     <main>
-      <section class="d-flex border justify-content-center">
-        <div class="d-flex flex-lg-row flex-column p-5 ">
+      <section class="d-flex justify-content-center align-items-center">
+        <div class="d-flex flex-lg-row flex-column p-5 sectionDiv">
             <div
               class="img-container d-flex p-5 justify-content-center align-items-center"
             >
@@ -43,22 +44,29 @@
                 alt="lockPickAxe"
               />
             </div>
-            <div class="content-container p-3 d-flex flex-column justify-content-center align-items-center">
+            <div class="content-container p-1 d-flex flex-column justify-content-center align-items-center">
               <h4 class="mb-4">Wieso ein sicher Passwort?</h4>
-              <p class="mb-4 w-100 px-3">
+              <p class="mb-4 w-100 px-3 fw-semibold">
                 Ein sicheres Passwort ist der erste Schritt, um Ihre digitalen Konten und persönlichen Informationen vor unbefugtem Zugriff zu schützen.
               </p>
               <ul class="list-group mb-3 w-100 list-group-flush">
-                <li class="list-group-item mb-1"><b>Schutz vor Identitätsdiebstahl: </b>Ein sicheres Passwort verhindert, dass Unbefugte Zugriff auf Ihre persönlichen Daten und Online-Konten erhalten.</li>
-                <li class="list-group-item mb-1"><b>Vermeidung finanzieller Verluste: </b>Starke Passwörter schützen Ihre Bankkonten und Zahlungsdaten vor Cyberkriminellen.
+                <li class="list-group-item mb-3 rounded"><b>Schutz vor Identitätsdiebstahl: </b>Ein sicheres Passwort verhindert, dass Unbefugte Zugriff auf Ihre persönlichen Daten und Online-Konten erhalten.</li>
+                <li class="list-group-item mb-3 rounded"><b>Vermeidung finanzieller Verluste: </b>Starke Passwörter schützen Ihre Bankkonten und Zahlungsdaten vor Cyberkriminellen.
                 </li>
-                <li class="list-group-item"><b>Sicherheit in der digitalen Welt: </b>Mit einem sicheren Passwort reduzieren Sie das Risiko, Opfer von Hackerangriffen oder Datenlecks zu werden.</li>
+                <li class="list-group-item rounded"><b>Sicherheit in der digitalen Welt: </b>Mit einem sicheren Passwort reduzieren Sie das Risiko, Opfer von Hackerangriffen oder Datenlecks zu werden.</li>
               </ul>
             </div>
           </div>
       </section>
-      <section class="d-flex border justify-content-center">
-        <div class="d-flex flex-column sectionDiv">
+      <section id="quote7" class="d-flex justify-content-center">
+          <script type="module">
+          import {quote} from "/components/quotes.js"
+
+              quote("#quote7","zitate",7)
+          </script>
+      </section>
+      <section class="d-flex justify-content-center">
+        <div class="d-flex flex-column sectionDiv py-4">
           <div
             class="img-container d-flex p-5 flex-column flex-lg-row justify-content-center align-items-center gap-5"
           >
@@ -68,60 +76,56 @@
               alt="lockPickAxe"
             />
             <div class="description">
-              <h3>Ablauf Bf</h3>
-              <p>
-                sldaghkasj sdgsg s gsdg sdg sgs dg sdg sdg sdg sdg sgd sdg sdg
-                sdg sgs dg
+              <h3>Ablauf einer Brute-Force-Attacke</h3>
+              <p class="fw-semibold">
+                Eine Brute-Force-Attacke ist eine Methode, bei der ein Angreifer systematisch alle möglichen Kombinationen von Passwörtern ausprobiert, um Zugang zu einem System zu erhalten. Der folgende Ablauf beschreibt die typischen Schritte eines solchen Angriffs.
               </p>
             </div>
           </div>
 
-          <div class="container text-center">
+          <div class="container text-center mb-5">
             <div class="row g-4 justify-content-center">
-              <div class="col-lg-3 col-sm-8 col-10">
+              <div class="col-lg-4 col-sm-8 col-10">
                 <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                  <div class="card-body d-flex flex-column gap-3 align-items-center">
+                    <h5 class="card-title">Angriffsvorbereitung</h5>
                     <img
                       src="/img/targetBrute.jpeg"
                       class="custom-img"
                       alt="bruteTarget"
                     />
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                    <p class="card-text fw-semibold">
+                      Der Angreifer bereitet sich vor, indem er entweder eine Liste häufiger Passwörter erstellt oder eine einfache Brute-Force-Attacke plant.
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-sm-8 col-10">
+              <div class="col-lg-4 col-sm-8 col-10">
                 <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                  <div class="card-body d-flex flex-column gap-3 align-items-center">
+                    <h5 class="card-title">Passwortversuche</h5>
                     <img
                       src="/img/autoattack.jpeg"
                       class="custom-img"
                       alt="autoattack"
                     />
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                    <p class="card-text fw-semibold">
+                      Bei einer Brute-Force-Attacke werden alle möglichen Kombinationen getestet, während bei einer Listenattacke gängige Passwörter ausprobiert werden.
                     </p>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-sm-8 col-10">
+              <div class="col-lg-4 col-sm-8 col-10">
                 <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                  <div class="card-body d-flex flex-column gap-3 align-items-center ">
+                    <h5 class="card-title">Zugang erhalten</h5>
                     <img
                       src="/img/gainingaccess.jpeg"
                       class="custom-img"
                       alt="gaining access"
                     />
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                    <p class="card-text fw-semibold">
+                      Erfolgt der Zugriff durch ein passendes Passwort, hat der Angreifer Zugang zum System erlangt.
                     </p>
                   </div>
                 </div>
@@ -130,50 +134,57 @@
           </div>
         </div>
       </section>
+      <section id="quote9" class="bg-body-tertiary">
+        <script type="module">
+          import {quote} from "/components/quotes.js"
+          quote("#quote9","zitate",9)
+        </script>
+      </section>
       <section class="d-flex justify-content-center">
-        <div id="bruteForceApp" class="appBox d-flex">
+        <div id="bruteForceApp" class="appBox d-flex flex-column">
           <h3>Test your Mojo</h3>
-          <p>
-            Choose a mode to test your password against brute force attacks. The
-            <span
-              class="text-info fw-bold text-decoration-underline"
+          <p class="fw-semibold">
+            Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe zu testen. Im
+              <span class="text-custom fw-bold text-decoration-underline"
               data-bs-toggle="offcanvas"
               href="#offcanvasSimpleBrute"
               role="button"
-              aria-controls="offcanvasExample"
+              aria-controls="offcanvasSimple"
             >
-              simple BruteForce mode
+            einfachen BruteForce-Modus
             </span>
 
-            calculate all combinations, the
+            alle möglichen Zeichenkombinationen durchprobiert. Der
             <span
-              class="text-info fw-bold text-decoration-underline"
+              class="text-custom fw-bold text-decoration-underline"
               data-bs-toggle="offcanvas"
               href="#offcanvasLibraryBrute"
               role="button"
-              aria-controls="offcanvasExample"
+              aria-controls="offcanvasLibrary"
             >
-              library Mode
+              Listen-Modus
             </span>
-            uses a list of leaked passwords.
+            nutzt eine Liste bekannter, unsicherer Passwörter, um zu prüfen, ob Ihr Passwort leicht zu erraten ist.
           </p>
-          <div id="bruteInput">
+          <div class="d-flex gap-3 flex-column flex-lg-row w-50 ">
+         
+          <div id="bruteInput" class="flex-column d-flex gap-4">
             <input
               type="text"
               id="userPwdInput"
-              class="form-control"
+              class="form-control-lg form-control"
               placeholder="Gib ein Passwort ein"
             />
             <select
               id="bruteMode"
-              class="form-select"
+              class="form-select-lg form-control"
               aria-label="Default select example"
             >
               <option value="library" selected>Listen Modus</option>
               <option value="simple">Simpler Modus</option>
             </select>
           </div>
-          <div id="bruteBtns">
+          <div id="bruteBtns" class="d-flex flex-column">
             <button
               class="btn btn-primary btn-lg"
               type="button"
@@ -183,7 +194,8 @@
             </button>
             <button id="stopBrute" class="btn btn-danger btn-lg">Stop</button>
           </div>
-          <table class="table mb-5" id="stats">
+          </div>
+          <table class="table mb-5 w-75"  id="stats">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -197,17 +209,15 @@
           </table>
         </div>
       </section>
+     
       <section id="quote5" class="bg-body-tertiary">
         <script type="module">
           import {quote} from "/components/quotes.js"
-
           quote("#quote5","zitate",5)
-
-
         </script>
       </section>
-      <section class="d-flex justify-content-center border">
-        <div class="excalibur" id="passwordStrengthCalc border w-50">
+      <section class="d-flex justify-content-center ">
+        <div class="excalibur" id="passwordStrengthCalc  w-50">
           <h3>Password Excalibur</h3>
           <p>
             Password Excalibur is a tool designed to assess the strength of your
@@ -218,15 +228,15 @@
             <input
               type="text"
               id="strengthInput"
-              class="form-control"
+              class="form-control-lg"
               placeholder="Gib ein Passwort ein"
             />
-            <button id="calcStrengthBtn" class="btn btn-primary">Teste!</button>
+            <button id="calcStrengthBtn" class="btn btn-primary btn-lg">Teste!</button>
           </div>
 
           <div
             id="strengthBarDiv"
-            class="w-100 d-flex align-items-center border d-flex p-2"
+            class="w-75 d-flex align-items-center d-flex p-2"
           >
             <span class="mx-3"><b>Schwach</b></span>
             <div
@@ -253,23 +263,32 @@
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="p-5">
       <script src="/components/footer.js"></script>
     </footer>
-    <script type="module">
-      import {loadOffCanvas} from "/components/offCanvas.js"
-      loadOffCanvas("main","liste")
-      loadOffCanvas("main","simple")
-    </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-      crossorigin="anonymous"
-    ></script>
+
   </body>
-</html>
+  <script src="/components/aiAssistant.js" type="module" ></script>
+  <script type="module">
+    
+    import {loadOffCanvas} from "/components/offCanvas.js"
+    
+    loadOffCanvas("header","liste")
+    loadOffCanvas("header","simple")
+    
+    
+    
+    </script>
+  <script src="/featureHtmlScripts/testing.js"  type="module"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+  integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+  crossorigin="anonymous"
+  ></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+  integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+  crossorigin="anonymous"
+  ></script>
+  </html>
+  

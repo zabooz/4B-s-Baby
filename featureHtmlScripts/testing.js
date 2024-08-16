@@ -1,8 +1,11 @@
-
-
 import { newPwStrength } from "./newStrengthCalc.js";
 import { passwordEncoder } from "/scripts/encoder.js";
 import { getColorFromStrength } from "/utilities/getColorFromStrength.js";
+
+document.addEventListener("DOMContentLoaded",() => {
+
+
+
 const startBrute = document.getElementById("startBrute");
 const stopBrute = document.getElementById("stopBrute");
 const calcStrengthBtn = document.getElementById("calcStrengthBtn");
@@ -18,7 +21,6 @@ const arr = [
     "interpretieren",
     "kalkulieren",
     "schätzen",
-    "bewerten",
     "kombinieren",
     "spekulieren",
     "ermitteln",
@@ -192,3 +194,4 @@ const fetchData = () => {
 
 
   }
+})

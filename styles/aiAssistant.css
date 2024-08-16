@@ -1,13 +1,14 @@
 #aiAssistant{
     position: fixed;
-    left:-5rem;
+    right:-5rem;
     top:40%;
-    border-top-right-radius: 40%;
-    border-bottom-right-radius: 40%;
+    border-top-left-radius: 40%;
+    border-bottom-left-radius: 40%;
+    border:none;
     width: 7rem;
     height: 5rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
 
 }
@@ -16,13 +17,9 @@
 }
 @keyframes moveBtnAi {
         0% {
-            left: -2.5rem;
+            right: -5rem;
         }
         100% {
-            left: -.5rem;   
+            right: -.5rem;   
         }   
-}
-
-.sectionDiv{
-    width: 80%;
 }

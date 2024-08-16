@@ -3,8 +3,9 @@ const createFooter = () => {
 
 
 return `
+<hr class="my-4 hr-custom w-100 mt-5  self-algin-center " />
       <section
-        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+        class="d-flex justify-content-center justify-content-lg-between p-4  mt-5 text-black"
       >
 
         <div class="me-5 d-none d-lg-block">
@@ -32,7 +33,7 @@ return `
           </a>
         </div>
       </section>
-      <section class="">
+      <section class="text-black">
         <div class="container text-center text-md-start mt-5">
           <div class="row mt-3">
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">

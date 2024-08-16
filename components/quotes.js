@@ -5,23 +5,23 @@ const createQuote = (content) => {
 
 
     return `
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center ">
-      <div class="">
-
-        <div class="card">
-          <div class="card-body p-4">
+  <div class="container my-5 sectionDiv bg-transparent">
+    <div class="row p-4 d-flex justify-content-center align-items-center bg-transparent ">
+    
+        <div class=" m-0 p-0 bg-transparent">
+          <div class="card-body p-4 bg-transparent d-flex flex-column ">
             <i class="fas fa-quote-left fa-2x mb-4"></i>
-            <p class="lead">${content.zitat}</p>
+            <p class="lead fw-semibold">${content.zitat}</p>
+            <i class="fas fa-quote-left fa-2x mb-4 ms-auto "></i>
             <hr>
-            <div class="d-flex">
-              <p class="mb-0">${content.person}</p>
+            <div class="d-flex ">
+              <p class="mb-0 fw-semibold fs-4">${content.person}</p>
             </div>
 
           </div>
         </div>
 
-      </div>
+      
     </div>
   </div>
 

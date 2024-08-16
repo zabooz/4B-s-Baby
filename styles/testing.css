@@ -11,6 +11,46 @@
     width: 80%;
 
 }
+
+
+
+.text-custom{
+    color: #ea6954;
+
+}
+.card{
+    min-height: 400px;
+}
+.bg-custom{
+    background-color:#23bbb8;
+}
+.nav-custom{
+    background-color: #f1f5f5;
+}
+.btn{
+    background-color: #ea6954;
+    color: white;
+    border: none;
+}
+#stopBrute{
+    background: rgb(110, 18, 18);
+}
+.sectionDiv{
+    width: 70%;
+    background: #f1f5f5;
+    border-radius: 1rem;
+}
+.hr-custom{
+    border: 5px solid black;
+    opacity: 1;
+}
+.btn:hover{
+    background: #56c5c3;
+    color: white;
+}
+.custom-img{
+    border-radius: 1rem;
+}
 #bruteInput{
     width: 80%;
 }
@@ -27,7 +67,9 @@ section{
     padding: 1rem 0;
  
 }
-
+.secionDiv{
+    width: 70%;
+}
 
 
 
@@ -40,6 +82,9 @@ section{
     }
     #bruteInput{
     flex-direction: column;
+    }
+    .card{
+        min-height: auto;
     }
 }
 @media(min-width:992px){

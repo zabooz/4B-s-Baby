@@ -24,11 +24,11 @@ const createOffCanvas = (content) => {
         </div>
         <div class="offcanvas-body">
           <div >
-            <p>${content.p}<p>
-            <p>${content.p2}<p>
-            <p>${content.p3}<p>
-            <p>${content.p4}<p>
-            <p>${content.p5}<p>
+            <p>${content.p}</p>
+            <p>${content.p2}</p>
+            <p>${content.p3}</p>
+            <p>${content.p4}</p>
+            <p>${content.p5}</p>
             </script>
           </div>
         </div>
@@ -49,3 +49,4 @@ export const loadOffCanvas  = (id,text) => {
 
 
 }
+

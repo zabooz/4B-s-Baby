@@ -17,13 +17,14 @@
     <link rel="stylesheet" href="/styles/navBar.css" />
     <link rel="stylesheet" href="/styles/aiAssistant.css">
     <script src="/components/aiAssistant.js" type="module"></script>
+
     <title>Password Playground</title>
   </head>
-  <body>
+  <body class="bg-custom">
     <nav id="navBar" class="sticky-top">
       <script src="/components/navBar.js"></script>
     </nav>
-    <header>
+    <header class="mb-5">
       <script type="module">
         import {heroText} from "/components/heroText.js"
         heroText("header","heroIndex")
@@ -35,7 +36,7 @@
           <div class="img-container d-flex justify-content-center p-5">
             <img src="img/tellMeWhy.jpg" class="custom-img" alt="lockPickAxe" />
           </div>
-          <div class="content-container p-3 d-flex flex-column align-items-center">
+          <div class="content-container p-3 d-flex flex-column align-items-center align-items-lg-start">
             <h4 class="mb-2 fw-bold fs-3 text-lg-start text-center w-100">Teste Die Stärke Deines Passworts!</h4>
             <p class="mb-3 fw-lg-semibold text-lg-start text-center fs-5 w-100">
               Überprüfen Sie die Sicherheit Ihres Passworts.
@@ -43,11 +44,11 @@
             <p class="p-3 p-lg-0 ">
               Verwenden Sie unser Bewertungstool <span><b>Excalibur</b></span>, um die Stärke Ihres Passworts zu testen und simulieren Sie Brute-Force-Angriffe mit <span><b>Mojo</b></span>, um zu sehen, wie lange es dauern würde, bis Ihr Passwort geknackt wird.
             </p>
-            <a class="btn btn-primary my-3" href="/featureHtmls/testing.html">Test Password</a>
+            <a class="btn my-3" href="/featureHtmls/testing.html">Test Password</a>
           </div>
         </div>
       </section>
-      <section id="quote1" class="bg-body-tertiary">
+      <section id="quote1" class="d-flex justify-content-center ">
         <script type="module">
           import {quote} from "/components/quotes.js"
 
@@ -65,7 +66,7 @@
               alt="lockPickAxe"
             />
           </div>
-          <div class="content-container p-3 d-flex flex-column align-items-center">
+          <div class="content-container p-3 d-flex flex-column align-items-center align-items-lg-start" >
             <h4 class="mb-2 fw-bold fs-2 text-lg-start text-center w-100">Generiere Passwort</h4>
             <p class="mb-3 fw-lg-semibold text-lg-start text-center fs-5 w-100">
               Erstellen Sie ein sicheres Passwort für Ihre Konten.
@@ -73,12 +74,12 @@
             <p class="p-3 p-lg-0 ">
               Nutzen Sie unsere drei Tools, um das ideale Passwort zu generieren: <span><b>Picture Magic</b></span> verwandelt Bilder in Passwörter,<span><b>Rune Translator</b></span>  konvertiert Texte in Leetspeak und <span><b>GlyphSorcery</b></span> erstellt zufällige, sichere Passwörter. Wählen Sie die Methode, die am besten zu Ihnen passt, um Ihre Daten zu schützen..
             </p>
-            <a class="btn btn-primary my-3" href="/featureHtmls/pwGenerating.html">Generiere Passwort</a>
+            <a class="btn  my-3" href="/featureHtmls/pwGenerating.html">Generiere Passwort</a>
           </div>
           </div>
         </div>
       </section>
-      <section id="quote2" class="bg-body-tertiary">
+      <section id="quote2" >
         <script type="module">
           import {quote} from "/components/quotes.js"
 
@@ -96,7 +97,7 @@
               alt="lockPickAxe"
             />
           </div>
-          <div class="content-container p-3 d-flex flex-column align-items-center">
+          <div class="content-container p-3 d-flex flex-column align-items-center align-items-lg-start">
             <h4 class="mb-2 fw-bold fs-2 text-lg-start text-center w-100">Erfinde Deinen Online-Namen!</h4>
             <p class="mb-3 fw-lg-semibold text-lg-start text-center fs-5 w-100">
               Lass deiner Fantasie freien Lauf und finde einen einzigartigen Benutzernamen, der dich in der digitalen Welt hervorhebt.
@@ -104,14 +105,14 @@
             <p class="p-3 p-lg-0 ">
               Nutzen Sie unsere beiden Tools, um den perfekten Benutzernamen zu erstellen: <span><b>Identity Wizardry</b></span> generiert zufällige Benutzernamen basierend auf Ihren Parametern, und <span><b>Soul Eater</b></span> erstellt kreative Namen durch ein unterhaltsames Quiz. Wählen Sie die Methode, die am besten zu Ihnen passt, um Ihre Online-Identität zu finden..
             </p>
-            <a class="btn btn-primary my-3" href="/featureHtmls/pwGenerating.html">Generiere Benutzernamen</a>
+            <a class="btn  my-3" href="/featureHtmls/pwGenerating.html">Generiere Benutzernamen</a>
           </div>
         </div>
       </section>
     </main>
 
 
-    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+    <footer class="p-5">
 
       <script src="/components/footer.js"></script>
     </footer>

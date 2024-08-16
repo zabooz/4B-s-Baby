@@ -35,7 +35,41 @@ main{
 }
 .sectionDiv{
     width: 80%;
-}  
+}
+.text-custom{
+    color: #ea6954;
+
+}
+.card{
+    min-height: 400px;
+}
+.bg-custom{
+    background-color:#23bbb8;
+}
+.nav-custom{
+    background-color: #f1f5f5;
+}
+.btn{
+    background-color: #ea6954;
+    color: white;
+    border: none;
+}
+.sectionDiv{
+    width: 70%;
+    background: #f1f5f5;
+    border-radius: 1rem;
+}
+.hr-custom{
+    border: 5px solid black;
+    opacity: 1;
+}
+.btn:hover{
+    background: #56c5c3;
+    color: white;
+}
+.custom-img{
+    border-radius: 1rem;
+}
 @media(max-width: 991px){
 
     .custom-img{
