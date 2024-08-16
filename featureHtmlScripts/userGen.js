@@ -1,40 +1,44 @@
 import { generateUser } from "/featureHtmlScripts/newUserGenerator.js";
-
-
-
+import { generateQuizResult } from "/featureHtmlScripts/userPsyTest.js";
 
 const userGenBtn = document.getElementById("userGeneratorBtn");
 
 userGenBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    const adjective1 = document.getElementById("adjective1").value;
-    const adjective2 = document.getElementById("adjective2").value;
-    const selectedNoun = document.getElementById("noun").value;
-    const userOutput = generateUser(adjective1, adjective2, selectedNoun);
+  e.preventDefault();
+  const adjective1 = document.getElementById("adjective1").value;
+  const adjective2 = document.getElementById("adjective2").value;
+  const selectedNoun = document.getElementById("noun").value;
+  const userOutput = generateUser(adjective1, adjective2, selectedNoun);
 
-    updateAttempts(userOutput)
+  updateAttempts(userOutput, "#statsBody");
+});
 
+function updateAttempts(result, table) {
+  const dataArr = result;
+
+  const tBody = document.querySelector(table);
+
+  const tr = document.createElement("tr");
+  const td = document.createElement("td");
+
+  td.textContent = tBody.rows.length + 1;
+
+  tr.appendChild(td);
+
+  dataArr.forEach((item) => {
+    const td = document.createElement("td");
+    td.textContent = item;
+    tr.appendChild(td);
   });
 
-function updateAttempts(result) {
-    const dataArr = result;
-    
-    const tBody = document.querySelector("#statsBody")
+  tBody.append(tr);
+}
 
-    const tr =  document.createElement("tr")
-    const td = document.createElement("td")
+const userGenSubmitBtn = document.getElementById("submitButton");
 
-    td.textContent =  tBody.rows.length + 1;
+userGenSubmitBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const quizOutput = generateQuizResult();
 
-    tr.appendChild(td)
-
-        dataArr.forEach((item) => {
-            const td = document.createElement("td")
-            td.textContent = item
-            tr.appendChild(td)
-        }); 
-
-    tBody.append(tr)
-
-    }
-
+  updateAttempts(quizOutput, "#statsBody1");
+});
