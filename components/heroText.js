@@ -1,27 +1,36 @@
-
-const configHero = {
-    targetElementId: "header",
-}
+import { fetchText } from "/utilities/fetchText.js";
 
 
-heroText = () => {
+const createHero = (content) => {
+
     return `
     <div class="jumbotron p-3">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">
-          This is a simple hero unit, a simple jumbotron-style component for
-          calling extra attention to featured content or information.
+        <h1 class="display-5 fw-semibold my-4">${content.h1}</h1>
+        <p class="lead fw-semibold">
+          ${content.lead}
         </p>
         <hr class="my-4" />
         <p>
-          It uses utility classes for typography and spacing to space content
-          out within the larger container.
+        ${content.p}
         </p>
-        <p>sdlhgaskjhdgkjadhkjhas dkjghakdjghkjsahdgkjahdgj</p>
+        ${content.p2}
       </div>
     `;
-
-
 }
+export const heroText = (id,text) => {
+  
 
-document.querySelector(configHero.targetElementId).innerHTML = heroText()
+    fetchText().then(data => {
+
+        const content = data[text]
+        const target = document.querySelector(id)
+
+        target.innerHTML = createHero(content)
+
+
+
+
+    })
+    
+  
+}

@@ -26,9 +26,34 @@
     <nav id="navBar" class="sticky-top"></nav>
     <script src="/components/navBar.js"></script>
     <header>
-      <script src="/components/heroText.js"></script>
+      <!-- <script src="/components/heroText.js"></script> -->
     </header>
     <main>
+      <section class="d-flex border justify-content-center">
+        <div class="d-flex flex-lg-row flex-column p-5 ">
+            <div
+              class="img-container d-flex p-5 justify-content-center align-items-center"
+            >
+              <img
+                src="/img/lockPickAxe.jpg"
+                class="custom-img"
+                alt="lockPickAxe"
+              />
+            </div>
+            <div class="content-container p-3 d-flex flex-column justify-content-center align-items-center">
+              <h4 class="mb-4">Wieso ein sicher Passwort?</h4>
+              <p class="mb-4 w-100 px-3">
+                Ein sicheres Passwort ist der erste Schritt, um Ihre digitalen Konten und persönlichen Informationen vor unbefugtem Zugriff zu schützen.
+              </p>
+              <ul class="list-group mb-3 w-100 list-group-flush">
+                <li class="list-group-item mb-1"><b>Schutz vor Identitätsdiebstahl: </b>Ein sicheres Passwort verhindert, dass Unbefugte Zugriff auf Ihre persönlichen Daten und Online-Konten erhalten.</li>
+                <li class="list-group-item mb-1"><b>Vermeidung finanzieller Verluste: </b>Starke Passwörter schützen Ihre Bankkonten und Zahlungsdaten vor Cyberkriminellen.
+                </li>
+                <li class="list-group-item"><b>Sicherheit in der digitalen Welt: </b>Mit einem sicheren Passwort reduzieren Sie das Risiko, Opfer von Hackerangriffen oder Datenlecks zu werden.</li>
+              </ul>
+            </div>
+          </div>
+      </section>
       <section class="d-flex border justify-content-center">
         <div class="d-flex flex-column sectionDiv">
           <div
@@ -169,32 +194,7 @@
           </table>
         </div>
       </section>
-      <section class="d-flex justify-content-center border">
-        <div class="d-flex flex-lg-row flex-column p-5 sectionDiv">
-          <div
-            class="img-container d-flex p-5 flex-column flex-lg-row justify-content-center align-items-center"
-          >
-            <img
-              src="/img/lockPickAxe.jpg"
-              class="custom-img"
-              alt="lockPickAxe"
-            />
-          </div>
-          <div class="content-container">
-            <h4 class="mb-2">Why a safe password matters.</h4>
-            <p class="mb-3">
-              Dies ist ein kurzer Teffffffffffffffff fffffffffffffffffffffffff
-              ffffffffffffffffffffffffffxt, der unter der Überschrift angezeigt
-              wird.
-            </p>
-            <ul class="list-group mb-3 list-group-flush">
-              <li class="list-group-item">Listenelement 1</li>
-              <li class="list-group-item">Listenelement 2</li>
-              <li class="list-group-item">Listenelement 3</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+
       <section class="d-flex justify-content-center border">
         <div class="excalibur" id="passwordStrengthCalc border w-50">
           <h3>Password Excalibur</h3>
@@ -241,63 +241,15 @@
           </div>
         </div>
       </section>
-      <div
-        class="offcanvas offcanvas-start"
-        tabindex="-1"
-        id="offcanvasSimpleBrute"
-        aria-labelledby="offcanvasExampleLabel"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-            Simpler Bruteforceangriff
-          </h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="offcanvas-body">
-          <div id="simpleText">
-            <script type="module">
-              import { start } from "/featureHtmlScripts/loadText.js";
-              start("simpleText", "simple");
-            </script>
-          </div>
-        </div>
-      </div>
-      <div
-        class="offcanvas offcanvas-start"
-        tabindex="-1"
-        id="offcanvasLibraryBrute"
-        aria-labelledby="offcanvasExampleLabel"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-            Listenangriff
-          </h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="offcanvas-body">
-          <div id="listText">
-            <script type="module">
-              import { start } from "/featureHtmlScripts/loadText.js";
-              start("listText", "liste");
-            </script>
-          </div>
-        </div>
-      </div>
     </main>
     <footer>
       <script src="/components/footer.js"></script>
     </footer>
-    
+    <script type="module">
+      import {loadOffCanvas} from "/components/offCanvas.js"
+      loadOffCanvas("main","liste")
+      loadOffCanvas("main","simple")
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

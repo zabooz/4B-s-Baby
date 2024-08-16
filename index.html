@@ -24,50 +24,26 @@
       <script src="/components/navBar.js"></script>
     </nav>
     <header>
-      <script src="/components/heroText.js"></script>
+      <script type="module">
+        import {heroText} from "/components/heroText.js"
+        heroText("header","heroIndex")
+      </script>
     </header>
     <main>
-      <section class="d-flex justify-content-center">
-        <div class="d-flex flex-lg-row flex-column  sectionDiv">
-          <div
-            class="img-container d-flex p-5 justify-content-center align-items-center"
-          >
-            <img
-              src="/img/lockPickAxe.jpg"
-              class="custom-img"
-              alt="lockPickAxe"
-            />
-          </div>
-          <div class="content-container p-3">
-            <h4 class="mb-2">Why a safe password matters.</h4>
-            <p class="mb-3">
-              Dies ist ein kurzer 
-              Teffffffffffffffffffffffffff fffffffffffffffffffffffffffffffffffffffffxt,
-              der unter der Überschrift angezeigt wird.
-            </p>
-            <ul class="list-group mb-3 list-group-flush">
-              <li class="list-group-item">Listenelement 1</li>
-              <li class="list-group-item">Listenelement 2</li>
-              <li class="list-group-item">Listenelement 3</li>
-            </ul>
-          </div>
-        </div>
-      </section>
       <section class="d-flex justify-content-center">
         <div class="d-flex flex-lg-row flex-column  sectionDiv">
           <div class="img-container d-flex justify-content-center p-5">
             <img src="img/tellMeWhy.jpg" class="custom-img" alt="lockPickAxe" />
           </div>
-          <div class="content-container">
-            <h4 class="mb-2">Test Your Password</h4>
-            <p class="mb-3">
-              Dies ist ein kurzer Text, der unter der Überschrift angezeigt
-              wird.
+          <div class="content-container p-3 d-flex flex-column align-items-center">
+            <h4 class="mb-2 fw-bold fs-3 text-lg-start text-center w-100">Teste Die Stärke Deines Passworts!</h4>
+            <p class="mb-3 fw-lg-semibold text-lg-start text-center fs-5 w-100">
+              Überprüfen Sie die Sicherheit Ihres Passworts.
             </p>
-            <p class="text-break">What the fuck is brute force?</p>
-            <a class="btn btn-primary" href="/featureHtmls/testing.html"
-              >Test Password</a
-            >
+            <p class="p-3 p-lg-0 ">
+              Verwenden Sie unser Bewertungstool <span><b>Excalibur</b></span>, um die Stärke Ihres Passworts zu testen und simulieren Sie Brute-Force-Angriffe mit <span><b>Mojo</b></span>, um zu sehen, wie lange es dauern würde, bis Ihr Passwort geknackt wird.
+            </p>
+            <a class="btn btn-primary my-3" href="/featureHtmls/testing.html">Test Password</a>
           </div>
         </div>
       </section>
@@ -80,16 +56,16 @@
               alt="lockPickAxe"
             />
           </div>
-          <div class="content-container">
-            <h4 class="mb-2">Überschrift</h4>
-            <p class="mb-3">
-              Dies ist ein kurzer Text, der unter der Überschrift angezeigt
-              wird.
+          <div class="content-container p-3 d-flex flex-column align-items-center">
+            <h4 class="mb-2 fw-bold fs-2 text-lg-start text-center w-100">Generiere Passwort</h4>
+            <p class="mb-3 fw-lg-semibold text-lg-start text-center fs-5 w-100">
+              Erstellen Sie ein sicheres Passwort für Ihre Konten.
             </p>
-            <p class="text-break"></p>
-            <a class="btn btn-primary" href="/featureHtmls/pwGenerating.html"
-              >Create Password</a
-            >
+            <p class="p-3 p-lg-0 ">
+              Nutzen Sie unsere drei Tools, um das ideale Passwort zu generieren: <span><b>Picture Magic</b></span> verwandelt Bilder in Passwörter,<span><b>Rune Translator</b></span>  konvertiert Texte in Leetspeak und <span><b>GlyphSorcery</b></span> erstellt zufällige, sichere Passwörter. Wählen Sie die Methode, die am besten zu Ihnen passt, um Ihre Daten zu schützen..
+            </p>
+            <a class="btn btn-primary my-3" href="/featureHtmls/pwGenerating.html">Generiere Passwort</a>
+          </div>
           </div>
         </div>
       </section>
@@ -102,17 +78,15 @@
               alt="lockPickAxe"
             />
           </div>
-          <div class="content-container">
-            <h4 class="mb-2">Überschrift</h4>
-            <p class="mb-3">
-              Dies ist ein kurzer Text, der unter der Überschrift angezeigt
-              wird.
+          <div class="content-container p-3 d-flex flex-column align-items-center">
+            <h4 class="mb-2 fw-bold fs-2 text-lg-start text-center w-100">Erfinde Deinen Online-Namen!</h4>
+            <p class="mb-3 fw-lg-semibold text-lg-start text-center fs-5 w-100">
+              Lass deiner Fantasie freien Lauf und finde einen einzigartigen Benutzernamen, der dich in der digitalen Welt hervorhebt.
             </p>
-            <p class="text-break"></p>
-
-            <a class="btn btn-primary" href="/featureHtmls/userGenerating.html"
-              >Create User</a
-            >
+            <p class="p-3 p-lg-0 ">
+              Nutzen Sie unsere beiden Tools, um den perfekten Benutzernamen zu erstellen: <span><b>Identity Wizardry</b></span> generiert zufällige Benutzernamen basierend auf Ihren Parametern, und <span><b>Soul Eater</b></span> erstellt kreative Namen durch ein unterhaltsames Quiz. Wählen Sie die Methode, die am besten zu Ihnen passt, um Ihre Online-Identität zu finden..
+            </p>
+            <a class="btn btn-primary my-3" href="/featureHtmls/pwGenerating.html">Generiere Benutzernamen</a>
           </div>
         </div>
       </section>
