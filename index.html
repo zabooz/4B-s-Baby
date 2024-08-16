@@ -24,12 +24,7 @@
     <nav id="navBar" class="sticky-top">
       <script src="/components/navBar.js"></script>
     </nav>
-    <header class="mb-5">
-      <script type="module">
-        import {heroText} from "/components/heroText.js"
-        heroText("header","heroIndex")
-      </script>
-    </header>
+    <header class="mb-5"></header>
     <main>
       <section class="d-flex justify-content-center">
         <div class="d-flex flex-lg-row flex-column  sectionDiv">
@@ -49,13 +44,6 @@
         </div>
       </section>
       <section id="quote1" class="d-flex justify-content-center ">
-        <script type="module">
-          import {quote} from "/components/quotes.js"
-
-          quote("#quote1","zitate",1)
-
-
-        </script>
       </section>
       <section class="d-flex justify-content-center">
         <div class="d-flex flex-lg-row flex-column sectionDiv">
@@ -79,14 +67,7 @@
           </div>
         </div>
       </section>
-      <section id="quote2" >
-        <script type="module">
-          import {quote} from "/components/quotes.js"
-
-          quote("#quote2","zitate",2)
-
-
-        </script>
+      <section id="quote2" ></script>
       </section>
       <section class="d-flex justify-content-center">
         <div class="d-flex flex-lg-row flex-column sectionDiv">
@@ -116,7 +97,13 @@
 
       <script src="/components/footer.js"></script>
     </footer>
-
+    <script type="module">
+      import {quote} from "/components/quotes.js"
+      import {heroText} from "/components/heroText.js"
+      quote("#quote1","zitate",1)
+      quote("#quote2","zitate",2)
+      heroText("header","heroIndex")
+  </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

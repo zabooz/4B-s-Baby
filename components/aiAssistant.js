@@ -32,7 +32,7 @@ document.getElementById("submitQ").addEventListener("click", async() => {
 
     const ele = document.getElementById("aiAnswer")
     const question = document.getElementById("question").value
-    const sysContent = "you a internetSecurity Bot"
+    const sysContent = "you are an internetSecurity Bot"
     const answer =  await aiApiCall(question,sysContent)
 
 
