@@ -34,7 +34,7 @@
     </header>
     <main>
       <section class="d-flex justify-content-center align-items-center">
-        <div class="d-flex flex-lg-row flex-column p-5 sectionDiv">
+        <div class="d-flex flex-lg-row flex-column p-2 p-md-5 sectionDiv">
             <div
               class="img-container d-flex p-5 justify-content-center align-items-center"
             >
@@ -217,7 +217,7 @@
         </script>
       </section>
       <section class="d-flex justify-content-center ">
-        <div class="excalibur" id="passwordStrengthCalc  w-50">
+        <div class="excalibur" id="passwordStrengthCalc">
           <h3>Password Excalibur</h3>
           <p>
             Password Excalibur is a tool designed to assess the strength of your
@@ -262,6 +262,13 @@
           </div>
         </div>
       </section>
+      <section id="quote11" class="d-flex justify-content-center">
+        <script type="module">
+        import {quote} from "/components/quotes.js"
+
+            quote("#quote11","zitate",11)
+        </script>
+    </section>
     </main>
     <footer class="p-5">
       <script src="/components/footer.js"></script>

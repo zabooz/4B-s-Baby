@@ -96,3 +96,18 @@ section{
 
 
 }
+@media(max-width:700px){
+    .bruteBox,
+    .excalibur,
+    .appBox,
+    .sectionDiv,
+    #bruteForceApp,
+    #passwordStrengthCalc,
+    .contentContainer{
+        width: 90%;
+
+    }
+
+
+
+}

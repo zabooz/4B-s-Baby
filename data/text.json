@@ -1,6 +1,6 @@
  {
     "simple": {
-      "p": "Was ist ein einfacher Bruteforce-Angriff?",
+    "p": "Was ist ein einfacher Bruteforce-Angriff?",
   "p2": "Bei einem einfachen Bruteforce-Angriff versucht ein Angreifer systematisch, ein Passwort oder einen geheimen Schlüssel zu erraten, indem er alle möglichen Kombinationen nacheinander ausprobiert. Der Angreifer beginnt in der Regel mit den einfachsten Kombinationen, wie \"0000\" oder \"1234\", und arbeitet sich dann durch alle möglichen Kombinationen, bis er die richtige gefunden hat.",
   "p3": "Funktionsweise eines einfachen Bruteforce-Angriffs:",
   "p4": "Zielsetzung: Der Angreifer hat ein spezifisches Ziel, wie z.B. den Zugriff auf ein Benutzerkonto, eine verschlüsselte Datei oder ein geschütztes System.",
@@ -18,7 +18,21 @@
       "p4":"Kombinationsauswahl: Der Angreifer generiert alle möglichen Kombinationen aus Zeichen, die für das Passwort verwendet werden können. Bei einem vierstelligen numerischen Passwort wären dies z.B. alle Kombinationen von 0000 bis 9999",
       "p5":"Ausprobieren: Der Angreifer probiert jede Kombination aus, bis er die richtige findet und Zugang erhält. Je nachdem, wie lang das Passwort ist und welchen Zeichensatz es verwendet, kann dieser Prozess schnell abgeschlossen sein oder sehr lange dauern."
     },
-  
+    "leetSpeak": {
+          "header" :"Leetspeak: Bedeutung und Anwendung",
+          "canvas" : "offcanvasLeetSpeak",
+          "p": "Leetspeak, auch bekannt als '1337 speak', ist eine Form der Internetsprache, die Buchstaben durch Zahlen und Symbole ersetzt. Der Begriff leitet sich von 'elite' ab und war ursprünglich eine Art Geheimsprache für Hacker und Programmierer, die sich vor automatisierten Systemen verbergen wollten. In den frühen Tagen des Internets fanden viele Nutzer, dass das Nutzen dieser alternativen Schreibweise nicht nur eine kreative Ausdrucksform war, sondern auch eine Möglichkeit bot, Kommentare und Nachrichten zu verschlüsseln, sodass Außenstehende oft den Kontext nicht sofort erkannten.",
+          
+          "p1": "Diese Sprache wurde in den 1980ern von Hackern entwickelt, um ihre Identität zu verbergen und sicherzustellen, dass sie sich ungestört unterhalten konnten. Dabei war Leetspeak nicht nur ein Mittel zur Kommunikation, sondern auch ein Zeichen der Zugehörigkeit zu einer bestimmten Gruppe oder Subkultur. Die Verwendung dieser Sprache schuf ein Gefühl der Exklusivität und des gemeinschaftlichen Ausdrucks, das für viele in der Hacker-Community von großer Bedeutung war.",
+          
+          "p2": "Im Wesentlichen handelt es sich bei Leetspeak um eine Art von Buchstabenersetzung, wobei Zeichen verwendet werden, die ähnlich aussehen wie die Buchstaben, die sie ersetzen. Zum Beispiel wird das 'A' durch die Zahl '4', das 'E' durch die Zahl '3' und das 'I' durch die Zahl '1' ersetzt. Diese kreativen Transformationen ermöglichen eine Vielzahl von Variationen, die sich je nach Nutzer oder Community stark unterscheiden können. So können Wörter wie 'Leet' zu 'L33t' oder 'Hacker' zu 'H4x0r' verändert werden, was gleichzeitig den Spieltrieb anregt und die Kommunikation einzigartig macht.",
+          
+          "p3": "Eine praktische Anwendung von Leetspeak ist, dass es die Sicherheit von Passwörtern erhöhen kann. Durch die Verwendung von Zahlen statt Buchstaben wird es potenziellen Angreifern erschwert, Passwörter zu erraten oder durch Brute-Force-Methoden zu knacken. Leetspeak bietet eine einfache Möglichkeit, Passwörter kreativer und weniger vorhersehbar zu gestalten; dies hat besonders in den letzten Jahren angesichts steigender Cyberbedrohungen an Bedeutung gewonnen. Dennoch sollte betont werden, dass es nicht die einzige Sicherheitsmaßnahme sein sollte.",
+          
+          "p4": "Trotz der Vorteile von Leetspeak ist es wichtig zu erkennen, dass diese Schreibweise nicht unfehlbar ist und es immer noch Risiken birgt. Vorhersagbare Muster in der Verwendung von Leetspeak können es Angreifern erleichtern, die ursprünglichen Buchstaben zu erraten. Zudem ist die Lesbarkeit manchmal eingeschränkt, was in wichtigen Kommunikationskontexten problematisch sein kann. Dennoch bleibt Leetspeak ein faszinierendes Element der Internetkultur und wird weiterhin aktiv in verschiedenen Online-Communities genutzt, um Identität und Kreativität auszudrücken.",
+          "p5": "Dumbledore stirbt"
+      
+    },
     "heroIndex": {
           "h1":"Willkommen im Password Playground!",
           "lead" :"Mach Schluss mit langweiligen Passwörtern und Namen!",
@@ -28,7 +42,7 @@
     "heroTest": {
       "h1": "Teste die Stärke Deines Passworts!",
       "lead": "Finde heraus, wie gut Dein Passwort gegen Angriffe geschützt ist!",
-      "p": "Unser Bewertungstool zeigt Dir, wie sicher Dein Passwort wirklich ist. Simuliere Brute-Force-Angriffe und erhalte wertvolle Tipps zur Verbesserung Deiner Passwörter.",
+      "p": "Unsere Bewertungstools zeigen Dir, wie sicher Dein Passwort wirklich ist. Simuliere Brute-Force-Angriffe mit Mojo und erhalte wertvolle Tipps zur Verbesserung Deiner Passwörter mit Excalibur.",
       "p2": "Nutze unsere Funktionen, um sicherzustellen, dass Deine Passwörter robust sind und Deinen digitalen Schutz maximieren. Sieh selbst, wie einfach es ist, Deine Sicherheit zu verbessern!"
     },
     "heroPw": {
@@ -85,6 +99,26 @@
           {
             "person": "James Comey",
             "zitat": "Die gefährlichsten Cyber-Bedrohungen sind die, an die wir noch nicht gedacht haben."
+          },
+          {
+            "person": "Robert Mueller",
+            "zitat": "Es gibt zwei Arten von Unternehmen: solche, die gehackt wurden, und solche, die es noch nicht wissen."
+          },
+          {
+            "person": "Dan Geer",
+            "zitat": "Sicherheit ist wie eine Versicherung - sie mag teuer erscheinen, bis du sie wirklich brauchst."
+          },
+          {
+            "person": "Mikko Hyppönen",
+            "zitat": "Die meiste Cyberkriminalität passiert nicht, weil die Kriminellen besonders fähig sind, sondern weil wir besonders nachlässig sind."
+          },
+          {
+            "person": "Ralph Langner",
+            "zitat": "Cyber-Angriffe sind wie digitale Terroranschläge; sie können enorme Schäden verursachen, ohne dass physische Waffen benötigt werden."
+          },
+          {
+            "person": "Lenny Zeltser",
+            "zitat": "In der Welt der Cyber-Sicherheit ist das einzig Vorhersehbare, dass Unvorhergesehenes eintreten wird."
           }
         ]
       

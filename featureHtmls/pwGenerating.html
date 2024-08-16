@@ -26,12 +26,16 @@
         import {heroText} from "/components/heroText.js"
         heroText("header","heroPw")
       </script>
+      <script type="module">
+        import {loadOffCanvas} from "/components/offCanvas.js"
+        loadOffCanvas("header","leetSpeak")
+      </script>
     </header>
     <main>
         <section class="d-flex  justify-content-center">
-            <div class="d-flex flex-lg-row flex-column p-5 ">
+            <div class="d-flex flex-lg-row flex-column p-5 sectionDiv">
                 <div
-                  class="img-container d-flex p-5 justify-content-center align-items-center"
+                  class="img-container d-flex px-5 justify-content-center align-items-center"
                 >
                   <img
                     src="/img/lockPickAxe.jpg"
@@ -41,43 +45,47 @@
                 </div>
                 <div class="content-container p-3 d-flex flex-column justify-content-center align-items-center">
                   <h4 class="mb-4">Was macht ein sicheres Passwort aus?</h4>
-                  <p class="mb-4 w-100 px-3">
+                  <p class="mb-4 w-100 px-3 fw-semibold">
                     Ein sicheres Passwort zeichnet sich durch seine Komplexität und Unvorhersehbarkeit aus. Es besteht aus einer Mischung verschiedener Zeichen, ist einzigartig und schwer zu erraten.
                   </p>
                   <ul class="list-group mb-3 w-100 list-group-flush">
-                    <li class="list-group-item mb-1"><b>Länge ist entscheidend: </b>Ein sicheres Passwort sollte mindestens 12 Zeichen lang sein. Je länger das Passwort, desto schwerer ist es zu knacken.</li>
-                    <li class="list-group-item mb-1"><b>Kombination aus verschiedenen Zeichen: </b>Verwenden Sie eine Mischung aus Groß- und Kleinbuchstaben, Zahlen und Sonderzeichen, um die Komplexität zu erhöhen.
+                    <li class="list-group-item mb-3 rounded"><b>Länge ist entscheidend: </b>Ein sicheres Passwort sollte mindestens 12 Zeichen lang sein. Je länger das Passwort, desto schwerer ist es zu knacken.</li>
+                    <li class="list-group-item mb-3 rounded"><b>Kombination aus verschiedenen Zeichen: </b>Verwenden Sie eine Mischung aus Groß- und Kleinbuchstaben, Zahlen und Sonderzeichen, um die Komplexität zu erhöhen.
                     </li>
-                    <li class="list-group-item"><b>Vermeidung von Vorhersehbarkeit: </b>Verwenden Sie keine leicht zu erratenden Informationen wie Namen, Geburtsdaten oder gängige Wörter. Zufälligkeit ist der Schlüssel.</li>
-                    <li class="list-group-item"><b>Einzigartigkeit für jedes Konto: </b>Nutzen Sie für jedes Konto ein anderes Passwort, um zu verhindern, dass bei einem Angriff alle Ihre Konten kompromittiert werden.</li>
-                    <li class="list-group-item"><b>Regelmäßige Aktualisierung: </b>Ändern Sie Ihre Passwörter regelmäßig, um die Sicherheit weiter zu erhöhen und das Risiko eines unbemerkten Zugriffs zu minimieren.</li>
+                    <li class="list-group-item mb-3 rounded"><b>Vermeidung von Vorhersehbarkeit: </b>Verwenden Sie keine leicht zu erratenden Informationen wie Namen, Geburtsdaten oder gängige Wörter. Zufälligkeit ist der Schlüssel.</li>
+                    <li class="list-group-item mb-3 rounded"><b>Einzigartigkeit für jedes Konto: </b>Nutzen Sie für jedes Konto ein anderes Passwort, um zu verhindern, dass bei einem Angriff alle Ihre Konten kompromittiert werden.</li>
+                    <li class="list-group-item mb-3 rounded"><b>Regelmäßige Aktualisierung: </b>Ändern Sie Ihre Passwörter regelmäßig, um die Sicherheit weiter zu erhöhen und das Risiko eines unbemerkten Zugriffs zu minimieren.</li>
                   </ul>
                 </div>
               </div>
           </section>
-
+          <section id="quote10" class="d-flex justify-content-center">
+            <script type="module">
+            import {quote} from "/components/quotes.js"
+  
+                quote("#quote10","zitate",10)
+            </script>
+        </section>
           <section class="d-flex justify-content-center">
             <div id="pictureMagic" class=" appBox container d-flex g-0 flex-column justify-content-center align-items-center" >
-                <h3>Picture Magic</h3>
-                <p>
-                  Upload a photo, and our app will convert it into a secure
-                  password.
-                </p>
-                <p>
-                  This unique method transforms visual information into a strong,
-                  complex password, enhancing your online security with ease.
-                </p>
-                <div class="pictureMagicDiv d-flex flex-column flex-lg-row align-items-center justify-content-evenly ">
-                  <div class="imgDiv border border-2  mb-3">
-                    <img  id="previewImage" src="/img/confusion.jpeg" alt="confusion">
+              <h3>Picture Magic</h3>
+              <p class="fw-semibold w-75">
+                Lade einfach ein Foto hoch, und unsere App verwandelt es in ein sicheres Passwort.
+              </p>
+              <p class="w-75 fw-semibold">
+                Mit dieser Methode wird ein Bild in ein starkes Passwort umgewandelt, das nicht nur sicher ist, sondern dir auch hilft, dir deine Passwörter leichter zu merken. Ein cleveres und einfaches System, um deine Online-Sicherheit zu verbessern.
+              </p>
+                <div class="pictureMagicDiv d-flex flex-column flex-lg-row align-items-center justify-content-evenly  gap-5">
+                  <div class="imgDiv border border-2  mb-3 rounded">
+                    <img  id="previewImage" src="/img/confusion.jpeg" alt="confusion" class="border rounded">
                   </div>
-                  <div class=" d-flex flex-column align-items-center gap-4">
-                    <div class="label d-flex bg-success justify-content-center align-items-center mx-3 p-1 px-2">
-                      <label id="uploadLabel" for="uploadFile"
-                        >Upload your Picture</label
+                  <div class=" d-flex flex-column  gap-2 h-100 ">
+                    <div class="label d-flex bg-success">
+                      <label id="uploadLabel" for="uploadFile" class="w-100 fw-semibold p-2 fs-5"
+                        >Foto hochladen</label
                       >
                     </div>
-                    <form action="#">
+                    <form action="#" class="w-100">
                       <input
                         type="file"
                         value="value"
@@ -85,8 +93,8 @@
                         style="display: none"
                         name="uploadFile"
                       />
-                      <button id="pictureConvertBtn" type="button" class="btn btn-primary btn-lg ">Convert</button>
-                    </form>
+                    <button id="pictureConvertBtn" type="button" class="btn btn-primary btn-lg w-100">Los geht's</button>
+                  </form>
                   </div>
                 </div>
                 <p id="picResult" class=" border border-secondary border-2  mt-3 text-center">Sample Text</p>
@@ -104,30 +112,30 @@
           <section class="d-flex  justify-content-center">
             <div id="converterSelector" class="appBox">
                   <h3>Rune Translator</h3>
-                  <p>
-                    Transform your password into leetspeak for added security.
-                    Simply enter your password, and the converter will change it
-                    into a more secure, leetspeak version.
+                  <p class="fw-semibold w-75">
+                    Verwandle dein Passwort in Leetspeak für mehr Sicherheit. Gib einfach dein Passwort ein, und der Konverter ändert es in eine sicherere<span class="text-custom fw-bold text-decoration-underline" data-bs-toggle="offcanvas" href="#offcanvasLeetSpeak" role="button" aria-controls="offcanvasExample">
+                      Leetspeak-Version
+                    </span>
                   </p>
-                  <p>
-                    This enhances your password's strength by replacing common
-                    characters with numbers and symbols.
+                  <p   class="fw-semibold w-75">
+                    So wird dein Passwort stärker, indem gewöhnliche Zeichen durch Zahlen und Symbole ersetzt werden.
                   </p>
+                  
                   <div class="d-flex flex-column flex-lg-row gap-3">
                     <input
                       type="text"
                       id="passwordInput"
-                      class="form-control"
-                      placeholder=" Enter password"
+                      class="form-control-lg"
+                      placeholder="Gib ein Password ein"
                     />
-                    <select id="converterSelect" class="form-select">
+                    <select id="converterSelect" class="form-select-lg">
                       <option value="leetSimple">Simple Leetspeak</option>
                       <option value="leetAdvanced">Advanced Leetspeak</option>
                       <option value="leetComplicated">Complicated Leetspeak</option>
                     </select>
                 </div>
                
-                  <button id="convertBtn" class="btn btn-primary mt-3 input btn-lg">Convert</button>
+                  <button id="convertBtn" class="btn btn-primary mt-3 input btn-lg">Los geht's</button>
                   <p  id="leetResult" class="input border border-secondary  border-2  mt-1 text-center">Sample Text</p>
            
                 
@@ -170,6 +178,13 @@
                 </div>
               </div>
           </section>
+          <section id="quote12" class="d-flex justify-content-center">
+            <script type="module">
+            import {quote} from "/components/quotes.js"
+  
+                quote("#quote12","zitate",12)
+            </script>
+        </section>
     </main>
     <footer class="mx-5">
         <script src="/components/footer.js"></script>

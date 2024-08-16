@@ -9,12 +9,7 @@
 main{
     display: flex;
     flex-direction: column;
-
 }
-/* section{
-    padding: 5rem 0;
-} */
-
 #picResult,
 .input{
     width: 30%;

@@ -53,4 +53,16 @@ main{
 
 
 }
+@media(max-width:700px){
+    .bruteBox,
+    .excalibur,
+    .appBox,
+    .sectionDiv{
+        width: 90%;
+    }
+
+
+
+}
+
 
