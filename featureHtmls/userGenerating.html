@@ -20,7 +20,7 @@
   <script src="/featureHtmlScripts/userGen.js" defer type="module"></script>
     <title>User Generator</title>
 </head>
-<body>
+<body class="bg-custom">
 
     <nav id="navBar" class="sticky-top"></nav>
     <script src="/components/navBar.js"></script>
@@ -31,77 +31,75 @@
       </script>
     </header>
     <main>
-        <section class="d-flex border justify-content-center">
-            <div id="pwdGenDiv" class="appBox">
-                <h3>Identity Wizardry</h3>
-                <p>
-                  Create a unique username by selecting up to two groups of
-                  adjectives and a group of nouns, or let the generator create a
-                  random combination for you.
-                </p>
-                <p>
-                  Ensure your username is unique and reflects your identity for a
-                  personalized online experience.
-                </p>
-                <div class="d-flex flex-lg-row flex-column gap-lg-5 gap-2">
-                  <div id="wizardInput2" class="d-flex flex-column gap-2">
-                    <label>First adjective:</label>
-                    <select id="adjective1" class="form-control">
-                      <option value="random">Random</option>
-                      <option value="shapes">Shape</option>
-                      <option value="colors">Color</option>
-                      <option value="textures">Texture</option>
-                      <option value="sizes">Size</option>
-                      <option value="tastes">Taste</option>
-                      <option value="emotions">Emotion</option>
-                      <option value="sounds">Sound</option>
-                      <option value="temperatures">Temperature</option>
-                      <option value="speeds">Speed</option>
-                      <option value="qualities">Quality</option>
-                      <option value="weatherTypes">Weather</option>
-                      <option value="">-None-</option>
-                    </select>
-                    <label>Second adjective:</label>
-                    <select id="adjective2" class="form-control">
-                      <option value="random">Random</option>
-                      <option value="shapes">Shape</option>
-                      <option value="colors">Color</option>
-                      <option value="textures">Texture</option>
-                      <option value="sizes">Size</option>
-                      <option value="tastes">Taste</option>
-                      <option value="emotions">Emotion</option>
-                      <option value="sounds">Sound</option>
-                      <option value="temperatures">Temperature</option>
-                      <option value="speeds">Speed</option>
-                      <option value="qualities">Quality</option>
-                      <option value="weatherTypes">Weather</option>
-                      <option value="">-None-</option>
-                    </select>
-                  </div>
-                  <div id="wizardInput3" class="d-flex  flex-column gap-2">
-                    <label>Choose a noun:</label>
-                    <select name="pwdGen" id="noun" class="form-control">
-                      <option value="random">Random</option>
-                      <option value="instruments">Instrument</option>
-                      <option value="fruits">Fruit</option>
-                      <option value="vegetables">Vegetable</option>
-                      <option value="animals">Animal</option>
-                      <option value="fantasyCreatures">Fantasy Creature</option>
-                      <option value="rpgClasses">Rpg Class</option>
-                      <option value="fantasyRaces">Fantasy race</option>
-                      <option value="occupations">Jobs</option>
-                      <option value="vehicles">Vehicle</option>
-                      <option value="food">Food</option>
-                      <option value="tools">Tool</option>
-                      <option value="beverages">Beverage</option>
-                      <option value="clothingItems">Clothes</option>
-                      <option value="bodyParts">Bodypart</option>
-                      <option value="flowers">Flower</option>
-                      <option value="desserts">Dessert</option>
-                    </select>
-                    <button id="userGeneratorBtn" class="btn btn-lg mt-4">Generate</button>
-                  </div>
-                </div>
+        <section class="d-flex  justify-content-center">
+          <div id="pwdGenDiv" class="appBox">
+            <h3>Identity Wizardry</h3>
+            <p class="w-75 fw-semibold">
+              Erstelle einen einzigartigen Benutzernamen, indem du bis zu zwei Gruppen von Adjektiven und eine Gruppe von Substantiven auswählst, oder lass den Generator eine zufällige Kombination für dich erstellen.
+            </p>
+            <p class="w-75 fw-semibold">
+              Achte darauf, dass dein Benutzername einzigartig ist und deine Identität widerspiegelt, um ein persönliches Online-Erlebnis zu haben.
+            </p>
+            
+            <div class="d-flex flex-lg-row flex-column gap-lg-5 gap-2">
+              <div id="wizardInput2" class="d-flex flex-column gap-2">
+                <label class="fw-semibold">Erstes Adjektiv:</label>
+                <select id="adjective1" class="form-control-lg fw-semibold">
+                  <option value="random">Zufällig</option>
+                  <option value="shapes">Form</option>
+                  <option value="colors">Farbe</option>
+                  <option value="textures">Textur</option>
+                  <option value="sizes">Größe</option>
+                  <option value="tastes">Geschmack</option>
+                  <option value="emotions">Emotion</option>
+                  <option value="sounds">Klang</option>
+                  <option value="temperatures">Temperatur</option>
+                  <option value="speeds">Geschwindigkeit</option>
+                  <option value="qualities">Qualität</option>
+                  <option value="weatherTypes">Wetter</option>
+                  <option value="">-Keine-</option>
+                </select>
+                <label class="fw-semibold">Zweites Adjektiv:</label>
+                <select id="adjective2" class="form-control-lg fw-semibold">
+                  <option value="random">Zufällig</option>
+                  <option value="shapes">Form</option>
+                  <option value="colors">Farbe</option>
+                  <option value="textures">Textur</option>
+                  <option value="sizes">Größe</option>
+                  <option value="tastes">Geschmack</option>
+                  <option value="emotions">Emotion</option>
+                  <option value="sounds">Klang</option>
+                  <option value="temperatures">Temperatur</option>
+                  <option value="speeds">Geschwindigkeit</option>
+                  <option value="qualities">Qualität</option>
+                  <option value="weatherTypes">Wetter</option>
+                  <option value="">-Keine-</option>
+                </select>
+              </div>
+              <div id="wizardInput3" class="d-flex flex-column gap-2">
+                <label class="fw-semibold">Wähle ein Substantiv:</label>
+                <select name="pwdGen" id="noun" class="form-control-lg fw-semibold">
+                  <option value="random">Zufällig</option>
+                  <option value="instruments">Instrument</option>
+                  <option value="fruits">Frucht</option>
+                  <option value="vegetables">Gemüse</option>
+                  <option value="animals">Tier</option>
+                  <option value="fantasyCreatures">Fantasiewesen</option>
+                  <option value="rpgClasses">RPG-Klasse</option>
+                  <option value="fantasyRaces">Fantasy-Rasse</option>
+                  <option value="occupations">Beruf</option>
+                  <option value="vehicles">Fahrzeug</option>
+                  <option value="food">Essen</option>
+                  <option value="tools">Werkzeug</option>
+                  <option value="beverages">Getränk</option>
+                  <option value="clothingItems">Kleidungsstück</option>
+                  <option value="bodyParts">Körperteil</option>
+                  <option value="flowers">Blume</option>
+                  <option value="desserts">Dessert</option>
+                </select>
+                <button id="userGeneratorBtn" class="btn btn-lg mt-4">Generieren</button>
+              </div>
+            </div>
                 <table class="table mb-5" id="stats">
                   <thead>
                     <tr>
@@ -124,7 +122,7 @@
   
           </script>
         </section>
-        <section class="d-flex border justify-content-center ">
+        <section class="d-flex justify-content-center ">
           <div id="pwdGenDiv" class="appBox d-flex justify-content-center ">
             <h3>Psych Test user name</h3>
             <p>
