@@ -1,3 +1,8 @@
+import { clipBoard,clipArr } from "/components/clipBoard.js";
+
+
+
+
 export const copyButton = (textId) => {
   const button = document.createElement("button");
   button.className = "copyButton";
@@ -39,7 +44,8 @@ export const copyButton = (textId) => {
 
   button.addEventListener("click", () => {
     navigator.clipboard.writeText(text);
-
+    clipArr.push(text)
+    clipBoard(".test")
     confirmBubble.classList.add("fadeIn");
     setTimeout(() => {
       confirmBubble.classList.remove("fadeIn");
@@ -48,3 +54,4 @@ export const copyButton = (textId) => {
 
   return button;
 };
+
