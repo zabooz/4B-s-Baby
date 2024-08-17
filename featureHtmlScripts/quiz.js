@@ -7,12 +7,12 @@ const config = {
   pic6: "../img/psyTest/pic6.jpg",
 
   frage1: {
-    frage: "Welche Lebensmittelgruppe spricht Sie am meisten an?",
+    frage: "Was ist Ihnen am wichtigsten?",
     antworten: [
-      "Früchte & Gemüse",
-      "Getränke",
-      "Desserts",
-      "Essen im Allgemeinen",
+      "Eine angenehme Temperatur",
+      "Bequemlichkeit",
+      "Selbstkenntnis",
+      "Zeit",
     ],
   },
   frage2: {
@@ -25,12 +25,12 @@ const config = {
     ],
   },
   frage3: {
-    frage: "Was ist Ihnen am wichtigsten?",
+    frage: "Welche Lebensmittelgruppe spricht Sie am meisten an?",
     antworten: [
-      "Eine angenehme Temperatur",
-      "Bequemlichkeit",
-      "Selbstkenntnis",
-      "Zeit",
+      "Früchte & Gemüse",
+      "Getränke",
+      "Desserts",
+      "Essen im Allgemeinen",
     ],
   },
   frage4: {
