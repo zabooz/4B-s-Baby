@@ -1,7 +1,7 @@
-import { pictureToString } from "/scripts/picturePwd.js";
-import { copyButton } from "/scripts/copybutton.js";
-import { passwordConverter } from "/scripts/passwordConverter.js";
-import { generatePassword } from "/scripts/passwordGenerator.js";
+import { pictureToString } from "../scripts/picturePwd.js";
+import { copyButton } from "../scripts/copybutton.js";
+import { passwordConverter } from "../scripts/passwordConverter.js";
+import { generatePassword } from "../scripts/passwordGenerator.js";
 const uploadFile = document.getElementById("uploadFile");
 const picConBtn = document.getElementById("pictureConvertBtn");
 const leetBtn = document.getElementById("convertBtn")

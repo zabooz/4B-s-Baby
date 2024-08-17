@@ -1,6 +1,6 @@
 import { newPwStrength } from "./newStrengthCalc.js";
-import { passwordEncoder } from "/scripts/encoder.js";
-import { getColorFromStrength } from "/utilities/getColorFromStrength.js";
+import { passwordEncoder } from "../scripts/encoder.js";
+import { getColorFromStrength } from "../utilities/getColorFromStrength.js";
 
 document.addEventListener("DOMContentLoaded",() => {
 

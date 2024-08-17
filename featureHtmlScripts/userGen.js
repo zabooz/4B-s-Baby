@@ -1,5 +1,5 @@
-import { generateUser } from "/featureHtmlScripts/newUserGenerator.js";
-import { generateQuizResult } from "/featureHtmlScripts/userPsyTest.js";
+import { generateUser } from "./newUserGenerator.js";
+import { generateQuizResult } from "./userPsyTest.js";
 import { copyButton } from "../scripts/copybutton.js";
 
 const userGenBtn = document.getElementById("userGeneratorBtn");

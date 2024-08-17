@@ -1,4 +1,4 @@
-import { clipBoard } from "/components/clipBoard.js";
+import { clipBoard } from "../components/clipBoard.js";
 
 
 export let storedArr = JSON.parse(sessionStorage.getItem("clipArr")) || [];
