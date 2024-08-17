@@ -1,18 +1,19 @@
+import { copyButton } from "/scripts/copybutton.js"
+export let clipArr = []
 
-export const clipArr = []
-console.log(clipArr)
 const createClipBoard = () => {
   
-    console.log(clipArr,12)
+    
     let p = ""
+
+    
+
 
     for(let i = 0; i < clipArr.length;i++){
 
-
-        p += `<p>${clipArr[i]}</p>`
-
-
-
+        const clip = "clip" + i
+        
+        p += `<p id="${clip}" >${clipArr[i]}</p>`
 
     }
 
@@ -53,6 +54,15 @@ export const clipBoard = (id) => {
 
     const target = document.querySelector(id)
 
+    clipArr = [...new Set(clipArr)]
     target.innerHTML = createClipBoard()
+
+    for(let i = 0; i < clipArr.length;i++){
+            const id  =  "clip" + i
+            const clip = document.getElementById(id)
+            const copyBtn = copyButton(id);
+            copyBtn.setAttribute("data-bs-dismiss", "modal");
+            clip.append(copyBtn)
+    }
 
 }

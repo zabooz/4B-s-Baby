@@ -43,6 +43,7 @@ export const copyButton = (textId) => {
   }
 
   button.addEventListener("click", () => {
+    console.log(textId)
     navigator.clipboard.writeText(text);
     clipArr.push(text)
     clipBoard(".test")
