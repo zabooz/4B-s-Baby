@@ -1,25 +1,14 @@
-import { copyButton } from "/scripts/copybutton.js"
-export let clipArr = []
+import { storedArr,copyButton } from "/scripts/copybutton.js";
 
 const createClipBoard = () => {
-  
-    
-    let p = ""
+    let p = "";
 
-    
-
-
-    for(let i = 0; i < clipArr.length;i++){
-
-        const clip = "clip" + i
-        
-        p += `<p id="${clip}" >${clipArr[i]}</p>`
-
+    for(let i = 0; i < storedArr.length; i++) {
+        const clip = "clip" + i;
+        p += `<p id="${clip}" >${storedArr[i]}</p>`;
     }
 
-
     return `
-      
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="clipBoardBtn">
   Clippy
 </button>
@@ -38,31 +27,18 @@ const createClipBoard = () => {
       </div>
     </div>
   </div>
-</div>
-    
-    
-    
-    `
-
-
-
-
+</div>`;
 }
 
 export const clipBoard = (id) => {
+    const target = document.querySelector(id);
+    target.innerHTML = createClipBoard();
 
-
-    const target = document.querySelector(id)
-
-    clipArr = [...new Set(clipArr)]
-    target.innerHTML = createClipBoard()
-
-    for(let i = 0; i < clipArr.length;i++){
-            const id  =  "clip" + i
-            const clip = document.getElementById(id)
-            const copyBtn = copyButton(id);
-            copyBtn.setAttribute("data-bs-dismiss", "modal");
-            clip.append(copyBtn)
+    for(let i = 0; i < storedArr.length; i++) {
+        const id  =  "clip" + i;
+        const clip = document.getElementById(id);
+        const copyBtn = copyButton(id);
+        copyBtn.setAttribute("data-bs-dismiss", "modal");
+        clip.append(copyBtn);
     }
-
 }

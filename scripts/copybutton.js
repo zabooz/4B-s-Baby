@@ -1,7 +1,7 @@
-import { clipBoard,clipArr } from "/components/clipBoard.js";
+import { clipBoard } from "/components/clipBoard.js";
 
 
-
+export let storedArr = JSON.parse(sessionStorage.getItem("clipArr")) || [];
 
 export const copyButton = (textId) => {
   const button = document.createElement("button");
@@ -43,10 +43,15 @@ export const copyButton = (textId) => {
   }
 
   button.addEventListener("click", () => {
-    console.log(textId)
     navigator.clipboard.writeText(text);
-    clipArr.push(text)
-    clipBoard(".test")
+    
+
+    storedArr.push(text);
+    storedArr = [...new Set(storedArr)];
+    sessionStorage.setItem('clipArr', JSON.stringify(storedArr));
+    
+    clipBoard(".clipBoard");
+
     confirmBubble.classList.add("fadeIn");
     setTimeout(() => {
       confirmBubble.classList.remove("fadeIn");
@@ -55,4 +60,3 @@ export const copyButton = (textId) => {
 
   return button;
 };
-
