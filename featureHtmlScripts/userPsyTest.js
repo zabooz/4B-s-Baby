@@ -75,7 +75,7 @@ export function generateQuizResult() {
   let adjective2;
   do {
     adjective2 = selectedAdjectiveGroups[rndNumInLen(selectedAdjectiveGroups)];
-  } while (adjective1 === adjective2); // Ensure adjective2 is different
+  } while (selectedAdjectiveGroups.length > 1 && adjective1 === adjective2); // Ensure adjective2 is different
 
   const noun = selectedNounGroups[rndNumInLen(selectedNounGroups)];
 
