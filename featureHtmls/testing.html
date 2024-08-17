@@ -278,12 +278,15 @@
     <footer class="p-5">
       <script src="../components/footer.js"></script>
     </footer>
+    <div class="clipBoard"></div>
   </body>
   <script src="../components/aiAssistant.js" type="module"></script>
   <script type="module">
     import { loadOffCanvas } from "../components/offCanvas.js";
     import { quote } from "../components/quotes.js";
     import { heroText } from "../components/heroText.js";
+    import {clipBoard} from "../components/clipboard.js"
+
 
     heroText("header", "heroTest");
     quote("#quote7", "zitate", 7);
@@ -292,6 +295,7 @@
     loadOffCanvas("header", "liste");
     loadOffCanvas("header", "simple");
     quote("#quote11", "zitate", 11);
+    clipBoard(".clipBoard")
   </script>
   <script src="../components/navBar.js"></script>
   <script src="../featureHtmlScripts/testing.js" type="module"></script>
