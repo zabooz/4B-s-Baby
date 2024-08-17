@@ -1,49 +1,54 @@
 const config = {
-    pic1: "../img/psyTest/pic1.jpg",
-    pic2: "../img/psyTest/pic4.png",
-    pic3: "../img/psyTest/pic3.jpg",
-    pic4: "../img/psyTest/pic4.png",
-    pic5: "../img/psyTest/pic9.jpeg",
-    pic6: "../img/psyTest/pic8.jpeg",
-  
-    frage1: {
-      frage: "Welche Lebensmittelgruppe spricht Sie am meisten an?",
-      antworten: [
-        "Früchte & Gemüse",
-        "Getränke",
-        "Desserts",
-        "Essen im Allgemeinen",
-      ],
-    },
-    frage2: {
-      frage: "Welche Aktivität mögen Sie am meisten?",
-      antworten: ["Zeichnen", "Arbeiten mit den Händen", "Schauspielern", "Musik"],
-    },
-    frage3: {
-      frage: "Was ist Ihnen am wichtigsten?",
-      antworten: [
-        "Eine angenehme Temperatur",
-        "Bequemlichkeit",
-        "Selbstkenntnis",
-        "Zeit",
-      ],
-    },
-    frage4: {
-      frage: "Was bevorzugen Sie?",
-      antworten: ["Instrumente", "Blumen", "Fahrzeuge", "Werkzeuge"],
-    },
-    frage5: {
-      frage: "Was interessiert Sie am meisten?",
-      antworten: ["Tiere", "Fantasiewesen", "Fantasierassen", "Nichts davon"],
-    },
-    letzteFolie: {
-      frage: "Vielen Dank für Ihre Teilnahme!",
-      antwort: "Bitte klicken Sie auf den Button, um Ihre Antworten zu senden.",
-    },
-  };
-  
-  const quiz = (config) => {
-    return `<div id="questionCarousel" class="carousel slide w-100 mx-auto mt-5">
+  pic1: "../img/psyTest/pic1.jpg",
+  pic2: "../img/psyTest/pic2.jpg",
+  pic3: "../img/psyTest/pic3.jpg",
+  pic4: "../img/psyTest/pic4.jpg",
+  pic5: "../img/psyTest/pic5.jpg",
+  pic6: "../img/psyTest/pic6.jpg",
+
+  frage1: {
+    frage: "Welche Lebensmittelgruppe spricht Sie am meisten an?",
+    antworten: [
+      "Früchte & Gemüse",
+      "Getränke",
+      "Desserts",
+      "Essen im Allgemeinen",
+    ],
+  },
+  frage2: {
+    frage: "Welche Aktivität mögen Sie am meisten?",
+    antworten: [
+      "Zeichnen",
+      "Arbeiten mit den Händen",
+      "Schauspielern",
+      "Musik",
+    ],
+  },
+  frage3: {
+    frage: "Was ist Ihnen am wichtigsten?",
+    antworten: [
+      "Eine angenehme Temperatur",
+      "Bequemlichkeit",
+      "Selbstkenntnis",
+      "Zeit",
+    ],
+  },
+  frage4: {
+    frage: "Was bevorzugen Sie?",
+    antworten: ["Instrumente", "Blumen", "Fahrzeuge", "Werkzeuge"],
+  },
+  frage5: {
+    frage: "Was interessiert Sie am meisten?",
+    antworten: ["Tiere", "Fantasiewesen", "Fantasierassen", "Nichts davon"],
+  },
+  letzteFolie: {
+    frage: "Vielen Dank für Ihre Teilnahme!",
+    antwort: "Bitte klicken Sie auf den Button, um Ihre Antworten zu senden.",
+  },
+};
+
+const quiz = (config) => {
+  return `<div id="questionCarousel" class="carousel slide w-100 mx-auto mt-5">
       <div class="carousel-inner">
           <!-- Erste Folie -->
           <div class="carousel-item active">
@@ -54,8 +59,12 @@ const config = {
                     .map(
                       (antwort, index) => `
                       <div class="form-check">
-                          <input class="form-check-input" type="radio" name="question1" id="q1a${index + 1}">
-                          <label class="form-check-label" for="q1a${index + 1}">${antwort}</label>
+                          <input class="form-check-input" type="radio" name="question1" id="q1a${
+                            index + 1
+                          }">
+                          <label class="form-check-label" for="q1a${
+                            index + 1
+                          }">${antwort}</label>
                       </div>
                   `
                     )
@@ -71,8 +80,12 @@ const config = {
                     .map(
                       (antwort, index) => `
                       <div class="form-check">
-                          <input class="form-check-input" type="radio" name="question2" id="q2a${index + 1}">
-                          <label class="form-check-label" for="q2a${index + 1}">${antwort}</label>
+                          <input class="form-check-input" type="radio" name="question2" id="q2a${
+                            index + 1
+                          }">
+                          <label class="form-check-label" for="q2a${
+                            index + 1
+                          }">${antwort}</label>
                       </div>
                   `
                     )
@@ -88,8 +101,12 @@ const config = {
                     .map(
                       (antwort, index) => `
                       <div class="form-check">
-                          <input class="form-check-input" type="radio" name="question3" id="q3a${index + 1}">
-                          <label class="form-check-label" for="q3a${index + 1}">${antwort}</label>
+                          <input class="form-check-input" type="radio" name="question3" id="q3a${
+                            index + 1
+                          }">
+                          <label class="form-check-label" for="q3a${
+                            index + 1
+                          }">${antwort}</label>
                       </div>
                   `
                     )
@@ -105,8 +122,12 @@ const config = {
                     .map(
                       (antwort, index) => `
                       <div class="form-check">
-                          <input class="form-check-input" type="radio" name="question4" id="q4a${index + 1}">
-                          <label class="form-check-label" for="q4a${index + 1}">${antwort}</label>
+                          <input class="form-check-input" type="radio" name="question4" id="q4a${
+                            index + 1
+                          }">
+                          <label class="form-check-label" for="q4a${
+                            index + 1
+                          }">${antwort}</label>
                       </div>
                   `
                     )
@@ -122,8 +143,12 @@ const config = {
                     .map(
                       (antwort, index) => `
                       <div class="form-check">
-                          <input class="form-check-input" type="radio" name="question5" id="q5a${index + 1}">
-                          <label class="form-check-label" for="q5a${index + 1}">${antwort}</label>
+                          <input class="form-check-input" type="radio" name="question5" id="q5a${
+                            index + 1
+                          }">
+                          <label class="form-check-label" for="q5a${
+                            index + 1
+                          }">${antwort}</label>
                       </div>
                   `
                     )
@@ -150,7 +175,6 @@ const config = {
           <span class="visually-hidden">Weiter</span>
       </button>
   </div>`;
-  };
-  
+};
 
 document.getElementById("quiz").innerHTML = quiz(config);
