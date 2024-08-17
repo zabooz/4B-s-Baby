@@ -14,22 +14,16 @@ userGenBtn.addEventListener("click", function (e) {
 });
 
 function updateAttempts(result, table) {
+  
   const dataArr = result;
 
   const tBody = document.querySelector(table);
-
   const tr = document.createElement("tr");
   const td = document.createElement("td");
 
   td.textContent = tBody.rows.length + 1;
-
   tr.appendChild(td);
 
-  dataArr.forEach((item) => {
-    const td = document.createElement("td");
-    td.textContent = item;
-    tr.appendChild(td);
-  });
 
         for(let i = 0; i<dataArr.length;i++){
 
@@ -53,6 +47,8 @@ function updateAttempts(result, table) {
             tr.appendChild(td)
         }
 
+      tBody.append(tr)  
+}
 const userGenSubmitBtn = document.getElementById("submitButton");
 
 userGenSubmitBtn.addEventListener("click", function (e) {
