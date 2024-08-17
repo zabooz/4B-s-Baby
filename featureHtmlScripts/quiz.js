@@ -1,7 +1,7 @@
 const config = {
-  pic1: "../img/psyTest/pic1.jpg",
+  pic1: "../img/psyTest/pic3.jpg",
   pic2: "../img/psyTest/pic2.jpg",
-  pic3: "../img/psyTest/pic3.jpg",
+  pic3: "../img/psyTest/pic1.jpg",
   pic4: "../img/psyTest/pic4.jpg",
   pic5: "../img/psyTest/pic5.jpg",
   pic6: "../img/psyTest/pic6.jpg",
