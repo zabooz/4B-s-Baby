@@ -1,4 +1,4 @@
-import { aiApiCall } from "/utilities/aiApiCall.js";
+import { aiApiCall } from "../utilities/aiApiCall.js";
 
 const sonderzeichen = [
   "!", "@", "#", "$", "%", "^", "§", "&", "*", "(", ")", "-", "_", "=",

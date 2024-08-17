@@ -31,7 +31,7 @@ import {
   allAdjectives,
   allNouns,
 } from "../data/englishGenerator.data.js";
-import { rndNumInLen } from "/scripts/encoder.js";
+import { rndNumInLen } from "../scripts/encoder.js";
 
 //Generates a random Username based on user input.
 export function generateUser(adjective1, adjective2, selectedNoun) {

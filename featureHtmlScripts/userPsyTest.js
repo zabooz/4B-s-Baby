@@ -28,8 +28,8 @@ import {
   desserts,
   allNouns,
 } from "/data/englishGenerator.data.js";
-import { generateUser } from "/featureHtmlScripts/newUserGenerator.js";
-import { rndNumInLen } from "/scripts/encoder.js";
+import { generateUser } from "../featureHtmlScripts/newUserGenerator.js";
+import { rndNumInLen } from "../scripts/encoder.js";
 /*Pick whatever appeals to your the most without thinking about it too much
 1. Which food group appeals to you the most?
     a. fruits&vegetables
