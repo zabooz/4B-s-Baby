@@ -100,9 +100,9 @@
     <script type="module">
       import {quote} from "./components/quotes.js"
       import {heroText} from "./components/heroText.js"
-      quote("#quote1","zitate",1)
-      quote("#quote2","zitate",2)
-      heroText("header","heroIndex")
+      quote("#quote1","zitate",1,'./data/text.json')
+      quote("#quote2","zitate",2,'./data/text.json')
+      heroText("header","heroIndex",'./data/text.json')
       import {createNav,configNavIndex} from "./components/navBar.js"
       createNav(configNavIndex)
   </script>

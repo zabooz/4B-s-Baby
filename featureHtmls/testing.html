@@ -27,8 +27,7 @@
     <nav id="navBar" class="sticky-top"></nav>    
     <header></header>
     <script type="module">
-      import { heroText } from "../components/heroText.js";
-      heroText("header", "heroTest");
+
   
     </script>
 
@@ -293,13 +292,15 @@
     import { quote } from "../components/quotes.js";
     import {clipBoard} from "../components/clipboard.js"
     import {createNav,configNav} from "../components/navBar.js"
+    import { heroText } from "../components/heroText.js";
     createNav(configNav)
-    quote("#quote7", "zitate", 7);
-    quote("#quote9", "zitate", 9);
-    quote("#quote5", "zitate", 5);
-    loadOffCanvas("header", "liste");
-    loadOffCanvas("header", "simple");
-    quote("#quote11", "zitate", 11);
+    heroText("header", "heroTest",'../data/text.json');
+    quote("#quote7", "zitate", 7,'../data/text.json');
+    quote("#quote9", "zitate", 9,'../data/text.json');
+    quote("#quote5", "zitate", 5,'../data/text.json');
+    loadOffCanvas("header", "liste",'../data/text.json');
+    loadOffCanvas("header", "simple",'../data/text.json');
+    quote("#quote11", "zitate", 11,'../data/text.json');
     clipBoard(".clipBoard")
   </script>
   

@@ -35,9 +35,9 @@ const createOffCanvas = (content) => {
       </div>`
 }
 
-export const loadOffCanvas  = (id,text) => {
+export const loadOffCanvas  = (id,text,path) => {
     
-    fetchText().then(data => {
+    fetchText(path).then(data => {
 
         const content =  data[text]
         const target = document.querySelector(id)

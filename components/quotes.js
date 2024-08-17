@@ -28,9 +28,9 @@ const createQuote = (content) => {
 `
 }
 
-export const quote = (id,text,quote) => {
-  
-    fetchText().then(data => {
+export const quote = (id,text,quote,path) => {
+
+    fetchText(path).then(data => {
 
         const content = data[text]
         const target = document.querySelector(id)

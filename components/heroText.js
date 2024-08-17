@@ -20,10 +20,10 @@ const createHero = (content) => {
     `;
 }
 
-export const heroText = (id,text) => {
+export const heroText = (id,text,path) => {
   
 
-    fetchText().then(data => {
+    fetchText(path).then(data => {
 
         const content = data[text]
         const target = document.querySelector(id)

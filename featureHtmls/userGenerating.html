@@ -154,9 +154,9 @@
       import {clipBoard} from "../components/clipBoard.js"
       import {createNav,configNav} from "../components/navBar.js"
       createNav(configNav)
-      quote("#quote6","zitate",6)
-      heroText("header","heroUser")
-      quote("#quote8","zitate",8)
+      quote("#quote6","zitate",6,'../data/text.json')
+      heroText("header","heroUser",'../data/text.json')
+      quote("#quote8","zitate",8,'../data/text.json')
       clipBoard(".clipBoard")
       </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

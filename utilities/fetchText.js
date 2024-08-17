@@ -1,6 +1,8 @@
-export const fetchText = async () => {
+export const fetchText = async (path) => {
+
+
     try {
-        const response = await fetch('../data/text.json');
+        const response = await fetch(path);
         if (!response.ok) {
             throw new Error('Netzwerkantwort war nicht ok');
         }
