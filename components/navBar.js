@@ -11,7 +11,7 @@ const configNav = {
   },
   userGen: {
     text: "User Generator",
-    link: "/featureHtmls/userGenerating.html",
+    link: "../featureHtmls/userGenerating.html",
   },
   pwGen: {
     text: "Password Generator",
