@@ -14,7 +14,13 @@
     padding: .2rem;
     border-radius: .5rem;
 }
-
+nav{
+    min-height: 64px ;
+   
+}
+header{
+    min-height: 400px;
+}
 .description{
     width: 25rem;
 }

@@ -35,7 +35,13 @@ main{
 .custom-img{
     border-radius: 1rem;
 }
-
+nav{
+    min-height: 64px ;
+   
+}
+header{
+    min-height: 400px;
+}
 
 @media(max-width: 991px){
 

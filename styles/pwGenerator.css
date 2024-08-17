@@ -43,6 +43,13 @@ main{
     align-items: center;
 
 }
+nav{
+    min-height: 64px ;
+   
+}
+header{
+    min-height: 400px;
+}
 #clipBoardBtn:hover{
     animation: moveBtnAi .5s ease-out forwards; /* Wende die Animation an */
 }
