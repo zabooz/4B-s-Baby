@@ -31,7 +31,7 @@
       heroText("header", "heroTest");
   
     </script>
-    <script src="../components/navBar.js"></script>
+
     <main>
       <section class="d-flex justify-content-center align-items-center">
         <div class="d-flex flex-lg-row flex-column p-2 p-md-5 sectionDiv">
@@ -292,8 +292,8 @@
     import { loadOffCanvas } from "../components/offCanvas.js";
     import { quote } from "../components/quotes.js";
     import {clipBoard} from "../components/clipboard.js"
-    
-
+    import {createNav,configNav} from "../components/navBar.js"
+    createNav(configNav)
     quote("#quote7", "zitate", 7);
     quote("#quote9", "zitate", 9);
     quote("#quote5", "zitate", 5);

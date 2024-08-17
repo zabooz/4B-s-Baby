@@ -22,7 +22,6 @@
 </head>
 <body class="bg-custom">
     <nav id="navBar" class="sticky-top"></nav>
-    <script src="../components/navBar.js"></script>
     <header></header>
     <main>
         <section class="d-flex  justify-content-center">
@@ -153,6 +152,8 @@
       import {heroText} from "../components/heroText.js"
       import {quote} from "../components/quotes.js"
       import {clipBoard} from "../components/clipBoard.js"
+      import {createNav,configNav} from "../components/navBar.js"
+      createNav(configNav)
       quote("#quote6","zitate",6)
       heroText("header","heroUser")
       quote("#quote8","zitate",8)

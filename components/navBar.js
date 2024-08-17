@@ -1,9 +1,34 @@
-const configNav = {
+export const configNav = {
 
   targetId: "nav",
 
   home: {
-    link: "./index.html",
+    link: "../index.html",
+  },
+  testing: {
+    text: "Password Testing",
+    link: "../featureHtmls/testing.html",
+  },
+  userGen: {
+    text: "User Generator",
+    link: "../featureHtmls/userGenerating.html",
+  },
+  pwGen: {
+    text: "Password Generator",
+    link: "../featureHtmls/pwGenerating.html",
+  },
+  logo: {
+    text: "Password Playground",
+    link: "../img/animated_monkey.gif",
+  },
+};
+
+export const configNavIndex = {
+
+  targetId: "nav",
+
+  home: {
+    link: "/index.html",
   },
   testing: {
     text: "Password Testing",
@@ -19,11 +44,14 @@ const configNav = {
   },
   logo: {
     text: "Password Playground",
-    link: "./img/animated_monkey.gif",
+    link: "/img/animated_monkey.gif",
   },
 };
 
-createNavBar = (configNav) => {
+
+
+
+const createNavBar = (configNav) => {
   const navBar = `
     <nav class="navbar navbar-expand-lg nav-custom fw-semibold text-black">
       <div>
@@ -67,4 +95,14 @@ createNavBar = (configNav) => {
   return navBar;
 };
 
-document.querySelector(configNav.targetId).innerHTML = createNavBar(configNav);
+
+export  const createNav = (config) => {
+
+
+  document.querySelector(config.targetId).innerHTML = createNavBar(config);
+
+
+}
+
+
+
