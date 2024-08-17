@@ -18,6 +18,9 @@ nav{
     min-height: 64px ;
    
 }
+nav img{
+    width: 3rem;
+}
 header{
     min-height: 400px;
 }

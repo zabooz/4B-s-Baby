@@ -16,6 +16,9 @@ main{
     padding: .2rem;
     border-radius: .5rem;
 }
+nav img{
+    width: 3rem;
+}
 
 .label{
     border-radius: 5px;

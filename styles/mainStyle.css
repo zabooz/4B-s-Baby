@@ -8,7 +8,9 @@ main{
     flex-direction: column;
 
 }
-
+nav img{
+    width: 3rem;
+}
 .bg-custom{
     background-color:#23bbb8;
 }

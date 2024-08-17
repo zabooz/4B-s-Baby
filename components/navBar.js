@@ -28,7 +28,7 @@ export const configNavIndex = {
   targetId: "nav",
 
   home: {
-    link: "/index.html",
+    link: "./index.html",
   },
   testing: {
     text: "Password Testing",

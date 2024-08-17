@@ -41,6 +41,9 @@ header{
 #stopBrute{
     background: rgb(110, 18, 18);
 }
+nav img{
+    width: 3rem;
+}
 .sectionDiv{
     width: 70%;
     background: #f1f5f5;
