@@ -136,12 +136,6 @@ export function generateQuizResult() {
   const noun = selectedNounGroups[rndNumInLen(selectedNounGroups)];
 
   // Pass the names of the arrays as strings to generateUser
-  console.log(
-    adjective1,
-    adjective2,
-    noun,
-    generateUser(adjective1, adjective2, noun)
-  );
   return generateUser(adjective1, adjective2, noun);
 }
 
