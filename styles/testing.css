@@ -71,7 +71,12 @@ section{
     width: 70%;
 }
 
+.tableWrapper{
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: auto;
 
+}
 
 
 @media(max-width: 991px){

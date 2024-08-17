@@ -28,6 +28,33 @@ main{
     height: 10rem;
 
 }
+
+#clipBoardBtn{
+    position: fixed;
+    right:-5rem;
+    top:30%;
+    border-top-left-radius: 40%;
+    border-bottom-left-radius: 40%;
+    border:none;
+    width: 7rem;
+    height: 5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+#clipBoardBtn:hover{
+    animation: moveBtnAi .5s ease-out forwards; /* Wende die Animation an */
+}
+@keyframes moveBtnAi {
+        0% {
+            right: -5rem;
+        }
+        100% {
+            right: -.5rem;   
+        }   
+}
+
 .sectionDiv{
     width: 80%;
 }

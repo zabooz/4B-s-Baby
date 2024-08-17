@@ -31,8 +31,27 @@ function updateAttempts(result, table) {
     tr.appendChild(td);
   });
 
-  tBody.append(tr);
-}
+        for(let i = 0; i<dataArr.length;i++){
+
+            const td = document.createElement("td")
+            console.log(dataArr)
+            if(i=== dataArr.length -2 ){
+
+                if(dataArr[i] && dataArr[i+1]){
+                    td.textContent = dataArr[i] +" / "+ dataArr[i+1]
+                }else if(dataArr[i]){
+                    td.textContent = dataArr[i]
+                }else{
+                    td.textContent = dataArr[i+1]
+                }
+                tr.appendChild(td)
+                break;
+
+            }
+
+            td.textContent = dataArr[i]
+            tr.appendChild(td)
+        }
 
 const userGenSubmitBtn = document.getElementById("submitButton");
 
