@@ -107,7 +107,7 @@ export function generateQuizResult() {
       const groups = answerObj[`question${i}`][answerKey];
 
       // Distribute groups into adjective or noun categories
-      if (i <= 3) {
+      if (i < 3) {
         if (Array.isArray(groups)) {
           selectedAdjectiveGroups.push(...groups);
         } else {
