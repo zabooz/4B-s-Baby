@@ -3,15 +3,15 @@ const configNav = {
   targetId: "nav",
 
   home: {
-    link: "/index.html",
+    link: "./index.html",
   },
   testing: {
     text: "Password Testing",
-    link: "/featureHtmls/testing.html",
+    link: "./featureHtmls/testing.html",
   },
   userGen: {
     text: "User Generator",
-    link: "/featureHtmls/userGenerating.html",
+    link: "./featureHtmls/userGenerating.html",
   },
   pwGen: {
     text: "Password Generator",
@@ -19,7 +19,7 @@ const configNav = {
   },
   logo: {
     text: "Password Playground",
-    link: "/img/animated_monkey.gif",
+    link: "./img/animated_monkey.gif",
   },
 };
 

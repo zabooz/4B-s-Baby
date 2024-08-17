@@ -1,4 +1,4 @@
-import { storedArr,copyButton } from "/scripts/copybutton.js";
+import { storedArr,copyButton } from "../scripts/copybutton.js";
 
 const createClipBoard = () => {
     let p = "";

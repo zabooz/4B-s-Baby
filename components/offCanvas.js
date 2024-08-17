@@ -1,4 +1,4 @@
-import { fetchText } from "/utilities/fetchText.js";
+import { fetchText } from "../utilities/fetchText.js";
 
 
 const createOffCanvas = (content) => {
