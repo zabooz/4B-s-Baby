@@ -38,8 +38,13 @@ const config = {
     antworten: ["Instrumente", "Blumen", "Fahrzeuge", "Werkzeuge"],
   },
   frage5: {
-    frage: "Was interessiert Sie am meisten?",
-    antworten: ["Tiere", "Fantasiewesen", "Fantasierassen", "Nichts davon"],
+    frage: "Was spricht Sie am meisten an?",
+    antworten: [
+      "Hunde und Katzen",
+      "Drachen und Einhörner",
+      "Elfen und Zwerge",
+      "Nichts davon",
+    ],
   },
   letzteFolie: {
     frage: "Vielen Dank für Ihre Teilnahme!",
