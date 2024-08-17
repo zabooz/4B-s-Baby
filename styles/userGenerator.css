@@ -8,6 +8,9 @@
   height: 300px;
   object-fit: cover;
 }
+.carousel-caption {
+  text-shadow: 1px 1px 1px #000000;
+}
 .input {
   width: 30%;
   padding: 0.2rem;
