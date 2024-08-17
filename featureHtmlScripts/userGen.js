@@ -1,5 +1,6 @@
 import { generateUser } from "/featureHtmlScripts/newUserGenerator.js";
 import { generateQuizResult } from "/featureHtmlScripts/userPsyTest.js";
+import { copyButton } from "../scripts/copybutton.js";
 
 const userGenBtn = document.getElementById("userGeneratorBtn");
 
@@ -16,19 +17,22 @@ userGenBtn.addEventListener("click", function (e) {
 function updateAttempts(result, table) {
   
   const dataArr = result;
-
+  
   const tBody = document.querySelector(table);
   const tr = document.createElement("tr");
   const td = document.createElement("td");
+  
+  const rowCount = tBody.rows.length + 1;
+  const id = +(rowCount.toString() + 1)
+  td.textContent = rowCount
 
-  td.textContent = tBody.rows.length + 1;
   tr.appendChild(td);
 
 
         for(let i = 0; i<dataArr.length;i++){
 
             const td = document.createElement("td")
-            console.log(dataArr)
+ 
             if(i=== dataArr.length -2 ){
 
                 if(dataArr[i] && dataArr[i+1]){
@@ -43,12 +47,17 @@ function updateAttempts(result, table) {
 
             }
 
-            td.textContent = dataArr[i]
-            tr.appendChild(td)
-        }
+            if(i === 0) td.id = id;
 
-      tBody.append(tr)  
-}
+
+            td.innerText = dataArr[i]
+            tr.appendChild(td)
+            
+          }
+          tBody.append(tr)
+          const username = document.getElementById(id)
+          username.append(copyButton(id))   
+        }
 const userGenSubmitBtn = document.getElementById("submitButton");
 
 userGenSubmitBtn.addEventListener("click", function (e) {

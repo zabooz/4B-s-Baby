@@ -33,6 +33,7 @@ export const copyButton = (textId) => {
   }
 
   const textElement = document.getElementById(textId);
+
   let text;
 
   if (textElement.innerText.includes(" ")) {
