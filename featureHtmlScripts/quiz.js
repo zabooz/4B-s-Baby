@@ -53,133 +53,77 @@ const config = {
 };
 
 const quiz = (config) => {
-  return `<div id="questionCarousel" class="carousel slide w-100 mx-auto mt-5">
-      <div class="carousel-inner">
-          <!-- Erste Folie -->
-          <div class="carousel-item active">
-              <img src="${config.pic1}" class="d-block w-100" alt="Frage 1">
-              <div class="carousel-caption d-none d-md-block">
-                  <h5>Frage 1: ${config.frage1.frage}</h5>
-                  ${config.frage1.antworten
-                    .map(
-                      (antwort, index) => `
-                      <div class="form-check">
-                          <input class="form-check-input" type="radio" name="question1" id="q1a${
-                            index + 1
-                          }">
-                          <label class="form-check-label" for="q1a${
-                            index + 1
-                          }">${antwort}</label>
-                      </div>
-                  `
-                    )
-                    .join("")}
-              </div>
-          </div>
-          <!-- Zweite Folie -->
-          <div class="carousel-item">
-              <img src="${config.pic2}" class="d-block w-100" alt="Frage 2">
-              <div class="carousel-caption d-none d-md-block">
-                  <h5>Frage 2: ${config.frage2.frage}</h5>
-                  ${config.frage2.antworten
-                    .map(
-                      (antwort, index) => `
-                      <div class="form-check">
-                          <input class="form-check-input" type="radio" name="question2" id="q2a${
-                            index + 1
-                          }">
-                          <label class="form-check-label" for="q2a${
-                            index + 1
-                          }">${antwort}</label>
-                      </div>
-                  `
-                    )
-                    .join("")}
-              </div>
-          </div>
-          <!-- Dritte Folie -->
-          <div class="carousel-item">
-              <img src="${config.pic3}" class="d-block w-100" alt="Frage 3">
-              <div class="carousel-caption d-none d-md-block">
-                  <h5>Frage 3: ${config.frage3.frage}</h5>
-                  ${config.frage3.antworten
-                    .map(
-                      (antwort, index) => `
-                      <div class="form-check">
-                          <input class="form-check-input" type="radio" name="question3" id="q3a${
-                            index + 1
-                          }">
-                          <label class="form-check-label" for="q3a${
-                            index + 1
-                          }">${antwort}</label>
-                      </div>
-                  `
-                    )
-                    .join("")}
-              </div>
-          </div>
-          <!-- Vierte Folie -->
-          <div class="carousel-item">
-              <img src="${config.pic4}" class="d-block w-100" alt="Frage 4">
-              <div class="carousel-caption d-none d-md-block">
-                  <h5>Frage 4: ${config.frage4.frage}</h5>
-                  ${config.frage4.antworten
-                    .map(
-                      (antwort, index) => `
-                      <div class="form-check">
-                          <input class="form-check-input" type="radio" name="question4" id="q4a${
-                            index + 1
-                          }">
-                          <label class="form-check-label" for="q4a${
-                            index + 1
-                          }">${antwort}</label>
-                      </div>
-                  `
-                    )
-                    .join("")}
-              </div>
-          </div>
-          <!-- Fünfte Folie -->
-          <div class="carousel-item">
-              <img src="${config.pic5}" class="d-block w-100" alt="Frage 5">
-              <div class="carousel-caption d-none d-md-block">
-                  <h5>Frage 5: ${config.frage5.frage}</h5>
-                  ${config.frage5.antworten
-                    .map(
-                      (antwort, index) => `
-                      <div class="form-check">
-                          <input class="form-check-input" type="radio" name="question5" id="q5a${
-                            index + 1
-                          }">
-                          <label class="form-check-label" for="q5a${
-                            index + 1
-                          }">${antwort}</label>
-                      </div>
-                  `
-                    )
-                    .join("")}
-              </div>
-          </div>
-          <!-- Letzte Folie mit Absenden-Button -->
-          <div class="carousel-item">
-              <img src="${config.pic6}" class="d-block w-100" alt="Danke">
-              <div class="carousel-caption d-none d-md-block">
-                  <h5>${config.letzteFolie.frage}</h5>
-                  <p>${config.letzteFolie.antwort}</p>
-                  <button class="btn btn-primary" id="submitButton">Antworten absenden</button>
-              </div>
-          </div>
-      </div>
-      <!-- Steuerungselemente -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#questionCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    return `<div id="questionCarousel" class="carousel slide w-100 mx-auto mt-5">
+        <div class="carousel-indicators custom-indicators">
+            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        </div>
+        <div class="carousel-inner">
+            <!-- Erste Folie -->
+            <div class="carousel-item active">
+                <img src="${config.pic1}" class="d-block w-100" alt="Frage 1">
+                <div class="carousel-caption d-flex flex-column bg align-items-center">
+                    <h5>Frage 1: ${config.frage1.frage}</h5>
+                    <div class="p-2 d-flex flex-column gap-2">
+                        ${config.frage1.antworten
+                          .map(
+                            (antwort, index) => `
+                            <div class="form-check d-flex gap-2">
+                                <input class="form-check-input" type="radio" name="question1" id="q1a${index + 1}">
+                                <label class="form-check-label" for="q1a${index + 1}">${antwort}</label>
+                            </div>
+                        `
+                          )
+                          .join('')}
+                    </div>
+                </div>
+            </div>
+            <!-- Zweite bis fünfte Folie -->
+            ${[config.pic2, config.pic3, config.pic4, config.pic5].map((pic, i) => `
+            <div class="carousel-item">
+                <img src="${pic}" class="d-block w-100" alt="Frage ${i + 2}">
+                <div class="carousel-caption d-flex flex-column bg align-items-center">
+                    <h5>Frage ${i + 2}: ${config[`frage${i + 2}`].frage}</h5>
+                    <div class="p-2 d-flex flex-column gap-2">
+                        ${config[`frage${i + 2}`].antworten
+                          .map(
+                            (antwort, index) => `
+                            <div class="form-check d-flex gap-2">
+                                <input class="form-check-input" type="radio" name="question${i + 2}" id="q${i + 2}a${index + 1}">
+                                <label class="form-check-label" for="q${i + 2}a${index + 1}">${antwort}</label>
+                            </div>
+                        `
+                          )
+                          .join('')}
+                    </div>
+                </div>
+            </div>`).join('')}
+            <!-- Letzte Folie -->
+            <div class="carousel-item">
+                <img src="${config.pic6}" class="d-block w-100" alt="Danke">
+                <div class="carousel-caption d-flex flex-column gap-4 align-items-center">
+                    <h5>${config.letzteFolie.frage}</h5>
+                    <p>${config.letzteFolie.antwort}</p>
+                    <button class="btn btn-primary mb-4" id="submitButton">Antworten absenden</button>
+                </div>
+            </div>
+        </div>
+        <!-- Steuerungselemente -->
+         <button class="carousel-control-prev" type="button" data-bs-target="#questionCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon custom-arrow" aria-hidden="true"></span>
           <span class="visually-hidden">Zurück</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#questionCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <button class="carousel-control-next " type="button" data-bs-target="#questionCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon custom-arrow" aria-hidden="true"></span>
           <span class="visually-hidden">Weiter</span>
       </button>
-  </div>`;
-};
+    </div>`;
+  };
+  
+  
 
 document.getElementById("quiz").innerHTML = quiz(config);
