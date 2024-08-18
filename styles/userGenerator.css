@@ -48,7 +48,8 @@ header {
 }
 .form-check-input:checked {
     background-color: #FF5722;
-    border-color: #FF5722; 
+    border-color: #FF5722;
+}
 main {
   display: flex;
   flex-direction: column;
