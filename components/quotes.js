@@ -5,11 +5,11 @@ const createQuote = (content) => {
 
 
     return `
-  <div class="container my-5 sectionDiv bg-transparent">
-    <div class="row p-4 d-flex justify-content-center align-items-center bg-transparent ">
+  <div class="container my-2 my-md-5 sectionDiv bg-transparent">
+    <div class="row p-0 p-md-0 d-flex justify-content-center align-items-center bg-transparent ">
     
         <div class=" m-0 p-0 bg-transparent">
-          <div class="card-body p-4 bg-transparent d-flex flex-column ">
+          <div class="card-body p-0 p-md-4 bg-transparent d-flex flex-column ">
             <i class="fas fa-quote-left fa-2x mb-4"></i>
             <p class="lead fw-semibold">${content.zitat}</p>
             <i class="fas fa-quote-left fa-2x mb-4 ms-auto "></i>

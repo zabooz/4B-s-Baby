@@ -115,6 +115,9 @@ section{
         width: 7rem;
         height: 5rem;
     }
+    .custom-width{
+        width: 75% ! important; 
+    }
 
 
 }
