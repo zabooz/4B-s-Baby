@@ -377,6 +377,18 @@ export const tastes = [
   "Syrupy",
   "Yummy",
 ];
+export const intensities = [
+  "strong",
+  "weak",
+  "intense",
+  "mild",
+  "fierce",
+  "moderate",
+  "severe",
+  "extreme",
+  "gentle",
+  "subtle",
+];
 
 export const sounds = [
   "Loud",
@@ -561,6 +573,18 @@ export const speeds = [
   "Rocket",
   "Sonic",
   "Hotfooted",
+];
+export const ages = [
+  "young",
+  "old",
+  "ancient",
+  "middle-aged",
+  "teenage",
+  "infant",
+  "adolescent",
+  "elderly",
+  "mature",
+  "juvenile",
 ];
 
 export const qualities = [
@@ -4261,7 +4285,9 @@ export const contentArray1 = [
   "shapes",
   "textures",
   "sizes",
+  "ages",
   "emotions",
+  "intensities",
   "tastes",
   "sounds",
   "temperatures",

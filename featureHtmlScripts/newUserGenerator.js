@@ -8,6 +8,7 @@ import {
   sounds,
   temperatures,
   speeds,
+  ages,
   qualities,
   weatherTypes,
   instruments,
@@ -30,6 +31,7 @@ import {
   contentArray2,
   allAdjectives,
   allNouns,
+  intensities,
 } from "../data/englishGenerator.data.js";
 import { rndNumInLen } from "../scripts/encoder.js";
 
@@ -64,6 +66,8 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     emotions: emotions,
     tastes: tastes,
     sounds: sounds,
+    ages: ages,
+    intensities: intensities,
     temperatures: temperatures,
     speeds: speeds,
     qualities: qualities,

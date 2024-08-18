@@ -8,11 +8,13 @@ import {
   sounds,
   temperatures,
   speeds,
+  intensities,
   qualities,
   weatherTypes,
   instruments,
   fruits,
   animals,
+  ages,
   fantasyCreatures,
   vegetables,
   rpgClasses,
@@ -64,6 +66,7 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     emotions: emotions,
     tastes: tastes,
     sounds: sounds,
+    intensities: intensities,
     temperatures: temperatures,
     speeds: speeds,
     qualities: qualities,
@@ -71,6 +74,7 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     instruments: instruments,
     fruits: fruits,
     animals: animals,
+    ages: ages,
     fantasyCreatures: fantasyCreatures,
     vegetables: vegetables,
     rpgClasses: rpgClasses,
@@ -135,14 +139,14 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     return;
   }
 
-    let handOverUser = `${randomAdjective1}${randomAdjective2}${randomNoun}`;
-    
-    //Filter out dashes/spaces.
-    for (let i = 0; i < handOverUser.length; i++) {
-        if (handOverUser[i] !== "-" && handOverUser[i] !== " ") {
-            newUser += handOverUser[i];
-        }
+  let handOverUser = `${randomAdjective1}${randomAdjective2}${randomNoun}`;
+
+  //Filter out dashes/spaces.
+  for (let i = 0; i < handOverUser.length; i++) {
+    if (handOverUser[i] !== "-" && handOverUser[i] !== " ") {
+      newUser += handOverUser[i];
     }
-    
-    return newUser;
+  }
+
+  return newUser;
 }
