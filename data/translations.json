@@ -1,384 +1,610 @@
 {
-    "navbar": {
-      "home": { "en": "Home", "de": "Startseite", "fr": "Accueil", "es": "Inicio" },
-      "test": { "en": "Bruteforce", "de": "Bruteforce", "fr": "Bruteforce", "es": "Bruteforce" },
-      "convert": { "en": "Password convert", "de": "Passwort konvertieren", "fr": "Convertir mot de passe", "es": "Convertir contraseña" },
-      "generate": { "en": "Generate Password", "de": "Passwort erzeugen", "fr": "Générer mot de passe", "es": "Generar contraseña" },
-      "language": { "en": "Language", "de": "Sprache", "fr": "Langue", "es": "Idioma" }
+  "navbar": {
+    "home": {
+      "en": "Home",
+      "de": "Startseite",
+      "fr": "Accueil",
+      "es": "Inicio"
     },
-    "header": {
-      "title": {
-        "en": "Ensuring Digital Safety: The Importance of Strong Passwords and Data Security",
-        "de": "Digitale Sicherheit gewährleisten: Die Bedeutung starker Passwörter und Datensicherheit",
-        "fr": "Assurer la sécurité numérique : L'importance des mots de passe forts et de la sécurité des données",
-        "es": "Garantizar la seguridad digital: La importancia de contraseñas fuertes y la seguridad de los datos"
-      },
-      "description": {
-        "en": "In our digital age, internet safety is essential to protect ourselves from cyber threats. Strong, unique passwords are crucial for securing our accounts against unauthorized access. Regular updates and the use of complex passwords can significantly enhance our online security. Data security involves safeguarding digital information from unauthorized access and breaches. This includes using encryption, secure networks, and keeping software updated. By practicing good internet safety, password management, and data security, we can protect our personal information and maintain privacy in the digital world.",
-        "de": "In unserem digitalen Zeitalter ist Internetsicherheit unerlässlich, um uns vor Cyber-Bedrohungen zu schützen. Starke, einzigartige Passwörter sind entscheidend, um unsere Konten vor unbefugtem Zugriff zu sichern. Regelmäßige Aktualisierungen und die Verwendung komplexer Passwörter können unsere Online-Sicherheit erheblich verbessern. Datensicherheit umfasst den Schutz digitaler Informationen vor unbefugtem Zugriff und Datenverletzungen. Dazu gehören die Verwendung von Verschlüsselung, sicheren Netzwerken und die Aktualisierung von Software. Durch gute Internetsicherheit, Passwortverwaltung und Datensicherheit können wir unsere persönlichen Informationen schützen und die Privatsphäre in der digitalen Welt wahren.",
-        "fr": "À notre époque numérique, la sécurité internet est essentielle pour nous protéger contre les menaces cybernétiques. Des mots de passe forts et uniques sont cruciaux pour sécuriser nos comptes contre tout accès non autorisé. Des mises à jour régulières et l'utilisation de mots de passe complexes peuvent améliorer considérablement notre sécurité en ligne. La sécurité des données consiste à protéger les informations numériques contre les accès non autorisés et les violations. Cela inclut l'utilisation du cryptage, de réseaux sécurisés et de logiciels à jour. En pratiquant une bonne sécurité internet, une gestion des mots de passe et une sécurité des données, nous pouvons protéger nos informations personnelles et préserver la vie privée dans le monde numérique.",
-        "es": "En nuestra era digital, la seguridad en internet es esencial para protegernos de las amenazas cibernéticas. Las contraseñas fuertes y únicas son cruciales para asegurar nuestras cuentas contra el acceso no autorizado. Las actualizaciones regulares y el uso de contraseñas complejas pueden mejorar significativamente nuestra seguridad en línea. La seguridad de los datos implica proteger la información digital contra el acceso no autorizado y las violaciones. Esto incluye el uso de cifrado, redes seguras y mantener el software actualizado. Al practicar una buena seguridad en internet, la gestión de contraseñas y la seguridad de los datos, podemos proteger nuestra información personal y mantener la privacidad en el mundo digital."
-      }
+    "test": {
+      "en": "Bruteforce",
+      "de": "Bruteforce",
+      "fr": "Bruteforce",
+      "es": "Bruteforce"
     },
-    "bruteDescription":{
-      "bruteSimple":{
-        "de" :"Ein Brute-Force-Angriff probiert systematisch alle möglichen Zeichenkombinationen aus, um ein Passwort oder eine Verschlüsselung zu knacken. Dieser Ansatz ist einfach, aber zeitaufwendig und ressourcenintensiv, besonders bei starken Passwörtern.",
-        "en" :"A brute force attack systematically tries all possible character combinations to crack a password or encryption. This approach is simple, but time-consuming and resource-intensive, especially with strong passwords.",
-        "fr" :"Un attaque de force brute tente systématiquement toutes les combinaisons possibles de caractères pour craquer un mot de passe ou une cryptographie. Cette approche est simple, mais chronophage et intensive en ressources, surtout avec des mots de passe forts.",
-        "es" :"Un ataque de fuerza bruta intenta sistemáticamente todas las combinaciones posibles de caracteres para descifrar una contraseña o una criptografía. Este enfoque es simple, pero requiere mucho tiempo y recursos, especialmente con contraseñas fuertes."
-      },
-      "bruteLibrary":{
-        "de" :"Ein Bibiliotheksangriff verwendet häufige Passwörter und Phrasen, um das Passwort oder die Verschlüsselung zu knacken. Dieser Ansatz ist schneller als der einfache Brute-Force-Angriff, aber erfordert eine große Anzahl von Versuchen und ist nicht so sicher wie der Hybridangriff.",
-        "en" :"A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts.",
-        "fr" :"Un attaque par dictionnaire utilise des mots de passe et des phrases courants pour craquer un mot de passe ou une cryptographie. Cette approche est plus rapide que l'attaque par force brute simple, mais nécessite un grand nombre d'essais.",
-        "es" :"Un ataque de diccionario utiliza contraseñas y frases comunes para descifrar una contraseña o una criptografía. Este enfoque es más rápido que el ataque de fuerza bruta simple, pero requiere un gran número de intentos."
-      }
+    "convert": {
+      "en": "Password convert",
+      "de": "Passwort konvertieren",
+      "fr": "Convertir mot de passe",
+      "es": "Convertir contraseña"
     },
-    "passwordSafetyHeading": {
-      "title": {
-        "en": "Brute Force and Testing Your Password",
-        "de": "Brute Force und das Testen Ihres Passworts",
-        "fr": "Force brute et test de votre mot de passe",
-        "es": "Fuerza bruta y prueba de su contraseña"
-      },
-      "description": {
-        "en": "It's essential to understand how brute force attacks work and how to test the strength of your passwords. Brute force attacks involve systematically trying every possible combination of characters until the correct password is found. By testing your passwords against such attacks, you can ensure they are robust and secure.",
-        "de": "Es ist wichtig zu verstehen, wie Brute-Force-Angriffe funktionieren und wie Sie die Stärke Ihrer Passwörter testen können. Brute-Force-Angriffe beinhalten das systematische Ausprobieren jeder möglichen Zeichenkombination, bis das richtige Passwort gefunden ist. Indem Sie Ihre Passwörter gegen solche Angriffe testen, können Sie sicherstellen, dass sie robust und sicher sind.",
-        "fr": "Il est essentiel de comprendre comment fonctionnent les attaques par force brute et comment tester la solidité de vos mots de passe. Les attaques par force brute consistent à essayer systématiquement toutes les combinaisons possibles de caractères jusqu'à ce que le mot de passe correct soit trouvé. En testant vos mots de passe contre de telles attaques, vous pouvez vous assurer qu'ils sont robustes et sécurisés.",
-        "es": "Es esencial entender cómo funcionan los ataques de fuerza bruta y cómo probar la fortaleza de sus contraseñas. Los ataques de fuerza bruta implican probar sistemáticamente todas las combinaciones posibles de caracteres hasta encontrar la contraseña correcta. Al probar sus contraseñas contra tales ataques, puede asegurarse de que sean robustas y seguras."
-      },
-      "testingTitle": {
-        "en": "Testing Your Password",
-        "de": "Ihr Passwort testen",
-        "fr": "Tester votre mot de passe",
-        "es": "Probar su contraseña"
-      },
-      "testingDescription": {
-        "en": "Choose a mode to test your password against brute force attacks. The Simple Brute Force mode tests all possible character combinations, the Dictionary Attack mode uses common passwords and phrases, and the Hybrid Attack mode combines dictionary words with variations like numbers and symbols.",
-        "de": "Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe zu testen. Der einfache Brute-Force-Modus testet alle möglichen Zeichenkombinationen, der Bilbiotheksangriffsmodus verwendet gängige Passwörter und Phrasen.",
-        "fr": "Choisissez un mode pour tester votre mot de passe contre les attaques par force brute. Le mode Force brute simple teste toutes les combinaisons possibles de caractères, le mode Attaque par dictionnaire utilise des mots de passe et des phrases courants, et le mode Attaque hybride combine des mots du dictionnaire avec des variations comme des chiffres et des symboles.",
-        "es": "Elija un modo para probar su contraseña contra ataques de fuerza bruta. El modo de fuerza bruta simple prueba todas las combinaciones posibles de caracteres, el modo de ataque de diccionario utiliza contraseñas y frases comunes, y el modo de ataque híbrido combina palabras del diccionario con variaciones como números y símbolos."
-      },
-      "excaliburTitle": {
-        "en": "The Excalibur Method",
-        "de": "Die Excalibur-Methode",
-        "fr": "La méthode Excalibur",
-        "es": "El método Excalibur"
-      },
-      "excaliburDescription": {
-        "en": "The Excalibur method calculates the strength of your password by analyzing its complexity and predictability. Enter your password to check its strength. This method ensures your password is strong enough to withstand various types of attacks.",
-        "de": "Die Excalibur-Methode berechnet die Stärke Ihres Passworts, indem sie dessen Komplexität und Vorhersagbarkeit analysiert. Geben Sie Ihr Passwort ein, um dessen Stärke zu überprüfen. Diese Methode stellt sicher, dass Ihr Passwort stark genug ist, um verschiedenen Arten von Angriffen standzuhalten.",
-        "fr": "La méthode Excalibur calcule la solidité de votre mot de passe en analysant sa complexité et sa prévisibilité. Entrez votre mot de passe pour vérifier sa solidité. Cette méthode garantit que votre mot de passe est suffisamment fort pour résister à divers types d'attaques.",
-        "es": "El método Excalibur calcula la fortaleza de su contraseña analizando su complejidad y previsibilidad. Ingrese su contraseña para verificar su fortaleza. Este método asegura que su contraseña sea lo suficientemente fuerte como para resistir varios tipos de ataques."
-      },
-      "importanceTitle": {
-        "en": "Why Brute Force Testing Matters",
-        "de": "Warum Brute-Force-Tests wichtig sind",
-        "fr": "Pourquoi les tests de force brute sont importants",
-        "es": "Por qué son importantes las pruebas de fuerza bruta"
-      },
-      "importanceDescription": {
-        "en": "Brute force testing helps you understand the resilience of your password. Weak passwords can be easily cracked, leading to unauthorized access and potential data breaches. Regularly testing and updating your passwords enhances your security.",
-        "de": "Brute-Force-Tests helfen Ihnen, die Widerstandsfähigkeit Ihres Passworts zu verstehen. Schwache Passwörter können leicht geknackt werden, was zu unbefugtem Zugriff und möglichen Datenverletzungen führt. Regelmäßiges Testen und Aktualisieren Ihrer Passwörter erhöht Ihre Sicherheit.",
-        "fr": "Les tests de force brute vous aident à comprendre la résilience de votre mot de passe. Les mots de passe faibles peuvent être facilement craqués, ce qui entraîne un accès non autorisé et des violations potentielles de données. Tester et mettre à jour régulièrement vos mots de passe améliore votre sécurité.",
-        "es": "Las pruebas de fuerza bruta lo ayudan a comprender la resiliencia de su contraseña. Las contraseñas débiles pueden ser fácilmente descifradas, lo que lleva a un acceso no autorizado y posibles violaciones de datos. Probar y actualizar regularmente sus contraseñas mejora su seguridad."
-      }
+    "generate": {
+      "en": "Generate Password",
+      "de": "Passwort erzeugen",
+      "fr": "Générer mot de passe",
+      "es": "Generar contraseña"
     },
-    "bruteForceApp": {
-      "title": {
-        "en": "Test your Mojo",
-        "de": "Testen Sie Ihr Mojo",
-        "fr": "Testez votre Mojo",
-        "es": "Pruebe su Mojo"
-      },
-      "description1": {
-        "en": "Choose a mode to test your password against brute force attacks.The Simple <span id='bruteSimpleDescription' class='bruteDescription' data-tooltip='A brute force attack systematically tries all possible character combinations to crack a password or encryption. This approach is simple, but time-consuming and resource-intensive, especially with strong passwords.'>Brute Force mode</span> tests all possible character combinations, the <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts and is not as secure as the hybrid attack.'>Dictionary Attack mode</span> uses common passwords and phrases.",
-        "de": "Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe zu testen. Der <span id='bruteSimpleDescription' class='bruteDescription' data-tooltop='Ein Brute-Force-Angriff probiert systematisch alle möglichen Zeichenkombinationen aus, um ein Passwort oder eine Verschlüsselung zu knacken. Dieser Ansatz ist einfach, aber zeitaufwendig und ressourcenintensiv, insbesondere bei starken Passwörtern.'>einfache Brute-Force-Modus</span> testet alle möglichen Zeichenkombinationen, der <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='Ein Bibiliotheksangriff verwendet häufige Passwörter und Phrasen, um ein Passwort oder eine Verschlüsselung zu knacken. Dieser Ansatz ist schneller als ein einfacher Brute-Force-Angriff, erfordert jedoch eine große Anzahl von Versuchen und ist nicht so sicher wie ein Hybridangriff'>Bibliothek-modus</span> verwendet gängige Passwörter und Phrasen.",
-        "fr": "Choisissez un mode pour tester votre mot de passe contre les attaques par force brute. Le mode <span id='bruteSimpleDescription' class='bruteDescription' data-tooltop='Une attaque par force brute essaie systématiquement toutes les combinaisons possibles de caractères pour craquer un mot de passe ou une cryptographie. Cette méthode est simple, mais longue et gourmande en ressources, surtout avec des mots de passe forts.'>Force brute simple</span> teste toutes les combinaisons possibles de caractères, le mode <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='Une attaque par dictionnaire utilise des mots de passe et des phrases courants pour craquer un mot de passe ou une cryptographie. Cette méthode est plus rapide que l'attaque par force brute simple, mais nécessite un grand nombre de tentatives et n'est pas aussi sécurisée qu'une attaque hybride'>Attaque par dictionnaire</span> utilise des mots de passe et des phrases courants.",
-        "es": "Elija un modo para probar su contraseña contra ataques de fuerza bruta. El modo de <span id='bruteSimpleDescription' class='bruteDescription' data-tooltop='Un ataque de fuerza bruta prueba sistemáticamente todas las combinaciones posibles de caracteres para descifrar una contraseña o una cifrada. Este enfoque es simple, pero lento y requiere muchos recursos, especialmente con contraseñas fuertes.'> fuerza bruta simple</span> prueba todas las combinaciones posibles de caracteres, el modo de <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='Un ataque de diccionario utiliza contraseñas y frases comunes para descifrar una contraseña o una cifrada. Este enfoque es más rápido que un ataque de fuerza bruta simple, pero requiere un gran número de intentos y no es tan seguro como un ataque híbrido'> ataque de diccionario</span> utiliza contraseñas y frases comunes."
-      },
-      "placeholder": {
-        "en": "Enter password",
-        "de": "Gib ein Passwort ein",
-        "fr": "Entrez votre mot de passe",
-        "es": "Ingrese su contraseña"
-      },
-      "simpleMode": { "en": "Mode Simple", "de": "Einfacher Modus", "fr": "Mode simple", "es": "Modo simple" },
-      "libraryMode": { "en": "Mode Library", "de": "Bibliotheksmodus", "fr": "Mode bibliothèque", "es": "Modo biblioteca" },
-      "hybridMode": { "en": "Mode Hybrid", "de": "Hybridmodus", "fr": "Mode hybride", "es": "Modo híbrido" },
-      "startButton": { "en": "Start", "de": "Starten", "fr": "Démarrer", "es": "Iniciar" },
-      "stopButton": { "en": "Stop", "de": "Stoppen", "fr": "Arrêter", "es": "Detener" },
-      "statsHeading": {
-        "password": { "en": "Password", "de": "Passwort", "fr": "Mot de passe", "es": "Contraseña" },
-        "attempts": { "en": "Attempts", "de": "Versuche", "fr": "Tentatives", "es": "Intentos" },
-        "mode": { "en": "Mode", "de": "Modus", "fr": "Mode", "es": "Modo" },
-        "time": { "en": "Time", "de": "Zeit", "fr": "Temps", "es": "Tiempo" }
-      }
+    "language": {
+      "en": "Language",
+      "de": "Sprache",
+      "fr": "Langue",
+      "es": "Idioma"
+    }
+  },
+  "header": {
+    "title": {
+      "en": "Ensuring Digital Safety: The Importance of Strong Passwords and Data Security",
+      "de": "Digitale Sicherheit gewährleisten: Die Bedeutung starker Passwörter und Datensicherheit",
+      "fr": "Assurer la sécurité numérique : L'importance des mots de passe forts et de la sécurité des données",
+      "es": "Garantizar la seguridad digital: La importancia de contraseñas fuertes y la seguridad de los datos"
     },
-    "passwordStrengthCalc": {
-      "title": {
-        "en": "Password Excalibur",
-        "de": "Passwort Excalibur",
-        "fr": "Mot de passe Excalibur",
-        "es": "Contraseña Excalibur"
-      },
-      "description1": {
-        "en": "Password Excalibur is a tool designed to assess the strength of your password. It evaluates various factors including length, complexity, and predictability to give you a comprehensive strength score.",
-        "de": "Passwort Excalibur ist ein Tool, das entwickelt wurde, um die Stärke Ihres Passworts zu bewerten. Es bewertet verschiedene Faktoren, darunter Länge, Komplexität und Vorhersagbarkeit, um Ihnen eine umfassende Stärkebewertung zu geben.",
-        "fr": "Mot de passe Excalibur est un outil conçu pour évaluer la solidité de votre mot de passe. Il évalue divers facteurs, notamment la longueur, la complexité et la prévisibilité, pour vous donner un score de solidité complet.",
-        "es": "Contraseña Excalibur es una herramienta diseñada para evaluar la fortaleza de su contraseña. Evalúa varios factores, incluidos la longitud, la complejidad y la previsibilidad, para brindarle una puntuación de fortaleza integral."
-      },
-      "description2": {
-        "en": "To use Password Excalibur, simply enter your password and click the 'Test it' button. The tool will analyze your password and provide a detailed result, highlighting areas where your password is strong and suggestions for improvement.",
-        "de": "Um Passwort Excalibur zu verwenden, geben Sie einfach Ihr Passwort ein und klicken Sie auf die Schaltfläche 'Testen'. Das Tool analysiert Ihr Passwort und liefert ein detailliertes Ergebnis, das Bereiche hervorhebt, in denen Ihr Passwort stark ist, sowie Verbesserungsvorschläge.",
-        "fr": "Pour utiliser Mot de passe Excalibur, entrez simplement votre mot de passe et cliquez sur le bouton 'Tester'. L'outil analysera votre mot de passe et fournira un résultat détaillé, mettant en évidence les domaines où votre mot de passe est fort et des suggestions d'amélioration.",
-        "es": "Para usar Contraseña Excalibur, simplemente ingrese su contraseña y haga clic en el botón 'Probar'. La herramienta analizará su contraseña y proporcionará un resultado detallado, destacando las áreas donde su contraseña es fuerte y sugerencias para mejorar."
-      },
-      "placeholder": {
-        "en": "Enter  password",
-        "de": "Gib ein Passwort ein",
-        "fr": "Entrez  de passe",
-        "es": "Ingrese su contraseña"
-      },
-      "testButton": { "en": "Test it", "de": "Testen", "fr": "Tester", "es": "Probar" },
-      "result": { "en": "Result:", "de": "Ergebnis:", "fr": "Résultat:", "es": "Resultado:" }
+    "description": {
+      "en": "In our digital age, internet safety is essential to protect ourselves from cyber threats. Strong, unique passwords are crucial for securing our accounts against unauthorized access. Regular updates and the use of complex passwords can significantly enhance our online security. Data security involves safeguarding digital information from unauthorized access and breaches. This includes using encryption, secure networks, and keeping software updated. By practicing good internet safety, password management, and data security, we can protect our personal information and maintain privacy in the digital world.",
+      "de": "In unserem digitalen Zeitalter ist Internetsicherheit unerlässlich, um uns vor Cyber-Bedrohungen zu schützen. Starke, einzigartige Passwörter sind entscheidend, um unsere Konten vor unbefugtem Zugriff zu sichern. Regelmäßige Aktualisierungen und die Verwendung komplexer Passwörter können unsere Online-Sicherheit erheblich verbessern. Datensicherheit umfasst den Schutz digitaler Informationen vor unbefugtem Zugriff und Datenverletzungen. Dazu gehören die Verwendung von Verschlüsselung, sicheren Netzwerken und die Aktualisierung von Software. Durch gute Internetsicherheit, Passwortverwaltung und Datensicherheit können wir unsere persönlichen Informationen schützen und die Privatsphäre in der digitalen Welt wahren.",
+      "fr": "À notre époque numérique, la sécurité internet est essentielle pour nous protéger contre les menaces cybernétiques. Des mots de passe forts et uniques sont cruciaux pour sécuriser nos comptes contre tout accès non autorisé. Des mises à jour régulières et l'utilisation de mots de passe complexes peuvent améliorer considérablement notre sécurité en ligne. La sécurité des données consiste à protéger les informations numériques contre les accès non autorisés et les violations. Cela inclut l'utilisation du cryptage, de réseaux sécurisés et de logiciels à jour. En pratiquant une bonne sécurité internet, une gestion des mots de passe et une sécurité des données, nous pouvons protéger nos informations personnelles et préserver la vie privée dans le monde numérique.",
+      "es": "En nuestra era digital, la seguridad en internet es esencial para protegernos de las amenazas cibernéticas. Las contraseñas fuertes y únicas son cruciales para asegurar nuestras cuentas contra el acceso no autorizado. Las actualizaciones regulares y el uso de contraseñas complejas pueden mejorar significativamente nuestra seguridad en línea. La seguridad de los datos implica proteger la información digital contra el acceso no autorizado y las violaciones. Esto incluye el uso de cifrado, redes seguras y mantener el software actualizado. Al practicar una buena seguridad en internet, la gestión de contraseñas y la seguridad de los datos, podemos proteger nuestra información personal y mantener la privacidad en el mundo digital."
+    }
+  },
+  "bruteDescription": {
+    "bruteSimple": {
+      "de": "Ein Brute-Force-Angriff probiert systematisch alle möglichen Zeichenkombinationen aus, um ein Passwort oder eine Verschlüsselung zu knacken. Dieser Ansatz ist einfach, aber zeitaufwendig und ressourcenintensiv, besonders bei starken Passwörtern.",
+      "en": "A brute force attack systematically tries all possible character combinations to crack a password or encryption. This approach is simple, but time-consuming and resource-intensive, especially with strong passwords.",
+      "fr": "Un attaque de force brute tente systématiquement toutes les combinaisons possibles de caractères pour craquer un mot de passe ou une cryptographie. Cette approche est simple, mais chronophage et intensive en ressources, surtout avec des mots de passe forts.",
+      "es": "Un ataque de fuerza bruta intenta sistemáticamente todas las combinaciones posibles de caracteres para descifrar una contraseña o una criptografía. Este enfoque es simple, pero requiere mucho tiempo y recursos, especialmente con contraseñas fuertes."
     },
-    "passwordCreationHeading": {
-      "title": {
-        "en": "How to Create or Generate a Strong Password",
-        "de": "Wie man ein starkes Passwort erstellt oder generiert",
-        "fr": "Comment créer ou générer un mot de passe fort",
-        "es": "Cómo crear o generar una contraseña fuerte"
-      },
-      "description": {
-        "en": "Creating a strong password is crucial to protect your personal and financial information from cyber threats. Here’s a concise guide on how to create robust passwords that can effectively safeguard your online accounts.",
-        "de": "Ein starkes Passwort zu erstellen ist entscheidend, um Ihre persönlichen und finanziellen Informationen vor Cyber-Bedrohungen zu schützen. Hier ist ein kurzer Leitfaden, wie Sie robuste Passwörter erstellen können, die Ihre Online-Konten effektiv schützen.",
-        "fr": "Créer un mot de passe fort est crucial pour protéger vos informations personnelles et financières contre les menaces cybernétiques. Voici un guide concis sur la façon de créer des mots de passe robustes qui peuvent efficacement protéger vos comptes en ligne.",
-        "es": "Crear una contraseña fuerte es crucial para proteger su información personal y financiera de las amenazas cibernéticas. Aquí hay una guía concisa sobre cómo crear contraseñas robustas que puedan proteger eficazmente sus cuentas en línea."
-      },
-      "characteristicsTitle": {
-        "en": "Characteristics of a Strong Password",
-        "de": "Merkmale eines starken Passworts",
-        "fr": "Caractéristiques d'un mot de passe fort",
-        "es": "Características de una contraseña fuerte"
-      },
-      "characteristicsDescription": {
-        "en": "A strong password should be long, complex, unpredictable, and unique. Aim for at least 12-16 characters with a mix of uppercase and lowercase letters, numbers, and special characters. Avoid easily guessable information like birthdays or common words. Each password should be unique to a specific account to prevent multiple accounts from being compromised.",
-        "de": "Ein starkes Passwort sollte lang, komplex, unvorhersehbar und einzigartig sein. Streben Sie mindestens 12-16 Zeichen mit einer Mischung aus Groß- und Kleinbuchstaben, Zahlen und Sonderzeichen an. Vermeiden Sie leicht zu erratende Informationen wie Geburtstage oder gängige Wörter. Jedes Passwort sollte für ein bestimmtes Konto einzigartig sein, um zu verhindern, dass mehrere Konten kompromittiert werden.",
-        "fr": "Un mot de passe fort doit être long, complexe, imprévisible et unique. Visez au moins 12-16 caractères avec un mélange de lettres majuscules et minuscules, de chiffres et de caractères spéciaux. Évitez les informations facilement devinables comme les anniversaires ou les mots courants. Chaque mot de passe doit être unique pour un compte spécifique afin d'empêcher que plusieurs comptes soient compromis.",
-        "es": "Una contraseña fuerte debe ser larga, compleja, impredecible y única. Apunte a al menos 12-16 caracteres con una mezcla de letras mayúsculas y minúsculas, números y caracteres especiales. Evite información fácilmente adivinable como cumpleaños o palabras comunes. Cada contraseña debe ser única para una cuenta específica para evitar que varias cuentas se vean comprometidas."
-      },
-      "stepsTitle": {
-        "en": "Steps to Create a Strong Password",
-        "de": "Schritte zur Erstellung eines starken Passworts",
-        "fr": "Étapes pour créer un mot de passe fort",
-        "es": "Pasos para crear una contraseña fuerte"
-      },
-      "stepsDescription": {
-        "en": "Start with a memorable base phrase, then add complexity by substituting some letters with numbers and symbols. For example, 'GreenDolphinSwims2024!' becomes 'Gr33nD0lph!nSw!ms2024!' This method ensures your password is both strong and memorable.",
-        "de": "Beginnen Sie mit einer einprägsamen Basisphrase und fügen Sie dann Komplexität hinzu, indem Sie einige Buchstaben durch Zahlen und Symbole ersetzen. Zum Beispiel wird aus 'GreenDolphinSwims2024!' 'Gr33nD0lph!nSw!ms2024!'. Diese Methode stellt sicher, dass Ihr Passwort sowohl stark als auch einprägsam ist.",
-        "fr": "Commencez par une phrase de base mémorable, puis ajoutez de la complexité en substituant certaines lettres par des chiffres et des symboles. Par exemple, 'GreenDolphinSwims2024!' devient 'Gr33nD0lph!nSw!ms2024!'. Cette méthode garantit que votre mot de passe est à la fois fort et mémorable.",
-        "es": "Comience con una frase base memorable, luego agregue complejidad sustituyendo algunas letras por números y símbolos. Por ejemplo, 'GreenDolphinSwims2024!' se convierte en 'Gr33nD0lph!nSw!ms2024!'. Este método asegura que su contraseña sea tanto fuerte como memorable."
-      },
-      "managementTitle": {
-        "en": "Managing Multiple Passwords",
-        "de": "Verwaltung mehrerer Passwörter",
-        "fr": "Gestion de plusieurs mots de passe",
-        "es": "Gestionar múltiples contraseñas"
-      },
-      "managementDescription": {
-        "en": "Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>",
-        "de": "Die Verwendung eines Passwort-Managers hilft bei der Verwaltung mehrerer eindeutiger Passwörter. Diese Tools speichern und füllen Passwörter automatisch aus, sodass Sie sich nur ein Master-Passwort merken müssen. Beliebte Optionen sind  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>.",
-        "fr": "L'utilisation d'un gestionnaire de mots de passe aide à gérer plusieurs mots de passe uniques. Ces outils stockent et remplissent automatiquement les mots de passe, vous n'avez donc besoin de vous souvenir que d'un seul mot de passe principal. Les options populaires incluent  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>.",
-        "es": "El uso de un administrador de contraseñas ayuda a gestionar múltiples contraseñas únicas. Estas herramientas almacenan y rellenan automáticamente las contraseñas, por lo que solo necesita recordar una contraseña maestra. Las opciones populares incluyen  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>."
-      }
+    "bruteLibrary": {
+      "de": "Ein Bibiliotheksangriff verwendet häufige Passwörter und Phrasen, um das Passwort oder die Verschlüsselung zu knacken. Dieser Ansatz ist schneller als der einfache Brute-Force-Angriff, aber erfordert eine große Anzahl von Versuchen und ist nicht so sicher wie der Hybridangriff.",
+      "en": "A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts.",
+      "fr": "Un attaque par dictionnaire utilise des mots de passe et des phrases courants pour craquer un mot de passe ou une cryptographie. Cette approche est plus rapide que l'attaque par force brute simple, mais nécessite un grand nombre d'essais.",
+      "es": "Un ataque de diccionario utiliza contraseñas y frases comunes para descifrar una contraseña o una criptografía. Este enfoque es más rápido que el ataque de fuerza bruta simple, pero requiere un gran número de intentos."
+    }
+  },
+  "passwordSafetyHeading": {
+    "title": {
+      "en": "Brute Force and Testing Your Password",
+      "de": "Brute Force und das Testen Ihres Passworts",
+      "fr": "Force brute et test de votre mot de passe",
+      "es": "Fuerza bruta y prueba de su contraseña"
     },
-    "runeTranslatorApp": {
-      "title": {
-        "en": "Rune Translator",
-        "de": "Runen-Übersetzer",
-        "fr": "Traducteur de runes",
-        "es": "Traductor de runas"
-      },
-      "description1": {
-        "en": "Transform your password into leetspeak for added security. Simply enter your password, and the converter will change it into a more secure, leetspeak version.",
-        "de": "Verwandeln Sie Ihr Passwort in Leetspeak für zusätzliche Sicherheit. Geben Sie einfach Ihr Passwort ein, und der Konverter verwandelt es in eine sicherere Leetspeak-Version.",
-        "fr": "Transformez votre mot de passe en leetspeak pour plus de sécurité. Entrez simplement votre mot de passe et le convertisseur le changera en une version leetspeak plus sécurisée.",
-        "es": "Transforme su contraseña en leetspeak para mayor seguridad. Simplemente ingrese su contraseña y el convertidor la cambiará a una versión leetspeak más segura."
-      },
-      "description2": {
-        "en": "This enhances your password's strength by replacing common characters with numbers and symbols.",
-        "de": "Dies erhöht die Stärke Ihres Passworts, indem gängige Zeichen durch Zahlen und Symbole ersetzt werden.",
-        "fr": "Cela renforce la solidité de votre mot de passe en remplaçant les caractères courants par des chiffres et des symboles.",
-        "es": "Esto mejora la fortaleza de su contraseña al reemplazar caracteres comunes con números y símbolos."
-      },
-      "placeholder": {
-        "en": "Enter password",
-        "de": "Gib ein Passwort ein",
-        "fr": "Entrez de passe",
-        "es": "Ingrese su contraseña"
-      },
-      "simpleLeet": { "en": "Simple Leetspeak", "de": "Einfaches Leetspeak", "fr": "Leetspeak simple", "es": "Leetspeak simple" },
-      "advancedLeet": { "en": "Advanced Leetspeak", "de": "Fortgeschrittenes Leetspeak", "fr": "Leetspeak avancé", "es": "Leetspeak avanzado" },
-      "complicatedLeet": { "en": "Complicated Leetspeak", "de": "Kompliziertes Leetspeak", "fr": "Leetspeak compliqué", "es": "Leetspeak complicado" },
-      "convertButton": { "en": "Convert", "de": "Konvertieren", "fr": "Convertir", "es": "Convertir" },
-      "runeword": { "en": "Your runeword:", "de": "Ihr Runenwort:", "fr": "Votre mot runique:", "es": "Tu runa:" }
+    "description": {
+      "en": "It's essential to understand how brute force attacks work and how to test the strength of your passwords. Brute force attacks involve systematically trying every possible combination of characters until the correct password is found. By testing your passwords against such attacks, you can ensure they are robust and secure.",
+      "de": "Es ist wichtig zu verstehen, wie Brute-Force-Angriffe funktionieren und wie Sie die Stärke Ihrer Passwörter testen können. Brute-Force-Angriffe beinhalten das systematische Ausprobieren jeder möglichen Zeichenkombination, bis das richtige Passwort gefunden ist. Indem Sie Ihre Passwörter gegen solche Angriffe testen, können Sie sicherstellen, dass sie robust und sicher sind.",
+      "fr": "Il est essentiel de comprendre comment fonctionnent les attaques par force brute et comment tester la solidité de vos mots de passe. Les attaques par force brute consistent à essayer systématiquement toutes les combinaisons possibles de caractères jusqu'à ce que le mot de passe correct soit trouvé. En testant vos mots de passe contre de telles attaques, vous pouvez vous assurer qu'ils sont robustes et sécurisés.",
+      "es": "Es esencial entender cómo funcionan los ataques de fuerza bruta y cómo probar la fortaleza de sus contraseñas. Los ataques de fuerza bruta implican probar sistemáticamente todas las combinaciones posibles de caracteres hasta encontrar la contraseña correcta. Al probar sus contraseñas contra tales ataques, puede asegurarse de que sean robustas y seguras."
     },
-    "pictureMagicApp": {
-      "title": {
-        "en": "Picture Magic",
-        "de": "Bildmagie",
-        "fr": "Magie d'image",
-        "es": "Magia de imagen"
-      },
-      "description1": {
-        "en": "Upload a photo, and our app will convert it into a secure password.",
-        "de": "Laden Sie ein Foto hoch und unsere App verwandelt es in ein sicheres Passwort.",
-        "fr": "Téléchargez une photo et notre application la convertira en un mot de passe sécurisé.",
-        "es": "Sube una foto y nuestra aplicación la convertirá en una contraseña segura."
-      },
-      "description2": {
-        "en": "This unique method transforms visual information into a strong, complex password, enhancing your online security with ease.",
-        "de": "Diese einzigartige Methode verwandelt visuelle Informationen in ein starkes, komplexes Passwort und verbessert Ihre Online-Sicherheit mühelos.",
-        "fr": "Cette méthode unique transforme les informations visuelles en un mot de passe fort et complexe, améliorant ainsi votre sécurité en ligne avec facilité.",
-        "es": "Este método único transforma la información visual en una contraseña fuerte y compleja, mejorando su seguridad en línea con facilidad."
-      },
-      "uploadLabel": {
-        "en": "Upload your Picture",
-        "de": "Laden Sie Ihr Bild hoch",
-        "fr": "Téléchargez votre photo",
-        "es": "Sube tu foto"
-      },
-      "convertButton": { "en": "Convert", "de": "Konvertieren", "fr": "Convertir", "es": "Convertir" },
-      "result": { "en": "Your Password:", "de": "Ihr Passwort:", "fr": "Votre mot de passe:", "es": "Tu contraseña:" }
+    "testingTitle": {
+      "en": "Testing Your Password",
+      "de": "Ihr Passwort testen",
+      "fr": "Tester votre mot de passe",
+      "es": "Probar su contraseña"
     },
-    "usernameCreationHeading": {
-      "title": {
-        "en": "Creating Unique Usernames",
-        "de": "Einzigartige Benutzernamen erstellen",
-        "fr": "Créer des noms d'utilisateur uniques",
-        "es": "Crear nombres de usuario únicos"
-      },
-      "description": {
-        "en": "Creating a unique and memorable username is important for your online identity. A good username should reflect your personality while being secure and difficult to guess.",
-        "de": "Ein einzigartiger und einprägsamer Benutzername ist wichtig für Ihre Online-Identität. Ein guter Benutzername sollte Ihre Persönlichkeit widerspiegeln, während er sicher und schwer zu erraten ist.",
-        "fr": "Créer un nom d'utilisateur unique et mémorable est important pour votre identité en ligne. Un bon nom d'utilisateur doit refléter votre personnalité tout en étant sécurisé et difficile à deviner.",
-        "es": "Crear un nombre de usuario único y memorable es importante para su identidad en línea. Un buen nombre de usuario debe reflejar su personalidad mientras sea seguro y difícil de adivinar."
-      },
-      "tipsTitle": {
-        "en": "Tips for Creating Usernames",
-        "de": "Tipps zur Erstellung von Benutzernamen",
-        "fr": "Conseils pour créer des noms d'utilisateur",
-        "es": "Consejos para crear nombres de usuario"
-      },
-      "tipsDescription": {
-        "en": "Use a combination of adjectives and nouns to create unique usernames. Consider using descriptive words that reflect your interests or characteristics. Avoid using personal information such as your real name or birthdate.",
-        "de": "Verwenden Sie eine Kombination aus Adjektiven und Nomen, um einzigartige Benutzernamen zu erstellen. Erwägen Sie die Verwendung beschreibender Wörter, die Ihre Interessen oder Eigenschaften widerspiegeln. Vermeiden Sie die Verwendung persönlicher Informationen wie Ihres echten Namens oder Geburtsdatums.",
-        "fr": "Utilisez une combinaison d'adjectifs et de noms pour créer des noms d'utilisateur uniques. Envisagez d'utiliser des mots descriptifs qui reflètent vos intérêts ou vos caractéristiques. Évitez d'utiliser des informations personnelles telles que votre vrai nom ou votre date de naissance.",
-        "es": "Utilice una combinación de adjetivos y sustantivos para crear nombres de usuario únicos. Considere usar palabras descriptivas que reflejen sus intereses o características. Evite usar información personal como su nombre real o fecha de nacimiento."
-      },
-      "generatorsTitle": {
-        "en": "Username Generators",
-        "de": "Benutzernamensgeneratoren",
-        "fr": "Générateurs de noms d'utilisateur",
-        "es": "Generadores de nombres de usuario"
-      },
-      "generatorsDescription": {
-        "en": "Username generators can help create unique usernames by combining random adjectives and nouns. These tools ensure that your username is distinctive and not easily guessed. You can select up to two groups of adjectives and a group of nouns, or let the generator create a random combination for you.",
-        "de": "Benutzernamensgeneratoren können dabei helfen, einzigartige Benutzernamen zu erstellen, indem sie zufällige Adjektive und Nomen kombinieren. Diese Tools stellen sicher, dass Ihr Benutzername unverwechselbar und nicht leicht zu erraten ist. Sie können bis zu zwei Gruppen von Adjektiven und eine Gruppe von Nomen auswählen oder den Generator eine zufällige Kombination für Sie erstellen lassen.",
-        "fr": "Les générateurs de noms d'utilisateur peuvent aider à créer des noms d'utilisateur uniques en combinant des adjectifs et des noms aléatoires. Ces outils garantissent que votre nom d'utilisateur est distinctif et pas facilement devinable. Vous pouvez sélectionner jusqu'à deux groupes d'adjectifs et un groupe de noms, ou laisser le générateur créer une combinaison aléatoire pour vous.",
-        "es": "Los generadores de nombres de usuario pueden ayudar a crear nombres de usuario únicos combinando adjetivos y sustantivos aleatorios. Estas herramientas aseguran que su nombre de usuario sea distintivo y no fácil de adivinar. Puede seleccionar hasta dos grupos de adjetivos y un grupo de sustantivos, o dejar que el generador cree una combinación aleatoria para usted."
-      }
+    "testingDescription": {
+      "en": "Choose a mode to test your password against brute force attacks. The Simple Brute Force mode tests all possible character combinations, the Dictionary Attack mode uses common passwords and phrases, and the Hybrid Attack mode combines dictionary words with variations like numbers and symbols.",
+      "de": "Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe zu testen. Der einfache Brute-Force-Modus testet alle möglichen Zeichenkombinationen, der Bilbiotheksangriffsmodus verwendet gängige Passwörter und Phrasen.",
+      "fr": "Choisissez un mode pour tester votre mot de passe contre les attaques par force brute. Le mode Force brute simple teste toutes les combinaisons possibles de caractères, le mode Attaque par dictionnaire utilise des mots de passe et des phrases courants, et le mode Attaque hybride combine des mots du dictionnaire avec des variations comme des chiffres et des symboles.",
+      "es": "Elija un modo para probar su contraseña contra ataques de fuerza bruta. El modo de fuerza bruta simple prueba todas las combinaciones posibles de caracteres, el modo de ataque de diccionario utiliza contraseñas y frases comunes, y el modo de ataque híbrido combina palabras del diccionario con variaciones como números y símbolos."
     },
-    "identityWizardryApp": {
-      "title": {
-        "en": "Identity Wizardry",
-        "de": "Identitätszauberei",
-        "fr": "Sorcellerie d'identité",
-        "es": "Magia de identidad"
-      },
-      "description1": {
-        "en": "Create a unique username by selecting up to two groups of adjectives and a group of nouns, or let the generator create a random combination for you.",
-        "de": "Erstellen Sie einen einzigartigen Benutzernamen, indem Sie bis zu zwei Gruppen von Adjektiven und eine Gruppe von Nomen auswählen, oder lassen Sie den Generator eine zufällige Kombination für Sie erstellen.",
-        "fr": "Créez un nom d'utilisateur unique en sélectionnant jusqu'à deux groupes d'adjectifs et un groupe de noms, ou laissez le générateur créer une combinaison aléatoire pour vous.",
-        "es": "Cree un nombre de usuario único seleccionando hasta dos grupos de adjetivos y un grupo de sustantivos, o deje que el generador cree una combinación aleatoria para usted."
-      },
-      "description2": {
-        "en": "Ensure your username is unique and reflects your identity for a personalized online experience.",
-        "de": "Stellen Sie sicher, dass Ihr Benutzername einzigartig ist und Ihre Identität für ein personalisiertes Online-Erlebnis widerspiegelt.",
-        "fr": "Assurez-vous que votre nom d'utilisateur est unique et reflète votre identité pour une expérience en ligne personnalisée.",
-        "es": "Asegúrese de que su nombre de usuario sea único y refleje su identidad para una experiencia en línea personalizada."
-      },
-      "firstAdjectiveLabel": {
-        "en": "First adjective:",
-        "de": "Erstes Adjektiv:",
-        "fr": "Premier adjectif:",
-        "es": "Primer adjetivo:"
-      },
-      "secondAdjectiveLabel": {
-        "en": "Second adjective:",
-        "de": "Zweites Adjektiv:",
-        "fr": "Deuxième adjectif:",
-        "es": "Segundo adjetivo:"
-      },
-      "nounLabel": {
-        "en": "Choose a noun:",
-        "de": "Wählen Sie ein Nomen:",
-        "fr": "Choisissez un nom:",
-        "es": "Elija un sustantivo:"
-      },
-      "random": { "en": "Random", "de": "Zufällig", "fr": "Aléatoire", "es": "Aleatorio" },
-      "shapes": { "en": "Shape", "de": "Form", "fr": "Forme", "es": "Forma" },
-      "colors": { "en": "Color", "de": "Farbe", "fr": "Couleur", "es": "Color" },
-      "textures": { "en": "Texture", "de": "Textur", "fr": "Texture", "es": "Textura" },
-      "sizes": { "en": "Size", "de": "Größe", "fr": "Taille", "es": "Tamaño" },
-      "tastes": { "en": "Taste", "de": "Geschmack", "fr": "Goût", "es": "Sabor" },
-      "emotions": { "en": "Emotion", "de": "Emotion", "fr": "Émotion", "es": "Emoción" },
-      "sounds": { "en": "Sound", "de": "Klang", "fr": "Son", "es": "Sonido" },
-      "temperatures": { "en": "Temperature", "de": "Temperatur", "fr": "Température", "es": "Temperatura" },
-      "speeds": { "en": "Speed", "de": "Geschwindigkeit", "fr": "Vitesse", "es": "Velocidad" },
-      "qualities": { "en": "Quality", "de": "Qualität", "fr": "Qualité", "es": "Calidad" },
-      "weatherTypes": { "en": "Weather", "de": "Wetter", "fr": "Temps", "es": "Clima" },
-      "instruments": { "en": "Instrument", "de": "Instrument", "fr": "Instrument", "es": "Instrumento" },
-      "fruits": { "en": "Fruit", "de": "Frucht", "fr": "Fruit", "es": "Fruta" },
-      "vegetables": { "en": "Vegetable", "de": "Gemüse", "fr": "Légume", "es": "Vegetal" },
-      "animals": { "en": "Animal", "de": "Tier", "fr": "Animal", "es": "Animal" },
-      "fantasyCreatures": { "en": "Fantasy Creature", "de": "Fantasiegeschöpf", "fr": "Créature fantastique", "es": "Criatura fantástica" },
-      "rpgClasses": { "en": "Rpg Class", "de": "RPG-Klasse", "fr": "Classe RPG", "es": "Clase RPG" },
-      "fantasyRaces": { "en": "Fantasy race", "de": "Fantasie-Rasse", "fr": "Race fantastique", "es": "Raza fantástica" },
-      "occupations": { "en": "Jobs", "de": "Jobs", "fr": "Métiers", "es": "Trabajos" },
-      "vehicles": { "en": "Vehicle", "de": "Fahrzeug", "fr": "Véhicule", "es": "Vehículo" },
-      "food": { "en": "Food", "de": "Essen", "fr": "Nourriture", "es": "Comida" },
-      "tools": { "en": "Tool", "de": "Werkzeug", "fr": "Outil", "es": "Herramienta" },
-      "beverages": { "en": "Beverage", "de": "Getränk", "fr": "Boisson", "es": "Bebida" },
-      "clothingItems": { "en": "Clothes", "de": "Kleidung", "fr": "Vêtements", "es": "Ropa" },
-      "bodyParts": { "en": "Bodypart", "de": "Körperteil", "fr": "Partie du corps", "es": "Parte del cuerpo" },
-      "flowers": { "en": "Flower", "de": "Blume", "fr": "Fleur", "es": "Flor" },
-      "desserts": { "en": "Dessert", "de": "Dessert", "fr": "Dessert", "es": "Postre" },
-      "generateButton": { "en": "Generate", "de": "Generieren", "fr": "Générer", "es": "Generar" },
-      "newUsername": { "en": "Username:", "de": "Benutzername:", "fr": "Nom d'utilisateur:", "es": "Nombre de usuario:" }
+    "excaliburTitle": {
+      "en": "The Excalibur Method",
+      "de": "Die Excalibur-Methode",
+      "fr": "La méthode Excalibur",
+      "es": "El método Excalibur"
     },
-    "glyphSorceryApp": {
-      "title": {
-        "en": "Glyph Sorcery",
-        "de": "Glyphenzauberei",
-        "fr": "Sorcelerie de glyphes",
-        "es": "Magia de glifos"
+    "excaliburDescription": {
+      "en": "The Excalibur method calculates the strength of your password by analyzing its complexity and predictability. Enter your password to check its strength. This method ensures your password is strong enough to withstand various types of attacks.",
+      "de": "Die Excalibur-Methode berechnet die Stärke Ihres Passworts, indem sie dessen Komplexität und Vorhersagbarkeit analysiert. Geben Sie Ihr Passwort ein, um dessen Stärke zu überprüfen. Diese Methode stellt sicher, dass Ihr Passwort stark genug ist, um verschiedenen Arten von Angriffen standzuhalten.",
+      "fr": "La méthode Excalibur calcule la solidité de votre mot de passe en analysant sa complexité et sa prévisibilité. Entrez votre mot de passe pour vérifier sa solidité. Cette méthode garantit que votre mot de passe est suffisamment fort pour résister à divers types d'attaques.",
+      "es": "El método Excalibur calcula la fortaleza de su contraseña analizando su complejidad y previsibilidad. Ingrese su contraseña para verificar su fortaleza. Este método asegura que su contraseña sea lo suficientemente fuerte como para resistir varios tipos de ataques."
+    },
+    "importanceTitle": {
+      "en": "Why Brute Force Testing Matters",
+      "de": "Warum Brute-Force-Tests wichtig sind",
+      "fr": "Pourquoi les tests de force brute sont importants",
+      "es": "Por qué son importantes las pruebas de fuerza bruta"
+    },
+    "importanceDescription": {
+      "en": "Brute force testing helps you understand the resilience of your password. Weak passwords can be easily cracked, leading to unauthorized access and potential data breaches. Regularly testing and updating your passwords enhances your security.",
+      "de": "Brute-Force-Tests helfen Ihnen, die Widerstandsfähigkeit Ihres Passworts zu verstehen. Schwache Passwörter können leicht geknackt werden, was zu unbefugtem Zugriff und möglichen Datenverletzungen führt. Regelmäßiges Testen und Aktualisieren Ihrer Passwörter erhöht Ihre Sicherheit.",
+      "fr": "Les tests de force brute vous aident à comprendre la résilience de votre mot de passe. Les mots de passe faibles peuvent être facilement craqués, ce qui entraîne un accès non autorisé et des violations potentielles de données. Tester et mettre à jour régulièrement vos mots de passe améliore votre sécurité.",
+      "es": "Las pruebas de fuerza bruta lo ayudan a comprender la resiliencia de su contraseña. Las contraseñas débiles pueden ser fácilmente descifradas, lo que lleva a un acceso no autorizado y posibles violaciones de datos. Probar y actualizar regularmente sus contraseñas mejora su seguridad."
+    }
+  },
+  "bruteForceApp": {
+    "title": {
+      "en": "Test your Mojo",
+      "de": "Testen Sie Ihr Mojo",
+      "fr": "Testez votre Mojo",
+      "es": "Pruebe su Mojo"
+    },
+    "description1": {
+      "en": "Choose a mode to test your password against brute force attacks.The Simple <span id='bruteSimpleDescription' class='bruteDescription' data-tooltip='A brute force attack systematically tries all possible character combinations to crack a password or encryption. This approach is simple, but time-consuming and resource-intensive, especially with strong passwords.'>Brute Force mode</span> tests all possible character combinations, the <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='A dictionary attack uses common passwords and phrases to crack a password or encryption. This approach is faster than the simple brute force attack, but requires a large number of attempts and is not as secure as the hybrid attack.'>Dictionary Attack mode</span> uses common passwords and phrases.",
+      "de": "Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe zu testen. Der <span id='bruteSimpleDescription' class='bruteDescription' data-tooltop='Ein Brute-Force-Angriff probiert systematisch alle möglichen Zeichenkombinationen aus, um ein Passwort oder eine Verschlüsselung zu knacken. Dieser Ansatz ist einfach, aber zeitaufwendig und ressourcenintensiv, insbesondere bei starken Passwörtern.'>einfache Brute-Force-Modus</span> testet alle möglichen Zeichenkombinationen, der <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='Ein Bibiliotheksangriff verwendet häufige Passwörter und Phrasen, um ein Passwort oder eine Verschlüsselung zu knacken. Dieser Ansatz ist schneller als ein einfacher Brute-Force-Angriff, erfordert jedoch eine große Anzahl von Versuchen und ist nicht so sicher wie ein Hybridangriff'>Bibliothek-modus</span> verwendet gängige Passwörter und Phrasen.",
+      "fr": "Choisissez un mode pour tester votre mot de passe contre les attaques par force brute. Le mode <span id='bruteSimpleDescription' class='bruteDescription' data-tooltop='Une attaque par force brute essaie systématiquement toutes les combinaisons possibles de caractères pour craquer un mot de passe ou une cryptographie. Cette méthode est simple, mais longue et gourmande en ressources, surtout avec des mots de passe forts.'>Force brute simple</span> teste toutes les combinaisons possibles de caractères, le mode <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='Une attaque par dictionnaire utilise des mots de passe et des phrases courants pour craquer un mot de passe ou une cryptographie. Cette méthode est plus rapide que l'attaque par force brute simple, mais nécessite un grand nombre de tentatives et n'est pas aussi sécurisée qu'une attaque hybride'>Attaque par dictionnaire</span> utilise des mots de passe et des phrases courants.",
+      "es": "Elija un modo para probar su contraseña contra ataques de fuerza bruta. El modo de <span id='bruteSimpleDescription' class='bruteDescription' data-tooltop='Un ataque de fuerza bruta prueba sistemáticamente todas las combinaciones posibles de caracteres para descifrar una contraseña o una cifrada. Este enfoque es simple, pero lento y requiere muchos recursos, especialmente con contraseñas fuertes.'> fuerza bruta simple</span> prueba todas las combinaciones posibles de caracteres, el modo de <span id='bruteLibraryDescription' class='bruteDescription' data-tooltip='Un ataque de diccionario utiliza contraseñas y frases comunes para descifrar una contraseña o una cifrada. Este enfoque es más rápido que un ataque de fuerza bruta simple, pero requiere un gran número de intentos y no es tan seguro como un ataque híbrido'> ataque de diccionario</span> utiliza contraseñas y frases comunes."
+    },
+    "placeholder": {
+      "en": "Enter password",
+      "de": "Gib ein Passwort ein",
+      "fr": "Entrez votre mot de passe",
+      "es": "Ingrese su contraseña"
+    },
+    "simpleMode": {
+      "en": "Mode Simple",
+      "de": "Einfacher Modus",
+      "fr": "Mode simple",
+      "es": "Modo simple"
+    },
+    "libraryMode": {
+      "en": "Mode Library",
+      "de": "Bibliotheksmodus",
+      "fr": "Mode bibliothèque",
+      "es": "Modo biblioteca"
+    },
+    "hybridMode": {
+      "en": "Mode Hybrid",
+      "de": "Hybridmodus",
+      "fr": "Mode hybride",
+      "es": "Modo híbrido"
+    },
+    "startButton": {
+      "en": "Start",
+      "de": "Starten",
+      "fr": "Démarrer",
+      "es": "Iniciar"
+    },
+    "stopButton": {
+      "en": "Stop",
+      "de": "Stoppen",
+      "fr": "Arrêter",
+      "es": "Detener"
+    },
+    "statsHeading": {
+      "password": {
+        "en": "Password",
+        "de": "Passwort",
+        "fr": "Mot de passe",
+        "es": "Contraseña"
       },
-      "description": {
-        "en": "Generate your own safe password with a length of your choice. The password is a random combination of letters, numbers and symbols to ensure the safety of your account.",
-        "de": "Generieren Sie Ihr eigenes sicheres Passwort mit einer Länge Ihrer Wahl. Das Passwort ist eine zufällige Kombination aus Buchstaben, Zahlen und Symbolen, um die Sicherheit Ihres Kontos zu gewährleisten.",
-        "fr": "Générez votre propre mot de passe sécurisé avec la longueur de votre choix. Le mot de passe est une combinaison aléatoire de lettres, de chiffres et de symboles pour assurer la sécurité de votre compte.",
-        "es": "Genere su propia contraseña segura con la longitud de su elección. La contraseña es una combinación aleatoria de letras, números y símbolos para garantizar la seguridad de su cuenta."
+      "attempts": {
+        "en": "Attempts",
+        "de": "Versuche",
+        "fr": "Tentatives",
+        "es": "Intentos"
       },
-      "lengthLabel": {
-        "en": "Password length:",
-        "de": "Passwortlänge:",
-        "fr": "Longueur du mot de passe:",
-        "es": "Longitud de la contraseña:"
-      },
-      "generateButton": { "en": "Generate", "de": "Generieren", "fr": "Générer", "es": "Generar" },
-      "result": { "en": "Your Password:", "de": "Ihr Passwort:", "fr": "Votre mot de passe:", "es": "Tu contraseña:" }
+      "mode": { "en": "Mode", "de": "Modus", "fr": "Mode", "es": "Modo" },
+      "time": { "en": "Time", "de": "Zeit", "fr": "Temps", "es": "Tiempo" }
+    }
+  },
+  "passwordStrengthCalc": {
+    "title": {
+      "en": "Password Excalibur",
+      "de": "Passwort Excalibur",
+      "fr": "Mot de passe Excalibur",
+      "es": "Contraseña Excalibur"
+    },
+    "description1": {
+      "en": "Password Excalibur is a tool designed to assess the strength of your password. It evaluates various factors including length, complexity, and predictability to give you a comprehensive strength score.",
+      "de": "Passwort Excalibur ist ein Tool, das entwickelt wurde, um die Stärke Ihres Passworts zu bewerten. Es bewertet verschiedene Faktoren, darunter Länge, Komplexität und Vorhersagbarkeit, um Ihnen eine umfassende Stärkebewertung zu geben.",
+      "fr": "Mot de passe Excalibur est un outil conçu pour évaluer la solidité de votre mot de passe. Il évalue divers facteurs, notamment la longueur, la complexité et la prévisibilité, pour vous donner un score de solidité complet.",
+      "es": "Contraseña Excalibur es una herramienta diseñada para evaluar la fortaleza de su contraseña. Evalúa varios factores, incluidos la longitud, la complejidad y la previsibilidad, para brindarle una puntuación de fortaleza integral."
+    },
+    "description2": {
+      "en": "To use Password Excalibur, simply enter your password and click the 'Test it' button. The tool will analyze your password and provide a detailed result, highlighting areas where your password is strong and suggestions for improvement.",
+      "de": "Um Passwort Excalibur zu verwenden, geben Sie einfach Ihr Passwort ein und klicken Sie auf die Schaltfläche 'Testen'. Das Tool analysiert Ihr Passwort und liefert ein detailliertes Ergebnis, das Bereiche hervorhebt, in denen Ihr Passwort stark ist, sowie Verbesserungsvorschläge.",
+      "fr": "Pour utiliser Mot de passe Excalibur, entrez simplement votre mot de passe et cliquez sur le bouton 'Tester'. L'outil analysera votre mot de passe et fournira un résultat détaillé, mettant en évidence les domaines où votre mot de passe est fort et des suggestions d'amélioration.",
+      "es": "Para usar Contraseña Excalibur, simplemente ingrese su contraseña y haga clic en el botón 'Probar'. La herramienta analizará su contraseña y proporcionará un resultado detallado, destacando las áreas donde su contraseña es fuerte y sugerencias para mejorar."
+    },
+    "placeholder": {
+      "en": "Enter  password",
+      "de": "Gib ein Passwort ein",
+      "fr": "Entrez  de passe",
+      "es": "Ingrese su contraseña"
+    },
+    "testButton": {
+      "en": "Test it",
+      "de": "Testen",
+      "fr": "Tester",
+      "es": "Probar"
+    },
+    "result": {
+      "en": "Result:",
+      "de": "Ergebnis:",
+      "fr": "Résultat:",
+      "es": "Resultado:"
+    }
+  },
+  "passwordCreationHeading": {
+    "title": {
+      "en": "How to Create or Generate a Strong Password",
+      "de": "Wie man ein starkes Passwort erstellt oder generiert",
+      "fr": "Comment créer ou générer un mot de passe fort",
+      "es": "Cómo crear o generar una contraseña fuerte"
+    },
+    "description": {
+      "en": "Creating a strong password is crucial to protect your personal and financial information from cyber threats. Here’s a concise guide on how to create robust passwords that can effectively safeguard your online accounts.",
+      "de": "Ein starkes Passwort zu erstellen ist entscheidend, um Ihre persönlichen und finanziellen Informationen vor Cyber-Bedrohungen zu schützen. Hier ist ein kurzer Leitfaden, wie Sie robuste Passwörter erstellen können, die Ihre Online-Konten effektiv schützen.",
+      "fr": "Créer un mot de passe fort est crucial pour protéger vos informations personnelles et financières contre les menaces cybernétiques. Voici un guide concis sur la façon de créer des mots de passe robustes qui peuvent efficacement protéger vos comptes en ligne.",
+      "es": "Crear una contraseña fuerte es crucial para proteger su información personal y financiera de las amenazas cibernéticas. Aquí hay una guía concisa sobre cómo crear contraseñas robustas que puedan proteger eficazmente sus cuentas en línea."
+    },
+    "characteristicsTitle": {
+      "en": "Characteristics of a Strong Password",
+      "de": "Merkmale eines starken Passworts",
+      "fr": "Caractéristiques d'un mot de passe fort",
+      "es": "Características de una contraseña fuerte"
+    },
+    "characteristicsDescription": {
+      "en": "A strong password should be long, complex, unpredictable, and unique. Aim for at least 12-16 characters with a mix of uppercase and lowercase letters, numbers, and special characters. Avoid easily guessable information like birthdays or common words. Each password should be unique to a specific account to prevent multiple accounts from being compromised.",
+      "de": "Ein starkes Passwort sollte lang, komplex, unvorhersehbar und einzigartig sein. Streben Sie mindestens 12-16 Zeichen mit einer Mischung aus Groß- und Kleinbuchstaben, Zahlen und Sonderzeichen an. Vermeiden Sie leicht zu erratende Informationen wie Geburtstage oder gängige Wörter. Jedes Passwort sollte für ein bestimmtes Konto einzigartig sein, um zu verhindern, dass mehrere Konten kompromittiert werden.",
+      "fr": "Un mot de passe fort doit être long, complexe, imprévisible et unique. Visez au moins 12-16 caractères avec un mélange de lettres majuscules et minuscules, de chiffres et de caractères spéciaux. Évitez les informations facilement devinables comme les anniversaires ou les mots courants. Chaque mot de passe doit être unique pour un compte spécifique afin d'empêcher que plusieurs comptes soient compromis.",
+      "es": "Una contraseña fuerte debe ser larga, compleja, impredecible y única. Apunte a al menos 12-16 caracteres con una mezcla de letras mayúsculas y minúsculas, números y caracteres especiales. Evite información fácilmente adivinable como cumpleaños o palabras comunes. Cada contraseña debe ser única para una cuenta específica para evitar que varias cuentas se vean comprometidas."
+    },
+    "stepsTitle": {
+      "en": "Steps to Create a Strong Password",
+      "de": "Schritte zur Erstellung eines starken Passworts",
+      "fr": "Étapes pour créer un mot de passe fort",
+      "es": "Pasos para crear una contraseña fuerte"
+    },
+    "stepsDescription": {
+      "en": "Start with a memorable base phrase, then add complexity by substituting some letters with numbers and symbols. For example, 'GreenDolphinSwims2024!' becomes 'Gr33nD0lph!nSw!ms2024!' This method ensures your password is both strong and memorable.",
+      "de": "Beginnen Sie mit einer einprägsamen Basisphrase und fügen Sie dann Komplexität hinzu, indem Sie einige Buchstaben durch Zahlen und Symbole ersetzen. Zum Beispiel wird aus 'GreenDolphinSwims2024!' 'Gr33nD0lph!nSw!ms2024!'. Diese Methode stellt sicher, dass Ihr Passwort sowohl stark als auch einprägsam ist.",
+      "fr": "Commencez par une phrase de base mémorable, puis ajoutez de la complexité en substituant certaines lettres par des chiffres et des symboles. Par exemple, 'GreenDolphinSwims2024!' devient 'Gr33nD0lph!nSw!ms2024!'. Cette méthode garantit que votre mot de passe est à la fois fort et mémorable.",
+      "es": "Comience con una frase base memorable, luego agregue complejidad sustituyendo algunas letras por números y símbolos. Por ejemplo, 'GreenDolphinSwims2024!' se convierte en 'Gr33nD0lph!nSw!ms2024!'. Este método asegura que su contraseña sea tanto fuerte como memorable."
+    },
+    "managementTitle": {
+      "en": "Managing Multiple Passwords",
+      "de": "Verwaltung mehrerer Passwörter",
+      "fr": "Gestion de plusieurs mots de passe",
+      "es": "Gestionar múltiples contraseñas"
+    },
+    "managementDescription": {
+      "en": "Using a password manager helps manage multiple unique passwords. These tools store and autofill passwords, so you only need to remember one master password. Popular options include  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>",
+      "de": "Die Verwendung eines Passwort-Managers hilft bei der Verwaltung mehrerer eindeutiger Passwörter. Diese Tools speichern und füllen Passwörter automatisch aus, sodass Sie sich nur ein Master-Passwort merken müssen. Beliebte Optionen sind  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>.",
+      "fr": "L'utilisation d'un gestionnaire de mots de passe aide à gérer plusieurs mots de passe uniques. Ces outils stockent et remplissent automatiquement les mots de passe, vous n'avez donc besoin de vous souvenir que d'un seul mot de passe principal. Les options populaires incluent  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>.",
+      "es": "El uso de un administrador de contraseñas ayuda a gestionar múltiples contraseñas únicas. Estas herramientas almacenan y rellenan automáticamente las contraseñas, por lo que solo necesita recordar una contraseña maestra. Las opciones populares incluyen  <a href='https://www.lastpass.com'>LastPass</a>, <a href='https://www.1password.com'>1Password</a>, and <a href='https://bitwarden.com'>Bitwarden</a>."
+    }
+  },
+  "runeTranslatorApp": {
+    "title": {
+      "en": "Rune Translator",
+      "de": "Runen-Übersetzer",
+      "fr": "Traducteur de runes",
+      "es": "Traductor de runas"
+    },
+    "description1": {
+      "en": "Transform your password into leetspeak for added security. Simply enter your password, and the converter will change it into a more secure, leetspeak version.",
+      "de": "Verwandeln Sie Ihr Passwort in Leetspeak für zusätzliche Sicherheit. Geben Sie einfach Ihr Passwort ein, und der Konverter verwandelt es in eine sicherere Leetspeak-Version.",
+      "fr": "Transformez votre mot de passe en leetspeak pour plus de sécurité. Entrez simplement votre mot de passe et le convertisseur le changera en une version leetspeak plus sécurisée.",
+      "es": "Transforme su contraseña en leetspeak para mayor seguridad. Simplemente ingrese su contraseña y el convertidor la cambiará a una versión leetspeak más segura."
+    },
+    "description2": {
+      "en": "This enhances your password's strength by replacing common characters with numbers and symbols.",
+      "de": "Dies erhöht die Stärke Ihres Passworts, indem gängige Zeichen durch Zahlen und Symbole ersetzt werden.",
+      "fr": "Cela renforce la solidité de votre mot de passe en remplaçant les caractères courants par des chiffres et des symboles.",
+      "es": "Esto mejora la fortaleza de su contraseña al reemplazar caracteres comunes con números y símbolos."
+    },
+    "placeholder": {
+      "en": "Enter password",
+      "de": "Gib ein Passwort ein",
+      "fr": "Entrez de passe",
+      "es": "Ingrese su contraseña"
+    },
+    "simpleLeet": {
+      "en": "Simple Leetspeak",
+      "de": "Einfaches Leetspeak",
+      "fr": "Leetspeak simple",
+      "es": "Leetspeak simple"
+    },
+    "advancedLeet": {
+      "en": "Advanced Leetspeak",
+      "de": "Fortgeschrittenes Leetspeak",
+      "fr": "Leetspeak avancé",
+      "es": "Leetspeak avanzado"
+    },
+    "complicatedLeet": {
+      "en": "Complicated Leetspeak",
+      "de": "Kompliziertes Leetspeak",
+      "fr": "Leetspeak compliqué",
+      "es": "Leetspeak complicado"
+    },
+    "convertButton": {
+      "en": "Convert",
+      "de": "Konvertieren",
+      "fr": "Convertir",
+      "es": "Convertir"
+    },
+    "runeword": {
+      "en": "Your runeword:",
+      "de": "Ihr Runenwort:",
+      "fr": "Votre mot runique:",
+      "es": "Tu runa:"
+    }
+  },
+  "pictureMagicApp": {
+    "title": {
+      "en": "Picture Magic",
+      "de": "Bildmagie",
+      "fr": "Magie d'image",
+      "es": "Magia de imagen"
+    },
+    "description1": {
+      "en": "Upload a photo, and our app will convert it into a secure password.",
+      "de": "Laden Sie ein Foto hoch und unsere App verwandelt es in ein sicheres Passwort.",
+      "fr": "Téléchargez une photo et notre application la convertira en un mot de passe sécurisé.",
+      "es": "Sube una foto y nuestra aplicación la convertirá en una contraseña segura."
+    },
+    "description2": {
+      "en": "This unique method transforms visual information into a strong, complex password, enhancing your online security with ease.",
+      "de": "Diese einzigartige Methode verwandelt visuelle Informationen in ein starkes, komplexes Passwort und verbessert Ihre Online-Sicherheit mühelos.",
+      "fr": "Cette méthode unique transforme les informations visuelles en un mot de passe fort et complexe, améliorant ainsi votre sécurité en ligne avec facilité.",
+      "es": "Este método único transforma la información visual en una contraseña fuerte y compleja, mejorando su seguridad en línea con facilidad."
+    },
+    "uploadLabel": {
+      "en": "Upload your Picture",
+      "de": "Laden Sie Ihr Bild hoch",
+      "fr": "Téléchargez votre photo",
+      "es": "Sube tu foto"
+    },
+    "convertButton": {
+      "en": "Convert",
+      "de": "Konvertieren",
+      "fr": "Convertir",
+      "es": "Convertir"
+    },
+    "result": {
+      "en": "Your Password:",
+      "de": "Ihr Passwort:",
+      "fr": "Votre mot de passe:",
+      "es": "Tu contraseña:"
+    }
+  },
+  "usernameCreationHeading": {
+    "title": {
+      "en": "Creating Unique Usernames",
+      "de": "Einzigartige Benutzernamen erstellen",
+      "fr": "Créer des noms d'utilisateur uniques",
+      "es": "Crear nombres de usuario únicos"
+    },
+    "description": {
+      "en": "Creating a unique and memorable username is important for your online identity. A good username should reflect your personality while being secure and difficult to guess.",
+      "de": "Ein einzigartiger und einprägsamer Benutzername ist wichtig für Ihre Online-Identität. Ein guter Benutzername sollte Ihre Persönlichkeit widerspiegeln, während er sicher und schwer zu erraten ist.",
+      "fr": "Créer un nom d'utilisateur unique et mémorable est important pour votre identité en ligne. Un bon nom d'utilisateur doit refléter votre personnalité tout en étant sécurisé et difficile à deviner.",
+      "es": "Crear un nombre de usuario único y memorable es importante para su identidad en línea. Un buen nombre de usuario debe reflejar su personalidad mientras sea seguro y difícil de adivinar."
+    },
+    "tipsTitle": {
+      "en": "Tips for Creating Usernames",
+      "de": "Tipps zur Erstellung von Benutzernamen",
+      "fr": "Conseils pour créer des noms d'utilisateur",
+      "es": "Consejos para crear nombres de usuario"
+    },
+    "tipsDescription": {
+      "en": "Use a combination of adjectives and nouns to create unique usernames. Consider using descriptive words that reflect your interests or characteristics. Avoid using personal information such as your real name or birthdate.",
+      "de": "Verwenden Sie eine Kombination aus Adjektiven und Nomen, um einzigartige Benutzernamen zu erstellen. Erwägen Sie die Verwendung beschreibender Wörter, die Ihre Interessen oder Eigenschaften widerspiegeln. Vermeiden Sie die Verwendung persönlicher Informationen wie Ihres echten Namens oder Geburtsdatums.",
+      "fr": "Utilisez une combinaison d'adjectifs et de noms pour créer des noms d'utilisateur uniques. Envisagez d'utiliser des mots descriptifs qui reflètent vos intérêts ou vos caractéristiques. Évitez d'utiliser des informations personnelles telles que votre vrai nom ou votre date de naissance.",
+      "es": "Utilice una combinación de adjetivos y sustantivos para crear nombres de usuario únicos. Considere usar palabras descriptivas que reflejen sus intereses o características. Evite usar información personal como su nombre real o fecha de nacimiento."
+    },
+    "generatorsTitle": {
+      "en": "Username Generators",
+      "de": "Benutzernamensgeneratoren",
+      "fr": "Générateurs de noms d'utilisateur",
+      "es": "Generadores de nombres de usuario"
+    },
+    "generatorsDescription": {
+      "en": "Username generators can help create unique usernames by combining random adjectives and nouns. These tools ensure that your username is distinctive and not easily guessed. You can select up to two groups of adjectives and a group of nouns, or let the generator create a random combination for you.",
+      "de": "Benutzernamensgeneratoren können dabei helfen, einzigartige Benutzernamen zu erstellen, indem sie zufällige Adjektive und Nomen kombinieren. Diese Tools stellen sicher, dass Ihr Benutzername unverwechselbar und nicht leicht zu erraten ist. Sie können bis zu zwei Gruppen von Adjektiven und eine Gruppe von Nomen auswählen oder den Generator eine zufällige Kombination für Sie erstellen lassen.",
+      "fr": "Les générateurs de noms d'utilisateur peuvent aider à créer des noms d'utilisateur uniques en combinant des adjectifs et des noms aléatoires. Ces outils garantissent que votre nom d'utilisateur est distinctif et pas facilement devinable. Vous pouvez sélectionner jusqu'à deux groupes d'adjectifs et un groupe de noms, ou laisser le générateur créer une combinaison aléatoire pour vous.",
+      "es": "Los generadores de nombres de usuario pueden ayudar a crear nombres de usuario únicos combinando adjetivos y sustantivos aleatorios. Estas herramientas aseguran que su nombre de usuario sea distintivo y no fácil de adivinar. Puede seleccionar hasta dos grupos de adjetivos y un grupo de sustantivos, o dejar que el generador cree una combinación aleatoria para usted."
+    }
+  },
+  "identityWizardryApp": {
+    "title": {
+      "en": "Identity Wizardry",
+      "de": "Identitätszauberei",
+      "fr": "Sorcellerie d'identité",
+      "es": "Magia de identidad"
+    },
+    "description1": {
+      "en": "Create a unique username by selecting up to two groups of adjectives and a group of nouns, or let the generator create a random combination for you.",
+      "de": "Erstellen Sie einen einzigartigen Benutzernamen, indem Sie bis zu zwei Gruppen von Adjektiven und eine Gruppe von Nomen auswählen, oder lassen Sie den Generator eine zufällige Kombination für Sie erstellen.",
+      "fr": "Créez un nom d'utilisateur unique en sélectionnant jusqu'à deux groupes d'adjectifs et un groupe de noms, ou laissez le générateur créer une combinaison aléatoire pour vous.",
+      "es": "Cree un nombre de usuario único seleccionando hasta dos grupos de adjetivos y un grupo de sustantivos, o deje que el generador cree una combinación aleatoria para usted."
+    },
+    "description2": {
+      "en": "Ensure your username is unique and reflects your identity for a personalized online experience.",
+      "de": "Stellen Sie sicher, dass Ihr Benutzername einzigartig ist und Ihre Identität für ein personalisiertes Online-Erlebnis widerspiegelt.",
+      "fr": "Assurez-vous que votre nom d'utilisateur est unique et reflète votre identité pour une expérience en ligne personnalisée.",
+      "es": "Asegúrese de que su nombre de usuario sea único y refleje su identidad para una experiencia en línea personalizada."
+    },
+    "firstAdjectiveLabel": {
+      "en": "First adjective:",
+      "de": "Erstes Adjektiv:",
+      "fr": "Premier adjectif:",
+      "es": "Primer adjetivo:"
+    },
+    "secondAdjectiveLabel": {
+      "en": "Second adjective:",
+      "de": "Zweites Adjektiv:",
+      "fr": "Deuxième adjectif:",
+      "es": "Segundo adjetivo:"
+    },
+    "nounLabel": {
+      "en": "Choose a noun:",
+      "de": "Wählen Sie ein Nomen:",
+      "fr": "Choisissez un nom:",
+      "es": "Elija un sustantivo:"
+    },
+    "random": {
+      "en": "Random",
+      "de": "Zufällig",
+      "fr": "Aléatoire",
+      "es": "Aleatorio"
+    },
+    "shapes": { "en": "Shape", "de": "Form", "fr": "Forme", "es": "Forma" },
+    "colors": { "en": "Color", "de": "Farbe", "fr": "Couleur", "es": "Color" },
+    "textures": {
+      "en": "Texture",
+      "de": "Textur",
+      "fr": "Texture",
+      "es": "Textura"
+    },
+    "sizes": { "en": "Size", "de": "Größe", "fr": "Taille", "es": "Tamaño" },
+    "ages": { "en": "Ages", "de": "Alter", "fr": "âge", "es": "siglos" },
+    "intensities": {
+      "en": "intensities",
+      "de": "Intensitäten",
+      "fr": "Intensités",
+      "es": "Intensidades"
+    },
+    "tastes": { "en": "Taste", "de": "Geschmack", "fr": "Goût", "es": "Sabor" },
+    "emotions": {
+      "en": "Emotion",
+      "de": "Emotion",
+      "fr": "Émotion",
+      "es": "Emoción"
+    },
+    "sounds": { "en": "Sound", "de": "Klang", "fr": "Son", "es": "Sonido" },
+    "temperatures": {
+      "en": "Temperature",
+      "de": "Temperatur",
+      "fr": "Température",
+      "es": "Temperatura"
+    },
+    "speeds": {
+      "en": "Speed",
+      "de": "Geschwindigkeit",
+      "fr": "Vitesse",
+      "es": "Velocidad"
+    },
+    "qualities": {
+      "en": "Quality",
+      "de": "Qualität",
+      "fr": "Qualité",
+      "es": "Calidad"
+    },
+    "weatherTypes": {
+      "en": "Weather",
+      "de": "Wetter",
+      "fr": "Temps",
+      "es": "Clima"
+    },
+    "instruments": {
+      "en": "Instrument",
+      "de": "Instrument",
+      "fr": "Instrument",
+      "es": "Instrumento"
+    },
+    "fruits": { "en": "Fruit", "de": "Frucht", "fr": "Fruit", "es": "Fruta" },
+    "vegetables": {
+      "en": "Vegetable",
+      "de": "Gemüse",
+      "fr": "Légume",
+      "es": "Vegetal"
+    },
+    "animals": { "en": "Animal", "de": "Tier", "fr": "Animal", "es": "Animal" },
+    "fantasyCreatures": {
+      "en": "Fantasy Creature",
+      "de": "Fantasiegeschöpf",
+      "fr": "Créature fantastique",
+      "es": "Criatura fantástica"
+    },
+    "rpgClasses": {
+      "en": "Rpg Class",
+      "de": "RPG-Klasse",
+      "fr": "Classe RPG",
+      "es": "Clase RPG"
+    },
+    "fantasyRaces": {
+      "en": "Fantasy race",
+      "de": "Fantasie-Rasse",
+      "fr": "Race fantastique",
+      "es": "Raza fantástica"
+    },
+    "occupations": {
+      "en": "Jobs",
+      "de": "Jobs",
+      "fr": "Métiers",
+      "es": "Trabajos"
+    },
+    "vehicles": {
+      "en": "Vehicle",
+      "de": "Fahrzeug",
+      "fr": "Véhicule",
+      "es": "Vehículo"
+    },
+    "food": { "en": "Food", "de": "Essen", "fr": "Nourriture", "es": "Comida" },
+    "tools": {
+      "en": "Tool",
+      "de": "Werkzeug",
+      "fr": "Outil",
+      "es": "Herramienta"
+    },
+    "beverages": {
+      "en": "Beverage",
+      "de": "Getränk",
+      "fr": "Boisson",
+      "es": "Bebida"
+    },
+    "clothingItems": {
+      "en": "Clothes",
+      "de": "Kleidung",
+      "fr": "Vêtements",
+      "es": "Ropa"
+    },
+    "bodyParts": {
+      "en": "Bodypart",
+      "de": "Körperteil",
+      "fr": "Partie du corps",
+      "es": "Parte del cuerpo"
+    },
+    "flowers": { "en": "Flower", "de": "Blume", "fr": "Fleur", "es": "Flor" },
+    "desserts": {
+      "en": "Dessert",
+      "de": "Dessert",
+      "fr": "Dessert",
+      "es": "Postre"
+    },
+    "generateButton": {
+      "en": "Generate",
+      "de": "Generieren",
+      "fr": "Générer",
+      "es": "Generar"
+    },
+    "newUsername": {
+      "en": "Username:",
+      "de": "Benutzername:",
+      "fr": "Nom d'utilisateur:",
+      "es": "Nombre de usuario:"
+    }
+  },
+  "glyphSorceryApp": {
+    "title": {
+      "en": "Glyph Sorcery",
+      "de": "Glyphenzauberei",
+      "fr": "Sorcelerie de glyphes",
+      "es": "Magia de glifos"
+    },
+    "description": {
+      "en": "Generate your own safe password with a length of your choice. The password is a random combination of letters, numbers and symbols to ensure the safety of your account.",
+      "de": "Generieren Sie Ihr eigenes sicheres Passwort mit einer Länge Ihrer Wahl. Das Passwort ist eine zufällige Kombination aus Buchstaben, Zahlen und Symbolen, um die Sicherheit Ihres Kontos zu gewährleisten.",
+      "fr": "Générez votre propre mot de passe sécurisé avec la longueur de votre choix. Le mot de passe est une combinaison aléatoire de lettres, de chiffres et de symboles pour assurer la sécurité de votre compte.",
+      "es": "Genere su propia contraseña segura con la longitud de su elección. La contraseña es una combinación aleatoria de letras, números y símbolos para garantizar la seguridad de su cuenta."
+    },
+    "lengthLabel": {
+      "en": "Password length:",
+      "de": "Passwortlänge:",
+      "fr": "Longueur du mot de passe:",
+      "es": "Longitud de la contraseña:"
+    },
+    "generateButton": {
+      "en": "Generate",
+      "de": "Generieren",
+      "fr": "Générer",
+      "es": "Generar"
+    },
+    "result": {
+      "en": "Your Password:",
+      "de": "Ihr Passwort:",
+      "fr": "Votre mot de passe:",
+      "es": "Tu contraseña:"
     }
   }
-  
+}

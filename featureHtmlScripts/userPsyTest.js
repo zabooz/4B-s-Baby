@@ -3,13 +3,13 @@ import { rndNumInLen } from "../scripts/encoder.js";
 
 const answerObj = {
   question1: {
-    q1a1: "temperatures",
-    q1a2: "textures",
+    q1a1: ["temperatures", "weatherTypes"],
+    q1a2: ["textures", "tastes"],
     q1a3: ["qualities", "sizes"],
-    q1a4: "speeds",
+    q1a4: ["speeds", "ages"],
   },
   question2: {
-    q2a1: "colors",
+    q2a1: ["colors", "intensities"],
     q2a2: ["shapes", "textures"],
     q2a3: ["emotions", "qualities"],
     q2a4: ["sounds", "speeds"],
