@@ -4294,7 +4294,6 @@ export const contentArray1 = [
   "speeds",
   "qualities",
   "weatherTypes",
-  "allAdjectives",
 ];
 
 export const contentArray2 = [
@@ -4314,5 +4313,4 @@ export const contentArray2 = [
   "bodyParts",
   "flowers",
   "desserts",
-  "allNouns",
 ];
