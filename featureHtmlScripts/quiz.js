@@ -53,7 +53,7 @@ const config = {
 };
 
 const quiz = (config) => {
-    return `<div id="questionCarousel" class="carousel slide w-100 mx-auto mt-5">
+  return `<div id="questionCarousel" class="carousel slide w-100 mx-auto mt-5">
         <div class="carousel-indicators custom-indicators">
             <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -135,26 +135,19 @@ const quiz = (config) => {
           <span class="visually-hidden">Weiter</span>
       </button>
     </div>
-                  <div class="tableWrapper w-75">
-                <table class="table mb-5" id="stats1">
-                  <thead>
-                    <tr>
-                      <th scope="col" class="text-center">#</th>
-                      <th scope="col"class="text-center">Username</th>
-                      <th scope="col" class="text-center">Begriff</th>
-                      <th scope="col" class="text-center">Eigenschaften</th>
-                    </tr>
-                  </thead>
-                  <tbody id="statsBody1" class="text-center" ></tbody>
-                </table>
-              </div>`;
-  };
-  
-  
+      <div class="tableWrapper w-75">
+    <table class="table mb-5" id="stats1">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">#</th>
+          <th scope="col"class="text-center">Username</th>
+          <th scope="col" class="text-center">Begriff</th>
+          <th scope="col" class="text-center">Eigenschaften</th>
+        </tr>
+      </thead>
+      <tbody id="statsBody1" class="text-center" ></tbody>
+    </table>
+  </div>`;
+};
 
 document.getElementById("quiz").innerHTML += quiz(config);
-
-
-
-
-
