@@ -72,6 +72,7 @@ userGenSubmitBtn.addEventListener("click", function (e) {
   };
 });
 
+
 export function replaceLastSlide() {
   // Find the last carousel item
   const lastSlide = document.querySelector(
@@ -95,3 +96,28 @@ const newSlideContent = `
     <p>Ihre Antworten wurden erfolgreich gesendet.</p>
   </div>
 </div>`;
+
+const carousel = document.querySelectorAll("#prevBtn,#nextBtn")
+
+const arrowBtn = () => {
+  
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  const active = document.querySelector(".active")
+  console.log(235)
+  if (active.getAttribute("aria-label")==="Slide 2") {
+    
+    prevBtn.style.display = "block";
+
+  } else if (active.getAttribute("aria-label") === "Slide 6") {
+    
+    nextBtn.style.display = "none";
+  } else {
+    prevBtn.style.display = "block";
+    nextBtn.style.display = "block";
+  }
+};
+
+carousel.forEach(btn => btn.addEventListener("click",arrowBtn))
+
