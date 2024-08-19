@@ -47,7 +47,7 @@
     },
     "heroPw": {
       "h1": "Erstelle Dein perfektes Passwort!",
-      "lead": "Sag unsichereren Passwörtern Lebewohl!",
+      "lead": "Sag unsichereren Passwörtern Lebewohl.",
       "p": "Nutze unseren Passwort-Generator, um starke und einzigartige Passwörter für all Deine Konten zu erstellen. Wähle aus verschiedenen Optionen, um das ideale Passwort zu finden.",
       "p2": "Sichere Deine digitale Identität mit einem Passwort, das wirklich schützt. Erstelle jetzt im Handumdrehen ein Passwort, das allen Angriffen standhält!"
     },
@@ -61,63 +61,63 @@
       
         "zitate": [
           {
-            "person": "Bruce Schneier",
+            "person": "Bruce Schneier - Sicherheitsexperte und Autor",
             "zitat": "Sicherheit ist kein Produkt, sondern ein Prozess."
           },
           {
-            "person": "Edward Snowden",
+            "person": "Edward Snowden - Whistleblower",
             "zitat": "Zu sagen, dass man sich nicht um das Recht auf Privatsphäre kümmert, weil man nichts zu verbergen hat, ist wie zu sagen, dass man sich nicht um freie Meinungsäußerung kümmert, weil man nichts zu sagen hat."
           },
           {
-            "person": "Kevin Mitnick",
+            "person": "Kevin Mitnick - ehemaliger Hacker und Autor",
             "zitat": "Man kann die beste Technologie haben, aber wenn nicht die richtige Kultur und Verantwortung dahinterstehen, wird sie trotzdem scheitern."
           },
           {
-            "person": "Bill Gates",
+            "person": "Bill Gates - Microsoftgründer",
             "zitat": "Sicherheit ist, würde ich sagen, unsere oberste Priorität, denn bei all den aufregenden Dingen, die man mit Computern machen kann – sein Leben organisieren, in Kontakt bleiben, kreativ sein – wenn wir diese Sicherheitsprobleme nicht lösen, werden die Menschen zurückhaltend sein."
           },
           {
-            "person": "Tim Berners-Lee",
+            "person": "Tim Berners-Lee - Erfinder des WWW",
             "zitat": "Wir brauchen Vielfalt im Denken, um den neuen Herausforderungen zu begegnen."
           },
           {
-            "person": "Vint Cerf",
+            "person": "Vint Cerf - Vater des Internets",
             "zitat": "Je mehr wir uns auf Technologie verlassen, desto verletzlicher sind wir."
           },
           {
-            "person": "John McAfee",
+            "person": "John McAfee - Gründer von McAfee",
             "zitat": "Die Privatsphäre ist tot, und soziale Medien halten die rauchende Waffe in der Hand."
           },
           {
-            "person": "Eric Schmidt",
+            "person": "Eric Schmidt - ehemaliger Ceo von Google",
             "zitat": "Das Internet ist das erste, was die Menschheit gebaut hat, das die Menschheit nicht versteht, das größte Experiment in Anarchie, das wir je hatten."
           },
           {
-            "person": "Richard Clarke",
+            "person": "Richard Clarke - Sicherheitsberater US-Regierung",
             "zitat": "Wenn Sie mehr für Kaffee als für IT-Sicherheit ausgeben, werden Sie gehackt. Was noch schlimmer ist, Sie verdienen es, gehackt zu werden."
           },
           {
-            "person": "James Comey",
+            "person": "James Comey - ehem. FBI-Direktor",
             "zitat": "Die gefährlichsten Cyber-Bedrohungen sind die, an die wir noch nicht gedacht haben."
           },
           {
-            "person": "Robert Mueller",
+            "person": "Robert Mueller - ehem. FBI-Direktor",
             "zitat": "Es gibt zwei Arten von Unternehmen: solche, die gehackt wurden, und solche, die es noch nicht wissen."
           },
           {
-            "person": "Dan Geer",
+            "person": "Dan Geer - Chief Officer bei @stake",
             "zitat": "Sicherheit ist wie eine Versicherung - sie mag teuer erscheinen, bis du sie wirklich brauchst."
           },
           {
-            "person": "Mikko Hyppönen",
+            "person": "Mikko Hyppönen - Sicherheitsexperte bei F-Secure",
             "zitat": "Die meiste Cyberkriminalität passiert nicht, weil die Kriminellen besonders fähig sind, sondern weil wir besonders nachlässig sind."
           },
           {
-            "person": "Ralph Langner",
+            "person": "Ralph Langner - Gründer Langner Communications",
             "zitat": "Cyber-Angriffe sind wie digitale Terroranschläge; sie können enorme Schäden verursachen, ohne dass physische Waffen benötigt werden."
           },
           {
-            "person": "Lenny Zeltser",
+            "person": "Lenny Zeltser - Experte und Partner bei Mineerva Labs",
             "zitat": "In der Welt der Cyber-Sicherheit ist das einzig Vorhersehbare, dass Unvorhergesehenes eintreten wird."
           }
         ]
