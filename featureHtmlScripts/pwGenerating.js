@@ -54,7 +54,7 @@ leetBtn.addEventListener("click", function () {
     const newPassword = passwordConverter(passwordInput.value, selectedConverter);
     textElement.innerText = `${newPassword}`;
     textElement.append(copyButton(textId));
-    // passwordInput.value = "";
+
   });
   rdmPwdBtn.addEventListener("click", function () {
     const textId = "generatedPassword";

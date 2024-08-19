@@ -1,4 +1,4 @@
-const config = {
+const configFooter = {
   companyName: "Mayo Monkeys",
   companyText:
     "Mayo Monkeys is a creative agency that brings a splash of fun to the world of digital solutions. We specialize in innovative design, development, and marketing strategies that make your brand stand out. Join us on our journey to add a little extra flavor to the digital space.",
@@ -30,7 +30,7 @@ const config = {
   },
 };
 
-const createFooter = (config) => {
+const createFooter = (configFooter) => {
   return `
         <hr class="my-4 hr-custom w-100 mt-5 self-algin-center" />
         <section class="d-flex justify-content-center justify-content-lg-between p-4 mt-5 text-black">
@@ -38,7 +38,7 @@ const createFooter = (config) => {
                 <span>Get connected with us on social networks:</span>
             </div>
             <div>
-                ${config.socialMedia
+                ${configFooter.socialMedia
                   .map(
                     (social) => `
                     <a href="${social.link}" class="me-4 text-reset">
@@ -54,15 +54,15 @@ const createFooter = (config) => {
                 <div class="row mt-3">
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>${config.companyName}
+                            <i class="fas fa-gem me-3"></i>${configFooter.companyName}
                         </h6>
                         <p>
-                            ${config.companyText}
+                            ${configFooter.companyText}
                         </p>
                     </div>
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                         <h6 class="text-uppercase fw-bold mb-4">Products</h6>
-                        ${config.platforms
+                        ${configFooter.platforms
                           .map(
                             (platform) => `
                             <p>
@@ -75,16 +75,16 @@ const createFooter = (config) => {
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
                         <p><i class="fas fa-home me-3"></i> ${
-                          config.contact.address
+                          configFooter.contact.address
                         }</p>
                         <p><i class="fas fa-envelope me-3"></i> ${
-                          config.contact.email
+                          configFooter.contact.email
                         }</p>
                         <p><i class="fas fa-phone me-3"></i> ${
-                          config.contact.phone
+                          configFooter.contact.phone
                         }</p>
                         <p><i class="fas fa-print me-3"></i> ${
-                          config.contact.fax
+                          configFooter.contact.fax
                         }</p>
                     </div>
                 </div>
@@ -96,4 +96,4 @@ const createFooter = (config) => {
         </div>`;
 };
 
-document.querySelector("footer").innerHTML = createFooter(config);
+document.querySelector("footer").innerHTML = createFooter(configFooter);

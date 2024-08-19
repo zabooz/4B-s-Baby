@@ -22,7 +22,7 @@ export async function aiApiCall(userContent,
     let formattedResult = result
     .split('. ')
     .map(sentence => `<p>${sentence.trim()}.</p>`) 
-    .join('');g
+    .join('');
 
     return formattedResult;
 

@@ -66,3 +66,28 @@ userGenSubmitBtn.addEventListener("click", function (e) {
 
   updateAttempts(quizOutput, "#statsBody1");
 });
+
+
+const carousel = document.querySelectorAll("#prevBtn,#nextBtn")
+
+const arrowBtn = () => {
+  
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  const active = document.querySelector(".active")
+  console.log(235)
+  if (active.getAttribute("aria-label")==="Slide 2") {
+    
+    prevBtn.style.display = "block";
+
+  } else if (active.getAttribute("aria-label") === "Slide 6") {
+    
+    nextBtn.style.display = "none";
+  } else {
+    prevBtn.style.display = "block";
+    nextBtn.style.display = "block";
+  }
+};
+
+carousel.forEach(btn => btn.addEventListener("click",arrowBtn))
