@@ -28,6 +28,7 @@ nav img {
 }
 header {
   min-height: 400px;
+  color: #151c19
 }
 .description {
   width: 25rem;
@@ -105,7 +106,7 @@ main {
   border-radius: 1rem;
 }
 .hr-custom {
-  border: 5px solid black;
+  border: 2px solid black;
   opacity: 1;
 }
 .btn:hover {

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../styles/testing.css" />
     <link rel="stylesheet" href="../styles/appBoxes.css" />
     <link rel="stylesheet" href="../styles/aiAssistant.css" />
-    <link rel="stylesheet" href="../styles/clipBoard.css">
+    <link rel="stylesheet" href="../styles/clipBoard.css" />
 
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -21,15 +21,12 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Test your password</title>
+    <title>Passwort Testen</title>
   </head>
   <body class="bg-custom">
-    <nav id="navBar" class="sticky-top"></nav>    
+    <nav id="navBar" class="sticky-top"></nav>
     <header></header>
-    <script type="module">
-
-  
-    </script>
+    <script type="module"></script>
 
     <main>
       <section class="d-flex justify-content-center align-items-center">
@@ -48,23 +45,24 @@
           >
             <h4 class="mb-4">Wieso ein sicher Passwort?</h4>
             <p class="mb-4 w-100 px-3 fw-semibold">
-              Ein sicheres Passwort ist der erste Schritt, um Ihre digitalen
+              Ein sicheres Passwort ist der erste Schritt, um deine digitalen
               Konten und persönlichen Informationen vor unbefugtem Zugriff zu
               schützen.
             </p>
             <ul class="list-group mb-3 w-100 list-group-flush">
               <li class="list-group-item mb-3 rounded">
                 <b>Schutz vor Identitätsdiebstahl: </b>Ein sicheres Passwort
-                verhindert, dass Unbefugte Zugriff auf Ihre persönlichen Daten
+                verhindert, dass Unbefugte Zugriff auf deine persönlichen Daten
                 und Online-Konten erhalten.
               </li>
               <li class="list-group-item mb-3 rounded">
                 <b>Vermeidung finanzieller Verluste: </b>Starke Passwörter
-                schützen Ihre Bankkonten und Zahlungsdaten vor Cyberkriminellen.
+                schützen deine Bankkonten und Zahlungsdaten vor
+                Cyberkriminellen.
               </li>
               <li class="list-group-item rounded">
                 <b>Sicherheit in der digitalen Welt: </b>Mit einem sicheren
-                Passwort reduzieren Sie das Risiko, Opfer von Hackerangriffen
+                Passwort reduzierst du das Risiko, Opfer von Hackerangriffen
                 oder Datenlecks zu werden.
               </li>
             </ul>
@@ -160,8 +158,8 @@
         <div id="bruteForceApp" class="appBox d-flex flex-column">
           <h3>Test your Mojo</h3>
           <p class="fw-semibold">
-            Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe
-            zu testen. Im
+            Wähle einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe zu
+            testen. Im
             <span
               class="text-custom fw-bold text-decoration-underline"
               data-bs-toggle="offcanvas"
@@ -185,12 +183,20 @@
             nutzt eine Liste bekannter, unsicherer Passwörter, um zu prüfen, ob
             Ihr Passwort leicht zu erraten ist.
           </p>
-          <div class="d-flex gap-lg-5 gap-4 flex-column flex-lg-row align-items-center w-100 custom-width justify-content-center">
+          <p>
+            <b
+              >Passwörter mit über 5 Zeichen brauchen mehr als 10 Minuten zum
+              Knacken im einfachen Modus</b
+            >
+          </p>
+          <div
+            class="d-flex gap-lg-5 gap-4 flex-column flex-lg-row align-items-center w-100 custom-width justify-content-center"
+          >
             <div id="bruteInput" class="flex-column d-flex gap-lg-4 row">
               <input
                 type="text"
                 id="userPwdInput"
-                class="form-control-lg form-control "
+                class="form-control-lg form-control"
                 placeholder="Gib ein Passwort ein"
               />
               <select
@@ -199,7 +205,7 @@
                 aria-label="Default select example"
               >
                 <option value="library" selected>Listen Modus</option>
-                <option value="simple">Simpler Modus</option>
+                <option value="simple">Einfacher Modus</option>
               </select>
             </div>
             <div id="bruteBtns" class="d-flex flex-column gap-lg-4">
@@ -235,11 +241,15 @@
         <div class="excalibur" id="passwordStrengthCalc">
           <h3>Password Excalibur</h3>
           <p>
-            Password Excalibur is a tool designed to assess the strength of your
-            password. It evaluates various factors including length, complexity,
-            and predictability to give you a comprehensive strength score.
+            Password Excalibur ist ein Tool, das die Stärke deines Passworts
+            überprüft. Es bewertet dabei Faktoren wie Länge, Komplexität und
+            Vorhersehbarkeit und gibt dir eine umfassende Bewertung deiner
+            Passwortsicherheit.
           </p>
-          <div id="passwordCalc" class="d-flex flex-column flex-lg-row gap-4 w-75">
+          <div
+            id="passwordCalc"
+            class="d-flex flex-column flex-lg-row gap-4 w-75"
+          >
             <input
               type="text"
               id="strengthInput"
@@ -290,20 +300,20 @@
   <script type="module">
     import { loadOffCanvas } from "../components/offCanvas.js";
     import { quote } from "../components/quotes.js";
-    import {clipBoard} from "../components/clipBoard.js"
-    import {createNav,configNav} from "../components/navBar.js"
+    import { clipBoard } from "../components/clipBoard.js";
+    import { createNav, configNav } from "../components/navBar.js";
     import { heroText } from "../components/heroText.js";
-    heroText("header", "heroTest",'../data/text.json');
-    quote("#quote7", "zitate", 7,'../data/text.json');
-    quote("#quote9", "zitate", 9,'../data/text.json');
-    quote("#quote5", "zitate", 5,'../data/text.json');
-    loadOffCanvas("header", "liste",'../data/text.json');
-    loadOffCanvas("header", "simple",'../data/text.json');
-    quote("#quote11", "zitate", 11,'../data/text.json');
-    clipBoard(".clipBoard")
-    createNav(configNav)
+    heroText("header", "heroTest", "../data/text.json");
+    quote("#quote7", "zitate", 7, "../data/text.json");
+    quote("#quote9", "zitate", 9, "../data/text.json");
+    quote("#quote5", "zitate", 5, "../data/text.json");
+    loadOffCanvas("header", "liste", "../data/text.json");
+    loadOffCanvas("header", "simple", "../data/text.json");
+    quote("#quote11", "zitate", 11, "../data/text.json");
+    clipBoard(".clipBoard");
+    createNav(configNav);
   </script>
-  
+
   <script src="../featureHtmlScripts/testing.js" type="module"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
