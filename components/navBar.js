@@ -83,7 +83,7 @@ const createNavBar = (configNav) => {
             <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${configNav}.oldDesign.link">${configNav.oldDesign.text}</a>
+            <a class="nav-link" href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

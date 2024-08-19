@@ -9,7 +9,7 @@ export const copyButton = (textId) => {
 
   const confirmBubble = document.createElement("div");
   confirmBubble.className = "confirmBubble";
-  confirmBubble.innerText = "Copied!";
+  confirmBubble.innerText = "Kopiert!";
 
   const img = document.createElement("img");
 
@@ -26,7 +26,6 @@ export const copyButton = (textId) => {
     }
     button.append(img, confirmBubble);
   } else {
-    const text = "Kopiert!";
     const i = document.createElement("i");
     i.className = "fa-regular fa-clipboard";
     button.append(i, confirmBubble);
