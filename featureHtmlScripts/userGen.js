@@ -3,7 +3,7 @@ import { generateQuizResult } from "./userPsyTest.js";
 import { copyButton } from "../scripts/copybutton.js";
 
 const userGenBtn = document.getElementById("userGeneratorBtn");
-
+console.log(document.querySelectorAll("table"))
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
   const adjective1 = document.getElementById("adjective1").value;
@@ -65,9 +65,9 @@ userGenSubmitBtn.addEventListener("click", function (e) {
   e.preventDefault();
   for (let i = 0; i < 5; i++){
     const quizOutput = generateQuizResult();
-    document.addEventListener('DOMContentLoaded', function() {
+
       updateAttempts(quizOutput, "#statsBody1")
-    });
+
    replaceLastSlide();
   };
 });
@@ -121,15 +121,10 @@ const arrowBtn = () => {
   
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
-
   const active = document.querySelector(".active")
-  console.log(235)
   if (active.getAttribute("aria-label")==="Slide 2") {
-    
-    prevBtn.style.display = "block";
-
+    prevBtn.style.display = "block"
   } else if (active.getAttribute("aria-label") === "Slide 6") {
-    
     nextBtn.style.display = "none";
   } else {
     prevBtn.style.display = "block";
