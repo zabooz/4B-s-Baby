@@ -121,7 +121,7 @@ const quiz = (config) => {
                     <h5>${config.letzteFolie.frage}</h5>
                     <p>${config.letzteFolie.antwort}</p>
                     <button class="btn btn-primary mb-4" id="submitButton">Antworten absenden</button>
-                    <button class="btn btn-primary mb-4" id="restartButton">Restart</button>
+                    
                 </div>
             </div>
         </div>

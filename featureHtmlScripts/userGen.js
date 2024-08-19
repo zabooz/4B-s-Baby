@@ -86,6 +86,23 @@ export function replaceLastSlide() {
   const carousel = document.querySelector("#questionCarousel");
   const bootstrapCarousel = new bootstrap.Carousel(carousel);
   bootstrapCarousel.to(5); // Moves to the last slide
+
+
+  const restBtn = document.getElementById("restartButton")
+
+
+  restBtn.addEventListener("click",() => {
+
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+    prevBtn.style.display = "none";
+    nextBtn.style.display = "block";
+
+    bootstrapCarousel.to(0)
+
+  })
+
 };
 
 const newSlideContent = `
@@ -94,6 +111,7 @@ const newSlideContent = `
   <div class="carousel-caption d-flex flex-column gap-4 align-items-center">
     <h5>Vielen Dank für Ihre Teilnahme!</h5>
     <p>Ihre Antworten wurden erfolgreich gesendet.</p>
+    <button class="btn btn-primary mb-4" id="restartButton">Restart</button>
   </div>
 </div>`;
 
