@@ -91,12 +91,20 @@ header{
         width: 7rem;
         height: 5rem;
     }
+    .input{
+        width: 50%;
+        padding: .2rem;
+        border-radius: .5rem;
+    }
 }
 @media(min-width:992px){
 
     .custom-img{
         width: 7rem;
         height: 5rem;
+    }
+    .custom-width{
+        width: 75% ! important; 
     }
 
 

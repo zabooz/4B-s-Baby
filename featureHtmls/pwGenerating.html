@@ -62,8 +62,8 @@
               <p class="w-75 fw-semibold">
                 Mit dieser Methode wird ein Bild in ein starkes Passwort umgewandelt, das nicht nur sicher ist, sondern dir auch hilft, dir deine Passwörter leichter zu merken. Ein cleveres und einfaches System, um deine Online-Sicherheit zu verbessern.
               </p>
-                <div class="pictureMagicDiv d-flex flex-column flex-lg-row align-items-center justify-content-evenly  gap-5">
-                  <div class="imgDiv border border-2  mb-3 rounded">
+                <div class=" d-flex flex-column flex-md-row align-items-center justify-content-evenly gap-5">
+                  <div class=" border border-2  mb-3 rounded">
                     <img  id="previewImage" src="../img/confusion.jpeg" alt="confusion" class="border rounded">
                   </div>
                   <div class=" d-flex flex-column  gap-2 h-100 ">
@@ -84,7 +84,7 @@
                   </form>
                   </div>
                 </div>
-                <p id="picResult" class=" border border-secondary border-2  mt-3 text-center">Sample Text</p>
+                <p id="picResult" class=" border border-secondary border-2 w-50  mt-3 text-center">Sample Text</p>
               </div>
           </section>
           <section id="quote3" class="bg-body-tertiary">
@@ -116,8 +116,8 @@
                     </select>
                 </div>
                
-                  <button id="convertBtn" class="btn btn-primary mt-3 input btn-lg">Los geht's</button>
-                  <p  id="leetResult" class="input border border-secondary  border-2  mt-1 text-center">Sample Text</p>
+                  <button id="convertBtn" class="btn btn-primary mt-3 custom-width btn-lg">Los geht's</button>
+                  <p  id="leetResult" class="input w-25 border border-secondary  border-2  mt-1 text-center">Sample Text</p>
            
                 
               </div>
@@ -132,10 +132,11 @@
                   Erstell dir ein sicheres Passwort, das lang genug ist. Es erscahfft eine zufällige Mischung aus Buchstaben, Zahlen und Symbolen sein, damit dein Konto gut geschützt ist.
                 </p>
                 <div id="startPwGenDiv" class="d-flex flex-column w-100 justify-content-center align-items-center">
-                    <div class="d-flex w-50 justify-content-center align-items-center mb-3">
-                      <label for="pwLength" class=" label  p-1 d-flex w-50 justify-content-center w-100 gap-3 align-items-center mb-3 fw-semibold">Passwortlänge:
+                    <div class="d-flex flex-column flex-lg-row w-50 justify-content-center align-items-center mb-3">
+                      <label for="pwLength" class=" label  p-1 d-flex w-50 custom-width justify-content-center w-100 gap-3 align-items-center mb-3 fw-semibold">Passwortlänge:
+                      </label>
                        
-                      <select id="pwLength" class="input">
+                      <select id="pwLength" class="input w-75">
                         <option value="6">6</option>
                         <option value="8">8</option>
                         <option value="10">10</option>
@@ -144,10 +145,9 @@
                         <option value="20">20</option>
                         <option value="24">24</option>
                       </select>
-                      </label>
                     </div>
                     <button id="rdmPwdBtn" class="btn btn-primary btn-lg input">Generate</button>
-                    <p  id="generatedPassword" class=" d-flex justify-content-evenly border border-secondary  border-2  mt-3 text-center input">Sample Text</p>
+                    <p  id="generatedPassword" class=" d-flex input justify-content-evenly border border-secondary  border-2  mt-3 text-center ">Sample Text</p>
                 </div>
               </div>
           </section>
