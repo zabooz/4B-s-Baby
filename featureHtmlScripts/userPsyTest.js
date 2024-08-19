@@ -17,7 +17,7 @@ const answerObj = {
   question3: {
     q3a1: ["fruits", "vegetables"],
     q3a2: "beverages",
-    q3a3: "desserts",
+    q3a3: ["desserts", "weatherTypes"],
     q3a4: "food",
   },
   question4: {
