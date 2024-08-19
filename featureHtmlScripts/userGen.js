@@ -3,7 +3,7 @@ import { generateQuizResult } from "./userPsyTest.js";
 import { copyButton } from "../scripts/copybutton.js";
 
 const userGenBtn = document.getElementById("userGeneratorBtn");
-console.log(document.querySelectorAll("table"))
+
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
   const adjective1 = document.getElementById("adjective1").value;
