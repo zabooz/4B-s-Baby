@@ -3,7 +3,7 @@ import { rndNumInLen } from "../scripts/encoder.js";
 
 const answerObj = {
   question1: {
-    q1a1: ["temperatures", "weatherTypes"],
+    q1a1: "temperatures",
     q1a2: ["textures", "tastes"],
     q1a3: ["qualities", "sizes"],
     q1a4: ["speeds", "ages"],
@@ -22,14 +22,14 @@ const answerObj = {
   },
   question4: {
     q4a1: "instruments",
-    q4a2: "flowers",
+    q4a2: ["flowers", "clothingItems"],
     q4a3: "vehicles",
     q4a4: "tools",
   },
   question5: {
     q5a1: "animals",
     q5a2: "fantasyCreatures",
-    q5a3: "fantasyRaces",
+    q5a3: ["fantasyRaces", "rpgClasses"],
     q5a4: "occupations",
   },
 };

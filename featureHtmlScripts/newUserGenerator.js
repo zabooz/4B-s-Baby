@@ -29,8 +29,6 @@ import {
   desserts,
   contentArray1,
   contentArray2,
-  allAdjectives,
-  allNouns,
   intensities,
 } from "../data/englishGenerator.data.js";
 import { rndNumInLen } from "../scripts/encoder.js";
@@ -88,8 +86,6 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
     bodyParts: bodyParts,
     flowers: flowers,
     desserts: desserts,
-    allAdjectives: allAdjectives,
-    allNouns: allNouns,
   };
   let selectedAdjectiveArray, selectedNounArray;
 
