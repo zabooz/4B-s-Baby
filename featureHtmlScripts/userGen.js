@@ -57,12 +57,41 @@ function updateAttempts(result, table) {
           tBody.append(tr)
           const username = document.getElementById(id)
           username.append(copyButton(id))   
-        }
+        };
+
 const userGenSubmitBtn = document.getElementById("submitButton");
 
 userGenSubmitBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  const quizOutput = generateQuizResult();
-
-  updateAttempts(quizOutput, "#statsBody1");
+  for (let i = 0; i < 5; i++){
+    const quizOutput = generateQuizResult();
+    document.addEventListener('DOMContentLoaded', function() {
+      updateAttempts(quizOutput, "#statsBody1")
+    });
+   replaceLastSlide();
+  };
 });
+
+export function replaceLastSlide() {
+  // Find the last carousel item
+  const lastSlide = document.querySelector(
+    ".carousel-inner .carousel-item:last-child"
+  );
+
+  // Replace the content of the last slide with the new content
+  lastSlide.outerHTML = newSlideContent;
+
+  // Optionally, you can move to the last slide after replacing it
+  const carousel = document.querySelector("#questionCarousel");
+  const bootstrapCarousel = new bootstrap.Carousel(carousel);
+  bootstrapCarousel.to(5); // Moves to the last slide
+};
+
+const newSlideContent = `
+<div class="carousel-item active">
+  <img src="../img/psyTest/thankyou.jpg" class="d-block w-100" alt="Thank You">
+  <div class="carousel-caption d-flex flex-column gap-4 align-items-center">
+    <h5>Vielen Dank für Ihre Teilnahme!</h5>
+    <p>Ihre Antworten wurden erfolgreich gesendet.</p>
+  </div>
+</div>`;
