@@ -17,6 +17,7 @@ nav{
 }
 header{
     min-height: 400px;
+    color: #151c19
 }
 
 
@@ -50,7 +51,7 @@ nav img{
     border-radius: 1rem;
 }
 .hr-custom{
-    border: 5px solid black;
+    border: 2px solid black;
     opacity: 1;
 }
 .btn:hover{
@@ -118,7 +119,9 @@ section{
     .custom-width{
         width: 75% ! important; 
     }
-
+          .heroText {
+    width: 75%;
+  }
 
 }
 @media(max-width:700px){

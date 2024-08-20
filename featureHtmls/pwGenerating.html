@@ -16,14 +16,14 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../styles/aiAssistant.css">
-  <script src="../components/aiAssistant.js" type="module"></script>
+
     <script src="../featureHtmlScripts/pwGenerating.js" type="module"></script>
     <title>Create Password</title>
 </head>
 <body class="bg-custom">
     <nav id="navBar" class="sticky-top"></nav>
     
-    <header></header>
+    <header class="mb-5 d-flex justify-content-center" ></header>
     <main>
         <section class="d-flex  justify-content-center">
             <div class="d-flex flex-lg-row flex-column p-2 p-md-5 sectionDiv">
@@ -77,6 +77,7 @@
                         type="file"
                         value="value"
                         id="uploadFile"
+                              accept=".jpg, .jpeg, .png, .webp, .bmp"
                         style="display: none"
                         name="uploadFile"
                       />
@@ -163,7 +164,12 @@
             import {loadOffCanvas} from "../components/offCanvas.js"
             import {clipBoard} from "../components/clipBoard.js"
             import {createNav,configNav} from "../components/navBar.js"
+
+                  import {createAssistant} from "../components/aiAssistant.js"
+      createAssistant("main")
+
             createNav(configNav)
+            createAssistant("main")
             quote("#quote12","zitate",12,'../data/text.json')
             quote("#quote3","zitate",3,'../data/text.json')
             quote("#quote4","zitate",4,'../data/text.json')

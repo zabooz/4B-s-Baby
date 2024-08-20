@@ -15,15 +15,13 @@
   />
     <link rel="stylesheet" href="./styles/mainStyle.css" />
     <link rel="stylesheet" href="./styles/aiAssistant.css">
-    <script src="./components/aiAssistant.js" type="module"></script>
 
     <title>Password Playground</title>
   </head>
   <body class="bg-custom">
     <nav id="navBar" class="sticky-top">
-      <script src="./components/navBar.js"></script>
     </nav>
-    <header class="mb-5"></header>
+    <header class="mb-5 d-flex justify-content-center" ></header>
     <main>
       <section class="d-flex justify-content-center">
         <div class="d-flex flex-lg-row flex-column  sectionDiv">
@@ -33,10 +31,10 @@
           <div class="content-container p-3 d-flex flex-column align-items-center align-items-lg-start">
             <h4 class="mb-2 fw-bold fs-3 text-lg-start text-center w-100">Teste Die Stärke Deines Passworts!</h4>
             <p class="mb-3 fw-lg-semibold text-lg-start text-center fs-5 w-100">
-              Überprüfen Sie die Sicherheit Ihres Passworts.
+              Teste die Stärke deines Passworts!
             </p>
             <p class="p-3 p-lg-0 ">
-              Verwenden Sie unser Bewertungstool <span><b>Excalibur</b></span>, um die Stärke Ihres Passworts zu testen und simulieren Sie Brute-Force-Angriffe mit <span><b>Mojo</b></span>, um zu sehen, wie lange es dauern würde, bis Ihr Passwort geknackt wird.
+              Verwende  unser Bewertungstool <span><b>Excalibur</b></span>, um die Stärke deines Passworts zu testen und simuliere Brute-Force-Angriffe mit <span><b>Mojo</b></span>, um zu sehen, wie lange es dauern würde, bis dein Passwort geknackt wird.
             </p>
             <a class="btn my-3" href="./featureHtmls/testing.html">Test Password</a>
           </div>
@@ -56,10 +54,10 @@
           <div class="content-container p-3 d-flex flex-column align-items-center align-items-lg-start" >
             <h4 class="mb-2 fw-bold fs-2 text-lg-start text-center w-100">Generiere Passwort</h4>
             <p class="mb-3 fw-lg-semibold text-lg-start text-center fs-5 w-100">
-              Erstellen Sie ein sicheres Passwort für Ihre Konten.
+              Erstelle ein sicheres Passwort für deine Konten.
             </p>
             <p class="p-3 p-lg-0 ">
-              Nutzen Sie unsere drei Tools, um das ideale Passwort zu generieren: <span><b>Picture Magic</b></span> verwandelt Bilder in Passwörter,<span><b>Rune Translator</b></span>  konvertiert Texte in Leetspeak und <span><b>GlyphSorcery</b></span> erstellt zufällige, sichere Passwörter. Wählen Sie die Methode, die am besten zu Ihnen passt, um Ihre Daten zu schützen..
+              Nutze unsere drei Tools, um das ideale Passwort zu generieren: <span><b>Picture Magic</b></span> verwandelt Bilder in Passwörter,<span><b>Rune Translator</b></span>  konvertiert Texte in Leetspeak und <span><b>GlyphSorcery</b></span> erstellt zufällige, sichere Passwörter. Wähle die Methode, die am besten zu dir passt, um deine Daten zu schützen.
             </p>
             <a class="btn  my-3" href="./featureHtmls/pwGenerating.html">Generiere Passwort</a>
           </div>
@@ -83,9 +81,9 @@
               Lass deiner Fantasie freien Lauf und finde einen einzigartigen Benutzernamen, der dich in der digitalen Welt hervorhebt.
             </p>
             <p class="p-3 p-lg-0 ">
-              Nutzen Sie unsere beiden Tools, um den perfekten Benutzernamen zu erstellen: <span><b>Identity Wizardry</b></span> generiert zufällige Benutzernamen basierend auf Ihren Parametern, und <span><b>Soul Eater</b></span> erstellt kreative Namen durch ein unterhaltsames Quiz. Wählen Sie die Methode, die am besten zu Ihnen passt, um Ihre Online-Identität zu finden..
+              Nutze unsere beiden Tools, um den perfekten Benutzernamen zu erstellen: <span><b>Identity Wizardry</b></span> generiert zufällige Benutzernamen basierend auf deinen Parametern, und <span><b>Mind Maestro</b></span> erstellt kreative Namen durch ein unterhaltsames Quiz. Wähle die Methode, die am besten zu dir passt, um deine Online-Identität zu finden.
             </p>
-            <a class="btn  my-3" href="./featureHtmls/pwGenerating.html">Generiere Benutzernamen</a>
+            <a class="btn  my-3" href="./featureHtmls/userGenerating.html">Generiere Benutzernamen</a>
           </div>
         </div>
       </section>
@@ -99,11 +97,14 @@
     <script type="module">
       import {quote} from "./components/quotes.js"
       import {heroText} from "./components/heroText.js"
+      import {createAssistant} from "./components/aiAssistant.js"
+      createAssistant("main")
       quote("#quote1","zitate",1,'./data/text.json')
       quote("#quote2","zitate",2,'./data/text.json')
       heroText("header","heroIndex",'./data/text.json')
       import {createNav,configNavIndex} from "./components/navBar.js"
       createNav(configNavIndex)
+
   </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
