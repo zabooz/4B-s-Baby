@@ -4,7 +4,7 @@ import { fetchText } from "../utilities/fetchText.js";
 const createHero = (content) => {
 
     return `
-    <div class="jumbotron p-5 mb-5 d-flex flex-column align-items-center align-items-lg-start">
+    <div class="jumbotron p-5 mb-5 d-flex flex-column align-items-center heroText align-items-lg-start">
         <h1 class="display-5 fw-semibold my-4 text-center">${content.h1}</h1>
         <p class="lead fw-semibold text-center">
           ${content.lead}
