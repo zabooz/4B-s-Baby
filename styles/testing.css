@@ -119,7 +119,9 @@ section{
     .custom-width{
         width: 75% ! important; 
     }
-
+          .heroText {
+    width: 75%;
+  }
 
 }
 @media(max-width:700px){

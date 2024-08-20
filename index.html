@@ -16,13 +16,12 @@
     <link rel="stylesheet" href="./styles/mainStyle.css" />
     <link rel="stylesheet" href="./styles/aiAssistant.css">
 
-
     <title>Password Playground</title>
   </head>
   <body class="bg-custom">
     <nav id="navBar" class="sticky-top">
     </nav>
-    <header class="mb-5"></header>
+    <header class="mb-5 d-flex justify-content-center" ></header>
     <main>
       <section class="d-flex justify-content-center">
         <div class="d-flex flex-lg-row flex-column  sectionDiv">
@@ -98,11 +97,14 @@
     <script type="module">
       import {quote} from "./components/quotes.js"
       import {heroText} from "./components/heroText.js"
+      import {createAssistant} from "./components/aiAssistant.js"
       quote("#quote1","zitate",1,'./data/text.json')
       quote("#quote2","zitate",2,'./data/text.json')
       heroText("header","heroIndex",'./data/text.json')
       import {createNav,configNavIndex} from "./components/navBar.js"
       createNav(configNavIndex)
+      createAssistant("main")
+
   </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
