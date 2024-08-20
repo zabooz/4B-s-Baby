@@ -15,56 +15,48 @@ userGenBtn.addEventListener("click", function (e) {
 });
 
 function updateAttempts(result, table) {
-  
   const dataArr = result;
-  
+
   const tBody = document.querySelector(table);
   const tr = document.createElement("tr");
   const td = document.createElement("td");
-  
+
   const rowCount = tBody.rows.length + 1;
-  const id = +(rowCount.toString() + 1)
-  td.textContent = rowCount
+  const id = +(rowCount.toString() + 1);
+  td.textContent = rowCount;
 
   tr.appendChild(td);
 
+  for (let i = 0; i < dataArr.length; i++) {
+    const td = document.createElement("td");
 
-        for(let i = 0; i<dataArr.length;i++){
+    if (i === dataArr.length - 2) {
+      if (dataArr[i] && dataArr[i + 1]) {
+        td.textContent = dataArr[i] + " / " + dataArr[i + 1];
+      } else if (dataArr[i]) {
+        td.textContent = dataArr[i];
+      } else {
+        td.textContent = dataArr[i + 1];
+      }
+      tr.appendChild(td);
+      break;
+    }
 
-            const td = document.createElement("td")
- 
-            if(i=== dataArr.length -2 ){
+    if (i === 0) td.id = id;
 
-                if(dataArr[i] && dataArr[i+1]){
-                    td.textContent = dataArr[i] +" / "+ dataArr[i+1]
-                }else if(dataArr[i]){
-                    td.textContent = dataArr[i]
-                }else{
-                    td.textContent = dataArr[i+1]
-                }
-                tr.appendChild(td)
-                break;
-
-            }
-
-            if(i === 0) td.id = id;
-
-
-            td.innerText = dataArr[i]
-            tr.appendChild(td)
-            
-          }
-          tBody.append(tr)
-          const username = document.getElementById(id)
-          username.append(copyButton(id))   
-        };
+    td.innerText = dataArr[i];
+    tr.appendChild(td);
+  }
+  tBody.append(tr);
+  const username = document.getElementById(id);
+  username.append(copyButton(id));
+}
 
 const userGenSubmitBtn = document.getElementById("submitButton");
 
 userGenSubmitBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
-  // Your existing logic
   for (let i = 0; i < 5; i++) {
     const quizOutput = generateQuizResult();
     updateAttempts(quizOutput, "#statsBody1");
@@ -76,39 +68,53 @@ userGenSubmitBtn.addEventListener("click", function (e) {
   // Create a reset button
   const resetBtn = document.createElement("button");
   resetBtn.id = "resetButton";
-  resetBtn.classList.add("btn btn-primary");
+  resetBtn.classList.add("btn", "btn-primary", "mb-4");
   resetBtn.textContent = "Reset Quiz";
   resetBtn.style.display = "inline-block"; // Ensure it's visible
   userGenSubmitBtn.parentNode.appendChild(resetBtn);
 
   // Add event listener to the reset button
   resetBtn.addEventListener("click", function () {
-    resetQuiz(); // Call a function to reset the quiz
+    resetQuiz();
   });
 });
 
 function resetQuiz() {
-  // Logic to reset the quiz, e.g., clearing inputs, resetting scores, etc.
-  console.log("Quiz has been reset.");
+  // Uncheck all radio buttons
+  const checkboxes = document.querySelectorAll('input[type="radio"]');
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+
+  // Reset the carousel to the first slide
+  const carousel = new bootstrap.Carousel(
+    document.getElementById("questionCarousel")
+  );
+  carousel.to(0); // Move to the first slide (index 0)
+
+  // Hide the "prev" button in the carousel
+  document.getElementById("prevBtn").style.display = "none";
 
   // Show the submit button again
-  const userGenSubmitBtn = document.getElementById("submitButton");
   userGenSubmitBtn.style.display = "inline-block"; // Make the submit button visible again
 
   // Remove the reset button
   const resetBtn = document.getElementById("resetButton");
   resetBtn.remove();
+  const tableBody = document.getElementById("statsBody1");
+  tableBody.innerHTML = "";
+
+  console.log("Quiz has been reset.");
 }
 
-const carousel = document.querySelectorAll("#prevBtn,#nextBtn")
+const carousel = document.querySelectorAll("#prevBtn,#nextBtn");
 
 const arrowBtn = () => {
-  
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
-  const active = document.querySelector(".active")
-  if (active.getAttribute("aria-label")==="Slide 2") {
-    prevBtn.style.display = "block"
+  const active = document.querySelector(".active");
+  if (active.getAttribute("aria-label") === "Slide 2") {
+    prevBtn.style.display = "block";
   } else if (active.getAttribute("aria-label") === "Slide 6") {
     nextBtn.style.display = "none";
   } else {
@@ -117,5 +123,4 @@ const arrowBtn = () => {
   }
 };
 
-carousel.forEach(btn => btn.addEventListener("click",arrowBtn))
-
+carousel.forEach((btn) => btn.addEventListener("click", arrowBtn));
