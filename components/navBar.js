@@ -35,15 +35,15 @@ export const configNavIndex = {
     link: "./index.html",
   },
   testing: {
-    text: "Password Testing",
+    text: "Check Password",
     link: "./featureHtmls/testing.html",
   },
   userGen: {
-    text: "User Generator",
+    text: "Find your Name",
     link: "./featureHtmls/userGenerating.html",
   },
   pwGen: {
-    text: "Password Generator",
+    text: "Make Password",
     link: "./featureHtmls/pwGenerating.html",
   },
   oldDesign:{
