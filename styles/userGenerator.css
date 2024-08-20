@@ -33,6 +33,11 @@ header {
 .description {
   width: 25rem;
 }
+#wizardInput2,
+#wizardInput3 {
+  width: 12.5rem;
+  height: 10.5rem;
+}
 
 .custom-indicators button {
   background-color: #4caf50;
@@ -128,6 +133,9 @@ main {
   .custom-img {
     width: 7rem;
     height: 5rem;
+  }
+  .btn {
+    margin-top: 1rem !important;
   }
 }
 @media (min-width: 992px) {
