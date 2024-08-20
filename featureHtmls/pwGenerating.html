@@ -16,7 +16,7 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../styles/aiAssistant.css">
-  <script src="../components/aiAssistant.js" type="module"></script>
+
     <script src="../featureHtmlScripts/pwGenerating.js" type="module"></script>
     <title>Create Password</title>
 </head>
@@ -164,6 +164,8 @@
             import {loadOffCanvas} from "../components/offCanvas.js"
             import {clipBoard} from "../components/clipBoard.js"
             import {createNav,configNav} from "../components/navBar.js"
+                  import {createAssistant} from "../components/aiAssistant.js"
+      createAssistant("main")
             createNav(configNav)
             quote("#quote12","zitate",12,'../data/text.json')
             quote("#quote3","zitate",3,'../data/text.json')

@@ -12,19 +12,19 @@ const aiAssistant = () => {
   <button class="btn btn-primary" id="aiAssistant" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
   Ai Bot
 </button>
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas offcanvas-start bg-custom  border-custom" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Security Bot</h5>
+    <h5 class="offcanvas-title mt-5 fs-3  fw-semibold text-decoration-underline"  id="offcanvasExampleLabel">Security Bot</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
   <div class="langBot d-flex">
   </div>
 <div class="form-floating">
-  <textarea id="question" class="form-control mb-4" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+  <textarea id="question" class="form-control mb-4 " placeholder="Leave a comment here" id="floatingTextarea"></textarea>
 </div>
     <button id="submitQ" type="button" class="btn btn-primary"> Senden</button>
-    <p id="aiAnswer"><p>
+    <p id="aiAnswer" class=" mt-4 p-2"><p>
   </div>
 </div>
     
