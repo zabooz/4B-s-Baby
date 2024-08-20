@@ -76,6 +76,7 @@ userGenSubmitBtn.addEventListener("click", function (e) {
   // Create a reset button
   const resetBtn = document.createElement("button");
   resetBtn.id = "resetButton";
+  resetBtn.classList.add("btn btn-primary");
   resetBtn.textContent = "Reset Quiz";
   resetBtn.style.display = "inline-block"; // Ensure it's visible
   userGenSubmitBtn.parentNode.appendChild(resetBtn);
