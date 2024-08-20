@@ -4,16 +4,16 @@ import { fetchText } from "../utilities/fetchText.js";
 const createHero = (content) => {
 
     return `
-    <div class="jumbotron p-5 mb-5 d-flex flex-column align-items-center heroText align-items-lg-start">
-        <h1 class="display-5 fw-semibold my-4 text-center">${content.h1}</h1>
-        <p class="lead fw-semibold text-center">
+    <div class="jumbotron  p-5 mb-5 d-flex flex-column align-items-center heroText align-items-lg-start">
+        <h1 class="display-5  fw-semibold my-4 text-center">${content.h1}</h1>
+        <p class="lead  text-center">
           ${content.lead}
         </p>
-        <hr class="my-4 hr-custom w-100" />
-        <p class="fw-semibold w-100 w-lg-50">
+        
+        <p class=" w-50 w-lg-50">
         ${content.p}
         </p>
-        <p class="fw-semibold w-100 w-lg-50">
+        <p class=" w-50 w-lg-50">
         ${content.p2}
         </p>
         </div>
