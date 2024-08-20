@@ -138,6 +138,8 @@ Erstelle einen einzigartigen Benutzernamen, indem du bis zu zwei Gruppen von Eig
       import {quote} from "../components/quotes.js"
       import {clipBoard} from "../components/clipBoard.js"
       import {createNav,configNav} from "../components/navBar.js"
+            import {createAssistant} from "../components/aiAssistant.js"
+      createAssistant("main")
       createNav(configNav)
       quote("#quote6","zitate",6,'../data/text.json')
       heroText("header","heroUser",'../data/text.json')

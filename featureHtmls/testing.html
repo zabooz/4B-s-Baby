@@ -25,7 +25,7 @@
   </head>
   <body class="bg-custom">
     <nav id="navBar" class="sticky-top"></nav>
-    <header class="mb-5 d-flex justify-content-center" ></header>
+    <header class="mb-5 d-flex justify-content-center"></header>
     <script type="module"></script>
 
     <main>
@@ -302,6 +302,8 @@
     import { quote } from "../components/quotes.js";
     import { clipBoard } from "../components/clipBoard.js";
     import { createNav, configNav } from "../components/navBar.js";
+    import { createAssistant } from "../components/aiAssistant.js";
+    createAssistant("main");
     import { heroText } from "../components/heroText.js";
     heroText("header", "heroTest", "../data/text.json");
     quote("#quote7", "zitate", 7, "../data/text.json");
