@@ -63,57 +63,42 @@ const userGenSubmitBtn = document.getElementById("submitButton");
 
 userGenSubmitBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  for (let i = 0; i < 5; i++){
+
+  // Your existing logic
+  for (let i = 0; i < 5; i++) {
     const quizOutput = generateQuizResult();
+    updateAttempts(quizOutput, "#statsBody1");
+  }
 
-      updateAttempts(quizOutput, "#statsBody1")
+  // Hide the submit button
+  userGenSubmitBtn.style.display = "none";
 
-   replaceLastSlide();
-  };
+  // Create a reset button
+  const resetBtn = document.createElement("button");
+  resetBtn.id = "resetButton";
+  resetBtn.classList.add("btn btn-primary");
+  resetBtn.textContent = "Reset Quiz";
+  resetBtn.style.display = "inline-block"; // Ensure it's visible
+  userGenSubmitBtn.parentNode.appendChild(resetBtn);
+
+  // Add event listener to the reset button
+  resetBtn.addEventListener("click", function () {
+    resetQuiz(); // Call a function to reset the quiz
+  });
 });
 
+function resetQuiz() {
+  // Logic to reset the quiz, e.g., clearing inputs, resetting scores, etc.
+  console.log("Quiz has been reset.");
 
-export function replaceLastSlide() {
-  // Find the last carousel item
-  const lastSlide = document.querySelector(
-    ".carousel-inner .carousel-item:last-child"
-  );
+  // Show the submit button again
+  const userGenSubmitBtn = document.getElementById("submitButton");
+  userGenSubmitBtn.style.display = "inline-block"; // Make the submit button visible again
 
-  // Replace the content of the last slide with the new content
-  lastSlide.outerHTML = newSlideContent;
-
-  // Optionally, you can move to the last slide after replacing it
-  const carousel = document.querySelector("#questionCarousel");
-  const bootstrapCarousel = new bootstrap.Carousel(carousel);
-  bootstrapCarousel.to(5); // Moves to the last slide
-
-
-  const restBtn = document.getElementById("restartButton")
-
-
-  restBtn.addEventListener("click",() => {
-
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-    prevBtn.style.display = "none";
-    nextBtn.style.display = "block";
-
-    bootstrapCarousel.to(0)
-
-  })
-
-};
-
-const newSlideContent = `
-<div class="carousel-item active">
-  <img src="../img/psyTest/thankyou.jpg" class="d-block w-100" alt="Thank You">
-  <div class="carousel-caption d-flex flex-column gap-4 align-items-center">
-    <h5>Vielen Dank für Ihre Teilnahme!</h5>
-    <p>Ihre Antworten wurden erfolgreich gesendet.</p>
-    <button class="btn btn-primary mb-4" id="restartButton">Restart</button>
-  </div>
-</div>`;
+  // Remove the reset button
+  const resetBtn = document.getElementById("resetButton");
+  resetBtn.remove();
+}
 
 const carousel = document.querySelectorAll("#prevBtn,#nextBtn")
 
