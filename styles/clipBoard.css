@@ -32,20 +32,4 @@
     50% { opacity: 1; }
     100% { opacity: 0; display: none; }
 }
-#clipBoardBtn{
-    position: fixed;
-    right:-5rem;
-    top:30%;
-    border-top-left-radius: 40%;
-    border-bottom-left-radius: 40%;
-    border:none;
-    width: 7rem;
-    height: 5rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
 
-}
-#clipBoardBtn:hover{
-    animation: moveBtnAi .5s ease-out forwards; /* Wende die Animation an */
-}

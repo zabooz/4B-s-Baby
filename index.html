@@ -94,17 +94,21 @@
 
       <script src="./components/footer.js"></script>
     </footer>
+    <div class="clipBoard"></div>
     <script type="module">
       import {quote} from "./components/quotes.js"
       import {heroText} from "./components/heroText.js"
+      import {createNav,configNavIndex} from "./components/navBar.js"
       import {createAssistant} from "./components/aiAssistant.js"
+      import{createQuickNav} from "./components/quickNav.js"
+      createQuickNav("main")
+      import {clipBoard} from "../components/clipBoard.js"
+      clipBoard(".clipBoard")
       createAssistant("main")
       quote("#quote1","zitate",1,'./data/text.json')
       quote("#quote2","zitate",2,'./data/text.json')
       heroText("header","heroIndex",'./data/text.json')
-      import {createNav,configNavIndex} from "./components/navBar.js"
       createNav(configNavIndex)
-
   </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
