@@ -1,8 +1,7 @@
 import { pictureToString } from "../scripts/picturePwd.js";
 import { copyButton } from "../scripts/copybutton.js";
-import { tripleConverter } from "./newLeetConverter.js";
+import { tripleConverter } from "./tripleLeetConverter.js";
 import { generatePassword } from "../scripts/passwordGenerator.js";
-import { updateAttempts } from "../featureHtmlScripts/userGen.js";
 const uploadFile = document.getElementById("uploadFile");
 const picConBtn = document.getElementById("pictureConvertBtn");
 const leetBtn = document.getElementById("convertBtn");
@@ -44,8 +43,13 @@ picConBtn.addEventListener("click", async (e) => {
 leetBtn.addEventListener("click", function () {
   const passwordInput = document.getElementById("passwordInput").value;
   const newPasswordArray = tripleConverter(passwordInput);
-  for (let i = 0; i < 3; i++) {
-    updateAttempts(newPasswordArray[i], statsBody2);
+  for (let i = 1; i < 4; i++) {
+    let result = document.getElementById("leetResult" + i);
+    let strength = document.getElementById("leetStrength" + i);
+    result.innerHTML = newPasswordArray[i - 1];
+    result.append(copyButton("leetResult" + i));
+    result.style.display = "block";
+    strength.style.display = "block";
   }
 });
 
@@ -55,7 +59,6 @@ rdmPwdBtn.addEventListener("click", function () {
 
   const pwLength = document.getElementById("pwLength").value;
   const generatedPassword = generatePassword(pwLength);
-  console.log(generatedPassword);
   textElement.innerText = `${generatedPassword}`;
   textElement.append(copyButton(textId));
 });

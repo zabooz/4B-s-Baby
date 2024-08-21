@@ -2,23 +2,16 @@ import { generateUser } from "./newUserGenerator.js";
 import { generateQuizResult } from "./userPsyTest.js";
 import { copyButton } from "../scripts/copybutton.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM loaded");
-  const userGenBtn = document.getElementById("userGeneratorBtn");
-  if (userGenBtn) {
-    console.log("Button found");
-    userGenBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      const adjective1 = document.getElementById("adjective1").value;
-      const adjective2 = document.getElementById("adjective2").value;
-      const selectedNoun = document.getElementById("noun").value;
-      const userOutput = generateUser(adjective1, adjective2, selectedNoun);
+const userGenBtn = document.getElementById("userGeneratorBtn");
 
-      updateAttempts(userOutput, "#statsBody");
-    });
-  } else {
-    console.error("Button element not found!");
-  }
+userGenBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  const adjective1 = document.getElementById("adjective1").value;
+  const adjective2 = document.getElementById("adjective2").value;
+  const selectedNoun = document.getElementById("noun").value;
+  const userOutput = generateUser(adjective1, adjective2, selectedNoun);
+
+  updateAttempts(userOutput, "#statsBody");
 });
 
 export function updateAttempts(result, table) {
