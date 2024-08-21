@@ -4,7 +4,7 @@ export const configQuickNavIndex = {
     text: "Ai-Assistant",
   },
   clippy: {
-    img: "./img/quickNav/clippy.jpeg",
+    img: "./img/quickNav/Clippy.jpeg",
     text: "Clippy",
   },
 };
@@ -14,7 +14,7 @@ export const configQuickNavFeature = {
     text: "Ai-Assistant",
   },
   clippy: {
-    img: "../img/quickNav/clippy.jpeg",
+    img: "../img/quickNav/Clippy.jpeg",
     text: "Clippy",
   },
 };
@@ -40,7 +40,7 @@ const quickNav = (config) => {
     `;
 };
 
-export const createQuickNav = (id,config) => {
+export const createQuickNav = (id, config) => {
   const target = document.querySelector(id);
 
   target.innerHTML += quickNav(config);
