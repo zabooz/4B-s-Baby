@@ -14,7 +14,7 @@ userGenBtn.addEventListener("click", function (e) {
   updateAttempts(userOutput, "#statsBody");
 });
 
-function updateAttempts(result, table) {
+export function updateAttempts(result, table) {
   const dataArr = result;
 
   const tBody = document.querySelector(table);
