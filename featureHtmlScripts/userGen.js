@@ -94,6 +94,7 @@ function resetQuiz() {
 
   // Hide the "prev" button in the carousel
   document.getElementById("prevBtn").style.display = "none";
+  document.getElementById("nextBtn").style.display = "";
 
   // Show the submit button again
   userGenSubmitBtn.style.display = "inline-block"; // Make the submit button visible again
