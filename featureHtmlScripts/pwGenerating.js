@@ -43,13 +43,17 @@ picConBtn.addEventListener("click", async (e) => {
 leetBtn.addEventListener("click", function () {
   const passwordInput = document.getElementById("passwordInput").value;
   const newPasswordArray = tripleConverter(passwordInput);
-  for (let i = 1; i < 4; i++) {
-    let result = document.getElementById("leetResult" + i);
-    let strength = document.getElementById("leetStrength" + i);
-    result.innerHTML = newPasswordArray[i - 1];
-    result.append(copyButton("leetResult" + i));
-    result.style.display = "block";
-    strength.style.display = "block";
+  const strengthArray = ["Simple", "Advanced", "Complicated"];
+  if (passwordInput) {
+    for (let i = 1; i < 4; i++) {
+      let result = document.getElementById("leetResult" + i);
+      let strength = document.getElementById("leetStrength" + i);
+      result.innerHTML = newPasswordArray[i - 1];
+      result.append(copyButton("leetResult" + i));
+      strength.innerHTML = strengthArray[i - 1];
+    }
+    const body = document.getElementById("statsBody2");
+    body.style.display = "";
   }
 });
 
