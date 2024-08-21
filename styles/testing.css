@@ -19,7 +19,40 @@ header{
     min-height: 400px;
     color: #151c19
 }
+#quickNav {
+    position: fixed;
+    right: -7rem;
+    top: 40%;
+}
 
+#quickNav img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+
+}
+
+#quickNav button {
+    position: absolute;
+    right:1rem;
+    position: relative;
+}
+
+
+#quickNav button:hover {
+
+    animation: moveBtn 0.5s forwards
+}
+
+
+@keyframes moveBtn {
+        0% {
+            right:1rem
+        }
+        100% {
+            right: 6.5rem;   
+        }   
+}
 
 .text-custom{
     color: #ea6954;

@@ -9,9 +9,7 @@ const configAi = {
 
 const aiAssistant = () => {
   return `
-  <button class="btn btn-primary" id="aiAssistant" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-  Ai Bot
-</button>
+
 <div class="offcanvas offcanvas-start bg-custom  border-custom" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title mt-5 fs-3  fw-semibold text-decoration-underline"  id="offcanvasExampleLabel">Security Bot</h5>

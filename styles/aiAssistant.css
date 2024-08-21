@@ -1,17 +1,4 @@
-#aiAssistant{
-    position: fixed;
-    right:-5rem;
-    top:40%;
-    border-top-left-radius: 40%;
-    border-bottom-left-radius: 40%;
-    border:none;
-    width: 7rem;
-    height: 5rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
 
-}
 #aiAssistant:hover{
     animation: moveBtnAi .5s ease-out forwards; /* Wende die Animation an */
 }
