@@ -135,7 +135,7 @@ const quiz = (config) => {
       </button>
     </div>
       <div class="tableWrapper w-75">
-    <table class="table mb-5" id="stats1">
+    <table class="table mt-2" id="stats1">
       <thead>
         <tr>
           <th scope="col" class="text-center">#</th>
