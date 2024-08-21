@@ -11,18 +11,18 @@ userGenBtn.addEventListener("click", function (e) {
   const selectedNoun = document.getElementById("noun").value;
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
 
-  updateAttempts(userOutput, "#statsBody");
+  updateAttempts(userOutput, "statsBody");
 });
 
-export function updateAttempts(result, table) {
+function updateAttempts(result, table) {
   const dataArr = result;
 
-  const tBody = document.querySelector(table);
+  const tBody = document.getElementById(table);
   const tr = document.createElement("tr");
   const td = document.createElement("td");
 
   const rowCount = tBody.rows.length + 1;
-  const id = +(rowCount.toString() + 1);
+  const id = table + "_" + rowCount;
   td.textContent = rowCount;
 
   tr.appendChild(td);
@@ -50,6 +50,7 @@ export function updateAttempts(result, table) {
   tBody.append(tr);
   const username = document.getElementById(id);
   username.append(copyButton(id));
+  console.log(id);
 }
 
 const userGenSubmitBtn = document.getElementById("submitButton");
@@ -59,7 +60,7 @@ userGenSubmitBtn.addEventListener("click", function (e) {
 
   for (let i = 0; i < 5; i++) {
     const quizOutput = generateQuizResult();
-    updateAttempts(quizOutput, "#statsBody1");
+    updateAttempts(quizOutput, "statsBody1");
   }
 
   // Hide the submit button
@@ -92,12 +93,12 @@ function resetQuiz() {
   );
   carousel.to(0); // Move to the first slide (index 0)
 
-  // Hide the "prev" button in the carousel
+  // Hide the "prev" button in the carousel and enable "next" button
   document.getElementById("prevBtn").style.display = "none";
   document.getElementById("nextBtn").style.display = "";
 
   // Show the submit button again
-  userGenSubmitBtn.style.display = "inline-block"; // Make the submit button visible again
+  userGenSubmitBtn.style.display = "inline-block";
 
   // Remove the reset button
   const resetBtn = document.getElementById("resetButton");
