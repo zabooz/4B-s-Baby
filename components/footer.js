@@ -1,7 +1,7 @@
 const configFooter = {
-  companyName: "Mayo Monkeys",
+  companyName: "TGOC",
   companyText:
-    "Mayo Monkeys is a creative agency that brings a splash of fun to the world of digital solutions. We specialize in innovative design, development, and marketing strategies that make your brand stand out. Join us on our journey to add a little extra flavor to the digital space.",
+    "TGOC is a creative agency that brings a splash of fun to the world of digital solutions. We specialize in innovative design, development, and marketing strategies that make your brand stand out. Join us on our journey to add a little extra flavor to the digital space.",
   socialMedia: [
     { name: "Facebook", link: "https://www.facebook.com" },
     { name: "Twitter", link: "https://www.twitter.com" },
@@ -11,10 +11,13 @@ const configFooter = {
     { name: "GitHub", link: "https://www.github.com" },
   ],
   platforms: [
-    { name: "Angular", link: "https://angular.io" },
-    { name: "React", link: "https://reactjs.org" },
-    { name: "Vue", link: "https://vuejs.org" },
-    { name: "Laravel", link: "https://laravel.com" },
+    {
+      name: "half baked backend",
+      link: "https://github.com/Zappls/TSP-Project",
+    },
+    { name: "Tic Tac Toe", link: "https://github.com/zabooz/tictactoe" },
+    { name: "Weather Widget", link: "https://github.com/zabooz/weatherWidget" },
+    { name: "Cv", link: "https://github.com/zabooz/codingschool-myCV" },
   ],
   placeholders: [
     { name: "Surprise 1", link: "https://www.pointerpointer.com/" },
@@ -23,7 +26,7 @@ const configFooter = {
     { name: "Surprise 4", link: "http://www.rrrgggbbb.com/" },
   ],
   contact: {
-    address: "1234 Elm Street, Springfield, USA",
+    address: "Crossroads 3, The Barrens, Kalimdor",
     email: "info@example.com",
     phone: "+1 555-123-4567",
     fax: "+1 555-987-6543",

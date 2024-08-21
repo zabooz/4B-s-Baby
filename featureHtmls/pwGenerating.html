@@ -169,7 +169,7 @@
       createAssistant("main")
 
             createNav(configNav)
-            createAssistant("main")
+
             quote("#quote12","zitate",12,'../data/text.json')
             quote("#quote3","zitate",3,'../data/text.json')
             quote("#quote4","zitate",4,'../data/text.json')
@@ -178,7 +178,7 @@
             loadOffCanvas("header","leetSpeak",'../data/text.json')
             clipBoard(".clipBoard")
             import{createQuickNav,configQuickNavFeature} from "../components/quickNav.js"
-      createQuickNav("main",configQuickNavFeature)
+      createQuickNav(".clipBoard",configQuickNavFeature)
             </script>
     
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
