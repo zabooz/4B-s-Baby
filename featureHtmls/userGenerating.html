@@ -139,6 +139,7 @@ Erstelle einen einzigartigen Benutzernamen, indem du bis zu zwei Gruppen von Eig
       import {clipBoard} from "../components/clipBoard.js"
       import {createNav,configNav} from "../components/navBar.js"
       import {createAssistant} from "../components/aiAssistant.js"
+      createQuickNav("main",configQuickNavFeature)
       createAssistant("main")
       createNav(configNav)
       quote("#quote6","zitate",6,'../data/text.json')
@@ -146,7 +147,6 @@ Erstelle einen einzigartigen Benutzernamen, indem du bis zu zwei Gruppen von Eig
       quote("#quote8","zitate",8,'../data/text.json')
       clipBoard(".clipBoard")
       import{createQuickNav,configQuickNavFeature} from "../components/quickNav.js"
-      createQuickNav("main",configQuickNavFeature)
       </script>
       <script src="../featureHtmlScripts/userGen.js" type="module"></script>
       <script src="../featureHtmlScripts/quiz.js"></script>

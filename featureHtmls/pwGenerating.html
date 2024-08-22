@@ -170,7 +170,7 @@
           <section id="quote12" class="d-flex justify-content-center"></section>
     </main>
     <footer class="mx-5">
-        <script src="../components/footer.js"></script>
+      <script src="../components/footer.js"></script>
     </footer>
     <div class="clipBoard"></div>
           <script type="module">
@@ -180,6 +180,8 @@
             import {clipBoard} from "../components/clipBoard.js"
             import {createNav,configNav} from "../components/navBar.js"
             import {createAssistant} from "../components/aiAssistant.js"
+            import{createQuickNav,configQuickNavFeature} from "../components/quickNav.js"
+            createQuickNav("main",configQuickNavFeature)
             createAssistant("main")
             createNav(configNav)
             quote("#quote12","zitate",12,'../data/text.json')
@@ -189,8 +191,6 @@
             heroText("header","heroPw",'../data/text.json')
             loadOffCanvas("header","leetSpeak",'../data/text.json')
             clipBoard(".clipBoard")
-            import{createQuickNav,configQuickNavFeature} from "../components/quickNav.js"
-            createQuickNav("main",configQuickNavFeature)
             </script>
 <script src="../featureHtmlScripts/pwGenerating.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
