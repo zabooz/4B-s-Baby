@@ -1,19 +1,24 @@
 import { generateUser } from "./newUserGenerator.js";
 import { generateQuizResult } from "./userPsyTest.js";
 import { copyButton } from "../scripts/copybutton.js";
+import { genderbend } from "./genderbender.js";
 
 const userGenBtn = document.getElementById("userGeneratorBtn");
+const adjective1 = document.getElementById("adjective1").value;
+const adjective2 = document.getElementById("adjective2").value;
+const selectedNoun = document.getElementById("noun").value;
+const userOutput = generateUser(adjective1, adjective2, selectedNoun);
 
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  const adjective1 = document.getElementById("adjective1").value;
-  const adjective2 = document.getElementById("adjective2").value;
-  const selectedNoun = document.getElementById("noun").value;
-  const userOutput = generateUser(adjective1, adjective2, selectedNoun);
-
   updateAttempts(userOutput, "statsBody");
 });
 
+const aiUserGenBtn = document.getElementById("aiUserGenBtn")
+
+aiUserGenBtn.addEventListener("click", function () {
+  const result = genderbend(userOutput[0])
+})
 function updateAttempts(result, table) {
   const dataArr = result;
 
