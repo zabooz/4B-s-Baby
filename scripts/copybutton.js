@@ -1,8 +1,6 @@
 import { clipBoard } from "../components/clipBoard.js";
 
-
-export let storedPw = JSON.parse(sessionStorage.getItem("clipPw")) || [];
-export let storedUser = JSON.parse(sessionStorage.getItem("clipUser")) || [];
+export let storedClippy = JSON.parse(sessionStorage.getItem("clippy")) || [];
 
 export const copyButton = (textId) => {
   const button = document.createElement("button");
@@ -35,38 +33,38 @@ export const copyButton = (textId) => {
   const textElement = document.getElementById(textId);
 
   let text;
-
-  if (textElement.innerText.includes(" ")) {
-    const index = textElement.innerText.lastIndexOf(" ");
-    text = textElement.innerText.slice(index + 1);
-  } else {
-    text = textElement.innerText;
+  if (textElement) {
+    if (textElement.innerText.includes(" ")) {
+      const index = textElement.innerText.lastIndexOf(" ");
+      text = textElement.innerText.slice(index + 1);
+    } else {
+      text = textElement.innerText;
+    }
   }
 
   button.addEventListener("click", () => {
     navigator.clipboard.writeText(text);
-    
-      console.log(textId);
 
-    if( textId.includes("stats")){
-      console.log(textId)
-      storedUser.push(text);
-      storedUser = [...new Set(storedUser)];
-      sessionStorage.setItem('clipUser', JSON.stringify(storedUser));
+    const type = textId.includes("stats") ? "username" : "password";
 
-    }else{
-      storedPw.push(text);
-      storedPw = [...new Set(storedPw)];
-      sessionStorage.setItem("clipPw", JSON.stringify(storedPw));
-    }
+    const textObj = {
+      type: type,
+      value: text,
+    };
 
-    
-    clipBoard(".clipBoard");
-
+    const updatetClippy = Array.from(
+      new Map(
+        [...storedClippy, textObj].map((obj) => [obj.value, obj])
+      ).values()
+    );
+    storedClippy = updatetClippy
+    sessionStorage.setItem("clippy", JSON.stringify(updatetClippy));
+ 
     confirmBubble.classList.add("fadeIn");
     setTimeout(() => {
       confirmBubble.classList.remove("fadeIn");
     }, 2000);
+    clipBoard(".clipBoard");
   });
 
   return button;
