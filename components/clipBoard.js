@@ -1,21 +1,24 @@
-import { storedUser,storedPw,storedClippy,copyButton } from "../scripts/copybutton.js";
+import {
+  storedClippy,
+  copyButton,
+} from "../scripts/copybutton.js";
 
 const createClipBoard = () => {
+  let pw = "";
+  let user = "";
 
-    let pw = "";
-    let user ="";
-    for(let i = 0; i < storedUser.length; i++) {
-        const clip = "user" + i;
-        user += `<p id="${clip}" class="d-flex justify-content-between" >${storedUser[i]}</p>`;
-     
+  for (let i = 0; i < storedClippy.length; i++) {
+    const clip = `${storedClippy[i].type}` + i;
+    const value = storedClippy[i].value;
+
+    if (storedClippy[i].type === "password") {
+      pw += `<p id="${clip}" class="d-flex justify-content-between" >${value}</p>`;
+    } else {
+      user += `<p id="${clip}" class="d-flex justify-content-between" >${value}</p>`;
     }
-    for (let i = 0; i < storedPw.length; i++) {
-      const clip = "pw" + i;
-      pw += `<p id="${clip}" class="d-flex justify-content-between" >${storedPw[i]}</p>`;
+  }
 
-    }
-
-    return `
+  return `
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -40,34 +43,16 @@ const createClipBoard = () => {
     </div>
   </div>
 </div>`;
-}
+};
 
-export const clipBoard =  (id) => {
-    const target = document.querySelector(id);
-    target.innerHTML =  createClipBoard();
-    
-
-      for (let i = 0; i < storedUser.length; i++) {
-        const elementId = "user" + i;
-
-
-        const clip = document.getElementById(elementId);
-        if (clip) {
-          const copyBtn = copyButton(elementId);
-          copyBtn.setAttribute("data-bs-dismiss", "modal");
-          clip.append(copyBtn);
-        }
-      }
-
-      for (let i = 0; i < storedPw.length; i++) {
-        const elementId = "pw" + i;
-
-        const clip = document.getElementById(elementId);
-        if (clip) {
-          const copyBtn = copyButton(elementId);
-          copyBtn.setAttribute("data-bs-dismiss", "modal");
-          clip.append(copyBtn);
-        }
-      }
-
-}
+export const clipBoard = (id) => {
+  const target = document.querySelector(id);
+  target.innerHTML = createClipBoard();
+  for (let i = 0; i < storedClippy.length; i++) {
+    const elementId = storedClippy[i].type + i;
+    const clip = document.getElementById(elementId);
+    const copyBtn = copyButton(elementId);
+    copyBtn.setAttribute("data-bs-dismiss", "modal");
+    clip.append(copyBtn);
+  }
+};
