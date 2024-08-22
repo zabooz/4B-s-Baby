@@ -1,7 +1,8 @@
 import { clipBoard } from "../components/clipBoard.js";
 
 
-export let storedArr = JSON.parse(sessionStorage.getItem("clipArr")) || [];
+export let storedPw = JSON.parse(sessionStorage.getItem("clipPw")) || [];
+export let storedUser = JSON.parse(sessionStorage.getItem("clipUser")) || [];
 
 export const copyButton = (textId) => {
   const button = document.createElement("button");
@@ -45,10 +46,20 @@ export const copyButton = (textId) => {
   button.addEventListener("click", () => {
     navigator.clipboard.writeText(text);
     
+      console.log(textId);
 
-    storedArr.push(text);
-    storedArr = [...new Set(storedArr)];
-    sessionStorage.setItem('clipArr', JSON.stringify(storedArr));
+    if( textId.includes("stats")){
+      console.log(textId)
+      storedUser.push(text);
+      storedUser = [...new Set(storedUser)];
+      sessionStorage.setItem('clipUser', JSON.stringify(storedUser));
+
+    }else{
+      storedPw.push(text);
+      storedPw = [...new Set(storedPw)];
+      sessionStorage.setItem("clipPw", JSON.stringify(storedPw));
+    }
+
     
     clipBoard(".clipBoard");
 

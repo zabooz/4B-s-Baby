@@ -302,11 +302,12 @@
     import { quote } from "../components/quotes.js";
     import { clipBoard } from "../components/clipBoard.js";
     import { createNav, configNav } from "../components/navBar.js";
-
-
+    import{createQuickNav,configQuickNavFeature} from "../components/quickNav.js"
     import { heroText } from "../components/heroText.js";
-          import {createAssistant} from "../components/aiAssistant.js"
-      createAssistant("main")
+    import {createAssistant} from "../components/aiAssistant.js"
+
+
+    createAssistant("main")
     heroText("header", "heroTest", "../data/text.json");
     quote("#quote7", "zitate", 7, "../data/text.json");
     quote("#quote9", "zitate", 9, "../data/text.json");
@@ -314,10 +315,9 @@
     loadOffCanvas("header", "liste", "../data/text.json");
     loadOffCanvas("header", "simple", "../data/text.json");
     quote("#quote11", "zitate", 11, "../data/text.json");
+    createQuickNav("main",configQuickNavFeature)
     clipBoard(".clipBoard");
     createNav(configNav);
-            import{createQuickNav,configQuickNavFeature} from "../components/quickNav.js"
-      createQuickNav("main",configQuickNavFeature)
   </script>
 
   <script src="../featureHtmlScripts/testing.js" type="module"></script>
