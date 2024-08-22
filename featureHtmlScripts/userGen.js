@@ -17,7 +17,8 @@ userGenBtn.addEventListener("click", function (e) {
 const aiUserGenBtn = document.getElementById("aiUserGenBtn")
 
 aiUserGenBtn.addEventListener("click", function () {
-  const result = genderbend(userOutput[0])
+  const result = genderbend(userOutput);
+  console.log(result);
 })
 function updateAttempts(result, table) {
   const dataArr = result;
