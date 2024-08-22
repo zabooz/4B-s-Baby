@@ -1,5 +1,6 @@
 import { clipBoard } from "../components/clipBoard.js";
 
+export let storedClippy = JSON.parse(sessionStorage.getItem("Clippy")) || [];
 
 export let storedPw = JSON.parse(sessionStorage.getItem("clipPw")) || [];
 export let storedUser = JSON.parse(sessionStorage.getItem("clipUser")) || [];
@@ -46,8 +47,10 @@ export const copyButton = (textId) => {
   button.addEventListener("click", () => {
     navigator.clipboard.writeText(text);
     
-      console.log(textId);
-
+   
+      storedClippy.push(text);
+      storedClippy = [...new Set(storedClippy)];
+      sessionStorage.setItem("clippy", JSON.stringify(storedUser));
     if( textId.includes("stats")){
       console.log(textId)
       storedUser.push(text);

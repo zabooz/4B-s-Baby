@@ -1,4 +1,4 @@
-import { storedUser,storedPw,copyButton } from "../scripts/copybutton.js";
+import { storedUser,storedPw,storedClippy,copyButton } from "../scripts/copybutton.js";
 
 const createClipBoard = () => {
 
@@ -45,7 +45,7 @@ const createClipBoard = () => {
 export const clipBoard =  (id) => {
     const target = document.querySelector(id);
     target.innerHTML =  createClipBoard();
-
+    
 
       for (let i = 0; i < storedUser.length; i++) {
         const elementId = "user" + i;

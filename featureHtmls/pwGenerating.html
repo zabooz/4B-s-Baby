@@ -180,6 +180,8 @@
             import {clipBoard} from "../components/clipBoard.js"
             import {createNav,configNav} from "../components/navBar.js"
             import {createAssistant} from "../components/aiAssistant.js"
+            import {createQuickNav,configQuickNavFeature} from "../components/quickNav.js"
+
             createAssistant("main")
             createNav(configNav)
             quote("#quote12","zitate",12,'../data/text.json')
@@ -189,7 +191,6 @@
             heroText("header","heroPw",'../data/text.json')
             loadOffCanvas("header","leetSpeak",'../data/text.json')
             clipBoard(".clipBoard")
-            import{createQuickNav,configQuickNavFeature} from "../components/quickNav.js"
             createQuickNav("main",configQuickNavFeature)
             </script>
 <script src="../featureHtmlScripts/pwGenerating.js" type="module"></script>
