@@ -68,6 +68,38 @@ app.get("/apiCall", async (req,res)=> {
 
 })
 
+app.get("/apiCallUsername", async (req, res) => {
+  const openai = new OpenAI({
+    apiKey: "d547239b0a3d4ab2a40d3ffea5cfd612",
+    baseURL: "https://api.aimlapi.com",
+  });
+
+  const adj1 = req.query.adj1;
+  const adj2 = req.query.adj2;
+  const noun = req.query.noun;
+  const sysContent = req.query.sysContent;
+  const apiArray = [adj1, adj2, noun];
+
+  try {
+    const chatCompletion = await openai.chat.completions.create({
+      model: "meta-llama/Meta-Llama-3-70B-Instruct-Lite",
+      messages: [
+        { role: "system", content: sysContent },
+        { role: "user", content: apiArray },
+      ],
+      temperature: 0.5,
+      max_tokens: 50,
+    });
+
+    const result = chatCompletion.choices[0].message.content;
+    res.send(result);
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+    res.send("no");
+  }
+});
+
 
 
 app.get("/", (req, res) => {
