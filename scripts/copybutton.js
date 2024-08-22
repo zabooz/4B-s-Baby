@@ -2,8 +2,6 @@ import { clipBoard } from "../components/clipBoard.js";
 
 export let storedClippy = JSON.parse(sessionStorage.getItem("clippy")) || [];
 
-
-
 export const copyButton = (textId) => {
   const button = document.createElement("button");
   button.className = "copyButton";
@@ -35,38 +33,38 @@ export const copyButton = (textId) => {
   const textElement = document.getElementById(textId);
 
   let text;
-
-  if (textElement.innerText.includes(" ")) {
-    const index = textElement.innerText.lastIndexOf(" ");
-    text = textElement.innerText.slice(index + 1);
-  } else {
-    text = textElement.innerText;
+  if (textElement) {
+    if (textElement.innerText.includes(" ")) {
+      const index = textElement.innerText.lastIndexOf(" ");
+      text = textElement.innerText.slice(index + 1);
+    } else {
+      text = textElement.innerText;
+    }
   }
 
   button.addEventListener("click", () => {
     navigator.clipboard.writeText(text);
-    
 
     const type = textId.includes("stats") ? "username" : "password";
-  
+
     const textObj = {
-      type : type,
-      value : text
-    }
+      type: type,
+      value: text,
+    };
 
-    storedClippy.push(textObj);
-  
-    const uniqueClippy = Array.from(
-    new Map(storedClippy.map(obj => [obj.value, obj])).values())
-      	console.log()
-    sessionStorage.setItem("clippy", JSON.stringify(uniqueClippy));
-    
-    clipBoard(".clipBoard");
-
+    const updatetClippy = Array.from(
+      new Map(
+        [...storedClippy, textObj].map((obj) => [obj.value, obj])
+      ).values()
+    );
+    storedClippy = updatetClippy
+    sessionStorage.setItem("clippy", JSON.stringify(updatetClippy));
+ 
     confirmBubble.classList.add("fadeIn");
     setTimeout(() => {
       confirmBubble.classList.remove("fadeIn");
     }, 2000);
+    clipBoard(".clipBoard");
   });
 
   return button;

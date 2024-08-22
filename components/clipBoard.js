@@ -6,7 +6,7 @@ import {
 const createClipBoard = () => {
   let pw = "";
   let user = "";
-
+  console.log(storedClippy)
   for (let i = 0; i < storedClippy.length; i++) {
     const clip = `${storedClippy[i].type}` + i;
     const value = storedClippy[i].value;
@@ -46,13 +46,44 @@ const createClipBoard = () => {
 };
 
 export const clipBoard = (id) => {
+  
   const target = document.querySelector(id);
   target.innerHTML = createClipBoard();
-  for (let i = 0; i < storedClippy.length; i++) {
-    const elementId = storedClippy[i].type + i;
-    const clip = document.getElementById(elementId);
-    const copyBtn = copyButton(elementId);
-    copyBtn.setAttribute("data-bs-dismiss", "modal");
-    clip.append(copyBtn);
-  }
+
+    
+    for (let i = 0; i < storedClippy.length; i++) {
+      const elementId = storedClippy[i].type + i;
+      const clip = document.getElementById(elementId);
+      const copyBtn = copyButton(elementId);
+      const delBtn = deleteBtn(elementId);
+      copyBtn.setAttribute("data-bs-dismiss", "modal");
+      clip.append(copyBtn, delBtn);
+    }
+ 
 };
+
+
+const deleteBtn = (id) => {
+
+  const btn = document.createElement("button")
+  const i = document.createElement("i");
+  btn.style.border = "none";
+  btn.style.backgroundColor = "white"
+  i.className = "fa fa-trash";
+  btn.append(i)
+  
+  btn.addEventListener("click", () => {
+  
+    const element = document.getElementById(id)
+    console.log(element.textContent)
+    
+    
+    const newArr = storedClippy.filter((obj) => !element.textContent.includes(obj.value));
+    
+    sessionStorage.setItem("clippy", JSON.stringify(newArr));
+    element.remove()
+  })
+
+  return btn
+
+}
