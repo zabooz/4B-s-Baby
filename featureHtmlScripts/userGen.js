@@ -2,6 +2,7 @@ import { generateUser } from "./newUserGenerator.js";
 import { generateQuizResult } from "./userPsyTest.js";
 import { copyButton } from "../scripts/copybutton.js";
 import { genderbend } from "./genderbender.js";
+import { myArraysObj } from "../data/deutschGenerator.data.js";
 
 const userGenBtn = document.getElementById("userGeneratorBtn");
 const adjective1 = document.getElementById("adjective1").value;
@@ -14,12 +15,28 @@ userGenBtn.addEventListener("click", function (e) {
   updateAttempts(userOutput, "statsBody");
 });
 
-const aiUserGenBtn = document.getElementById("aiUserGenBtn")
+const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 
-aiUserGenBtn.addEventListener("click", function () {
-  const result = genderbend(userOutput);
-  console.log(result);
-})
+aiUserGenBtn.addEventListener("click", async function () {
+  const gender = await genderbend(userOutput);
+  console.log(gender);
+  const germanUserOutput = userOutput;
+  for (let i = 1; i < 4; i++) {
+    for (const [key, value] of Object.entries(myArraysObj)) {
+      if (myArraysObj.hasOwnProperty(germanUserOutput[i])) {
+        germanUserOutput[i] = value;
+        break;
+      }
+    }
+  }
+  for (let i = 0; i < 3; i++) {
+    germanUserOutput[0] = gender[i];
+    updateAttempts(germanUserOutput, "statsBody");
+  }
+
+  console.log(germanUserOutput);
+});
+
 function updateAttempts(result, table) {
   const dataArr = result;
 
@@ -28,7 +45,7 @@ function updateAttempts(result, table) {
   const td = document.createElement("td");
 
   const rowCount = tBody.rows.length + 1;
-  const id = table + "_" + rowCount;
+  const id = result[0] + "_" + rowCount;
   td.textContent = rowCount;
 
   tr.appendChild(td);
@@ -56,7 +73,6 @@ function updateAttempts(result, table) {
   tBody.append(tr);
   const username = document.getElementById(id);
   username.append(copyButton(id));
-  console.log(id);
 }
 
 const userGenSubmitBtn = document.getElementById("submitButton");
