@@ -1,3 +1,13 @@
+.bg-ai-custom{
+    background-color:#23bbb8;
+}
+.border-custom{
+    border-right: 5px solid #f1f5f5 !important;
+}
+#question{
+    min-height: 9rem;
+}
+
 
 #aiAssistant:hover{
     animation: moveBtnAi .5s ease-out forwards; /* Wende die Animation an */
