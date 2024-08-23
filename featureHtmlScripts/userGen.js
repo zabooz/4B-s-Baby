@@ -72,7 +72,7 @@ function updateAttempts(result, table) {
   const td = document.createElement("td");
 
   const rowCount = tBody.rows.length + 1;
-  const id = result[0] + "_" + rowCount;
+  const id = "username" + "_" + rowCount + "_" + table;
   td.textContent = rowCount;
 
   tr.appendChild(td);

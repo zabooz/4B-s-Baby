@@ -1,42 +1,14 @@
 import { newPwStrength } from "./newStrengthCalc.js";
 import { passwordEncoder } from "../scripts/encoder.js";
 import { getColorFromStrength } from "../utilities/getColorFromStrength.js";
+import { thinkWords,thinker } from "../utilities/thinker.js";
 
 
-  export const thinker = () => {
-    const randomIndex = Math.floor(Math.random() * thinkWords.length);
-    const verb = thinkWords[randomIndex];
-    startBrute.innerHTML = `
-                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                <span role="status">${verb}</span>`;
-  };
-
-  export const thinkWords = [
-    "denken",
-    "rechnen",
-    "überlegen",
-    "analysieren",
-    "planen",
-    "abstrahieren",
-    "interpretieren",
-    "kalkulieren",
-    "schätzen",
-    "kombinieren",
-    "spekulieren",
-    "ermitteln",
-    "nachdenken",
-    "ableiten",
-    "schlussfolgern",
-    "reflektieren",
-    "synthesieren",
-  ];
 
 document.addEventListener("DOMContentLoaded", () => {
   const startBrute = document.getElementById("startBrute");
   const stopBrute = document.getElementById("stopBrute");
   const calcStrengthBtn = document.getElementById("calcStrengthBtn");
-
-
 
   let interval;
 
@@ -49,7 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     startBrute.disabled = true;
 
-    interval = setInterval(thinker, 3000);
+    interval = setInterval(() => {
+      thinker(startBrute)
+    },2000);
     fetchData();
   });
 
@@ -80,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const bruteType = document.querySelector("#bruteMode").value;
     const url = "http://localhost:3001/";
     // const url = "https://e6f7-85-31-21-51.ngrok-free.app/";
-
+ 
     const pwd = document.getElementById("userPwdInput");
     const [encodedPwd, key] = passwordEncoder(pwd.value);
     const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
@@ -90,11 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
     pwd.value = "";
 
     let result = [pwd.value, "--", "--", "--"];
-
-    fetch(urlPara, {
-      method: "GET",
-      headers: { "ngrok-skip-browser-warning": true },
-    })
+    console.log(urlPara)
+    fetch(urlPara
+    //   , {
+    //   method: "GET",
+    //   headers: { "ngrok-skip-browser-warning": true },
+    // }
+  )
       .then((response) => {
         if (!response.ok) {
           throw new Error(response.statusText);
@@ -118,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateAttempts(result) {
     const dataArr = result;
-    console.log(dataArr);
+
     const tBody = document.querySelector("#statsBody");
 
     const tr = document.createElement("tr");

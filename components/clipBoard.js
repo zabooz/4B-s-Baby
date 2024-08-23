@@ -4,6 +4,7 @@ import {
 } from "../scripts/copybutton.js";
 
 const createClipBoard = () => {
+
   let pw = "";
   let user = "";
   for (let i = 0; i < storedClippy.length; i++) {
@@ -52,6 +53,9 @@ export const clipBoard = (id) => {
     
     for (let i = 0; i < storedClippy.length; i++) {
       const elementId = storedClippy[i].type + i;
+
+
+   
       const clip = document.getElementById(elementId);
       const copyBtn = copyButton(elementId);
       const delBtn = deleteBtn(elementId);

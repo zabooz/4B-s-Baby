@@ -45,13 +45,13 @@ export const copyButton = (textId) => {
   button.addEventListener("click", () => {
     navigator.clipboard.writeText(text);
 
-    const type = textId.includes("stats") ? "username" : "password";
+    const type = textId.includes("username") ? "username" : "password";
 
     const textObj = {
       type: type,
       value: text,
     };
-
+    console.log(textObj)
     const updatetClippy = Array.from(
       new Map(
         [...storedClippy, textObj].map((obj) => [obj.value, obj])
