@@ -307,6 +307,7 @@
     import {createAssistant} from "../components/aiAssistant.js"
 
 
+    createQuickNav("main",configQuickNavFeature)
     createAssistant("main")
     heroText("header", "heroTest", "../data/text.json");
     quote("#quote7", "zitate", 7, "../data/text.json");
@@ -315,7 +316,6 @@
     loadOffCanvas("header", "liste", "../data/text.json");
     loadOffCanvas("header", "simple", "../data/text.json");
     quote("#quote11", "zitate", 11, "../data/text.json");
-    createQuickNav("main",configQuickNavFeature)
     clipBoard(".clipBoard");
     createNav(configNav);
   </script>
