@@ -1,7 +1,7 @@
 {
   "name": "4b-s-baby",
   "version": "1.0.0",
-  "main": "server/server.js",
+  "main": "app.js",
   "directories": {
     "doc": "docs"
   },
@@ -33,7 +33,7 @@
   "type": "module",
   "nodemonConfig": {
     "watch": [
-      "server"
+      "app.js"
     ],
     "ignore": [
       "scripts/*",
@@ -42,7 +42,7 @@
       "*.json"
     ],
     "ext": "js,json",
-    "exec": "node server/server.js"
+    "exec": "node app.js"
   },
   "description": ""
 }

@@ -3,9 +3,9 @@ import express from "express";
 import axios from "axios";
 import cors from "cors";
 
-import { bruteForceSimple } from "./serverScripts/bruteSimple.js";
-import { bruteForceLibrary } from "./serverScripts/bruteLibrary.js";
-import { passwordDecoder } from "./serverScripts/encoder.js";
+import { bruteForceSimple } from "./server/serverScripts/bruteSimple.js";
+import { bruteForceLibrary } from "./server/serverScripts/bruteLibrary.js";
+import { passwordDecoder } from "./server/serverScripts/encoder.js";
 import OpenAI from "openai";
 
 config();
