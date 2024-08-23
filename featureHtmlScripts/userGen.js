@@ -20,15 +20,18 @@ const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 aiUserGenBtn.addEventListener("click", async function () {
   const gender = await genderbend(userOutput);
   console.log(gender);
-  const germanUserOutput = userOutput;
+  const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
+
   for (let i = 1; i < 4; i++) {
     for (const [key, value] of Object.entries(myArraysObj)) {
-      if (myArraysObj.hasOwnProperty(germanUserOutput[i])) {
-        germanUserOutput[i] = value;
+      if (germanUserOutput[i] === key) {
+        // Check if the word in germanUserOutput matches the key
+        germanUserOutput[i] = value; // Replace with the corresponding value from myArraysObj
         break;
       }
     }
   }
+
   for (let i = 0; i < 3; i++) {
     germanUserOutput[0] = gender[i];
     updateAttempts(germanUserOutput, "statsBody");
@@ -36,6 +39,7 @@ aiUserGenBtn.addEventListener("click", async function () {
 
   console.log(germanUserOutput);
 });
+
 
 function updateAttempts(result, table) {
   const dataArr = result;
