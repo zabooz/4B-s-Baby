@@ -3,6 +3,7 @@ import { generateQuizResult } from "./userPsyTest.js";
 import { copyButton } from "../scripts/copybutton.js";
 import { genderbend } from "./genderbender.js";
 import { myArraysObj } from "../data/deutschGenerator.data.js";
+import { convertToGerman } from "./tableParser.js";
 
 const userGenBtn = document.getElementById("userGeneratorBtn");
 const aiUserGenBtn = document.getElementById("aiUserGenBtn");
@@ -18,7 +19,10 @@ window.addEventListener("DOMContentLoaded", function () {
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
-  updateAttempts(userOutput, "statsBody");
+  const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
+
+  const newUserOutput = convertToGerman(germanUserOutput, myArraysObj);
+  updateAttempts(newUserOutput, "statsBody");
 });
 
 aiUserGenBtn.addEventListener("click", async function () {
@@ -27,22 +31,15 @@ aiUserGenBtn.addEventListener("click", async function () {
   console.log(gender);
   const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
 
-  for (let i = 1; i < 4; i++) {
-    for (const [key, value] of Object.entries(myArraysObj)) {
-      if (germanUserOutput[i] === key) {
-        // Check if the word in germanUserOutput matches the key
-        germanUserOutput[i] = value; // Replace with the corresponding value from myArraysObj
-        break;
-      }
-    }
-  }
+  const newUserOutput = convertToGerman(germanUserOutput, myArraysObj);
+
 
   for (let i = 0; i < 3; i++) {
-    germanUserOutput[0] = gender[i];
-    updateAttempts(germanUserOutput, "statsBody");
+    newUserOutput[0] = gender[i];
+    updateAttempts(newUserOutput, "statsBody");
   }
 
-  console.log(germanUserOutput);
+  console.log(newUserOutput);
 });
 
 document
@@ -112,7 +109,8 @@ userGenSubmitBtn.addEventListener("click", function (e) {
 
   for (let i = 0; i < 5; i++) {
     const quizOutput = generateQuizResult();
-    updateAttempts(quizOutput, "statsBody1");
+    const newQuizOutput = convertToGerman(quizOutput, myArraysObj);
+    updateAttempts(newQuizOutput, "statsBody1");
   }
 
   // Hide the submit button
