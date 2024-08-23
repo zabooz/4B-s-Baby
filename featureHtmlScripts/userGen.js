@@ -4,7 +4,7 @@ import { copyButton } from "../scripts/copybutton.js";
 import { genderbend } from "./genderbender.js";
 import { myArraysObj } from "../data/deutschGenerator.data.js";
 import { convertToGerman } from "./tableParser.js";
-
+import { thinker,thinkWords } from "../utilities/thinker.js";
 const userGenBtn = document.getElementById("userGeneratorBtn");
 const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 const adjective1 = document.getElementById("adjective1").value;
@@ -27,19 +27,44 @@ userGenBtn.addEventListener("click", function (e) {
 
 aiUserGenBtn.addEventListener("click", async function () {
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
-  const gender = await genderbend(userOutput);
-  console.log(gender);
-  const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
 
-  const newUserOutput = convertToGerman(germanUserOutput, myArraysObj);
+  
+ 
+    
 
 
-  for (let i = 0; i < 3; i++) {
-    newUserOutput[0] = gender[i];
-    updateAttempts(newUserOutput, "statsBody");
-  }
+    aiUserGenBtn.innerHTML = `
+    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+    <span role="status">${thinkWords[0]}</span>
+    `;
+    
+    aiUserGenBtn.disabled = true;
 
-  console.log(newUserOutput);
+       let interval
+      interval = setInterval(()=> {
+        thinker(aiUserGenBtn)
+      },2000)
+
+
+      try {
+         const gender = await genderbend(userOutput);
+         const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
+       
+       
+         const newUserOutput = convertToGerman(germanUserOutput, myArraysObj);
+         for (let i = 0; i < 3; i++) {
+           newUserOutput[0] = gender[i];
+           updateAttempts(newUserOutput, "statsBody");
+         }
+      } catch (error) {
+        console.error("Error fetching AI response:", error);
+      } finally {
+        clearInterval(interval);
+        aiUserGenBtn.innerHTML = "Senden";
+        aiUserGenBtn.disabled = false;
+      }
+
+
 });
 
 document
