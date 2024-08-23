@@ -5,17 +5,21 @@ import { genderbend } from "./genderbender.js";
 import { myArraysObj } from "../data/deutschGenerator.data.js";
 
 const userGenBtn = document.getElementById("userGeneratorBtn");
+const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 const adjective1 = document.getElementById("adjective1").value;
 const adjective2 = document.getElementById("adjective2").value;
 const selectedNoun = document.getElementById("noun").value;
 const userOutput = generateUser(adjective1, adjective2, selectedNoun);
 
+window.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("germanAiToggle");
+  toggle.dispatchEvent(new Event("change")); // Trigger the change event to set initial state
+});
+
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
   updateAttempts(userOutput, "statsBody");
 });
-
-const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 
 aiUserGenBtn.addEventListener("click", async function () {
   const gender = await genderbend(userOutput);
@@ -39,6 +43,27 @@ aiUserGenBtn.addEventListener("click", async function () {
 
   console.log(germanUserOutput);
 });
+
+document
+  .getElementById("germanAiToggle")
+  .addEventListener("change", function () {
+
+    if (this.checked) {
+      // Toggle is active
+      userGenBtn.classList.add("d-none");
+      userGenBtn.disabled = true; // Disable button
+
+      aiUserGenBtn.classList.remove("d-none");
+      aiUserGenBtn.disabled = false; // Enable button
+    } else {
+      // Toggle is inactive
+      userGenBtn.classList.remove("d-none");
+      userGenBtn.disabled = false; // Enable button
+
+      aiUserGenBtn.classList.add("d-none");
+      aiUserGenBtn.disabled = true; // Disable button
+    }
+  });
 
 
 function updateAttempts(result, table) {
