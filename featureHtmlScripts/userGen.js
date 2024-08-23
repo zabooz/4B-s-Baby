@@ -9,7 +9,6 @@ const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 const adjective1 = document.getElementById("adjective1").value;
 const adjective2 = document.getElementById("adjective2").value;
 const selectedNoun = document.getElementById("noun").value;
-const userOutput = generateUser(adjective1, adjective2, selectedNoun);
 
 window.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("germanAiToggle");
@@ -18,10 +17,12 @@ window.addEventListener("DOMContentLoaded", function () {
 
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
+  const userOutput = generateUser(adjective1, adjective2, selectedNoun);
   updateAttempts(userOutput, "statsBody");
 });
 
 aiUserGenBtn.addEventListener("click", async function () {
+  const userOutput = generateUser(adjective1, adjective2, selectedNoun);
   const gender = await genderbend(userOutput);
   console.log(gender);
   const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
