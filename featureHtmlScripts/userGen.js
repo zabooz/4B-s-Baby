@@ -5,30 +5,38 @@ import { genderbend } from "./genderbender.js";
 import { myArraysObj } from "../data/deutschGenerator.data.js";
 
 const userGenBtn = document.getElementById("userGeneratorBtn");
+const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 const adjective1 = document.getElementById("adjective1").value;
 const adjective2 = document.getElementById("adjective2").value;
 const selectedNoun = document.getElementById("noun").value;
-const userOutput = generateUser(adjective1, adjective2, selectedNoun);
+
+window.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("germanAiToggle");
+  toggle.dispatchEvent(new Event("change")); // Trigger the change event to set initial state
+});
 
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
+  const userOutput = generateUser(adjective1, adjective2, selectedNoun);
   updateAttempts(userOutput, "statsBody");
 });
 
-const aiUserGenBtn = document.getElementById("aiUserGenBtn");
-
 aiUserGenBtn.addEventListener("click", async function () {
+  const userOutput = generateUser(adjective1, adjective2, selectedNoun);
   const gender = await genderbend(userOutput);
   console.log(gender);
-  const germanUserOutput = userOutput;
+  const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
+
   for (let i = 1; i < 4; i++) {
     for (const [key, value] of Object.entries(myArraysObj)) {
-      if (myArraysObj.hasOwnProperty(germanUserOutput[i])) {
-        germanUserOutput[i] = value;
+      if (germanUserOutput[i] === key) {
+        // Check if the word in germanUserOutput matches the key
+        germanUserOutput[i] = value; // Replace with the corresponding value from myArraysObj
         break;
       }
     }
   }
+
   for (let i = 0; i < 3; i++) {
     germanUserOutput[0] = gender[i];
     updateAttempts(germanUserOutput, "statsBody");
@@ -36,6 +44,28 @@ aiUserGenBtn.addEventListener("click", async function () {
 
   console.log(germanUserOutput);
 });
+
+document
+  .getElementById("germanAiToggle")
+  .addEventListener("change", function () {
+
+    if (this.checked) {
+      // Toggle is active
+      userGenBtn.classList.add("d-none");
+      userGenBtn.disabled = true; // Disable button
+
+      aiUserGenBtn.classList.remove("d-none");
+      aiUserGenBtn.disabled = false; // Enable button
+    } else {
+      // Toggle is inactive
+      userGenBtn.classList.remove("d-none");
+      userGenBtn.disabled = false; // Enable button
+
+      aiUserGenBtn.classList.add("d-none");
+      aiUserGenBtn.disabled = true; // Disable button
+    }
+  });
+
 
 function updateAttempts(result, table) {
   const dataArr = result;
