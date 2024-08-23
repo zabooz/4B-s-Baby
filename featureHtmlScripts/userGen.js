@@ -18,7 +18,18 @@ window.addEventListener("DOMContentLoaded", function () {
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
-  updateAttempts(userOutput, "statsBody");
+  const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
+
+  for (let i = 1; i < 4; i++) {
+    for (const [key, value] of Object.entries(myArraysObj)) {
+      if (germanUserOutput[i] === key) {
+        // Check if the word in germanUserOutput matches the key
+        germanUserOutput[i] = value; // Replace with the corresponding value from myArraysObj
+        break;
+      }
+    }
+  }
+  updateAttempts(germanUserOutput, "statsBody");
 });
 
 aiUserGenBtn.addEventListener("click", async function () {
