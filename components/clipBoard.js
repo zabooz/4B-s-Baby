@@ -6,7 +6,6 @@ import {
 const createClipBoard = () => {
   let pw = "";
   let user = "";
-  console.log(storedClippy)
   for (let i = 0; i < storedClippy.length; i++) {
     const clip = `${storedClippy[i].type}` + i;
     const value = storedClippy[i].value;
