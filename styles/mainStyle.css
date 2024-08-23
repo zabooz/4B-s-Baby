@@ -80,9 +80,7 @@ header {
   min-height: 400px;
   color: #151c19;
 }
-.border-custom{
-    border-right: 5px solid #f1f5f5 !important;
-}
+
 @media (max-width: 991px) {
   .custom-img {
     width: 10rem;
