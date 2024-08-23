@@ -35,10 +35,10 @@ export async function genderbend(username) {
     console.log("Genderless Key:", genderlessKey);
 
     if (maleKey && femaleKey && genderlessKey) {
-      const male = maleKey[0] + " " + maleKey[1] + " " + maleKey[2];
-      const female = femaleKey[0] + " " + femaleKey[1] + " " + femaleKey[2];
+      const male = maleKey[0] +  maleKey[1] + maleKey[2];
+      const female = femaleKey[0] +  femaleKey[1] +  femaleKey[2];
       const genderless =
-        genderlessKey[0] + " " + genderlessKey[1] + " " + genderlessKey[2];
+        genderlessKey[0] + genderlessKey[1] + genderlessKey[2];
       return [male, female, genderless];
     } else {
       console.error(
