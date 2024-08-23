@@ -1,25 +1,24 @@
 export const configNav = {
-
   targetId: "nav",
 
   home: {
     link: "../index.html",
   },
   testing: {
-    text: "Password Testing",
+    text: "Check Password",
     link: "../featureHtmls/testing.html",
   },
   userGen: {
-    text: "User Generator",
+    text: "Find your Name",
     link: "../featureHtmls/userGenerating.html",
   },
   pwGen: {
-    text: "Password Generator",
+    text: "Make Password",
     link: "../featureHtmls/pwGenerating.html",
   },
-  oldDesign:{
-    link:"../oldDesign/index.html",
-    text:"Old Design",
+  oldDesign: {
+    link: "../oldDesign/index.html",
+    text: "Old Design",
   },
   logo: {
     text: "Password Playground",
