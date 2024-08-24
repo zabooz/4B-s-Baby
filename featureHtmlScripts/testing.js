@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const fetchData = () => {
     const bruteType = document.querySelector("#bruteMode").value;
-    const url = "http://localhost:3001/";
+    const url = "http://passwordplayground.com/";
     // const url = "https://e6f7-85-31-21-51.ngrok-free.app/";
  
     const pwd = document.getElementById("userPwdInput");
