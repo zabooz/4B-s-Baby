@@ -24,12 +24,12 @@ const quickNav = (config) => {
 
     <div id="quickNav" class="d-flex flex-column gap-1 ">
 
-    <button class="btn btn-primary d-flex align-items-center gap-2" id="aiAssistant" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    <button class="btn btn-primary d-md-flex d-none align-items-center gap-2" id="aiAssistant" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <img src = ${config.ai.img} >
         <p class="mb-0">${config.ai.text}
             </button>
 
-        <button type="button" class="btn btn-primary btn btn-primary d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#exampleModal" id="clipBoardBtn">
+        <button type="button" class="btn btn-primary btn btn-primary d-md-flex d-none align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#exampleModal" id="clipBoardBtn">
                     <img src = ${config.clippy.img}>
         <p class="mb-0">${config.clippy.text}
         </button

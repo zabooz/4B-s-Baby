@@ -27,7 +27,7 @@ const configFooter = {
   ],
   contact: {
     address: "Crossroads 3, The Barrens, Kalimdor",
-    email: "info@example.com",
+    email: "hello@passwordplayground.com",
     phone: "+1 555-123-4567",
     fax: "+1 555-987-6543",
   },
