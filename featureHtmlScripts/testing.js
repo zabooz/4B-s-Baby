@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const startBrute = document.getElementById("startBrute");
   const stopBrute = document.getElementById("stopBrute");
   const calcStrengthBtn = document.getElementById("calcStrengthBtn");
-
+  const baseUrl = "https://kgg8gggo0c08oc8wcw0oco00.coolify.machma.app/";
   let interval;
 
   startBrute.addEventListener("click", (e) => {
@@ -30,13 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   stopBrute.addEventListener("click", () => {
-    // const url = "https://e6f7-85-31-21-51.ngrok-free.app/stopBruteForce";
-    const url = "http://localhost:3001/stopBruteForce";
-
-    fetch(url, {
-      method: "GET",
-      headers: { "ngrok-skip-browser-warning": true },
-    })
+    const url = `${baseUrl}stopBruteForce`
+    fetch(url)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Request to stop brute force process failed");
@@ -52,12 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const fetchData = () => {
     const bruteType = document.querySelector("#bruteMode").value;
-    const url = "http://localhost:3001/";
-    // const url = "https://e6f7-85-31-21-51.ngrok-free.app/";
+
  
     const pwd = document.getElementById("userPwdInput");
     const [encodedPwd, key] = passwordEncoder(pwd.value);
-    const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
+    const urlPara = `${baseUrl}bruteforce${bruteType}?pwd=${encodeURIComponent(
       encodedPwd
     )}&key=${key}`;
 
@@ -65,12 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let result = [pwd.value, "--", "--", "--"];
     console.log(urlPara)
-    fetch(urlPara
-    //   , {
-    //   method: "GET",
-    //   headers: { "ngrok-skip-browser-warning": true },
-    // }
-  )
+    fetch(urlPara)
       .then((response) => {
         if (!response.ok) {
           throw new Error(response.statusText);

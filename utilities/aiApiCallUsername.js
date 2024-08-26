@@ -2,9 +2,9 @@
 
 
 export async function aiApiCallUsername(userContent, sysContent) {
-  const url = "http://localhost:3001/";
+  const baseUrl = "https://kgg8gggo0c08oc8wcw0oco00.coolify.machma.app/";
   const [adj1, adj2, noun] = userContent
-  const urlPara = `${url}apiCallUsername?adj1=${encodeURIComponent(
+  const urlPara = `${baseUrl}apiCallUsername?adj1=${encodeURIComponent(
   adj1
 )}&adj2=${encodeURIComponent(adj2)}&noun=${encodeURIComponent(
   noun
