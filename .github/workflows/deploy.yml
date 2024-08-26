@@ -1,0 +1,26 @@
+name: Deploy to Plesk
+
+on:
+  push:
+    branches:
+      - main  # Deploy bei jedem Push in den main-Branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3  # Neueste Version verwenden
+
+    - name: Deploy via SSH
+      uses: appleboy/ssh-action@v1.0.3  # Neueste Version verwenden
+      with:
+        host: https://www.passwordplayground.com/
+        username: zabooz
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          set -e  # Beendet das Skript bei Fehler
+          git pull origin main
+
