@@ -18,11 +18,7 @@ main {
 .pwInputDiv {
   width: 75%;
 }
-.pwInputDiv input,
-.pwInputDiv button {
-  width: 50% !important;
-  height: 3rem !important;
-}
+
 
 #passwordInput {
   height: 3rem !important;

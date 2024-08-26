@@ -22,12 +22,11 @@ export const configNav = {
   },
   logo: {
     text: "Password Playground",
-    link: "../img/animated_monkey.gif",
+    link: "../img/logo/logo.svg",
   },
 };
 
 export const configNavIndex = {
-
   targetId: "nav",
 
   home: {
@@ -45,13 +44,13 @@ export const configNavIndex = {
     text: "Make Password",
     link: "./featureHtmls/pwGenerating.html",
   },
-  oldDesign:{
-    link:"./oldDesign/index.html",
-    text:"Old Design",
+  oldDesign: {
+    link: "./oldDesign/index.html",
+    text: "Old Design",
   },
   logo: {
     text: "Password Playground",
-    link: "./img/animated_monkey.gif",
+    ink: "./img/logo/logo.svg",
   },
 };
 
@@ -60,10 +59,10 @@ export const configNavIndex = {
 
 const createNavBar = (configNav) => {
   const navBar = `
-    <nav class="navbar navbar-expand-lg nav-custom fw-semibold text-black">
+    <nav class="navbar navbar-expand-md nav-custom fw-semibold text-black">
       <div>
         <a href="${configNav.home.link}" class="d-flex align-items-center" style="text-decoration: none;">
-          <img src="${configNav.logo.link}" alt="logo" />
+          <img src="${configNav.logo.link}" alt="logo" class="d-none d-sm-block" />
           <p class="navbar-brand mb-0 ms-3">${configNav.logo.text}</p>
         </a>
       </div>
