@@ -33,6 +33,14 @@ import {
 } from "../data/englishGenerator.data.js";
 import { rndNumInLen } from "../scripts/encoder.js";
 
+export function capitalizeFirstLetter(str) {
+  // Check if the input is not empty
+  if (str.length === 0) return "";
+
+  // Capitalize the first letter and concatenate with the rest of the string
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 //Generates a random Username based on user input.
 export function generateUser(adjective1, adjective2, selectedNoun) {
   let newUser = "";
@@ -47,13 +55,6 @@ export function generateUser(adjective1, adjective2, selectedNoun) {
   }
   if (selectedNoun === "random") {
     selectedNoun = contentArray2[rndNumInLen(contentArray2)];
-  }
-  function capitalizeFirstLetter(str) {
-    // Check if the input is not empty
-    if (str.length === 0) return "";
-
-    // Capitalize the first letter and concatenate with the rest of the string
-    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
   const myArraysObj = {

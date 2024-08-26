@@ -4,12 +4,13 @@ import { copyButton } from "../scripts/copybutton.js";
 import { genderbend } from "./genderbender.js";
 import { myArraysObj } from "../data/deutschGenerator.data.js";
 import { convertToGerman } from "./tableParser.js";
-import { thinker,thinkWords } from "../utilities/thinker.js";
+import { thinker, thinkWords } from "../utilities/thinker.js";
 const userGenBtn = document.getElementById("userGeneratorBtn");
 const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 const adjective1 = document.getElementById("adjective1").value;
 const adjective2 = document.getElementById("adjective2").value;
 const selectedNoun = document.getElementById("noun").value;
+const userAiToggle = document.getElementById("germanAiToggle");
 
 window.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("germanAiToggle");
@@ -28,66 +29,53 @@ userGenBtn.addEventListener("click", function (e) {
 aiUserGenBtn.addEventListener("click", async function () {
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
 
-  
- 
-    
-
-
-    aiUserGenBtn.innerHTML = `
+  aiUserGenBtn.innerHTML = `
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
     <span role="status">${thinkWords[0]}</span>
     `;
-    
-    aiUserGenBtn.disabled = true;
 
-       let interval
-      interval = setInterval(()=> {
-        thinker(aiUserGenBtn)
-      },2000)
+  aiUserGenBtn.disabled = true;
 
+  let interval;
+  interval = setInterval(() => {
+    thinker(aiUserGenBtn);
+  }, 2000);
 
-      try {
-         const gender = await genderbend(userOutput);
-         const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
-       
-       
-         const newUserOutput = convertToGerman(germanUserOutput, myArraysObj);
-         for (let i = 0; i < 3; i++) {
-           newUserOutput[0] = gender[i];
-           updateAttempts(newUserOutput, "statsBody");
-         }
-      } catch (error) {
-        console.error("Error fetching AI response:", error);
-      } finally {
-        clearInterval(interval);
-        aiUserGenBtn.innerHTML = "Senden";
-        aiUserGenBtn.disabled = false;
-      }
+  try {
+    const gender = await genderbend(userOutput);
+    const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
 
-
+    const newUserOutput = convertToGerman(germanUserOutput, myArraysObj);
+    for (let i = 0; i < 3; i++) {
+      newUserOutput[0] = gender[i];
+      updateAttempts(newUserOutput, "statsBody");
+    }
+  } catch (error) {
+    console.error("Error fetching AI response:", error);
+  } finally {
+    clearInterval(interval);
+    aiUserGenBtn.innerHTML = "Senden";
+    aiUserGenBtn.disabled = false;
+  }
 });
 
-document
-  .getElementById("germanAiToggle")
-  .addEventListener("change", function () {
+userAiToggle.addEventListener("change", function () {
+  if (this.checked) {
+    // Toggle is active
+    userGenBtn.classList.add("d-none");
+    userGenBtn.disabled = true; // Disable button
 
-    if (this.checked) {
-      // Toggle is active
-      userGenBtn.classList.add("d-none");
-      userGenBtn.disabled = true; // Disable button
+    aiUserGenBtn.classList.remove("d-none");
+    aiUserGenBtn.disabled = false; // Enable button
+  } else {
+    // Toggle is inactive
+    userGenBtn.classList.remove("d-none");
+    userGenBtn.disabled = false; // Enable button
 
-      aiUserGenBtn.classList.remove("d-none");
-      aiUserGenBtn.disabled = false; // Enable button
-    } else {
-      // Toggle is inactive
-      userGenBtn.classList.remove("d-none");
-      userGenBtn.disabled = false; // Enable button
-
-      aiUserGenBtn.classList.add("d-none");
-      aiUserGenBtn.disabled = true; // Disable button
-    }
-  });
-
+    aiUserGenBtn.classList.add("d-none");
+    aiUserGenBtn.disabled = true; // Disable button
+  }
+});
 
 function updateAttempts(result, table) {
   const dataArr = result;
