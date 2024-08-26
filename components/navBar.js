@@ -81,9 +81,16 @@ const createNavBar = (configNav) => {
           <li class="nav-item">
             <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a>
-          </li>
+          <li class="nav-item dropdown me-5">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Stuff
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Ai Assistant</a></li>
+          <li><a class="dropdown-item" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal"  >Clippy</a></li>
+          <li><a class="dropdown-item" href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a></li>
+          </ul>
+        </li>
         </ul>
       </div>
     </nav>
