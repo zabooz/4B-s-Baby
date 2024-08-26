@@ -13,7 +13,7 @@ config();
 const app = express(); // Create an Express application
 const port = process.env.PORT || 3000; // Set the port from the environment variable or default to 3000
 const dropboxFileUrl = process.env.DROPBOX_FILE_URL; // Set the Dropbox file URL from the environment variable
-
+const openAiKey = process.env.OPENAI_KEY;
 app.use(cors());
 
 let passwordList;
@@ -34,7 +34,8 @@ loadPasswordList();
 
 app.get("/apiCall", async (req, res) => {
   const openai = new OpenAI({
-    apiKey: "d547239b0a3d4ab2a40d3ffea5cfd612",
+    
+    apiKey: openAiKey,
     baseURL: "https://api.aimlapi.com",
   });
 
