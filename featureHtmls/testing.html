@@ -19,7 +19,23 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       rel="stylesheet"
     />
-
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/favicon/favicon-16x16.png"
+    />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Passwort Testen</title>
   </head>
@@ -29,7 +45,6 @@
     <script type="module"></script>
 
     <main>
- 
       <section class="d-flex justify-content-center">
         <div class="d-flex flex-column sectionDiv py-4">
           <div
@@ -262,15 +277,17 @@
     import { quote } from "../components/quotes.js";
     import { clipBoard } from "../components/clipBoard.js";
     import { createNav, configNav } from "../components/navBar.js";
-    import{createQuickNav,configQuickNavFeature} from "../components/quickNav.js"
+    import {
+      createQuickNav,
+      configQuickNavFeature,
+    } from "../components/quickNav.js";
     import { heroText } from "../components/heroText.js";
-    import {createAssistant} from "../components/aiAssistant.js"
+    import { createAssistant } from "../components/aiAssistant.js";
 
-
-    createQuickNav("main",configQuickNavFeature)
-    createAssistant("main")
+    createQuickNav("main", configQuickNavFeature);
+    createAssistant("main");
     heroText("header", "heroTest", "../data/text.json");
-   
+
     quote("#quote9", "zitate", 9, "../data/text.json");
     quote("#quote5", "zitate", 5, "../data/text.json");
     loadOffCanvas("header", "liste", "../data/text.json");

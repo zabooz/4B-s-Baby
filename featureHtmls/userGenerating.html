@@ -1,162 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    rel="stylesheet"
-  />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles/appBoxes.css" />
-    <link rel="stylesheet" href="../styles/userGenerator.css"/>
-    <link rel="stylesheet" href="../styles/clipBoard.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="../styles/aiAssistant.css">
+    <link rel="stylesheet" href="../styles/userGenerator.css" />
+    <link rel="stylesheet" href="../styles/clipBoard.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/aiAssistant.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../img/favicon/favicon-16x16.png"
+    />
 
-  <title>User Generator</title>
-</head>
-<body class="bg-custom">
+    <title>User Generator</title>
+  </head>
+  <body class="bg-custom">
     <nav id="navBar" class="sticky-top"></nav>
-    <header class="mb-5 d-flex justify-content-center" ></header>
+    <header class="mb-5 d-flex justify-content-center"></header>
     <main>
-        <section class="d-flex  justify-content-center">
-          <div id="pwdGenDiv" class="appBox">
-            <h3>Identity Wizardry</h3>
-            <p class="w-75 fw-semibold">
-              Erstelle einen einzigartigen Benutzernamen, indem du bis zu zwei Gruppen von Adjektiven und eine Gruppe von Substantiven auswählst, oder lass den Generator eine zufällige Kombination für dich erstellen.
-            </p>
-            <p class="w-75 fw-semibold">
-              Achte darauf, dass dein Benutzername einzigartig ist und deine Identität widerspiegelt, um ein persönliches Online-Erlebnis zu haben.
-            </p>
-            
-            <div class="d-flex flex-lg-row flex-column justify-content-between gap-lg-5 gap-2">
-              <div id="wizardInput2" class="d-flex flex-column gap-2">
-                <label class="fw-semibold">1. Eigenschaft:</label>
-                <select id="adjective1" class="form-control-lg fw-semibold">
-                  <option value="random">Zufällig</option>
-                  <option value="shapes">Form</option>
-                  <option value="colors">Farbe</option>
-                  <option value="textures">Textur</option>
-                  <option value="sizes">Größe</option>
-                  <option value="ages">Alter</option>
-                  <option value="intensities">Intensität</option>
-                  <option value="tastes">Geschmack</option>
-                  <option value="emotions">Emotion</option>
-                  <option value="sounds">Klang</option>
-                  <option value="temperatures">Temperatur</option>
-                  <option value="speeds">Geschwindigkeit</option>
-                  <option value="qualities">Qualität</option>
-                  <option value="weatherTypes">Wetter</option>
-                  <option value="">-Keine-</option>
-                </select>
-                <label class="fw-semibold">2. Eigenschaft:</label>
-                <select id="adjective2" class="form-control-lg fw-semibold">
-                  <option value="random">Zufällig</option>
-                  <option value="shapes">Form</option>
-                  <option value="colors">Farbe</option>
-                  <option value="textures">Textur</option>
-                  <option value="sizes">Größe</option>
-                  <option value="ages">Alter</option>
-                  <option value="intensities">Intensität</option>
-                  <option value="tastes">Geschmack</option>
-                  <option value="emotions">Emotion</option>
-                  <option value="sounds">Klang</option>
-                  <option value="temperatures">Temperatur</option>
-                  <option value="speeds">Geschwindigkeit</option>
-                  <option value="qualities">Qualität</option>
-                  <option value="weatherTypes">Wetter</option>
-                  <option value="">-Keine-</option>
-                </select>
-              </div>
-              <div id="wizardInput3" class="d-flex flex-column gap-2">
-                <label class="fw-semibold">Wähle einen Begriff:</label>
-                <select name="pwdGen" id="noun" class="form-control-lg fw-semibold">
-                  <option value="random">Zufällig</option>
-                  <option value="instruments">Instrument</option>
-                  <option value="fruits">Frucht</option>
-                  <option value="vegetables">Gemüse</option>
-                  <option value="animals">Tier</option>
-                  <option value="fantasyCreatures">Fantasiewesen</option>
-                  <option value="rpgClasses">RPG-Klasse</option>
-                  <option value="fantasyRaces">Fantasy-Rasse</option>
-                  <option value="occupations">Beruf</option>
-                  <option value="vehicles">Fahrzeug</option>
-                  <option value="food">Essen</option>
-                  <option value="tools">Werkzeug</option>
-                  <option value="beverages">Getränk</option>
-                  <option value="clothingItems">Kleidungsstück</option>
-                  <option value="bodyParts">Körperteil</option>
-                  <option value="flowers">Blume</option>
-                  <option value="desserts">Dessert</option>
-                </select>
-                <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="germanAiToggle">
-                <label class="form-check-label" for="germanAiToggle">Deutsch (Beta)</label>
-              </div>
-                <button id="userGeneratorBtn" class="btn btn-lg mt-lg-auto mt-auto">Generieren</button>
-                <button id="aiUserGenBtn" class="btn btn-lg mt-lg-auto mt-auto">Überrasch mich!</button>
-              </div>
+      <section class="d-flex justify-content-center">
+        <div id="pwdGenDiv" class="appBox">
+          <h3>Identity Wizardry</h3>
+          <p class="w-75 fw-semibold">
+            Erstelle einen einzigartigen Benutzernamen, indem du bis zu zwei
+            Gruppen von Adjektiven und eine Gruppe von Substantiven auswählst,
+            oder lass den Generator eine zufällige Kombination für dich
+            erstellen.
+          </p>
+          <p class="w-75 fw-semibold">
+            Achte darauf, dass dein Benutzername einzigartig ist und deine
+            Identität widerspiegelt, um ein persönliches Online-Erlebnis zu
+            haben.
+          </p>
+
+          <div
+            class="d-flex flex-lg-row flex-column justify-content-between gap-lg-5 gap-2"
+          >
+            <div id="wizardInput2" class="d-flex flex-column gap-2">
+              <label class="fw-semibold">1. Eigenschaft:</label>
+              <select id="adjective1" class="form-control-lg fw-semibold">
+                <option value="random">Zufällig</option>
+                <option value="shapes">Form</option>
+                <option value="colors">Farbe</option>
+                <option value="textures">Textur</option>
+                <option value="sizes">Größe</option>
+                <option value="ages">Alter</option>
+                <option value="intensities">Intensität</option>
+                <option value="tastes">Geschmack</option>
+                <option value="emotions">Emotion</option>
+                <option value="sounds">Klang</option>
+                <option value="temperatures">Temperatur</option>
+                <option value="speeds">Geschwindigkeit</option>
+                <option value="qualities">Qualität</option>
+                <option value="weatherTypes">Wetter</option>
+                <option value="">-Keine-</option>
+              </select>
+              <label class="fw-semibold">2. Eigenschaft:</label>
+              <select id="adjective2" class="form-control-lg fw-semibold">
+                <option value="random">Zufällig</option>
+                <option value="shapes">Form</option>
+                <option value="colors">Farbe</option>
+                <option value="textures">Textur</option>
+                <option value="sizes">Größe</option>
+                <option value="ages">Alter</option>
+                <option value="intensities">Intensität</option>
+                <option value="tastes">Geschmack</option>
+                <option value="emotions">Emotion</option>
+                <option value="sounds">Klang</option>
+                <option value="temperatures">Temperatur</option>
+                <option value="speeds">Geschwindigkeit</option>
+                <option value="qualities">Qualität</option>
+                <option value="weatherTypes">Wetter</option>
+                <option value="">-Keine-</option>
+              </select>
             </div>
-              <div class="tableWrapper w-75">
-                <table class="table mb-5" id="stats">
-                  <thead>
-                    <tr>
-                      <th scope="col" class="text-center">#</th>
-                      <th scope="col"class="text-center">Username</th>
-                      <th scope="col" class="text-center">Begriff</th>
-                      <th scope="col" class="text-center">Eigenschaften</th>
-                    </tr>
-                  </thead>
-                  <tbody id="statsBody" class="text-center" ></tbody>
-                </table>
+            <div id="wizardInput3" class="d-flex flex-column gap-2">
+              <label class="fw-semibold">Wähle einen Begriff:</label>
+              <select
+                name="pwdGen"
+                id="noun"
+                class="form-control-lg fw-semibold"
+              >
+                <option value="random">Zufällig</option>
+                <option value="instruments">Instrument</option>
+                <option value="fruits">Frucht</option>
+                <option value="vegetables">Gemüse</option>
+                <option value="animals">Tier</option>
+                <option value="fantasyCreatures">Fantasiewesen</option>
+                <option value="rpgClasses">RPG-Klasse</option>
+                <option value="fantasyRaces">Fantasy-Rasse</option>
+                <option value="occupations">Beruf</option>
+                <option value="vehicles">Fahrzeug</option>
+                <option value="food">Essen</option>
+                <option value="tools">Werkzeug</option>
+                <option value="beverages">Getränk</option>
+                <option value="clothingItems">Kleidungsstück</option>
+                <option value="bodyParts">Körperteil</option>
+                <option value="flowers">Blume</option>
+                <option value="desserts">Dessert</option>
+              </select>
+              <div class="form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="germanAiToggle"
+                />
+                <label class="form-check-label" for="germanAiToggle"
+                  >Deutsch (Beta)</label
+                >
               </div>
-              </div>
-        </section>
-        <section id="quote6" class="d-flex justify-content-center align-items-center">
-        </section>
-        <section class="d-flex justify-content-center ">
-          <div id="pwdGenDiv" class="appBox d-flex justify-content-center ">
-            <h3>Mind Maestro</h3>
-            <p class="fw-semibold w-75">
-              
-Erstelle einen einzigartigen Benutzernamen, indem du bis zu zwei Gruppen von Eigenschaften und eine Gruppe von Begriffen auswählst oder lass den Generator eine zufällige Kombination für dich erstellen.
-            </p>
-            <p class="fw-semibold w-75">
-              Stell sicher, dass dein Benutzername einzigartig ist und deine Persönlichkeit widerspiegelt, für eine persönliche Online-Erfahrung.
-            </p>
-            <div id="quiz" class="w-100 d-flex justify-content-center flex-column align-items-center">
+              <button
+                id="userGeneratorBtn"
+                class="btn btn-lg mt-lg-auto mt-auto"
+              >
+                Generieren
+              </button>
+              <button id="aiUserGenBtn" class="btn btn-lg mt-lg-auto mt-auto">
+                Überrasch mich!
+              </button>
             </div>
-            </div>  
-        </section>
-        <section id="quote8" class="bg-body-tertiary">
-        </section>
+          </div>
+          <div class="tableWrapper w-75">
+            <table class="table mb-5" id="stats">
+              <thead>
+                <tr>
+                  <th scope="col" class="text-center">#</th>
+                  <th scope="col" class="text-center">Username</th>
+                  <th scope="col" class="text-center">Begriff</th>
+                  <th scope="col" class="text-center">Eigenschaften</th>
+                </tr>
+              </thead>
+              <tbody id="statsBody" class="text-center"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section
+        id="quote6"
+        class="d-flex justify-content-center align-items-center"
+      ></section>
+      <section class="d-flex justify-content-center">
+        <div id="pwdGenDiv" class="appBox d-flex justify-content-center">
+          <h3>Mind Maestro</h3>
+          <p class="fw-semibold w-75">
+            Erstelle einen einzigartigen Benutzernamen, indem du bis zu zwei
+            Gruppen von Eigenschaften und eine Gruppe von Begriffen auswählst
+            oder lass den Generator eine zufällige Kombination für dich
+            erstellen.
+          </p>
+          <p class="fw-semibold w-75">
+            Stell sicher, dass dein Benutzername einzigartig ist und deine
+            Persönlichkeit widerspiegelt, für eine persönliche Online-Erfahrung.
+          </p>
+          <div
+            id="quiz"
+            class="w-100 d-flex justify-content-center flex-column align-items-center"
+          ></div>
+        </div>
+      </section>
+      <section id="quote8" class="bg-body-tertiary"></section>
     </main>
     <footer>
       <script src="../components/footer.js"></script>
     </footer>
     <div class="clipBoard"></div>
     <script type="module">
-      import {heroText} from "../components/heroText.js"
-      import {quote} from "../components/quotes.js"
-      import {clipBoard} from "../components/clipBoard.js"
-      import {createNav,configNav} from "../components/navBar.js"
-      import {createAssistant} from "../components/aiAssistant.js"
-      createQuickNav("main",configQuickNavFeature)
-      createAssistant("main")
-      createNav(configNav)
-      quote("#quote6","zitate",6,'../data/text.json')
-      heroText("header","heroUser",'../data/text.json')
-      quote("#quote8","zitate",8,'../data/text.json')
-      clipBoard(".clipBoard")
-      import{createQuickNav,configQuickNavFeature} from "../components/quickNav.js"
-      </script>
-      <script src="../featureHtmlScripts/userGen.js" type="module"></script>
-      <script src="../featureHtmlScripts/quiz.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-</body>
-</body>
+      import { heroText } from "../components/heroText.js";
+      import { quote } from "../components/quotes.js";
+      import { clipBoard } from "../components/clipBoard.js";
+      import { createNav, configNav } from "../components/navBar.js";
+      import { createAssistant } from "../components/aiAssistant.js";
+      createQuickNav("main", configQuickNavFeature);
+      createAssistant("main");
+      createNav(configNav);
+      quote("#quote6", "zitate", 6, "../data/text.json");
+      heroText("header", "heroUser", "../data/text.json");
+      quote("#quote8", "zitate", 8, "../data/text.json");
+      clipBoard(".clipBoard");
+      import {
+        createQuickNav,
+        configQuickNavFeature,
+      } from "../components/quickNav.js";
+    </script>
+    <script src="../featureHtmlScripts/userGen.js" type="module"></script>
+    <script src="../featureHtmlScripts/quiz.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
