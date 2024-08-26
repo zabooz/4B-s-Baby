@@ -21,6 +21,8 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          set -e  # Beendet das Skript bei Fehler
+          set -e
+          cd /passwordplayground.com/httpdocs/
           git pull origin main
-
+          # Weitere Befehle, falls nötig, wie npm install oder build
+          echo "Deployment completed successfully"
