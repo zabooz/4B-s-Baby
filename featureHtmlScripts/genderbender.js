@@ -3,7 +3,7 @@ import { aiApiCallUsername } from "../utilities/aiApiCallUsername.js";
 import { rndNumInLen } from "../scripts/encoder.js";
 import { capitalizeFirstLetter } from "./newUserGenerator.js";
 function concKeys(array) {
-  const result = "";
+  let result = "";
   for (let i = 0; i < 3; i++) {
     result += capitalizeFirstLetter(array[i]);
   }
@@ -181,8 +181,8 @@ function addEndings(object) {
   }
   if (object["neuter"]) {
     let neuterKey = [...object["neuter"]]; // Deep copy of the array
-    let neuterToMaleKey = [...object["neuter"]]; // Deep copy of the array
-    let neuterToFemaleKey = [...object["neuter"]]; // Deep copy of the array
+    let neuterToMaleKey = [...object["neuter"]]; 
+    let neuterToFemaleKey = [...object["neuter"]]; 
 
     for (let i = 0; i < 2; i++) {
       if (neuterKey[i].endsWith("e")) {
@@ -210,7 +210,7 @@ function addEndings(object) {
       } else if (pattern.test(neuterToFemaleKey[i])) {
         neuterToFemaleKey[i] = neuterToFemaleKey[i].slice(0, -2) + "r" + "es";
       } else {
-        neuterToFemaleKey[i] += "es";
+        neuterToFemaleKey[i] += "e";
       }
     }
     neuterToMaleKey[3] += maleEndings[rndNumInLen(maleEndings)];
@@ -240,7 +240,7 @@ export async function genderbend(username) {
   let apiString = adj1 + " " + adj2 + " " + noun;
   console.log(apiString);
 
-  const sysContent = `I want you to translate ${apiString} to german. I want you to return the german root word only. I want you to return the result as a JSON object where the key is the german grammatical gender of the third word in ${apiString} and the value is an array with value[0] being the first translated word, value[1] being the second translated word, value[2] being the third translated word and value[3] being the german plural of the noun in value[2]. Example: For "crazy red duck" the result I'm looking for would be a JSON object in the format of {"female": ["verückt", "rot", "Ente", "Enten"]}. The response should be the resulting object only.`;
+  const sysContent = `I want you to translate ${apiString} to german. I want you to return the german root word only. I want you to return the result as a JSON object where the key is the correct german grammatical gender male, female or neuter of the translated third word in ${apiString} and the value is an array with value[0] being the first translated word, value[1] being the second translated word, value[2] being the third translated word and value[3] being the german plural of the noun in value[2]. Example: For "crazy red duck" the result I'm looking for would be a JSON object in the format of {"female": ["verückt", "rot", "Ente", "Enten"]}. The response should be the resulting object only.`;
 
   try {
     const apiResultString = await aiApiCallUsername(apiString, sysContent);
