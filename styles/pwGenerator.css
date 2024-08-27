@@ -64,17 +64,16 @@ nav img {
   color: white;
 }
 #previewImage {
-  width: 10rem;
-  height: 10rem;
-}
+  max-width: 10rem;
 
+}
+.bg-card-custom{
+  background-color:#f1f5f5;
+}
 nav {
   min-height: 64px;
 }
-header {
-  min-height: 400px;
-  color: #151c19;
-}
+
 @keyframes moveBtnAi {
   0% {
     right: -5rem;
