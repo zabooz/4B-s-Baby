@@ -91,7 +91,7 @@ export async function passwordStrength(pwd) {
   await checkIfWord(pwd);
 
   count -= repeatMalus * timesRepeated + usedWords;
-  console.log(pwd, pwd.length, count, timesRepeated, "Userwords: ", usedWords);
+  
 
   count = count < 0 ? 0 : count;
 

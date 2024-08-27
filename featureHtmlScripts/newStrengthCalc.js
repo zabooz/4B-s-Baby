@@ -17,35 +17,35 @@ export async function newPwStrength(pwd) {
   const points = {
     pointForNumber: {
       value: false,
-      text: "Includes at least one number."
+      text:"Enthält mindestens eine Ziffer."
     },
     pointForSLetter: {
       value: false,
-      text: "Includes at least one lowercase letter."
+      text: "Enthält mindestens einen Kleinbuchstaben."
     },
     pointForBLetter: {
       value: false,
-      text: "Includes at least one uppercase letter."
+      text: "Enthält mindestens einen Großbuchstaben."
     },
     pointForSigns: {
       value: false,
-      text: "Includes at least one special character."
+      text: "Enthält mindestens ein Sonderzeichen."
     },
     noSequence: {
       value: false,
-      text: "No sequences of three consecutive characters."
+      text: "Hat keine aufeinander folgende Zeichen."
     },
     noRepeat: {
       value: false,
-      text: "No repeating characters."
+      text: "Keine wiederholenden Zeichen."
     },
     pointForLength: {
       value: pwd.length >= 12,
-      text: "Password length is at least 12 characters."
+      text: "Passwort besteht aus mindestens 12 Zeichen."
     },
     hasNoWord: {
       value: false,
-      text: "Does contain common words."
+      text: "Enthält keine geläufiges Wort"
     },
   };
   
@@ -62,7 +62,7 @@ export async function newPwStrength(pwd) {
     points.pointForNumber.value = true;
   }
 
-  // Überprüfe auf Wiederholungen und Sequenzen
+
   pwd = pwd.toLowerCase();
   for (let i = 0; i < pwd.length - 2; i++) {
     const charCodeOne = pwd.charCodeAt(i);
@@ -89,10 +89,10 @@ export async function newPwStrength(pwd) {
 
 
   try {
-    console.log(pwd,sysContent)
+    console.log("passwort: ",pwd, "prompt: ",sysContent)
     const response = await aiApiCall(pwd,sysContent);
-    console.log(response)
-    points.hasNoWord.value = !response.includes("Yes");
+    console.log("antwort: ",response)
+    points.hasNoWord.value = !response.toLowerCase().includes("yes");
     console.log(points.hasNoWord.value)
   } catch (error) {
     console.error('API call error:', error);
