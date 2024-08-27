@@ -1,6 +1,6 @@
 
-document.addEventListener("DOMContentLoaded", function () {
-  const elements = document.querySelectorAll(".bounceScroll");
+export const observer = () => {
+   const elements = document.querySelectorAll(".bounceScroll");
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -17,4 +17,4 @@ document.addEventListener("DOMContentLoaded", function () {
   elements.forEach((element) => {
     observer.observe(element);
   });
-});
+}
