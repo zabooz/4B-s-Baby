@@ -18,7 +18,7 @@ export const configNav = {
   },
   oldDesign: {
     link: "../oldDesign/index.html",
-    text: "Old Design",
+    text: "Legacy Design",
   },
   logo: {
     text: "Password Playground",
@@ -46,16 +46,13 @@ export const configNavIndex = {
   },
   oldDesign: {
     link: "./oldDesign/index.html",
-    text: "Old Design",
+    text: "Legacy Design",
   },
   logo: {
     text: "Password Playground",
     link: "./img/logo/logo.svg",
   },
 };
-
-
-
 
 const createNavBar = (configNav) => {
   const navBar = `
@@ -80,16 +77,16 @@ const createNavBar = (configNav) => {
           <li class="nav-item">
             <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
           </li>
-          <li class="nav-item dropdown me-5">
-          <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-bars"></i>
-          </a>
-          <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-          <li><a class="dropdown-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Ai Assistant</a></li>
-          <li><a class="dropdown-item" href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal"  >Clippy</a></li>
-          <li><a class="dropdown-item" href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a></li>
-          </ul>
-        </li>
+            <li class="nav-item">
+            <a class="nav-link text-danger" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" >Clippy</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link text-danger" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Ai Assistant</a>
+          </li>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link text-success" href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -97,14 +94,6 @@ const createNavBar = (configNav) => {
   return navBar;
 };
 
-
-export  const createNav = (config) => {
-
-
+export const createNav = (config) => {
   document.querySelector(config.targetId).innerHTML = createNavBar(config);
-
-
-}
-
-
-
+};
