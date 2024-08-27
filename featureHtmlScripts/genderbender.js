@@ -9,6 +9,38 @@ function concKeys(array) {
   }
   return result;
 }
+function checkKey(object) {
+  const firstKey = Object.keys(object)[0];
+  console.log("First Key:", firstKey);
+
+  if (firstKey === "männlich" || firstKey === "der") {
+    object["male"] = object[firstKey];
+    delete object[firstKey];
+    return object;
+  } else if (firstKey === "weiblich" || firstKey === "die") {
+    object["female"] = object[firstKey];
+    delete object[firstKey];
+    return object;
+  } else if (
+    firstKey === "neutral" ||
+    firstKey === "sächlich" ||
+    firstKey === "das"
+  ) {
+    object["neuter"] = object[firstKey];
+    delete object[firstKey];
+    return object;
+  } else if (
+    firstKey === "male" ||
+    firstKey === "female" ||
+    firstKey === "neuter"
+  ) {
+    return object;
+  } else {
+    console.log("gender not identifiable: ", firstKey);
+    return null; // Return null or a default value
+  }
+}
+
 const neuterEndings = [
   "phänomen",
   "onom",
@@ -75,6 +107,18 @@ const femaleEndings = [
 ];
 
 function addEndings(object) {
+  if (!object) {
+    console.error("Received an invalid object");
+    return ["", "", ""];
+  }
+
+  const genderKey = Object.keys(object)[0];
+  const wordsArray = object[genderKey];
+
+  if (!wordsArray || !Array.isArray(wordsArray) || wordsArray.length < 4) {
+    console.error("Array is invalid or has insufficient elements:", wordsArray);
+    return ["", "", ""];
+  }
   const pattern = /[aeiou]er$/;
 
   if (object["male"]) {
@@ -113,9 +157,9 @@ function addEndings(object) {
         maleToNeuterKey[i] += "es";
       }
     }
+    maleToNeuterKey[2] += neuterEndings[rndNumInLen(neuterEndings)];
     maleToFemaleKey[3] += femaleEndings[rndNumInLen(femaleEndings)];
     maleToFemaleKey.splice(maleToFemaleKey.length - 2, 1);
-    maleToNeuterKey[2] += neuterEndings[rndNumInLen(neuterEndings)];
     maleToNeuterKey.splice(maleToNeuterKey.length - 2, 1);
     maleKey.splice(maleKey.length - 1, 1);
     console.log(
@@ -163,9 +207,9 @@ function addEndings(object) {
       }
     }
 
+    femaleToNeuterKey[2] += neuterEndings[rndNumInLen(neuterEndings)];
     femaleToMaleKey[3] += maleEndings[rndNumInLen(maleEndings)];
     femaleToMaleKey.splice(femaleToMaleKey.length - 2, 1);
-    femaleToNeuterKey[2] += neuterEndings[rndNumInLen(neuterEndings)];
     femaleToNeuterKey.splice(femaleToNeuterKey.length - 2, 1);
     femaleKey.splice(femaleKey.length - 1, 1);
     console.log(
@@ -181,8 +225,8 @@ function addEndings(object) {
   }
   if (object["neuter"]) {
     let neuterKey = [...object["neuter"]]; // Deep copy of the array
-    let neuterToMaleKey = [...object["neuter"]]; 
-    let neuterToFemaleKey = [...object["neuter"]]; 
+    let neuterToMaleKey = [...object["neuter"]];
+    let neuterToFemaleKey = [...object["neuter"]];
 
     for (let i = 0; i < 2; i++) {
       if (neuterKey[i].endsWith("e")) {
@@ -214,8 +258,8 @@ function addEndings(object) {
       }
     }
     neuterToMaleKey[3] += maleEndings[rndNumInLen(maleEndings)];
-    neuterToMaleKey.splice(neuterToMaleKey.length - 2, 1);
     neuterToFemaleKey[3] += femaleEndings[rndNumInLen(femaleEndings)];
+    neuterToMaleKey.splice(neuterToMaleKey.length - 2, 1);
     neuterToFemaleKey.splice(neuterToFemaleKey.length - 2, 1);
     neuterKey.splice(neuterKey.length - 1, 1);
     console.log(
@@ -240,7 +284,16 @@ export async function genderbend(username) {
   let apiString = adj1 + " " + adj2 + " " + noun;
   console.log(apiString);
 
-  const sysContent = `I want you to translate ${apiString} to german. I want you to return the german root word only. I want you to return the result as a JSON object where the key is the correct german grammatical gender male, female or neuter of the translated third word in ${apiString} and the value is an array with value[0] being the first translated word, value[1] being the second translated word, value[2] being the third translated word and value[3] being the german plural of the noun in value[2]. Example: For "crazy red duck" the result I'm looking for would be a JSON object in the format of {"female": ["verückt", "rot", "Ente", "Enten"]}. The response should be the resulting object only.`;
+  const sysContent = `I want you to translate the string "${apiString}" into German, following these steps: 1.) Translate the string "${apiString}" into German. 2.) Identify the grammatical gender (male, female, or neuter) of the third word in the translated string. 3.) Extract the root words of each translated word, ensuring they are in their singular form. 4.) Create the plural form of the noun (third word). 5.) Return a JSON object where:
+The key is the correct grammatical gender of the third word in German.
+The value is an array where:
+value[0] is the first translated word,
+value[1] is the second translated word,
+value[2] is the third translated word,
+value[3] is the plural form of the third translated word. The response should be the resulting object only, with no additional text. Example: For the string "crazy red duck", the expected output should be:
+{
+  "female": ["verrückt", "rot", "Ente", "Enten"]
+};`;
 
   try {
     const apiResultString = await aiApiCallUsername(apiString, sysContent);
@@ -250,9 +303,12 @@ export async function genderbend(username) {
     // Parse the string into an object
     let apiResult = JSON.parse(apiResultString);
     console.log("Parsed API Result:", apiResult);
-    apiResult = addEndings(apiResult);
-    console.log("apiResult with addEndings:", apiResult);
-    return apiResult;
+    const checkedResult = checkKey(apiResult);
+    console.log("New Key after checkKey:", checkedResult);
+    console.log("Final API result object before addEndings:", checkedResult);
+    const EndingsResult = addEndings(checkedResult);
+    console.log("apiResult with addEndings:", EndingsResult);
+    return EndingsResult;
   } catch (error) {
     console.error("Error in API call or processing:", error);
     return ["", "", ""];
