@@ -3,15 +3,16 @@
   padding: 0;
   margin: 0;
 }
-main {
+main{
   display: flex;
   flex-direction: column;
+  
 }
 nav img {
   width: 3rem;
 }
 .bg-custom {
-  background-color: #23bbb870;
+  background-color: #23bbb858;
 }
 .nav-custom {
   background-color: #f1f5f5;
@@ -20,16 +21,35 @@ nav img {
 #jumbotron{
   height: 100vh;
 }
-#jumbotron img{
-  width: 15rem;
-  height: 15rem;
-}
+#padlockPic{
+  max-width:15rem;
 
+  margin-right: 10rem;
+  transform: rotate(20deg);
+
+}
+#PPIcon{
+  width: 20rem;
+  height: 12rem;
+  transform: rotate(-5deg);
+}
+#arrow{
+  transform: rotate(180deg);
+  width: 5rem;
+}
 
 #quickNav {
     position: fixed;
     right: -7rem;
     top: 40%;
+}
+
+.card{
+  min-height: 28rem;
+  max-width: 25rem;
+}
+.card img{
+  max-width: 18rem;
 }
 
 #quickNav img {
@@ -86,7 +106,8 @@ nav {
   min-height: 64px;
 }
 header {
-  height: 100vh;
+  width: 75%;
+  min-height: 800px;
   color: #151c19;
 }
 
@@ -103,6 +124,15 @@ header {
   }
   .heroText {
     width: 75%;
+  }
+
+}
+
+
+@media (max-width: 1090px) {
+  .card{
+    min-height: 1px;
+    max-width: none;
   }
 
 }

@@ -6,22 +6,26 @@ const createHero = (content) => {
     return `
     <div  id="jumbotron" class="d-flex flex-column align-items-center">
         
-    <div class="w-100 d-flex justify-content-center align-items-center flex-column ">
-    <div class="d-flex  w-75  ">
-    <h1 class="display-5  fw-semibold my-4 ">${content.h1}</h1>
-    <img src="./img/safepassword.jpg" class="">
+    <div class="w-100 d-flex justify-content-center align-items-center flex-column mt-5 pt-2">
+    <div class="d-flex  w-75 justify-content-between ">
+    <img  id="PPIcon"src="./img/landingPage/PPicon.png" class="ms-2">
+    
+    <img id="padlockPic" src="./img/landingPage/padlock.svg" class"img-fluid" >
     </div>
-    <p class="lead w-75 text-center text-lg-start border-bottom pb-0 ">${content.lead}</p>
+    <p id="" class="lead w-75 text-center pb-3 text-lg-start border-bottom border-5 border-dark fw-semibold ">${content.lead}</p>
     
     </div>
-    <div  class="w-75 border d-flex justify-content-center  flex-column "> 
-    <p class=" w-50">
+    <div  class="w-75  d-flex justify-content-center  flex-column"> 
+    <p class="w-75 mt-3 fw-semibold">
     ${content.p}
     </p>
-    <p class=" w-75 w-lg-50">
+    <p class=" w-75 fw-semibold mt-3  fs-4 text-decoration-underline">
     ${content.p2}
     </p>
     </div>
+    <a href="#spanScroll" id="test" class="mt-4">
+    <img id="arrow" src="./img/landingPage/arrow-pointing.svg"
+    </a>
     </div>
     `;
 }
