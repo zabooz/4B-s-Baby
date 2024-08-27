@@ -64,7 +64,9 @@ nav img {
   color: white;
 }
 #previewImage {
-  max-width: 10rem;
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
 
 }
 .bg-card-custom{
