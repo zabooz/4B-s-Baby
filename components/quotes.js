@@ -11,12 +11,12 @@ const createQuote = (content) => {
         <div class=" m-0 p-0 bg-transparent">
           <div class="card-body p-0  bg-transparent d-flex flex-column ">
             <i class="fas fa-quote-left fa-2x mb-4"></i>
-            <p class="lead fw-semibold text-center w-100 fst-italic">${content.zitat}</p>
-            <i class="fas fa-quote-left fa-2x mb-4 ms-auto"></i>
+            <p class="lead text-center w-100 fst-italic">${content.zitat}</p>
+            
+            <hr>
             <div class="d-flex ">
               <p class="mb-0  w-100 text-center text-md-end text-right fw-semibold fs-4">${content.person}</p>
             </div>
-            <hr>
 
           </div>
         </div>

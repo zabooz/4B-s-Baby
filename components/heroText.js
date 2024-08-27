@@ -6,13 +6,13 @@ const createHero = (content) => {
     return `
     <div  id="jumbotron" class="d-flex flex-column align-items-center">
         
-    <div class="w-100 d-flex justify-content-center align-items-center flex-column mt-5 pt-2">
-    <div class="d-flex  w-75 justify-content-between ">
+    <div class="w-100 d-flex justify-content-center align-items-center flex-column pt-2">
+    <div class="d-flex  w-75 justify-content-lg-between justify-content-center ">
     <img  id="PPIcon"src="./img/landingPage/PPicon.png" class="ms-2">
     
-    <img id="padlockPic" src="./img/landingPage/padlock.svg" class"img-fluid" >
+    <img id="padlockPic" src="./img/landingPage/padlock.svg" class"img-fluid d-none" >
     </div>
-    <p id="" class="lead w-75 text-center pb-3 text-lg-start border-bottom border-5 border-dark fw-semibold ">${content.lead}</p>
+    <p id="" class="lead w-75 text-center pb-3 text-lg-start border-bottom border-2 border-dark fw-semibold ">${content.lead}</p>
     
     </div>
     <div  class="w-75  d-flex justify-content-center  flex-column"> 

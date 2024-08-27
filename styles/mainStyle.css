@@ -18,12 +18,10 @@ nav img {
   background-color: #f1f5f5;
 }
 
-#jumbotron{
-  height: 100vh;
-}
+
 #padlockPic{
   max-width:15rem;
-
+  display: none;
   margin-right: 10rem;
   transform: rotate(20deg);
 
@@ -106,9 +104,12 @@ nav {
   min-height: 64px;
 }
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 75%;
-  min-height: 800px;
   color: #151c19;
+  min-height: 100vh;
 }
 
 @media (max-width: 991px) {
@@ -116,6 +117,7 @@ header {
     width: 10rem;
     height: 7rem;
   }
+
 }
 @media (min-width: 992px) {
   .custom-img {
@@ -124,6 +126,9 @@ header {
   }
   .heroText {
     width: 75%;
+  }
+  #padlockPic{
+    display: block;
   }
 
 }
