@@ -184,7 +184,7 @@ export const sizes = [
   "Compact",
   "Mini",
   "Little",
-  "Micro",
+  "Microscopic",
   "Minute",
   "Slight",
   "Nano",
