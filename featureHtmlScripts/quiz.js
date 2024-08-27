@@ -47,8 +47,8 @@ const config = {
     ],
   },
   letzteFolie: {
-    frage: "Vielen Dank für Ihre Teilnahme!",
-    antwort: "Bitte klicken Sie auf den Button, um Ihre Antworten zu senden.",
+    frage: "Vielen Dank für deine Teilnahme!",
+    antwort: "Bitte klick auf den Button, um deine Antworten zu senden.",
   },
 };
 
