@@ -50,7 +50,7 @@ export const configNavIndex = {
   },
   logo: {
     text: "Password Playground",
-    ink: "./img/logo/logo.svg",
+    link: "./img/logo/logo.svg",
   },
 };
 

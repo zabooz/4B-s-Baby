@@ -4,19 +4,25 @@ import { fetchText } from "../utilities/fetchText.js";
 const createHero = (content) => {
 
     return `
-    <div class="jumbotron p-1  p-md-5  mb-2 mb-md-4 d-flex flex-column align-items-center heroText align-items-lg-start">
-        <h1 class="display-5  fw-semibold my-4 text-center">${content.h1}</h1>
-        <p class="lead w-75 w-lg-100 text-center text-lg-start">
-          ${content.lead}
-        </p>
+    <div  id="jumbotron" class="d-flex flex-column align-items-center">
         
-        <p class=" w-75 w-lg-50">
-        ${content.p}
-        </p>
-        <p class=" w-75 w-lg-50">
-        ${content.p2}
-        </p>
-        </div>
+    <div class="w-100 d-flex justify-content-center align-items-center flex-column ">
+    <div class="d-flex  w-75  ">
+    <h1 class="display-5  fw-semibold my-4 ">${content.h1}</h1>
+    <img src="./img/safepassword.jpg" class="">
+    </div>
+    <p class="lead w-75 text-center text-lg-start border-bottom pb-0 ">${content.lead}</p>
+    
+    </div>
+    <div  class="w-75 border d-flex justify-content-center  flex-column "> 
+    <p class=" w-50">
+    ${content.p}
+    </p>
+    <p class=" w-75 w-lg-50">
+    ${content.p2}
+    </p>
+    </div>
+    </div>
     `;
 }
 
