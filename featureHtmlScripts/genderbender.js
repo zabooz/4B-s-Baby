@@ -288,16 +288,13 @@ export async function genderbend(username) {
   let apiString = adj1 + " " + adj2 + " " + noun;
   console.log(apiString);
 
-  const sysContent = `I want you to translate the string "${apiString}" into their german root words, following these steps: 1.) Translate the string "${apiString}" into German. 2.) Extract the root words of each translated word, ensuring they are in their singular form. 4.) Create the plural form of the noun (third word). 5.) Return a JSON object where:
+  const sysContent = `I want you to translate the string "${apiString}" into their german root words, following these steps: 1.) Translate each word of the string "${apiString}" into the German. 2.) Extract the root words of each translated word, ensuring they are in their singular form. 4.) Create the plural form of the noun (third word). 5.) Return a JSON object where:
 The key is the german article of value[2].
 The value is an array where:
-value[0] is the first translated word,
-value[1] is the second translated word,
-value[2] is the third translated word,
-value[3] is the plural form of the third translated word. The response should be the resulting object only, with no additional text. Example: For the string "hot red duck", the expected output should be:
-{
-  "die": ["heiß", "rot", "Ente", "Enten"]
-};`;
+value[0] is the root word of the first translated word,
+value[1] is the root word of the second translated word,
+value[2] is the root word of the third translated word,
+value[3] is the plural form of the third translated word. The response should be the resulting object only, with no additional text. Example1: For the string "hot red duck", the expected output should be: {"die": ["heiß", "rot", "Ente", "Enten"]} Example2: For the string "blue cold gorilla", the expected output should be: {"der": ["blau", "kalt", "gorilla", "gorillas"]};`;
 
   try {
     const apiResultString = await aiApiCallUsername(apiString, sysContent);
