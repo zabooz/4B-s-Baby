@@ -51,15 +51,16 @@ export const copyButton = (textId) => {
       type: type,
       value: text,
     };
-    console.log(textObj)
+
     const updatetClippy = Array.from(
       new Map(
         [...storedClippy, textObj].map((obj) => [obj.value, obj])
       ).values()
     );
     storedClippy = updatetClippy
+
     sessionStorage.setItem("clippy", JSON.stringify(updatetClippy));
- 
+
     confirmBubble.classList.add("fadeIn");
     setTimeout(() => {
       confirmBubble.classList.remove("fadeIn");
