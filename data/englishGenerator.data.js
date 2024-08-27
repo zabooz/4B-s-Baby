@@ -555,7 +555,6 @@ export const speeds = [
   "Breakneck",
   "Express",
   "Flying",
-  "Racing",
   "Agile",
   "Slick",
   "Efficient",
