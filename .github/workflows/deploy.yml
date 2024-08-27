@@ -24,6 +24,6 @@ jobs:
           server: ${{ secrets.BASE_FTP_URL }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /staging.passwordplayground.com/httpdocs
+          server-dir: /staging.passwordplayground.com/httpdocs/
           local-dir: ./
           port: ${{ secrets.FTP_PORT }}
