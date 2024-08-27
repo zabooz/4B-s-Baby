@@ -3,10 +3,9 @@
   padding: 0;
   margin: 0;
 }
-main{
+main {
   display: flex;
   flex-direction: column;
-  
 }
 nav img {
   width: 3rem;
@@ -18,65 +17,62 @@ nav img {
   background-color: #f1f5f5;
 }
 
-
-#padlockPic{
-  max-width:15rem;
+#padlockPic {
+  max-width: 15rem;
   display: none;
   margin-right: 10rem;
   transform: rotate(20deg);
-
 }
-#PPIcon{
+#PPIcon {
   width: 20rem;
   height: 12rem;
   transform: rotate(-5deg);
 }
-#arrow{
+#arrow {
   transform: rotate(180deg);
   width: 5rem;
 }
 
 #quickNav {
-    position: fixed;
-    right: -7rem;
-    top: 40%;
+  position: fixed;
+  right: -7rem;
+  top: 40%;
 }
 
-.card{
+.card {
   min-height: 28rem;
   max-width: 25rem;
+  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
+  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
+  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
 }
-.card img{
+.card img {
   max-width: 18rem;
 }
 
 #quickNav img {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
 }
 
 #quickNav button {
-    position: absolute;
-    right:1rem;
-    position: relative;
+  position: absolute;
+  right: 1rem;
+  position: relative;
 }
-
 
 #quickNav button:hover {
-
-    animation: moveBtn 0.5s forwards
+  animation: moveBtn 0.5s forwards;
 }
 
-
 @keyframes moveBtn {
-        0% {
-            right:1rem
-        }
-        100% {
-            right: 6.5rem;   
-        }   
+  0% {
+    right: 1rem;
+  }
+  100% {
+    right: 6.5rem;
+  }
 }
 
 .btn {
@@ -117,7 +113,6 @@ header {
     width: 10rem;
     height: 7rem;
   }
-
 }
 @media (min-width: 992px) {
   .custom-img {
@@ -127,33 +122,25 @@ header {
   .heroText {
     width: 75%;
   }
-  #padlockPic{
+  #padlockPic {
     display: block;
   }
-
 }
 
-
 @media (max-width: 1090px) {
-  .card{
+  .card {
     min-height: 1px;
     max-width: none;
   }
-
 }
-  @media (max-width: 700px) {
-    .bruteBox,
-    .excalibur,
-    .appBox,
-    .sectionDiv {
-      width: 90%;
-    }
+@media (max-width: 700px) {
+  .bruteBox,
+  .excalibur,
+  .appBox,
+  .sectionDiv {
+    width: 90%;
   }
-.dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0; /* remove the gap so it doesn't close */
 }
-
 
 @keyframes bounce {
   0% {
