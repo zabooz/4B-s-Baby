@@ -10,7 +10,8 @@
 }
 
 .carousel-caption {
-  background-color: #5553534b;
+  background-color: #1f1919bd;
+
   text-shadow: 1px 1px 1px #000000;
   border-radius: 1rem;
   margin-bottom: 2rem;
@@ -57,7 +58,7 @@ nav img {
   width: 3rem;
 }
 header {
-  min-height: 400px;
+
   color: #151c19;
 }
 .description {

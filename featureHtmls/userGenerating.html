@@ -45,7 +45,7 @@
     <nav id="navBar" class="sticky-top"></nav>
     <header class="mb-5 d-flex justify-content-center"></header>
     <main>
-      <section class="d-flex justify-content-center">
+      <section class="d-flex justify-content-center flex-column flex-lg-row p-5 gap-4">
         <div id="pwdGenDiv" class="appBox">
           <h3>Identity Wizardry</h3>
           <p class="w-75 fw-semibold">
@@ -162,12 +162,8 @@
             </table>
           </div>
         </div>
-      </section>
-      <section
-        id="quote6"
-        class="d-flex justify-content-center align-items-center"
-      ></section>
-      <section class="d-flex justify-content-center">
+
+
         <div id="pwdGenDiv" class="appBox d-flex justify-content-center">
           <h3>Mind Maestro</h3>
           <p class="fw-semibold w-75">
@@ -193,7 +189,7 @@
     </footer>
     <div class="clipBoard"></div>
     <script type="module">
-      import { heroText } from "../components/heroText.js";
+  
       import { quote } from "../components/quotes.js";
       import { clipBoard } from "../components/clipBoard.js";
       import { createNav, configNav } from "../components/navBar.js";
@@ -201,8 +197,8 @@
       createQuickNav("main", configQuickNavFeature);
       createAssistant("main");
       createNav(configNav);
-      quote("#quote6", "zitate", 6, "../data/text.json");
-      heroText("header", "heroUser", "../data/text.json");
+   
+
       quote("#quote8", "zitate", 8, "../data/text.json");
       clipBoard(".clipBoard");
       import {

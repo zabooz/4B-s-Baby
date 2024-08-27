@@ -7,7 +7,7 @@ const config = {
   pic6: "../img/psyTest/pic6.jpg",
 
   frage1: {
-    frage: "Was ist Ihnen am wichtigsten?",
+    frage: "Was ist dir am wichtigsten?",
     antworten: [
       "Eine angenehme Temperatur",
       "Bequemlichkeit",
@@ -16,7 +16,7 @@ const config = {
     ],
   },
   frage2: {
-    frage: "Welche Aktivität mögen Sie am meisten?",
+    frage: "Welche Aktivität magst du am meisten?",
     antworten: [
       "Zeichnen",
       "Arbeiten mit den Händen",
@@ -25,7 +25,7 @@ const config = {
     ],
   },
   frage3: {
-    frage: "Welche Lebensmittelgruppe spricht Sie am meisten an?",
+    frage: "Welche Lebensmittelgruppe spricht dich am meisten an?",
     antworten: [
       "Früchte & Gemüse",
       "Getränke",
@@ -34,11 +34,11 @@ const config = {
     ],
   },
   frage4: {
-    frage: "Was bevorzugen Sie?",
+    frage: "Was bevorzugst du?",
     antworten: ["Instrumente", "Blumen", "Fahrzeuge", "Werkzeuge"],
   },
   frage5: {
-    frage: "Was spricht Sie am meisten an?",
+    frage: "Was spricht dich am meisten an?",
     antworten: [
       "Hunde und Katzen",
       "Drachen und Einhörner",

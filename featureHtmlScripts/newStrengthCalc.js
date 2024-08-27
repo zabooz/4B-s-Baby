@@ -91,6 +91,7 @@ export async function newPwStrength(pwd) {
   try {
     console.log(pwd,sysContent)
     const response = await aiApiCall(pwd,sysContent);
+    console.log(response)
     points.hasNoWord.value = !response.includes("Yes");
     console.log(points.hasNoWord.value)
   } catch (error) {

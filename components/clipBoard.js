@@ -78,11 +78,11 @@ const deleteBtn = (id) => {
   btn.addEventListener("click", () => {
   
     const element = document.getElementById(id)
-    console.log(element.textContent)
+    console.log(element.textContent,id)
     
     
     const newArr = storedClippy.filter((obj) => !element.textContent.includes(obj.value));
-    
+    console.log(newArr)
     sessionStorage.setItem("clippy", JSON.stringify(newArr));
     element.remove()
   })
