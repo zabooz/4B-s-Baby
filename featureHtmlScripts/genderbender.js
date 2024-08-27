@@ -140,7 +140,9 @@ function addEndings(object) {
       } else {
         maleKey[i] += "er";
       }
-      if (maleToFemaleKey[i].endsWith("el")) {
+      if (maleToFemaleKey[i].endsWith("e")) {
+        maleToFemaleKey[i] += "";
+      } else if (maleToFemaleKey[i].endsWith("el")) {
         maleToFemaleKey[i] = maleToFemaleKey[i].slice(0, -1) + "le";
       } else if (pattern.test(maleToFemaleKey[i])) {
         maleToFemaleKey[i] = maleToFemaleKey[i].slice(0, -2) + "r" + "e";
@@ -180,7 +182,9 @@ function addEndings(object) {
     let femaleToNeuterKey = [...object["female"]]; // Deep copy of the array
 
     for (let i = 0; i < 2; i++) {
-      if (femaleKey[i].endsWith("el")) {
+      if (femaleKey[i].endsWith("e")) {
+        femaleKey[i] += "";
+      } else if (femaleKey[i].endsWith("el")) {
         femaleKey[i] = femaleKey[i].slice(0, -1) + "le";
       } else if (pattern.test(femaleKey[i])) {
         femaleKey[i] = femaleKey[i].slice(0, -2) + "r" + "e";
@@ -207,21 +211,21 @@ function addEndings(object) {
       }
     }
 
-    femaleToNeuterKey[2] += neuterEndings[rndNumInLen(neuterEndings)];
+    femaleToNeuterKey[3] += neuterEndings[rndNumInLen(neuterEndings)];
     femaleToMaleKey[3] += maleEndings[rndNumInLen(maleEndings)];
     femaleToMaleKey.splice(femaleToMaleKey.length - 2, 1);
     femaleToNeuterKey.splice(femaleToNeuterKey.length - 2, 1);
     femaleKey.splice(femaleKey.length - 1, 1);
     console.log(
       "female addEndings result:",
-      femaleKey,
       femaleToMaleKey,
+      femaleKey,
       femaleToNeuterKey
     );
-    let femaleKeyResult = concKeys(femaleKey);
     let femaleToMaleKeyResult = concKeys(femaleToMaleKey);
+    let femaleKeyResult = concKeys(femaleKey);
     let femaleToNeuterKeyResult = concKeys(femaleToNeuterKey);
-    return [femaleKeyResult, femaleToMaleKeyResult, femaleToNeuterKeyResult];
+    return [femaleToMaleKeyResult, femaleKeyResult, femaleToNeuterKeyResult];
   }
   if (object["neuter"]) {
     let neuterKey = [...object["neuter"]]; // Deep copy of the array
@@ -264,14 +268,14 @@ function addEndings(object) {
     neuterKey.splice(neuterKey.length - 1, 1);
     console.log(
       "neuter addEndings result:",
-      neuterKey,
       neuterToMaleKey,
-      neuterToFemaleKey
+      neuterToFemaleKey,
+      neuterKey
     );
     let neuterKeyResult = concKeys(neuterKey);
     let neuterToMaleKeyResult = concKeys(neuterToMaleKey);
     let neuterToFemaleKeyResult = concKeys(neuterToFemaleKey);
-    return [neuterKeyResult, neuterToMaleKeyResult, neuterToFemaleKeyResult];
+    return [neuterToMaleKeyResult, neuterToFemaleKeyResult, neuterKeyResult];
   }
 }
 function splitCamelCase(str) {
@@ -284,15 +288,15 @@ export async function genderbend(username) {
   let apiString = adj1 + " " + adj2 + " " + noun;
   console.log(apiString);
 
-  const sysContent = `I want you to translate the string "${apiString}" into German, following these steps: 1.) Translate the string "${apiString}" into German. 2.) Identify the grammatical gender (male, female, or neuter) of the third word in the translated string. 3.) Extract the root words of each translated word, ensuring they are in their singular form. 4.) Create the plural form of the noun (third word). 5.) Return a JSON object where:
-The key is the correct grammatical gender of the third word in German.
+  const sysContent = `I want you to translate the string "${apiString}" into their german root words, following these steps: 1.) Translate the string "${apiString}" into German. 2.) Extract the root words of each translated word, ensuring they are in their singular form. 4.) Create the plural form of the noun (third word). 5.) Return a JSON object where:
+The key is the german article of value[2].
 The value is an array where:
 value[0] is the first translated word,
 value[1] is the second translated word,
 value[2] is the third translated word,
-value[3] is the plural form of the third translated word. The response should be the resulting object only, with no additional text. Example: For the string "crazy red duck", the expected output should be:
+value[3] is the plural form of the third translated word. The response should be the resulting object only, with no additional text. Example: For the string "hot red duck", the expected output should be:
 {
-  "female": ["verrückt", "rot", "Ente", "Enten"]
+  "die": ["heiß", "rot", "Ente", "Enten"]
 };`;
 
   try {
