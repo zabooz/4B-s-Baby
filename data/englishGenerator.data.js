@@ -727,7 +727,6 @@ export const weatherTypes = [
   "Clear",
   "Sunlit",
   "Dazzling",
-  "Rays",
   "Frosty",
   "Nippy",
   "Glistening",
