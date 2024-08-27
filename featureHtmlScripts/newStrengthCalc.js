@@ -11,7 +11,9 @@ const zahlen = "0123456789".split("");
 export async function newPwStrength(pwd) {
   let result = 0;
   
-  const sysContent ="you can only answer with one word, it should be yes or no. does this password contains a word either in german,english,france or spain?"
+  const sysContent ="you can only answer with one word, it should be yes or no. does this password contains a word, either in german,english,france or spanish?"
+
+
 
 
   const points = {
@@ -87,13 +89,10 @@ export async function newPwStrength(pwd) {
     }
   }
 
-
+  
   try {
-    console.log("passwort: ",pwd, "prompt: ",sysContent)
     const response = await aiApiCall(pwd,sysContent);
-    console.log("antwort: ",response)
     points.hasNoWord.value = !response.toLowerCase().includes("yes");
-    console.log(points.hasNoWord.value)
   } catch (error) {
     console.error('API call error:', error);
     points.hasNoWord.value = false;
