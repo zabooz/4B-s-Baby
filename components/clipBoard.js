@@ -54,8 +54,6 @@ export const clipBoard = (id) => {
     for (let i = 0; i < storedClippy.length; i++) {
       const elementId = storedClippy[i].type + i;
 
-
-   
       const clip = document.getElementById(elementId);
       const copyBtn = copyButton(elementId);
       const delBtn = deleteBtn(elementId);
@@ -72,18 +70,20 @@ const deleteBtn = (id) => {
   const i = document.createElement("i");
   btn.style.border = "none";
   btn.style.backgroundColor = "white"
+  btn.id="btn" + id
   i.className = "fa fa-trash";
   btn.append(i)
   
   btn.addEventListener("click", () => {
-  
+    
     const element = document.getElementById(id)
-    console.log(element.textContent,id)
-    
-    
-    const newArr = storedClippy.filter((obj) => !element.textContent.includes(obj.value));
-    console.log(newArr)
-    sessionStorage.setItem("clippy", JSON.stringify(newArr));
+    console.log(element.innerText,element.textContent)
+    storedClippy.forEach((obj,index) => {
+      if ((element.textContent.includes(obj.value)))  storedClippy.splice(index, 1);
+    })
+ 
+    sessionStorage.setItem("clippy", JSON.stringify(storedClippy));
+ 
     element.remove()
   })
 
