@@ -10,7 +10,6 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../styles/appBoxes.css" />
     <link rel="stylesheet" href="../styles/pwGenerator.css" />
     <link rel="stylesheet" href="../styles/clipBoard.css" />
 
@@ -45,172 +44,18 @@
 
     <header class="mb-5 d-flex justify-content-center"></header>
     <main>
-      <section class="d-flex justify-content-center">
-        <div class="d-flex flex-lg-row flex-column p-2 p-md-5 sectionDiv">
-          <div
-            class="img-container d-flex px-5 justify-content-center align-items-center"
-          >
-            <img
-              src="../img/lockPickAxe.jpg"
-              class="custom-img"
-              alt="lockPickAxe"
-            />
-          </div>
-          <div class="accordion w-100 w-lg-75" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  Die Länge ist entscheidend!
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  Ein sicheres Passwort sollte mindestens 12 Zeichen lang sein.
-                  Je länger das Passwort, desto schwerer ist es zu knacken.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  Kombination aus verschiedenen Zeichen.
-                </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  Verwenden Sie eine Mischung aus Groß- und Kleinbuchstaben,
-                  Zahlen und Sonderzeichen, um die Komplexität zu erhöhen.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  Vermeidung von Vorhersehbarkeit
-                </button>
-              </h2>
-              <div
-                id="collapseThree"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  Verwenden Sie keine leicht zu erratenden Informationen wie
-                  Namen, Geburtsdaten oder gängige Wörter. Zufälligkeit ist der
-                  Schlüssel.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingFour">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour"
-                  aria-expanded="false"
-                  aria-controls="collapseFour"
-                >
-                  Einzigartigkeit für jedes Konto.
-                </button>
-              </h2>
-              <div
-                id="collapseFour"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingFour"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  Nutzen Sie für jedes Konto ein anderes Passwort, um zu
-                  verhindern, dass bei einem Angriff alle Ihre Konten
-                  kompromittiert werden.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingFive">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseFive"
-                  aria-expanded="false"
-                  aria-controls="collapseFive"
-                >
-                  Regelmäßige Aktualisierung.
-                </button>
-              </h2>
-              <div
-                id="collapseFive"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingFive"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  Ändern Sie Ihre Passwörter regelmäßig, um die Sicherheit
-                  weiter zu erhöhen und das Risiko eines unbemerkten Zugriffs zu
-                  minimieren.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="quote10" class="d-flex justify-content-center"></section>
-      <section class="d-flex justify-content-center">
+      <section class="d-flex justify-content-center flex-column flex-lg-row p-5 gap-4">
         <div
           id="pictureMagic"
-          class="appBox container d-flex g-0 flex-column justify-content-center align-items-center"
+          class="container p-1 gap-1 w-75 bg-card-custom d-flex  flex-column justify-content-center align-items-center"
         >
-          <h3>Picture Magic</h3>
+          <h3 class="pt-3">Picture Magic</h3>
           <p class="fw-semibold w-75">
             Lade einfach ein Foto hoch, und unsere App verwandelt es in ein
             sicheres Passwort.
           </p>
-          <p class="w-75 fw-semibold">
-            Mit dieser Methode wird ein Bild in ein starkes Passwort
-            umgewandelt, das nicht nur sicher ist, sondern dir auch hilft, dir
-            deine Passwörter leichter zu merken. Ein cleveres und einfaches
-            System, um deine Online-Sicherheit zu verbessern.
-          </p>
           <div
-            class="d-flex flex-column flex-md-row align-items-center justify-content-evenly gap-5"
+            class="d-flex flex-column align-items-center justify-content-evenly w-100 gap-5"
           >
             <div class="border border-2 mb-3 rounded">
               <img
@@ -220,16 +65,18 @@
                 class="border rounded"
               />
             </div>
-            <div class="d-flex flex-column gap-2 h-100">
-              <div class="label d-flex bg-success">
+            <div
+              class="d-flex flex-column align-items-center justify-content-center w-100 gap-2"
+            >
+              <div class="label w-75 d-flex bg-success">
                 <label
                   id="uploadLabel"
                   for="uploadFile"
-                  class="w-100 fw-semibold p-2 fs-5"
+                  class="w-100 fw-semibold p-2 fs-5 w-50 text-center"
                   >Foto hochladen</label
                 >
               </div>
-              <form action="#" class="w-100">
+              <form action="#" class="w-100 text-center">
                 <input
                   type="file"
                   value="value"
@@ -241,7 +88,7 @@
                 <button
                   id="pictureConvertBtn"
                   type="button"
-                  class="btn btn-primary btn-lg w-100"
+                  class="btn btn-primary btn-lg w-75"
                 >
                   Los geht's
                 </button>
@@ -255,15 +102,11 @@
             Sample Text
           </p>
         </div>
-      </section>
-      <section id="quote3" class="bg-body-tertiary"></section>
-      <section class="d-flex justify-content-center">
-        <div id="converterSelector" class="appBox">
-          <h3>Rune Translator</h3>
+
+        <div id="converterSelector" class="container p-1 gap-1 w-75 bg-card-custom d-flex  flex-column  align-items-center">
+          <h3 class="pt-3">Rune Translator</h3>
           <p class="fw-semibold w-75">
-            Verwandle dein Passwort in Leetspeak für mehr Sicherheit. Gib
-            einfach dein Passwort ein, und der Konverter ändert es in eine
-            sicherere<span
+            Verwandle dein Passwort in eine sicherere<span
               class="text-custom fw-bold text-decoration-underline"
               data-bs-toggle="offcanvas"
               href="#offcanvasLeetSpeak"
@@ -272,14 +115,11 @@
             >
               Leetspeak-Version
             </span>
-          </p>
-          <p class="fw-semibold w-75">
-            So wird dein Passwort stärker, indem gewöhnliche Zeichen durch
-            Zahlen und Symbole ersetzt werden.
+            für mehr Sicherheit.
           </p>
 
           <div
-            class="pwInputDiv d-flex flex-column flex-md-row align-items-center flex-lg-row gap-3"
+            class="pwInputDiv d-flex flex-column align-items-center  gap-3"
           >
             <input
               type="text"
@@ -296,51 +136,48 @@
             <table class="table mb-5" id="stats2">
               <thead>
                 <tr>
-                  <th scope="col" class="text-center">Dein Passwort</th>
-                  <th scope="col" class="text-center">Leetspeak Variante</th>
-                </tr>
+                  <th scope="col" class="text-center" >Version</th>
+                  <th scope="col" class="text-center">Passwort</th>
               </thead>
-              <tbody id="statsBody2" class="text-center" style="display: none">
+              <tbody id="statsBody2" class="text-center" >
                 <tr>
-                  <td class="text-center" id="leetResult1"></td>
-                  <td class="text-center" id="leetStrength1"></td>
+                  <td class="text-start">Simple:</td>
+                  <td id="leetResult0"  class="text-end"></td>
+                  
                 </tr>
                 <tr>
-                  <td class="text-center" id="leetResult2"></td>
-                  <td class="text-center" id="leetStrength2"></td>
+                  <td  class="text-start" >Advanced:</td>
+                  <td  id="leetResult1" class="text-end"></td>
                 </tr>
                 <tr>
-                  <td class="text-center" id="leetResult3"></td>
-                  <td class="text-center" id="leetStrength3"></td>
+                  <td  class="text-start" >Complicated:</td>
+                  <td  class="text-end" id="leetResult2"></td>
+                  
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-      </section>
-      <section id="quote4" class="bg-body-tertiary"></section>
-      <section class="d-flex justify-content-center">
-        <div class="appBox" id="glyphSorcery">
-          <h3>Glyph Sorcery</h3>
+
+        <div class="container p-1 gap- w-75 bg-card-custom d-flex  flex-column align-items-center" id="glyphSorcery">
+          <h3 class="pt-3">Glyph Sorcery</h3>
           <p class="w-75 fw-semibold">
-            Erstell dir ein sicheres Passwort, das lang genug ist. Es erscahfft
-            eine zufällige Mischung aus Buchstaben, Zahlen und Symbolen sein,
-            damit dein Konto gut geschützt ist.
+            Erstell dir ein sicheres Passwor zwischen 6 und 24 Zeichen.
           </p>
           <div
             id="startPwGenDiv"
             class="d-flex flex-column w-100 justify-content-center align-items-center"
           >
             <div
-              class="d-flex flex-column flex-lg-row w-50 justify-content-center align-items-center mb-3"
+              class="d-flex flex-column  w-75 justify-content-center align-items-center mb-3"
             >
               <label
                 for="pwLength"
                 class="label p-1 d-flex w-50 custom-width justify-content-center w-100 gap-3 align-items-center mb-3 fw-semibold"
-                >Passwortlänge:
+                > Wähle deine Passwortlänge:
               </label>
 
-              <select id="pwLength" class="input w-75">
+              <select id="pwLength" class="input w-25">
                 <option value="6">6</option>
                 <option value="8">8</option>
                 <option value="10">10</option>
@@ -370,7 +207,7 @@
     <div class="clipBoard"></div>
     <script type="module">
       import { quote } from "../components/quotes.js";
-      import { heroText } from "../components/heroText.js";
+      // import { heroText } from "../components/heroText.js";
       import { loadOffCanvas } from "../components/offCanvas.js";
       import { clipBoard } from "../components/clipBoard.js";
       import { createNav, configNav } from "../components/navBar.js";
@@ -384,11 +221,10 @@
 
       createAssistant("main");
       createNav(configNav);
+
       quote("#quote12", "zitate", 12, "../data/text.json");
-      quote("#quote3", "zitate", 7, "../data/text.json");
-      quote("#quote4", "zitate", 4, "../data/text.json");
-      quote("#quote10", "zitate", 10, "../data/text.json");
-      heroText("header", "heroPw", "../data/text.json");
+      // quote("#quote10", "zitate", 10, "../data/text.json");
+      // heroText("header", "heroPw", "../data/text.json");
       loadOffCanvas("header", "leetSpeak", "../data/text.json");
       clipBoard(".clipBoard");
     </script>

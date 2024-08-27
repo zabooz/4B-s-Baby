@@ -3,24 +3,53 @@
   padding: 0;
   margin: 0;
 }
-main {
+main{
   display: flex;
   flex-direction: column;
+  
 }
 nav img {
   width: 3rem;
 }
 .bg-custom {
-  background-color: #23bbb870;
+  background-color: #23bbb858;
 }
 .nav-custom {
   background-color: #f1f5f5;
+}
+
+#jumbotron{
+  height: 100vh;
+}
+#padlockPic{
+  max-width:15rem;
+
+  margin-right: 10rem;
+  transform: rotate(20deg);
+
+}
+#PPIcon{
+  width: 20rem;
+  height: 12rem;
+  transform: rotate(-5deg);
+}
+#arrow{
+  transform: rotate(180deg);
+  width: 5rem;
 }
 
 #quickNav {
     position: fixed;
     right: -7rem;
     top: 40%;
+}
+
+.card{
+  min-height: 28rem;
+  max-width: 25rem;
+}
+.card img{
+  max-width: 18rem;
 }
 
 #quickNav img {
@@ -77,7 +106,8 @@ nav {
   min-height: 64px;
 }
 header {
-  min-height: 400px;
+  width: 75%;
+  min-height: 800px;
   color: #151c19;
 }
 
@@ -97,6 +127,15 @@ header {
   }
 
 }
+
+
+@media (max-width: 1090px) {
+  .card{
+    min-height: 1px;
+    max-width: none;
+  }
+
+}
   @media (max-width: 700px) {
     .bruteBox,
     .excalibur,
@@ -108,4 +147,30 @@ header {
 .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0; /* remove the gap so it doesn't close */
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-30px);
+  }
+  40% {
+    transform: translateY(15px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+  80% {
+    transform: translateY(7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bounce {
+  animation: bounce 1.2s ease;
 }

@@ -37,127 +37,75 @@
   </head>
   <body class="bg-custom">
     <nav id="navBar" class="sticky-top"></nav>
-    <header class="mb-5 d-flex justify-content-center"></header>
+    <header class="mx-auto"></header>
+    <div id="spanScroll" class="my-5" style="height: 70px;"  ></div>
     <main>
-      <section class="d-flex justify-content-center">
-        <div class="d-flex flex-lg-row flex-column sectionDiv">
-          <div class="img-container d-flex justify-content-center p-5">
-            <img
-              src="./img/tellMeWhy.jpg"
-              class="custom-img"
-              alt="lockPickAxe"
-            />
-          </div>
-          <div
-            class="content-container p-3 d-flex flex-column align-items-center align-items-lg-start"
-          >
-            <h4 class="mb-2 fw-bold fs-3 text-lg-start text-center w-100">
-              Teste Die Stärke Deines Passworts!
-            </h4>
-            <p class="mb-3 fw-lg-semibold text-lg-start text-center fs-5 w-100">
-              Teste die Stärke deines Passworts!
-            </p>
-            <p class="p-3 p-lg-0">
-              Verwende unser Bewertungstool <span><b>Excalibur</b></span
-              >, um die Stärke deines Passworts zu testen und simuliere
-              Brute-Force-Angriffe mit <span><b>Mojo</b></span
-              >, um zu sehen, wie lange es dauern würde, bis dein Passwort
-              geknackt wird.
-            </p>
-            <a class="btn my-3" href="./featureHtmls/testing.html"
-              >Test Password</a
-            >
-          </div>
-        </div>
-      </section>
-      <section id="quote1" class="d-flex justify-content-center"></section>
-      <section class="d-flex justify-content-center">
-        <div class="d-flex flex-lg-row flex-column sectionDiv">
-          <div class="img-container d-flex justify-content-center p-5">
-            <img
-              src="./img/safepassword.jpg"
-              class="custom-img"
-              alt="lockPickAxe"
-            />
-          </div>
-          <div
-            class="content-container p-3 d-flex flex-column align-items-center align-items-lg-start"
-          >
-            <h4 class="mb-2 fw-bold fs-2 text-lg-start text-center w-100">
-              Generiere Passwort
-            </h4>
-            <p class="mb-3 fw-lg-semibold text-lg-start text-center fs-5 w-100">
-              Erstelle ein sicheres Passwort für deine Konten.
-            </p>
-            <p class="p-3 p-lg-0">
-              Nutze unsere drei Tools, um das ideale Passwort zu generieren:
-              <span><b>Picture Magic</b></span> verwandelt Bilder in
-              Passwörter,<span><b>Rune Translator</b></span> konvertiert Texte
-              in Leetspeak und <span><b>GlyphSorcery</b></span> erstellt
-              zufällige, sichere Passwörter. Wähle die Methode, die am besten zu
-              dir passt, um deine Daten zu schützen.
-            </p>
-            <a class="btn my-3" href="./featureHtmls/pwGenerating.html"
-              >Generiere Passwort</a
-            >
-          </div>
-        </div>
-      </section>
-      <section id="quote2"></section>
-      <section class="d-flex justify-content-center">
-        <div class="d-flex flex-lg-row flex-column sectionDiv">
-          <div class="img-container d-flex justify-content-center p-5">
-            <img
-              src="./img/usernameGenerator.jpg"
-              class="custom-img"
-              alt="lockPickAxe"
-            />
-          </div>
-          <div
-            class="content-container p-3 d-flex flex-column align-items-center align-items-lg-start"
-          >
-            <h4 class="mb-2 fw-bold fs-2 text-lg-start text-center w-100">
-              Erfinde Deinen Online-Namen!
-            </h4>
-            <p class="mb-3 fw-lg-semibold text-lg-start text-center fs-5 w-100">
-              Lass deiner Fantasie freien Lauf und finde einen einzigartigen
-              Benutzernamen, der dich in der digitalen Welt hervorhebt.
-            </p>
-            <p class="p-3 p-lg-0">
-              Nutze unsere beiden Tools, um den perfekten Benutzernamen zu
-              erstellen: <span><b>Identity Wizardry</b></span> generiert
-              zufällige Benutzernamen basierend auf deinen Parametern, und
-              <span><b>Mind Maestro</b></span> erstellt kreative Namen durch ein
-              unterhaltsames Quiz. Wähle die Methode, die am besten zu dir
-              passt, um deine Online-Identität zu finden.
-            </p>
-            <a class="btn my-3" href="./featureHtmls/userGenerating.html"
-              >Generiere Benutzernamen</a
-            >
-          </div>
-        </div>
-      </section>
+<section id="section" class="mx-5 bounceScroll" >
+  <div class="d-flex flex-column flex-lg-row gap-4 align-items-center justify-content-center ">
+    <div class=" card  d-flex flex-column border align-items-center  gap-2  w-75 h-75 border-danger p-3 mb-4">
+      <img src="./img/landingPage/pwGenerating.svg" alt="password Generator" class="img-fluid" />
+      <div>
+        <h2 class="text-decoration-underline text-center">Generiere</h2>
+        <!-- <p class="text-center">ein sicheres Passwort</p> -->
+      </div>
+      <p>
+        Nutze unsere drei Tools, um das ideale Passwort zu generieren:
+        <span><b>Picture Magic</b></span> verwandelt Bilder in Passwörter, 
+        <span><b>Rune Translator</b></span> konvertiert Texte in Leetspeak und 
+        <span><b>GlyphSorcery</b></span> erstellt zufällige, sichere Passwörter. 
+      </p>
+      <a class="btn btn-primary mt-auto" href="./featureHtmls/pwGenerating.html">Generiere Passwort</a>
+    </div>
+    
+    <div class=" card  d-flex flex-column w-75 gap-2 align-items-center border border-danger p-3 mb-4">
+      <img src="./img/landingPage/testpw.svg" alt=""  class="img-fluid"/>
+      <div>
+        <h2 class="text-decoration-underline text-center">Teste</h2>
+        <!-- <p class="text-center">die Stärke deines Passworts</p> -->
+      </div>
+      <p>
+        Verwende unser Bewertungstool <span><b>Excalibur</b></span>, um die Stärke deines Passworts zu testen und simuliere 
+        Brute-Force-Angriffe mit <span><b>Mojo</b></span>, um zu sehen, wie lange es dauern würde, bis dein Passwort geknackt wird.
+      </p>
+      <a class="btn btn-primary mt-auto" href="./featureHtmls/testing.html">Teste Passwort</a>
+    </div>
+    
+    <div id="scroll" class=" card  d-flex flex-column align-items-center   gap-2  w-75  border border-danger p-3 mb-4">
+      <img src="./img/landingPage/usernamegen.svg" alt="" class="img-fluid" />
+      <div>
+        <h2 class="text-decoration-underline text-center">Erfinde</h2>
+        <!-- <p class="text-center">deinen Online-Namen</p> -->
+      </div>
+      <p>
+        Nutze unsere beiden Tools, um den perfekten Benutzernamen zu erstellen: 
+        <span><b>Identity Wizardry</b></span> generiert zufällige Benutzernamen basierend auf deinen Parametern, und 
+        <span><b>Mind Maestro</b></span> erstellt kreative Namen durch ein unterhaltsames Quiz. 
+        
+      </p>
+      <a class="btn btn-primary mt-auto" href="./featureHtmls/userGenerating.html">Erfinde Namen</a>
+    </div>
+  </div>
+  <section id="quote1" class="  d-flex justify-content-center"></section>
+</section>
+
+
     </main>
 
     <footer class="p-5">
       <script src="./components/footer.js"></script>
     </footer>
     <div class="clipBoard"></div>
+   
     <script type="module">
       import { quote } from "./components/quotes.js";
       import { heroText } from "./components/heroText.js";
       import { createNav, configNavIndex } from "./components/navBar.js";
       import { createAssistant } from "./components/aiAssistant.js";
-      import {
-        createQuickNav,
-        configQuickNavFeature,
-      } from "./components/quickNav.js";
       import { clipBoard } from "../components/clipBoard.js";
-      createQuickNav("main", configQuickNavFeature);
+      
       clipBoard(".clipBoard");
       createAssistant("main");
       quote("#quote1", "zitate", 1, "./data/text.json");
-      quote("#quote2", "zitate", 2, "./data/text.json");
       heroText("header", "heroIndex", "./data/text.json");
       createNav(configNavIndex);
     </script>
