@@ -5,7 +5,7 @@ export async function pictureToString() {
     label.textContent = 'Upload your picture';
     
     
-    
+
     
     
     

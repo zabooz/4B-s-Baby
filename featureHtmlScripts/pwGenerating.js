@@ -12,6 +12,20 @@ uploadFile.addEventListener("change", () => {
   const preview = document.getElementById("previewImage");
   const input = document.getElementById("uploadFile");
   const file = input.files[0];
+
+        const validTypes = [
+          "image/jpeg",
+          "image/png",
+          "image/webp",
+          "image/bmp",
+        ];
+ 
+        if (!validTypes.includes(file.type)) {
+          alert("Only image files are allowed.");
+          return
+        }
+
+
   label.textContent = "Picture Uploaded!";
   if (preview) {
     const reader = new FileReader();
