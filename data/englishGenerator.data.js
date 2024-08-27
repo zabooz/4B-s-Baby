@@ -2504,7 +2504,6 @@ export const fantasyRaces = [
   "Kobold",
   "Satyr",
   "Minotaur",
-  "Warforged",
   "Changeling",
   "Shifter",
   "Sahuagin",

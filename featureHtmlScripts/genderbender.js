@@ -240,7 +240,7 @@ export async function genderbend(username) {
   let apiString = adj1 + " " + adj2 + " " + noun;
   console.log(apiString);
 
-  const sysContent = `I want you to translate ${apiString} to german. I want you to return the german root word only. I want you to return the result as a JSON object where the key is the correct german grammatical gender male, female or neuter of the translated third word in ${apiString} and the value is an array with value[0] being the first translated word, value[1] being the second translated word, value[2] being the third translated word and value[3] being the german plural of the noun in value[2]. Example: For "crazy red duck" the result I'm looking for would be a JSON object in the format of {"female": ["verückt", "rot", "Ente", "Enten"]}. The response should be the resulting object only.`;
+  const sysContent = `I want you to translate "${apiString}" to german. I want you to return the german root word only. I want you to return the result as a JSON object where the key is the correct german grammatical gender male, female or neuter of the translated third word in "${apiString}" and the value is an array with value[0] being the first translated word, value[1] being the second translated word, value[2] being the third translated word and value[3] being the german plural of the noun in value[2]. Example: For "crazy red duck" the result I'm looking for would be a JSON object in the format of {"female": ["verückt", "rot", "Ente", "Enten"]}. The response should be the resulting object only. It is critically important that the key is the correct german grammatical gender.`;
 
   try {
     const apiResultString = await aiApiCallUsername(apiString, sysContent);
