@@ -1,0 +1,29 @@
+name: passwordplayground staging
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+
+
+
+
+
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: ${{ secrets.BASE_FTP_URL }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /staging.passwordplayground.com/httpdocs
+          local-dir: .
+          port: ${{ secrets.FTP_PORT }}
