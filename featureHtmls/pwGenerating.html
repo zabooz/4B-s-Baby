@@ -89,7 +89,7 @@
                 </tr>
               </thead>
 
-              <tbody id="statsBody2" class="text-center">
+              <tbody id="statsBody2" class="text-center" style="display: none">
                 <tr>
                   <td class="text-start">1</td>
                   <td id="leetResult0" class="text-end"></td>
@@ -100,7 +100,7 @@
                 </tr>
                 <tr>
                   <td class="text-start">3</td>
-                  <td class="text-end" id="leetResult2"></td>
+                  <td id="leetResult2" class="text-end"></td>
                 </tr>
               </tbody>
             </table>
@@ -185,7 +185,7 @@
                 Wähle deine Passwortlänge:
               </label>
 
-              <select id="pwLength" class="input w-25">
+              <select id="pwLength" class="form-control-lg fw-semibold w-25">
                 <option value="6">6</option>
                 <option value="8">8</option>
                 <option value="10">10</option>
@@ -195,15 +195,37 @@
                 <option value="24">24</option>
               </select>
             </div>
-            <button id="rdmPwdBtn" class="btn btn-primary btn-lg input">
+            <button
+              id="rdmPwdBtn"
+              class="btn btn-primary btn-lg mt-lg-auto mt-auto"
+            >
               Generate
             </button>
-            <p
-              id="generatedPassword"
-              class="d-flex input justify-content-evenly border border-secondary border-2 mt-3 text-center"
-            >
-              Sample Text
-            </p>
+            <div class="tableWrapper w-75">
+              <table class="table mb-5" id="statsPwGen">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center">Länge</th>
+                    <th scope="col" class="text-center">Passwort</th>
+                  </tr>
+                </thead>
+
+                <tbody id="statsBodyPwGen" class="text-center">
+                  <tr id="generatedPasswordRow0" style="display: none">
+                    <td id="generatedPasswordLength0" class="text-end"></td>
+                    <td id="generatedPassword0" class="text-end"></td>
+                  </tr>
+                  <tr id="generatedPasswordRow1" style="display: none">
+                    <td id="generatedPasswordLength1" class="text-end"></td>
+                    <td id="generatedPassword1" class="text-end"></td>
+                  </tr>
+                  <tr id="generatedPasswordRow2" style="display: none">
+                    <td id="generatedPasswordLength2" class="text-end"></td>
+                    <td id="generatedPassword2" class="text-end"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
