@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.className = "list-group-item";
 
       if (points[key].value === true) {
-        li.style.color = "blue";
+        li.style.color = "green";
         li.textContent = "- " + points[key].text;
         succ.append(li);
       } else {
