@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const stopBrute = document.getElementById("stopBrute");
   const calcStrengthBtn = document.getElementById("calcStrengthBtn");
   const baseUrl = "https://kgg8gggo0c08oc8wcw0oco00.coolify.machma.app/";
+  const icon2 = document.getElementById("basic-addon2");
+  const icon = document.getElementById("basic-addon1");
   let interval;
 
   startBrute.addEventListener("click", (e) => {
@@ -44,6 +46,25 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Stop brute force process:", error);
       });
   });
+
+  icon.addEventListener("click", () => {
+    const input = document.getElementById("userPwdInput");
+    if (input.type === "password") {
+      input.type = "text";
+    } else {
+      input.type = "password";
+    }
+  });
+  icon2.addEventListener("click", () => {
+    const input = document.getElementById("strengthInput");
+    if (input.type === "password") {
+      input.type = "text";
+    } else {
+      input.type = "password";
+    }
+  });
+
+
 
   const fetchData = () => {
     
