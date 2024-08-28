@@ -78,9 +78,9 @@ const createNavBar = (configNav) => {
             <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
           </li>
 
-            <li class="nav-item">
-            <a class="nav-link text-danger" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" >Clippy</a>
-          </li>
+<li class="nav-item">
+    <a class="nav-link text-danger" href="#" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy">Clippy</a>
+</li>
 
             <li class="nav-item">
             <a class="nav-link text-danger" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" >Ai-Assistant</a>

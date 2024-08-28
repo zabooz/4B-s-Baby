@@ -3,6 +3,9 @@ import {
   copyButton,
 } from "../scripts/copybutton.js";
 
+
+const imgSrc = "../img/quickNav/clippy.jpeg";
+
 const createClipBoard = () => {
 
   let pw = "";
@@ -19,16 +22,14 @@ const createClipBoard = () => {
   }
 
   return `
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Clippy</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body d-flex justify-content-evenly">
-        <div class="d-flex flex-column align-items-left">
+<div class="offcanvas offcanvas-start bg-ai-custom w-custom  border-custom" tabindex="-1" id="clippy" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas-header d-flex justify-content-end">
+<button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<h5 class="offcanvas-title  mt-3 mx-3 fs-3  fw-semibold d-flex justify-content-evenly gap-2 p-2  rounded text-decoration-underline"  id="offcanvasExampleLabel"><img src="${imgSrc}" alt="ai"/>  Clippy </h5>
+    <div class="offcanvas-body d-flex  flex-column align-items-center ">
+      <div class="d-flex w-100 justify-content-evenly gap-5 px-2 mb-5">
+        <div class="d-flex flex-column align-items-left ">
         <h3 class="text-decoration-underline ">Passwörter</h3>
         ${pw}
         </div>
@@ -36,13 +37,10 @@ const createClipBoard = () => {
         <h3 class="text-decoration-underline ">Usernames</h3>
         ${user}
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>`;
+        </div>
+        <button class="btn btn-primary btn-lg w-50 ms-auto mt-5" >Alles löschen</button>
+        </div>
+      </div>`;
 };
 
 export const clipBoard = (id) => {

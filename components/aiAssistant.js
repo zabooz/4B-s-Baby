@@ -6,20 +6,23 @@ const configAi = {
 
 };
 
+const aiImgSrc = "../img/quickNav/ai.webp";
+
+
 
 const aiAssistant = () => {
   return `
 
 <div class="offcanvas offcanvas-start bg-ai-custom  border-custom" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title mt-5 fs-3  fw-semibold text-decoration-underline"  id="offcanvasExampleLabel">Security Bot</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <div class="offcanvas-header d-flex justify-content-end">
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
+  <h5 class="offcanvas-title  mt-3 mx-3 fs-3  fw-semibold d-flex justify-content-evenly gap-2 p-2  rounded text-decoration-underline"  id="offcanvasExampleLabel"><img src="${aiImgSrc}" alt="ai"/>  Security Bot </h5>
   <div class="offcanvas-body">
   <div class="langBot d-flex">
   </div>
 <div class="form-floating">
-  <textarea id="question" class="form-control mb-4 " placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+  <textarea id="question" class="form-control my-5 " placeholder="Leave a comment here" id="floatingTextarea"></textarea>
 </div>
     <button id="submitQ" type="button" class="btn btn-primary"> Senden</button>
     <p id="aiAnswer" class=" mt-4 p-2"><p>
