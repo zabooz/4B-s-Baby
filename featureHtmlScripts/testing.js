@@ -181,6 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const { result, points } = await newPwStrength(value);
+      
       bar.style.width = `${result}%`;
       bar.style.backgroundColor = getColorFromStrength(result);
       showSuggestions(points);
