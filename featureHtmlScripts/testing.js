@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pwd.value = "";
 
     let result = [pwd.value, "--", "--", "--"];
-    console.log(urlPara)
+   
     fetch(urlPara)
       .then((response) => {
         if (!response.ok) {
@@ -95,7 +95,14 @@ document.addEventListener("DOMContentLoaded", () => {
       tr.appendChild(td);
     });
 
-    tBody.append(tr);
+
+    tBody.appendChild(tr);
+                
+    let rows = Array.from(tBody.getElementsByTagName("tr"));
+    tBody.innerHTML = "";
+    rows.reverse().forEach((row) => tBody.appendChild(row));
+
+    
   }
 
   calcStrengthBtn.addEventListener("click", async () => {
