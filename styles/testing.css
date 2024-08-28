@@ -1,7 +1,11 @@
 .custom-img {
   border-radius: 1rem;
 }
-
+i,
+#basic-addon1,
+#basic-addon2 {
+  cursor: pointer;
+}
 #bruteInput,
 #bruteBtns {
   display: flex;
