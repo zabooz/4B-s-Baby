@@ -18,6 +18,9 @@ i,
   display: flex;
   flex-direction: column;
   background-color: #f1f5f5;
+  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.452);
+  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.486);
+  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.427);
 }
 nav {
   min-height: 64px;
@@ -59,7 +62,6 @@ header {
 .text-custom {
   color: #ea6954;
 }
-
 
 .bg-custom {
   background-color: #23bbb870;
@@ -149,5 +151,3 @@ section {
     width: 75%;
   }
 }
-
-
