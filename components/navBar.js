@@ -81,6 +81,9 @@ const createNavBar = (configNav) => {
             <li class="nav-item">
             <a class="nav-link text-danger" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" >Clippy</a>
           </li>
+
+            <li class="nav-item">
+            <a class="nav-link text-danger" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" >Ai-Assistant</a>
             </li>
             <li class="nav-item">
             <a class="nav-link text-success" href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a>
