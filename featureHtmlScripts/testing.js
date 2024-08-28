@@ -46,9 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const fetchData = () => {
-    const bruteType = document.querySelector("#bruteMode").value;
-
- 
+    
+    const bruteType = document.querySelector('input[name="bruteMode"]:checked').id;
     const pwd = document.getElementById("userPwdInput");
     const [encodedPwd, key] = passwordEncoder(pwd.value);
     const urlPara = `${baseUrl}bruteforce${bruteType}?pwd=${encodeURIComponent(

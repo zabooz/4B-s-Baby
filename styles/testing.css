@@ -10,8 +10,7 @@
   width: 80%;
 }
 .card {
-  min-height: 28rem;
-  max-width: 25rem;
+  min-height: 40rem;
   display: flex;
   flex-direction: column;
   background-color: #f1f5f5;
@@ -56,9 +55,7 @@ header {
 .text-custom {
   color: #ea6954;
 }
-.card {
-  min-height: 400px;
-}
+
 
 .bg-custom {
   background-color: #23bbb870;
@@ -151,14 +148,5 @@ section {
     width: 75%;
   }
 }
-@media (max-width: 700px) {
-  .bruteBox,
-  .excalibur,
-  .appBox,
-  .sectionDiv,
-  #bruteForceApp,
-  #passwordStrengthCalc,
-  .contentContainer {
-    width: 90%;
-  }
-}
+
+
