@@ -31,14 +31,18 @@ const createClipBoard = () => {
       <div class="d-flex w-100 justify-content-evenly gap-5 px-2 mb-5">
         <div class="d-flex flex-column align-items-left ">
         <h3 class="text-decoration-underline ">Passwörter</h3>
+        <div id="passwords" class="list">
         ${pw}
+        </div>
         </div>
         <div>
         <h3 class="text-decoration-underline ">Usernames</h3>
+        <div id="usernames" class="list">
         ${user}
         </div>
         </div>
-        <button class="btn btn-primary btn-lg w-50 ms-auto mt-5" >Alles löschen</button>
+        </div>
+        <button class="btn btn-primary btn-lg w-50 ms-auto mt-5" id="deleteAll">Alles löschen</button>
         </div>
       </div>`;
 };
@@ -58,6 +62,14 @@ export const clipBoard = (id) => {
       copyBtn.setAttribute("data-bs-dismiss", "modal");
       clip.append(copyBtn, delBtn);
     }
+  
+    const deleteAllBtn = document.getElementById("deleteAll");
+    console.log(deleteAllBtn)
+    deleteAllBtn.addEventListener("click", () => {
+      deleteAll();
+    });
+
+
  
 };
 
@@ -87,4 +99,15 @@ const deleteBtn = (id) => {
 
   return btn
 
+}
+
+const deleteAll = () => {
+
+  storedClippy.splice(0, storedClippy.length);
+  sessionStorage.setItem("clippy", JSON.stringify(storedClippy));
+  const target = document.querySelectorAll(".list");
+  target.forEach((element) => {
+    console.log(element)
+    element.innerHTML = ""
+  })
 }
