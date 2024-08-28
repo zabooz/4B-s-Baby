@@ -44,10 +44,68 @@
 
     <header class="mb-5 d-flex justify-content-center"></header>
     <main>
-      <section class="d-flex justify-content-center flex-column flex-lg-row p-5 gap-4">
+      <section
+        class="d-flex justify-content-center flex-column flex-lg-row p-5 gap-4"
+      >
+        <div
+          id="converterSelector"
+          class="container p-1 gap-1 w-75 bg-card-custom d-flex flex-column align-items-center"
+        >
+          <h3 class="pt-3">Rune Translator</h3>
+          <p class="fw-semibold w-75">
+            Verwandle dein Passwort in eine sicherere<span
+              class="text-custom fw-bold text-decoration-underline"
+              data-bs-toggle="offcanvas"
+              href="#offcanvasLeetSpeak"
+              role="button"
+              aria-controls="offcanvasExample"
+            >
+              Leetspeak-Version
+            </span>
+            für mehr Sicherheit.
+          </p>
+
+          <div class="pwInputDiv d-flex flex-column align-items-center gap-3">
+            <input
+              type="text"
+              id="passwordInput"
+              class="form-control-lg w-75"
+              placeholder="Gib ein Password ein"
+            />
+
+            <button id="convertBtn" class="btn btn-primary mt-3 w-75 btn-lg">
+              Los geht's
+            </button>
+          </div>
+          <div class="tableWrapper w-75">
+            <table class="table mb-5" id="stats2">
+              <thead>
+                <tr>
+                  <th scope="col" class="text-center">Version</th>
+                  <th scope="col" class="text-center">Passwort</th>
+                </tr>
+              </thead>
+
+              <tbody id="statsBody2" class="text-center">
+                <tr>
+                  <td class="text-start">Simple:</td>
+                  <td id="leetResult0" class="text-end"></td>
+                </tr>
+                <tr>
+                  <td class="text-start">Advanced:</td>
+                  <td id="leetResult1" class="text-end"></td>
+                </tr>
+                <tr>
+                  <td class="text-start">Complicated:</td>
+                  <td class="text-end" id="leetResult2"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <div
           id="pictureMagic"
-          class="container p-1 gap-1 w-75 bg-card-custom d-flex  flex-column justify-content-center align-items-center"
+          class="container p-1 gap-1 w-75 bg-card-custom d-flex flex-column justify-content-center align-items-center"
         >
           <h3 class="pt-3">Picture Magic</h3>
           <p class="fw-semibold w-75">
@@ -102,64 +160,10 @@
             Sample Text
           </p>
         </div>
-
-        <div id="converterSelector" class="container p-1 gap-1 w-75 bg-card-custom d-flex  flex-column  align-items-center">
-          <h3 class="pt-3">Rune Translator</h3>
-          <p class="fw-semibold w-75">
-            Verwandle dein Passwort in eine sicherere<span
-              class="text-custom fw-bold text-decoration-underline"
-              data-bs-toggle="offcanvas"
-              href="#offcanvasLeetSpeak"
-              role="button"
-              aria-controls="offcanvasExample"
-            >
-              Leetspeak-Version
-            </span>
-            für mehr Sicherheit.
-          </p>
-
-          <div
-            class="pwInputDiv d-flex flex-column align-items-center  gap-3"
-          >
-            <input
-              type="text"
-              id="passwordInput"
-              class="form-control-lg w-75"
-              placeholder="Gib ein Password ein"
-            />
-
-            <button id="convertBtn" class="btn btn-primary mt-3 w-75 btn-lg">
-              Los geht's
-            </button>
-          </div>
-          <div class="tableWrapper w-75">
-            <table class="table mb-5" id="stats2">
-              <thead>
-                <tr>
-                  <th scope="col" class="text-center" >Version</th>
-                  <th scope="col" class="text-center">Passwort</th>
-              </thead>
-              <tbody id="statsBody2" class="text-center" >
-                <tr>
-                  <td class="text-start">Simple:</td>
-                  <td id="leetResult0"  class="text-end"></td>
-                  
-                </tr>
-                <tr>
-                  <td  class="text-start" >Advanced:</td>
-                  <td  id="leetResult1" class="text-end"></td>
-                </tr>
-                <tr>
-                  <td  class="text-start" >Complicated:</td>
-                  <td  class="text-end" id="leetResult2"></td>
-                  
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="container p-1 gap- w-75 bg-card-custom d-flex  flex-column align-items-center" id="glyphSorcery">
+        <div
+          class="container p-1 gap- w-75 bg-card-custom d-flex flex-column align-items-center"
+          id="glyphSorcery"
+        >
           <h3 class="pt-3">Glyph Sorcery</h3>
           <p class="w-75 fw-semibold">
             Erstell dir ein sicheres Passwor zwischen 6 und 24 Zeichen.
@@ -169,12 +173,13 @@
             class="d-flex flex-column w-100 justify-content-center align-items-center"
           >
             <div
-              class="d-flex flex-column  w-75 justify-content-center align-items-center mb-3"
+              class="d-flex flex-column w-75 justify-content-center align-items-center mb-3"
             >
               <label
                 for="pwLength"
                 class="label p-1 d-flex w-50 custom-width justify-content-center w-100 gap-3 align-items-center mb-3 fw-semibold"
-                > Wähle deine Passwortlänge:
+              >
+                Wähle deine Passwortlänge:
               </label>
 
               <select id="pwLength" class="input w-25">
@@ -213,18 +218,11 @@
       import { createNav, configNav } from "../components/navBar.js";
       import { createAssistant } from "../components/aiAssistant.js";
 
-      import {
-        createQuickNav,
-        configQuickNavFeature,
-      } from "../components/quickNav.js";
-      createQuickNav("main", configQuickNavFeature);
-
       createAssistant("main");
       createNav(configNav);
 
       quote("#quote12", "zitate", 12, "../data/text.json");
-      // quote("#quote10", "zitate", 10, "../data/text.json");
-      // heroText("header", "heroPw", "../data/text.json");
+
       loadOffCanvas("header", "leetSpeak", "../data/text.json");
       clipBoard(".clipBoard");
     </script>
