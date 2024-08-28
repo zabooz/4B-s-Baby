@@ -48,13 +48,21 @@
       <section
         class="d-flex flex-column flex-lg-row gap-4 p-5 align-items-center justify-content-center"
       >
-        <div class="card d-flex flex-column align-items-center p-5 w-50"></div>
+        <div class="card d-flex flex-column align-items-center p-5 w-50">
+          <h2 class="mb-4">Warum sollte ich mein Passwort testen?</h2>
+         
+          <p>In der digitalen Welt ist Ihr Passwort der erste Schutzschild gegen unbefugten Zugriff auf persönliche und sensible Daten. Doch wie sicher ist Ihr Passwort wirklich?</p>
+          <p>Ein Passwort zu testen, ist eine wichtige Maßnahme, um Sicherheitslücken aufzudecken und sich vor potenziellen Angriffen zu schützen. Schwache Passwörter, die aus einfachen Wörtern oder gängigen Mustern bestehen, sind leicht für Hacker zu knacken. Wenn Ihr Passwort getestet wird, können Sie sicherstellen, dass es den aktuellen Sicherheitsstandards entspricht und ausreichend stark ist, um Ihre Daten vor Verlust und Missbrauch zu schützen. </p>
+
+          <p>Ein starkes Passwort trägt wesentlich dazu bei, Ihre Konten und die darin gespeicherten Informationen sicher zu halten.</p>
+
+        </div>
         <div
           id="bruteForceApp"
-          class="card d-flex flex-column align-items-center p-5 w-50"
+          class="card d-flex flex-column align-items-center text-start p-5 w-50"
         >
-          <h3>Mojo</h3>
-          <p class="fw-semibold">
+          <h2 class="mb-4">Mojo</h2>
+          <p >
             Wähle einen Modus, um dein Passwort gegen Brute-Force-Angriffe zu
             testen. Im
             <span
@@ -86,13 +94,13 @@
             >
           </p>
           <div
-            class="d-flex gap-lg-5 gap-4 flex-column flex-lg-row align-items-center w-100 custom-width justify-content-center"
+            class="d-flex gap-lg-5 gap-4 flex-column flex-lg-row align-items-center w-100  justify-content-center"
           >
-            <div id="bruteInput" class="flex-column w-100 d-flex gap-lg-4 ">
+            <div id="bruteInput" class="flex-column w-100 align-items-center d-flex gap-lg-4 ">
               <input
                 type="password"
                 id="userPwdInput"
-                class="form-control-lg"
+                class="form-control-lg w-75"
                 placeholder="Gib ein Passwort ein"
               />
               <div class="d-flex w-100 justify-content-evenly">
@@ -137,7 +145,7 @@
             </div>
           </div>
           <div class="tableWrapper w-100 w-md-75 d-flex justify-content-center">
-            <table class="table mb-5 w-75" id="stats">
+            <table class="table w-100 mt-4" id="stats">
               <thead>
                 <tr>
                   <th scope="col">Password</th>
@@ -152,7 +160,7 @@
         </div>
 
         <div class="card align-items-center p-5 w-50" id="passwordStrengthCalc">
-          <h3>Excalibur</h3>
+          <h2 class="mb-4">Excalibur</h2>
           <p>
             Excalibur ist ein Tool, das die Stärke deines Passworts
             überprüft. Es bewertet dabei Faktoren wie Länge, Komplexität und
@@ -299,13 +307,10 @@
     import { quote } from "../components/quotes.js";
     import { clipBoard } from "../components/clipBoard.js";
     import { createNav, configNav } from "../components/navBar.js";
-    import {
-      createQuickNav,
-      configQuickNavFeature,
-    } from "../components/quickNav.js";
+
     import { createAssistant } from "../components/aiAssistant.js";
 
-    createQuickNav("main", configQuickNavFeature);
+    
     createAssistant("main");
 
     loadOffCanvas("header", "liste", "../data/text.json");
