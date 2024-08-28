@@ -12,6 +12,14 @@ uploadFile.addEventListener("change", () => {
   const preview = document.getElementById("previewImage");
   const input = document.getElementById("uploadFile");
   const file = input.files[0];
+
+  const validTypes = ["image/jpeg", "image/png", "image/webp", "image/bmp"];
+
+  if (!validTypes.includes(file.type)) {
+    alert("Only image files are allowed.");
+    return;
+  }
+
   label.textContent = "Picture Uploaded!";
   if (preview) {
     const reader = new FileReader();
@@ -46,14 +54,10 @@ leetBtn.addEventListener("click", function () {
 
   if (passwordInput) {
     for (let i = 0; i < newPasswordArray.length; i++) {
-
-      
-      const result = document.getElementById("leetResult" + i)
+      const result = document.getElementById("leetResult" + i);
 
       result.innerHTML = newPasswordArray[i];
       result.append(copyButton("leetResult" + i));
-      
-
     }
     const body = document.getElementById("statsBody2");
     body.style.display = "";
