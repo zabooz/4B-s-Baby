@@ -67,6 +67,13 @@ nav img {
   max-width: 10rem;
 
 }
+.card {
+  min-height: 28rem;
+  max-width: 25rem;
+  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
+  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
+  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
+}
 .bg-card-custom{
   background-color:#f1f5f5;
 }
