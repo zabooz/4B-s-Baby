@@ -13,14 +13,10 @@ window.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("germanAiToggle");
   toggle.dispatchEvent(new Event("change")); // Trigger the change event to set initial state
 });
-let interval
+let interval;
 
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
-
-
-
-
   const adjective1 = document.getElementById("adjective1").value;
   const adjective2 = document.getElementById("adjective2").value;
   const selectedNoun = document.getElementById("noun").value;
@@ -90,10 +86,8 @@ function updateAttempts(result, table) {
   const tBody = document.getElementById(table);
   const tr = document.createElement("tr");
 
-
   const rowCount = tBody.rows.length + 1;
   const id = "username" + "_" + rowCount + "_" + table;
-
 
   for (let i = 0; i < dataArr.length; i++) {
     const td = document.createElement("td");
