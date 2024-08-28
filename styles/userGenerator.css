@@ -69,7 +69,6 @@ nav img {
   width: 3rem;
 }
 header {
-
   color: #151c19;
 }
 .description {
@@ -99,8 +98,8 @@ header {
   background-color: #ff5722;
   border-color: #ff5722;
 }
-.border-custom{
-    border-right: 5px solid #f1f5f5 !important;
+.border-custom {
+  border-right: 5px solid #f1f5f5 !important;
 }
 main {
   display: flex;
@@ -139,6 +138,9 @@ main {
 }
 .card {
   min-height: 400px;
+  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
+  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
+  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
 }
 
 .bg-custom {
@@ -183,7 +185,6 @@ main {
     width: 7rem;
     height: 5rem;
   }
-  
 }
 @media (min-width: 992px) {
   .custom-img {
