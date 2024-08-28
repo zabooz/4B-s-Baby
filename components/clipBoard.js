@@ -37,7 +37,7 @@ const createClipBoard = () => {
         </div>
         </div>
         </div>
-        <button class="btn btn-primary btn-lg w-50 ms-auto mt-5" id="deleteAll">Alles löschen</button>
+        <button class="btn btn-primary btn-lg w-50 ms-auto my-auto" id="deleteAll">Alles löschen</button>
         </div>
       </div>`;
 };
