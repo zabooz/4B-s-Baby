@@ -51,7 +51,6 @@ picConBtn.addEventListener("click", async (e) => {
 leetBtn.addEventListener("click", function () {
   const passwordInput = document.getElementById("passwordInput").value;
   const newPasswordArray = tripleConverter(passwordInput);
-
   if (passwordInput) {
     for (let i = 0; i < newPasswordArray.length; i++) {
       const result = document.getElementById("leetResult" + i);
