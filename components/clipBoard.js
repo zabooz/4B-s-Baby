@@ -1,6 +1,5 @@
 import { storedClippy, copyButton } from "../scripts/copybutton.js";
 
-
 const imgSrc = "../img/quickNav/clippy.jpeg";
 
 const createClipBoard = () => {
@@ -50,18 +49,18 @@ export const clipBoard = (id) => {
   for (let i = 0; i < storedClippy.length; i++) {
     const elementId = storedClippy[i].type + i;
 
-      const clip = document.getElementById(elementId);
-      const copyBtn = copyButton(elementId);
-      const delBtn = deleteBtn(elementId);
-      copyBtn.setAttribute("data-bs-dismiss", "modal");
-      clip.append(copyBtn, delBtn);
-    }
-  
-    const deleteAllBtn = document.getElementById("deleteAll");
-    console.log(deleteAllBtn)
-    deleteAllBtn.addEventListener("click", () => {
-      deleteAll();
-    });
+    const clip = document.getElementById(elementId);
+    const copyBtn = copyButton(elementId);
+    const delBtn = deleteBtn(elementId);
+    copyBtn.setAttribute("data-bs-dismiss", "modal");
+    clip.append(copyBtn, delBtn);
+  }
+
+  const deleteAllBtn = document.getElementById("deleteAll");
+  console.log(deleteAllBtn);
+  deleteAllBtn.addEventListener("click", () => {
+    deleteAll();
+  });
 };
 
 const deleteBtn = (id) => {
@@ -86,19 +85,15 @@ const deleteBtn = (id) => {
     element.remove();
   });
 
-
   return btn;
 };
 
-}
-
 const deleteAll = () => {
-
   storedClippy.splice(0, storedClippy.length);
   sessionStorage.setItem("clippy", JSON.stringify(storedClippy));
   const target = document.querySelectorAll(".list");
   target.forEach((element) => {
-    console.log(element)
-    element.innerHTML = ""
-  })
-}
+    console.log(element);
+    element.innerHTML = "";
+  });
+};
