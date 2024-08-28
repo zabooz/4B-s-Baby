@@ -1,24 +1,23 @@
-name: passwordplayground staging
 
-on:
-  push:
-    branches:
-      - main
-
+name: remote ssh command
+on: 
+    push:
+        branches:
+            - main
 jobs:
-  deploy:
+
+  build:
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
-        with:
-          server: ${{ secrets.BASE_FTP_URL }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /staging.passwordplayground.com/httpdocs/
-          local-dir: ./
-          port: ${{ secrets.FTP_PORT }}
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.BASE_FTP_URL }}       # z.B. ssh.passwordplayground.com
+        username: ${{ secrets.FTP_USERNAME }} # Dein SSH-Benutzername
+        password: ${{ secrets.FTP_PASSWORD }} # Dein SSH-Passwort
+        port: 22                               # SSH-Port
+        script: |
+          cd /staging.passwordplayground.com/httpsdocs/
+          git pull origin main
+ 
