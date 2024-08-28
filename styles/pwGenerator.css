@@ -18,11 +18,17 @@ main {
 .pwInputDiv {
   width: 75%;
 }
-
-
-#passwordInput {
+#pwLength,
+#passwordInput,
+#rdmPwdBtn,
+#uploadLabel,
+#pictureConvertBtn,
+#convertBtn {
   height: 3rem !important;
   margin-top: auto !important;
+}
+#uploadLabel {
+  border-radius: 0.5rem !important;
 }
 nav img {
   width: 3rem;
@@ -64,8 +70,9 @@ nav img {
   color: white;
 }
 #previewImage {
-  max-width: 10rem;
-
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
 }
 .card {
   min-height: 28rem;

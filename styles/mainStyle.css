@@ -17,16 +17,17 @@ nav img {
   background-color: #f1f5f5;
 }
 
-#padlockPic {
-  max-width: 15rem;
+
+#padlockPic{
+  max-width:18rem;
   display: none;
-  margin-right: 10rem;
-  transform: rotate(20deg);
-}
-#PPIcon {
-  width: 20rem;
-  height: 12rem;
   transform: rotate(-5deg);
+
+}
+#PPIcon{
+  width: 30rem;
+  height: 18rem;
+  transform: rotate(-12deg);
 }
 #arrow {
   transform: rotate(180deg);
@@ -98,6 +99,9 @@ nav img {
 }
 nav {
   min-height: 64px;
+}
+#jumbotron {
+  max-width: 800px;
 }
 header {
   display: flex;

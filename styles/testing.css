@@ -1,13 +1,23 @@
 .custom-img {
   border-radius: 1rem;
 }
-
+i,
+#basic-addon1,
+#basic-addon2 {
+  cursor: pointer;
+}
 #bruteInput,
 #bruteBtns {
   display: flex;
   justify-content: center;
   gap: 2rem;
   width: 80%;
+}
+.card {
+  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f5f5;
 }
 nav {
   min-height: 64px;
@@ -49,12 +59,6 @@ header {
 .text-custom {
   color: #ea6954;
 }
-.card {
-  min-height: 400px;
-  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
-  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
-  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
-}
 
 .bg-custom {
   background-color: #23bbb870;
@@ -93,9 +97,6 @@ nav img {
 #bruteInput {
   width: 80%;
 }
-#bruteForceApp p {
-  text-align: center;
-}
 
 main {
   display: flex;
@@ -109,7 +110,7 @@ section {
 }
 
 .tableWrapper {
-  max-height: 300px;
+  height: 200px;
   overflow-y: auto;
   overflow-x: auto;
 }
@@ -145,16 +146,5 @@ section {
   }
   .heroText {
     width: 75%;
-  }
-}
-@media (max-width: 700px) {
-  .bruteBox,
-  .excalibur,
-  .appBox,
-  .sectionDiv,
-  #bruteForceApp,
-  #passwordStrengthCalc,
-  .contentContainer {
-    width: 90%;
   }
 }

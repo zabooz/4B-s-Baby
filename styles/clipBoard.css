@@ -11,6 +11,12 @@
 .copyButton img{
     width: 100%;
 }
+i::before{
+    background: transparent;
+}
+.w-custom{
+    width: 33% !important;
+}
 .confirmBubble{
     position: absolute;
     top: -0.1rem;

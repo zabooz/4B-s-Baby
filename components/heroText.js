@@ -4,22 +4,22 @@ import { observer } from "../utilities/bounce.js";
 const createHero = (content) => {
 
     return `
-    <div  id="jumbotron" class="d-flex flex-column align-items-center">
+    <div  id="jumbotron" class="d-flex flex-column gap-5 align-items-center">
         
-    <div class="w-100 d-flex justify-content-center align-items-center flex-column pt-2">
-    <div class="d-flex  w-75 justify-content-lg-between justify-content-center ">
+    <div class="w-100 d-flex justify-content-center  flex-column pt-2">
+    <div class="d-flex  w-100 justify-content-lg-between justify-content-center mb-5 ">
     <img  id="PPIcon"src="./img/landingPage/PPicon.png" class="ms-2">
     
     <img id="padlockPic" src="./img/landingPage/padlock.svg" class"img-fluid d-none" >
     </div>
-    <p id="" class="lead w-75 text-center pb-3 text-lg-start border-bottom border-2 border-dark fw-semibold ">${content.lead}</p>
+    <p  class="lead w-75  text-center pb-2 fs-5 text-lg-start border-bottom border-2 border-dark fw-semibold ">${content.lead}</p>
     
     </div>
-    <div  class="w-75  d-flex justify-content-center  flex-column"> 
-    <p class="w-75 mt-3 fw-semibold">
+    <div  class="w-100  d-flex justify-content-center  flex-column"> 
+    <p class="w-75 fs-5">
     ${content.p}
     </p>
-    <p class=" w-75 fw-semibold mt-3  fs-4 text-decoration-underline">
+    <p class=" w-75  mt-3  fs-4 ">
     ${content.p2}
     </p>
     </div>

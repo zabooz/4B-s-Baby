@@ -139,11 +139,11 @@
               </div>
               <button
                 id="userGeneratorBtn"
-                class="btn btn-lg mt-lg-auto mt-auto"
+                class="btn btn-primary btn-lg mt-lg-auto mt-auto"
               >
                 Generieren
               </button>
-              <button id="aiUserGenBtn" class="btn btn-lg mt-lg-auto mt-auto">
+              <button id="aiUserGenBtn" class="btn btn-primary btn-lg mt-lg-auto mt-auto">
                 Überrasch mich!
               </button>
             </div>
@@ -152,7 +152,7 @@
             <table class="table mb-5" id="stats">
               <thead>
                 <tr>
-                  <th scope="col" class="text-center">#</th>
+    
                   <th scope="col" class="text-center">Username</th>
                   <th scope="col" class="text-center">Begriff</th>
                   <th scope="col" class="text-center">Eigenschaften</th>
@@ -194,17 +194,13 @@
       import { clipBoard } from "../components/clipBoard.js";
       import { createNav, configNav } from "../components/navBar.js";
       import { createAssistant } from "../components/aiAssistant.js";
-      createQuickNav("main", configQuickNavFeature);
+    
       createAssistant("main");
       createNav(configNav);
    
 
       quote("#quote8", "zitate", 8, "../data/text.json");
       clipBoard(".clipBoard");
-      import {
-        createQuickNav,
-        configQuickNavFeature,
-      } from "../components/quickNav.js";
     </script>
     <script src="../featureHtmlScripts/userGen.js" type="module"></script>
     <script src="../featureHtmlScripts/quiz.js"></script>
