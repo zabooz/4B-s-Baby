@@ -87,11 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const tBody = document.querySelector("#statsBody");
 
     const tr = document.createElement("tr");
-    const td = document.createElement("td");
 
-    td.textContent = tBody.rows.length + 1;
-
-    tr.appendChild(td);
 
     dataArr.forEach((item) => {
       const td = document.createElement("td");

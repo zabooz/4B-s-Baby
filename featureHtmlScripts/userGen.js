@@ -89,13 +89,11 @@ function updateAttempts(result, table) {
 
   const tBody = document.getElementById(table);
   const tr = document.createElement("tr");
-  const td = document.createElement("td");
+
 
   const rowCount = tBody.rows.length + 1;
   const id = "username" + "_" + rowCount + "_" + table;
-  td.textContent = rowCount;
 
-  tr.appendChild(td);
 
   for (let i = 0; i < dataArr.length; i++) {
     const td = document.createElement("td");
