@@ -43,9 +43,9 @@ nav img {
 .card {
   min-height: 28rem;
   max-width: 25rem;
-  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
-  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
-  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
+  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
+  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
+  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
 }
 .card img {
   max-width: 18rem;

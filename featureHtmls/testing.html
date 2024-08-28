@@ -50,7 +50,7 @@
       <section
         class="d-flex flex-column flex-lg-row gap-4 p-5 align-items-center justify-content-center"
       >
-        <div class="card d-flex flex-column align-items-center p-5 w-50">
+        <div class="card d-flex flex-column align-items-left p-5 w-50">
           <h2 class="mb-3">Warum sollte ich mein Passwort testen?</h2>
 
           <p>
@@ -70,7 +70,7 @@
           class="card d-flex flex-column align-items-center text-start p-5 w-50"
         >
           <h2 class="mb-3">Mojo</h2>
-          <p>
+          <p class="mb-4 pb-1">
             Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe
             zu testen. Im
             <span
@@ -105,7 +105,7 @@
                 <div class="input-group mb-3">
                   <input
                     type="password"
-                    class="form-control-lg w-75"
+                    class="form-control w-75"
                     placeholder="Gib ein Passwort ein"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
@@ -117,7 +117,7 @@
                 </div>
               </div>
               <div class="d-flex w-100 justify-content-evenly">
-                <div class="form-check">
+                <div class="form-check mb-2">
                   <input
                     class="form-check-input"
                     type="radio"
@@ -187,7 +187,7 @@
               <div class="input-group mb-3">
                 <input
                   type="password"
-                  class="form-control-lg w-75"
+                  class="form-control w-75"
                   placeholder="Gib ein Passwort ein"
                   aria-label="Username"
                   aria-describedby="basic-addon2"
@@ -243,7 +243,7 @@
           </div>
         </div>
       </section>
-      <section id="quote5" class="bg-body-tertiary"></section>
+      <section id="quote5" class="bg-body-tertiary my-5"></section>
       <section class="d-flex justify-content-center">
         <div class="d-flex flex-column sectionDiv py-4">
           <div
@@ -327,7 +327,7 @@
           </div>
         </div>
       </section>
-      <section id="quote11" class="d-flex justify-content-center"></section>
+      <section id="quote11" class="d-flex justify-content-center my-5"></section>
     </main>
     <footer class="p-5">
       <script src="../components/footer.js"></script>
@@ -344,6 +344,7 @@
     import { createAssistant } from "../components/aiAssistant.js";
 
     createAssistant("main");
+    quote("#quote5", "zitate", 6, "../data/text.json");
 
     loadOffCanvas("header", "liste", "../data/text.json");
     loadOffCanvas("header", "simple", "../data/text.json");
