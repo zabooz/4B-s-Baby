@@ -18,6 +18,6 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }} # Dein SSH-Passwort
         port: 22                               # SSH-Port
         script: |
-          cd /staging.passwordplayground.com/httpsdocs/
+          cd /staging.passwordplayground.com/httpdocs/
           git pull origin main
  
