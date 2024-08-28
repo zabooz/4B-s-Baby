@@ -71,6 +71,9 @@
               id="passwordInput"
               class="form-control-lg w-75"
               placeholder="Gib ein Password ein"
+              required
+              minlength="1"
+              maxlength="16"
             />
 
             <button id="convertBtn" class="btn btn-primary mt-3 w-75 btn-lg">
@@ -81,22 +84,22 @@
             <table class="table mb-5" id="stats2">
               <thead>
                 <tr>
-                  <th scope="col" class="text-center">Version</th>
+                  <th scope="col" class="text-center">Stärke</th>
                   <th scope="col" class="text-center">Passwort</th>
                 </tr>
               </thead>
 
               <tbody id="statsBody2" class="text-center">
                 <tr>
-                  <td class="text-start">Simple:</td>
+                  <td class="text-start">1</td>
                   <td id="leetResult0" class="text-end"></td>
                 </tr>
                 <tr>
-                  <td class="text-start">Advanced:</td>
+                  <td class="text-start">2</td>
                   <td id="leetResult1" class="text-end"></td>
                 </tr>
                 <tr>
-                  <td class="text-start">Complicated:</td>
+                  <td class="text-start">3</td>
                   <td class="text-end" id="leetResult2"></td>
                 </tr>
               </tbody>
