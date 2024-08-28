@@ -13,13 +13,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-
-
-
-
-
       - name: Deploy to FTP
-        uses: appleboy/sftp-action@v1.2.0
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
           server: ${{ secrets.BASE_FTP_URL }}
           username: ${{ secrets.FTP_USERNAME }}
