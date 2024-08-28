@@ -94,13 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
       tr.appendChild(td);
     });
 
-
-    tBody.appendChild(tr);
-                
     let rows = Array.from(tBody.getElementsByTagName("tr"));
     tBody.innerHTML = "";
-    rows.reverse().forEach((row) => tBody.appendChild(row));
-
+    tBody.append(tr, ...rows);
     
   }
 
