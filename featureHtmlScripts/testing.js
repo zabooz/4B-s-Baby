@@ -49,18 +49,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   icon.addEventListener("click", () => {
     const input = document.getElementById("userPwdInput");
+    const icon = document.getElementById("togglePassword");
     if (input.type === "password") {
       input.type = "text";
+      icon.className = "bi bi-eye-slash";
     } else {
       input.type = "password";
+      icon.className = "bi bi-eye";
     }
   });
   icon2.addEventListener("click", () => {
     const input = document.getElementById("strengthInput");
+    const icon2 = document.getElementById("togglePassword2");
     if (input.type === "password") {
       input.type = "text";
+      icon2.className = "bi bi-eye-slash";
     } else {
       input.type = "password";
+      icon2.className = "bi bi-eye";
     }
   });
 
@@ -103,15 +109,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateAttempts(result) {
     const dataArr = result;
-
     const tBody = document.querySelector("#statsBody");
-
     const tr = document.createElement("tr");
 
+    const stars = "******"
 
-    dataArr.forEach((item) => {
+    
+    const icon = document.createElement("i");
+    icon.className = "bi bi-eye-slash";
+    
+    const rowCount = tBody.rows.length;
+    
+    const hideArr = [stars,dataArr[0]]
+    
+    icon.addEventListener("click", () => {
+        const target = document.getElementById(`td${rowCount}`);
+        if(target.textContent === stars){
+            target.textContent = dataArr[0];
+            icon.className = "bi bi-eye";
+            target.append(icon);
+        }else{
+            target.textContent = stars;
+            icon.className = "bi bi-eye-slash";
+            target.append(icon);
+        }
+        
+
+    })
+
+
+
+    dataArr.forEach((item,index) => {
       const td = document.createElement("td");
-      td.textContent = item;
+      
+      if(index === 0){
+          td.textContent = hideArr[0]
+          td.id = `td${rowCount}`
+          td.classList.add("d-flex", "justify-content-between", "align-items-center")
+          td.append(icon);
+          console.log(icon)
+      }else{
+        td.textContent = item;
+      }
       tr.appendChild(td);
     });
 
