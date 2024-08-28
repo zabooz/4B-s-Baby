@@ -6,7 +6,7 @@ const uploadFile = document.getElementById("uploadFile");
 const picConBtn = document.getElementById("pictureConvertBtn");
 const leetBtn = document.getElementById("convertBtn");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
-
+const pwInputField = document.getElementById("passwordInput");
 uploadFile.addEventListener("change", () => {
   const label = document.getElementById("uploadLabel");
   const preview = document.getElementById("previewImage");
@@ -48,6 +48,13 @@ picConBtn.addEventListener("click", async (e) => {
     console.log(result);
   } catch (error) {
     console.log(error);
+  }
+});
+
+pwInputField.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevents the default action (if any)
+    document.getElementById("convertBtn").click(); // Trigger button click
   }
 });
 
