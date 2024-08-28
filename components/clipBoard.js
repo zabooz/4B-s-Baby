@@ -57,7 +57,7 @@ export const clipBoard = (id) => {
   }
 
   const deleteAllBtn = document.getElementById("deleteAll");
-  console.log(deleteAllBtn);
+ 
   deleteAllBtn.addEventListener("click", () => {
     deleteAll();
   });
@@ -67,9 +67,10 @@ const deleteBtn = (id) => {
   const btn = document.createElement("button");
   const i = document.createElement("i");
   btn.style.border = "none";
-  btn.style.backgroundColor = "white";
+  btn.style.backgroundColor = "transparent"
   btn.id = "btn" + id;
   i.className = "fa-regular fa-trash-can";
+
   btn.append(i);
 
   btn.addEventListener("click", () => {
@@ -93,7 +94,7 @@ const deleteAll = () => {
   sessionStorage.setItem("clippy", JSON.stringify(storedClippy));
   const target = document.querySelectorAll(".list");
   target.forEach((element) => {
-    console.log(element);
+
     element.innerHTML = "";
   });
 };
