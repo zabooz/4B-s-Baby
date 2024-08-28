@@ -19,7 +19,7 @@ jobs:
 
 
       - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        uses: appleboy/sftp-action@v1.2.0
         with:
           server: ${{ secrets.BASE_FTP_URL }}
           username: ${{ secrets.FTP_USERNAME }}
