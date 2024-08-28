@@ -156,12 +156,20 @@
               </form>
             </div>
           </div>
-          <p
-            id="picResult"
-            class="border border-secondary border-2 w-50 mt-3 text-center"
-          >
-            Sample Text
-          </p>
+          <div class="tableWrapper w-75">
+            <table class="table mb-5" id="statsPicResult">
+              <thead id="generatedPicHead" style="display: none">
+                <tr>
+                  <th scope="col" class="text-center"></th>
+                </tr>
+              </thead>
+              <tbody id="statsBodyPicResult" class="text-center">
+                <tr id="generatedPicRow0" style="display: none">
+                  <td id="picResult" class="text-center"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div
           class="container p-1 gap- w-75 bg-card-custom d-flex flex-column align-items-center"
@@ -175,16 +183,15 @@
             id="startPwGenDiv"
             class="d-flex flex-column w-100 justify-content-center align-items-center"
           >
-            <div
-              class="d-flex flex-column w-75 justify-content-center align-items-center mb-3"
+            <label
+              for="pwLength"
+              class="label p-1 d-flex w-50 custom-width justify-content-center w-100 gap-3 align-items-center mb-3 fw-semibold"
             >
-              <label
-                for="pwLength"
-                class="label p-1 d-flex w-50 custom-width justify-content-center w-100 gap-3 align-items-center mb-3 fw-semibold"
-              >
-                Wähle deine Passwortlänge:
-              </label>
-
+              Wähle deine Passwortlänge:
+            </label>
+            <div
+              class="d-flex w-75 justify-content-around align-items-center mb-auto"
+            >
               <select id="pwLength" class="form-control-lg fw-semibold w-25">
                 <option value="6">6</option>
                 <option value="8">8</option>
@@ -194,13 +201,13 @@
                 <option value="20">20</option>
                 <option value="24">24</option>
               </select>
+              <button
+                id="rdmPwdBtn"
+                class="btn btn-primary btn-lg mt-lg-auto mt-auto"
+              >
+                Generate
+              </button>
             </div>
-            <button
-              id="rdmPwdBtn"
-              class="btn btn-primary btn-lg mt-lg-auto mt-auto"
-            >
-              Generate
-            </button>
             <div class="tableWrapper w-75">
               <table class="table mb-5" id="statsPwGen">
                 <thead>

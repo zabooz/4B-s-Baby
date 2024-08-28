@@ -18,11 +18,17 @@ main {
 .pwInputDiv {
   width: 75%;
 }
-
-
-#passwordInput {
+#pwLength,
+#passwordInput,
+#rdmPwdBtn,
+#uploadLabel,
+#pictureConvertBtn,
+#convertBtn {
   height: 3rem !important;
   margin-top: auto !important;
+}
+#uploadLabel {
+  border-radius: 0.5rem !important;
 }
 nav img {
   width: 3rem;
@@ -67,10 +73,9 @@ nav img {
   width: 15rem;
   height: 15rem;
   object-fit: cover;
-
 }
-.bg-card-custom{
-  background-color:#f1f5f5;
+.bg-card-custom {
+  background-color: #f1f5f5;
 }
 nav {
   min-height: 64px;
