@@ -47,7 +47,7 @@ export async function newPwStrength(pwd) {
     },
     hasNoWord: {
       value: false,
-      text: "Enthält keine geläufiges Wort"
+      text: "Enthält kein geläufiges Wort"
     },
   };
   

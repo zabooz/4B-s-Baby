@@ -46,9 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const fetchData = () => {
-    const bruteType = document.querySelector("#bruteMode").value;
-
- 
+    
+    const bruteType = document.querySelector('input[name="bruteMode"]:checked').id;
     const pwd = document.getElementById("userPwdInput");
     const [encodedPwd, key] = passwordEncoder(pwd.value);
     const urlPara = `${baseUrl}bruteforce${bruteType}?pwd=${encodeURIComponent(
@@ -58,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pwd.value = "";
 
     let result = [pwd.value, "--", "--", "--"];
-    console.log(urlPara)
+   
     fetch(urlPara)
       .then((response) => {
         if (!response.ok) {
@@ -95,7 +94,14 @@ document.addEventListener("DOMContentLoaded", () => {
       tr.appendChild(td);
     });
 
-    tBody.append(tr);
+
+    tBody.appendChild(tr);
+                
+    let rows = Array.from(tBody.getElementsByTagName("tr"));
+    tBody.innerHTML = "";
+    rows.reverse().forEach((row) => tBody.appendChild(row));
+
+    
   }
 
   calcStrengthBtn.addEventListener("click", async () => {
@@ -123,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.className = "list-group-item";
 
       if (points[key].value === true) {
-        li.style.color = "blue";
+        li.style.color = "green";
         li.textContent = "- " + points[key].text;
         succ.append(li);
       } else {
