@@ -11,6 +11,9 @@
 .copyButton img{
     width: 100%;
 }
+.w-custom{
+    width: 33% !important;
+}
 .confirmBubble{
     position: absolute;
     top: -0.1rem;
