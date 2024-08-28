@@ -45,11 +45,11 @@
     <header class="mb-5 d-flex justify-content-center"></header>
     <main>
       <section
-        class="d-flex justify-content-center flex-column flex-lg-row p-5 gap-4"
+        class="d-flex justify-content-center  flex-lg-row p-5 gap-4"
       >
         <div
           id="converterSelector"
-          class="container p-1 gap-1 w-75 bg-card-custom d-flex flex-column align-items-center"
+          class="card p-1 gap-1 w-50 bg-card-custom d-flex flex-column align-items-center"
         >
           <h3 class="pt-3">Rune Translator</h3>
           <p class="fw-semibold w-75">
@@ -108,7 +108,7 @@
         </div>
         <div
           id="pictureMagic"
-          class="container card p-1 gap-1 w-75 bg-card-custom d-flex  flex-column justify-content-center align-items-center"
+          class="card p-1 gap-1 w-50 bg-card-custom d-flex  flex-column justify-content-center align-items-center"
         >
           <h3 class="pt-3">Picture Magic</h3>
           <p class="fw-semibold w-75">
@@ -164,52 +164,7 @@
           </p>
         </div>
 
-        <div id="converterSelector" class="container card p-1 gap-1 w-75 bg-card-custom d-flex  flex-column  align-items-center">
-          <h3 class="pt-3">Rune Translator</h3>
-          <p class="fw-semibold w-75">
-            Verwandle dein Passwort in eine sicherere<span
-              class="text-custom fw-bold text-decoration-underline"
-              data-bs-toggle="offcanvas"
-              href="#offcanvasLeetSpeak"
-              role="button"
-              aria-controls="offcanvasExample"
-            >
-              Leetspeak-Version
-            </span>
-            für mehr Sicherheit.
-          </p>
-
-          <div
-            class="pwInputDiv d-flex flex-column align-items-center  gap-3"
-          >
-            <input
-              type="text"
-              id="passwordInput"
-              class="form-control-lg w-75"
-              placeholder="Gib ein Password ein"
-            />
-
-            <button id="convertBtn" class="btn btn-primary mt-3 w-75 btn-lg">
-              Los geht's
-            </button>
-          </div>
-          <div class="tableWrapper w-75">
-            <table class="table mb-5" id="statsPicResult">
-              <thead id="generatedPicHead" style="display: none">
-                <tr>
-                  <th scope="col" class="text-center"></th>
-                </tr>
-              </thead>
-              <tbody id="statsBodyPicResult" class="text-center">
-                <tr id="generatedPicRow0" style="display: none">
-                  <td id="picResult" class="text-center"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="container card p-1 gap- w-75 bg-card-custom d-flex  flex-column align-items-center" id="glyphSorcery">
+        <div class=" card p-1 w-50 gap- w-75 bg-card-custom d-flex  flex-column align-items-center" id="glyphSorcery">
           <h3 class="pt-3">Glyph Sorcery</h3>
           <p class="w-75 fw-semibold">
             Erstell dir ein sicheres Passwor zwischen 6 und 24 Zeichen.
