@@ -44,9 +44,7 @@
 
     <header class="mb-5 d-flex justify-content-center"></header>
     <main>
-      <section
-        class="d-flex justify-content-evenly  flex-lg-row pb-5"
-      >
+      <section class="d-flex justify-content-evenly flex-lg-row pb-5">
         <div
           id="converterSelector"
           class="card p-1 gap-1 mt-5 w-75 bg-card-custom d-flex flex-column align-items-center"
@@ -65,7 +63,7 @@
             für mehr Sicherheit.
           </p>
 
-          <div class="pwInputDiv d-flex flex-column  align-items-center gap-4">
+          <div class="pwInputDiv d-flex flex-column align-items-center gap-4">
             <input
               type="text"
               id="passwordInput"
@@ -76,7 +74,10 @@
               maxlength="16"
             />
 
-            <button id="convertBtn" class="btn btn-primary mt-3 mb-4 w-75 btn-lg">
+            <button
+              id="convertBtn"
+              class="btn btn-primary mt-3 mb-4 w-75 btn-lg"
+            >
               Los geht's
             </button>
           </div>
@@ -108,7 +109,7 @@
         </div>
         <div
           id="pictureMagic"
-          class="card p-1 gap-1 mt-5  w-75 bg-card-custom d-flex  flex-column justify-content-center align-items-center"
+          class="card p-1 gap-1 mt-5 w-75 bg-card-custom d-flex flex-column justify-content-center align-items-center"
         >
           <h3 class="pt-3">Picture Magic</h3>
           <p class="fw-semibold w-75">
@@ -118,14 +119,6 @@
           <div
             class="d-flex flex-column align-items-center justify-content-evenly w-100 gap-3"
           >
-            <div class="border border-2 mb-3 rounded">
-              <img
-                id="previewImage"
-                src="../img/confusion.jpeg"
-                alt="confusion"
-                class="border rounded"
-              />
-            </div>
             <div
               class="d-flex flex-column align-items-center justify-content-center w-100 gap-2"
             >
@@ -154,19 +147,43 @@
                   Los geht's
                 </button>
               </form>
+              <div class="border border-2 mb-3 rounded">
+                <img
+                  id="previewImage"
+                  src="../img/confusion.jpeg"
+                  alt="confusion"
+                  class="border rounded"
+                  style="display: block"
+                />
+              </div>
+              <div class="tableWrapper w-75">
+                <table
+                  class="table mb-5"
+                  id="statsPicGen"
+                  style="display: none"
+                >
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center">Passwort</th>
+                    </tr>
+                  </thead>
+                  <tbody id="statsBodyPicGen" class="text-center">
+                    <tr id="generatedPicRow0">
+                      <td id="generatedPic0" class="text-center"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-          <p
-            id="picResult"
-            class="border border-secondary border-2 w-75 mt-3 text-center"
-          >
-            Sample Text
-          </p>
         </div>
 
-        <div class=" card p-1 w-75 mt-5  gap- w-75 bg-card-custom d-flex  flex-column align-items-center" id="glyphSorcery">
+        <div
+          class="card p-1 w-75 mt-5 gap- w-75 bg-card-custom d-flex flex-column align-items-center"
+          id="glyphSorcery"
+        >
           <h3 class="pt-3">Glyph Sorcery</h3>
-          <p class="w-75  mb-5 fw-semibold">
+          <p class="w-75 mb-5 fw-semibold">
             Erstell dir ein sicheres Passwor zwischen 6 und 24 Zeichen.
           </p>
           <div
