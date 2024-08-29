@@ -42,9 +42,6 @@ picConBtn.addEventListener("click", async (e) => {
   try {
     const result = await pictureToString();
 
-    document.getElementById("previewImage").style.display = "none";
-    document.getElementById("statsPicGen").style.display = "";
-
     textElement.innerText = `${result}`;
     textElement.append(copyButton(textId));
     console.log(result);
