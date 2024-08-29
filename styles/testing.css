@@ -107,10 +107,11 @@ main {
 }
 
 
-.tablerapper {
-  height: 200px;
+.tableWrapper {
+  max-height: 180px;
   overflow-y: auto;
   overflow-x: auto;
+  
 }
 
 @keyframes moveBtnAi {
@@ -131,7 +132,7 @@ main {
     flex-direction: column;
   }
   .card {
-    min-height: auto;
+    min-height: none;
   }
 }
 @media (min-width: 992px) {

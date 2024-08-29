@@ -57,7 +57,7 @@ aiUserGenBtn.addEventListener("click", async function () {
     console.error("Error fetching AI response:", error);
   } finally {
     clearInterval(interval);
-    aiUserGenBtn.innerHTML = "Senden";
+    aiUserGenBtn.innerHTML = "Generieren";
     aiUserGenBtn.disabled = false;
   }
 });

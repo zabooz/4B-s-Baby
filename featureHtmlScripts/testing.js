@@ -17,6 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
   startBrute.addEventListener("click", (e) => {
     e.preventDefault();
 
+    const tableWrapper = document.getElementById("tableWrapper");
+    const statsBody = document.getElementById("statsBody");
+    console.log(statsBody.childElementCount);
+    if(statsBody.childElementCount === 2){
+      tableWrapper.classList.add("border-bottom");
+    }
+
     startBrute.innerHTML = `
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
     <span role="status">${thinkWords[0]}</span>
@@ -132,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const target = document.getElementById(`td${rowCount}`);
       if (target.textContent === stars) {
         target.textContent = dataArr[0];
-        icon.className = "bi bi-eye";
+        icon.classList.add("bi", "bi-eye","mb-1")
         target.append(icon);
       } else {
         target.textContent = stars;
@@ -146,12 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (index === 0) {
         td.textContent = hideArr[0];
-        td.id = `td${rowCount}`;
-        td.classList.add(
-          "d-flex",
-          "justify-content-between",
-          "align-items-center"
-        );
+        td.id = `td${rowCount}`
+        td.classList.add("d-flex","justify-content-between","align-items-center");
         td.append(icon);
       } else {
         td.textContent = item;
