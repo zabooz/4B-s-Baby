@@ -3,8 +3,8 @@ const config = {
   pic2: "../img/psyTest/quiz1.svg",
   pic3: "../img/psyTest/quiz2.svg",
   pic4: "../img/psyTest/quiz3.svg",
-  pic5: "../img/psyTest/quiz4.jpg",
-  pic6: "../img/psyTest/quiz5.jpg",	
+  pic5: "../img/psyTest/quiz4.svg",
+  pic6: "../img/psyTest/quiz5.svg",	
 
   frage1: {
     frage: "Was ist dir am wichtigsten?",
@@ -50,23 +50,16 @@ const config = {
     frage: "Vielen Dank für deine Teilnahme!",
     antwort: "Bitte klick auf den Button, um deine Antworten zu senden.",
   },
+
 };
 
 const quiz = (config) => {
-  return `<div id="questionCarousel" class="carousel slide w-100 mx-auto mt-5">
-        <div class="carousel-indicators custom-indicators">
-            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            <button type="button" data-bs-target="#questionCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
-        </div>
-        <div class="carousel-inner">
+  return `<div id="questionCarousel" class="carousel slide w-100 border-4 border-dark" >
+        <div class="carousel-inner d-flex">
             <!-- Erste Folie -->
-            <div class="carousel-item firstSlide active">
-                <img src="${config.pic1}" class="d-block w-100" alt="Frage 1">
-                <div class="carousel-caption d-flex flex-column bg align-items-center">
+            <div class="carousel-item firstSlide rounded active">
+                <img src="${config.pic1}" class="d-block rounded" alt="Frage 1">
+                <div class="carousel-caption d-flex flex-column align-items-center">
                     <h5>Frage 1: ${config.frage1.frage}</h5>
                     <div class="p-2 d-flex flex-column gap-2">
                         ${config.frage1.antworten
@@ -117,9 +110,9 @@ const quiz = (config) => {
             <!-- Letzte Folie -->
             <div class="carousel-item ">
                 <img src="${config.pic6}" class="d-block w-100" alt="Danke">
-                <div class="carousel-caption d-flex flex-column gap-4 align-items-center">
-                    <h5>${config.letzteFolie.frage}</h5>
-                    <p>${config.letzteFolie.antwort}</p>
+                <div id="lastCaption" class="carousel-caption d-flex flex-column  align-items-center">
+                    <h5 id="captionH">${config.letzteFolie.frage}</h5>
+                    <p id="captionP">${config.letzteFolie.antwort}</p>
                     <button class="btn btn-primary mb-4" id="submitButton">Antworten absenden</button>
                 </div>
             </div>
@@ -134,19 +127,7 @@ const quiz = (config) => {
           <span class="visually-hidden">Weiter</span>
       </button>
     </div>
-      <div class="tableWrapper w-75">
-    <table class="table mt-2" id="stats1">
-      <thead>
-        <tr>
-          <th scope="col" class="text-center">#</th>
-          <th scope="col"class="text-center">Username</th>
-          <th scope="col" class="text-center">Begriff</th>
-          <th scope="col" class="text-center">Eigenschaften</th>
-        </tr>
-      </thead>
-      <tbody id="statsBody1" class="text-center" ></tbody>
-    </table>
-  </div>`;
+`
 };
 
 document.getElementById("quiz").innerHTML += quiz(config);
