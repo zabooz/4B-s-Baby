@@ -36,13 +36,15 @@ uploadFile.addEventListener("change", () => {
 
 picConBtn.addEventListener("click", async (e) => {
   e.preventDefault();
-  const textId = "picResult";
+  const textId = "generatedPic0";
   const textElement = document.getElementById(textId);
 
   try {
     const result = await pictureToString();
-    // document.getElementById("generatedPicRow0").style.display = "";
-    // document.getElementById("generatedPicHead").style.display = "";
+
+    document.getElementById("previewImage").style.display = "none";
+    document.getElementById("statsPicGen").style.display = "";
+
     textElement.innerText = `${result}`;
     textElement.append(copyButton(textId));
     console.log(result);
