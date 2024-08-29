@@ -57,7 +57,9 @@ const createFooter = (configFooter) => {
                 <div class="row mt-3">
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>${configFooter.companyName}
+                            <i class="fas fa-gem me-3"></i>${
+                              configFooter.companyName
+                            }
                         </h6>
                         <p>
                             ${configFooter.companyText}
@@ -90,12 +92,14 @@ const createFooter = (configFooter) => {
                           configFooter.contact.fax
                         }</p>
                     </div>
+
                 </div>
             </div>
         </section>
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
             © 2021 Copyright:
             <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            <a class="text-reset fw-bold mx-5" href="../legalStuff/impressum.html" >Impressum</a>
         </div>`;
 };
 
