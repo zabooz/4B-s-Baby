@@ -69,20 +69,16 @@ nav img {
 #uploadLabel {
   color: white;
 }
-#previewImage {
-  width: 12rem;
-  height: 12rem;
-  object-fit: cover;
-}
+
 .card {
-  min-height: 28rem;
+  min-height: 33.5rem;
   max-width: 28rem;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 1);
 }
-.bg-card-custom{
-  background-color:#f1f5f5;
+.bg-card-custom {
+  background-color: #f1f5f5;
 }
 nav {
   min-height: 64px;
@@ -103,9 +99,7 @@ nav {
 .text-custom {
   color: #ea6954;
 }
-.card {
-  min-height: 400px;
-}
+
 .bg-custom {
   background-color: #23bbb870;
 }

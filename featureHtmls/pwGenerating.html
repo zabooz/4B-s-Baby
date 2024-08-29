@@ -109,10 +109,10 @@
         </div>
         <div
           id="pictureMagic"
-          class="card p-1 gap-1 mt-5 w-75 bg-card-custom d-flex flex-column justify-content-center align-items-center"
+          class="card p-1 gap-1 mt-5 w-75 bg-card-custom d-flex flex-column align-items-center"
         >
           <h3 class="pt-3">Picture Magic</h3>
-          <p class="fw-semibold w-75">
+          <p class="fw-semibold w-75 mb-5">
             Lade einfach ein Foto hoch, und unsere App verwandelt es in ein
             sicheres Passwort.
           </p>
@@ -120,7 +120,7 @@
             class="d-flex flex-column align-items-center justify-content-evenly w-100 gap-3"
           >
             <div
-              class="d-flex flex-column align-items-center justify-content-center w-100 gap-2"
+              class="d-flex flex-column align-items-center justify-content-center w-100 gap-4"
             >
               <div class="label w-75 d-flex bg-success">
                 <label
@@ -147,32 +147,30 @@
                   Los geht's
                 </button>
               </form>
-              <div class="border border-2 mb-3 rounded">
-                <img
-                  id="previewImage"
-                  src="../img/confusion.jpeg"
-                  alt="confusion"
-                  class="border rounded"
-                  style="display: block"
-                />
-                <div class="tableWrapper w-75">
-                  <table
-                    class="table mb-5"
-                    id="statsPicGen"
-                    style="display: none"
-                  >
-                    <thead>
-                      <tr>
-                        <th scope="col" class="text-center">Passwort</th>
-                      </tr>
-                    </thead>
-                    <tbody id="statsBodyPicGen" class="text-center">
-                      <tr id="generatedPicRow0">
-                        <td id="generatedPic0" class="text-center"></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+
+              <div class="tableWrapper w-75">
+                <table class="table mb-5 w-100" id="statsPicGen">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center">Dein Bild</th>
+                      <th scope="col" class="text-center">Passwort</th>
+                    </tr>
+                  </thead>
+                  <tbody id="statsBodyPicGen" class="text-center">
+                    <tr id="generatedPicRow0">
+                      <td id="previewPic0">
+                        <img
+                          id="previewImage"
+                          src="../img/confusion.jpeg"
+                          alt="confusion"
+                          width="125"
+                          height="125"
+                        />
+                      </td>
+                      <td id="generatedPic0" class="text-center"></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
