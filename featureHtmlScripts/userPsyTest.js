@@ -30,7 +30,7 @@ const answerObj = {
     q5a1: "animals",
     q5a2: "fantasyCreatures",
     q5a3: ["fantasyRaces", "rpgClasses"],
-    q5a4: "occupations",
+    q5a4: ["occupations", "bodyParts"],
   },
 };
 
