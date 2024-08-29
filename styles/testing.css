@@ -14,7 +14,7 @@ i,
   width: 80%;
 }
 .card {
-  min-height: 40rem;
+  min-height: 35rem;
   display: flex;
   flex-direction: column;
   background-color: #f1f5f5;
@@ -105,14 +105,9 @@ main {
   display: flex;
   flex-direction: column;
 }
-section {
-  padding: 1rem 0;
-}
-.secionDiv {
-  width: 70%;
-}
 
-.tableWrapper {
+
+.tablerapper {
   height: 200px;
   overflow-y: auto;
   overflow-x: auto;

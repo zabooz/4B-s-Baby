@@ -48,9 +48,9 @@
 
     <main>
       <section
-        class="d-flex flex-column flex-lg-row gap-4 p-5 align-items-center justify-content-center"
+        class="d-flex flex-column flex-lg-row gap-4 px-5 align-items-center justify-content-center"
       >
-        <div class="card d-flex flex-column align-items-left p-5 w-50">
+        <div class="card d-flex flex-column align-items-left px-5 pt-3 w-50">
           <h2 class="mb-3">Warum sollte ich mein Passwort testen?</h2>
 
           <p>
@@ -67,10 +67,10 @@
         </div>
         <div
           id="bruteForceApp"
-          class="card d-flex flex-column align-items-center text-start p-5 w-50"
+          class="card d-flex flex-column align-items-center text-start px-5 pt-3 w-50"
         >
           <h2 class="mb-3">Mojo</h2>
-          <p class="mb-4 pb-1">
+          <p class="mb-0">
             Wählen Sie einen Modus, um Ihr Passwort gegen Brute-Force-Angriffe
             zu testen. Im
             <span
@@ -171,9 +171,9 @@
           </div>
         </div>
 
-        <div class="card align-items-center p-5 w-50" id="passwordStrengthCalc">
+        <div class="card align-items-center px-5 pt-3 w-50" id="passwordStrengthCalc">
           <h2 class="mb-3">Excalibur</h2>
-          <p class="mb-5">
+          <p class="mb-4">
             Excalibur ist ein Tool, das die Stärke deines Passworts überprüft.
             Es bewertet dabei Faktoren wie Länge, Komplexität und
             Vorhersehbarkeit und gibt dir eine umfassende Bewertung deiner
@@ -181,10 +181,10 @@
           </p>
           <div
             id="passwordCalc"
-            class="d-flex flex-column align-items-center gap-5 w-100"
+            class="d-flex flex-column align-items-center gap-3 w-100"
           >
             <div class="hmm">
-              <div class="input-group mb-3">
+              <div class="input-group mb-5">
                 <input
                   type="password"
                   class="form-control w-75"
@@ -199,14 +199,14 @@
               </div>
             </div>
 
-            <button id="calcStrengthBtn" class="btn btn-primary btn-lg w-75">
+            <button id="calcStrengthBtn" class="btn btn-primary btn-lg mb-3 w-75">
               Teste!
             </button>
           </div>
 
           <div
             id="strengthBarDiv"
-            class="w-100 d-flex align-items-center mt-5 d-flex"
+            class="w-100 d-flex align-items-center mt-3 d-flex"
           >
             <div
               class="progress flex-grow-1"
@@ -243,7 +243,7 @@
           </div>
         </div>
       </section>
-      <section id="quote5" class="bg-body-tertiary my-5"></section>
+      <section id="quote5" class="bg-body-tertiary"></section>
       <section class="d-flex justify-content-center">
         <div class="d-flex flex-column sectionDiv py-4">
           <div

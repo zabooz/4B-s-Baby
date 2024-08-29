@@ -1,10 +1,10 @@
 const config = {
-  pic1: "../img/psyTest/landscape.svg",
-  pic2: "../img/psyTest/landscape6.svg",
-  pic3: "../img/psyTest/landscape3.svg",
-  pic4: "../img/psyTest/landscape4.svg",
-  pic5: "../img/psyTest/landscape5.svg",
-  pic6: "../img/psyTest/landscape1.svg",
+  pic1: "../img/psyTest/quiz.svg",
+  pic2: "../img/psyTest/quiz1.svg",
+  pic3: "../img/psyTest/quiz2.svg",
+  pic4: "../img/psyTest/quiz3.svg",
+  pic5: "../img/psyTest/quiz4.jpg",
+  pic6: "../img/psyTest/quiz5.jpg",	
 
   frage1: {
     frage: "Was ist dir am wichtigsten?",
