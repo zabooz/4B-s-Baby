@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const why = document.getElementById("why");
   let interval;
 
+  
   startBrute.addEventListener("click", (e) => {
     e.preventDefault();
 
