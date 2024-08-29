@@ -41,8 +41,8 @@ picConBtn.addEventListener("click", async (e) => {
 
   try {
     const result = await pictureToString();
-    document.getElementById("generatedPicRow0").style.display = "";
-    document.getElementById("generatedPicHead").style.display = "";
+    // document.getElementById("generatedPicRow0").style.display = "";
+    // document.getElementById("generatedPicHead").style.display = "";
     textElement.innerText = `${result}`;
     textElement.append(copyButton(textId));
     console.log(result);

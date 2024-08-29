@@ -4,7 +4,7 @@ import { observer } from "../utilities/bounce.js";
 const createHero = (content) => {
 
     return `
-    <div  id="jumbotron" class="d-flex flex-column gap-5 align-items-center">
+    <div  id="jumbotron" class="d-flex flex-column gap-2 align-items-center">
         
     <div class="w-100 d-flex justify-content-center  flex-column pt-2">
     <div class="d-flex  w-100 justify-content-lg-between justify-content-center mb-5 ">
