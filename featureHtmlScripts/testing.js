@@ -153,7 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
           "align-items-center"
         );
         td.append(icon);
-        console.log(icon);
       } else {
         td.textContent = item;
       }

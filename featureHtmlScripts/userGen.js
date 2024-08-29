@@ -109,24 +109,35 @@ function updateAttempts(result, table) {
     td.innerText = dataArr[i];
     tr.appendChild(td);
   }
-  tBody.append(tr);
+  let rows = Array.from(tBody.getElementsByTagName("tr"));
+  tBody.innerHTML = "";
+  tBody.append(tr, ...rows);
+  
   const username = document.getElementById(id);
   username.append(copyButton(id));
 }
 
-const userGenSubmitBtn = document.getElementById("submitButton");
+const quizBtn = document.getElementById("submitButton");
 
-userGenSubmitBtn.addEventListener("click", function (e) {
+quizBtn.addEventListener("click", function (e) {
   e.preventDefault();
+
+  let testResult;
 
   for (let i = 0; i < 5; i++) {
     const quizOutput = generateQuizResult();
     const newQuizOutput = convertToGerman(quizOutput, myArraysObj);
-    updateAttempts(newQuizOutput, "statsBody1");
+    console.log(newQuizOutput)
+    testResult = newQuizOutput[0];
+    // updateAttempts(newQuizOutput, "statsBody1");
   }
+  const captionH = document.getElementById("captionH");
+  const captionP = document.getElementById("captionP");
 
+  captionH.innerText = "Dein neuer Username"
+  captionP.innerText = testResult;
   // Hide the submit button
-  userGenSubmitBtn.style.display = "none";
+  quizBtn.style.display = "none";
 
   // Create a reset button
   const resetBtn = document.createElement("button");
@@ -134,21 +145,23 @@ userGenSubmitBtn.addEventListener("click", function (e) {
   resetBtn.classList.add("btn", "btn-primary", "mb-4");
   resetBtn.textContent = "Reset Quiz";
   resetBtn.style.display = "inline-block"; // Ensure it's visible
-  userGenSubmitBtn.parentNode.appendChild(resetBtn);
+  quizBtn.parentNode.appendChild(resetBtn);
 
   // Add event listener to the reset button
   resetBtn.addEventListener("click", function () {
-    resetQuiz();
+    resetQuiz(captionH,captionP);
   });
 });
 
-function resetQuiz() {
+function resetQuiz(captionH,captionP) {
   // Uncheck all radio buttons
   const checkboxes = document.querySelectorAll('input[type="radio"]');
   checkboxes.forEach((checkbox) => {
     checkbox.checked = false;
   });
-
+  captionH.innerText = "Vielen Dank für deine Teilnahme!";
+  captionP.innerText =
+    "Bitte klick auf den Button, um deine Antworten zu senden.";
   // Reset the carousel to the first slide
   const carousel = new bootstrap.Carousel(
     document.getElementById("questionCarousel")
@@ -160,13 +173,12 @@ function resetQuiz() {
   document.getElementById("nextBtn").style.display = "";
 
   // Show the submit button again
-  userGenSubmitBtn.style.display = "inline-block";
+  quizBtn.style.display = "inline-block";
 
   // Remove the reset button
   const resetBtn = document.getElementById("resetButton");
   resetBtn.remove();
-  const tableBody = document.getElementById("statsBody1");
-  tableBody.innerHTML = "";
+
 
   console.log("Quiz has been reset.");
 }
@@ -188,3 +200,4 @@ const arrowBtn = () => {
 };
 
 carousel.forEach((btn) => btn.addEventListener("click", arrowBtn));
+
