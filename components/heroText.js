@@ -7,19 +7,19 @@ const createHero = (content) => {
     <div  id="jumbotron" class="d-flex flex-column gap-2 align-items-center">
         
     <div class="w-100 d-flex justify-content-center  flex-column pt-2">
-    <div class="d-flex  w-100 justify-content-lg-between justify-content-center mb-5 ">
-    <img  id="PPIcon"src="./img/landingPage/PPicon.png" class="ms-2">
+    <div class="d-flex justify-content-lg-start justify-content-center gap-5 mb-5 me-5">
+    <img  id="PPIcon"src="./img/landingPage/PPicon.png" class="mx-5 img-fluid">
     
-    <img id="padlockPic" src="./img/landingPage/padlock.svg" class"img-fluid d-none" >
+    <img id="padlockPic" src="./img/landingPage/padlock.svg" class"img-fluid d-none mx-5 " >
     </div>
-    <p  class="lead w-75  text-center pb-2 fs-5 text-lg-start border-bottom border-2 border-dark fw-semibold ">${content.lead}</p>
+    <p  class="lead w-75  text-center pb-2 fs-2 ms-5 text-lg-start border-bottom border-2 border-dark fw-semibold ">${content.lead}</p>
     
     </div>
-    <div  class="w-100  d-flex justify-content-center  flex-column"> 
-    <p class="w-75 fs-5">
+    <div  class="w-100  d-flex justify-content-center ms-5 flex-column"> 
+    <p class="w-75 fs-3 ms-4">
     ${content.p}
     </p>
-    <p class=" w-75  mt-3  fs-4 ">
+    <p class=" w-75  mt-3 ms-4 fs-3 ">
     ${content.p2}
     </p>
     </div>
