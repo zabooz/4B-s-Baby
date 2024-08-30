@@ -66,7 +66,7 @@ export const configNavIndex = {
 
 const createNavBar = (configNav) => {
   const navBar = `
-    <nav class="navbar navbar-expand-md nav-custom fw-semibold text-black">
+    <nav class="navbar navbar-expand-lg nav-custom fw-semibold text-black">
       <div>
         <a href="${configNav.home.link}" class="d-flex align-items-center" style="text-decoration: none;">
           <img src="${configNav.logo.link}" alt="logo" class="d-none img-fluid d-lg-block" />
