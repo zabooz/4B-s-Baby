@@ -11,6 +11,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const icon2 = document.getElementById("basic-addon2");
   const icon = document.getElementById("basic-addon1");
   const why = document.getElementById("why");
+  const bruteInput = document.getElementById("userPwdInput");
+  const strengthInput = document.getElementById("strengthInput");
+
+bruteInput.addEventListener("keypress",(e)=>{
+  if(e.key === "Enter"){
+    startBrute.click();
+  }
+})
+
+strengthInput.addEventListener("keypress",(e)=>{
+  if(e.key === "Enter"){
+    calcStrengthBtn.click();
+  }
+})
+
+
+
+
   let interval;
 
   
@@ -19,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const tableWrapper = document.getElementById("tableWrapper");
     const statsBody = document.getElementById("statsBody");
-    console.log(statsBody.childElementCount);
+
     if(statsBody.childElementCount === 2){
       tableWrapper.classList.add("border-bottom");
     }
@@ -176,9 +194,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   calcStrengthBtn.addEventListener("click", async () => {
     const bar = document.getElementById("progressBar");
-
-    const value = document.getElementById("strengthInput").value;
-    // excValue = value;
+    const strengthInput = document.getElementById("strengthInput");
+    const value = strengthInput.value;
+    strengthInput.value =""
     calcStrengthBtn.innerHTML = `
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
     <span role="status">${thinkWords[0]}</span>
