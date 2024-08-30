@@ -144,8 +144,23 @@ header {
     font-size: 1rem !important;
   }
 }
+@media (max-width:768px){
+  #leadText{
+    font-size: 1.4rem !important;
+  }
+  .heroText{
+    font-size: 1rem !important;
+  }
+  header{
+    padding:0
+  }
+}
+@media (max-width:768px){
+  #leadText{
+    font-size: 1.1rem !important;
+  }
 
-
+}
 @keyframes bounce {
   0% {
     transform: translateY(0);
