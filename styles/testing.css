@@ -17,7 +17,6 @@ i,
   left: -55px !important;
 }
 .card {
-  min-height: 35rem;
   max-width: 35rem;
   display: flex;
   flex-direction: column;
@@ -32,6 +31,9 @@ i,
 }
 nav {
   min-height: 64px;
+}
+nav img{
+  width: 4rem;
 }
 header {
   color: #151c19;
@@ -86,14 +88,8 @@ header {
 #stopBrute {
   background: rgb(110, 18, 18);
 }
-nav img {
-  width: 3rem;
-}
-.sectionDiv {
-  width: 70%;
-  background: #f1f5f5;
-  border-radius: 1rem;
-}
+
+
 .hr-custom {
   border: 2px solid black;
   opacity: 1;
@@ -139,9 +135,7 @@ main {
   #bruteInput {
     flex-direction: column;
   }
-  .card {
-    min-height: none;
-  }
+
 }
 @media (min-width: 992px) {
   .custom-img {
