@@ -5,7 +5,7 @@ const createQuote = (content) => {
 
 
     return `
-  <div class="container my-3 sectionDiv bg-transparent ">
+  <div class="container my-5  bg-transparent ">
     <div class="row p-0 p-md-0 mx-0 -mx-md-5 d-flex justify-content-center align-items-center bg-transparent ">
     
         <div class=" m-0 p-0 bg-transparent">
