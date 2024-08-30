@@ -94,13 +94,13 @@ const createNavBar = (configNav) => {
                   </a>
                   <ul class="dropdown-menu">
               <li class="nav-item d-flex align-items-center">
-              <a class="nav-link text-danger d-flex align-items-center" href="#" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy">Clippy</a>
+              <a class="nav-link  d-flex align-items-center" href="#" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy">Clippy</a>
               </li>
             <li class="nav-item">
-            <a class="nav-link text-danger" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" >Ai-Assistant</a>
+            <a class="nav-link " href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" >Ai-Assistant</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link text-success" href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a>
+            <a class="nav-link " href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a>
             </li>
                   </ul>
               </div>
