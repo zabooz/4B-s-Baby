@@ -9,6 +9,9 @@ main {
   display: flex;
   flex-direction: column;
 }
+.dropdown-menu{
+  left: -55px !important;
+}
 #picResult,
 .input {
   width: 30%;

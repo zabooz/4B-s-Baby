@@ -13,15 +13,22 @@ i,
   gap: 2rem;
   width: 80%;
 }
+.dropdown-menu{
+  left: -55px !important;
+}
 .card {
   min-height: 35rem;
-  max-width: 28rem;
+  max-width: 35rem;
   display: flex;
   flex-direction: column;
   background-color: #f1f5f5;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
+}
+.card img{
+  max-width: 10rem;
+  border-radius: .5rem;
 }
 nav {
   min-height: 64px;

@@ -18,6 +18,9 @@
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
+.dropdown-menu{
+  left: -50px !important;
+}
 .input {
   width: 30%;
   padding: 0.2rem;
