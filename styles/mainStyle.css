@@ -19,7 +19,7 @@ nav img {
 
 
 #padlockPic{
-  max-width:25rem;
+
   display: none;
   transform: rotate(-5deg);
 
@@ -102,16 +102,13 @@ nav img {
 nav {
   min-height: 84px;
 }
-#jumbotron {
-  max-width: 1400px;
-}
+
+
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #151c19;
   height: 100vh;
-
+  display: flex;
+  padding-left: 10%;
 }
 
 @media (max-width: 991px) {
