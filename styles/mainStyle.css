@@ -107,7 +107,7 @@ nav {
 
 header {
   color: #151c19;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   padding-left: 10%;
 }
@@ -117,15 +117,16 @@ header {
     width: 10rem;
     height: 7rem;
   }
+
 }
-@media (min-width: 992px) {
-  .custom-img {
-    width: 15rem;
-    height: 10rem;
+@media (min-width: 2000px) {
+  header{
+    justify-content: center;
+    align-items: center;
   }
-  .heroText {
-    width: 75%;
-  }
+  #logoContainer img{
+    width: 80rem;
+  } 
 
 }
 
@@ -135,7 +136,14 @@ header {
     max-width: none;
   }
 }
-
+@media (max-width:1280px){
+  #leadText{
+    font-size: 1.05rem !important;
+  }
+  .heroText{
+    font-size: 1rem !important;
+  }
+}
 
 
 @keyframes bounce {
