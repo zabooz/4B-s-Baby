@@ -11,16 +11,16 @@ const createHero = (content) => {
     <div class="w-50 pt-5">
     <img  id="PPIcon"src="./img/landingPage/PPicon.png" class="px-5 img-fluid">
     </div>
-    <div class="w-25 pt-5">
-    <img id="padlockPic" src="./img/landingPage/padlock.svg" class"img-fluid d-none mx-5 my-auto" >
+    <div class="w-25 pt-5 d-none d-md-block">
+    <img id="padlockPic" src="./img/landingPage/padlock.svg" class"img-fluid  mx-5 my-auto" >
     </div>
     </div>
     <div class="d-flex">
-    <p  class="lead   text-center pb-2 fs-2 ms-5 text-lg-start border-bottom border-2 border-dark fw-semibold ">${content.lead}</p>
+    <p  class="lead   text-center pb-2 fs-3 fs-md-2 ms-5 text-md-start border-bottom border-2 border-dark fw-semibold ">${content.lead}</p>
     </div>
     </div>
-    <div  class="w-75 d-flex me-auto ms-4 flex-column"> 
-    <p class="w-50 fs-4 ms-4">
+    <div  class="w-md-75  d-flex me-auto ms-4 flex-column"> 
+    <p class="w-50  fs-4 ms-4">
     ${content.p}
     </p>
     <p class=" w-50  mt-3 ms-4 fs-4 ">
