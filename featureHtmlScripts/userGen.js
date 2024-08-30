@@ -57,7 +57,7 @@ aiUserGenBtn.addEventListener("click", async function () {
     console.error("Error fetching AI response:", error);
   } finally {
     clearInterval(interval);
-    aiUserGenBtn.innerHTML = "Senden";
+    aiUserGenBtn.innerHTML = "Generieren";
     aiUserGenBtn.disabled = false;
   }
 });
@@ -81,32 +81,30 @@ userAiToggle.addEventListener("change", function () {
 });
 
 function updateAttempts(result, table) {
-  const dataArr = result;
-
+ 
+  const dataArr = result.filter((x) => x !== "");
+  console.log(dataArr);
   const tBody = document.getElementById(table);
   const tr = document.createElement("tr");
 
   const rowCount = tBody.rows.length + 1;
   const id = "username" + "_" + rowCount + "_" + table;
-
-  for (let i = 0; i < dataArr.length; i++) {
+  
+  for (let i = 0; i < 2; i++) {
     const td = document.createElement("td");
+    
+    if(i === 0){
+      td.textContent = dataArr[i];
+    }else{
 
-    if (i === dataArr.length - 2) {
-      if (dataArr[i] && dataArr[i + 1]) {
-        td.textContent = dataArr[i] + " / " + dataArr[i + 1];
-      } else if (dataArr[i]) {
-        td.textContent = dataArr[i];
-      } else {
-        td.textContent = dataArr[i + 1];
+      for(let j = 1; j < dataArr.length; j++){
+        td.textContent  += dataArr[j] + "/"
       }
-      tr.appendChild(td);
-      break;
     }
+  
+    if(td.textContent.endsWith("/")) td.textContent = td.textContent.slice(0, -1);
 
-    if (i === 0) td.id = id;
-
-    td.innerText = dataArr[i];
+    td.id = id;
     tr.appendChild(td);
   }
   let rows = Array.from(tBody.getElementsByTagName("tr"));

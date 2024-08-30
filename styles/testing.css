@@ -15,6 +15,7 @@ i,
 }
 .card {
   min-height: 35rem;
+  max-width: 28rem;
   display: flex;
   flex-direction: column;
   background-color: #f1f5f5;
@@ -107,10 +108,11 @@ main {
 }
 
 
-.tablerapper {
-  height: 200px;
+.tableWrapper {
+  max-height: 180px;
   overflow-y: auto;
   overflow-x: auto;
+  
 }
 
 @keyframes moveBtnAi {
@@ -131,7 +133,7 @@ main {
     flex-direction: column;
   }
   .card {
-    min-height: auto;
+    min-height: none;
   }
 }
 @media (min-width: 992px) {
