@@ -75,11 +75,7 @@ nav img {
     right: 6.5rem;
   }
 }
-footer{
-  border-left: 5px solid black;
-  border-right: 5px solid black;
-  border-bottom: 5px solid black;
-}
+
 .btn {
   background-color: #ea6954;
   color: white;
@@ -102,7 +98,7 @@ footer{
   border-radius: 1rem;
 }
 nav {
-  min-height: 64px;
+  min-height: 84px;
 }
 #jumbotron {
   max-width: 800px;

@@ -5,15 +5,15 @@ export const configNav = {
     link: "../index.html",
   },
   testing: {
-    text: "Check Password",
+    text: `CHECKE <br> deine Sicherheit`,
     link: "../featureHtmls/testing.html",
   },
   userGen: {
-    text: "Find your Name",
+    text: `ERFINDE <br> deinen Online-Namen`,
     link: "../featureHtmls/userGenerating.html",
   },
   pwGen: {
-    text: "Make Password",
+    text: `ERSTELLE <br> dein Passwort`,
     link: "../featureHtmls/pwGenerating.html",
   },
   oldDesign: {
@@ -24,6 +24,11 @@ export const configNav = {
     text: "Password Playground",
     link: "../img/logo/logo.svg",
   },
+  stuff: {
+    text: `ERFAHRE <br> mehr...`,
+    clippy: "Clippy",
+    aiAssistant: "AI-Assistent",
+  },
 };
 
 export const configNavIndex = {
@@ -33,15 +38,15 @@ export const configNavIndex = {
     link: "./index.html",
   },
   testing: {
-    text: "Check Password",
+    text: `CHECKE <br> deine Sicherheit`,
     link: "./featureHtmls/testing.html",
   },
   userGen: {
-    text: "Find your Name",
+    text: `ERFINDE <br> deinen Online-Namen`,
     link: "./featureHtmls/userGenerating.html",
   },
   pwGen: {
-    text: "Make Password",
+    text: `ERSTELLE <br> dein Passwort`,
     link: "./featureHtmls/pwGenerating.html",
   },
   oldDesign: {
@@ -51,6 +56,11 @@ export const configNavIndex = {
   logo: {
     text: "Password Playground",
     link: "./img/logo/logo.svg",
+  },
+  stuff: {
+    text: `ERFAHRE <br> mehr...`,
+    clippy: "Clippy",
+    aiAssistant: "AI-Assistent",
   },
 };
 
@@ -68,25 +78,32 @@ const createNavBar = (configNav) => {
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav  d-flex justify-content-end w-100">
-        <li class="nav-item">
+        <li class="nav-item mx-2">
         <a class="nav-link" href="${configNav.pwGen.link}">${configNav.pwGen.text}</a>
         </li>
-          <li class="nav-item">
+          <li class="nav-item mx-2">
             <a class="nav-link" href="${configNav.testing.link}">${configNav.testing.text}</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mx-2">
             <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
           </li>
-
-<li class="nav-item d-flex align-items-center">
-    <a class="nav-link text-danger d-flex align-items-center" href="#" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy">Clippy</a>
-</li>
-
+          <li class="nav-item mx-2">
+            <div class="dropdown">
+            <a class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    ${configNav.stuff.text}
+                  </a>
+                  <ul class="dropdown-menu">
+              <li class="nav-item d-flex align-items-center">
+              <a class="nav-link text-danger d-flex align-items-center" href="#" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy">Clippy</a>
+              </li>
             <li class="nav-item">
             <a class="nav-link text-danger" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" >Ai-Assistant</a>
             </li>
             <li class="nav-item">
             <a class="nav-link text-success" href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a>
+            </li>
+                  </ul>
+              </div>
           </li>
         </ul>
       </div>
