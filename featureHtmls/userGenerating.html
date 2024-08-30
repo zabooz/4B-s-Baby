@@ -43,25 +43,30 @@
   </head>
   <body class="bg-custom">
     <nav id="navBar" class="sticky-top"></nav>
-    <header class=" d-flex justify-content-center"></header>
+    <header class="d-flex justify-content-center"></header>
     <main>
-      <section class="d-flex justify-content-center flex-column flex-lg-row p-5 pb-1 gap-5">
-        <div id="pwdGenDiv" class="card px-4 pt-3 d-flex justify-content-center w-100 ">
-          <h3 class="py-3 text-center" >Identity Wizardry</h3>
-          <p class="w-75  w-100">
+      <section
+        class="d-flex justify-content-center flex-column flex-lg-row p-5 pb-1 gap-5"
+      >
+        <div
+          id="pwdGenDiv"
+          class="card px-4 pt-3 d-flex justify-content-center w-100"
+        >
+          <h3 class="py-3 text-center">Identity Wizardry</h3>
+          <p class="w-75 w-100">
             Erstelle einen einzigartigen Benutzernamen, indem du bis zu zwei
             Gruppen von Adjektiven und eine Gruppe von Substantiven auswählst,
             oder lass den Generator eine zufällige Kombination für dich
             erstellen.
           </p>
-          <p class="w-75 ">
+          <p class="w-75">
             Achte darauf, dass dein Benutzername einzigartig ist und deine
             Identität widerspiegelt, um ein persönliches Online-Erlebnis zu
             haben.
           </p>
 
           <div
-            class="d-flex flex-lg-row flex-column justify-content-evenly gap-lg-5 gap-2 "
+            class="d-flex flex-lg-row flex-column justify-content-evenly gap-lg-5 gap-2"
           >
             <div id="wizardInput2" class="d-flex flex-column gap-2">
               <label class="fw-semibold">1. Eigenschaft:</label>
@@ -103,11 +108,7 @@
             </div>
             <div id="wizardInput3" class="d-flex flex-column gap-2">
               <label class="fw-semibold">Wähle einen Begriff:</label>
-              <select
-                name="pwdGen"
-                id="noun"
-                class="form-control fw-semibold"
-              >
+              <select name="pwdGen" id="noun" class="form-control fw-semibold">
                 <option value="random">Zufällig</option>
                 <option value="instruments">Instrument</option>
                 <option value="fruits">Frucht</option>
@@ -132,18 +133,19 @@
                   type="checkbox"
                   role="switch"
                   id="germanAiToggle"
+                  style="display: none"
                 />
-                <label class="form-check-label" for="germanAiToggle"
+                <label
+                  class="form-check-label"
+                  for="germanAiToggle"
+                  style="display: none"
                   >Deutsch (Beta)</label
                 >
               </div>
-              <button
-                id="userGeneratorBtn"
-                class="btn btn-primary "
-              >
+              <button id="userGeneratorBtn" class="btn btn-primary">
                 Generieren
               </button>
-              <button id="aiUserGenBtn" class="btn btn-primary  ">
+              <button id="aiUserGenBtn" class="btn btn-primary">
                 Überrasch mich!
               </button>
             </div>
@@ -152,21 +154,19 @@
             <table class="table mb-5" id="stats">
               <thead>
                 <tr>
-    
                   <th scope="col" class="text-center">Username</th>
                   <th scope="col" class="text-center">Begriff</th>
                   <th scope="col" class="text-center">Eigenschaften</th>
                 </tr>
               </thead>
-              <tbody id="statsBody" class="w-100" ></tbody>
+              <tbody id="statsBody" class="w-100"></tbody>
             </table>
           </div>
         </div>
 
-
-        <div id="pwdGenDiv" class=" card px-4 pt-3 ">
+        <div id="pwdGenDiv" class="card px-4 pt-3">
           <h3>Mind Maestro</h3>
-          <p class=" w-75 mb-4">
+          <p class="w-75 mb-4">
             Erstelle einen einzigartigen Benutzernamen, indem du bis zu zwei
             Gruppen von Eigenschaften und eine Gruppe von Begriffen auswählst
             oder lass den Generator eine zufällige Kombination für dich
@@ -174,7 +174,7 @@
           </p>
           <div
             id="quiz"
-            class=" d-flex w-100 justify-content-center flex-column align-items-center"
+            class="d-flex w-100 justify-content-center flex-column align-items-center"
           ></div>
           <p class="mt-4">Dumbldore stirbt und darth vader ist lukes vater</p>
         </div>
@@ -186,15 +186,13 @@
     </footer>
     <div class="clipBoard"></div>
     <script type="module">
-  
       import { quote } from "../components/quotes.js";
       import { clipBoard } from "../components/clipBoard.js";
       import { createNav, configNav } from "../components/navBar.js";
       import { createAssistant } from "../components/aiAssistant.js";
-    
+
       createAssistant("main");
       createNav(configNav);
-   
 
       quote("#quote8", "zitate", 8, "../data/text.json");
       clipBoard(".clipBoard");
