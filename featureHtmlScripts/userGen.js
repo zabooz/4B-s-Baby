@@ -3,7 +3,7 @@ import { generateQuizResult } from "./userPsyTest.js";
 import { copyButton } from "../scripts/copybutton.js";
 import { genderbend } from "./genderbender.js";
 import { myArraysObj } from "../data/deutschGenerator.data.js";
-import { convertToGerman } from "./tableParser.js";
+import { convertToGerman, shiftTableRows } from "./tableFunctions.js";
 import { thinker, thinkWords } from "../utilities/thinker.js";
 const userGenBtn = document.getElementById("userGeneratorBtn");
 const aiUserGenBtn = document.getElementById("aiUserGenBtn");
@@ -24,40 +24,12 @@ userGenBtn.addEventListener("click", function (e) {
   const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
   const newUserOutput = convertToGerman(germanUserOutput, myArraysObj);
   const tBody = document.getElementById("statsBody");
+  // Example usage for different tables
+  shiftTableRows("statsBodyUser", "statsBodyArray", "statsBodyRow", 3);
 
-  function shiftRow() {
-    for (let i = tBody.rows.length - 1; i > 0; i--) {
-      if (tBody.rows[i - 1].innerText.trim() !== "") {
-        // Correctly copy cell contents instead of reassigning rows
-        for (let j = 0; j < tBody.rows[i].cells.length; j++) {
-          tBody.rows[0].cells[0].querySelector("button")?.remove();
-          tBody.rows[i].cells[j].innerText =
-            tBody.rows[i - 1].cells[j].innerText;
-          console.log(tBody.rows[i].cells[j].innerText);
-        }
-        tBody.rows[i].append(copyButton(`statsBodyUser${i}`));
-        // Display the current row if it has content
-        document.getElementById("statsBodyRow" + i).style.display = "";
-      } else {
-        // Hide the row if it does not have content
-        document.getElementById("statsBodyRow" + i).style.display = "none";
-      }
-    }
-    // Additional check for a specific row to remove border-bottom
-    if (tBody.rows[2].innerText.trim() !== "") {
-      document
-        .getElementById("statsTableWrapper")
-        .classList.remove("border-bottom");
-    }
-  }
-
-  shiftRow();
-
-  // Correctly access the first row and its cells
   const firstRow = tBody.rows[0];
   let firstCell = firstRow.cells[0];
   firstCell.innerText = `${newUserOutput[0]}`;
-  console.log();
   document.getElementById("statsBodyRow0").style.display = "";
   if (newUserOutput[2] && newUserOutput[3]) {
     firstRow.cells[1].innerText = `${newUserOutput[2]}/${newUserOutput[3]}, ${newUserOutput[1]}`;
@@ -69,6 +41,11 @@ userGenBtn.addEventListener("click", function (e) {
     firstRow.cells[1].innerText = `${newUserOutput[1]}`;
   }
   firstCell.append(copyButton("statsBodyUser0"));
+  if (tBody.rows[2].innerText.trim() !== "") {
+    document
+      .getElementById("statsTableWrapper")
+      .classList.remove("border-bottom");
+  }
 });
 
 aiUserGenBtn.addEventListener("click", async function () {
