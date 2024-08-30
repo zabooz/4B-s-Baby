@@ -69,8 +69,8 @@ const createNavBar = (configNav) => {
     <nav class="navbar navbar-expand-md nav-custom fw-semibold text-black">
       <div>
         <a href="${configNav.home.link}" class="d-flex align-items-center" style="text-decoration: none;">
-          <img src="${configNav.logo.link}" alt="logo" class="d-none d-lg-block" />
-          <p class="navbar-brand mb-0 ms-3">${configNav.logo.text}</p>
+          <img src="${configNav.logo.link}" alt="logo" class="d-none img-fluid d-lg-block" />
+          <p class="navbar-brand mb-0 fs-2 ms-3">${configNav.logo.text}</p>
         </a>
       </div>
       <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

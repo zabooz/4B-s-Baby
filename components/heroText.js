@@ -7,10 +7,10 @@ const createHero = (content) => {
       
       <div class="container-fluid row d-flex justify-content-center flex-column pt-2">
           <div id="logoContainer" class="row col-12 b justify-content-center justify-content-sm-center  justify-content-md-start justify-content-sm-start gap-5 mb-5">
-              <div class="col-10 col-xxl-3 col-sm-8 col-lg-4  col-xl-3 col-md-4 pt-xxl-5 pt-xl-4 text-center text-md-start">
-                  <img id="PPIcon" src="./img/landingPage/PPicon.png" class="img-fluid pt-xxl-4">
+              <div class="col-10 col-xxl-3 col-sm-8 col-lg-4  col-xl-3 col-md-4  text-center text-md-start">
+                  <img id="PPIcon" src="./img/landingPage/PPicon.png" class="img-fluid ">
               </div>
-              <div class="col-12 col-xxl-2 col-xl-2 col-lg-3 col-md-3 pt-xxl-5 pt-xl-4 text-center text-md-start d-none d-md-block">
+              <div class="col-12 col-xxl-2 col-xl-2 col-lg-3 col-md-3 pt-xxl-5 pt-xl-1 text-center text-md-start d-none d-md-block">
                   <img id="padlockPic" src="./img/landingPage/padlock.svg" class="img-fluid">
               </div>
           </div>
@@ -19,7 +19,7 @@ const createHero = (content) => {
           </div>
       </div>
       
-      <div class="container-fluid d-flex flex-column mt-xxl-4 ms-sm-3"> 
+      <div class="container-fluid d-flex flex-column mt-xxl-2 ms-sm-3"> 
           <p  class=" heroText col-12 col-xxl-5 col-xl-5 col-lg-5 fs-4 col-md-7  text-center text-md-start">${content.p}</p>
           <p class=" heroText col-12 col-xxl-5 col-xl-5 fs-4 mt-3 col-lg-5 col-md-7  text-center text-md-start">${content.p2}</p>
       </div>

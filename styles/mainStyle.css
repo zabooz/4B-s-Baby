@@ -8,7 +8,7 @@ main {
   flex-direction: column;
 }
 nav img {
-  width: 3rem;
+  width: 4rem;
 }
 .bg-custom {
   background-color: #23bbb858;
@@ -47,9 +47,7 @@ nav img {
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
 }
-.card img {
-  max-width: 18rem;
-}
+
 
 #quickNav img {
   width: 3rem;
@@ -107,18 +105,13 @@ nav {
 
 header {
   color: #151c19;
-  height: 90vh;
+  /* height: 90vh; */
   display: flex;
   padding-left: 10%;
 }
 
-@media (max-width: 991px) {
-  .custom-img {
-    width: 10rem;
-    height: 7rem;
-  }
 
-}
+
 @media (min-width: 2000px) {
   header{
     justify-content: center;
