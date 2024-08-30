@@ -97,6 +97,9 @@ nav img {
 .custom-img {
   border-radius: 1rem;
 }
+.dropdown-menu{
+  left: -55px !important;
+}
 nav {
   min-height: 84px;
 }
