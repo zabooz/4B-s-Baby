@@ -23,7 +23,52 @@ userGenBtn.addEventListener("click", function (e) {
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
   const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
   const newUserOutput = convertToGerman(germanUserOutput, myArraysObj);
-  updateAttempts(newUserOutput, "statsBody");
+  const tBody = document.getElementById("statsBody");
+
+  function shiftRow() {
+    for (let i = tBody.rows.length - 1; i > 0; i--) {
+      if (tBody.rows[i - 1].innerText.trim() !== "") {
+        // Correctly copy cell contents instead of reassigning rows
+        for (let j = 0; j < tBody.rows[i].cells.length; j++) {
+          tBody.rows[0].cells[0].querySelector("button")?.remove();
+          tBody.rows[i].cells[j].innerText =
+            tBody.rows[i - 1].cells[j].innerText;
+          console.log(tBody.rows[i].cells[j].innerText);
+        }
+        tBody.rows[i].append(copyButton(`statsBodyUser${i}`));
+        // Display the current row if it has content
+        document.getElementById("statsBodyRow" + i).style.display = "";
+      } else {
+        // Hide the row if it does not have content
+        document.getElementById("statsBodyRow" + i).style.display = "none";
+      }
+    }
+    // Additional check for a specific row to remove border-bottom
+    if (tBody.rows[2].innerText.trim() !== "") {
+      document
+        .getElementById("statsTableWrapper")
+        .classList.remove("border-bottom");
+    }
+  }
+
+  shiftRow();
+
+  // Correctly access the first row and its cells
+  const firstRow = tBody.rows[0];
+  let firstCell = firstRow.cells[0];
+  firstCell.innerText = `${newUserOutput[0]}`;
+  console.log();
+  document.getElementById("statsBodyRow0").style.display = "";
+  if (newUserOutput[2] && newUserOutput[3]) {
+    firstRow.cells[1].innerText = `${newUserOutput[2]}/${newUserOutput[3]}, ${newUserOutput[1]}`;
+  } else if (!newUserOutput[2]) {
+    firstRow.cells[1].innerText = `${newUserOutput[3]}, ${newUserOutput[1]}`;
+  } else if (!newUserOutput[3]) {
+    firstRow.cells[1].innerText = `${newUserOutput[2]}, ${newUserOutput[1]}`;
+  } else {
+    firstRow.cells[1].innerText = `${newUserOutput[1]}`;
+  }
+  firstCell.append(copyButton("statsBodyUser0"));
 });
 
 aiUserGenBtn.addEventListener("click", async function () {
@@ -81,7 +126,6 @@ userAiToggle.addEventListener("change", function () {
 });
 
 function updateAttempts(result, table) {
- 
   const dataArr = result.filter((x) => x !== "");
   console.log(dataArr);
   const tBody = document.getElementById(table);
@@ -89,20 +133,20 @@ function updateAttempts(result, table) {
 
   const rowCount = tBody.rows.length + 1;
   const id = "username" + "_" + rowCount + "_" + table;
-  
+
   for (let i = 0; i < 2; i++) {
     const td = document.createElement("td");
-    
-    if(i === 0){
-      td.textContent = dataArr[i];
-    }else{
 
-      for(let j = 1; j < dataArr.length; j++){
-        td.textContent  += dataArr[j] + "/"
+    if (i === 0) {
+      td.textContent = dataArr[i];
+    } else {
+      for (let j = 1; j < dataArr.length; j++) {
+        td.textContent += dataArr[j] + "/";
       }
     }
-  
-    if(td.textContent.endsWith("/")) td.textContent = td.textContent.slice(0, -1);
+
+    if (td.textContent.endsWith("/"))
+      td.textContent = td.textContent.slice(0, -1);
 
     td.id = id;
     tr.appendChild(td);
@@ -110,7 +154,7 @@ function updateAttempts(result, table) {
   let rows = Array.from(tBody.getElementsByTagName("tr"));
   tBody.innerHTML = "";
   tBody.append(tr, ...rows);
-  
+
   const username = document.getElementById(id);
   username.append(copyButton(id));
 }
@@ -125,14 +169,14 @@ quizBtn.addEventListener("click", function (e) {
   for (let i = 0; i < 5; i++) {
     const quizOutput = generateQuizResult();
     const newQuizOutput = convertToGerman(quizOutput, myArraysObj);
-    console.log(newQuizOutput)
+    console.log(newQuizOutput);
     testResult = newQuizOutput[0];
     // updateAttempts(newQuizOutput, "statsBody1");
   }
   const captionH = document.getElementById("captionH");
   const captionP = document.getElementById("captionP");
 
-  captionH.innerText = "Dein neuer Username"
+  captionH.innerText = "Dein neuer Username";
   captionP.innerText = testResult;
   // Hide the submit button
   quizBtn.style.display = "none";
@@ -147,11 +191,11 @@ quizBtn.addEventListener("click", function (e) {
 
   // Add event listener to the reset button
   resetBtn.addEventListener("click", function () {
-    resetQuiz(captionH,captionP);
+    resetQuiz(captionH, captionP);
   });
 });
 
-function resetQuiz(captionH,captionP) {
+function resetQuiz(captionH, captionP) {
   // Uncheck all radio buttons
   const checkboxes = document.querySelectorAll('input[type="radio"]');
   checkboxes.forEach((checkbox) => {
@@ -177,7 +221,6 @@ function resetQuiz(captionH,captionP) {
   const resetBtn = document.getElementById("resetButton");
   resetBtn.remove();
 
-
   console.log("Quiz has been reset.");
 }
 
@@ -198,4 +241,3 @@ const arrowBtn = () => {
 };
 
 carousel.forEach((btn) => btn.addEventListener("click", arrowBtn));
-

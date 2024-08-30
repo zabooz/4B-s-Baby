@@ -1,6 +1,6 @@
-.carousel-item{
+.carousel-item {
   height: 300px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .card {
@@ -128,8 +128,7 @@ main {
   color: #ea6954;
 }
 .card {
-  min-height: 400px;
-
+  min-height: 40rem;
 }
 
 .bg-custom {
@@ -162,7 +161,10 @@ main {
 .custom-img {
   border-radius: 1rem;
 }
-
+#statsTableWrapper {
+  height: 163.5px;
+  margin-bottom: 2rem;
+}
 .tableWrapper {
   height: 150px;
 
