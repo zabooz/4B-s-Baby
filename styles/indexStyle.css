@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+/* ================================================ Other Stuff =======================================*/
+
+.bg-custom {
+  background-color: #23bbb858;
+}
+header {
+  color: #151c19;
+  height: 90vh;
+}
+main{
+  height: 100vh;
+}
+
+/* ================================================ LANDING PAGE HERO TEXT  ============================================= */
+
+
+
+#logoText{
+  font-family: "Montserrat" !important;
+}
+.montserrat-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(2rem, 5vw, 6rem);
+  padding: 0;
+  line-height: clamp(2rem, 8vw, 5.5rem);
+  margin: 0;
+}
+
+
+.playwrite-cz-font {
+  font-family: "Playwrite CZ", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#logoFirstLetter {
+  font-family: "Yellowtail", cursive;
+  font-weight: bold;
+  font-size: clamp(5rem, 15vw, 15rem);
+  letter-spacing: -3vw;
+  margin-left: clamp(-1rem, -44vw, -5rem);
+}
+
+#padlockPic{
+  max-width: clamp(3rem, 25vw, 20rem);
+  transform: rotate(5deg);
+}
+
+
+.inria-serif-regular {
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+.leadFontSize {
+  font-size: clamp(1rem, 3vw, 2rem);
+  text-transform: uppercase;
+}
+
+#scrollArrow {
+  transform: rotate(180deg);
+  width: 5rem;
+}
+.bounce {
+  animation: bounce 1.2s ease;
+}
+
+/* ===================== Landing Page Cards =============================== */
+
+
+.box-shadow{
+  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
+  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
+  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
+}
+
+.btn {
+  background-color: #ea6954;
+  color: white;
+}
+
+.btn:hover {
+  background: #56c5c3;
+  color: white;
+}
+
+/* ====================== Keyframes ===================== */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-30px);
+  }
+  40% {
+    transform: translateY(15px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+  80% {
+    transform: translateY(7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* =================================== media queries ================================*/
+
+@media(max-width: 1600px){
+  .w-50{
+    width: 65% !important;
+  }
+}
+
+
+@media(max-width: 992px){
+  .w-50{
+    width: 90% !important;
+  }
+}
