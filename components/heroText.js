@@ -3,7 +3,7 @@ import { observer } from "../utilities/bounce.js";
 
 const createHero = (content) => {
   return `
-  <div id="jumbotron" class="d-flex w-100 flex-column gap-4 align-items-center  ">
+  <div id="jumbotron" class="d-flex w-100 flex-column gap-4 align-items-center mt-5  ">
       
       <div class="container-fluid d-flex justify-content-center flex-column pt-2">
           <div id="logoContainer" class=" justify-content-center mt-5  ">
@@ -18,7 +18,7 @@ const createHero = (content) => {
                 </div>
           </div>
           <div  class=" container-fluid d-flex justify-content-center ">
-              <p id="leadText" class="lead  fs-1  text-center text-md-center fs-3 pb-2 ps-0 border-bottom border-2 border-dark fw-semibold">${content.lead}</p>
+              <p id="leadText" class="lead  fs-1  text-center text-md-center text-l">${content.lead}</p>
           </div>
       </div>
       <div class="container-fluid d-flex flex-column justify-content-center align-items-center "> 
@@ -27,7 +27,7 @@ const createHero = (content) => {
       </div>
       
       <a href="#spanScroll" id="test" class="mt-auto">
-          <img id="arrow" src="./img/landingPage/arrow-pointing.svg" class="img-fluid mb-4 ">
+          <img id="scrollArrow" src="./img/landingPage/arrow-pointing.svg" class="img-fluid mb-4 ">
       </a>
   </div>
   `;
@@ -35,7 +35,6 @@ const createHero = (content) => {
 
 const removeBounceClass = () => {
   const elements = document.querySelectorAll(".bounceScroll");
-    console.log(elements)
   elements.forEach((el) => {
     if (el.classList.contains("bounce")) {
       el.classList.remove("bounce");
