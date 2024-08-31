@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 /* ================================================ Other Stuff =======================================*/
 
@@ -55,6 +55,18 @@ main{
   transform: rotate(5deg);
 }
 
+
+.inria-serif-regular {
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+.leadFontSize {
+  font-size: clamp(1rem, 3vw, 2rem);
+  text-transform: uppercase;
+}
+
 #scrollArrow {
   transform: rotate(180deg);
   width: 5rem;
@@ -105,4 +117,17 @@ main{
   }
 }
 
+/* =================================== media queries ================================*/
 
+@media(max-width: 1600px){
+  .w-50{
+    width: 65% !important;
+  }
+}
+
+
+@media(max-width: 992px){
+  .w-50{
+    width: 90% !important;
+  }
+}

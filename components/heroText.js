@@ -17,14 +17,14 @@ const createHero = (content) => {
                 </div>
                 </div>
           </div>
-          <div  class=" container-fluid d-flex justify-content-center ">
-              <p id="leadText" class="lead  fs-1  text-center text-md-center text-l">${content.lead}</p>
+          <div  class=" inria-serif-regular  container-fluid d-flex justify-content-center ">
+              <p class=" leadFontSize  text-center">${content.lead}</p>
+              </div>
+              <div class="container-fluid d-flex flex-column inria-serif-regular  align-items-center w-50"> 
+              <p  class="  text-start ">${content.p}</p>
+              <p class="  text-start mt-4">${content.p2}</p>
           </div>
-      </div>
-      <div class="container-fluid d-flex flex-column justify-content-center align-items-center "> 
-          <p  class=" text-center text-lg-start">${content.p}</p>
-          <p class=" text-center text-lg-start">${content.p2}</p>
-      </div>
+          </div>
       
       <a href="#spanScroll" id="test" class="mt-auto">
           <img id="scrollArrow" src="./img/landingPage/arrow-pointing.svg" class="img-fluid mb-4 ">
