@@ -2644,7 +2644,6 @@ export const tools = [
   "Clamp",
   "Vice",
   "Ruler",
-  "Square",
   "Knife",
   "Scissors",
   "Axe",
