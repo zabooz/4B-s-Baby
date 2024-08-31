@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .copyButton {
     position: relative;
     background-color: transparent;
@@ -14,8 +16,18 @@
 i::before{
     background: transparent;
 }
-.w-custom{
-    width: 33% !important;
+
+.bg-header{
+    background-color: #EA6954;
+}
+
+.montserrat-font-clippy {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: white;
 }
 .confirmBubble{
     position: absolute;
@@ -29,6 +41,30 @@ i::before{
     padding: .2rem;
     
 }
+
+.nav-item-clippy{
+    padding: .5rem 0.5rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+#userListBtn{
+    margin-left: -.3rem;
+    z-index: 2;
+    background-color: #ea6854c5;
+    border-bottom-right-radius: .5rem;
+
+}
+#passwordListBtn{
+    background-color: aqua;
+    background-color: #ea6854;
+    border-bottom-right-radius: .5rem;
+}
+.btnBox{
+    display: flex;
+    gap:.5rem;
+}
+
 .fadeIn{
     display: flex;
     animation: fadeIn 2s forwards ;

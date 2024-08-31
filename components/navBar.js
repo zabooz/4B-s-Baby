@@ -5,15 +5,15 @@ export const configNav = {
     link: "../index.html",
   },
   testing: {
-    text: `CHECKE <br> deine Sicherheit`,
+    text: `CHECKE<span>deine Sicherheit</span>`,
     link: "../featureHtmls/testing.html",
   },
   userGen: {
-    text: `ERFINDE <br> deinen Online-Namen`,
+    text: `ERFINDE<span>deinen Online-Namen</span>`,
     link: "../featureHtmls/userGenerating.html",
   },
   pwGen: {
-    text: `ERSTELLE <br> dein Passwort`,
+    text: `ERSTELLE<span>dein Passwort</span>`,
     link: "../featureHtmls/pwGenerating.html",
   },
   oldDesign: {
@@ -25,7 +25,7 @@ export const configNav = {
     link: "../img/logo/logo.svg",
   },
   stuff: {
-    text: `ERFAHRE <br> mehr...`,
+    text: `ERFAHRE <span>mehr...</span>`,
     clippy: "Clippy",
     aiAssistant: "AI-Assistent",
   },
@@ -38,15 +38,15 @@ export const configNavIndex = {
     link: "./index.html",
   },
   testing: {
-    text: `CHECKE <br> deine Sicherheit`,
+    text: `CHECKE<span>deine Sicherheit</span>`,
     link: "./featureHtmls/testing.html",
   },
   userGen: {
-    text: `ERFINDE <br> deinen Online-Namen`,
+    text: `ERFINDE<span>deinen Online-Namen</span>`,
     link: "./featureHtmls/userGenerating.html",
   },
   pwGen: {
-    text: `ERSTELLE <br> dein Passwort`,
+    text: `ERSTELLE<span>dein Passwort</span>`,
     link: "./featureHtmls/pwGenerating.html",
   },
   oldDesign: {
@@ -58,15 +58,15 @@ export const configNavIndex = {
     link: "./img/logo/logo.svg",
   },
   stuff: {
-    text: `ERFAHRE <br> mehr...`,
-    clippy: "Clippy",
+    text: `ERFAHRE <span>mehr...</span>`,
+    clippy: "Clipboard",
     aiAssistant: "AI-Assistent",
   },
 };
 
 const createNavBar = (configNav) => {
   const navBar = `
-    <nav class="navbar navbar-expand-lg nav-custom fw-semibold text-black">
+    <nav class="navbar navbar-expand-lg nav-custom fw-semibold text-black box-shadow">
       <div>
         <a href="${configNav.home.link}" class="d-flex align-items-center" style="text-decoration: none;">
          
@@ -76,11 +76,11 @@ const createNavBar = (configNav) => {
           <p class="navbar-brand mb-0 fs-2 ms-3">${configNav.logo.text}</p>
         </a>
       </div>
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav  d-flex justify-content-end w-100">
+        <ul class="navbar-nav  d-flex justify-content-end align-items-lg-center w-100">
         <li class="nav-item mx-2">
         <a class="nav-link" href="${configNav.pwGen.link}">${configNav.pwGen.text}</a>
         </li>
@@ -91,13 +91,14 @@ const createNavBar = (configNav) => {
             <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
           </li>
           <li class="nav-item mx-2">
-            <div class="dropdown position-relative mx-3">
-            <a class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="dropdown position-relative me-2 ">
+            <a class="nav-link " type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     ${configNav.stuff.text}
-                  </a>
-                  <ul class="dropdown-menu position-absolute text-center">
+                 
+            </a>
+              <ul class="dropdown-menu position-absolute p-2 ">
               <li class="nav-item ">
-              <a class="nav-link  " href="#" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy">Clippy</a>
+              <a class="nav-link  " href="#" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy">Clipboard</a>
               </li>
             <li class="nav-item">
             <a class="nav-link " href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" >Ai-Assistant</a>
