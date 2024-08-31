@@ -22,10 +22,10 @@ const createClipBoard = () => {
 </div>
 <div class="bg-header d-flex flex-column  ">
 <button type="button" class="btn-close m-2 ms-auto " data-bs-dismiss="offcanvas" aria-label="Close"></button>
-<hp class="offcanvas-title montserrat-font p-3  d-flex justify-content-evenly"  id="offcanvasExampleLabel">  CLIPBOARD </h5>
+<h5 class="offcanvas-title montserrat-font-clippy  p-3  d-flex justify-content-evenly"  id="offcanvasExampleLabel">  CLIPBOARD </h5>
 </div>
     <div class="offcanvas-body d-flex  flex-column align-items-center ">
-        
+
         <button class="btn btn-primary btn-lg w-50 ms-auto my-auto" id="deleteAll">Alles löschen</button>
   </div>
 </div>`;
