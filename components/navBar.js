@@ -95,7 +95,7 @@ const createNavBar = (configNav) => {
           </li>
           <li class="nav-item mx-2">
             <div class="dropdown position-relative me-2 ">
-            <a class="nav-link " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link " type="button" href"#" data-bs-toggle="dropdown" aria-expanded="false">
                     ${configNav.stuff.text}
                  
             </a>

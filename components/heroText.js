@@ -13,7 +13,7 @@ const createHero = (content) => {
                   <div class="montserrat-font">Playground</div>
                 </div>
                 <div class="w-25 ">
-                <img id="padlockPic" src="./img/landingPage/padlock.svg" class="img-fluid ">
+                <img id="padlockPic" src="./img/landingPage/padlock.svg" alt="padlock" class="img-fluid ">
                 </div>
                 </div>
           </div>
@@ -27,7 +27,7 @@ const createHero = (content) => {
           </div>
       
       <a href="#spanScroll" id="test" class="mt-auto">
-          <img id="scrollArrow" src="./img/landingPage/arrow-pointing.svg" class="img-fluid mb-4 ">
+          <img id="scrollArrow" src="./img/landingPage/arrow-pointing.svg" alt="scrollArrow" class="img-fluid mb-4 ">
       </a>
   </div>
   `;
