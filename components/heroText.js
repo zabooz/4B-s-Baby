@@ -2,42 +2,39 @@ import { fetchText } from "../utilities/fetchText.js";
 import { observer } from "../utilities/bounce.js";
 
 const createHero = (content) => {
-
-    return `
-    <div  id="jumbotron" class="d-flex flex-column gap-2 align-items-center">
-        
-    <div class="w-100 d-flex justify-content-center  flex-column pt-2">
-    <div  id="logoContainer"  class="d-flex justify-content-lg-start justify-content-center gap-5 mb-5 me-5">
-    <div class="w-50 pt-5">
-    <img  id="PPIcon"src="./img/landingPage/PPicon.png" class="px-5 img-fluid">
-    </div>
-    <div class="w-25 pt-5 d-none d-md-block">
-    <img id="padlockPic" src="./img/landingPage/padlock.svg" class"img-fluid  mx-5 my-auto" >
-    </div>
-    </div>
-    <div class="d-flex">
-    <p  class="lead   text-center pb-2 fs-3 fs-md-2 ms-5 text-md-start border-bottom border-2 border-dark fw-semibold ">${content.lead}</p>
-    </div>
-    </div>
-    <div  class="w-md-75  d-flex me-auto ms-4 flex-column"> 
-    <p class="w-50  fs-4 ms-4">
-    ${content.p}
-    </p>
-    <p class=" w-50  mt-3 ms-4 fs-4 ">
-    ${content.p2}
-    </p>
-    </div>
-    <a href="#spanScroll" id="test" class="mt-4" >
-    <img id="arrow" src="./img/landingPage/arrow-pointing.svg"
-    </a>
-    </div>
-    `;
+  return `
+  <div id="jumbotron" class="d-flex w-100 flex-column gap-4 align-items-center mt-5  ">
+      
+      <div class="container-fluid d-flex justify-content-center flex-column pt-2">
+          <div id="logoContainer" class=" justify-content-center mt-5  ">
+              <div class="d-flex justify-content-center">
+                <div class="mt-auto mb-5">
+                  <div class="montserrat-font "><span id="logoFirstLetter">P</span>assword</div>
+                  <div class="montserrat-font">Playground</div>
+                </div>
+                <div class="w-25 ">
+                <img id="padlockPic" src="./img/landingPage/padlock.svg" class="img-fluid ">
+                </div>
+                </div>
+          </div>
+          <div  class=" inria-serif-regular  container-fluid d-flex justify-content-center ">
+              <p class=" leadFontSize  text-center">${content.lead}</p>
+              </div>
+              <div class="container-fluid d-flex flex-column inria-serif-regular  align-items-center w-50"> 
+              <p  class="  text-start ">${content.p}</p>
+              <p class="  text-start mt-4">${content.p2}</p>
+          </div>
+          </div>
+      
+      <a href="#spanScroll" id="test" class="mt-auto">
+          <img id="scrollArrow" src="./img/landingPage/arrow-pointing.svg" class="img-fluid mb-4 ">
+      </a>
+  </div>
+  `;
 }
-
 
 const removeBounceClass = () => {
   const elements = document.querySelectorAll(".bounceScroll");
-    console.log(elements)
   elements.forEach((el) => {
     if (el.classList.contains("bounce")) {
       el.classList.remove("bounce");
