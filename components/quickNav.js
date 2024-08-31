@@ -22,7 +22,7 @@ export const configQuickNavFeature = {
 const quickNav = (config) => {
   return `
 
-    <div id="quickNav" class="d-flex flex-column gap-1 ">
+    <div id="quickNav" class="d-sm-flex d-none flex-column gap-1 ">
 
     <button class="btn btn-primary d-md-flex d-none align-items-center gap-2" id="aiAssistant" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <img src = ${config.ai.img} >

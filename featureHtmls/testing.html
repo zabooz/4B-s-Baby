@@ -261,15 +261,13 @@
     import { quote } from "../components/quotes.js";
     import { clipBoard } from "../components/clipBoard.js";
     import { createNav, configNav } from "../components/navBar.js";
-
     import { createAssistant } from "../components/aiAssistant.js";
+    import { createQuickNav, configQuickNavFeature } from "../components/quickNav.js";
 
+    createQuickNav("main",configQuickNavFeature)
     createAssistant("main");
-
-
     loadOffCanvas("header", "liste", "../data/text.json");
     loadOffCanvas("header", "simple", "../data/text.json");
-
     clipBoard(".clipBoard");
     createNav(configNav);
   </script>
