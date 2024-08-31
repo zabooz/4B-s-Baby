@@ -12,17 +12,16 @@ export const copyButton = (textId) => {
 
   const img = document.createElement("img");
 
+  // Determine the correct image based on theme
   if (document.getElementById("themeStylesheet")) {
     const boolean = document
       .getElementById("themeStylesheet")
       .getAttribute("href")
       .includes("serious");
 
-    if (boolean) {
-      img.src = "/img/copyToClipBoard.png";
-    } else {
-      img.src = "/img/copyToClipBoard2.png";
-    }
+    img.src = boolean
+      ? "/img/copyToClipBoard.png"
+      : "/img/copyToClipBoard2.png";
     button.append(img, confirmBubble);
   } else {
     const i = document.createElement("img");
@@ -33,42 +32,36 @@ export const copyButton = (textId) => {
     button.append(i, confirmBubble);
   }
 
-  const textElement = document.getElementById(textId);
-
-  let text;
-  if (textElement) {
-    if (textElement.innerText.includes(" ")) {
-      const index = textElement.innerText.lastIndexOf(" ");
-      text = textElement.innerText.slice(index + 1);
-    } else {
-      text = textElement.innerText;
-    }
-  }
-
   button.addEventListener("click", () => {
-    navigator.clipboard.writeText(text);
- 
-    const type = textId.includes("username") ? "username" : "password";
+    const textElement = document.getElementById(textId);
 
-    const textObj = {
-      type: type,
-      value: text,
-    };
+    if (textElement) {
+      let text = textElement.innerText.trim();
 
-    const updatetClippy = Array.from(
-      new Map(
-        [...storedClippy, textObj].map((obj) => [obj.value, obj])
-      ).values()
-    );
-    storedClippy = updatetClippy
+      navigator.clipboard.writeText(text).then(() => {
+        confirmBubble.classList.add("fadeIn");
+        setTimeout(() => {
+          confirmBubble.classList.remove("fadeIn");
+        }, 2000);
+      });
 
-    sessionStorage.setItem("clippy", JSON.stringify(updatetClippy));
+      const type = textId.includes("username") ? "username" : "password";
 
-    confirmBubble.classList.add("fadeIn");
-    setTimeout(() => {
-      confirmBubble.classList.remove("fadeIn");
-    }, 2000);
-    clipBoard(".clipBoard");
+      const textObj = { type: type, value: text };
+
+      const updatetClippy = Array.from(
+        new Map(
+          [...storedClippy, textObj].map((obj) => [obj.value, obj])
+        ).values()
+      );
+
+      storedClippy = updatetClippy;
+      sessionStorage.setItem("clippy", JSON.stringify(updatetClippy));
+
+      clipBoard(".clipBoard");
+    } else {
+      console.warn(`Element with ID ${textId} not found.`);
+    }
   });
 
   return button;
