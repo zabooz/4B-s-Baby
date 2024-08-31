@@ -21,6 +21,11 @@ main {
 .pwInputDiv {
   width: 75%;
 }
+video{
+  border: 2px solid #ea6954;
+  margin-left: 1rem;
+  border-radius: .3rem;
+}
 #pwLength,
 #passwordInput,
 #rdmPwdBtn,

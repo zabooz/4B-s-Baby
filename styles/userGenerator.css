@@ -18,6 +18,11 @@
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
+video{
+  border: 2px solid #ea6954;
+  margin-left: 1rem;
+  border-radius: .3rem;
+}
 .dropdown-menu{
   left: -50px !important;
 }

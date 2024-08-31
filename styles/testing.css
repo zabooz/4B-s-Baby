@@ -94,6 +94,11 @@ header {
   border: 2px solid black;
   opacity: 1;
 }
+video{
+  border: 2px solid #ea6954;
+  margin-left: 1rem;
+  border-radius: .3rem;
+}
 .btn:hover {
   background: #56c5c3;
   color: white;
