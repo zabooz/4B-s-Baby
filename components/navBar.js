@@ -71,7 +71,10 @@ const createNavBar = (configNav) => {
         <a href="${configNav.home.link}" class="d-flex align-items-center" style="text-decoration: none;">
          
 
-<video src="../img/animations/key.webm" style="width: 3rem; height: 3rem;" autoplay  muted playsinline></video>
+          <img
+            src="${configNav.logo.link}"
+            alt="logo"
+          />
 
           <p class="navbar-brand mb-0 fs-2 ms-3">${configNav.logo.text}</p>
         </a>
