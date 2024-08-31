@@ -86,9 +86,6 @@
                 <option value="weatherTypes">Wetter</option>
                 <option value="">-Keine-</option>
               </select>
-            </div>
-            <div id="wizardInput2" class="gap-2">
-              <label class="fw-semibold">2. Eigenschaft:</label>
               <select id="adjective2" class="form-control fw-semibold">
                 <option value="random">Zufällig</option>
                 <option value="shapes">Form</option>
@@ -106,56 +103,49 @@
                 <option value="weatherTypes">Wetter</option>
                 <option value="">-Keine-</option>
               </select>
+            <label class="fw-semibold">Wähle einen Begriff:</label>
+            <select name="pwdGen" id="noun" class="form-control fw-semibold">
+              <option value="random">Zufällig</option>
+              <option value="instruments">Instrument</option>
+              <option value="fruits">Frucht</option>
+              <option value="vegetables">Gemüse</option>
+              <option value="animals">Tier</option>
+              <option value="fantasyCreatures">Fantasiewesen</option>
+              <option value="rpgClasses">Fantasy-Charakter</option>
+              <option value="fantasyRaces">Fantasie-Volk</option>
+              <option value="occupations">Beruf</option>
+              <option value="vehicles">Fahrzeug</option>
+              <option value="food">Essen</option>
+              <option value="tools">Werkzeug</option>
+              <option value="beverages">Getränk</option>
+              <option value="clothingItems">Kleidungsstück</option>
+              <option value="bodyParts">Körperteil</option>
+              <option value="flowers">Blume</option>
+              <option value="desserts">Dessert</option>
+            </select>
+              <button id="userGeneratorBtn" class="btn btn-primary">
+                Generieren
+              </button>
+              <!-- <button id="aiUserGenBtn" class="btn btn-primary">
+                Überrasch mich!
+              </button>
+              <div class="form-check form-switch justify-content-end">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="germanAiToggle"
+                />
+                <label
+                  class="form-check-label"
+                  for="germanAiToggle"
+                  >Deutsch (Beta)</label
+                >
+              </div> -->
             </div>
           </div>
-            <div id="wizardInput6">            
-              <div id="wizardInput3" class="gap-2">
-              <label class="fw-semibold">Wähle einen Begriff:</label>
-              <select name="pwdGen" id="noun" class="form-control fw-semibold">
-                <option value="random">Zufällig</option>
-                <option value="instruments">Instrument</option>
-                <option value="fruits">Frucht</option>
-                <option value="vegetables">Gemüse</option>
-                <option value="animals">Tier</option>
-                <option value="fantasyCreatures">Fantasiewesen</option>
-                <option value="rpgClasses">Fantasy-Charakter</option>
-                <option value="fantasyRaces">Fantasie-Volk</option>
-                <option value="occupations">Beruf</option>
-                <option value="vehicles">Fahrzeug</option>
-                <option value="food">Essen</option>
-                <option value="tools">Werkzeug</option>
-                <option value="beverages">Getränk</option>
-                <option value="clothingItems">Kleidungsstück</option>
-                <option value="bodyParts">Körperteil</option>
-                <option value="flowers">Blume</option>
-                <option value="desserts">Dessert</option>
-              </select>
-            </div>
-              <div id="wizardInput4" class="d-flex justify-content-center">
-                <button id="userGeneratorBtn" class="btn btn-primary">
-                  Generieren
-                </button>
-                <!-- <button id="aiUserGenBtn" class="btn btn-primary">
-                  Überrasch mich!
-                </button>
-                <div class="form-check form-switch justify-content-end">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    role="switch"
-                    id="germanAiToggle"
-                  />
-                  <label
-                    class="form-check-label"
-                    for="germanAiToggle"
-                    >Deutsch (Beta)</label
-                  >
-                </div> -->
-              </div></div>
-
-            </div>
-
-          <div class="w-75 border-bottom d-flex align-self-center flex-column" id="statsTableWrapper">
+          <div id="wizardInput6">          
+            <div class="w-50 border-bottom d-flex align-self-center flex-column" id="statsTableWrapper">
             <table class="table mb-5" id="stats">
               <thead >
                 <tr>
@@ -165,20 +155,23 @@
               </thead>
               <tbody id="statsBody" class="w-100 text-center">
                 <tr id="statsBodyRow0" style="display: none">
-                  <td id="statsBodyUser0" class="text-start"></td>
+                  <td id="statsBodyUsername0" class="text-start"></td>
                   <td id="statsBodyArray0" class="text-end"></td>
                 </tr>
                 <tr id="statsBodyRow1" style="display: none">
-                  <td id="statsBodyUser1" class="text-start"></td>
+                  <td id="statsBodyUsername1" class="text-start"></td>
                   <td id="statsBodyArray1" class="text-end"></td>
                 </tr>
                 <tr id="statsBodyRow2" style="display: none">
-                  <td id="statsBodyUser2" class="text-start"></td>
+                  <td id="statsBodyUsername2" class="text-start"></td>
                   <td id="statsBodyArray2" class="text-end"></td>
                 </tr>
               </tbody>
             </table>
-          </div>
+          </div></div>
+            </div>
+
+
         </div>
 
         </div>
