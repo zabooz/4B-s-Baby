@@ -17,29 +17,18 @@ const createClipBoard = () => {
   }
 
   return `
-<div class="offcanvas offcanvas-start bg-ai-custom w-custom  border-custom" tabindex="-1" id="clippy" aria-labelledby="offcanvasExampleLabel">
-<div class="offcanvas-header d-flex justify-content-end">
-<button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div class="offcanvas offcanvas-start border-0  " tabindex="-1" id="clippy" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas-header p-0 justify-content-end">
 </div>
-<h5 class="offcanvas-title  mt-3 mx-3 fs-3  fw-semibold d-flex justify-content-evenly gap-2 p-2  rounded text-decoration-underline"  id="offcanvasExampleLabel"><img src="${imgSrc}" alt="ai"/>  Clippy </h5>
+<div class="bg-header d-flex flex-column  ">
+<button type="button" class="btn-close m-2 ms-auto " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<hp class="offcanvas-title montserrat-font p-3  d-flex justify-content-evenly"  id="offcanvasExampleLabel">  CLIPBOARD </h5>
+</div>
     <div class="offcanvas-body d-flex  flex-column align-items-center ">
-      <div class="d-flex w-100 justify-content-evenly gap-5 px-2 mb-5">
-        <div class="d-flex flex-column align-items-left ">
-        <h3 class="text-decoration-underline ">Passwörter</h3>
-        <div id="passwords" class="list">
-        ${pw}
-        </div>
-        </div>
-        <div>
-        <h3 class="text-decoration-underline ">Usernames</h3>
-        <div id="usernames" class="list">
-        ${user}
-        </div>
-        </div>
-        </div>
+        
         <button class="btn btn-primary btn-lg w-50 ms-auto my-auto" id="deleteAll">Alles löschen</button>
-        </div>
-      </div>`;
+  </div>
+</div>`;
 };
 
 export const clipBoard = (id) => {
@@ -57,7 +46,7 @@ export const clipBoard = (id) => {
   }
 
   const deleteAllBtn = document.getElementById("deleteAll");
- 
+
   deleteAllBtn.addEventListener("click", () => {
     deleteAll();
   });
@@ -67,7 +56,7 @@ const deleteBtn = (id) => {
   const btn = document.createElement("button");
   const i = document.createElement("i");
   btn.style.border = "none";
-  btn.style.backgroundColor = "transparent"
+  btn.style.backgroundColor = "transparent";
   btn.id = "btn" + id;
   i.className = "fa-regular fa-trash-can";
 
@@ -94,7 +83,6 @@ const deleteAll = () => {
   sessionStorage.setItem("clippy", JSON.stringify(storedClippy));
   const target = document.querySelectorAll(".list");
   target.forEach((element) => {
-
     element.innerHTML = "";
   });
 };

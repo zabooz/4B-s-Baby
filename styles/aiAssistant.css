@@ -13,10 +13,6 @@
     border-radius: 50%;
 }
 
-.offcanvas h5{
-    background-color: #EA6954;
-}
-
 #aiAssistant:hover{
     animation: moveBtnAi .5s ease-out forwards; /* Wende die Animation an */
 }
