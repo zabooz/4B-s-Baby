@@ -1,11 +1,12 @@
-.carousel-item{
+.carousel-item {
   height: 300px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .card {
-  min-height: 28rem;
-  max-width: 40rem;
+  align-self: center;
+  min-height: 40rem;
+  max-width: 80%;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
@@ -65,12 +66,74 @@ header {
 .description {
   width: 25rem;
 }
-#wizardInput2,
-#wizardInput3 {
-  width: 12.5rem;
-  height: 10.5rem;
+#wizardTextDiv {
+  width: 90%;
+  align-self: center;
+  margin-top: auto;
+}
+/* Container Styling */
+#wizardDiv {
+  display: flex; /* Enables Flexbox for horizontal alignment */
+  justify-content: center; /* Centers the contents horizontally */
+  align-items: flex-start; /* Aligns items to the top */
+  gap: 1rem; /* Adds space between the main groups */
+  flex-wrap: wrap; /* Prevents items from wrapping on larger screens */
 }
 
+/* Flex Item Styling - Input Groups */
+#wizardInput5,
+#wizardInput6 {
+  display: flex; /* Flexbox to align items within each group */
+  align-items: center; /* Centers content horizontally within each flex item */
+  gap: 1rem; /* Adds spacing between items within each group */
+  min-width: 40%; /* Sets a minimum width for each group */
+}
+#wizardInput1,
+#wizardInput2,
+#wizardInput3,
+#wizardInput4 {
+  width: 50%;
+}
+/* Label Styling */
+#wizardDiv label {
+  text-align: left; /* Aligns text to the left */
+  text-wrap: nowrap;
+  width: 100%; /* Ensures label takes the full width of its container */
+}
+
+/* Select and Button Styling */
+#wizardDiv select,
+#userGeneratorBtn {
+  width: 100%; /* Takes the full width of the parent container */
+}
+
+#wizardInput4 {
+  margin-top: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  #wizardInput5,
+  #wizardInput6 {
+    width: 100%; /* Each item takes the full width */
+    max-width: 25rem;
+  }
+}
+@media (max-width: 580px) {
+  #wizardInput5,
+  #wizardInput6 {
+    flex-direction: column;
+  }
+  #userGeneratorBtn {
+    margin-top: 1rem;
+  }
+  #wizardInput1,
+  #wizardInput2,
+  #wizardInput3,
+  #wizardInput4 {
+    width: 75%;
+  }
+}
 .custom-indicators button {
   background-color: #4caf50;
 }
@@ -127,10 +190,6 @@ main {
 .text-custom {
   color: #ea6954;
 }
-.card {
-  min-height: 400px;
-
-}
 
 .bg-custom {
   background-color: #23bbb870;
@@ -162,7 +221,10 @@ main {
 .custom-img {
   border-radius: 1rem;
 }
-
+#statsTableWrapper {
+  height: 163.5px;
+  margin-bottom: 2rem;
+}
 .tableWrapper {
   height: 150px;
 
