@@ -8,9 +8,20 @@
 #uploadLabel {
   color: white;
 }
+section{
+  width: 100%;
+  max-width: 1600px;
 
+}
+
+h3{
+  text-transform: uppercase;
+  text-align: center;
+}
 .card {
-  max-width: 35rem;
+  margin: 0 auto;
+  max-width: 30rem;
+  min-height: 710px;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
