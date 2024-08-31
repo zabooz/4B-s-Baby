@@ -241,25 +241,24 @@
           </div>
         </div>
       </section>
-      <section id="quote12" class="d-flex justify-content-center"></section>
+   
     </main>
+    <div class="clipBoard"></div>
     <footer class="mx-5">
       <script src="../components/footer.js"></script>
     </footer>
     <div class="clipBoard"></div>
     <script type="module">
       import { quote } from "../components/quotes.js";
-      // import { heroText } from "../components/heroText.js";
       import { loadOffCanvas } from "../components/offCanvas.js";
       import { clipBoard } from "../components/clipBoard.js";
       import { createNav, configNav } from "../components/navBar.js";
       import { createAssistant } from "../components/aiAssistant.js";
-
+      import { createQuickNav, configQuickNavFeature } from "../components/quickNav.js";
+      
       createAssistant("main");
       createNav(configNav);
-
-      quote("#quote12", "zitate", 12, "../data/text.json");
-
+      createQuickNav("main",configQuickNavFeature)
       loadOffCanvas("header", "leetSpeak", "../data/text.json");
       clipBoard(".clipBoard");
     </script>

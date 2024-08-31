@@ -69,7 +69,13 @@ const createNavBar = (configNav) => {
     <nav class="navbar navbar-expand-lg nav-custom fw-semibold text-black box-shadow">
       <div>
         <a href="${configNav.home.link}" class="d-flex align-items-center" style="text-decoration: none;">
-          <img src="${configNav.logo.link}" alt="logo" class="d-none img-fluid d-lg-block" />
+         
+
+          <img
+            src="${configNav.logo.link}"
+            alt="logo"
+          />
+
           <p class="navbar-brand mb-0 fs-2 ms-3">${configNav.logo.text}</p>
         </a>
       </div>

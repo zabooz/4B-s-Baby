@@ -197,7 +197,7 @@
           <p class="mt-4">Dumbldore stirbt und darth vader ist lukes vater</p>
         </div>
       </section>
-      <section id="quote8" class="bg-body-tertiary"></section>
+
     </main>
     <footer>
       <script src="../components/footer.js"></script>
@@ -208,11 +208,10 @@
       import { clipBoard } from "../components/clipBoard.js";
       import { createNav, configNav } from "../components/navBar.js";
       import { createAssistant } from "../components/aiAssistant.js";
-
+      import { createQuickNav, configQuickNavFeature } from "../components/quickNav.js";
+      createQuickNav("main",configQuickNavFeature)
       createAssistant("main");
       createNav(configNav);
-
-      quote("#quote8", "zitate", 8, "../data/text.json");
       clipBoard(".clipBoard");
     </script>
     <script src="../featureHtmlScripts/userGen.js" type="module"></script>

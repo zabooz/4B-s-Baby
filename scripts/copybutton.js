@@ -24,8 +24,11 @@ export const copyButton = (textId) => {
       : "/img/copyToClipBoard2.png";
     button.append(img, confirmBubble);
   } else {
-    const i = document.createElement("i");
-    i.className = "fa-regular fa-clipboard";
+    const i = document.createElement("img");
+    i.src ="../img/icons/clipboard-12-regular_.png"
+    i.style.width = "20px"
+    i.style.height = "20px"
+    i.style.marginBottom = "5px"
     button.append(i, confirmBubble);
   }
 
@@ -35,7 +38,6 @@ export const copyButton = (textId) => {
     if (textElement) {
       let text = textElement.innerText.trim();
 
-      // Copy to clipboard
       navigator.clipboard.writeText(text).then(() => {
         confirmBubble.classList.add("fadeIn");
         setTimeout(() => {
