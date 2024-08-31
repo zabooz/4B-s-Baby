@@ -67,7 +67,7 @@ header {
   width: 25rem;
 }
 #wizardTextDiv {
-  width: 90%;
+  width: 50%;
   align-self: center;
   padding: 2rem;
 }
@@ -79,15 +79,18 @@ header {
   gap: 1rem; /* Adds space between the main groups */
   flex-wrap: wrap; /* Prevents items from wrapping on larger screens */
 }
-
+#wizardInput1 {
+  width: 75%;
+}
 /* Flex Item Styling - Input Groups */
 #wizardInput5,
 #wizardInput6 {
   display: flex; /* Flexbox to align items within each group */
   align-items: center; /* Centers content horizontally within each flex item */
   justify-content: center;
-  min-width: 40%; /* Sets a minimum width for each group */
+  width: 45%; /* Sets a minimum width for each group */
 }
+
 /* Label Styling */
 #wizardDiv label {
   text-align: left; /* Aligns text to the left */
@@ -99,6 +102,12 @@ header {
 #wizardDiv select,
 #userGeneratorBtn {
   width: 100%; /* Takes the full width of the parent container */
+}
+.table-cell-content {
+  display: flex;
+  justify-content: space-between; /* Pushes content to both sides */
+  align-items: center; /* Vertically aligns items to center */
+  width: 100%;
 }
 
 /* Responsive Adjustments */
