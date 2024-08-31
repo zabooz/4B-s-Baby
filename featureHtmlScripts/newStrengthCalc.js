@@ -19,37 +19,46 @@ export async function newPwStrength(pwd) {
   const points = {
     pointForNumber: {
       value: false,
-      text:"Enthält mindestens eine Ziffer."
+      textTrue: "Enthält mindestens eine Ziffer.",
+      textFalse: "Enthält keine Ziffer."
     },
     pointForSLetter: {
       value: false,
-      text: "Enthält mindestens einen Kleinbuchstaben."
+      textTrue: "Enthält mindestens einen Kleinbuchstaben.",
+      textFalse: "Enthält keinen Kleinbuchstaben."
     },
     pointForBLetter: {
       value: false,
-      text: "Enthält mindestens einen Großbuchstaben."
+      textTrue: "Enthält mindestens einen Großbuchstaben.",
+      textFalse: "Enthält keinen Großbuchstaben."
     },
     pointForSigns: {
       value: false,
-      text: "Enthält mindestens ein Sonderzeichen."
+      textTrue: "Enthält mindestens ein Sonderzeichen.",
+      textFalse: "Enthält kein Sonderzeichen."
     },
     noSequence: {
       value: false,
-      text: "Hat keine aufeinander folgende Zeichen."
+      textTrue: "Hat keine aufeinander folgende Zeichen.",
+      textFalse: "Hat aufeinander folgende Zeichen."
     },
     noRepeat: {
       value: false,
-      text: "Keine wiederholenden Zeichen."
+      textTrue: "Keine wiederholenden Zeichen.",
+      textFalse: "Enthält wiederholende Zeichen."
     },
     pointForLength: {
       value: pwd.length >= 12,
-      text: "Passwort besteht aus mindestens 12 Zeichen."
+      textTrue: "Passwort besteht aus mindestens 12 Zeichen.",
+      textFalse: "Passwort besteht aus weniger als 12 Zeichen."
     },
     hasNoWord: {
       value: false,
-      text: "Enthält kein geläufiges Wort"
+      textTrue: "Enthält kein geläufiges Wort.",
+      textFalse: "Enthält ein geläufiges Wort."
     },
   };
+  
   
   if (sonderzeichen.some(z => pwd.includes(z))) {
     points.pointForSigns.value = true;
@@ -91,7 +100,6 @@ export async function newPwStrength(pwd) {
 
   
   try {
-    console.log(pwd,sysContent)
     const response = await aiApiCall(pwd,sysContent);
     points.hasNoWord.value = !response.toLowerCase().includes("yes");
   } catch (error) {

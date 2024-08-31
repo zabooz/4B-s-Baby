@@ -13,9 +13,11 @@ i,
   gap: 2rem;
   width: 80%;
 }
+.dropdown-menu{
+  left: -55px !important;
+}
 .card {
-  min-height: 35rem;
-  max-width: 28rem;
+  max-width: 35rem;
   display: flex;
   flex-direction: column;
   background-color: #f1f5f5;
@@ -23,8 +25,15 @@ i,
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
 }
+.card img{
+  max-width: 10rem;
+  border-radius: .5rem;
+}
 nav {
   min-height: 64px;
+}
+nav img{
+  width: 4rem;
 }
 header {
   color: #151c19;
@@ -79,17 +88,16 @@ header {
 #stopBrute {
   background: rgb(110, 18, 18);
 }
-nav img {
-  width: 3rem;
-}
-.sectionDiv {
-  width: 70%;
-  background: #f1f5f5;
-  border-radius: 1rem;
-}
+
+
 .hr-custom {
   border: 2px solid black;
   opacity: 1;
+}
+video{
+  border: 2px solid #ea6954;
+  margin-left: 1rem;
+  border-radius: .3rem;
 }
 .btn:hover {
   background: #56c5c3;
@@ -109,6 +117,7 @@ main {
 
 
 .tableWrapper {
+  position: relative;
   max-height: 180px;
   overflow-y: auto;
   overflow-x: auto;
@@ -132,9 +141,7 @@ main {
   #bruteInput {
     flex-direction: column;
   }
-  .card {
-    min-height: none;
-  }
+
 }
 @media (min-width: 992px) {
   .custom-img {

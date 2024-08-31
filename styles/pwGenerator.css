@@ -9,6 +9,9 @@ main {
   display: flex;
   flex-direction: column;
 }
+.dropdown-menu{
+  left: -55px !important;
+}
 #picResult,
 .input {
   width: 30%;
@@ -17,6 +20,11 @@ main {
 }
 .pwInputDiv {
   width: 75%;
+}
+video{
+  border: 2px solid #ea6954;
+  margin-left: 1rem;
+  border-radius: .3rem;
 }
 #pwLength,
 #passwordInput,
