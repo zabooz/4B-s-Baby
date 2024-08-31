@@ -9,7 +9,7 @@
 }
 header {
   color: #151c19;
-  height: 90vh;
+  min-height: 90vh;
 }
 main {
   min-height: 110vh;

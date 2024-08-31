@@ -10,8 +10,29 @@ nav img {
   background-color: #f1f5f5;
 }
 .dropdown-menu {
-  left: -55px !important;
+  left: -62px !important;
 }
+.nav-link {
+  line-height: 1em;
+}
+
+.nav-link span {
+  display: block;
+  font-weight: 300;
+  margin-top: .3rem;
+  color: black;
+  font-size: 14px;
+}
+
+
+
+@media(max-width: 992px) {
+  .dropdown-menu {
+    left: 0 !important;
+  }
+
+}
+
 
 /* =================== QuickNav ================== */
 
@@ -38,13 +59,3 @@ nav img {
   }
 }
 
-.nav-link {
-  line-height: 1em;
-}
-
-.nav-link span {
-  display: block;
-  font-weight: 300;
-  color: black;
-  font-size: 14px;
-}
