@@ -90,6 +90,7 @@
               href="#offcanvasSimpleBrute"
               role="button"
               aria-controls="offcanvasSimple"
+              aria-label="BruteForce"
             >
               einfachen Modus
             </span>
@@ -100,6 +101,7 @@
               href="#offcanvasLibraryBrute"
               role="button"
               aria-controls="offcanvasLibrary"
+              aria-label="BruteForce-stop"
             >
               Listen-Modus
             </span>
@@ -171,10 +173,10 @@
             <table class="table w-100 mt-4 " id="stats">
               <thead>
                 <tr>
-                  <th scope="col">Password</th>
-                  <th scope="col">Versuche</th>
-                  <th scope="col">Modus</th>
-                  <th scope="col" id="lastTh">Zeit</th>
+                  <th scope="col" role="columnheader">Password</th>
+                  <th scope="col" role="columnheader">Versuche</th>
+                  <th scope="col" role="columnheader">Modus</th>
+                  <th scope="col" role="columnheader" id="lastTh">Zeit</th>
                 </tr>
               </thead>
               <tbody id="statsBody"></tbody>
