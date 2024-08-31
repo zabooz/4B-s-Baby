@@ -5,15 +5,15 @@ export const configNav = {
     link: "../index.html",
   },
   testing: {
-    text: `CHECKE <br> deine Sicherheit`,
+    text: `CHECKE<span>deine Sicherheit</span>`,
     link: "../featureHtmls/testing.html",
   },
   userGen: {
-    text: `ERFINDE <br> deinen Online-Namen`,
+    text: `ERFINDE<span>deinen Online-Namen</span>`,
     link: "../featureHtmls/userGenerating.html",
   },
   pwGen: {
-    text: `ERSTELLE <br> dein Passwort`,
+    text: `ERSTELLE<span>dein Passwort</span>`,
     link: "../featureHtmls/pwGenerating.html",
   },
   oldDesign: {
@@ -25,7 +25,7 @@ export const configNav = {
     link: "../img/logo/logo.svg",
   },
   stuff: {
-    text: `ERFAHRE <br> mehr...`,
+    text: `ERFAHRE<span>mehr...</span>`,
     clippy: "Clippy",
     aiAssistant: "AI-Assistent",
   },
@@ -38,15 +38,15 @@ export const configNavIndex = {
     link: "./index.html",
   },
   testing: {
-    text: `CHECKE <br> deine Sicherheit`,
+    text: `CHECKE<span>deine Sicherheit</span>`,
     link: "./featureHtmls/testing.html",
   },
   userGen: {
-    text: `ERFINDE <br> deinen Online-Namen`,
+    text: `ERFINDE<span>deinen Online-Namen</span>`,
     link: "./featureHtmls/userGenerating.html",
   },
   pwGen: {
-    text: `ERSTELLE <br> dein Passwort`,
+    text: `ERSTELLE<span>dein Passwort</span>`,
     link: "./featureHtmls/pwGenerating.html",
   },
   oldDesign: {
@@ -58,7 +58,7 @@ export const configNavIndex = {
     link: "./img/logo/logo.svg",
   },
   stuff: {
-    text: `ERFAHRE <br> mehr...`,
+    text: `ERFAHRE<span>mehr...</span>`,
     clippy: "Clippy",
     aiAssistant: "AI-Assistent",
   },

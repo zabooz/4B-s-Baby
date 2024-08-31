@@ -40,88 +40,92 @@
   <body class="bg-custom">
     <nav id="navBar" class="sticky-top"></nav>
     <header class="w-100 d-flex justify-content-center"></header>
-    <div id="spanScroll" style="height: 80px"></div>
-    <main class="">
-      <section id="section" class="m-2 m-sm-5 bounceScroll">
-        <div
-          class="d-flex flex-column flex-lg-row gap-5 gap-sm-3 gap-lg-3 gap-xl-5 mt-5 align-items-center align-items-lg-stretch justify-content-lg-evenly text-center"
-        >
-          <div
-            class="card box-shadow p-4 d-flex flex-column justify-content-evenly"
-            style="max-width: 30rem"
-          >
-            <img
-              src="./img/landingPage/password.jpg"
-              class="card-img-top"
-              alt="picture Password Generating"
-            />
-            <div
-              class="card-body d-flex flex-column justify-content-evenly align-items-center"
-            >
-              <h5 class="card-title">ERSTELLE</h5>
-              <p class="card-text">ein sicheres Passwort</p>
-              <p class="card-text p-3 p-lg-0 text-start">
-                Nutze unsere drei Tools, um das ideale Passwort zu generieren:
-                <span><b>Picture Magic</b></span> verwandelt Bilder in
-                Passwörter, <span><b>Rune Translator</b></span> konvertiert
-                Texte in Leetspeak und <span><b>GlyphSorcery</b></span> erstellt
-                zufällige, sichere Passwörter.
-              </p>
-              <a
-                class="btn btn-primary mt-auto btn-lg border-0 w-75"
-                href="./featureHtmls/pwGenerating.html"
-                >Erstelle Passwort</a
-              >
+    <div id="spanScroll" ></div>
+
+    <main class="w-100 d-flex  pt-5 mt-5 pt-lg-0 mt-lg-0 justify-content-center align-items-center">
+      <section  class=" w-100 bounceScroll">
+        <div class="row row-cols-1 row-cols-lg-3 g-5 g-xl-5 ">
+          <div class="col ">
+            <div class="card mx-auto box-shadow p-4">
+              <img
+                src="./img/landingPage/password.jpg"
+                class="card-img-top"
+                alt="picture Password Generating"
+              />
+              <div class="card-body d-flex flex-column ">
+                <h5 class="card-title text-center mb-3">ERSTELLE</h5>
+                <h6 class="card-subtitle text-center mb-4">
+                  ein sicheres Passwort
+                </h6>
+                <p class="card-text">
+                  Nutze unsere drei Tools, um das ideale Passwort zu generieren:
+                  <span><b>Picture Magic</b></span> verwandelt Bilder in
+                  Passwörter, <span><b>Rune Translator</b></span> konvertiert
+                  Texte in Leetspeak und
+                  <span><b>GlyphSorcery</b></span> erstellt zufällige, sichere
+                  Passwörter.
+                </p>
+                <a
+                  class="btn btn-primary mt-auto mx-auto btn-lg border-0 w-75"
+                  href="./featureHtmls/pwGenerating.html"
+                  >Erstelle Passwort</a
+                >
+              </div>
             </div>
           </div>
-          <div class="card box-shadow p-4" style="max-width: 30rem">
-            <img
-              src="./img/landingPage/bruteforce.jpg"
-              class="card-img-top"
-              alt="picture testing"
-            />
-            <div
-              class="card-body d-flex flex-column justify-content-evenly align-items-center"
-            >
-              <h5 class="card-title">TESTE</h5>
-              <p class="card-text">die Stärke deines Passworts</p>
-              <p class="card-text p-0 p-lg-3 text-start">
-                Verwende unser Bewertungstool <span><b>Excalibur</b></span
-                >, um die Stärke deines Passworts zu testen und simuliere
-                Brute-Force-Angriffe mit <span><b>Mojo</b></span
-                >, um zu sehen, wie lange es dauern würde, bis dein Passwort
-                geknackt wird.
-              </p>
-              <a
-                class="btn btn-primary mt-auto btn-lg border-0 w-75"
-                href="./featureHtmls/testing.html"
-                >Teste Passwort</a
-              >
+          <div class="col">
+            <div class="card mx-auto box-shadow p-4">
+              <img
+                src="./img/landingPage/bruteforce.jpg"
+                class="card-img-top"
+                alt="picture testing"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-center mb-3">TESTE</h5>
+                <h6 class="card-subtitle text-center mb-4">
+                  die Stärke deines Passworts
+                </h6>
+                <p class="card-text">
+                  Verwende unser Bewertungstool <span><b>Excalibur</b></span
+                  >, um die Stärke deines Passworts zu testen und simuliere
+                  Brute-Force-Angriffe mit <span><b>Mojo</b></span
+                  >, um zu sehen, wie lange es dauern würde, bis dein Passwort
+                  geknackt wird.
+                </p>
+                <a
+                  class="btn btn-primary mt-auto mx-auto btn-lg border-0 w-75"
+                  href="./featureHtmls/testing.html"
+                  >Teste Passwort</a
+                >
+              </div>
             </div>
           </div>
-          <div class="card box-shadow p-4" style="max-width: 30rem">
-            <img
-              src="./img/landingPage/username.jpg"
-              class="card-img-top"
-              alt="picture username"
-            />
-            <div
-              class="card-body d-flex flex-column justify-content-evenly align-items-center"
-            >
-              <h5 class="card-title">ERFINDE</h5>
-              <p class="card-text">deinen Online-Namen</p>
-              <p class="card-text p-3 p-lg-0 text-start">
-                Nutze unsere beiden Tools, um den perfekten Benutzernamen zu
-                erstellen: <span><b>Identity Wizardry</b></span> generiert
-                zufällige Benutzernamen basierend auf deinen Parametern, und
-                <span><b>Mind Maestro</b></span> erstellt kreative Namen durch
-                ein unterhaltsames Quiz.
-              </p>
-              <a
-                class="btn btn-primary btn-lg mt-auto border-0 w-75"
-                href="./featureHtmls/userGenerating.html"
-                >Erfinde Namen</a
-              >
+          <div class="col">
+            <div class="card mx-auto box-shadow p-4">
+              <img
+                src="./img/landingPage/username.jpg"
+                class="card-img-top"
+                alt="picture username"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title text-center mb-3">ERFINDE</h5>
+                <h6 class="card-subtitle text-center mb-4">
+                  deinen Online-Namen
+                </h6>
+                <p class="card-text">
+                  Nutze unsere beiden Tools, um den perfekten Benutzernamen zu
+                  erstellen: <span><b>Identity Wizardry</b></span> generiert
+                  zufällige Benutzernamen basierend auf deinen Parametern, und
+                  <span><b>Mind Maestro</b></span> erstellt kreative Namen durch
+                  ein unterhaltsames Quiz.
+                </p>
+                <a
+                  class="btn btn-primary btn-lg mt-auto mx-auto border-0 w-75"
+                  href="./featureHtmls/userGenerating.html"
+                  >Erfinde Namen</a
+                >
+              </div>
+
             </div>
           </div>
         </div>
