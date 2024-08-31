@@ -27,6 +27,7 @@ i::before{
     font-style: normal;
     font-size: 2rem;
     font-weight: 400;
+    color: white;
 }
 .confirmBubble{
     position: absolute;
@@ -40,6 +41,30 @@ i::before{
     padding: .2rem;
     
 }
+
+.nav-item-clippy{
+    padding: .5rem 0.5rem;
+    color: white;
+    font-size: 1.5rem;
+}
+
+#userListBtn{
+    margin-left: -.3rem;
+    z-index: 2;
+    background-color: #ea6854c5;
+    border-bottom-right-radius: .5rem;
+
+}
+#passwordListBtn{
+    background-color: aqua;
+    background-color: #ea6854;
+    border-bottom-right-radius: .5rem;
+}
+.btnBox{
+    display: flex;
+    gap:.5rem;
+}
+
 .fadeIn{
     display: flex;
     animation: fadeIn 2s forwards ;
