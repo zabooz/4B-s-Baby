@@ -44,7 +44,7 @@ const createFooter = (configFooter) => {
                 ${configFooter.socialMedia
                   .map(
                     (social) => `
-                    <a href="${social.link}" class="me-4 text-reset">
+                    <a href="${social.link}" aria-label="${social.name}" class="me-4 text-reset">
                         <i class="fab fa-${social.name.toLowerCase()}"></i>
                     </a>
                 `
@@ -71,7 +71,7 @@ const createFooter = (configFooter) => {
                           .map(
                             (platform) => `
                             <p>
-                                <a href="${platform.link}" class="text-reset">${platform.name}</a>
+                                <a href="${platform.link}" aria-label="${platform.name}" class="text-reset">${platform.name}</a>
                             </p>
                         `
                           )
@@ -98,8 +98,8 @@ const createFooter = (configFooter) => {
         </section>
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
             © 2021 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-            <a class="text-reset fw-bold mx-5" href="../legalStuff/impressum.html" >Impressum</a>
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/"  aria-label="MDBootstrap.com" >MDBootstrap.com</a>
+            <a class="text-reset fw-bold mx-5" href="../legalStuff/impressum.html" aria-label="Impressum" >Impressum</a>
         </div>`;
 };
 
