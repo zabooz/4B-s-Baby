@@ -17,10 +17,7 @@
     <link rel="stylesheet" href="../styles/aiAssistant.css" />
     <link rel="stylesheet" href="../styles/clipBoard.css" />
     <link rel="stylesheet" href="../styles/navBars.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      rel="stylesheet"
-    />
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -50,21 +47,6 @@
       <section
         class="d-flex flex-column flex-lg-row   align-items-center justify-content-evenly"
       >
-        <div class="card d-flex flex-column align-items-left px-4 pt-3 w-50">
-          <h2 class="mb-3">Warum sollte ich mein Passwort testen?</h2>
-
-          <p>
-            In der digitalen Welt ist Ihr Passwort der erste Schutz gegen
-            unbefugten Zugriff. Doch wie sicher ist es wirklich?
-          </p>
-          <p>
-            Ein Passwort zu testen, hilft, Sicherheitslücken zu erkennen.
-            Schwache Passwörter sind leicht zu knacken. Durch einen Test können
-            Sie sicherstellen, dass Ihr Passwort stark genug ist, um Ihre Daten
-            zu schützen.
-          </p>
-          <p>Ein starkes Passwort hält Ihre Konten sicher.</p>
-        </div>
         <div
           id="bruteForceApp"
           class="card d-flex flex-column align-items-center text-start px-5 pt-3 w-50"
@@ -243,91 +225,7 @@
           </div>
         </div>
       </section>
-      <section id="quote5" class="bg-body-tertiary"></section>
-      <!-- <section class="d-flex justify-content-center">
-        <div class="d-flex flex-column sectionDiv py-4">
-          <div
-            class="img-container d-flex p-5 flex-column flex-lg-row justify-content-center align-items-center gap-5"
-          >
-            <img
-              src="../img/lockPickAxe.jpg"
-              class="custom-img"
-              alt="lockPickAxe"
-            />
-            <div class="description">
-              <h3>Ablauf einer Brute-Force-Attacke</h3>
-              <p class="fw-semibold">
-                Eine Brute-Force-Attacke ist eine Methode, bei der ein Angreifer
-                systematisch alle möglichen Kombinationen von Passwörtern
-                ausprobiert, um Zugang zu einem System zu erhalten. Der folgende
-                Ablauf beschreibt die typischen Schritte eines solchen Angriffs.
-              </p>
-            </div>
-          </div>
 
-          <div class="container text-center mb-5">
-            <div class="row g-4 justify-content-center">
-              <div class="col-lg-4 col-sm-8 col-10">
-                <div class="card">
-                  <div
-                    class="card-body d-flex flex-column gap-3 align-items-center"
-                  >
-                    <h5 class="card-title">Angriffsvorbereitung</h5>
-                    <img
-                      src="../img/targetBrute.jpeg"
-                      class="custom-img"
-                      alt="bruteTarget"
-                    />
-                    <p class="card-text fw-semibold">
-                      Der Angreifer bereitet sich vor, indem er entweder eine
-                      Liste häufiger Passwörter erstellt oder eine einfache
-                      Brute-Force-Attacke plant.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-8 col-10">
-                <div class="card">
-                  <div
-                    class="card-body d-flex flex-column gap-3 align-items-center"
-                  >
-                    <h5 class="card-title">Passwortversuche</h5>
-                    <img
-                      src="../img/autoattack.jpeg"
-                      class="custom-img"
-                      alt="autoattack"
-                    />
-                    <p class="card-text fw-semibold">
-                      Bei einer Brute-Force-Attacke werden alle möglichen
-                      Kombinationen getestet, während bei einer Listenattacke
-                      gängige Passwörter ausprobiert werden.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-sm-8 col-10">
-                <div class="card">
-                  <div
-                    class="card-body d-flex flex-column gap-3 align-items-center"
-                  >
-                    <h5 class="card-title">Zugang erhalten</h5>
-                    <img
-                      src="../img/gainingaccess.jpeg"
-                      class="custom-img"
-                      alt="gaining access"
-                    />
-                    <p class="card-text fw-semibold">
-                      Erfolgt der Zugriff durch ein passendes Passwort, hat der
-                      Angreifer Zugang zum System erlangt.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="quote11" class="d-flex justify-content-center my-5"></section> -->
     </main>
     <footer class="p-5">
       <script src="../components/footer.js"></script>
@@ -344,11 +242,11 @@
     import { createAssistant } from "../components/aiAssistant.js";
 
     createAssistant("main");
-    quote("#quote5", "zitate", 6, "../data/text.json");
+
 
     loadOffCanvas("header", "liste", "../data/text.json");
     loadOffCanvas("header", "simple", "../data/text.json");
-    quote("#quote11", "zitate", 11, "../data/text.json");
+
     clipBoard(".clipBoard");
     createNav(configNav);
   </script>

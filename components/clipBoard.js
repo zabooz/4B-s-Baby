@@ -113,11 +113,17 @@ export const clipBoard = (id) => {
 
 const deleteBtn = (id) => {
   const btn = document.createElement("button");
-  const i = document.createElement("i");
+
+  const i = document.createElement("img");
+  i.src ="../img/icons/trash_.png"
+  i.style.width = "20px"
+  i.style.height = "20px"
+  i.style.marginBottom = "5px"
+
   btn.style.border = "none";
   btn.style.backgroundColor = "transparent";
   btn.id = "btn" + id;
-  i.className = "fa-regular fa-trash-can";
+
 
   btn.append(i);
 
