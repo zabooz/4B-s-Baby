@@ -19,6 +19,14 @@
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
+video{
+  border: 2px solid #ea6954;
+  margin-left: 1rem;
+  border-radius: .3rem;
+}
+.dropdown-menu{
+  left: -50px !important;
+}
 .input {
   width: 30%;
   padding: 0.2rem;
@@ -69,7 +77,7 @@ header {
 #wizardTextDiv {
   width: 90%;
   align-self: center;
-  margin-top: auto;
+  padding: 2rem;
 }
 /* Container Styling */
 #wizardDiv {
@@ -85,14 +93,8 @@ header {
 #wizardInput6 {
   display: flex; /* Flexbox to align items within each group */
   align-items: center; /* Centers content horizontally within each flex item */
-  gap: 1rem; /* Adds spacing between items within each group */
+  justify-content: center;
   min-width: 40%; /* Sets a minimum width for each group */
-}
-#wizardInput1,
-#wizardInput2,
-#wizardInput3,
-#wizardInput4 {
-  width: 50%;
 }
 /* Label Styling */
 #wizardDiv label {
@@ -105,10 +107,6 @@ header {
 #wizardDiv select,
 #userGeneratorBtn {
   width: 100%; /* Takes the full width of the parent container */
-}
-
-#wizardInput4 {
-  margin-top: auto;
 }
 
 /* Responsive Adjustments */

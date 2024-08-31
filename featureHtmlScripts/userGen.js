@@ -25,7 +25,7 @@ userGenBtn.addEventListener("click", function (e) {
   const newUserOutput = convertToGerman(germanUserOutput, myArraysObj);
   const tBody = document.getElementById("statsBody");
   // Example usage for different tables
-  shiftTableRows("statsBodyUser", "statsBodyArray", "statsBodyRow", 3);
+  shiftTableRows("statsBodyUsername", "statsBodyArray", "statsBodyRow", 3);
 
   const firstRow = tBody.rows[0];
   let firstCell = firstRow.cells[0];
@@ -40,7 +40,7 @@ userGenBtn.addEventListener("click", function (e) {
   } else {
     firstRow.cells[1].innerText = `${newUserOutput[1]}`;
   }
-  firstCell.append(copyButton("statsBodyUser0"));
+  firstCell.append(copyButton("statsBodyUsername0"));
   if (tBody.rows[2].innerText.trim() !== "") {
     document
       .getElementById("statsTableWrapper")
