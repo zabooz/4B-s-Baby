@@ -35,7 +35,7 @@ const configFooter = {
 
 const createFooter = (configFooter) => {
   return `
-        <hr class="my-4  w-100 mt-5 self-algin-center" />
+        <hr class="my-4   w-100 mt-5 self-algin-center" />
         <section class="d-flex justify-content-center justify-content-lg-between p-4 mt-5 text-black">
             <div class="me-5 d-none d-lg-block">
                 <span>Get connected with us on social networks:</span>

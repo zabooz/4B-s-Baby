@@ -13,33 +13,89 @@ export function convertToGerman(germanUserOutput, myArraysObj) {
   return germanUserOutput;
 }
 
-// Helper function to get elements by ID pattern
 function getElementsByIdPattern(prefix, count) {
   return Array.from({ length: count }, (_, i) =>
     document.getElementById(`${prefix}${i}`)
   );
 }
 
-// Generalized function to shift rows for any table
-export function shiftTableRows(column1Prefix, column2Prefix, rowPrefix, count) {
-  const elements = {
-    column1: getElementsByIdPattern(column1Prefix, count),
-    column2: getElementsByIdPattern(column2Prefix, count),
-  };
+export function shiftTableRows(
+  usernamePrefix,
+  arrayPrefix,
+  rowPrefix,
+  maxRows
+) {
+  for (let i = maxRows - 1; i > 0; i--) {
+    const prevArrayText = document.getElementById(
+      `${arrayPrefix}${i - 1}`
+    ).innerText;
+    const prevUsernameText = document.getElementById(
+      `${usernamePrefix}${i - 1}`
+    ).innerText;
 
-  for (let i = elements.column1.length - 1; i > 0; i--) {
-    const prevColumn1Element = elements.column1[i - 1];
-    if (prevColumn1Element.innerText !== "") {
-      // Shift text content
-      elements.column1[i].innerText = prevColumn1Element.innerText;
-      elements.column2[i].innerText = elements.column2[i - 1].innerText;
+    // Set the content of the current row with the text from the previous row
+    document.getElementById(`${arrayPrefix}${i}`).innerText = prevArrayText;
+    document.getElementById(`${usernamePrefix}${i}`).innerText =
+      prevUsernameText;
 
-      // Replace copy button
-      elements.column1[i].querySelector("button")?.remove();
-      elements.column1[i].append(copyButton(`${column1Prefix}${i}`));
-
-      // Show row
-      document.getElementById(`${rowPrefix}${i}`).style.display = "";
+    // Manage the visibility of the current rows
+    if (prevArrayText || prevUsernameText) {
+      // Show only if there is content
+      document.getElementById(`${rowPrefix}${i * 2}`).style.display =
+        "table-row";
+      document.getElementById(`${rowPrefix}${i * 2 + 1}`).style.display =
+        "table-row";
+    } else {
+      // Hide empty rows
+      document.getElementById(`${rowPrefix}${i * 2}`).style.display = "none";
+      document.getElementById(`${rowPrefix}${i * 2 + 1}`).style.display =
+        "none";
     }
+
+    // Update the username cell content
+    const usernameCell = document.getElementById(`${usernamePrefix}${i}`);
+    usernameCell.innerHTML = ""; // Clear existing content
+
+    const contentContainer = document.createElement("div");
+    contentContainer.className = "table-cell-content"; // Use flexbox styling
+
+    const textContainer = document.createElement("span");
+    textContainer.innerText = prevUsernameText; // Set the copied text from the previous row
+
+    contentContainer.appendChild(textContainer);
+
+    // Add the copy button only if there is text to copy
+    if (prevUsernameText.trim() !== "") {
+      contentContainer.appendChild(copyButton(`${usernamePrefix}${i}`));
+    }
+
+    usernameCell.appendChild(contentContainer);
   }
+
+  // Clear the current row (the first set) for new data
+  document.getElementById(`${arrayPrefix}0`).innerText = "";
+  document.getElementById(`${usernamePrefix}0`).innerText = "";
+  document.getElementById(`${rowPrefix}0`).style.display = "table-row";
+  document.getElementById(`${rowPrefix}1`).style.display = "table-row";
+
+  // Corrected setup for the first row
+  const usernameCellFirstRow = document.getElementById(`${usernamePrefix}0`);
+  usernameCellFirstRow.innerHTML = "";
+
+  const contentContainerFirstRow = document.createElement("div");
+  contentContainerFirstRow.className = "table-cell-content";
+
+  const textContainerFirstRow = document.createElement("span");
+  textContainerFirstRow.innerText = document.getElementById(
+    `${usernamePrefix}0`
+  ).innerText;
+
+  contentContainerFirstRow.appendChild(textContainerFirstRow);
+
+  // Add the copy button only if there is text to copy
+  if (textContainerFirstRow.innerText.trim() !== "") {
+    contentContainerFirstRow.appendChild(copyButton("statsBodyUsername0"));
+  }
+
+  usernameCellFirstRow.appendChild(contentContainerFirstRow);
 }

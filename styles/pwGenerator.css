@@ -1,75 +1,6 @@
-.description {
-  width: 25rem;
-}
 
-.custom-img {
-  border-radius: 1rem;
-}
-main {
-  display: flex;
-  flex-direction: column;
-}
-.dropdown-menu{
-  left: -55px !important;
-}
-#picResult,
-.input {
-  width: 30%;
-  padding: 0.2rem;
-  border-radius: 0.5rem;
-}
-.pwInputDiv {
-  width: 75%;
-}
-video{
-  border: 2px solid #ea6954;
-  margin-left: 1rem;
-  border-radius: .3rem;
-}
-#pwLength,
-#passwordInput,
-#rdmPwdBtn,
-#uploadLabel,
-#pictureConvertBtn,
-#convertBtn {
-  height: 3rem !important;
-  margin-top: auto !important;
-}
 #uploadLabel {
   border-radius: 0.5rem !important;
-}
-nav img {
-  width: 3rem;
-}
-#quickNav {
-  position: fixed;
-  right: -7rem;
-  top: 40%;
-}
-
-#quickNav img {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-}
-
-#quickNav button {
-  position: absolute;
-  right: 1rem;
-  position: relative;
-}
-
-#quickNav button:hover {
-  animation: moveBtn 0.5s forwards;
-}
-
-@keyframes moveBtn {
-  0% {
-    right: 1rem;
-  }
-  100% {
-    right: 6.5rem;
-  }
 }
 .label {
   border-radius: 5px;
@@ -79,8 +10,7 @@ nav img {
 }
 
 .card {
-  min-height: 33.5rem;
-  max-width: 28rem;
+  max-width: 35rem;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
@@ -88,86 +18,20 @@ nav img {
 .bg-card-custom {
   background-color: #f1f5f5;
 }
-nav {
-  min-height: 64px;
-}
-
-@keyframes moveBtnAi {
-  0% {
-    right: -5rem;
-  }
-  100% {
-    right: -0.5rem;
-  }
-}
-
-.sectionDiv {
-  width: 80%;
-}
 .text-custom {
   color: #ea6954;
 }
-
 .bg-custom {
   background-color: #23bbb870;
 }
-
-.nav-custom {
-  background-color: #f1f5f5;
-}
-
 .btn {
   background-color: #ea6954;
   color: white;
   border: none;
-}
-.sectionDiv {
-  width: 70%;
-  background: #f1f5f5;
-  border-radius: 1rem;
-}
-.hr-custom {
-  border: 2px solid black;
-  opacity: 1;
-}
+} 
 .btn:hover {
   background: #56c5c3;
   color: white;
 }
-.custom-img {
-  border-radius: 1rem;
-}
-@media (max-width: 991px) {
-  .custom-img {
-    width: 7rem;
-    height: 5rem;
-  }
-  .input {
-    width: 50%;
-    padding: 0.2rem;
-    border-radius: 0.5rem;
-  }
-}
-@media (min-width: 992px) {
-  .custom-img {
-    width: 7rem;
-    height: 5rem;
-  }
-  .custom-width {
-    width: 75% !important;
-  }
-  .heroText {
-    width: 75%;
-  }
-}
-@media (max-width: 700px) {
-  .bruteBox,
-  .excalibur,
-  .appBox,
-  .sectionDiv,
-  #bruteForceApp,
-  #passwordStrengthCalc,
-  .contentContainer {
-    width: 90%;
-  }
-}
+
+

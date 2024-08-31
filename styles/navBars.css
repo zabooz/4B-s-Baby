@@ -1,7 +1,7 @@
 /* =================== Navbar ================== */
 
 nav {
-  min-height: 10vh;
+  min-height: 80px;
 }
 nav img {
   width: 4rem;
@@ -45,6 +45,13 @@ nav img {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
+}
+#quickNav button {
+  background-color: #ea6954;
+  border: none;
+  position: relative;
+  right: 1rem;
+
 }
 #quickNav button:hover {
   animation: moveBtn 0.5s forwards;

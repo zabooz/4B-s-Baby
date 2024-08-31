@@ -17,35 +17,58 @@ let interval;
 
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
+
+  // Get values from inputs
   const adjective1 = document.getElementById("adjective1").value;
   const adjective2 = document.getElementById("adjective2").value;
   const selectedNoun = document.getElementById("noun").value;
+
+  // Generate user output
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
   const germanUserOutput = [...userOutput]; // Create a copy of the array to avoid mutation
   const newUserOutput = convertToGerman(germanUserOutput, myArraysObj);
   const tBody = document.getElementById("statsBody");
-  // Example usage for different tables
-  shiftTableRows("statsBodyUsername", "statsBodyArray", "statsBodyRow", 3);
 
+  // Call the shift function with parameters
+  shiftTableRows("statsBodyUsername", "statsBodyArray", "statsBodyRow", 4);
+
+  // Fill the new generated data in the first row
   const firstRow = tBody.rows[0];
+  const secondRow = tBody.rows[1];
   let firstCell = firstRow.cells[0];
-  firstCell.innerText = `${newUserOutput[0]}`;
+  let secondCell = secondRow.cells[0];
+  secondCell.innerText = `${newUserOutput[0]}`;
   document.getElementById("statsBodyRow0").style.display = "";
+
+  // Handling for additional cells in the row
   if (newUserOutput[2] && newUserOutput[3]) {
-    firstRow.cells[1].innerText = `${newUserOutput[2]}/${newUserOutput[3]}, ${newUserOutput[1]}`;
+    firstCell.innerText = `${newUserOutput[2]}&${newUserOutput[3]}, ${newUserOutput[1]}`;
   } else if (!newUserOutput[2]) {
-    firstRow.cells[1].innerText = `${newUserOutput[3]}, ${newUserOutput[1]}`;
+    firstCell.innerText = `${newUserOutput[3]}, ${newUserOutput[1]}`;
   } else if (!newUserOutput[3]) {
-    firstRow.cells[1].innerText = `${newUserOutput[2]}, ${newUserOutput[1]}`;
+    firstCell.innerText = `${newUserOutput[2]}, ${newUserOutput[1]}`;
   } else {
-    firstRow.cells[1].innerText = `${newUserOutput[1]}`;
+    firstCell.innerText = `${newUserOutput[1]}`;
   }
-  firstCell.append(copyButton("statsBodyUsername0"));
-  if (tBody.rows[2].innerText.trim() !== "") {
-    document
-      .getElementById("statsTableWrapper")
-      .classList.remove("border-bottom");
+
+  // Update the first row's content container
+  const usernameCellFirstRow = document.getElementById("statsBodyUsername0");
+  usernameCellFirstRow.innerHTML = ""; // Clear existing content for new data
+
+  const contentContainerFirstRow = document.createElement("div");
+  contentContainerFirstRow.className = "table-cell-content";
+
+  const textContainerFirstRow = document.createElement("span");
+  textContainerFirstRow.innerText = newUserOutput[0] || ""; // Set new data
+
+  contentContainerFirstRow.appendChild(textContainerFirstRow);
+
+  // Add the copy button only if there is text to copy
+  if (textContainerFirstRow.innerText.trim() !== "") {
+    contentContainerFirstRow.appendChild(copyButton("statsBodyUsername0"));
   }
+
+  usernameCellFirstRow.appendChild(contentContainerFirstRow);
 });
 
 aiUserGenBtn.addEventListener("click", async function () {
