@@ -10,8 +10,8 @@ section{
 }
 
 .card {
-  max-width: 35rem;
-  min-height: 810px;
+  max-width: 30rem;
+  min-height: 750px;
   display: flex;
   flex-direction: column;
   background-color: #f1f5f5;
