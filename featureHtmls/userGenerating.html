@@ -45,30 +45,29 @@
     <nav id="navBar" class="sticky-top"></nav>
     <header class="d-flex justify-content-center"></header>
     <main>
-      <section
-        class="d-flex justify-content-center flex-column flex-lg-row p-5 pb-1 gap-5"
-      >
+      <section class="d-flex justify-content-center flex-column p-5 pb-1 gap-5">
         <div
           id="pwdGenDiv"
           class="card px-4 pt-3 d-flex justify-content-center w-100"
         >
-          <h3 class="py-3 text-center">Identity Wizardry</h3>
-          <p class="w-75 w-100">
+          <h3 class="py-3 text-center">Identity Wizard</h3>
+        <div id="wizardTextDiv" class="d-flex justify-content-center flex-column align-items-center">
+          <p class="w-75">
             Erstelle einen einzigartigen Benutzernamen, indem du bis zu zwei
             Gruppen von Adjektiven und eine Gruppe von Substantiven auswählst,
             oder lass den Generator eine zufällige Kombination für dich
             erstellen.
           </p>
           <p class="w-75">
-            Achte darauf, dass dein Benutzername einzigartig ist und deine
-            Identität widerspiegelt, um ein persönliches Online-Erlebnis zu
-            haben.
+            Du kannst bis zu drei neue Namen in der Liste belassen. Pro-Tipp:
+            Speichere die Namen, die dir besonders gut gefallen, mit Clippy!
           </p>
-
+          </div>  
           <div
-            class="d-flex flex-lg-row flex-column justify-content-evenly gap-lg-5 gap-2"
+            id="wizardDiv"
+            class="d-flex justify-content-center "
           >
-            <div id="wizardInput2" class="d-flex flex-column gap-2">
+            <div id="wizardInput1" class="gap-2">
               <label class="fw-semibold">1. Eigenschaft:</label>
               <select id="adjective1" class="form-control fw-semibold">
                 <option value="random">Zufällig</option>
@@ -87,6 +86,8 @@
                 <option value="weatherTypes">Wetter</option>
                 <option value="">-Keine-</option>
               </select>
+            </div>
+            <div id="wizardInput2" class="gap-2">
               <label class="fw-semibold">2. Eigenschaft:</label>
               <select id="adjective2" class="form-control fw-semibold">
                 <option value="random">Zufällig</option>
@@ -106,7 +107,7 @@
                 <option value="">-Keine-</option>
               </select>
             </div>
-            <div id="wizardInput3" class="d-flex flex-column gap-2">
+            <div id="wizardInput3" class="gap-2">
               <label class="fw-semibold">Wähle einen Begriff:</label>
               <select name="pwdGen" id="noun" class="form-control fw-semibold">
                 <option value="random">Zufällig</option>
@@ -127,35 +128,36 @@
                 <option value="flowers">Blume</option>
                 <option value="desserts">Dessert</option>
               </select>
-              <div class="form-check form-switch">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  role="switch"
-                  id="germanAiToggle"
-                  style="display: none"
-                />
-                <label
-                  class="form-check-label"
-                  for="germanAiToggle"
-                  style="display: none"
-                  >Deutsch (Beta)</label
-                >
-              </div>
-              <button id="userGeneratorBtn" class="btn btn-primary">
-                Generieren
-              </button>
-              <button id="aiUserGenBtn" class="btn btn-primary">
-                Überrasch mich!
-              </button>
             </div>
-          </div>
-          <div class="w-100 border-bottom" id="statsTableWrapper">
+              <div id="wizardInput4" class="d-flex justify-content-center">
+                <button id="userGeneratorBtn" class="btn btn-primary">
+                  Generieren
+                </button>
+                <!-- <button id="aiUserGenBtn" class="btn btn-primary">
+                  Überrasch mich!
+                </button>
+                <div class="form-check form-switch justify-content-end">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="germanAiToggle"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="germanAiToggle"
+                    >Deutsch (Beta)</label
+                  >
+                </div> -->
+              </div>
+            </div>
+
+          <div class="w-75 tableWrapper border-bottom d-flex align-self-center flex-column" id="statsTableWrapper">
             <table class="table mb-5" id="stats">
-              <thead>
+              <thead >
                 <tr>
-                  <th scope="col" class="text-center">Username</th>
-                  <th scope="col" class="text-center">Auswahl</th>
+                  <th scope="col" class="w-50 text-center">Username</th>
+                  <th scope="col" class="w-50 text-center">Auswahl</th>
                 </tr>
               </thead>
               <tbody id="statsBody" class="w-100 text-center">
@@ -174,6 +176,8 @@
               </tbody>
             </table>
           </div>
+        </div>
+
         </div>
 
         <div id="pwdGenDiv" class="card px-4 pt-3">
