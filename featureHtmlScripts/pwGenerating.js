@@ -36,7 +36,7 @@ uploadFile.addEventListener("change", () => {
 
 picConBtn.addEventListener("click", async (e) => {
   e.preventDefault();
-  const textId = "generatedPic0";
+  const textId = "passwordPic";
   const textElement = document.getElementById(textId);
 
   try {
@@ -44,9 +44,8 @@ picConBtn.addEventListener("click", async (e) => {
 
     textElement.innerText = `${result}`;
     textElement.append(copyButton(textId));
-    console.log(result);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 });
 
