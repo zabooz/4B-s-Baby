@@ -71,34 +71,68 @@ header {
   align-self: center;
   margin-top: auto;
 }
+/* Container Styling */
 #wizardDiv {
-  width: 80%;
-  height: 4.5rem;
-  align-items: center;
-  align-self: center;
-  margin-bottom: 4rem;
-  margin-top: 4rem;
+  display: flex; /* Enables Flexbox for horizontal alignment */
+  justify-content: center; /* Centers the contents horizontally */
+  align-items: flex-start; /* Aligns items to the top */
+  gap: 1rem; /* Adds space between the main groups */
+  flex-wrap: wrap; /* Prevents items from wrapping on larger screens */
 }
-#wizardDiv div {
-  height: 100%;
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
+/* Flex Item Styling - Input Groups */
+#wizardInput5,
+#wizardInput6 {
+  display: flex; /* Flexbox to align items within each group */
+  align-items: center; /* Centers content horizontally within each flex item */
+  gap: 1rem; /* Adds spacing between items within each group */
+  min-width: 40%; /* Sets a minimum width for each group */
 }
+#wizardInput1,
+#wizardInput2,
+#wizardInput3,
+#wizardInput4 {
+  width: 50%;
+}
+/* Label Styling */
+#wizardDiv label {
+  text-align: left; /* Aligns text to the left */
+  text-wrap: nowrap;
+  width: 100%; /* Ensures label takes the full width of its container */
+}
+
+/* Select and Button Styling */
+#wizardDiv select,
 #userGeneratorBtn {
-  width: 80%;
-  height: 38px;
+  width: 100%; /* Takes the full width of the parent container */
+}
+
+#wizardInput4 {
   margin-top: auto;
 }
-#wizardDiv label {
-  width: 80%;
-  justify-content: center;
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  #wizardInput5,
+  #wizardInput6 {
+    width: 100%; /* Each item takes the full width */
+    max-width: 25rem;
+  }
 }
-#wizardDiv select {
-  width: 80%;
-  justify-content: center;
+@media (max-width: 580px) {
+  #wizardInput5,
+  #wizardInput6 {
+    flex-direction: column;
+  }
+  #userGeneratorBtn {
+    margin-top: 1rem;
+  }
+  #wizardInput1,
+  #wizardInput2,
+  #wizardInput3,
+  #wizardInput4 {
+    width: 75%;
+  }
 }
 .custom-indicators button {
   background-color: #4caf50;

@@ -4346,7 +4346,7 @@ export const myArraysObj = {
   animals: "Tier",
   fantasyCreatures: "Fantasiewesen",
   rpgClasses: "RPG-Klasse",
-  fantasyRaces: "Fantasie-Rasse",
+  fantasyRaces: "Fantasie-Volk",
   occupations: "Beruf",
   vehicles: "Fahrzeug",
   food: "Essen",
