@@ -66,7 +66,7 @@ export const configNavIndex = {
 
 const createNavBar = (configNav) => {
   const navBar = `
-    <nav class="navbar navbar-expand-lg nav-custom fw-semibold text-black box-shadow">
+    <nav class="navbar navbar-expand-lg nav-custom p-0 text-black box-shadow">
       <div>
         <a href="${configNav.home.link}" class="d-flex align-items-center" style="text-decoration: none;">
          
@@ -76,7 +76,7 @@ const createNavBar = (configNav) => {
             alt="logo"
           />
 
-          <p class="navbar-brand mb-0 fs-2 ms-3">${configNav.logo.text}</p>
+          <p class="navbar-brand mb-0  ms-3">${configNav.logo.text}</p>
         </a>
       </div>
       <button class="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
