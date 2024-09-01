@@ -7,9 +7,26 @@ const picConBtn = document.getElementById("pictureConvertBtn");
 const leetBtn = document.getElementById("convertBtn");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
 const pwInputField = document.getElementById("passwordInput");
+const glyphRangeSlider = document.getElementById("pwLength");
+
+
+
+
+let picturePath;
+
+
+glyphRangeSlider.addEventListener("input", () => {
+  const pwLengthValue = document.getElementById("pwLengthValue");
+  pwLengthValue.textContent = glyphRangeSlider.value;
+});
+
+
 uploadFile.addEventListener("change", () => {
+
+  picConBtn.disabled = false;
   const label = document.getElementById("uploadLabel");
   const preview = document.getElementById("previewImage");
+
   const input = document.getElementById("uploadFile");
   const file = input.files[0];
 
@@ -25,7 +42,10 @@ uploadFile.addEventListener("change", () => {
     const reader = new FileReader();
 
     reader.onload = function (e) {
-      preview.src = e.target.result;
+
+      picturePath = e.target.result;
+      preview.src = picturePath
+   
     };
 
     reader.readAsDataURL(file);
@@ -36,16 +56,42 @@ uploadFile.addEventListener("change", () => {
 
 picConBtn.addEventListener("click", async (e) => {
   e.preventDefault();
-  const textId = "passwordPic";
-  const textElement = document.getElementById(textId);
 
+  const tbody = document.getElementById("statsBodyPicGen");
+  const row = document.createElement("tr");
+
+  const tdPic = document.createElement("td");  
+  const tdPw = document.createElement("td");
+
+  const rowCount = tbody.rows.length + 1;
+
+  const pwId = `pasword${rowCount}`
+  const picId = `pic${rowCount}`
+
+  tdPic.id = picId
+  tdPic.classList.add("tablePics");
+  tdPic.innerHTML = `<img src="${picturePath}" id="${picId}" alt="runeTranslator" class="imgTable img-fluid">`;
+  tdPw.id = pwId
+  tdPw.className ="d-flex justify-content-between w-100"
+  
+  
+  row.append(tdPw,tdPic);
+  tbody.appendChild(row);
+  const pic = document.getElementById(picId);
   try {
     const result = await pictureToString();
 
-    textElement.innerText = `${result}`;
-    textElement.append(copyButton(textId));
+    const span = document.createElement("span");
+    span.innerText = `${result}`;
+    span.classList.add("w-100")
+
+    tdPw.append(copyButton(pwId),span);
+    pic.src = picturePath
+
   } catch (error) {
     console.error(error);
+  } finally{
+    picConBtn.disabled = true
   }
 });
 
@@ -63,9 +109,12 @@ leetBtn.addEventListener("click", function () {
   if (passwordInput) {
     for (let i = 0; i < newPasswordArray.length; i++) {
       const result = document.getElementById("leetResult" + i);
+      const span = document.createElement("span");
 
-      result.innerHTML = newPasswordArray[i];
-      result.append(copyButton("leetResult" + i));
+      span.innerText = `${newPasswordArray[i]}`;
+      span.classList.add("w-100")
+      result.innerHTML=""
+      result.append(copyButton("leetResult" + i), span);
     }
     const body = document.getElementById("statsBody2");
     body.style.display = "";
@@ -106,9 +155,14 @@ rdmPwdBtn.addEventListener("click", function () {
   const pwLength = document.getElementById("pwLength").value;
   document.getElementById("generatedPasswordLength0").innerText = pwLength;
   const generatedPassword = generatePassword(pwLength);
-  passwordElements[0].innerText = `${generatedPassword}`;
-  document.getElementById("generatedPasswordRow0").style.display = "";
-  // Remove old copy button and add a new one
+
+  const span = document.createElement("span");
   passwordElements[0].querySelector("button")?.remove();
-  passwordElements[0].append(copyButton("generatedPassword0"));
+  span.innerText = `${generatedPassword}`;
+ 
+  passwordElements[0].innerHTML = "";
+  passwordElements[0].append(copyButton("generatedPassword0"), span);
+  document.getElementById("generatedPasswordRow0").style.display = "";
+
+
 });
