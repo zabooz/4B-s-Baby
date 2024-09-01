@@ -7,11 +7,11 @@ nav {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(0.7rem, 5vw, 1.2rem);
+  font-size: clamp(1rem, 1vw, 1.2rem);
 
 }
 .navbar-brand {
-  font-size: clamp(1.3rem, 5vw, 3.5rem);
+  font-size: clamp(1.3rem, 3vw, 3rem);
   font-weight: 500;
 }
 nav img {

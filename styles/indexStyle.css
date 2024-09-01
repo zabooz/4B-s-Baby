@@ -102,8 +102,8 @@ main > section {
 }
 
 .card{
-  min-height: 90%;
-  max-width: 40rem;
+  min-height: 100%;
+  max-width: 38rem;
 }
 
 .card a{
