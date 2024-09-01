@@ -6,7 +6,7 @@
 }
 main section{
   width: 100%;
-  max-width: 1600px;
+
 }
 
 
@@ -106,12 +106,15 @@ main section{
 /* =============================== cards =============================== */
 
 .card {
-  /* min-height: 790px; */
 
+  min-height: 100%;
   max-width: 25rem;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
+}
+.card p{
+  font-size: clamp(.9rem, 2vw, 1rem);
 }
 .bg-card-custom {
   background-color: #f1f5f5;
