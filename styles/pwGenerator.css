@@ -8,7 +8,9 @@ main section{
   width: 100%;
 
 }
-
+.col{
+  margin-top: 2rem;
+}
 
 /* ================= Picture magic================= */
 
