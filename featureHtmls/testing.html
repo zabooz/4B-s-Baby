@@ -3,6 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Open Graph Meta Tags for Social Media -->
+        <meta property="og:title" content="Password Playground">
+        <meta property="og:description" content="Generate secure passwords easily with our free tool.">
+        <meta property="og:image" content="https://passwordplayground.com/images/og-image.jpg">
+        <meta property="og:url" content="https://passwordplayground.com">
+        <meta property="og:type" content="website">
+    
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Password Playground: Secure, Random Password Generator & Validator">
+        <meta name="twitter:description" content="Generate secure passwords easily with our free tool.">
+        <meta name="twitter:image" content="https://passwordplayground.com/images/twitter-card.jpg">
+        
+        <!-- Structured Data for SEO -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Password Playground",
+          "url": "https://passwordplayground.com",
+          "description": "Password Playground offers a free, secure tool to generate and validate strong passwords.",
+          "applicationCategory": "Utilities",
+          "operatingSystem": "All"
+        }
+        </script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -52,7 +77,7 @@
       <div class="col mx-auto">    
         <div
           id="bruteForceApp"
-          class="card d-flex flex-column align-items-center text-start mx-auto p-4 box-shadow"
+          class="card d-flex flex-column align-items-center text-start mx-auto pt-4 px-3 box-shadow"
         >
           <img src="../img/testing/mojo.png" alt="mojo" class="img-fluid rounded-top">
           <h2 class="my-4">Mojo</h2>
@@ -65,6 +90,7 @@
               href="#offcanvasSimpleBrute"
               role="button"
               aria-controls="offcanvasSimple"
+              aria-label="BruteForce"
             >
               einfachen Modus
             </span>
@@ -75,6 +101,7 @@
               href="#offcanvasLibraryBrute"
               role="button"
               aria-controls="offcanvasLibrary"
+              aria-label="BruteForce-stop"
             >
               Listen-Modus
             </span>
@@ -129,14 +156,14 @@
 
               <div id="bruteBtns" class="d-flex w-100 flex-column gap-4 align-items-center flex-sm-row">
                 <button
-                  class="btn btn-primary btn-lg w-75 startBtn"
+                  class="btn btn-primary w-75 startBtn"
                   type="button"
                   id="startBrute"
                   
                 >
                 Los geht's!
                 </button>
-                <button id="stopBrute" class="btn  btn-lg w-75 btn-danger">
+                <button id="stopBrute" class="btn   w-75 btn-danger">
                   Stop
                 </button>
               </div>
@@ -146,10 +173,10 @@
             <table class="table w-100 mt-4 " id="stats">
               <thead>
                 <tr>
-                  <th scope="col">Password</th>
-                  <th scope="col">Versuche</th>
-                  <th scope="col">Modus</th>
-                  <th scope="col" id="lastTh">Zeit</th>
+                  <th scope="col" role="columnheader">Password</th>
+                  <th scope="col" role="columnheader">Versuche</th>
+                  <th scope="col" role="columnheader">Modus</th>
+                  <th scope="col" role="columnheader" id="lastTh">Zeit</th>
                 </tr>
               </thead>
               <tbody id="statsBody"></tbody>
@@ -158,7 +185,7 @@
         </div>
       </div>  
       <div class="col">
-        <div class="card d-flex flex-column align-items-center text-start p-4  mx-auto" id="passwordStrengthCalc">
+        <div class="card d-flex flex-column align-items-center text-start pt-4 px-3   mx-auto" id="passwordStrengthCalc">
           <img src="../img/testing/excalibur.png" alt="excalibur" class="img-fluid rounded-top ">
           <h2 class="my-4">Excalibur</h2>
           <p class="mb-4">
@@ -187,7 +214,7 @@
               </div>
       
 
-            <button id="calcStrengthBtn"   class="btn btn-primary btn-lg mb-3 w-75 startBtn">
+            <button id="calcStrengthBtn"   class="btn btn-primary  mb-3 w-75 startBtn">
               Los geht's!
             </button>
           </div>

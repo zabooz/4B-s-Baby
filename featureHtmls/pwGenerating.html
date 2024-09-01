@@ -3,7 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <!-- Open Graph Meta Tags for Social Media -->
+        <meta property="og:title" content="Password Playground">
+        <meta property="og:description" content="Generate secure passwords easily with our free tool.">
+        <meta property="og:image" content="https://passwordplayground.com/images/og-image.jpg">
+        <meta property="og:url" content="https://passwordplayground.com">
+        <meta property="og:type" content="website">
+    
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Password Playground: Secure, Random Password Generator & Validator">
+        <meta name="twitter:description" content="Generate secure passwords easily with our free tool.">
+        <meta name="twitter:image" content="https://passwordplayground.com/images/twitter-card.jpg">
+        
+        <!-- Structured Data for SEO -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          "name": "Password Playground",
+          "url": "https://passwordplayground.com",
+          "description": "Password Playground offers a free, secure tool to generate and validate strong passwords.",
+          "applicationCategory": "Utilities",
+          "operatingSystem": "All"
+        }
+        </script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -43,203 +67,197 @@
     <nav id="navBar" class="sticky-top"></nav>
 
     <header class="d-flex justify-content-center"></header>
-    <main>
-      <section class="d-flex justify-content-evenly flex-lg-row pb-5">
-        <div
-          id="converterSelector"
-          class="card p-1 gap-1 mt-5 w-75 bg-card-custom d-flex flex-column align-items-center"
-        >
-          <h3 class="pt-3">Rune Translator</h3>
-          <p class="fw-semibold w-75 mb-5">
-            Verwandle dein Passwort in eine sicherere<span
-              class="text-custom fw-bold text-decoration-underline"
-              data-bs-toggle="offcanvas"
-              href="#offcanvasLeetSpeak"
-              role="button"
-              aria-controls="offcanvasExample"
-            >
-              Leetspeak-Version</span
-            >
-            für mehr Sicherheit.
-          </p>
-
-          <div class="pwInputDiv d-flex flex-column align-items-center gap-4">
-            <input
-              type="text"
-              id="passwordInput"
-              class="form-control-lg w-75"
-              placeholder="Gib ein Password ein"
-              required
-              minlength="1"
-              maxlength="16"
-            />
-
-            <button
-              id="convertBtn"
-              class="btn btn-primary mt-3 mb-4 w-75 btn-lg"
-            >
-              Los geht's
-            </button>
-          </div>
-          <div class="tableWrapper w-75">
-            <table class="table mb-5" id="stats2">
-              <thead>
-                <tr>
-                  <th scope="col" class="text-center">Stärke</th>
-                  <th scope="col" class="text-center">Passwort</th>
-                </tr>
-              </thead>
-
-              <tbody id="statsBody2" class="text-center" style="display: none">
-                <tr>
-                  <td class="text-start">1</td>
-                  <td id="leetResult0" class="text-end"></td>
-                </tr>
-                <tr>
-                  <td class="text-start">2</td>
-                  <td id="leetResult1" class="text-end"></td>
-                </tr>
-                <tr>
-                  <td class="text-start">3</td>
-                  <td id="leetResult2" class="text-end"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div
-          id="pictureMagic"
-          class="card p-1 gap-1 mt-5 w-75 bg-card-custom d-flex flex-column align-items-center"
-        >
-          <h3 class="pt-3">Picture Magic</h3>
-          <p class="fw-semibold w-75 mb-5">
-            Lade einfach ein Foto hoch, und unsere App verwandelt es in ein
-            sicheres Passwort.
-          </p>
-          <div
-            class="d-flex flex-column align-items-center justify-content-evenly w-100 gap-3"
-          >
+    <main class="w-100 mt-5" >
+      <section class="row row-cols-1 row-cols-lg-3 g-5 mx-auto">
+        
+          <div class="col">
             <div
-              class="d-flex flex-column align-items-center justify-content-center w-100 gap-4"
+              id="converterSelector"
+              class="card pt-4 px-3  col  bg-card-custom d-flex flex-column  "
             >
-              <div class="label w-75 d-flex bg-success">
-                <label
-                  id="uploadLabel"
-                  for="uploadFile"
-                  class="w-100 fw-semibold p-2 fs-5 w-50 text-center"
-                  >Foto hochladen</label
+              <img src="../img/pwGen/runeTranslator.jpeg" class="img-fluid rounded-top" alt="runeTranslator">
+              <h3 class="pt-4 text-center">Rune Translator</h3>
+              <p class=" mb-5">
+                Verwandle dein Passwort in eine sicherere<span
+                  class="text-custom fw-bold text-decoration-underline"
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvasLeetSpeak"
+                  role="button"
+                  aria-controls="offcanvasExample"
                 >
-              </div>
-              <form action="#" class="w-100 text-center">
+                  Leetspeak-Version</span
+                >
+                für mehr Sicherheit.
+              </p>
+              <div class="d-flex flex-column flex-sm-row my-4 gap-4">
                 <input
-                  type="file"
-                  value="value"
-                  id="uploadFile"
-                  accept=".jpg, .jpeg, .png, .webp, .bmp"
-                  style="display: none"
-                  name="uploadFile"
+                  type="text"
+                  id="passwordInput"
+                  class="form-control "
+                  placeholder="Gib ein Password ein"
+                  required
+                  minlength="1"
+                  maxlength="16"
                 />
                 <button
-                  id="pictureConvertBtn"
-                  type="button"
-                  class="btn btn-primary btn-lg w-75"
+                  id="convertBtn"
+                  class="btn btn-primary w-100 "
                 >
                   Los geht's
                 </button>
-              </form>
-
-              <div class="tableWrapper w-75">
-                <table class="table mb-5 w-100" id="statsPicGen">
-                  <thead>
-                    <tr>
-                      <th scope="col" class="text-center">Dein Bild</th>
-                      <th scope="col" class="text-center">Passwort</th>
-                    </tr>
-                  </thead>
-                  <tbody id="statsBodyPicGen" class="text-center">
-                    <tr id="generatedPicRow0">
-                      <td id="previewPic0">
-                        <img
-                          id="previewImage"
-                          src="../img/confusion.jpeg"
-                          alt="confusion"
-                          width="125"
-                          height="125"
-                        />
-                      </td>
-                      <td id="generatedPic0" class="text-center"></td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="card p-1 w-75 mt-5 gap- w-75 bg-card-custom d-flex flex-column align-items-center"
-          id="glyphSorcery"
-        >
-          <h3 class="pt-3">Glyph Sorcery</h3>
-          <p class="w-75 mb-5 fw-semibold">
-            Erstell dir ein sicheres Passwor zwischen 6 und 24 Zeichen.
-          </p>
-          <div
-            id="startPwGenDiv"
-            class="d-flex flex-column w-100 justify-content-center align-items-center"
-          >
-            <label
-              for="pwLength"
-              class="label p-1 mb-5 d-flex w-50 custom-width justify-content-center w-100 gap-3 align-items-center mb-3 fw-semibold"
-            >
-              Wähle deine Passwortlänge:
-            </label>
-            <div
-              class="d-flex w-75 justify-content-around align-items-center mb-4"
-            >
-              <select id="pwLength" class="form-control-lg fw-semibold w-25">
-                <option value="6">6</option>
-                <option value="8">8</option>
-                <option value="10">10</option>
-                <option value="12">12</option>
-                <option value="16">16</option>
-                <option value="20">20</option>
-                <option value="24">24</option>
-              </select>
-              <button
-                id="rdmPwdBtn"
-                class="btn btn-primary btn-lg mt-lg-auto mt-auto"
-              >
-                Generate
-              </button>
-            </div>
-            <div class="tableWrapper w-75">
-              <table class="table mb-5" id="statsPwGen">
+         
+          
+              <table class="table  id="stats2">
                 <thead>
                   <tr>
-                    <th scope="col" class="text-center">Länge</th>
+                    <th scope="col" class="text-center">Stärke</th>
                     <th scope="col" class="text-center">Passwort</th>
                   </tr>
                 </thead>
-
-                <tbody id="statsBodyPwGen" class="text-center">
-                  <tr id="generatedPasswordRow0" style="display: none">
-                    <td id="generatedPasswordLength0" class="text-center"></td>
-                    <td id="generatedPassword0" class="text-end"></td>
+                <tbody id="statsBody2" class="text-center" style="display: none">
+                  <tr>
+                    <td class="text-start">1</td>
+                    <td id="leetResult0" class="text-end"></td>
                   </tr>
-                  <tr id="generatedPasswordRow1" style="display: none">
-                    <td id="generatedPasswordLength1" class="text-center"></td>
-                    <td id="generatedPassword1" class="text-end"></td>
+                  <tr>
+                    <td class="text-start">2</td>
+                    <td id="leetResult1" class="text-end"></td>
                   </tr>
-                  <tr id="generatedPasswordRow2" style="display: none">
-                    <td id="generatedPasswordLength2" class="text-center"></td>
-                    <td id="generatedPassword2" class="text-end"></td>
+                  <tr>
+                    <td class="text-start">3</td>
+                    <td id="leetResult2" class="text-end"></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-        </div>
+
+
+
+
+          <div class="col">
+            <div
+              id="pictureMagic"
+              class="card pt-4 px-3  col bg-card-custom d-flex flex-column "
+            >
+              <img id="previewImage" src="../img/pwGen/pictureMagic.jpeg" class="img-fluid rounded-top" alt="pictureMagic">
+              <h3 class="pt-4">Picture Magic</h3>
+              <p class=" mb-5">
+                Lade einfach ein Foto hoch, und unsere App verwandelt es in ein
+                sicheres Passwort.
+              </p>
+              <div
+                class="d-flex flex-column"
+              >
+                <div
+                  class="d-flex flex-column flex-sm-row my-4 gap-4"
+                >
+                    <label
+                      id="uploadLabel"
+                      for="uploadFile"
+                      class="w-100 d-flex justify-content-center align-items-center bg-success"
+                      >Foto hochladen</label
+                    >
+            
+                  <form action="#" class="w-100">
+                    <input
+                      type="file"
+                      value="value"
+                      id="uploadFile"
+                      accept=".jpg, .jpeg, .png, .webp, .bmp"
+                      style="display: none"
+                      name="uploadFile"
+                    />
+                    <button
+                      id="pictureConvertBtn"
+                      type="button"
+                      class="btn btn-primary w-100"
+                    >
+                      Los geht's
+                    </button>
+                  </form>
+            
+                </div>
+                <table class="table " id="statsPicGen">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="text-center">Passwort</th>
+                    </tr>
+                  </thead>
+                  <tbody id="statsBodyPicGen" class="text-center">
+                      <td id="passwordPic" class="text-center border-0 p-0"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+          </div>
+
+
+
+          <div class="col">
+            <div
+              class="card col pt-4 px-3    bg-card-custom d-flex flex-column "
+              id="glyphSorcery"
+            >
+              <img src="../img/pwGen/glyphSorcery.jpeg" class="img-fluid rounded-top" alt="glyphSorcery">
+              <h3 class="pt-4">Glyph Sorcery</h3>
+              <p class="mb-5">
+                Erstell dir ein sicheres Passwor  das zwischen 6 und 24 Zeichen  lang ist.
+              </p>
+              <div
+                id="startPwGenDiv"
+                class="d-flex flex-column justify-content-center "
+              >
+                <div
+                  class="d-flex flex-column flex-sm-row gap-4 my-4"
+                >
+                  <select id="pwLength" class="form-control ">
+                    <option value="6">Länge: 6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="16">16</option>
+                    <option value="20">20</option>
+                    <option value="24">24</option>
+                  </select>
+                  <button
+                    id="rdmPwdBtn"
+                    class="btn btn-primary w-100 "
+                  >
+                    Generate
+                  </button>
+                </div>
+            
+                  <table class="table " id="statsPwGen">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-center">Länge</th>
+                        <th scope="col" class="text-center">Passwort</th>
+                      </tr>
+                    </thead>
+                    <tbody id="statsBodyPwGen" class="text-center">
+                      <tr id="generatedPasswordRow0" style="display: none">
+                        <td id="generatedPasswordLength0" class="text-center"></td>
+                        <td id="generatedPassword0" class="text-end"></td>
+                      </tr>
+                      <tr id="generatedPasswordRow1" style="display: none">
+                        <td id="generatedPasswordLength1" class="text-center"></td>
+                        <td id="generatedPassword1" class="text-end"></td>
+                      </tr>
+                      <tr id="generatedPasswordRow2" style="display: none">
+                        <td id="generatedPasswordLength2" class="text-center"></td>
+                        <td id="generatedPassword2" class="text-end"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            
+              </div>
+            </div>
+          </div>
+        
       </section>
    
     </main>
@@ -255,7 +273,7 @@
       import { createNav, configNav } from "../components/navBar.js";
       import { createAssistant } from "../components/aiAssistant.js";
       import { createQuickNav, configQuickNavFeature } from "../components/quickNav.js";
-      
+
       createAssistant("main");
       createNav(configNav);
       createQuickNav("main",configQuickNavFeature)
