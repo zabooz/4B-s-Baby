@@ -24,6 +24,7 @@ section{
   border: none;
   color: white;
   width: 100%;
+  margin-bottom: .2rem;
   
 }
 
@@ -136,7 +137,10 @@ table{
 
 }
 
-
+#passwordInput{
+  margin-bottom: .35rem;
+  
+}
 /* ============================= Range Input ==============================  */
 
 
@@ -145,6 +149,7 @@ table{
 input[type="range"] {
 	font-size: 1.5rem;
   width: 100%;
+  margin-bottom: 1.7rem !important;
 }
 
 input[type="range"] {
