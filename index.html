@@ -64,34 +64,34 @@
   </head>
   <body class="bg-custom">
     <nav id="navBar" class="sticky-top"></nav>
-    <header class="w-100 d-flex justify-content-center">
-      <div id="jumbotron" class="d-flex w-100 flex-column gap-4 align-items-center  ">
+    <header class="w-100 d-flex flex-column justify-content-center align-items-center">
+      <div id="jumbotron" class="d-flex flex-column m-auto  align-items-center  ">
           
-          <div class="container-fluid d-flex justify-content-center flex-column pt-2">
-              <div id="logoContainer" class=" justify-content-center mt-5  ">
-                  <div class="d-flex justify-content-center">
+          <div class="container-fluid d-flex justify-content-center flex-column pt-2 px-0">
+              <div id="logoContainer" class=" d-flex justify-content-center mt-5  ">
+                  
                     <div class="mt-auto mb-5">
-                      <div class="montserrat-font "><span id="logoFirstLetter">P</span>assword</div>
-                      <div class="montserrat-font">Playground</div>
+                      <div class="montserrat-font-header "><span id="logoFirstLetter">P</span>assword</div>
+                      <div class="montserrat-font-header">Playground</div>
                     </div>
-                    <div class="w-25 ">
+                    <div id="padlockCon" class=" justify-content-end ">
                     <img id="padlockPic" src="./img/landingPage/padlock.svg" alt="padlock" class="img-fluid ">
                     </div>
-                    </div>
+                 
               </div>
-              <div  class=" inria-serif-regular  container-fluid d-flex justify-content-center ">
+              <div  class="   container-fluid d-flex justify-content-center ">
                   <p class=" leadFontSize  text-center">Mach Schluss mit langweiligen Passwörtern und Namen!</p>
                   </div>
                   <div class="container-fluid d-flex flex-column inria-serif-regular  align-items-center w-50"> 
-                  <p  class="  text-start ">Optimiere mit unseren Tools deine Passwörter und Benutzernamen. Teste ihre Stärke, erschaffe neue und sichere Optionen und finde den perfekten Online-Namen.</p>
-                  <p class="  text-start mt-4">Entdecke jetzt, wie einfach es ist deine Online-Sicherheit zu erhöhen!</p>
+                  <p class="subText inria-serif-regular">Optimiere mit unseren Tools deine Passwörter und Benutzernamen. Teste ihre Stärke, erschaffe neue und sichere Optionen und finde den perfekten Online-Namen.</p>
+                  <p class="subText inria-serif-regular">Entdecke jetzt, wie einfach es ist deine Online-Sicherheit zu erhöhen!</p>
               </div>
               </div>
           
-          <a href="#spanScroll" id="test" class="mt-auto">
-              <img id="scrollArrow" src="./img/landingPage/arrow-pointing.svg" alt="scrollArrow" class="img-fluid mb-4 ">
-          </a>
-      </div>
+            </div>
+            <a href="#spanScroll" id="test" class="mt-auto">
+                <img id="scrollArrow" src="./img/landingPage/arrow-pointing.svg" alt="scrollArrow" class="img-fluid mb-4 ">
+            </a>
 
 
 
@@ -111,11 +111,11 @@
                 alt="picture Password Generating"
               />
               <div class="card-body d-flex flex-column ">
-                <h5 class="card-title text-center mb-3">ERSTELLE</h5>
-                <h6 class="card-subtitle text-center mb-4">
+                <h5 class="card-title text-center mb-3 leadFontSize">ERSTELLE</h5>
+                <h6 class="card-subtitle text-center mb-4 subText">
                   ein sicheres Passwort
                 </h6>
-                <p class="card-text">
+                <p class="card-text subText">
                   Nutze unsere drei Tools, um das ideale Passwort zu generieren:
                   <span><b>Picture Magic</b></span> verwandelt Bilder in
                   Passwörter, <span><b>Rune Translator</b></span> konvertiert
@@ -124,7 +124,7 @@
                   Passwörter.
                 </p>
                 <a
-                  class="btn btn-primary mt-auto mx-auto btn-lg border-0 w-75"
+                  class="btn btn-primary mt-auto mx-auto subText border-0 w-75"
                   href="./featureHtmls/pwGenerating.html"
                   >Erstelle Passwort</a
                 >
@@ -139,11 +139,11 @@
                 alt="picture testing"
               />
               <div class="card-body d-flex flex-column">
-                <h5 class="card-title text-center mb-3">TESTE</h5>
-                <h6 class="card-subtitle text-center mb-4">
+                <h5 class="card-title text-center mb-3 leadFontSize">TESTE</h5>
+                <h6 class="card-subtitle text-center mb-4 subText">
                   die Stärke deines Passworts
                 </h6>
-                <p class="card-text">
+                <p class="card-text subText">
                   Verwende unser Bewertungstool <span><b>Excalibur</b></span
                   >, um die Stärke deines Passworts zu testen und simuliere
                   Brute-Force-Angriffe mit <span><b>Mojo</b></span
@@ -151,7 +151,7 @@
                   geknackt wird.
                 </p>
                 <a
-                  class="btn btn-primary mt-auto mx-auto btn-lg border-0 w-75"
+                  class="btn btn-primary subText mt-auto mx-auto btn-lg border-0 w-75"
                   href="./featureHtmls/testing.html"
                   >Teste Passwort</a
                 >
@@ -166,11 +166,11 @@
                 alt="picture username"
               />
               <div class="card-body d-flex flex-column">
-                <h5 class="card-title text-center mb-3">ERFINDE</h5>
-                <h6 class="card-subtitle text-center mb-4">
+                <h5 class="card-title text-center mb-3 leadFontSize">ERFINDE</h5>
+                <h6 class="card-subtitle text-center mb-4  subText">
                   deinen Online-Namen
                 </h6>
-                <p class="card-text">
+                <p class="card-text subText">
                   Nutze unsere beiden Tools, um den perfekten Benutzernamen zu
                   erstellen: <span><b>Identity Wizardry</b></span> generiert
                   zufällige Benutzernamen basierend auf deinen Parametern, und
@@ -178,7 +178,7 @@
                   ein unterhaltsames Quiz.
                 </p>
                 <a
-                  class="btn btn-primary btn-lg mt-auto mx-auto border-0 w-75"
+                  class="btn btn-primary btn-lg mt-auto subText mx-auto border-0 w-75"
                   href="./featureHtmls/userGenerating.html"
                   >Erfinde Namen</a
                 >
@@ -190,7 +190,7 @@
       </section>
     </main>
 
-    <footer class="p-5">
+    <footer class="p-5 d-flex justify-content-center flex-column">
       <script src="./components/footer.js"></script>
     </footer>
     <div class="clipBoard"></div>

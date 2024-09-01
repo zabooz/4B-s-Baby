@@ -3,7 +3,7 @@
 #basic-addon2 {
   cursor: pointer;
 }
-section{
+main section{
   width: 100%;
   max-width: 1600px;
 
@@ -18,6 +18,9 @@ section{
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
+}
+.card h2{
+  text-transform: uppercase;
 }
 .text-custom {
   color: #ea6954;
