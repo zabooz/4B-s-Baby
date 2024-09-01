@@ -9,7 +9,7 @@
 }
 header {
   color: #151c19;
-  min-height: 85vh;
+  min-height: 90vh;
 }
 main {
   min-height: 110vh;
@@ -102,8 +102,8 @@ main > section {
 }
 
 .card{
-  min-height: 90%;
-  max-width: 40rem;
+  min-height: 100%;
+  max-width: 38rem;
 }
 
 .card a{
