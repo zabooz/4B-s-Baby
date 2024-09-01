@@ -17,7 +17,7 @@ main {
  
 main > section {
   width: 100%;
-  max-width: 1400px;
+  /* max-width: 1600px; */
   padding: 1.2em;
 }
 
@@ -33,9 +33,9 @@ main > section {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(2rem, 5vw, 10rem);
+  font-size: clamp(2rem, 5vw, 15rem);
   padding: 0;
-  line-height: clamp(2rem, 5vw, 10rem);
+  line-height: clamp(2rem, 5vw, 12rem);
   margin: 0;
 }
 
@@ -49,21 +49,22 @@ main > section {
 #logoFirstLetter {
   font-family: "Yellowtail", cursive;
   font-weight: bold;
-  font-size: clamp(5rem, 15vw, 25rem);
+  font-size: clamp(5rem, 15vw, 35rem);
   letter-spacing: calc(-1rem - 2vw);
   margin-left: -2rem
 }
 #padlockCon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: calc(3rem + 15vw);
+  max-width: clamp(6rem , 30vw,36rem);
   position: relative;
 }
 #padlockPic {
-  width: clamp(3rem, 25vw, 25rem);
+  width: clamp(6rem, 20vw, 40rem);
   transform: rotate(5deg);
-  position: absolute;
-  left: 2rem;
-  top: -1rem;
+
 
 }
 
@@ -73,14 +74,14 @@ main > section {
   font-style: normal;
 }
 .leadFontSize {
-  font-size: clamp(1.2rem, 3vw, 2.5rem);
+  font-size: clamp(1.2rem, 2vw, 3rem);
   text-transform: uppercase;
   font-family: "Montserrat", serif;
   font-weight: 400;
   font-style: normal;
 }
 .subText{
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1.2rem, 2vw, 2rem);
 }
 #scrollArrow {
   transform: rotate(180deg);
@@ -100,8 +101,8 @@ main > section {
 }
 
 .card{
-  min-height: 36rem;
-  max-width: 35rem;
+  min-height: 100%;
+  max-width: 50rem;
 }
 
 
