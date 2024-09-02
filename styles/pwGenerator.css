@@ -12,7 +12,7 @@ main section {
   margin-top: 2rem;
 }
 .btn:disabled{
-  background-color: #ced4da !important;
+  background-color: #eb6854 !important;
 }
 
 
@@ -137,7 +137,7 @@ main section {
 .card p {
   font-size: clamp(0.9rem, 2vw, 1rem);
 }
-.card span{
+.card-body p span{
   color: #e93232;
 }
 .bg-card-custom {

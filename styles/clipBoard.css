@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+*{
+    font-family: "Montserrat", serif;
+}
 .copyButton {
     position: relative;
     background-color: transparent;
@@ -21,13 +23,18 @@ i::before{
     background-color: #EA6954;
 }
 
+
+.offcanvas img{
+    border-radius: .5rem;
+    width: 5rem;
+    margin: auto;
+}
+
 .montserrat-font-clippy {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 2.4rem;
-    font-weight: 400;
     color: white;
+    font-size: 2.4rem;
+    text-align: center;
+    padding: 1rem !important;
 }
 .confirmBubble{
     position: absolute;

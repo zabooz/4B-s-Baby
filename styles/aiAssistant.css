@@ -39,6 +39,18 @@ textarea{
     border-radius: 0 !important;
     border: none !important;
 }
+.sanchez .imgCon{
+    display: flex;
+    justify-content: center;
+    background-color: #ea6954;
+    
+}
+
+.sanchez img{
+    border-radius: .5rem;
+    width: 5rem;
+}
+
 
 .sanchez button{    margin-left: auto;
     font-size: 1.3rem;
@@ -49,7 +61,7 @@ textarea{
     color: white;
     font-size: 2.4rem;
     text-align: center;
-    padding: 2rem !important;
+    padding: 1rem !important;
 }
 
 #aiAssistant:hover{

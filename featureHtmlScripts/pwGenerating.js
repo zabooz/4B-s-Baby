@@ -124,6 +124,7 @@ leetInputField.addEventListener("input",()=> {
 leetBtn.addEventListener("click", function () {
   document.getElementById("statsBody2").style.display = "";
   const leetInput = leetInputField.value;
+  leetInputField.value = ""
   const newPasswordArray = tripleConverter(leetInput);
 
     for (let i = 0; i < newPasswordArray.length; i++) {

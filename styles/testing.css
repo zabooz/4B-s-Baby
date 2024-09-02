@@ -79,7 +79,7 @@ main section{
 .card p{
   font-size: clamp(.9rem, 3vw, 1rem);
 }
-.card span{
+.card p span{
   color: #e93232;
   
 }
@@ -98,8 +98,14 @@ main section{
   border: none;
 } 
 .btn:hover {
-  background: #56c5c3;
-  color: white;
+  background-color: #eb6854;
+  color: rgba(255, 255, 255, 0.767);
+}
+.btn:active{
+  background-color: #eb6854 !important;
+}
+.btn:disabled{
+  background-color: #eb6854;
 }
 
 #stopBrute{

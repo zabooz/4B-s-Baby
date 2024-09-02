@@ -5,10 +5,7 @@ const configAi = {
 };
 
 
-
-
-
-
+const imgSrc = "../img/icons/_sanchez.jpeg";
 
 const aiAssistant = () => {
   return `
@@ -16,6 +13,9 @@ const aiAssistant = () => {
 <div class="offcanvas  sanchez offcanvas-start bg-ai-custom  " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="imgCon">
+  <img src="${imgSrc}">
   </div>
   <h5 class="offcanvas-title"  id="offcanvasExampleLabel">Sanchez Bot </h5>
   <div class="offcanvas-body">
