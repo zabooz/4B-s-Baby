@@ -97,15 +97,15 @@ main > section {
 
 /* ===================== Landing Page Cards =============================== */
 
-.box-shadow {
-  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
-  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
-  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
-}
+
 
 .card{
   min-height: 100%;
-  max-width: 38rem;
+  max-width: 35rem;
+  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
+  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
+  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
+  
 }
 
 .card a{

@@ -51,6 +51,7 @@ nav img {
   position: fixed;
   right: -8rem;
   top: 40%;
+  z-index: 1;
 }
 #quickNav img {
   width: 3rem;
