@@ -1,7 +1,6 @@
 export function passwordConverter(password, selector) {
   // Converts a strings content based on dropdown menu choice ("selector")
   let newPassword;
-
   const leetTables = {
     leetSimple: {
       // Easily readable leetspeak here.
