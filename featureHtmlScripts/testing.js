@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(statsBody.childElementCount === 2){
       tableWrapper.classList.add("border-bottom");
 
-
+    }
 
 
     // thinker starts directly after button press
