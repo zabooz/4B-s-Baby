@@ -2,7 +2,7 @@
 
 
 *{
-    font-family: "Montserrat", serif !important;
+    font-family: "Montserrat", serif;
 }
 .bg-ai-custom{
     background-color: #f1f5f5;
@@ -51,9 +51,7 @@ textarea{
     text-align: center;
     padding: 2rem !important;
 }
-.sanchez p{
 
-}
 #aiAssistant:hover{
     animation: moveBtnAi .5s ease-out forwards; /* Wende die Animation an */
 }
