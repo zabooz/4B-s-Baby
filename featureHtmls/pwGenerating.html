@@ -135,7 +135,7 @@
           
             </div>
             <button
-              id="convertBtn"
+              id="leetBtn"
               class="btn btn-primary w-100 my-auto"
               disabled="true"
             >
@@ -230,7 +230,7 @@
                 </div>
               </div>
                   <button
-                    id="pictureConvertBtn"
+                    id="pictureMagicBtn"
                     type="button"
                     class="btn btn-primary mt-auto w-100"
                     disabled="true"
@@ -276,18 +276,19 @@
 
               <div class="d-flex flex-column gap-3 w-100 ">
                 <p class="mx-auto mb-0 fs-5">
-                  Passwortlänge: <span id="pwLengthValue">6</span>
+                  Passwortlänge: <span id="sliderValue">0</span>
                 </p>
                 <input
                   type="range"
-                  id="pwLength"
-                  min="6"
+                  id="sliderSorcery"
+                  min="0"
                   max="24"
-                  value="6"
+                  value="0"
                   steps="1"
+                  
                 />
               </div>
-              <button id="rdmPwdBtn" class="btn btn-primary w-100 mt-auto">
+              <button id="rdmPwdBtn" class="btn btn-primary w-100 mt-auto" disabled = "true">
                 Los geht's
               </button>
               <table class="table" id="statsPwGen">
@@ -301,23 +302,23 @@
                   <tr id="generatedPasswordRow0" style="display: none">
                     <td
                       id="generatedPassword0"
-                      class="d-flex justify-content-between w-100"
+                      class="d-flex justify-content-between w-100 rdmPassword"
                     ></td>
-                    <td id="generatedPasswordLength0" class="text-center"></td>
+                    <td id="generatedPasswordLength0" class="text-center rdmPasswordLength"></td>
                   </tr>
                   <tr id="generatedPasswordRow1" style="display: none">
                     <td
                       id="generatedPassword1"
-                      class="d-flex flex-row-reverse justify-content-between w-100"
+                      class="d-flex flex-row-reverse justify-content-between w-100 rdmPassword"
                     ></td>
-                    <td id="generatedPasswordLength1" class="text-center"></td>
+                    <td id="generatedPasswordLength1" class="text-center rdmPasswordLength"></td>
                   </tr>
-                  <tr id="generatedPasswordRow2" style="display: none">
+                  <tr id="generatedPasswordRow2" style="display: none" >
                     <td
                       id="generatedPassword2"
-                      class="d-flex justify-content-between flex-row-reverse w-100"
+                      class="d-flex justify-content-between flex-row-reverse w-100 rdmPassword"
                     ></td>
-                    <td id="generatedPasswordLength2" class="text-center"></td>
+                    <td id="generatedPasswordLength2" class="text-center rdmPasswordLength"></td>
                   </tr>
                 </tbody>
               </table>

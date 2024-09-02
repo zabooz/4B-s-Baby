@@ -11,6 +11,10 @@ main section {
 .col {
   margin-top: 2rem;
 }
+.btn:disabled{
+  background-color: #ea6854be !important;
+}
+
 
 /* ================= Picture magic================= */
 

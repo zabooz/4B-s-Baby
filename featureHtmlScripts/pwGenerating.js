@@ -2,12 +2,12 @@ import { pictureToString } from "../scripts/picturePwd.js";
 import { copyButton } from "../scripts/copybutton.js";
 import { tripleConverter } from "./tripleLeetConverter.js";
 import { generatePassword } from "../scripts/passwordGenerator.js";
+
 const uploadFile = document.getElementById("uploadFile");
-const picConBtn = document.getElementById("pictureConvertBtn");
-const leetBtn = document.getElementById("convertBtn");
+const picMagicBtn = document.getElementById("pictureMagicBtn");
+const leetBtn = document.getElementById("leetBtn");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
-const pwInputField = document.getElementById("leetInput");
-const glyphRangeSlider = document.getElementById("pwLength");
+const glyphRangeSlider = document.getElementById("sliderSorcery");
 const previewCon = document.getElementById("previewContainer");
 const leetInputField = document.getElementById("leetInput");
 
@@ -16,8 +16,14 @@ const leetInputField = document.getElementById("leetInput");
 
 
 glyphRangeSlider.addEventListener("input", () => {
-  const pwLengthValue = document.getElementById("pwLengthValue");
-  pwLengthValue.textContent = glyphRangeSlider.value;
+
+  const sliderValue  = glyphRangeSlider.value
+
+  const sliderValueDisplay = document.getElementById("sliderValue");
+  sliderValueDisplay.textContent = sliderValue
+
+  rdmPwdBtn.disabled = sliderValue > 0 ? false : true
+
 });
 
 previewCon.addEventListener("click", () => {
@@ -25,12 +31,16 @@ previewCon.addEventListener("click", () => {
 })
 
 
+
+// shared variables between upload and converter
 let picturePath;
 let file;
 
+//  ==============================
+
 uploadFile.addEventListener("input", () => {
 
-  picConBtn.disabled = false;
+  picMagicBtn.disabled = false;
   const label = document.getElementById("uploadLabel");
   const preview = document.getElementById("previewImage");
 
@@ -48,67 +58,64 @@ uploadFile.addEventListener("input", () => {
   }
 
   label.textContent = "Hochgeladen!";
-  if (preview) {
     const reader = new FileReader();
-
     reader.onload = function (e) {
-
       picturePath = e.target.result;
       preview.src = picturePath
    
     };
 
     reader.readAsDataURL(file);
-  } else {
-    preview.src = "/img/confusion.jpeg"; // Verstecke das Bild, wenn keine Datei ausgewählt ist
-  }
+
 });
 
-picConBtn.addEventListener("click", async (e) => {
+picMagicBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
   const tbody = document.getElementById("statsBodyPicGen");
   const row = document.createElement("tr");
 
-  const tdPic = document.createElement("td");  
-  const tdPw = document.createElement("td");
-
   const rowCount = tbody.rows.length + 1;
-
   const pwId = `pasword${rowCount}`
   const picId = `pic${rowCount}`
 
+  const tdPic = document.createElement("td");  
   tdPic.id = picId
   tdPic.classList.add("tablePics");
   tdPic.innerHTML = `<img src="${picturePath}" id="${picId}" alt="runeTranslator" class="imgTable img-fluid">`;
+  
+  const tdPw = document.createElement("td");
   tdPw.id = pwId
   tdPw.className ="d-flex justify-content-between w-100"
-  
-  
+
   row.append(tdPw,tdPic);
   tbody.appendChild(row);
-  const pic = document.getElementById(picId);
+
+  
   try {
     const result = await pictureToString(file);
-    console.log(result)
+
     const span = document.createElement("span");
+    const pic = document.getElementById(picId);
     span.innerText = `${result}`;
     span.classList.add("w-100")
-
     tdPw.append(copyButton(pwId),span);
     pic.src = picturePath
+    picMagicBtn.disabled = true
 
   } catch (error) {
     console.error(error);
-  } finally{
-    picConBtn.disabled = true
   }
+
 });
 
-pwInputField.addEventListener("keypress", function (event) {
+
+
+
+leetInputField.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault(); // Prevents the default action (if any)
-    document.getElementById("convertBtn").click(); // Trigger button click
+    leetBtn.click(); // Trigger button click
   }
 });
 
@@ -121,7 +128,7 @@ leetBtn.addEventListener("click", function () {
   document.getElementById("statsBody2").style.display = "";
   const leetInput = leetInputField.value;
   const newPasswordArray = tripleConverter(leetInput);
-  if (leetInput) {
+
     for (let i = 0; i < newPasswordArray.length; i++) {
       const result = document.getElementById("leetResult" + i);
       const span = document.createElement("span");
@@ -133,28 +140,20 @@ leetBtn.addEventListener("click", function () {
     }
     const body = document.getElementById("statsBody2");
     body.style.display = "";
-  }
+
 });
 
 rdmPwdBtn.addEventListener("click", function () {
   // Create an array of password elements
-  const passwordElements = [
-    document.getElementById("generatedPassword0"),
-    document.getElementById("generatedPassword1"),
-    document.getElementById("generatedPassword2"),
-  ];
-  const lengthElements = [
-    document.getElementById("generatedPasswordLength0"),
-    document.getElementById("generatedPasswordLength1"),
-    document.getElementById("generatedPasswordLength2"),
-  ];
+  const passwordElements = document.querySelectorAll(".rdmPassword")
+  const passwordLength = document.querySelectorAll(".rdmPasswordLength") 
 
   // Function to shift passwords down the array
   function shiftRow() {
     for (let i = passwordElements.length - 1; i > 0; i--) {
       if (passwordElements[i - 1].innerText !== "") {
         passwordElements[i].innerText = passwordElements[i - 1].innerText;
-        lengthElements[i].innerText = lengthElements[i - 1].innerText;
+        passwordLength[i].innerText = passwordLength[i - 1].innerText;
         // Remove old copy button and add a new one
         passwordElements[i].querySelector("button")?.remove();
         passwordElements[i].append(copyButton(`generatedPassword${i}`));
@@ -167,7 +166,7 @@ rdmPwdBtn.addEventListener("click", function () {
   shiftRow();
 
   // Generate a new password and update the first element
-  const pwLength = document.getElementById("pwLength").value;
+  const pwLength = glyphRangeSlider.value;
   document.getElementById("generatedPasswordLength0").innerText = pwLength;
   const generatedPassword = generatePassword(pwLength);
 
