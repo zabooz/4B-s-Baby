@@ -39,16 +39,22 @@ main section{
 }
 
 .tablePics{
+  position: relative;
   width: 1rem;
+  
+  object-fit: cover;
 }
 .tablePics:hover{
   cursor: pointer;
-  z-index: 2;
   animation: scaleUp 1s ease forwards;
+  z-index:5;
 }
 .imgTable{
   border-radius: .2rem;
   border: 1px solid #7e757585;
+  background: white;
+  object-fit: stretch;
+  aspect-ratio: 4/3;
 
 }
 @keyframes scaleUp {
@@ -56,7 +62,7 @@ main section{
     transform: scale(1) rotate(0deg);
   }
   100% {
-    transform: scale(7) rotate(360deg);
+    transform: scale(5) rotate(360deg);
   }
 }
 

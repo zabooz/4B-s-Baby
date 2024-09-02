@@ -37,6 +37,7 @@ main > section {
   padding: 0;
   line-height: clamp(2rem, 5vw, 8rem);
   margin: 0;
+  font-optical-sizing: auto;
 }
 
 .playwrite-cz-font {
