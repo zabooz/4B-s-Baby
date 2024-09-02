@@ -41,15 +41,14 @@ main section {
 
 .labelCon {
   position: absolute;
-  top: 0;
   display: flex;
   justify-content: center;
   align-items: end;
   height: 100%;
   background-color: #ffffff00;
   border-radius: 0.5rem;
-  width: 100%;
   z-index: 1;
+ 
 }
 #previewImage {
   aspect-ratio: 4/3;
@@ -62,7 +61,7 @@ main section {
 }
 
 #uploadLabel {
-  width: 100%;
+  width: clamp(200px, 20vw, 280px);
   pointer-events: none;
   text-align: center;
   font-weight: 400;
@@ -88,7 +87,6 @@ main section {
   position: relative;
   overflow: hidden;
   border-radius: 0.5rem;
-  width: 100%;
 }
 .imageContainer img {
   aspect-ratio: 16/9;
