@@ -4,11 +4,18 @@
 
 /* ================================================ Other Stuff =======================================*/
 
+
+* {
+  color: #212529;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+
 .bg-custom {
   background-color: #23bbb858;
 }
 header {
-  color: #212529;
   min-height: 90vh;
 }
 main {
@@ -17,7 +24,6 @@ main {
  
 main > section {
   width: 100%;
-  /* max-width: 1600px; */
   padding: 1.2em;
 }
 
@@ -75,7 +81,7 @@ main > section {
   font-style: normal;
 }
 .leadFont {
-  font-size: clamp(1.1rem, 1.5vw, 2rem);
+  font-size: clamp(1.1rem, 1.5vw, 2rem) ;
   text-transform: uppercase;
   font-family: "INRIA Serif", serif;
   font-weight: 400;
@@ -83,7 +89,8 @@ main > section {
   letter-spacing: .1rem;
 }
 .subText{
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-size: clamp(.9rem, 1vw, 1.3rem) !important;
+  font-weight: 400;
 }
 #scrollArrow {
   transform: rotate(180deg);
