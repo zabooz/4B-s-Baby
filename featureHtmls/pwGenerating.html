@@ -102,7 +102,7 @@
               </div>
             </div>
             <div
-              class="card-body d-flex flex-column align-items-center p-0 my-2 my-lg-4"
+              class="card-body d-flex flex-column align-items-center p-0 mt-4"
             >
               <p class="mb-5">
                 <span
@@ -119,8 +119,8 @@
                 aus, welche Variante - von einfach bis stark verändert - du
                 bevorzugst.
               </p>
-              <div class="w-100">
-                <div class="d-flex flex-column w-100 my-2 my-lg-4">
+            
+                <div class="d-flex flex-column w-100 mb-4">
                   <input
                     type="text"
                     id="passwordInput"
@@ -130,50 +130,51 @@
                     minlength="1"
                     maxlength="16"
                   />
-                  <button
-                    id="convertBtn"
-                    class="btn btn-primary w-100 my-2 my-lg-4"
-                  >
-                    Los geht's
-                  </button>
-                  <table class="stats mt-auto" id="stats2">
-                    <thead class="border-bottom">
-                      <tr>
-                        <th scope="col" class="text-center py-2">Passwort</th>
-                        <th scope="col" class="text-center">Stärke</th>
-                      </tr>
-                    </thead>
-                    <tbody
-                      id="statsBody2"
-                      class="text-center border-top"
-                      style="display: none"
-                    >
-                      <tr>
-                        <td
-                          id="leetResult0"
-                          class="d-flex justify-content-between w-100"
-                        ></td>
-                        <td class="">Einfach</td>
-                      </tr>
-                      <tr>
-                        <td
-                          id="leetResult1"
-                          class="d-flex justify-content-between w-100"
-                        ></td>
-                        <td class="text-center">Mittel</td>
-                      </tr>
-                      <tr>
-                        <td
-                          id="leetResult2"
-                          class="d-flex justify-content-between w-100"
-                        ></td>
-                        <td class="text-center">Stark</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <p class="ps-3">* Maximal 16 Zeichen</p>
                 </div>
-              </div>
+          
             </div>
+            <button
+              id="convertBtn"
+              class="btn btn-primary w-100 mt-auto"
+            >
+              Los geht's
+            </button>
+            <table class="stats mt-auto mb-3" id="stats2">
+              <thead class="border-bottom">
+                <tr>
+                  <th scope="col" class="text-center py-2">Passwort</th>
+                  <th scope="col" class="text-center">Stärke</th>
+                </tr>
+              </thead>
+              <tbody
+                id="statsBody2"
+                class="text-center border-top"
+                style="display: none"
+              >
+                <tr>
+                  <td
+                    id="leetResult0"
+                    class="d-flex justify-content-between w-100"
+                  ></td>
+                  <td class="">Einfach</td>
+                </tr>
+                <tr>
+                  <td
+                    id="leetResult1"
+                    class="d-flex justify-content-between w-100"
+                  ></td>
+                  <td class="text-center">Mittel</td>
+                </tr>
+                <tr>
+                  <td
+                    id="leetResult2"
+                    class="d-flex justify-content-between w-100"
+                  ></td>
+                  <td class="text-center">Stark</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -192,27 +193,28 @@
               </div>
             </div>
             <div
-              class="card-body d-flex flex-column align-items-center p-0 mt-4"
+              class="card-body d-flex flex-column align-items-center justify-content-evenly p-0 mt-4"
             >
               <p>
                 Lade einfach ein Foto hoch, und unsere App verwandelt es in ein
                 sicheres Passwort.
               </p>
-              <div class="imageContainer d-flex " id="previewContainer">
+              <div class="imageContainer d-flex mt-3 mb-4" id="previewContainer">
                 <img
                   id="previewImage"
                   src="../img/pwGen/upload.jpeg"
                   alt="runeTranslator"
-                  class="border"
+                  class="border img-fluid"
+
                 />
-                <div class="labelCon">
-                  <label id="uploadLabel" for="uploadFile" class=""
-                    >Foto hochladen
+                <div class="labelCon ">
+                  <label id="uploadLabel" for="uploadFile"
+                    >Foto hochladen!
                   </label>
                 </div>
               </div>
 
-              <div class="w-100 mt-auto">
+              <div style="display: none">
                 <div class="d-flex flex-column w-100">
                   <form action="#" class="w-100">
                     <input
@@ -220,20 +222,20 @@
                       value="value"
                       id="uploadFile"
                       accept=".jpg, .jpeg, .png, .webp, .bmp"
-                      style="display: none"
+                      
                       name="uploadFile"
                     />
-                    <button
-                      id="pictureConvertBtn"
-                      type="button"
-                      class="btn btn-primary my-2 my-lg-4 w-100"
-                      disabled="true"
-                    >
-                      Los geht's
-                    </button>
                   </form>
                 </div>
               </div>
+                  <button
+                    id="pictureConvertBtn"
+                    type="button"
+                    class="btn btn-primary mt-auto w-100"
+                    disabled="true"
+                  >
+                    Los geht's
+                  </button>
               <table class="table" id="statsPicGen">
                 <thead>
                   <tr>
@@ -271,22 +273,21 @@
                 sichere Passwörter entsprechen.
               </p>
 
-              <div class="d-flex flex-column w-100 mt-3">
-                <p class="mx-auto">
-                  Passwortlänge: <span id="pwLengthValue">1</span>
+              <div class="d-flex flex-column gap-3 w-100 ">
+                <p class="mx-auto mb-0 fs-5">
+                  Passwortlänge: <span id="pwLengthValue">6</span>
                 </p>
                 <input
                   type="range"
                   id="pwLength"
-                  min="1"
+                  min="6"
                   max="24"
-                  value="1"
+                  value="6"
                   steps="1"
-                  class="mb-4 mx-auto"
                 />
               </div>
-              <button id="rdmPwdBtn" class="btn btn-primary w-100 mt-1">
-                Los
+              <button id="rdmPwdBtn" class="btn btn-primary w-100 mt-auto">
+                Los geht's
               </button>
               <table class="table" id="statsPwGen">
                 <thead>

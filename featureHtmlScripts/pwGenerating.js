@@ -40,7 +40,7 @@ uploadFile.addEventListener("change", () => {
     return;
   }
 
-  label.textContent = "Picture Uploaded!";
+  label.textContent = "Hochgeladen!";
   if (preview) {
     const reader = new FileReader();
 
