@@ -8,7 +8,7 @@
   background-color: #23bbb858;
 }
 header {
-  color: #151c19;
+  color: #212529;
   min-height: 90vh;
 }
 main {
@@ -74,12 +74,13 @@ main > section {
   font-weight: 400;
   font-style: normal;
 }
-.leadFontSize {
+.leadFont {
   font-size: clamp(1.1rem, 1.5vw, 2rem);
   text-transform: uppercase;
-  font-family: "Montserrat", serif;
+  font-family: "INRIA Serif", serif;
   font-weight: 400;
   font-style: normal;
+  letter-spacing: .1rem;
 }
 .subText{
   font-size: clamp(1rem, 1.5vw, 1.5rem);
