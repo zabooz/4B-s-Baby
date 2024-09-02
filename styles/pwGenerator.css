@@ -18,6 +18,8 @@ main section {
 
 /* ================= Picture magic================= */
 
+
+
 .tablePics {
   position: relative;
   width: 1rem;
@@ -63,8 +65,8 @@ main section {
   width: 100%;
   pointer-events: none;
   text-align: center;
-  font-weight: 500;
-  font-size: clamp(1.1rem, 1.5vw, 2rem);
+  font-weight: 400;
+  font-size: clamp(1.1rem, 1.5vw, 1.6rem);
   font-family: "Montserrat", sans-serif;
   padding: 0.2rem 0.2rem;
   margin: 0 0.2rem;
@@ -125,7 +127,7 @@ main section {
 /* =============================== cards =============================== */
 
 .card {
-  min-height: 100%;
+  min-height: clamp(716px,716px,100%);
   max-width: 30rem;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);

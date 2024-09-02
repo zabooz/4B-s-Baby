@@ -109,9 +109,6 @@ picMagicBtn.addEventListener("click", async (e) => {
 
 });
 
-
-
-
 leetInputField.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault(); // Prevents the default action (if any)
