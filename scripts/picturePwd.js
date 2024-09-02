@@ -4,7 +4,7 @@ export async function pictureToString() {
   const input = document.getElementById("uploadFile");
   const file = input.files[0];
   const label = document.getElementById("uploadLabel");
-  label.textContent = "Upload your picture";
+  label.textContent = "Foto hochladen!";
 
   if (!file) {
     throw new Error("No file selected");

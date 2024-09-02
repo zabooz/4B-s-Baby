@@ -8,7 +8,7 @@ const leetBtn = document.getElementById("convertBtn");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
 const pwInputField = document.getElementById("passwordInput");
 const glyphRangeSlider = document.getElementById("pwLength");
-
+const previewCon = document.getElementById("previewContainer");
 
 
 
@@ -20,6 +20,9 @@ glyphRangeSlider.addEventListener("input", () => {
   pwLengthValue.textContent = glyphRangeSlider.value;
 });
 
+previewCon.addEventListener("click", () => {
+  uploadFile.click()
+})
 
 uploadFile.addEventListener("change", () => {
 
@@ -37,7 +40,7 @@ uploadFile.addEventListener("change", () => {
     return;
   }
 
-  label.textContent = "Picture Uploaded!";
+  label.textContent = "Hochgeladen!";
   if (preview) {
     const reader = new FileReader();
 

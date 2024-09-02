@@ -8,7 +8,7 @@
   background-color: #23bbb858;
 }
 header {
-  color: #151c19;
+  color: #212529;
   min-height: 90vh;
 }
 main {
@@ -37,6 +37,7 @@ main > section {
   padding: 0;
   line-height: clamp(2rem, 5vw, 8rem);
   margin: 0;
+  font-optical-sizing: auto;
 }
 
 .playwrite-cz-font {
@@ -49,7 +50,7 @@ main > section {
 #logoFirstLetter {
   font-family: "Yellowtail", cursive;
   font-weight: bold;
-  font-size: clamp(5rem, 15vw, 20rem);
+  font-size: clamp(5rem, 15vw, 18rem);
   letter-spacing: clamp(-3.5rem ,-5vw,-1rem);
   margin-left: -2rem
 }
@@ -58,11 +59,11 @@ main > section {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: clamp(6rem , 20vw,30rem);
+  max-width: clamp(6rem , 18vw,30rem);
   position: relative;
 }
 #padlockPic {
-  width: clamp(6rem, 20vw, 25rem);
+  width: clamp(6rem, 18vw, 25rem);
   transform: rotate(5deg);
 
 
@@ -73,15 +74,16 @@ main > section {
   font-weight: 400;
   font-style: normal;
 }
-.leadFontSize {
-  font-size: clamp(1.1rem, 2vw, 2.5rem);
+.leadFont {
+  font-size: clamp(1.1rem, 1.5vw, 2rem);
   text-transform: uppercase;
-  font-family: "Montserrat", serif;
+  font-family: "INRIA Serif", serif;
   font-weight: 400;
   font-style: normal;
+  letter-spacing: .1rem;
 }
 .subText{
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 #scrollArrow {
   transform: rotate(180deg);
@@ -95,15 +97,15 @@ main > section {
 
 /* ===================== Landing Page Cards =============================== */
 
-.box-shadow {
-  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
-  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
-  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
-}
+
 
 .card{
   min-height: 100%;
-  max-width: 38rem;
+  max-width: 35rem;
+  -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
+  -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
+  box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
+  
 }
 
 .card a{

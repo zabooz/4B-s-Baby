@@ -1,78 +1,96 @@
 @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-*{
+* {
   font-family: "Montserrat", sans-serif;
+  color: #212529;
 }
-main section{
+main section {
   width: 100%;
-  max-width: 1600px;
 }
-
+.col {
+  margin-top: 2rem;
+}
 
 /* ================= Picture magic================= */
 
-
-
-
-#uploadLabel{
-  text-align: center;
-  border-radius: 0.375rem;
-  padding: 0.45rem 0.2rem;
-  font-size: 1rem;
-  background-color: #ea6954;
-  border: none;
-  color: white;
-  width: 100%;
-  margin-bottom: .2rem;
-  
-}
-
-#previewImage{
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  border-radius: .5rem;
-  border: 1px solid #7e7575;
-  margin-bottom: 1rem;
-}
-
-.tablePics{
+.tablePics {
+  position: relative;
   width: 1rem;
-}
-.tablePics:hover{
-  cursor: pointer;
-  z-index: 2;
-  animation: scaleUp 1s ease forwards;
-}
-.imgTable{
-  border-radius: .2rem;
-  border: 1px solid #7e757585;
 
+  object-fit: cover;
 }
+.tablePics:hover {
+  cursor: pointer;
+  animation: scaleUp 1s ease forwards;
+  z-index: 5;
+}
+.imgTable {
+  border-radius: 0.2rem;
+  border: 1px solid #7e757585;
+  background: white;
+  object-fit: stretch;
+  aspect-ratio: 4/3;
+}
+
+.labelCon {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  height: 100%;
+  background-color: #ffffff00;
+  border-radius: 0.5rem;
+  width: 100%;
+  z-index: 1;
+}
+#previewImage {
+  aspect-ratio: 4/3;
+  width: clamp(200px, 20vw, 280px);
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 1px solid #7e7575;
+  filter: blur(0);
+}
+
+#uploadLabel {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: clamp(1.1rem, 1.5vw, 2rem);
+  font-family: "Montserrat", sans-serif;
+
+  padding: 0.2rem 0.2rem;
+  margin: 0 0.2rem;
+  background-color: #ffffff96;
+}
+
 @keyframes scaleUp {
   0% {
     transform: scale(1) rotate(0deg);
   }
   100% {
-    transform: scale(7) rotate(360deg);
+    transform: scale(5) rotate(360deg);
   }
 }
 
-
 /* ====================  Cards Header =============== */
 
-.imageContainer{
+.imageContainer {
   position: relative;
   overflow: hidden;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
+  width: 100%;
 }
-.imageContainer img{
+.imageContainer img {
   aspect-ratio: 16/9;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   object-fit: cover;
   filter: blur(2px);
 }
-.imageContainer .h1Con{
+.imageContainer .h1Con {
   position: absolute;
   top: 0;
   display: flex;
@@ -80,38 +98,37 @@ main section{
   align-items: center;
   height: 100%;
   background-color: #ffffff7c;
-
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   width: 100%;
   z-index: 1;
-  
-  
 }
 
-.h1Con h1{
+.h1Con h1 {
   width: 100%;
   text-transform: uppercase;
   text-align: center;
   font-weight: 500;
-  font-size: calc(1.3rem + .5vw);
+  font-size: calc(1.3rem + 0.5vw);
   font-family: "inria serif", sans-serif;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
-  padding: .2rem .2rem;
-  margin: 0 .2rem;
+  padding: 0.2rem 0.2rem;
+  margin: 0 0.2rem;
   background-color: #ffffff18;
 }
 
 /* =============================== cards =============================== */
 
 .card {
-  /* min-height: 790px; */
-
-  max-width: 25rem;
+  min-height: 100%;
+  max-width: 30rem;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
+}
+.card p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 .bg-card-custom {
   background-color: #f1f5f5;
@@ -126,182 +143,175 @@ main section{
   background-color: #ea6954;
   color: white;
   border: none;
-} 
+}
 .btn:hover {
   background: #56c5c3;
   color: white;
 }
 
-table{
-  margin-top: 1rem;
 
-}
 
-#passwordInput{
-  margin-bottom: .35rem;
-  
+#passwordInput {
+  margin-bottom: 0.35rem;
 }
 /* ============================= Range Input ==============================  */
 
-
-
-
 input[type="range"] {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
   width: 100%;
   margin-bottom: 1.7rem !important;
 }
 
 input[type="range"] {
-	color: #ef233c;
-	--thumb-height: 1.125em;
-	--track-height: 0.125em;
-	--track-color: rgba(0, 0, 0, 0.2);
-	--brightness-hover: 180%;
-	--brightness-down: 80%;
-	--clip-edges: 0.125em;
+  color: #ea6954;
+  --thumb-height: 1.125em;
+  --track-height: 0.125em;
+  --track-color: rgba(0, 0, 0, 0.2);
+  --brightness-hover: 180%;
+  --brightness-down: 80%;
+  --clip-edges: 0.125em;
 }
 input[type="range"] {
-	position: relative;
-	background: #fff0;
-	overflow: hidden;
+  position: relative;
+  background: #fff0;
+  overflow: hidden;
 }
 input[type="range"] {
-	position: relative;
-	background: #fff0;
-	overflow: hidden;
+  position: relative;
+  background: #fff0;
+  overflow: hidden;
 }
 
 input[type="range"]:active {
-	cursor: grabbing;
+  cursor: grabbing;
 }
 
 input[type="range"]:disabled {
-	filter: grayscale(1);
-	opacity: 0.3;
-	cursor: not-allowed;
+  filter: grayscale(1);
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
 /* === WebKit specific styles === */
 input[type="range"],
 input[type="range"]::-webkit-slider-runnable-track,
 input[type="range"]::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	transition: all ease 100ms;
-	height: var(--thumb-height);
+  -webkit-appearance: none;
+  transition: all ease 100ms;
+  height: var(--thumb-height);
 }
 
 input[type="range"]::-webkit-slider-runnable-track,
 input[type="range"]::-webkit-slider-thumb {
-	position: relative;
+  position: relative;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-	--thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
-	--clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
-	--clip-bottom: calc(var(--thumb-height) - var(--clip-top));
-	--clip-further: calc(100% + 1px);
-	--box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
-		100vmax currentColor;
+  --thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
+  --clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
+  --clip-bottom: calc(var(--thumb-height) - var(--clip-top));
+  --clip-further: calc(100% + 1px);
+  --box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
+    100vmax currentColor;
 
-	width: var(--thumb-width, var(--thumb-height));
-	background: linear-gradient(currentColor 0 0) scroll no-repeat left center /
-		50% calc(var(--track-height) + 1px);
-	background-color: currentColor;
-	box-shadow: var(--box-fill);
-	border-radius: var(--thumb-width, var(--thumb-height));
+  width: var(--thumb-width, var(--thumb-height));
+  background: linear-gradient(currentColor 0 0) scroll no-repeat left center /
+    50% calc(var(--track-height) + 1px);
+  background-color: currentColor;
+  box-shadow: var(--box-fill);
+  border-radius: var(--thumb-width, var(--thumb-height));
 
-	filter: brightness(100%);
-	clip-path: polygon(
-		100% -1px,
-		var(--clip-edges) -1px,
-		0 var(--clip-top),
-		-100vmax var(--clip-top),
-		-100vmax var(--clip-bottom),
-		0 var(--clip-bottom),
-		var(--clip-edges) 100%,
-		var(--clip-further) var(--clip-further)
-	);
+  filter: brightness(100%);
+  clip-path: polygon(
+    100% -1px,
+    var(--clip-edges) -1px,
+    0 var(--clip-top),
+    -100vmax var(--clip-top),
+    -100vmax var(--clip-bottom),
+    0 var(--clip-bottom),
+    var(--clip-edges) 100%,
+    var(--clip-further) var(--clip-further)
+  );
 }
 
 input[type="range"]:hover::-webkit-slider-thumb {
-	filter: brightness(var(--brightness-hover));
-	cursor: grab;
+  filter: brightness(var(--brightness-hover));
+  cursor: grab;
 }
 
 input[type="range"]:active::-webkit-slider-thumb {
-	filter: brightness(var(--brightness-down));
-	cursor: grabbing;
+  filter: brightness(var(--brightness-down));
+  cursor: grabbing;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
-	background: linear-gradient(var(--track-color) 0 0) scroll no-repeat center /
-		100% calc(var(--track-height) + 1px);
+  background: linear-gradient(var(--track-color) 0 0) scroll no-repeat center /
+    100% calc(var(--track-height) + 1px);
 }
 
 input[type="range"]:disabled::-webkit-slider-thumb {
-	cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 /* === Firefox specific styles === */
 input[type="range"],
 input[type="range"]::-moz-range-track,
 input[type="range"]::-moz-range-thumb {
-	appearance: none;
-	transition: all ease 100ms;
-	height: var(--thumb-height);
+  appearance: none;
+  transition: all ease 100ms;
+  height: var(--thumb-height);
 }
 
 input[type="range"]::-moz-range-track,
 input[type="range"]::-moz-range-thumb,
 input[type="range"]::-moz-range-progress {
-	background: #fff0;
+  background: #fff0;
 }
 
 input[type="range"]::-moz-range-thumb {
-	background: currentColor;
-	border: 0;
-	width: var(--thumb-width, var(--thumb-height));
-	border-radius: var(--thumb-width, var(--thumb-height));
-	cursor: grab;
+  background: currentColor;
+  border: 0;
+  width: var(--thumb-width, var(--thumb-height));
+  border-radius: var(--thumb-width, var(--thumb-height));
+  cursor: grab;
 }
 
 input[type="range"]:active::-moz-range-thumb {
-	cursor: grabbing;
+  cursor: grabbing;
 }
 
 input[type="range"]::-moz-range-track {
-	width: 100%;
-	background: var(--track-color);
+  width: 100%;
+  background: var(--track-color);
 }
 
 input[type="range"]::-moz-range-progress {
-	appearance: none;
-	background: currentColor;
-	transition-delay: 30ms;
+  appearance: none;
+  background: currentColor;
+  transition-delay: 30ms;
 }
 
 input[type="range"]::-moz-range-track,
 input[type="range"]::-moz-range-progress {
-	height: calc(var(--track-height) + 1px);
-	border-radius: var(--track-height);
+  height: calc(var(--track-height) + 1px);
+  border-radius: var(--track-height);
 }
 
 input[type="range"]::-moz-range-thumb,
 input[type="range"]::-moz-range-progress {
-	filter: brightness(100%);
+  filter: brightness(100%);
 }
 
 input[type="range"]:hover::-moz-range-thumb,
 input[type="range"]:hover::-moz-range-progress {
-	filter: brightness(var(--brightness-hover));
+  filter: brightness(var(--brightness-hover));
 }
 
 input[type="range"]:active::-moz-range-thumb,
 input[type="range"]:active::-moz-range-progress {
-	filter: brightness(var(--brightness-down));
+  filter: brightness(var(--brightness-down));
 }
 
 input[type="range"]:disabled::-moz-range-thumb {
-	cursor: not-allowed;
+  cursor: not-allowed;
 }

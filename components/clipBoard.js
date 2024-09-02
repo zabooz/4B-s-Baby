@@ -32,10 +32,10 @@ const createClipBoard = () => {
        Usernamen
        </div>
       </div>
-      <ol id="passwordList" class="list-group list-group-flush  d-flex flex-column align-items-center mt-5">
+      <ol id="passwordList" class="list-group list-group-flush  d-flex flex-column align-items-center mt-5" data-type="list" data-list="password">
         ${pw}
       </ol>
-      <ol id="userList" class="list-group list-group-flush d-flex flex-column align-items-center mt-5 d-none">
+      <ol id="userList" class="list-group list-group-flush d-flex flex-column align-items-center mt-5 d-none" data-type="list" data-list="username" >
         ${user}
       </ol>
       
@@ -144,11 +144,20 @@ const deleteBtn = (id) => {
 };
 
 const deleteAll = () => {
-  storedClippy.splice(0, storedClippy.length);
-  sessionStorage.setItem("clippy", JSON.stringify(storedClippy));
-  const target = document.querySelectorAll(".list");
-  target.forEach((element) => {
-    element.innerHTML = "";
+  const lists = document.querySelectorAll('[data-type="list"]');
+
+  lists.forEach((list) => {
+    if (!list.classList.contains("d-none")) {
+      list.innerHTML = "";
+      const type = list.getAttribute("data-list");
+      for (let i = storedClippy.length - 1; i >= 0; i--) {
+        if (type.includes(storedClippy[i].type)) {
+          storedClippy.splice(i, 1);
+        }
+      }
+    }
   });
+
+  sessionStorage.setItem("clippy", JSON.stringify(storedClippy));
 };
 

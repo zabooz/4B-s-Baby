@@ -2,7 +2,7 @@ import { newPwStrength } from "./newStrengthCalc.js";
 import { passwordEncoder } from "../scripts/encoder.js";
 import { getColorFromStrength } from "../utilities/getColorFromStrength.js";
 import { thinkWords, thinker } from "../utilities/thinker.js";
-
+import {copyButton} from "../scripts/copybutton.js"
 document.addEventListener("DOMContentLoaded", () => {
   const startBrute = document.getElementById("startBrute");
   const stopBrute = document.getElementById("stopBrute");
@@ -86,10 +86,10 @@ strengthInput.addEventListener("keypress",(e)=>{
     const icon2 = document.getElementById("togglePassword2");
     if (input.type === "password") {
       input.type = "text";
-      icon2.className = "bi bi-eye-slash";
+      icon2.className = "bi bi-eye";
     } else {
       input.type = "password";
-      icon2.className = "bi bi-eye";
+      icon2.className = "bi bi-eye-slash";
     }
   });
 
@@ -154,7 +154,7 @@ strengthInput.addEventListener("keypress",(e)=>{
     const stars = "******";
 
     const icon = document.createElement("i");
-    icon.className = "bi bi-eye-slash";
+    icon.className = "bi bi-eye";
 
     const rowCount = tBody.rows.length;
 
@@ -164,11 +164,11 @@ strengthInput.addEventListener("keypress",(e)=>{
       const target = document.getElementById(`td${rowCount}`);
       if (target.textContent === stars) {
         target.textContent = dataArr[0];
-        icon.classList.add("bi", "bi-eye","mb-1")
+        icon.className = "bi bi-eye-slash mb-1";
         target.append(icon);
       } else {
         target.textContent = stars;
-        icon.className = "bi bi-eye-slash";
+        icon.className = "bi bi-eye mb-1";
         target.append(icon);
       }
     });
@@ -218,6 +218,7 @@ strengthInput.addEventListener("keypress",(e)=>{
         why.style.textDecoration="underline";
       }else{
         why.style.textDecoration="none";
+        why.style.pointerEvents = "none"
       }
       
       showSuggestions(points);

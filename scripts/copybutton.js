@@ -44,8 +44,7 @@ export const copyButton = (textId) => {
           confirmBubble.classList.remove("fadeIn");
         }, 2000);
       });
-
-      const type = textId.includes("username") ? "username" : "password";
+      const type = textId.toLowerCase().includes("username") ? "username" : "password";
 
       const textObj = { type: type, value: text };
 
