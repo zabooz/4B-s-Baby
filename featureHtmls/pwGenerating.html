@@ -336,6 +336,7 @@
 
     <!-- ============= footer & clipBoard ============ -->
     <div class="clipBoard"></div>
+    <div class="assistant"></div>
     <footer class="p-5 d-flex justify-content-center flex-column">
       <script src="../components/footer.js"></script>
     </footer>
@@ -353,9 +354,9 @@
         configQuickNavFeature,
       } from "../components/quickNav.js";
 
-      createAssistant("main");
       createNav(configNav);
       createQuickNav("main", configQuickNavFeature);
+      createAssistant("main");
       loadOffCanvas("header", "leetSpeak", "../data/text.json");
       clipBoard(".clipBoard");
     </script>

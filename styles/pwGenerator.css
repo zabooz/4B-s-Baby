@@ -129,6 +129,7 @@ main section {
 .card {
   min-height: clamp(716px,716px,100%);
   max-width: 30rem;
+  background-color: #f1f5f5;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);

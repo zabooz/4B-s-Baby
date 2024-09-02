@@ -1,18 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+
+*{
+    font-family: "Montserrat", serif !important;
+}
 .bg-ai-custom{
-    background-color:#23bbb8;
+    background-color: #f1f5f5;
 }
-.border-custom{
-    border-right: 5px solid #f1f5f5 !important;
-}
+
 #question{
     min-height: 13rem;
 }
-.offcanvas img{
-    width: 3rem;
-    height: 3.3rem;
-    border-radius: 50%;
+
+
+.sanchez .offcanvas-header{
+    display: flex;
+    justify-content: end;
+    padding: 0;
+    background-color:#ea6954;
+    border: none !important;
+
+}
+.sanchez .offcanvas-header  button{
+    margin: .5rem .5rem;
+
 }
 
+.sanchez .offcanvas-body{
+    padding: 3rem 2rem ;
+}
+
+textarea{
+    color: black !important;
+}
+.sanchez .offcanvas-title {
+    background-color:#ea6954;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+.sanchez button{    margin-left: auto;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+}
+
+.sanchez h5{
+    color: white;
+    font-size: 2.4rem;
+    text-align: center;
+    padding: 2rem !important;
+}
+.sanchez p{
+
+}
 #aiAssistant:hover{
     animation: moveBtnAi .5s ease-out forwards; /* Wende die Animation an */
 }

@@ -87,6 +87,7 @@ main > section {
   font-weight: 400;
   font-style: normal;
   letter-spacing: .1rem;
+  background-color: #ea6954;
 }
 .subText{
   font-size: clamp(.9rem, 1vw, 1.3rem) !important;
@@ -109,6 +110,7 @@ main > section {
 .card{
   min-height: 100%;
   max-width: 35rem;
+  background-color: #f1f5f5;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
