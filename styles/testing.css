@@ -1,12 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 #basic-addon1,
 #basic-addon2 {
   cursor: pointer;
 }
+
+*{
+  font-family: "Montserrat", sans-serif;
+}
 main section{
   width: 100%;
-  max-width: 1600px;
 
+}
+
+
+/* ====================  Cards Header =============== */
+
+.imageContainer{
+  position: relative;
+  overflow: hidden;
+  border-radius: .5rem;
+}
+.imageContainer img{
+  aspect-ratio: 16/9;
+  border-radius: .5rem;
+  object-fit: cover;
+  filter: blur(2px);
+}
+.imageContainer .h1Con{
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #ffffff7c;
+
+  border-radius: .5rem;
+  width: 100%;
+  z-index: 1;
+  
+  
+}
+.h1Con h1{
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  font-size: calc(1.3rem + .5vw);
+  font-family: "inria serif", sans-serif;
+  letter-spacing: .3rem;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: .2rem .2rem;
+  margin: 0 .2rem;
+  background-color: #ffffff18;
 }
 
 .card {
@@ -19,8 +68,11 @@ main section{
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
 }
-.card h2{
-  text-transform: uppercase;
+.card p{
+  font-size: clamp(.9rem, 2vw, 1rem);
+}
+.bg-card-custom {
+  background-color: #f1f5f5;
 }
 .text-custom {
   color: #ea6954;
@@ -28,23 +80,13 @@ main section{
 .bg-custom {
   background-color: #23bbb870;
 }
-.startBtn {
+.btn {
   background-color: #ea6954;
   color: white;
   border: none;
-}
-
+} 
 .btn:hover {
   background: #56c5c3;
   color: white;
 }
-.tableWrapper {
-  position: relative;
-  max-height: 180px;
-  overflow-y: auto;
-  overflow-x: auto;
-  
-}
-
-
 
