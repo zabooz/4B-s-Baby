@@ -10,7 +10,7 @@ export const configQuickNavIndex = {
 };
 export const configQuickNavFeature = {
   ai: {
-    img: "../img/quickNav/ai.webp",
+    img: "../img/icons/_sanchez.jpeg",
     text: "Ai-Assistant",
   },
   clippy: {

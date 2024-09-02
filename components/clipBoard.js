@@ -21,7 +21,7 @@ const createClipBoard = () => {
 </div>
 <div class="bg-header d-flex flex-column  ">
 <button type="button" class="btn-close m-2 ms-auto " data-bs-dismiss="offcanvas" aria-label="Close"></button>
-<h5 class="offcanvas-title montserrat-font-clippy  p-3 pb-4  d-flex justify-content-evenly"  id="offcanvasExampleLabel">  CLIPBOARD </h5>
+<h5 class="offcanvas-title montserrat-font-clippy  p-3 pb-4  d-flex justify-content-evenly"  id="clippy">  CLIPBOARD </h5>
 </div>
     <div class="offcanvas-body p-0 border-0 d-flex  flex-column ">
       <div class="clippyNav d-flex ">

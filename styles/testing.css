@@ -50,7 +50,7 @@ main section{
   text-transform: uppercase;
   text-align: center;
   font-weight: 600;
-  font-size: calc(1.1rem + .7vw);
+  font-size: calc(1.1rem + .5vw);
   font-family: "inria serif", sans-serif;
   letter-spacing: .3rem;
   border-top: 1px solid #000;
@@ -78,6 +78,10 @@ main section{
 }
 .card p{
   font-size: clamp(.9rem, 3vw, 1rem);
+}
+.card span{
+  color: #e93232;
+  
 }
 .bg-card-custom {
   background-color: #f1f5f5;
