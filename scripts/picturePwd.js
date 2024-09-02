@@ -1,13 +1,12 @@
 import { passwordConverter } from "./passwordConverter.js";
 
-export async function pictureToString() {
-  const input = document.getElementById("uploadFile");
-  const file = input.files[0];
+export async function pictureToString(file) {
   const label = document.getElementById("uploadLabel");
   label.textContent = "Foto hochladen!";
 
   if (!file) {
     throw new Error("No file selected");
+    return
   }
 
   return new Promise((resolve, reject) => {
@@ -29,7 +28,6 @@ export async function pictureToString() {
         index = (index*2 + key ) % base64String.length;
         const char = base64String[index];
         password += char;
-        console.log( "count: ",count, "index: ", index,"base64StringChar:",base64String[index], "char: ",char,"base64String" ,base64String)
       }
 
       let betterPassword = "";

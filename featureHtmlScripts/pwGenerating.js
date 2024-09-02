@@ -6,13 +6,13 @@ const uploadFile = document.getElementById("uploadFile");
 const picConBtn = document.getElementById("pictureConvertBtn");
 const leetBtn = document.getElementById("convertBtn");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
-const pwInputField = document.getElementById("passwordInput");
+const pwInputField = document.getElementById("leetInput");
 const glyphRangeSlider = document.getElementById("pwLength");
 const previewCon = document.getElementById("previewContainer");
+const leetInputField = document.getElementById("leetInput");
 
 
 
-let picturePath;
 
 
 glyphRangeSlider.addEventListener("input", () => {
@@ -24,18 +24,25 @@ previewCon.addEventListener("click", () => {
   uploadFile.click()
 })
 
-uploadFile.addEventListener("change", () => {
+
+let picturePath;
+let file;
+
+uploadFile.addEventListener("input", () => {
 
   picConBtn.disabled = false;
   const label = document.getElementById("uploadLabel");
   const preview = document.getElementById("previewImage");
 
   const input = document.getElementById("uploadFile");
-  const file = input.files[0];
+
+  if(input.files[0]) file = input.files[0]
 
   const validTypes = ["image/jpeg", "image/png", "image/webp", "image/bmp"];
-
-  if (!validTypes.includes(file.type)) {
+  if(file === undefined){
+    return
+  }
+  else if(!validTypes.includes(file.type)) {
     alert("Only image files are allowed.");
     return;
   }
@@ -82,8 +89,8 @@ picConBtn.addEventListener("click", async (e) => {
   tbody.appendChild(row);
   const pic = document.getElementById(picId);
   try {
-    const result = await pictureToString();
-
+    const result = await pictureToString(file);
+    console.log(result)
     const span = document.createElement("span");
     span.innerText = `${result}`;
     span.classList.add("w-100")
@@ -105,11 +112,16 @@ pwInputField.addEventListener("keypress", function (event) {
   }
 });
 
+leetInputField.addEventListener("input",()=> {
+  leetBtn.disabled =  leetInputField.value.length > 0 ? false : true
+})
+
+
 leetBtn.addEventListener("click", function () {
   document.getElementById("statsBody2").style.display = "";
-  const passwordInput = document.getElementById("passwordInput").value;
-  const newPasswordArray = tripleConverter(passwordInput);
-  if (passwordInput) {
+  const leetInput = leetInputField.value;
+  const newPasswordArray = tripleConverter(leetInput);
+  if (leetInput) {
     for (let i = 0; i < newPasswordArray.length; i++) {
       const result = document.getElementById("leetResult" + i);
       const span = document.createElement("span");
