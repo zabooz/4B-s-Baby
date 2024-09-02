@@ -218,6 +218,7 @@ strengthInput.addEventListener("keypress",(e)=>{
         why.style.textDecoration="underline";
       }else{
         why.style.textDecoration="none";
+        why.style.pointerEvents = "none"
       }
       
       showSuggestions(points);

@@ -79,7 +79,7 @@
     <title>Passwort Testen</title>
   </head>
   <body class="bg-custom">
-    <!-- ================== Navbar  &  Header ============================ -->
+    <!-- ================== Navbar  &  Header ================ -->
 
     <nav id="navBar" class="sticky-top"></nav>
     <header class="mb-5 d-flex justify-content-center"></header>
@@ -88,11 +88,8 @@
 
     <main class="d-flex justify-content-center">
       <section class="row row-cols-1 row-cols-lg-2 g-5 mx-0 mx-md-5">
-        <div class="col mx-auto">
-          <div
-            id="bruteForceApp"
-            class="card  p-4 mx-auto"
-          >
+        <div class="col">
+          <div id="bruteForceApp" class="card p-4 mx-auto">
             <div class="imageContainer">
               <img
                 class="card-img-top"
@@ -103,8 +100,8 @@
                 <h1>Mojo</h1>
               </div>
             </div>
-            <div class="card-body d-flex flex-column align-items-center p-0 mt-4">
-              <p class="mb-4">
+            <div class="card-body">
+              <p class="my-4">
                 Wählen Sie einen Modus, um Ihr Passwort gegen
                 Brute-Force-Angriffe zu testen. Im
                 <span
@@ -131,67 +128,64 @@
                 prüft bekannte Passwörter.
               </p>
 
-                <div
-                  id="bruteInput"
-                  class=" px-1 mx-auto w-100"
-                >
-                  <div class="input-group mb-3 w-100 mx-auto">
+              <div id="bruteInput" class="mx-auto w-100">
+                <div class="input-group mb-3 w-100 mx-auto">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Gib ein Passwort ein"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                    id="userPwdInput"
+                  />
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="bi bi-eye" id="togglePassword"></i
+                  ></span>
+                </div>
+
+                <div class="d-flex justify-content-evenly my-4">
+                  <div class="form-check">
                     <input
-                      type="password"
-                      class="form-control"
-                      placeholder="Gib ein Passwort ein"
-                      aria-label="Username"
-                      aria-describedby="basic-addon1"
-                      id="userPwdInput"
+                      class="form-check-input"
+                      type="radio"
+                      name="bruteMode"
+                      id="simple"
                     />
-                    <span class="input-group-text" id="basic-addon1"
-                      ><i class="bi bi-eye" id="togglePassword"></i
-                    ></span>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Einfach
+                    </label>
                   </div>
-
-                  <div class="d-flex justify-content-evenly my-4">
-                    <div class="form-check ">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="bruteMode"
-                        id="simple"
-                      />
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Einfach
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="bruteMode"
-                        id="library"
-                        checked
-                      />
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        Listen
-                      </label>
-                    </div>
-                  </div>
-
-                  <div
-                    id="bruteBtns"
-                    class="d-flex w-100 flex-column gap-4 align-items-center flex-sm-row"
-                  >
-                    <button
-                      class="btn btn-primary w-100 startBtn"
-                      type="button"
-                      id="startBrute"
-                    >
-                      Los geht's!
-                    </button>
-                    <button id="stopBrute" class="btn w-100 btn-danger mx-auto ">
-                      Stop
-                    </button>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="bruteMode"
+                      id="library"
+                      checked
+                    />
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Listen
+                    </label>
                   </div>
                 </div>
-      
+
+                <div
+                  id="bruteBtns"
+                  class="d-flex w-100 flex-column gap-4 align-items-center flex-sm-row"
+                >
+                  <button
+                    class="btn btn-primary w-100 startBtn"
+                    type="button"
+                    id="startBrute"
+                  >
+                    Los geht's!
+                  </button>
+                  <button id="stopBrute" class="btn w-100 btn-danger mx-auto">
+                    Stop
+                  </button>
+                </div>
+              </div>
+
               <div
                 id="tableWrapper"
                 class="tableWrapper w-100 w-md-75 d-flex justify-content-center"
@@ -215,10 +209,7 @@
         <!-- ============= Excalibur ================== -->
 
         <div class="col">
-          <div
-            class="card d-flex flex-column align-items-center text-start pt-4 px-3 mx-auto"
-            id="passwordStrengthCalc"
-          >
+          <div class="card p-4 mx-auto" id="passwordStrengthCalc">
             <div class="imageContainer">
               <img
                 class="card-img-top"
@@ -230,20 +221,17 @@
               </div>
             </div>
             <div class="card-body">
-              <p class="mb-4">
-                Excalibur ist ein Tool, das die Stärke deines Passworts
+              <p class="my-4">
+                Excalibur ist ein Tool, dass die Stärke deines Passworts
                 überprüft. Es bewertet dabei Faktoren wie Länge, Komplexität und
                 Vorhersehbarkeit und gibt dir eine umfassende Bewertung deiner
                 Passwortsicherheit.
               </p>
-              <div
-                id="passwordCalc"
-                class="d-flex flex-column align-items-center gap-3 w-100"
-              >
-                <div class="input-group mb-5 w-75">
+              <div id="passwordCalc " class="w-100  d-flex flex-column">
+                <div class="input-group mb-5 ">
                   <input
                     type="password"
-                    class="form-control w-75"
+                    class="form-control "
                     placeholder="Gib ein Passwort ein"
                     aria-label="Username"
                     aria-describedby="basic-addon2"
@@ -256,16 +244,13 @@
 
                 <button
                   id="calcStrengthBtn"
-                  class="btn btn-primary mb-3 w-75 startBtn"
+                  class="btn btn-primary mx-auto w-50 my-4  startBtn"
                 >
                   Los geht's!
                 </button>
               </div>
 
-              <div
-                id="strengthBarDiv"
-                class="w-100 d-flex align-items-center mt-3 d-flex"
-              >
+              <div id="strengthBarDiv" class="">
                 <div
                   class="progress flex-grow-1"
                   role="progressbar"
@@ -287,7 +272,7 @@
                 <span><b>Stark</b></span>
               </p>
               <a
-                class="p-1 mt-3 text-start w-100 text-dark d-none"
+                class="p-1 mt-3 d-flex justify-content-center w-100 "
                 id="why"
                 href="#"
                 data-bs-toggle="modal"
