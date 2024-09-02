@@ -18,15 +18,18 @@ export async function pictureToString() {
         .replace("data", "")
         .replace(/^.+,/, "");
       const pwdLength = 12;
-      const key = base64String.charCodeAt(pwdLength);
+      const key = base64String.charCodeAt(pwdLength*pwdLength*pwdLength/2*pwdLength/2*pwdLength/2);
 
       let password = "";
-      let index = 0;
-
+      let index = 100;
+      let count =0
       while (password.length < pwdLength) {
-        index = (index + key) % base64String.length;
+        ++index
+        count++
+        index = (index*2 + key ) % base64String.length;
         const char = base64String[index];
         password += char;
+        console.log( "count: ",count, "index: ", index,"base64StringChar:",base64String[index], "char: ",char,"base64String" ,base64String)
       }
 
       let betterPassword = "";
