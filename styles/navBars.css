@@ -63,12 +63,20 @@ nav img {
   border: none;
   position: relative;
   right: 1rem;
+  margin-top: .5rem;
 
 }
 #quickNav button:hover {
   animation: moveBtn 0.5s forwards;
 }
 
+.noticeMeSenpai {
+  will-change: box-shadow, border-color;
+  animation: glowing 3s infinite ;
+}
+
+
+/* ===================== KEYFRAMES ============================ */
 @keyframes moveBtn {
   0% {
     right: 1rem;
@@ -77,4 +85,34 @@ nav img {
     right: 6.5rem;
   }
 }
+
+
+
+@keyframes glowing {
+  0%, 100% {
+      border-color: rgba(234, 105, 84, 0.2); /* Sehr schwaches Rot */
+      box-shadow: 0 0 3px rgba(234, 105, 84, 0.4), 
+                  0 0 9px rgba(234, 105, 84, 0.3), 
+                  0 0 12px rgba(234, 105, 84, 0.2);
+  }
+  25% {
+      border-color: rgba(234, 105, 84, 0.4); /* Schwächeres Rot */
+      box-shadow: 0 0 8px rgba(234, 105, 84, 0.6), 
+                  0 0 13px rgba(234, 105, 84, 0.5), 
+                  0 0 18px rgba(234, 105, 84, 0.2);
+  }
+  50% {
+      border-color: rgba(234, 105, 84, 0.6); /* Stärkeres Rot */
+      box-shadow: 0 0 10px rgba(234, 105, 84, 0.8), 
+                  0 0 15px rgba(234, 105, 84, 0.6), 
+                  0 0 20px rgba(234, 105, 84, 0.4);
+  }
+  75% {
+      border-color: rgba(234, 105, 84, 0.4); /* Zurück zu schwächerem Rot */
+      box-shadow: 0 0 8px rgba(234, 105, 84, 0.4), 
+                  0 0 10px rgba(234, 105, 84, 0.3), 
+                  0 0 15px rgba(234, 105, 84, 0.2);
+  }
+}
+
 

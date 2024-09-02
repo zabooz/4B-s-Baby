@@ -29,7 +29,7 @@ const quickNav = (config) => {
         <p class="mb-0">${config.ai.text}
             </button>
 
-        <button type="button" class="btn btn-primary btn btn-primary d-md-flex d-none align-items-center gap-2" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy">
+        <button type="button" class="btn btn-primary btn btn-primary d-md-flex d-none align-items-center gap-2" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy" id="clippyNav" >
                     <img src = ${config.clippy.img} alt="Clippy">
         <p class="mb-0">${config.clippy.text}
         </button

@@ -35,6 +35,23 @@ export const copyButton = (textId) => {
   button.addEventListener("click", () => {
     const textElement = document.getElementById(textId);
 
+    const clippyQuickNav = document.getElementById("clippyNav");
+
+    if (clippyQuickNav) {
+      
+      clippyQuickNav.classList.add("noticeMeSenpai");
+
+      setTimeout(() => {
+        clippyQuickNav.classList.remove("noticeMeSenpai");
+      }, 3000);
+
+
+
+
+    }
+
+
+
     if (textElement) {
       let text = textElement.innerText.trim();
 
