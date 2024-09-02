@@ -22,7 +22,7 @@ glyphRangeSlider.addEventListener("input", () => {
   const sliderValueDisplay = document.getElementById("sliderValue");
   sliderValueDisplay.textContent = sliderValue
 
-  rdmPwdBtn.disabled = sliderValue > 0 ? false : true
+  rdmPwdBtn.disabled = sliderValue > 5 ? false : true
 
 });
 
