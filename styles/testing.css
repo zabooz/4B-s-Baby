@@ -101,6 +101,11 @@ main section{
   background: #56c5c3;
   color: white;
 }
+
+#stopBrute{
+  background: #ced4da !important;
+}
+
 @media(max-width: 500px){
   #bruteInput{
     width: 100% !important;
