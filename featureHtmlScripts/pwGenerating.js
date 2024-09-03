@@ -94,7 +94,7 @@ picMagicBtn.addEventListener("click", async (e) => {
   const tdPic = document.createElement("td");  
   tdPic.id = picId
   tdPic.classList.add("tablePics");
-  tdPic.innerHTML = `<img src="${picturePath}" id="${picId}" alt="runeTranslator" class="imgTable img-fluid">`;
+  tdPic.innerHTML = `<img src="${picturePath}" id="${picId}" alt="your Picture" class="imgTable img-fluid">`;
   
   const tdPw = document.createElement("td");
   tdPw.id = pwId
@@ -107,11 +107,11 @@ picMagicBtn.addEventListener("click", async (e) => {
   try {
     const result = await pictureToString(file);
 
-    const span = document.createElement("span");
+    const spanPwd = document.createElement("spanPwd");
     const pic = document.getElementById(picId);
-    span.innerText = `${result}`;
-    span.classList.add("w-100")
-    tdPw.append(copyButton(pwId),span);
+    spanPwd.innerText = `${result}`;
+    spanPwd.classList.add("w-100")
+    tdPw.append(copyButton(pwId),spanPwd);
     pic.src = picturePath
     picMagicBtn.disabled = true
 
@@ -139,16 +139,46 @@ leetBtn.addEventListener("click", function () {
   const leetInput = leetInputField.value;
   leetInputField.value = ""
   const newPasswordArray = tripleConverter(leetInput);
+  const versionArray = ["Einfach","Mittel","Stark"]
+  console.log(newPasswordArray)
+  const td = document.getElementById("leetResult0");
+  const spanPwd = document.createElement("spanPw");
+  spanPwd.innerText = `${newPasswordArray[0]}`;
+  spanPwd.id = "leetPwd"
+  spanPwd.classList.add("w-100")
+  td.innerHTML=""
+  td.append(copyButton("leetResult0"), spanPwd);
 
-    for (let i = 0; i < newPasswordArray.length; i++) {
-      const result = document.getElementById("leetResult" + i);
-      const span = document.createElement("span");
 
-      span.innerText = `${newPasswordArray[i]}`;
-      span.classList.add("w-100")
-      result.innerHTML=""
-      result.append(copyButton("leetResult" + i), span);
-    }
+
+
+
+
+const arrowLeft = `<img src="../img/icons/arrow.svg" data-side="left" class="leetArrows" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`;
+const versionText = `<span id="versionText" >${versionArray[0]}</span>`; 
+const arrowRight = `<img src="../img/icons/arrow.svg" id="arrowRight" class="leetArrows" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`;
+
+  const versionTd = document.getElementById("leetVersion")
+  versionTd.innerHTML = arrowLeft + versionText  + arrowRight 
+
+  let count = 0
+
+  document.querySelectorAll(".leetArrows").forEach(arrow => {
+
+      arrow.addEventListener("click", () => {
+        const versionText = document.getElementById("versionText")
+        const spanPwd = document.getElementById("leetPwd")
+ 
+        if(arrow.dataset.side === "left"){
+          count = (count - 1 + versionArray.length) % versionArray.length;
+        }else{
+          count = (count + 1) % versionArray.length;
+        }
+        spanPwd.innerText =`${newPasswordArray[count]}`
+        versionText.innerText =`${versionArray[count]}`
+        
+      })
+  })
     const body = document.getElementById("statsBody2");
     body.style.display = "";
 
@@ -181,12 +211,12 @@ rdmPwdBtn.addEventListener("click", function () {
   document.getElementById("generatedPasswordLength0").innerText = pwLength;
   const generatedPassword = generatePassword(pwLength);
 
-  const span = document.createElement("span");
+  const spanPwd = document.createElement("spanPwd");
   passwordElements[0].querySelector("button")?.remove();
-  span.innerText = `${generatedPassword}`;
+  spanPwd.innerText = `${generatedPassword}`;
  
   passwordElements[0].innerHTML = "";
-  passwordElements[0].append(copyButton("generatedPassword0"), span);
+  passwordElements[0].append(copyButton("generatedPassword0"), spanPwd);
   document.getElementById("generatedPasswordRow0").style.display = "";
 
 
