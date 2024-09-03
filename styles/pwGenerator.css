@@ -22,11 +22,11 @@ main section {
 
 .tablePics {
   position: relative;
-  width: 1rem;
-
+  width: 6rem;
   object-fit: cover;
 }
-.tablePics:hover {
+
+.tablePics .imgTable:hover {
   cursor: pointer;
   animation: scaleUpper 1s ease forwards;
   z-index: 5;
@@ -71,6 +71,11 @@ main section {
   margin: 0 0.2rem;
   background-color: #ffffff96;
 }
+
+#picSpan{
+  width: 45%;
+}
+
 
 @keyframes scaleUpper {
   0% {

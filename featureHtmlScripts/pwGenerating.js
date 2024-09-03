@@ -11,8 +11,8 @@ const glyphRangeSlider = document.getElementById("sliderSorcery");
 const previewCon = document.getElementById("previewContainer");
 const leetInputField = document.getElementById("leetInput");
 
-
-
+let pictureMagicArray = JSON.parse(sessionStorage.getItem("pictureMagicArray")) || [];
+const updatedPicMagArr = []
 
 
 glyphRangeSlider.addEventListener("input", () => {
@@ -86,27 +86,30 @@ picMagicBtn.addEventListener("click", async (e) => {
 
   const tbody = document.getElementById("statsBodyPicGen");
   const row = document.createElement("tr");
+  tbody.innerHTML = "";
 
-  const rowCount = tbody.rows.length + 1;
-  const pwId = `pasword${rowCount}`
-  const picId = `pic${rowCount}`
+  const pwId = `pasword${updatedPicMagArr.length}`
+  const picId = `pic${updatedPicMagArr.length}`
 
   const tdPic = document.createElement("td");  
   tdPic.id = picId
   tdPic.classList.add("tablePics");
-  tdPic.innerHTML = `<img src="${picturePath}" id="${picId}" alt="your Picture" class="imgTable img-fluid">`;
+ 
+
+  tdPic.innerHTML =  `<img src="${picturePath}" id="${picId}" alt="your Picture" class="imgTable " style="width:2rem">`  ;
   
   const tdPw = document.createElement("td");
   tdPw.id = pwId
-  tdPw.className ="d-flex justify-content-between w-100"
 
+
+  
   row.append(tdPw,tdPic);
   tbody.appendChild(row);
-
+  
   
   try {
     const result = await pictureToString(file);
-
+    
     const spanPwd = document.createElement("spanPwd");
     const pic = document.getElementById(picId);
     spanPwd.innerText = `${result}`;
@@ -114,8 +117,10 @@ picMagicBtn.addEventListener("click", async (e) => {
     tdPw.append(copyButton(pwId),spanPwd);
     pic.src = picturePath
     picMagicBtn.disabled = true
+    updatedPicMagArr.push(row)
+    sessionStorage.setItem("pictureMagicArray", JSON.stringify(updatedPicMagArr));
 
-
+    console.log(updatedPicMagArr)
   } catch (error) {
     console.error(error);
   } 
