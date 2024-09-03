@@ -290,7 +290,7 @@ rdmPwdBtn.addEventListener("click", function () {
   document.getElementById("generatedPasswordLength0").innerText = pwLength;
   const generatedPassword = generatePassword(pwLength);
 
-  const spanPwd = document.createElement("spanPwd");
+  const spanPwd = document.createElement("span");
   passwordElements[0].querySelector("button")?.remove();
   spanPwd.innerText = `${generatedPassword}`;
  
