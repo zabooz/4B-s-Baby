@@ -29,6 +29,14 @@ export const configNav = {
     clippy: "Clippy",
     aiAssistant: "AI-Assistent",
   },
+  aboutUs: {
+    link: "../aboutUs/aboutUs.html",
+    text: "Über uns",
+  },
+  project: {
+    link: "../aboutUs/project.html",
+    text: "Projekt",
+  },
 };
 
 export const configNavIndex = {
@@ -61,6 +69,14 @@ export const configNavIndex = {
     text: `ERFAHRE <span>mehr...</span>`,
     clippy: "Clipboard",
     aiAssistant: "AI-Assistent",
+  },
+  aboutUs: {
+    link: "./aboutUs/aboutUs.html",
+    text: "Über uns",
+  },
+  project: {
+    link: "./aboutUs/project.html",
+    text: "Projekt",
   },
 };
 
@@ -109,6 +125,12 @@ const createNavBar = (configNav) => {
             <li class="nav-item">
             <a class="nav-link " href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a>
             </li>
+                      <li class="nav-item mx-2">
+            <a class="nav-link" href="${configNav.project.link}">${configNav.project.text}</a>
+          </li>
+                    <li class="nav-item mx-2">
+            <a class="nav-link" href="${configNav.aboutUs.link}">${configNav.aboutUs.text}</a>
+          </li>
                   </ul>
               </div>
           </li>

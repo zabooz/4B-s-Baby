@@ -324,13 +324,13 @@
       import { loadOffCanvas } from "../components/offCanvas.js";
       import { clipBoard } from "../components/clipBoard.js";
       import { createNav, configNav } from "../components/navBar.js";
+      createNav(configNav);
       import { createAssistant } from "../components/aiAssistant.js";
       import {
         createQuickNav,
         configQuickNavFeature,
       } from "../components/quickNav.js";
 
-      createNav(configNav);
       createQuickNav("main", configQuickNavFeature);
       createAssistant("main");
       loadOffCanvas("header", "leetSpeak", "../data/text.json");
