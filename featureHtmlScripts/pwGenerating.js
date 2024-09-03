@@ -164,7 +164,7 @@ picMagicBtn.addEventListener("click", async (e) => {
     const spanPwd = document.createElement("span"); 
     const pic = document.getElementById(picId);
     spanPwd.innerText = `${result}`;
-    spanPwd.classList.add("w-100");
+    spanPwd.classList.add("w-100","pwdSpan");
     tdPw.append(copyButton(pwId), spanPwd);
     pic.src = picturePath; 
     picMagicBtn.disabled = true;
@@ -247,7 +247,7 @@ leetBtn.addEventListener("click", function () {
       arrow.addEventListener("click", () => {
         const versionText = document.getElementById("versionText")
         const spanPwd = document.getElementById("leetPwd")
- 
+        spanPwd.classList.add("pwdSpan")
         if(arrow.dataset.side === "left"){
           count = (count - 1 + versionArray.length) % versionArray.length;
         }else{
@@ -291,6 +291,7 @@ rdmPwdBtn.addEventListener("click", function () {
   const generatedPassword = generatePassword(pwLength);
 
   const spanPwd = document.createElement("span");
+  spanPwd.classList.add("pwdSpan");
   passwordElements[0].querySelector("button")?.remove();
   spanPwd.innerText = `${generatedPassword}`;
  

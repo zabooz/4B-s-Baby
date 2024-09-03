@@ -22,7 +22,18 @@ table{
   min-height: 88px;
 }
 
+.pwdSpan,
+#versionText,
+#generatedPasswordLength0,
+th {
+  font-size: clamp(.8rem, 1.5vw, 1rem);
+}
 
+#leetPwd,
+.leetArrows{
+  font-size: clamp(1rem, 2vw, 1rem);
+  width: clamp(1rem, 2vw,2rem);
+}
 
 
 /* ================= Picture magic================= */
