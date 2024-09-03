@@ -106,16 +106,31 @@ picMagicBtn.addEventListener("click", async (e) => {
   const tdLeft = document.createElement("td");
   const tdRight = document.createElement("td");
 
-  tdLeft.innerHTML = ` <img src="../img/icons/arrow.svg" data-side="left" class="magicArrows" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`;
-  tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="magicArrows" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`;
+  tdLeft.innerHTML = ` <img src="../img/icons/arrow.svg" data-side="left" class="magicArrows d-none" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`;
+  tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="magicArrows d-none" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`;
 
   row.append(tdLeft, tdPw, tdPic, tdRight);
   tbody.appendChild(row);
 
   let count = updatedPicMagArr.length;
   updatedPicMagArr.push(row); 
+  console.log(count)
+  if(count >=1){
+    
+    updatedPicMagArr.forEach((element) => {
+      const arrows = element.querySelectorAll(".magicArrows");
+      arrows.forEach((arrow) => {
+        arrow.classList.remove("d-none");
+      });
+    
+    });
+    
+  }
+
   document.querySelectorAll(".magicArrows").forEach((arrow) => {
+
     arrow.addEventListener("click", () => {
+
       tbody.innerHTML = "";
 
       if (arrow.dataset.side === "left") {
