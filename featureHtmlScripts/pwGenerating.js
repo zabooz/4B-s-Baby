@@ -232,24 +232,6 @@ leetBtn.addEventListener("click", function () {
 rdmPwdBtn.addEventListener("click", function () {
   // Create an array of password elements
   const passwordElements = document.querySelectorAll(".rdmPassword")
-  const passwordLength = document.querySelectorAll(".rdmPasswordLength") 
-
-  // Function to shift passwords down the array
-  function shiftRow() {
-    for (let i = passwordElements.length - 1; i > 0; i--) {
-      if (passwordElements[i - 1].innerText !== "") {
-        passwordElements[i].innerText = passwordElements[i - 1].innerText;
-        passwordLength[i].innerText = passwordLength[i - 1].innerText;
-        // Remove old copy button and add a new one
-        passwordElements[i].querySelector("button")?.remove();
-        passwordElements[i].append(copyButton(`generatedPassword${i}`));
-        document.getElementById("generatedPasswordRow" + i).style.display = "";
-      }
-    }
-  }
-
-  // Call the function to shift passwords
-  shiftRow();
 
   // Generate a new password and update the first element
   const pwLength = glyphRangeSlider.value;
