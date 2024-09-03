@@ -15,6 +15,10 @@ main section {
   background-color: #eb6854 !important;
 }
 
+table th{
+  font-weight: 400;
+}
+
 
 /* ================= Picture magic================= */
 
@@ -22,14 +26,14 @@ main section {
 
 .tablePics {
   position: relative;
-  width: 6rem;
   object-fit: cover;
+  z-index: 10;
 }
 
 .tablePics .imgTable:hover {
   cursor: pointer;
   animation: scaleUpper 1s ease forwards;
-  z-index: 5;
+
 }
 .imgTable {
   border-radius: 0.2rem;
@@ -38,7 +42,12 @@ main section {
   object-fit: stretch;
   aspect-ratio: 4/3;
 }
-
+td{
+  height: 47px;
+}
+.table{
+  margin-bottom: 1.2rem;
+}
 .labelCon {
   position: absolute;
   display: flex;
@@ -48,6 +57,7 @@ main section {
   background-color: #ffffff00;
   border-radius: 0.5rem;
   z-index: 1;
+  margin-bottom: rem;
  
 }
 #previewImage {
@@ -146,7 +156,7 @@ main section {
 /* =============================== cards =============================== */
 
 .card {
-  min-height: clamp(716px,716px,100%);
+  min-height: 100%;
   max-width: 30rem;
   background-color: #f1f5f5;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);

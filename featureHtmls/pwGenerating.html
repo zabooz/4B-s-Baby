@@ -103,7 +103,7 @@
             </div>
             <div
               class="card-body d-flex flex-column align-items-center p-0 mt-4"
-              style="margin-bottom: 3rem;"
+ 
             >
               <p class="mb-5">
                 <span
@@ -121,7 +121,7 @@
                 bevorzugst.
               </p>
             
-                <div class="d-flex flex-column w-100 mb-4">
+                <div class="d-flex flex-column w-100"  style="margin-bottom:2.5rem">
                   <input
                     type="text"
                     id="leetInput"
@@ -134,38 +134,37 @@
                   <p class="ps-3 mt-1">* Maximal 12 Zeichen</p>
                 </div>
           
+                <table class="stats table mt-auto " id="stats2">
+                  <thead class="border-bottom">
+                    <tr>
+                      <th></th>
+                      <th scope="col" class="text-center py-2">Passwort</th>
+                      <th scope="col" class="text-center">Stärke</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    id="statsBody2"
+                    class="text-center border-top"
+                    
+                  >
+                    <tr style="display: none;">
+                      <td
+                        id="leetResult0"
+                        class="d-flex justify-content-between w-100 "
+                      ></td>
+                      <td id="leetVersion"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button
+                  id="leetBtn"
+                  class="btn btn-primary w-100  mb-2"
+                  disabled="true"
+                >
+                  Los geht's
+                </button>
             </div>
-            <table class="stats table  mb-3" id="stats2">
-              <thead class="border-bottom">
-                <tr>
-                  <th></th>
-                  <th scope="col" class="text-center py-2">Passwort</th>
-                  <th scope="col" class="text-center">Stärke</th>
-                  <th></th>
-
-                </tr>
-              </thead>
-              <tbody
-                id="statsBody2"
-                class="text-center border-top"
-                
-              >
-                <tr>
-                  <td
-                    id="leetResult0"
-                    class="d-flex justify-content-between w-100 "
-                  ></td>
-                  <td id="leetVersion"></td>
-                </tr>
-              </tbody>
-            </table>
-            <button
-              id="leetBtn"
-              class="btn btn-primary w-100 mt-auto mb-2"
-              disabled="true"
-            >
-              Los geht's
-            </button>
           </div>
         </div>
 
@@ -190,7 +189,7 @@
                 Lade einfach ein Foto hoch, und unsere App verwandelt es in ein
                 sicheres Passwort.
               </p>
-              <div class="imageContainer d-flex mt-3 mb-4 justify-content-center" id="previewContainer">
+              <div class="imageContainer d-flex mt-3 justify-content-center" id="previewContainer">
                 <img
                   id="previewImage"
                   src="../img/pwGen/upload.jpeg"
@@ -198,9 +197,7 @@
                   class="border img-fluid"
 
                 />
-                <div class="labelCon "
-                    style="margin-bottom: 2rem;"
-                
+                <div class="labelCon "        
                 
                 >
                   <label id="uploadLabel" for="uploadFile"
@@ -223,7 +220,7 @@
                   </form>
                 </div>
               </div>
-              <table class="table mt-auto mb-2" id="statsPicGen">
+              <table class="table mt-auto " style="margin-bottom: 1.15rem;" id="statsPicGen">
                 <thead>
                   <tr>
                     <th></th>
@@ -237,7 +234,7 @@
                   <button
                     id="pictureMagicBtn"
                     type="button"
-                    class="btn btn-primary mt-auto mb-2 w-100"
+                    class="btn btn-primary mb-2 w-100"
                     disabled="true"
                   >
                     Los geht's
@@ -270,7 +267,7 @@
                 sichere Passwörter entsprechen.
               </p>
 
-              <div class="d-flex flex-column gap-3 w-100" style="margin-bottom: 4.3rem; ">
+              <div class="d-flex flex-column gap-3 w-100 " style="margin-bottom:3.4rem ;" >
                 <p class="mx-auto mb-0 fs-5">
                   Passwortlänge: <span id="sliderValue">6</span>
                 </p>
@@ -285,7 +282,7 @@
                   
                 />
               </div>
-              <table class="table  mt-auto mb-2" id="statsPwGen">
+              <table class="table  mt-auto " id="statsPwGen">
                 <thead>
                   <tr>
                     <th scope="col" class="text-center">Passwort</th>
