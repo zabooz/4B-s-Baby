@@ -14,30 +14,30 @@ const leetInputField = document.getElementById("leetInput");
 
 
 
-glyphRangeSlider.addEventListener("input", () => {
+// ==========================================================
 
-  const sliderValue  = glyphRangeSlider.value
 
-  const sliderValueDisplay = document.getElementById("sliderValue");
-  sliderValueDisplay.textContent = sliderValue
+//               PICTURE MAGIC
 
-  rdmPwdBtn.disabled = sliderValue > 5 ? false : true
 
-});
+// =========================================================
+
+
+
+// shared variables between upload and converter functions
+let picturePath;
+let file;
+const updatedPicMagArr = [];    // variable  to save pw/pic  to switch between them
+
+
+//  click anywhere in the preview container to upload
 
 previewCon.addEventListener("click", () => {
   uploadFile.click()
 })
 
 
-
-// shared variables between upload and converter
-let picturePath;
-let file;
-
-//  ==============================
-
-uploadFile.addEventListener("input", () => {
+uploadFile.addEventListener("input", () => {    
 
   picMagicBtn.disabled = false;
   const label = document.getElementById("uploadLabel");
@@ -45,9 +45,13 @@ uploadFile.addEventListener("input", () => {
   const previewImg = document.getElementById("previewImage")
   const input = document.getElementById("uploadFile");
 
+
+  // check if file is valid & and handle if user abort upload 
+
   if(input.files[0]) file = input.files[0]
 
   const validTypes = ["image/jpeg", "image/png", "image/webp", "image/bmp"];
+
   if(file === undefined){
     return
   }
@@ -59,6 +63,9 @@ uploadFile.addEventListener("input", () => {
   const reader = new FileReader();
   reader.onload = function (e) {
     picturePath = e.target.result;
+
+
+    //  upload effect
     previewCon.classList.add("scale")
     setTimeout(()=> {
       previewImg.src =picturePath
@@ -67,18 +74,15 @@ uploadFile.addEventListener("input", () => {
     setTimeout(()=> {
       previewCon.classList.remove("scale")
       },2000)
-
-   
     };
 
     reader.readAsDataURL(file);
 
-
-
-
 });
-let count = 0;
-const updatedPicMagArr = [];
+
+
+
+ 
 picMagicBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
@@ -90,33 +94,44 @@ picMagicBtn.addEventListener("click", async (e) => {
   //   JSON.parse(sessionStorage.getItem("pictureMagicArray")) || []; 
 
   
+
+  //  generatte id
+
   const pwId = `pasword${updatedPicMagArr.length}`;
   const picId = `pic${updatedPicMagArr.length}`;
 
+  // table elements picture & password
   const tdPic = document.createElement("td");
   tdPic.id = picId;
   tdPic.classList.add("tablePics");
-
-  // Assuming picturePath is defined somewhere earlier in your code
   tdPic.innerHTML = `<img src="${picturePath}" id="${picId}" alt="your Picture" class="imgTable " style="width:2rem">`;
 
   const tdPw = document.createElement("td");
   tdPw.id = pwId;
   tdPw.classList.add("d-flex","p-0","align-items-center","gap-2"); 
+
+
+  // create Arrow Buttons to switch between pictures
+
   const tdLeft = document.createElement("td");
   const tdRight = document.createElement("td");
-
   tdLeft.innerHTML = ` <img src="../img/icons/arrow.svg" data-side="left" class="magicArrows d-none" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`;
   tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="magicArrows d-none" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`;
 
   row.append(tdLeft, tdPw, tdPic, tdRight);
   tbody.appendChild(row);
 
-  let count = updatedPicMagArr.length;
+
+  // save uploaded picture in the array
   updatedPicMagArr.push(row); 
-  console.log(count)
-  if(count >=1){
-    
+
+
+  
+  // toggle arrow buttons show when more than 1 picture is in the array
+  
+  let count = updatedPicMagArr.length;
+  
+  if(count >=1){    
     updatedPicMagArr.forEach((element) => {
       const arrows = element.querySelectorAll(".magicArrows");
       arrows.forEach((arrow) => {
@@ -127,25 +142,25 @@ picMagicBtn.addEventListener("click", async (e) => {
     
   }
 
+  // Arrow click events to navigate through the table
+
   document.querySelectorAll(".magicArrows").forEach((arrow) => {
-
     arrow.addEventListener("click", () => {
-
       tbody.innerHTML = "";
-
       if (arrow.dataset.side === "left") {
         count = (count - 1 + updatedPicMagArr.length) % updatedPicMagArr.length;
       } else {
         count = (count + 1) % updatedPicMagArr.length;
       }
-
       tbody.append(updatedPicMagArr[count]); 
     });
   });
 
-  try {
-    const result = await pictureToString(file);
 
+  //  convert uploaded Picture to string and show it in the table
+  try {
+
+    const result = await pictureToString(file);
     const spanPwd = document.createElement("span"); 
     const pic = document.getElementById(picId);
     spanPwd.innerText = `${result}`;
@@ -158,20 +173,31 @@ picMagicBtn.addEventListener("click", async (e) => {
     //   "pictureMagicArray",             //later maybe
     //   JSON.stringify(updatedPicMagArr)
     // );
-
-    console.log(updatedPicMagArr);
   } catch (error) {
     console.error(error);
   }
 });
 
 
+
+//  ===============================================================
+
+
+//                           RUNE TRANSLATOR
+
+
+//  ==============================================================
+
+
 leetInputField.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
-    event.preventDefault(); // Prevents the default action (if any)
-    leetBtn.click(); // Trigger button click
+    event.preventDefault(); // 
+    leetBtn.click(); 
   }
 });
+
+
+//  enable btn if input is not empty
 
 leetInputField.addEventListener("input",()=> {
   leetBtn.disabled =  leetInputField.value.length > 0 ? false : true
@@ -182,23 +208,34 @@ leetBtn.addEventListener("click", function () {
 
   document.querySelector("#statsBody2 tr").style.display = "";
 
+
   const leetInput = leetInputField.value;
   leetInputField.value = ""
+
+
+  // create new password in three version
+
   const newPasswordArray = tripleConverter(leetInput);
   const versionArray = ["Einfach","Mittel","Stark"]
-  console.log(newPasswordArray)
+
+
+  // create table elements and append it
+
   const td = document.getElementById("leetResult0");
-  const spanPwd = document.createElement("spanPw");
+  td.innerHTML=""
+
+  const spanPwd = document.createElement("span");
   spanPwd.innerText = `${newPasswordArray[0]}`;
   spanPwd.id = "leetPwd"
   spanPwd.classList.add("w-100")
-  td.innerHTML=""
+
   td.append(copyButton("leetResult0"), spanPwd);
-
-
+  
   const versionText = `<span id="versionText" >${versionArray[0]}</span>`; 
   const versionTd = document.getElementById("leetVersion")
   versionTd.innerHTML = versionText
+
+
 
 
 
@@ -225,6 +262,24 @@ leetBtn.addEventListener("click", function () {
     body.style.display = "";
 
 });
+
+
+// ================================================================
+
+//                  Glyph Sorcery
+
+
+// ================================================================
+
+
+glyphRangeSlider.addEventListener("input", () => {
+  const sliderValue  = glyphRangeSlider.value
+  const sliderValueDisplay = document.getElementById("sliderValue");
+  sliderValueDisplay.textContent = sliderValue
+  rdmPwdBtn.disabled = sliderValue > 5 ? false : true
+
+});
+
 
 rdmPwdBtn.addEventListener("click", function () {
   // Create an array of password elements
