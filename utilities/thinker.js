@@ -1,3 +1,6 @@
+
+
+
 export const thinker = (target) => {
   const randomIndex = Math.floor(Math.random() * thinkWords.length);
   const verb = thinkWords[randomIndex];
