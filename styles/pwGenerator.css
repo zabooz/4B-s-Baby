@@ -18,7 +18,9 @@ main section {
 table th{
   font-weight: 400;
 }
-
+table{
+  min-height: 88px;
+}
 
 /* ================= Picture magic================= */
 

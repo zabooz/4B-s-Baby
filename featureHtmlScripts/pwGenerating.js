@@ -181,21 +181,11 @@ leetBtn.addEventListener("click", function () {
   td.append(copyButton("leetResult0"), spanPwd);
 
 
-  const tdLeft = document.createElement("td")
-  const tdRight = document.createElement("td")
-
-  tdLeft.innerHTML = ` <img src="../img/icons/arrow.svg" data-side="left" class="letArrows" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`
-
-  tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="leetArrows" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`
-
-  const row = document.querySelector("#statsBody2 tr")
-
   const versionText = `<span id="versionText" >${versionArray[0]}</span>`; 
   const versionTd = document.getElementById("leetVersion")
-  versionTd.innerHTML =versionText
+  versionTd.innerHTML = versionText
 
-  row.prepend(tdLeft)
-  row.append(tdRight)
+
 
 
   let count = 0
