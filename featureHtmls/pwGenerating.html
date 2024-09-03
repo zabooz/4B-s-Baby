@@ -135,14 +135,7 @@
                 </div>
           
             </div>
-            <button
-              id="leetBtn"
-              class="btn btn-primary w-100 mt-auto mb-2"
-              disabled="true"
-            >
-              Los geht's
-            </button>
-            <table class="stats table mt-auto mb-3" id="stats2">
+            <table class="stats table  mb-3" id="stats2">
               <thead class="border-bottom">
                 <tr>
                   <th></th>
@@ -155,17 +148,24 @@
               <tbody
                 id="statsBody2"
                 class="text-center border-top"
-                style="display: none"
+                
               >
                 <tr>
                   <td
                     id="leetResult0"
-                    class="d-flex justify-content-between w-100"
+                    class="d-flex justify-content-between w-100 "
                   ></td>
                   <td id="leetVersion"></td>
                 </tr>
               </tbody>
             </table>
+            <button
+              id="leetBtn"
+              class="btn btn-primary w-100 mt-auto mb-2"
+              disabled="true"
+            >
+              Los geht's
+            </button>
           </div>
         </div>
 
@@ -223,15 +223,7 @@
                   </form>
                 </div>
               </div>
-                  <button
-                    id="pictureMagicBtn"
-                    type="button"
-                    class="btn btn-primary mt-auto mb-2 w-100"
-                    disabled="true"
-                  >
-                    Los geht's
-                  </button>
-              <table class="table" id="statsPicGen">
+              <table class="table mt-auto mb-2" id="statsPicGen">
                 <thead>
                   <tr>
                     <th></th>
@@ -242,6 +234,14 @@
                 </thead>
                 <tbody id="statsBodyPicGen" class="text-center"></tbody>
               </table>
+                  <button
+                    id="pictureMagicBtn"
+                    type="button"
+                    class="btn btn-primary mt-auto mb-2 w-100"
+                    disabled="true"
+                  >
+                    Los geht's
+                  </button>
             </div>
           </div>
         </div>
@@ -285,10 +285,7 @@
                   
                 />
               </div>
-              <button id="rdmPwdBtn" class="btn btn-primary w-100 mt-auto mb-2" disabled = "true">
-                Los geht's
-              </button>
-              <table class="table" id="statsPwGen">
+              <table class="table  mt-auto mb-2" id="statsPwGen">
                 <thead>
                   <tr>
                     <th scope="col" class="text-center">Passwort</th>
@@ -303,22 +300,11 @@
                     ></td>
                     <td id="generatedPasswordLength0" class="text-center rdmPasswordLength"></td>
                   </tr>
-                  <tr id="generatedPasswordRow1" style="display: none">
-                    <td
-                      id="generatedPassword1"
-                      class="d-flex flex-row-reverse justify-content-between w-100 rdmPassword"
-                    ></td>
-                    <td id="generatedPasswordLength1" class="text-center rdmPasswordLength"></td>
-                  </tr>
-                  <tr id="generatedPasswordRow2" style="display: none" >
-                    <td
-                      id="generatedPassword2"
-                      class="d-flex justify-content-between flex-row-reverse w-100 rdmPassword"
-                    ></td>
-                    <td id="generatedPasswordLength2" class="text-center rdmPasswordLength"></td>
-                  </tr>
                 </tbody>
               </table>
+              <button id="rdmPwdBtn" class="btn btn-primary w-100 mt-auto mb-2" disabled = "true">
+                Los geht's
+              </button>
             </div>
           </div>
         </div>
