@@ -51,3 +51,17 @@ h2,h3{
 .logo {
     animation: logo 3s linear infinite;
 }
+/* Allgemeine Styles für Zitate in einem p-Tag */
+.zitat {
+    position: relative; /* Positionierung für das Design des Zitats */
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #007bff; /* Linke Linie zur Hervorhebung des Zitats */
+    background-color: #f9f9f9; /* Heller Hintergrund für das Zitat */
+    color: #333; /* Dunkle Textfarbe für das Zitat */
+    font-style: italic; /* Kursivschrift für den Zitat-Text */
+    border-radius: 8px; /* Abgerundete Ecken für das Zitat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für mehr Tiefe */
+}
+
+
