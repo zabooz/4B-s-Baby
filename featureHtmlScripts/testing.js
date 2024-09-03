@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ? "Dein Passwort ist sicher! Keine weiteren Anpassungen erforderlich." 
         : "Schau dir diese Tipps an, um dein Passwort zu verbessern.";
     
-      showSuggestions(result.points);
+      showSuggestions(result.points,value);
     } catch (error) {
       console.log(error);
     } finally {
@@ -305,9 +305,11 @@ document.addEventListener("DOMContentLoaded", () => {
  * @property {string} textFalse - the text to show when the result is false
  */
 
-  const showSuggestions = (points) => {
+  const showSuggestions = (points,pwd) => {
     const sugg = document.getElementById("suggestions");
     const succ = document.getElementById("success");
+    const excaliburPwd = document.getElementById("excaliburPassword")
+    excaliburPwd.innerText = `"${pwd}"`
     sugg.innerHTML = "";
     succ.innerHTML = "";
     for (const key in points) {
