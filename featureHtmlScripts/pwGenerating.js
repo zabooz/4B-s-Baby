@@ -11,8 +11,7 @@ const glyphRangeSlider = document.getElementById("sliderSorcery");
 const previewCon = document.getElementById("previewContainer");
 const leetInputField = document.getElementById("leetInput");
 
-let pictureMagicArray = JSON.parse(sessionStorage.getItem("pictureMagicArray")) || [];
-const updatedPicMagArr = []
+
 
 
 glyphRangeSlider.addEventListener("input", () => {
@@ -42,10 +41,8 @@ uploadFile.addEventListener("input", () => {
 
   picMagicBtn.disabled = false;
   const label = document.getElementById("uploadLabel");
-
   const previewCon = document.getElementById("previewContainer")
   const previewImg = document.getElementById("previewImage")
-
   const input = document.getElementById("uploadFile");
 
   if(input.files[0]) file = input.files[0]
@@ -80,7 +77,8 @@ uploadFile.addEventListener("input", () => {
 
 
 });
-
+let count = 0;
+const updatedPicMagArr = [];
 picMagicBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
@@ -88,78 +86,70 @@ picMagicBtn.addEventListener("click", async (e) => {
   const row = document.createElement("tr");
   tbody.innerHTML = "";
 
-  const pwId = `pasword${updatedPicMagArr.length}`
-  const picId = `pic${updatedPicMagArr.length}`
+  // let pictureMagicArray =                                          // for later maybe
+  //   JSON.parse(sessionStorage.getItem("pictureMagicArray")) || []; 
 
-  const tdPic = document.createElement("td");  
-  tdPic.id = picId
+  
+  const pwId = `pasword${updatedPicMagArr.length}`;
+  const picId = `pic${updatedPicMagArr.length}`;
+
+  const tdPic = document.createElement("td");
+  tdPic.id = picId;
   tdPic.classList.add("tablePics");
- 
 
-  tdPic.innerHTML =  `<img src="${picturePath}" id="${picId}" alt="your Picture" class="imgTable " style="width:2rem">`  ;
-  
+  // Assuming picturePath is defined somewhere earlier in your code
+  tdPic.innerHTML = `<img src="${picturePath}" id="${picId}" alt="your Picture" class="imgTable " style="width:2rem">`;
+
   const tdPw = document.createElement("td");
-  tdPw.id = pwId
-  tdPw.classList.add("d-flex")
-  const tdLeft = document.createElement("td")
-  const tdRight = document.createElement("td")
+  tdPw.id = pwId;
+  tdPw.classList.add("d-flex","p-0","align-items-center","gap-2"); 
+  const tdLeft = document.createElement("td");
+  const tdRight = document.createElement("td");
 
-  tdLeft.innerHTML = ` <img src="../img/icons/arrow.svg" data-side="left" class="magicArrows" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`
+  tdLeft.innerHTML = ` <img src="../img/icons/arrow.svg" data-side="left" class="magicArrows" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`;
+  tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="magicArrows" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`;
 
-  tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="magicArrows" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`
+  row.append(tdLeft, tdPw, tdPic, tdRight);
+  tbody.appendChild(row);
 
-
-    
-    row.append(tdLeft,tdPw,tdPic,tdRight);
-    tbody.appendChild(row);
-
-
-  let count = 0
-  
-  document.querySelectorAll(".magicArrows").forEach(arrow => {
-
-    
+  let count = updatedPicMagArr.length;
+  updatedPicMagArr.push(row); 
+  document.querySelectorAll(".magicArrows").forEach((arrow) => {
     arrow.addEventListener("click", () => {
+      tbody.innerHTML = "";
 
-        tbody.innerHTML = ""
-
-      if(arrow.dataset.side === "left"){
-        count = (count - 1 + pictureMagicArray.length) % pictureMagicArray.length;
-      }else{
-        count = (count + 1) % pictureMagicArray.length
+      if (arrow.dataset.side === "left") {
+        count = (count - 1 + updatedPicMagArr.length) % updatedPicMagArr.length;
+      } else {
+        count = (count + 1) % updatedPicMagArr.length;
       }
 
+      tbody.append(updatedPicMagArr[count]); 
+    });
+  });
 
-      tbody.append(updatedPicMagArr[count])
-
-
-    })
-})
-
-
- 
-
-
-  
   try {
     const result = await pictureToString(file);
-    
-    const spanPwd = document.createElement("spanPwd");
+
+    const spanPwd = document.createElement("span"); 
     const pic = document.getElementById(picId);
     spanPwd.innerText = `${result}`;
-    spanPwd.classList.add("w-100")
-    tdPw.append(copyButton(pwId),spanPwd);
-    pic.src = picturePath
-    picMagicBtn.disabled = true
-    updatedPicMagArr.push(row)
-    sessionStorage.setItem("pictureMagicArray", JSON.stringify(updatedPicMagArr));
+    spanPwd.classList.add("w-100");
+    tdPw.append(copyButton(pwId), spanPwd);
+    pic.src = picturePath; 
+    picMagicBtn.disabled = true;
+    
+    // sessionStorage.setItem(
+    //   "pictureMagicArray",             //later maybe
+    //   JSON.stringify(updatedPicMagArr)
+    // );
 
-    console.log(updatedPicMagArr)
+    console.log(updatedPicMagArr);
   } catch (error) {
     console.error(error);
-  } 
-
+  }
 });
+
 
 leetInputField.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
