@@ -11,7 +11,7 @@ export const configQuickNavIndex = {
 export const configQuickNavFeature = {
   ai: {
     img: "../img/icons/_sanchez.jpeg",
-    text: "Ai-Assistant",
+    text: "Sanchez",
   },
   clippy: {
     img: "../img/icons/copyCat1.jpeg",

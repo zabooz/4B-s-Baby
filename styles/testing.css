@@ -94,7 +94,7 @@ main section{
 }
 .btn {
   background-color: #ea6954;
-  color: white;
+  color: white !important;
   border: none;
 } 
 .btn:hover {

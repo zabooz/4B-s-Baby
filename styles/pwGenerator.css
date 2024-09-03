@@ -28,7 +28,7 @@ main section {
 }
 .tablePics:hover {
   cursor: pointer;
-  animation: scaleUp 1s ease forwards;
+  animation: scaleUpper 1s ease forwards;
   z-index: 5;
 }
 .imgTable {
@@ -72,12 +72,12 @@ main section {
   background-color: #ffffff96;
 }
 
-@keyframes scaleUp {
+@keyframes scaleUpper {
   0% {
-    transform: scale(1) rotate(0deg);
+    transform: scale(1)
   }
   100% {
-    transform: scale(5) rotate(360deg);
+    transform: scale(5)
   }
 }
 
@@ -120,6 +120,22 @@ main section {
   padding: 0.2rem 0.2rem;
   margin: 0 0.2rem;
   background-color: #ffffff18;
+}
+
+.scale{
+  animation: scale 2s ease-in-out;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1) rotate(360deg);
+  }
+  50% {
+    transform: scale(0) rotate(0deg);
+  }
+  100%{
+    tranform: scale(1) rotate(360deg)
+  }
 }
 
 /* =============================== cards =============================== */

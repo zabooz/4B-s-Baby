@@ -42,7 +42,9 @@ uploadFile.addEventListener("input", () => {
 
   picMagicBtn.disabled = false;
   const label = document.getElementById("uploadLabel");
-  const preview = document.getElementById("previewImage");
+
+  const previewCon = document.getElementById("previewContainer")
+  const previewImg = document.getElementById("previewImage")
 
   const input = document.getElementById("uploadFile");
 
@@ -57,15 +59,25 @@ uploadFile.addEventListener("input", () => {
     return;
   }
 
-  label.textContent = "Hochgeladen!";
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      picturePath = e.target.result;
-      preview.src = picturePath
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    picturePath = e.target.result;
+    previewCon.classList.add("scale")
+    setTimeout(()=> {
+      previewImg.src =picturePath
+      label.textContent = "Hochgeladen!";
+    },1000)
+    setTimeout(()=> {
+      previewCon.classList.remove("scale")
+      },2000)
+
    
     };
 
     reader.readAsDataURL(file);
+
+
+
 
 });
 
@@ -103,9 +115,10 @@ picMagicBtn.addEventListener("click", async (e) => {
     pic.src = picturePath
     picMagicBtn.disabled = true
 
+
   } catch (error) {
     console.error(error);
-  }
+  } 
 
 });
 

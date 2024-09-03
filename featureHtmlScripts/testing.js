@@ -12,10 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const stopBrute = document.getElementById("stopBrute");
   const excaliburBtn = document.getElementById("excaliburBtn");
   const excaliburIcon = document.getElementById("basic-addon2");
+  const excaliburInput = document.getElementById("excaliburInput")
+  const bruteForceInput = document.getElementById("bruteForceInput");
   const mojoIcon = document.getElementById("basic-addon1");
   const why = document.getElementById("why");
-  const bruteInput = document.getElementById("userPwdInput");
-  const strengthInput = document.getElementById("strengthInput");
+
 
 
   
@@ -24,9 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const baseUrl = "https://kgg8gggo0c08oc8wcw0oco00.coolify.machma.app/"; //  base url for api calls
 
 
+  excaliburInput.addEventListener("input", () =>{
 
+    excaliburBtn.disabled = excaliburInput.value.length > 0 ? false : true;
+    
 
+  })
 
+  bruteForceInput.addEventListener("input", () =>{
+    startBrute.disabled = bruteForceInput.value.length > 0 ? false : true;
+    
+  })
   // ==========   brute force
   
   startBrute.addEventListener("click", (e) => {
@@ -88,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // probably refactor it
 
   mojoIcon.addEventListener("click", () => {
-    const input = document.getElementById("userPwdInput");
+    const input = document.getElementById("bruteForceInput");
     const icon = document.getElementById("togglePassword");
     if (input.type === "password") {
       input.type = "text";
@@ -99,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   excaliburIcon.addEventListener("click", () => {
-    const input = document.getElementById("strengthInput");
+    const input = document.getElementById("excaliburInput");
     const icon = document.getElementById("togglePassword2");
     if (input.type === "password") {
       input.type = "text";
@@ -138,13 +147,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const bruteType = document.querySelector(
       'input[name="bruteMode"]:checked'
     ).id;
-    const pwd = document.getElementById("userPwdInput");
-    const [encodedPwd, key] = passwordEncoder(pwd.value); // encode the password
+    const pwd = bruteForceInput.value
+    const [encodedPwd, key] = passwordEncoder(pwd); // encode the password
     const urlPara = `${baseUrl}bruteforce${bruteType}?pwd=${encodeURIComponent(
       encodedPwd
     )}&key=${key}`;
 
-    pwd.value = "";
+    bruteForceInput.value = "";
 
     let result = [pwd.value, "--", "--", "--"];
 
@@ -164,8 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .finally(() => {
         clearInterval(interval);  // stop the thinker
         updateAttempts(result);   // update the table
-        startBrute.disabled = false;
-        startBrute.innerHTML = "Start";
+        startBrute.disabled = true;
+        startBrute.innerHTML = "Nochmal?";
       });
   };
 
@@ -224,52 +233,68 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   excaliburBtn.addEventListener("click", async () => {
-    const bar = document.getElementById("progressBar");
-    const strengthInput = document.getElementById("strengthInput");
-    const value = strengthInput.value;
-    strengthInput.value =""
-
-
-   //  ==   thinker function 
-     
     excaliburBtn.innerHTML = `   
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
     <span role="status">${thinkWords[0]}</span>
     `;
-    excaliburBtn.disabled = true;
+    const bar = document.getElementById("progressBar");
+    const value = excaliburInput.value;
+    excaliburInput.value =""
 
-    interval = setInterval(() => {
-      thinker(excaliburBtn);
-    }, 2000);
+
+   //  ==   thinker function 
+     
+    excaliburBtn.disabled = true;
+   
+    bar.style.backgroundColor = "#ced4da";
+    const barAni = setInterval(() => {
+    const rdm = Math.floor(Math.random()*75) +1
+    bar.style.width = `${rdm}%` 
+
+  },600)
+
+
+  interval = setInterval(() => {
+    thinker(excaliburBtn);
+  }, 2000);
 
 
 
     // ==   passwordStrength function call
-
+    let result;
     try {
-      const { result, points } = await newPwStrength(value);
-      bar.style.width = `${result}%`;
-      bar.style.backgroundColor = getColorFromStrength(result);
-      why.innerText = result === 100 ? "Dein Passwort ist sicher! Keine weiteren Anpassungen erforderlich." 
-                                     : "Schau dir diese Tipps an, um dein Passwort zu verbessern.";
-
-      if (result !== 100) {
-        why.style.textDecoration="underline";
-      }else{
-        why.style.textDecoration="none";
-        why.style.pointerEvents = "none"
-      }
-      
-      showSuggestions(points); // show suggestions for password improvement
+      // Asynchrone Operation ausführen
+      result = await newPwStrength(value);
+    
+      // Anzeige der Ergebnisse basierend auf dem Resultat
+      why.innerText = result.result === 100 
+        ? "Dein Passwort ist sicher! Keine weiteren Anpassungen erforderlich." 
+        : "Schau dir diese Tipps an, um dein Passwort zu verbessern.";
+    
+      showSuggestions(result.points);
     } catch (error) {
       console.log(error);
     } finally {
-      why.classList.remove("d-none"); 
+      if (result) {
+        // Ändere das Styling der Statusanzeige nach einer Verzögerung
+        setTimeout(() => {
+          bar.style.width = `${result.result}%`;
+          bar.style.backgroundColor = getColorFromStrength(result.result);
+          
+          why.style.textDecoration = result.result !== 100 ? "underline" : "none";
+          why.style.pointerEvents = result.result === 100 ? "none" : "auto";
+        }, 100);
+      }
+      
+      // Bereinige Intervalle und setze den Button zurück
+      why.classList.remove("d-none");
+      clearInterval(barAni);
       clearInterval(interval);
-      excaliburBtn.disabled = false;
-      excaliburBtn.innerHTML = "Testen!";
+      console.log(result.result)
+      excaliburBtn.disabled = true;
+      excaliburBtn.innerHTML = "Nochmal?";
     }
-  });
+})   
 
 
 /**
@@ -294,6 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
         li.textContent = "- " + points[key].textTrue;
         succ.append(li);
       } else {
+
         li.style.color = "red";
         li.textContent = "- " + points[key].textFalse;
         sugg.append(li);
@@ -303,13 +329,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         // ======= KeyPress ===========
 
-bruteInput.addEventListener("keypress", (e) => {
+bruteForceInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     startBrute.click();
   }
 });
 
-strengthInput.addEventListener("keypress", (e) => {
+excaliburInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     excaliburBtn.click();
   }

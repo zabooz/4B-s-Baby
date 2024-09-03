@@ -49,7 +49,7 @@ nav img {
 
 #quickNav {
   position: fixed;
-  right: -8rem;
+  right: -6.3rem;
   top: 40%;
   z-index: 1;
 }
@@ -72,7 +72,7 @@ nav img {
 
 .noticeMeSenpai {
   will-change: box-shadow, border-color;
-  animation: glowing 3s infinite ;
+  animation: glowing 2s infinite forwards ;
 }
 
 
@@ -82,36 +82,48 @@ nav img {
     right: 1rem;
   }
   100% {
-    right: 6.5rem;
+    right: 6rem;
   }
 }
 
 
 
 @keyframes glowing {
-  0%, 100% {
+  0% {
       border-color: rgba(234, 105, 84, 0.2); /* Sehr schwaches Rot */
       box-shadow: 0 0 3px rgba(234, 105, 84, 0.4), 
                   0 0 9px rgba(234, 105, 84, 0.3), 
                   0 0 12px rgba(234, 105, 84, 0.2);
+      transform: rotate(2deg);
   }
   25% {
       border-color: rgba(234, 105, 84, 0.4); /* Schwächeres Rot */
       box-shadow: 0 0 8px rgba(234, 105, 84, 0.6), 
                   0 0 13px rgba(234, 105, 84, 0.5), 
                   0 0 18px rgba(234, 105, 84, 0.2);
+      transform: rotate(-2deg);
   }
   50% {
       border-color: rgba(234, 105, 84, 0.6); /* Stärkeres Rot */
       box-shadow: 0 0 10px rgba(234, 105, 84, 0.8), 
                   0 0 15px rgba(234, 105, 84, 0.6), 
                   0 0 20px rgba(234, 105, 84, 0.4);
+      transform: rotate(2deg);
+      
   }
   75% {
       border-color: rgba(234, 105, 84, 0.4); /* Zurück zu schwächerem Rot */
       box-shadow: 0 0 8px rgba(234, 105, 84, 0.4), 
                   0 0 10px rgba(234, 105, 84, 0.3), 
                   0 0 15px rgba(234, 105, 84, 0.2);
+      transform: rotate(-2deg);
+  }
+  100% {
+    border-color: rgba(234, 105, 84, 0.2); /* Sehr schwaches Rot */
+    box-shadow: 0 0 3px rgba(234, 105, 84, 0.4), 
+                0 0 9px rgba(234, 105, 84, 0.3), 
+                0 0 12px rgba(234, 105, 84, 0.2);
+    transform: rotate(0deg);
   }
 }
 
