@@ -130,8 +130,8 @@ picMagicBtn.addEventListener("click", async (e) => {
   // toggle arrow buttons show when more than 1 picture is in the array
   
   let count = updatedPicMagArr.length;
-  
-  if(count >=1){    
+  console.log(count);
+  if(count >1){    
     updatedPicMagArr.forEach((element) => {
       const arrows = element.querySelectorAll(".magicArrows");
       arrows.forEach((arrow) => {
