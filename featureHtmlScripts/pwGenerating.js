@@ -100,12 +100,46 @@ picMagicBtn.addEventListener("click", async (e) => {
   
   const tdPw = document.createElement("td");
   tdPw.id = pwId
+  tdPw.classList.add("d-flex")
+  const tdLeft = document.createElement("td")
+  const tdRight = document.createElement("td")
+
+  tdLeft.innerHTML = ` <img src="../img/icons/arrow.svg" data-side="left" class="magicArrows" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`
+
+  tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="magicArrows" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`
 
 
+    
+    row.append(tdLeft,tdPw,tdPic,tdRight);
+    tbody.appendChild(row);
+
+
+  let count = 0
   
-  row.append(tdPw,tdPic);
-  tbody.appendChild(row);
-  
+  document.querySelectorAll(".magicArrows").forEach(arrow => {
+
+    
+    arrow.addEventListener("click", () => {
+
+        tbody.innerHTML = ""
+
+      if(arrow.dataset.side === "left"){
+        count = (count - 1 + pictureMagicArray.length) % pictureMagicArray.length;
+      }else{
+        count = (count + 1) % pictureMagicArray.length
+      }
+
+
+      tbody.append(updatedPicMagArr[count])
+
+
+    })
+})
+
+
+ 
+
+
   
   try {
     const result = await pictureToString(file);
@@ -155,16 +189,22 @@ leetBtn.addEventListener("click", function () {
   td.append(copyButton("leetResult0"), spanPwd);
 
 
+  const tdLeft = document.createElement("td")
+  const tdRight = document.createElement("td")
 
+  tdLeft.innerHTML = ` <img src="../img/icons/arrow.svg" data-side="left" class="letArrows" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`
 
+  tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="leetArrows" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`
 
+  const row = document.querySelector("#statsBody2 tr")
 
-const arrowLeft = `<img src="../img/icons/arrow.svg" data-side="left" class="leetArrows" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`;
-const versionText = `<span id="versionText" >${versionArray[0]}</span>`; 
-const arrowRight = `<img src="../img/icons/arrow.svg" id="arrowRight" class="leetArrows" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`;
-
+  const versionText = `<span id="versionText" >${versionArray[0]}</span>`; 
   const versionTd = document.getElementById("leetVersion")
-  versionTd.innerHTML = arrowLeft + versionText  + arrowRight 
+  versionTd.innerHTML =versionText
+
+  row.prepend(tdLeft)
+  row.append(tdRight)
+
 
   let count = 0
 
