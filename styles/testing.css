@@ -118,6 +118,14 @@ main section{
   }
 }
 
+/* ==================  Tables ===============  */
 
+#tableWrapper{
+
+  height: 180px;
+  overflow-y: auto;
+
+
+}
 
 

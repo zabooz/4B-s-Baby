@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const tableWrapper = document.getElementById("tableWrapper"); // probably not needed anymore
     if(statsBody.childElementCount === 2){
       tableWrapper.classList.add("border-bottom");
-
     }
 
 
