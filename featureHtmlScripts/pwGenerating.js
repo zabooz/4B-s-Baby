@@ -238,8 +238,6 @@ leetBtn.addEventListener("click", function () {
 
 
 
-
-
   let count = 0
 
   document.querySelectorAll(".leetArrows").forEach(arrow => {
