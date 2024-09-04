@@ -25,9 +25,15 @@ const leetInputField = document.getElementById("leetInput");
 
 
 // shared variables between upload and converter functions
+
+
 let picturePath;
 let file;
-const updatedPicMagArr = [];    // variable  to save pw/pic  to switch between them
+const pictureRowsArr = [];    // variable  to save row dom elements 
+let pictureMagicArray =  JSON.parse(sessionStorage.getItem("pictureMagicArray")) || [];  // variable to save row data
+
+
+
 
 
 //  click anywhere in the preview container to upload
@@ -36,6 +42,10 @@ previewCon.addEventListener("click", () => {
   uploadFile.click()
 })
 
+
+
+
+// 
 
 uploadFile.addEventListener("input", () => {    
 
@@ -82,97 +92,116 @@ uploadFile.addEventListener("input", () => {
 
 
 
- 
+
+const pictureSelector = (pictureMagicArray) => {
+  
+    const tbody = document.getElementById("statsBodyPicGen");
+    tbody.innerHTML = "";
+
+
+    sessionStorage.setItem("pictureMagicArray", JSON.stringify(pictureMagicArray));
+
+    // generate rows from data array
+
+    for (let i = 0; i < pictureMagicArray.length; i++) {
+
+
+
+      const item = pictureMagicArray[i];
+    
+      const picId = `pic${item.picId}`;
+      const pwId = `pasword${item.pwId}`;
+      const tdPw = document.createElement("td");
+      const tdPic = document.createElement("td");
+      const tdLeft = document.createElement("td");
+      const tdRight = document.createElement("td");
+      const spanPwd = document.createElement("span");
+    
+      spanPwd.innerText = `${item.password}`;
+      spanPwd.classList.add("w-100", "pwdSpan");
+      tdPw.append(copyButton(pwId), spanPwd, spanPwd);
+      tdLeft.innerHTML = `<img src="../img/icons/arrow.svg" data-side="left" class="magicArrows d-none" style="transform: rotate(180deg); margin-top: -0.15rem; width: 2rem" alt="Arrow Left">`;
+      tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="magicArrows d-none" data-side="right" style="margin-top: -0.15rem; width: 2rem" alt="Arrow Right">`;
+      tdPic.id = picId;
+      tdPic.classList.add("tablePics");
+      tdPic.innerHTML = `<img src="${item.picturePath}" id="${picId}" alt="Your Picture" class="imgTable" style="width:2rem">`;
+      tdPw.id = pwId;
+      tdPw.classList.add("d-flex", "p-0", "align-items-center", "gap-2");
+    
+      const tr = document.createElement("tr");
+      tr.append(tdLeft, tdPw, tdPic, tdRight);
+    
+      pictureRowsArr.push(tr);
+    }
+    
+
+
+    // add switch arrows to rows when more than 1 row 
+    let count = pictureRowsArr.length;
+
+    if(count >1){    
+      pictureRowsArr.forEach((element) => {
+        const arrows = element.querySelectorAll(".magicArrows");
+        arrows.forEach((arrow) => {
+          arrow.classList.remove("d-none");
+          arrow.addEventListener("click", () => {
+            tbody.innerHTML = "";
+            if (arrow.dataset.side === "left") {
+              count = (count - 1 + pictureRowsArr.length) % pictureRowsArr.length;
+            } else {
+              count = (count + 1) % pictureRowsArr.length;
+            }
+            tbody.append(pictureRowsArr[count]); 
+          });
+        });
+      });
+      
+    }
+
+
+
+  tbody.append(pictureRowsArr[pictureRowsArr.length - 1])
+
+}
+
+
+
+
+
+//  check if data is in session storage and render it
+
+if(pictureMagicArray.length > 0){
+  pictureSelector(pictureMagicArray);
+}
+
+
+
 picMagicBtn.addEventListener("click", async (e) => {
   e.preventDefault();
-
-  const tbody = document.getElementById("statsBodyPicGen");
-  const row = document.createElement("tr");
-  tbody.innerHTML = "";
-
-  // let pictureMagicArray =                                          // for later maybe
-  //   JSON.parse(sessionStorage.getItem("pictureMagicArray")) || []; 
-
   
-
-  //  generatte id
-
-  const pwId = `pasword${updatedPicMagArr.length}`;
-  const picId = `pic${updatedPicMagArr.length}`;
-
-  // table elements picture & password
-  const tdPic = document.createElement("td");
-  tdPic.id = picId;
-  tdPic.classList.add("tablePics");
-  tdPic.innerHTML = `<img src="${picturePath}" id="${picId}" alt="your Picture" class="imgTable " style="width:2rem">`;
-
-  const tdPw = document.createElement("td");
-  tdPw.id = pwId;
-  tdPw.classList.add("d-flex","p-0","align-items-center","gap-2"); 
+  const pwId = `pasword${pictureRowsArr.length}`;
+  const picId = `pic${pictureRowsArr.length}`;
 
 
-  // create Arrow Buttons to switch between pictures
-
-  const tdLeft = document.createElement("td");
-  const tdRight = document.createElement("td");
-  tdLeft.innerHTML = ` <img src="../img/icons/arrow.svg" data-side="left" class="magicArrows d-none" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`;
-  tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="magicArrows d-none" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`;
-
-  row.append(tdLeft, tdPw, tdPic, tdRight);
-  tbody.appendChild(row);
+  const data = {
+    pwId: pwId,
+    picId: picId,
+    picturePath: picturePath,
+    password: null
+  };
 
 
-  // save uploaded picture in the array
-  updatedPicMagArr.push(row); 
-
-
-  
-  // toggle arrow buttons show when more than 1 picture is in the array
-  
-  let count = updatedPicMagArr.length;
-  console.log(count);
-  if(count >1){    
-    updatedPicMagArr.forEach((element) => {
-      const arrows = element.querySelectorAll(".magicArrows");
-      arrows.forEach((arrow) => {
-        arrow.classList.remove("d-none");
-      });
-    
-    });
-    
-  }
-
-  // Arrow click events to navigate through the table
-
-  document.querySelectorAll(".magicArrows").forEach((arrow) => {
-    arrow.addEventListener("click", () => {
-      tbody.innerHTML = "";
-      if (arrow.dataset.side === "left") {
-        count = (count - 1 + updatedPicMagArr.length) % updatedPicMagArr.length;
-      } else {
-        count = (count + 1) % updatedPicMagArr.length;
-      }
-      tbody.append(updatedPicMagArr[count]); 
-    });
-  });
-
-
-  //  convert uploaded Picture to string and show it in the table
   try {
 
     const result = await pictureToString(file);
-    const spanPwd = document.createElement("span"); 
-    const pic = document.getElementById(picId);
-    spanPwd.innerText = `${result}`;
-    spanPwd.classList.add("w-100","pwdSpan");
-    tdPw.append(copyButton(pwId), spanPwd);
-    pic.src = picturePath; 
+    
+    data.password = result;
+    pictureMagicArray.push(data);
+
+    pictureSelector(pictureMagicArray);
     picMagicBtn.disabled = true;
     
-    // sessionStorage.setItem(
-    //   "pictureMagicArray",             //later maybe
-    //   JSON.stringify(updatedPicMagArr)
-    // );
+
   } catch (error) {
     console.error(error);
   }
