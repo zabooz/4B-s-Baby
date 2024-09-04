@@ -119,7 +119,7 @@ const pictureSelector = (pictureMagicArray) => {
     
       spanPwd.innerText = `${item.password}`;
       spanPwd.classList.add("w-100", "pwdSpan");
-      tdPw.append(copyButton(pwId), spanPwd, spanPwd);
+      tdPw.append(copyButton(pwId), spanPwd);
       tdLeft.innerHTML = `<img src="../img/icons/arrow.svg" data-side="left" class="magicArrows d-none" style="transform: rotate(180deg); margin-top: -0.15rem; width: 2rem" alt="Arrow Left">`;
       tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="magicArrows d-none" data-side="right" style="margin-top: -0.15rem; width: 2rem" alt="Arrow Right">`;
       tdPic.id = picId;
@@ -236,11 +236,12 @@ leetInputField.addEventListener("input",()=> {
 leetBtn.addEventListener("click", function () {
 
   document.querySelector("#statsBody2 tr").style.display = "";
+  leetBtn.disabled = true
 
 
   const leetInput = leetInputField.value;
   leetInputField.value = ""
-
+ 
 
   // create new password in three version
 
@@ -287,6 +288,10 @@ leetBtn.addEventListener("click", function () {
   })
     const body = document.getElementById("statsBody2");
     body.style.display = "";
+
+
+
+
 
 });
 

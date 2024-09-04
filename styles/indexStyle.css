@@ -54,12 +54,17 @@ main > section {
 }
 
 #logoFirstLetter {
-  font-family: "Yellowtail", cursive;
+  font-family: "Yellowtail", cursive ;
   font-weight: bold;
   font-size: clamp(5rem, 15vw, 18rem);
   letter-spacing: clamp(-3.5rem ,-5vw,-1rem);
   margin-left: -2rem
 }
+#logoFirstLetter font {
+  font-family: "Yellowtail", cursive ;
+}
+
+
 #padlockCon{
   display: flex;
   justify-content: center;
@@ -117,17 +122,24 @@ main > section {
   
 }
 
+.card-title   font{
+  font-family: "Inria Serif", serif;
+}
+
 .card a{
   margin-top: calc(5rem + vw);
 }
 .btn {
   background-color: #ea6954;
-  color: white;
+  color: #f1f5f5;
+}
+.btn font{
+  color: #f1f5f5;
 }
 
 .btn:hover {
   background: #56c5c3;
-  color: white;
+  color: #f1f5f5;
 }
 
 /* ====================== Keyframes ===================== */

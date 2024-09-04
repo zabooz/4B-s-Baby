@@ -95,6 +95,7 @@ const createNavBar = (configNav) => {
           <p class="navbar-brand mb-0  ms-3">${configNav.logo.text}</p>
         </a>
       </div>
+      
       <button class="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon "></span>
       </button>
@@ -125,10 +126,10 @@ const createNavBar = (configNav) => {
             <li class="nav-item">
             <a class="nav-link " href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a>
             </li>
-                      <li class="nav-item mx-2">
+                      <li class="nav-item">
             <a class="nav-link" href="${configNav.project.link}">${configNav.project.text}</a>
           </li>
-                    <li class="nav-item mx-2">
+                    <li class="nav-item">
             <a class="nav-link" href="${configNav.aboutUs.link}">${configNav.aboutUs.text}</a>
           </li>
                   </ul>
@@ -144,3 +145,4 @@ const createNavBar = (configNav) => {
 export const createNav = (config) => {
   document.querySelector(config.targetId).innerHTML = createNavBar(config);
 };
+
