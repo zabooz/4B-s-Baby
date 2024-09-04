@@ -1,7 +1,7 @@
 import { newPwStrength } from "./newStrengthCalc.js";
 import { passwordEncoder } from "../scripts/encoder.js";
 import { getColorFromStrength } from "../utilities/getColorFromStrength.js";
-import { thinkWords, thinker } from "../utilities/thinker.js";
+import { thinkWords, thinker} from "../utilities/thinker.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -21,53 +21,90 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   // ============= stuff ===== 
-  let interval; // to stop the thinker function
+  let bruteThinkerInterval; // to stop the thinker function
+  let excaliburThinkerInterval;
   const baseUrl = "https://kgg8gggo0c08oc8wcw0oco00.coolify.machma.app/"; //  base url for api calls
 
+  let isBruteActive = sessionStorage.getItem("isBruteActive") ? JSON.parse(sessionStorage.getItem("isBruteActive")) : false;
 
-  excaliburInput.addEventListener("input", () =>{
 
-    excaliburBtn.disabled = excaliburInput.value.length > 0 ? false : true;
-    
-
-  })
-
-  bruteForceInput.addEventListener("input", () =>{
-    startBrute.disabled = bruteForceInput.value.length > 0 ? false : true;
-    
-  })
-  // ==========   brute force
   
+  
+  
+  
+  
+  // ===============================================================
+
+  //               BRUTE FORCE
+
+  // =================================================================
+
+
+
+
+  //  checks if brute force is already  active
+
+  if(isBruteActive){
+    const radioCheckSimple = document.getElementById("simple");
+    radioCheckSimple.checked = true;
+
+  startBrute.innerHTML = `
+  <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+  <span role="status">${thinkWords[0]}</span>
+  `;
+  startBrute.disabled = true;
+
+  bruteThinkerInterval = setInterval(() => {
+  thinker(startBrute);
+  }, 2000);
+  }
+  
+
+
+
+
   startBrute.addEventListener("click", (e) => {
     e.preventDefault();
-    const statsBody = document.getElementById("statsBody");
-
     
-    const tableWrapper = document.getElementById("tableWrapper"); // probably not needed anymore
-    if(statsBody.childElementCount === 2){
-      tableWrapper.classList.add("border-bottom");
-    }
+    
+    
+    if(isBruteActive === false){
+      const statsBody = document.getElementById("statsBody");
+      
+      
 
+      // to get border bottom when scrollbar appears
+
+      const tableWrapper = document.getElementById("tableWrapper"); // probably not needed anymore
+      if(statsBody.childElementCount === 2){
+        tableWrapper.classList.add("border-bottom");
+      }
+
+
+      // setting brute status in sessionstore
+
+      isBruteActive = true;
+      sessionStorage.setItem("isBruteActive", isBruteActive);
 
     // thinker starts directly after button press
-
-    startBrute.innerHTML = `
+      startBrute.innerHTML = `
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
     <span role="status">${thinkWords[0]}</span>
     `;
     startBrute.disabled = true;
 
-    interval = setInterval(() => {
+    bruteThinkerInterval = setInterval(() => {
       thinker(startBrute);
     }, 2000);
-
     // =============================
-
-
-    //  Api call to start brute force and get the result
-
+    
+    
+    
+    
     callBruteForce();
-  });
+  }
+
+});
 
 
 
@@ -82,7 +119,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         startBrute.innerHTML = "Start";
         startBrute.disabled = false;
+        isBruteActive = false;
+        sessionStorage.setItem("isBruteActive", isBruteActive);
         console.log("Brute force process stopped");
+        clearInterval(bruteThinkerInterval);
       })
       .catch((error) => {
         console.error("Stop brute force process:", error);
@@ -164,13 +204,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.json();
       })
       .then((data) => {
+        isBruteActive = false;
+        sessionStorage.setItem("isBruteActive", isBruteActive);
         result = data;
       })
       .catch((error) => {
         console.error("fetch data:", error);
       })
       .finally(() => {
-        clearInterval(interval);  // stop the thinker
+        clearInterval(bruteThinkerInterval);  // stop the thinker
         updateAttempts(result);   // update the table
         startBrute.disabled = true;
         startBrute.innerHTML = "Nochmal?";
@@ -253,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
   },600)
 
 
-  interval = setInterval(() => {
+  excaliburThinkerInterval = setInterval(() => {
     thinker(excaliburBtn);
   }, 2000);
 
@@ -288,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Bereinige Intervalle und setze den Button zurück
       why.classList.remove("d-none");
       clearInterval(barAni);
-      clearInterval(interval);
+      clearInterval(excaliburThinkerInterval);
       console.log(result.result)
       excaliburBtn.disabled = true;
       excaliburBtn.innerHTML = "Nochmal?";
@@ -328,7 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-                        // ======= KeyPress ===========
+                        // ======= KeyPress btn-disables ===========
 
 bruteForceInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
@@ -341,6 +383,21 @@ excaliburInput.addEventListener("keypress", (e) => {
     excaliburBtn.click();
   }
 });
+
+
+excaliburInput.addEventListener("input", () =>{
+
+  excaliburBtn.disabled = excaliburInput.value.length > 0 ? false : true;
+  
+
+})
+
+bruteForceInput.addEventListener("input", () =>{
+
+  if(!isBruteActive) startBrute.disabled = bruteForceInput.value.length > 0 ? false : true;
+  
+})
+
 
 
 });

@@ -22,6 +22,22 @@ table{
   min-height: 88px;
 }
 
+.pwdSpan,
+#versionText,
+#generatedPasswordLength0,
+th {
+  font-size: clamp(.8rem, 1.5vw, 1rem);
+}
+
+#leetPwd,
+.leetArrows{
+  font-size: clamp(1rem, 2vw, 1rem);
+  width: clamp(1rem, 2vw,2rem);
+}
+.btn:active {
+  background-color: #56c5c3 !important;
+}
+
 /* ================= Picture magic================= */
 
 
@@ -186,7 +202,7 @@ td{
   border: none;
 }
 .btn:hover {
-  background: #56c5c3;
+  background: #56c5c3be;
   color: white;
 }
 
