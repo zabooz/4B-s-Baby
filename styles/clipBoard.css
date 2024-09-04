@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+*{
+    font-family: "Montserrat", serif;
+}
 .copyButton {
     position: relative;
     background-color: transparent;
     border: hidden;
-    height: 1rem;
-    width: 1rem;
+
 
     cursor: pointer;
-    margin-left: 0.5rem;
+
 }
 .copyButton img{
     width: 100%;
@@ -21,13 +22,18 @@ i::before{
     background-color: #EA6954;
 }
 
+
+.offcanvas img{
+    border-radius: .5rem;
+    width: 5rem;
+    margin: auto;
+}
+
 .montserrat-font-clippy {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 2.4rem;
-    font-weight: 400;
     color: white;
+    font-size: 2.4rem;
+    text-align: center;
+    padding: 1rem !important;
 }
 .confirmBubble{
     position: absolute;
@@ -45,20 +51,23 @@ i::before{
 .nav-item-clippy{
     padding: .5rem 0.5rem;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 #userListBtn{
     margin-left: -.3rem;
     z-index: 2;
     background-color: #ea6854c5;
-    border-bottom-right-radius: .5rem;
+    border-bottom-right-radius: .3rem;
 
 }
 #passwordListBtn{
     background-color: aqua;
     background-color: #ea6854;
-    border-bottom-right-radius: .5rem;
+    border-bottom-right-radius: .3rem;
+
+
+ 
 }
 .btnBox{
     display: flex;

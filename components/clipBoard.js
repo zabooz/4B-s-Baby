@@ -17,11 +17,12 @@ const createClipBoard = () => {
 
   return `
 <div class="offcanvas offcanvas-start border-0  " tabindex="-1" id="clippy" aria-labelledby="offcanvasExampleLabel">
-<div class="offcanvas-header p-0 justify-content-end">
+<div class="offcanvas-header bg-header p-0">
+<button type="button" class="btn-close m-2 ms-auto " data-bs-dismiss="offcanvas" aria-label="Close"></button>
 </div>
 <div class="bg-header d-flex flex-column  ">
-<button type="button" class="btn-close m-2 ms-auto " data-bs-dismiss="offcanvas" aria-label="Close"></button>
-<h5 class="offcanvas-title montserrat-font-clippy  p-3 pb-4  d-flex justify-content-evenly"  id="offcanvasExampleLabel">  CLIPBOARD </h5>
+<img src="../img/icons/copyCat1.jpeg">
+<h5 class="offcanvas-title montserrat-font-clippy  p-3 pb-4  d-flex justify-content-evenly"  id="clippy">  CLIPBOARD </h5>
 </div>
     <div class="offcanvas-body p-0 border-0 d-flex  flex-column ">
       <div class="clippyNav d-flex ">
@@ -32,10 +33,10 @@ const createClipBoard = () => {
        Usernamen
        </div>
       </div>
-      <ol id="passwordList" class="list-group list-group-flush  d-flex flex-column align-items-center mt-5">
+      <ol id="passwordList" class="list-group list-group-flush  d-flex flex-column align-items-center mt-5" data-type="list" data-list="password">
         ${pw}
       </ol>
-      <ol id="userList" class="list-group list-group-flush d-flex flex-column align-items-center mt-5 d-none">
+      <ol id="userList" class="list-group list-group-flush d-flex flex-column align-items-center mt-5 d-none" data-type="list" data-list="username" >
         ${user}
       </ol>
       
@@ -144,11 +145,20 @@ const deleteBtn = (id) => {
 };
 
 const deleteAll = () => {
-  storedClippy.splice(0, storedClippy.length);
-  sessionStorage.setItem("clippy", JSON.stringify(storedClippy));
-  const target = document.querySelectorAll(".list");
-  target.forEach((element) => {
-    element.innerHTML = "";
+  const lists = document.querySelectorAll('[data-type="list"]');
+
+  lists.forEach((list) => {
+    if (!list.classList.contains("d-none")) {
+      list.innerHTML = "";
+      const type = list.getAttribute("data-list");
+      for (let i = storedClippy.length - 1; i >= 0; i--) {
+        if (type.includes(storedClippy[i].type)) {
+          storedClippy.splice(i, 1);
+        }
+      }
+    }
   });
+
+  sessionStorage.setItem("clippy", JSON.stringify(storedClippy));
 };
 

@@ -4,37 +4,46 @@
 
 /* ================================================ Other Stuff =======================================*/
 
+
+* {
+  color: #212529;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+
 .bg-custom {
   background-color: #23bbb858;
 }
 header {
-  color: #151c19;
   min-height: 90vh;
 }
 main {
   min-height: 110vh;
 }
-
+ 
 main > section {
   width: 100%;
-  max-width: 1400px;
   padding: 1.2em;
 }
 
 /* ================================================ LANDING PAGE HERO TEXT  ============================================= */
 
+
+
 #logoText {
   font-family: "Montserrat" !important;
 }
-.montserrat-font {
+.montserrat-font-header {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(2rem, 5vw, 6rem);
+  font-size: clamp(2rem, 5vw, 10rem);
   padding: 0;
-  line-height: clamp(2rem, 8vw, 5.5rem);
+  line-height: clamp(2rem, 5vw, 8rem);
   margin: 0;
+  font-optical-sizing: auto;
 }
 
 .playwrite-cz-font {
@@ -47,29 +56,48 @@ main > section {
 #logoFirstLetter {
   font-family: "Yellowtail", cursive;
   font-weight: bold;
-  font-size: clamp(5rem, 15vw, 15rem);
-  letter-spacing: -3vw;
-  margin-left: clamp(-1rem, -44vw, -5rem);
+  font-size: clamp(5rem, 15vw, 18rem);
+  letter-spacing: clamp(-3.5rem ,-5vw,-1rem);
+  margin-left: -2rem
 }
-
+#padlockCon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: clamp(6rem , 18vw,30rem);
+  position: relative;
+}
 #padlockPic {
-  max-width: clamp(3rem, 25vw, 20rem);
+  width: clamp(6rem, 18vw, 25rem);
   transform: rotate(5deg);
+
+
 }
 
 .inria-serif-regular {
-  font-family: "Montserrat", serif;
+  font-family: "Inria Serif", serif;
   font-weight: 400;
   font-style: normal;
 }
-.leadFontSize {
-  font-size: clamp(1rem, 3vw, 2rem);
+.leadFont {
+  font-size: clamp(1.1rem, 1.5vw, 2rem) ;
   text-transform: uppercase;
-}
+  font-family: "INRIA Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .1rem;
 
+}
+.subText{
+  font-size: clamp(.9rem, 1vw, 1.3rem) !important;
+  font-weight: 400;
+}
 #scrollArrow {
   transform: rotate(180deg);
-  width: 5rem;
+  width: clamp(5rem, 5vw, 10rem);
+  margin-top: auto;
+  height: 10vh;
 }
 .bounce {
   animation: bounce 1.2s ease;
@@ -77,19 +105,21 @@ main > section {
 
 /* ===================== Landing Page Cards =============================== */
 
-.box-shadow {
+
+
+.card{
+  min-height: 100%;
+  max-width: 35rem;
+  background-color: #f1f5f5;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
+  
 }
 
-.card{
-  min-height: 36rem;
-  max-width: 35rem;
+.card a{
+  margin-top: calc(5rem + vw);
 }
-
-
-
 .btn {
   background-color: #ea6954;
   color: white;

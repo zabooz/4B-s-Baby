@@ -2,113 +2,246 @@ import { pictureToString } from "../scripts/picturePwd.js";
 import { copyButton } from "../scripts/copybutton.js";
 import { tripleConverter } from "./tripleLeetConverter.js";
 import { generatePassword } from "../scripts/passwordGenerator.js";
+
 const uploadFile = document.getElementById("uploadFile");
-const picConBtn = document.getElementById("pictureConvertBtn");
-const leetBtn = document.getElementById("convertBtn");
+const picMagicBtn = document.getElementById("pictureMagicBtn");
+const leetBtn = document.getElementById("leetBtn");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
-const pwInputField = document.getElementById("passwordInput");
-uploadFile.addEventListener("change", () => {
+const glyphRangeSlider = document.getElementById("sliderSorcery");
+const previewCon = document.getElementById("previewContainer");
+const leetInputField = document.getElementById("leetInput");
+
+
+
+
+glyphRangeSlider.addEventListener("input", () => {
+
+  const sliderValue  = glyphRangeSlider.value
+
+  const sliderValueDisplay = document.getElementById("sliderValue");
+  sliderValueDisplay.textContent = sliderValue
+
+  rdmPwdBtn.disabled = sliderValue > 5 ? false : true
+
+});
+
+previewCon.addEventListener("click", () => {
+  uploadFile.click()
+})
+
+
+
+// shared variables between upload and converter
+let picturePath;
+let file;
+
+//  ==============================
+
+uploadFile.addEventListener("input", () => {
+
+  picMagicBtn.disabled = false;
   const label = document.getElementById("uploadLabel");
-  const preview = document.getElementById("previewImage");
+  const previewCon = document.getElementById("previewContainer")
+  const previewImg = document.getElementById("previewImage")
   const input = document.getElementById("uploadFile");
-  const file = input.files[0];
+
+  if(input.files[0]) file = input.files[0]
 
   const validTypes = ["image/jpeg", "image/png", "image/webp", "image/bmp"];
-
-  if (!validTypes.includes(file.type)) {
+  if(file === undefined){
+    return
+  }
+  else if(!validTypes.includes(file.type)) {
     alert("Only image files are allowed.");
     return;
   }
 
-  label.textContent = "Picture Uploaded!";
-  if (preview) {
-    const reader = new FileReader();
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    picturePath = e.target.result;
+    previewCon.classList.add("scale")
+    setTimeout(()=> {
+      previewImg.src =picturePath
+      label.textContent = "Hochgeladen!";
+    },1000)
+    setTimeout(()=> {
+      previewCon.classList.remove("scale")
+      },2000)
 
-    reader.onload = function (e) {
-      preview.src = e.target.result;
+   
     };
 
     reader.readAsDataURL(file);
-  } else {
-    preview.src = "/img/confusion.jpeg"; // Verstecke das Bild, wenn keine Datei ausgewählt ist
-  }
-});
 
-picConBtn.addEventListener("click", async (e) => {
+
+
+
+});
+let count = 0;
+const updatedPicMagArr = [];
+picMagicBtn.addEventListener("click", async (e) => {
   e.preventDefault();
-  const textId = "passwordPic";
-  const textElement = document.getElementById(textId);
+
+  const tbody = document.getElementById("statsBodyPicGen");
+  const row = document.createElement("tr");
+  tbody.innerHTML = "";
+
+  // let pictureMagicArray =                                          // for later maybe
+  //   JSON.parse(sessionStorage.getItem("pictureMagicArray")) || []; 
+
+  
+  const pwId = `pasword${updatedPicMagArr.length}`;
+  const picId = `pic${updatedPicMagArr.length}`;
+
+  const tdPic = document.createElement("td");
+  tdPic.id = picId;
+  tdPic.classList.add("tablePics");
+
+  // Assuming picturePath is defined somewhere earlier in your code
+  tdPic.innerHTML = `<img src="${picturePath}" id="${picId}" alt="your Picture" class="imgTable " style="width:2rem">`;
+
+  const tdPw = document.createElement("td");
+  tdPw.id = pwId;
+  tdPw.classList.add("d-flex","p-0","align-items-center","gap-2"); 
+  const tdLeft = document.createElement("td");
+  const tdRight = document.createElement("td");
+
+  tdLeft.innerHTML = ` <img src="../img/icons/arrow.svg" data-side="left" class="magicArrows d-none" style="transform: rotate(180deg);margin-top:-0.15rem;width:2rem" alt="Arrow Left">`;
+  tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="magicArrows d-none" data-side="right" style="margin-top:-0.15rem;width:2rem" alt="Arrow Right">`;
+
+  row.append(tdLeft, tdPw, tdPic, tdRight);
+  tbody.appendChild(row);
+
+  let count = updatedPicMagArr.length;
+  updatedPicMagArr.push(row); 
+  console.log(count)
+  if(count >=1){
+    
+    updatedPicMagArr.forEach((element) => {
+      const arrows = element.querySelectorAll(".magicArrows");
+      arrows.forEach((arrow) => {
+        arrow.classList.remove("d-none");
+      });
+    
+    });
+    
+  }
+
+  document.querySelectorAll(".magicArrows").forEach((arrow) => {
+
+    arrow.addEventListener("click", () => {
+
+      tbody.innerHTML = "";
+
+      if (arrow.dataset.side === "left") {
+        count = (count - 1 + updatedPicMagArr.length) % updatedPicMagArr.length;
+      } else {
+        count = (count + 1) % updatedPicMagArr.length;
+      }
+
+      tbody.append(updatedPicMagArr[count]); 
+    });
+  });
 
   try {
-    const result = await pictureToString();
+    const result = await pictureToString(file);
 
-    textElement.innerText = `${result}`;
-    textElement.append(copyButton(textId));
+    const spanPwd = document.createElement("span"); 
+    const pic = document.getElementById(picId);
+    spanPwd.innerText = `${result}`;
+    spanPwd.classList.add("w-100");
+    tdPw.append(copyButton(pwId), spanPwd);
+    pic.src = picturePath; 
+    picMagicBtn.disabled = true;
+    
+    // sessionStorage.setItem(
+    //   "pictureMagicArray",             //later maybe
+    //   JSON.stringify(updatedPicMagArr)
+    // );
+
+    console.log(updatedPicMagArr);
   } catch (error) {
     console.error(error);
   }
 });
 
-pwInputField.addEventListener("keypress", function (event) {
+
+leetInputField.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault(); // Prevents the default action (if any)
-    document.getElementById("convertBtn").click(); // Trigger button click
+    leetBtn.click(); // Trigger button click
   }
 });
 
-leetBtn.addEventListener("click", function () {
-  document.getElementById("statsBody2").style.display = "";
-  const passwordInput = document.getElementById("passwordInput").value;
-  const newPasswordArray = tripleConverter(passwordInput);
-  if (passwordInput) {
-    for (let i = 0; i < newPasswordArray.length; i++) {
-      const result = document.getElementById("leetResult" + i);
+leetInputField.addEventListener("input",()=> {
+  leetBtn.disabled =  leetInputField.value.length > 0 ? false : true
+})
 
-      result.innerHTML = newPasswordArray[i];
-      result.append(copyButton("leetResult" + i));
-    }
+
+leetBtn.addEventListener("click", function () {
+
+  document.querySelector("#statsBody2 tr").style.display = "";
+
+  const leetInput = leetInputField.value;
+  leetInputField.value = ""
+  const newPasswordArray = tripleConverter(leetInput);
+  const versionArray = ["Einfach","Mittel","Stark"]
+  console.log(newPasswordArray)
+  const td = document.getElementById("leetResult0");
+  const spanPwd = document.createElement("spanPw");
+  spanPwd.innerText = `${newPasswordArray[0]}`;
+  spanPwd.id = "leetPwd"
+  spanPwd.classList.add("w-100")
+  td.innerHTML=""
+  td.append(copyButton("leetResult0"), spanPwd);
+
+
+  const versionText = `<span id="versionText" >${versionArray[0]}</span>`; 
+  const versionTd = document.getElementById("leetVersion")
+  versionTd.innerHTML = versionText
+
+
+
+
+  let count = 0
+
+  document.querySelectorAll(".leetArrows").forEach(arrow => {
+
+      arrow.addEventListener("click", () => {
+        const versionText = document.getElementById("versionText")
+        const spanPwd = document.getElementById("leetPwd")
+ 
+        if(arrow.dataset.side === "left"){
+          count = (count - 1 + versionArray.length) % versionArray.length;
+        }else{
+          count = (count + 1) % versionArray.length;
+        }
+        spanPwd.innerText =`${newPasswordArray[count]}`
+        versionText.innerText =`${versionArray[count]}`
+        
+      })
+  })
     const body = document.getElementById("statsBody2");
     body.style.display = "";
-  }
+
 });
 
 rdmPwdBtn.addEventListener("click", function () {
   // Create an array of password elements
-  const passwordElements = [
-    document.getElementById("generatedPassword0"),
-    document.getElementById("generatedPassword1"),
-    document.getElementById("generatedPassword2"),
-  ];
-  const lengthElements = [
-    document.getElementById("generatedPasswordLength0"),
-    document.getElementById("generatedPasswordLength1"),
-    document.getElementById("generatedPasswordLength2"),
-  ];
-
-  // Function to shift passwords down the array
-  function shiftRow() {
-    for (let i = passwordElements.length - 1; i > 0; i--) {
-      if (passwordElements[i - 1].innerText !== "") {
-        passwordElements[i].innerText = passwordElements[i - 1].innerText;
-        lengthElements[i].innerText = lengthElements[i - 1].innerText;
-        // Remove old copy button and add a new one
-        passwordElements[i].querySelector("button")?.remove();
-        passwordElements[i].append(copyButton(`generatedPassword${i}`));
-        document.getElementById("generatedPasswordRow" + i).style.display = "";
-      }
-    }
-  }
-
-  // Call the function to shift passwords
-  shiftRow();
+  const passwordElements = document.querySelectorAll(".rdmPassword")
 
   // Generate a new password and update the first element
-  const pwLength = document.getElementById("pwLength").value;
+  const pwLength = glyphRangeSlider.value;
   document.getElementById("generatedPasswordLength0").innerText = pwLength;
   const generatedPassword = generatePassword(pwLength);
-  passwordElements[0].innerText = `${generatedPassword}`;
-  document.getElementById("generatedPasswordRow0").style.display = "";
-  // Remove old copy button and add a new one
+
+  const spanPwd = document.createElement("spanPwd");
   passwordElements[0].querySelector("button")?.remove();
-  passwordElements[0].append(copyButton("generatedPassword0"));
+  spanPwd.innerText = `${generatedPassword}`;
+ 
+  passwordElements[0].innerHTML = "";
+  passwordElements[0].append(copyButton("generatedPassword0"), spanPwd);
+  document.getElementById("generatedPasswordRow0").style.display = "";
+
+
 });

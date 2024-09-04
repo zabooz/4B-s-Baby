@@ -1,8 +1,11 @@
 import { passwordConverter } from "../scripts/passwordConverter.js";
 
 export function tripleConverter(password) {
-  const newPassword1 = passwordConverter(password, "leetSimple");
-  const newPassword2 = passwordConverter(password, "leetAdvanced");
-  const newPassword3 = passwordConverter(password, "leetComplicated");
-  return [newPassword1, newPassword2, newPassword3];
+
+   const pwArr = [undefined,undefined,undefined]
+   const modi =  ["leetSimple","leetAdvanced","leetComplicated"]
+    for(let i = 0; i < pwArr.length;i++){
+    pwArr[i] = passwordConverter(password,modi[i])
+  }
+  return pwArr ;
 }

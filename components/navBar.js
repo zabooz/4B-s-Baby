@@ -29,6 +29,14 @@ export const configNav = {
     clippy: "Clippy",
     aiAssistant: "AI-Assistent",
   },
+  aboutUs: {
+    link: "../aboutUs/aboutUs.html",
+    text: "Über uns",
+  },
+  project: {
+    link: "../aboutUs/project.html",
+    text: "Projekt",
+  },
 };
 
 export const configNavIndex = {
@@ -62,11 +70,19 @@ export const configNavIndex = {
     clippy: "Clipboard",
     aiAssistant: "AI-Assistent",
   },
+  aboutUs: {
+    link: "./aboutUs/aboutUs.html",
+    text: "Über uns",
+  },
+  project: {
+    link: "./aboutUs/project.html",
+    text: "Projekt",
+  },
 };
 
 const createNavBar = (configNav) => {
   const navBar = `
-    <nav class="navbar navbar-expand-lg nav-custom fw-semibold text-black box-shadow">
+    <nav class="navbar navbar-expand-lg nav-custom p-0 text-black box-shadow">
       <div>
         <a href="${configNav.home.link}" class="d-flex align-items-center" style="text-decoration: none;">
          
@@ -76,7 +92,7 @@ const createNavBar = (configNav) => {
             alt="logo"
           />
 
-          <p class="navbar-brand mb-0 fs-2 ms-3">${configNav.logo.text}</p>
+          <p class="navbar-brand mb-0  ms-3">${configNav.logo.text}</p>
         </a>
       </div>
       <button class="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,8 +110,8 @@ const createNavBar = (configNav) => {
             <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
           </li>
           <li class="nav-item mx-2">
-            <div class="dropdown position-relative me-2 ">
-            <a class="nav-link " type="button" href"#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="dropdown position-relative  ">
+            <a class="nav-link  " type="button" href"#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
                     ${configNav.stuff.text}
                  
             </a>
@@ -109,6 +125,12 @@ const createNavBar = (configNav) => {
             <li class="nav-item">
             <a class="nav-link " href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a>
             </li>
+                      <li class="nav-item mx-2">
+            <a class="nav-link" href="${configNav.project.link}">${configNav.project.text}</a>
+          </li>
+                    <li class="nav-item mx-2">
+            <a class="nav-link" href="${configNav.aboutUs.link}">${configNav.aboutUs.text}</a>
+          </li>
                   </ul>
               </div>
           </li>

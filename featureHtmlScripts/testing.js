@@ -4,43 +4,52 @@ import { getColorFromStrength } from "../utilities/getColorFromStrength.js";
 import { thinkWords, thinker } from "../utilities/thinker.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
+  
+
   const startBrute = document.getElementById("startBrute");
   const stopBrute = document.getElementById("stopBrute");
-  const calcStrengthBtn = document.getElementById("calcStrengthBtn");
-  const baseUrl = "https://kgg8gggo0c08oc8wcw0oco00.coolify.machma.app/";
-  const icon2 = document.getElementById("basic-addon2");
-  const icon = document.getElementById("basic-addon1");
+  const excaliburBtn = document.getElementById("excaliburBtn");
+  const excaliburIcon = document.getElementById("basic-addon2");
+  const excaliburInput = document.getElementById("excaliburInput")
+  const bruteForceInput = document.getElementById("bruteForceInput");
+  const mojoIcon = document.getElementById("basic-addon1");
   const why = document.getElementById("why");
-  const bruteInput = document.getElementById("userPwdInput");
-  const strengthInput = document.getElementById("strengthInput");
-
-bruteInput.addEventListener("keypress",(e)=>{
-  if(e.key === "Enter"){
-    startBrute.click();
-  }
-})
-
-strengthInput.addEventListener("keypress",(e)=>{
-  if(e.key === "Enter"){
-    calcStrengthBtn.click();
-  }
-})
 
 
 
+  
+  // ============= stuff ===== 
+  let interval; // to stop the thinker function
+  const baseUrl = "https://kgg8gggo0c08oc8wcw0oco00.coolify.machma.app/"; //  base url for api calls
 
-  let interval;
 
+  excaliburInput.addEventListener("input", () =>{
+
+    excaliburBtn.disabled = excaliburInput.value.length > 0 ? false : true;
+    
+
+  })
+
+  bruteForceInput.addEventListener("input", () =>{
+    startBrute.disabled = bruteForceInput.value.length > 0 ? false : true;
+    
+  })
+  // ==========   brute force
   
   startBrute.addEventListener("click", (e) => {
     e.preventDefault();
-
-    const tableWrapper = document.getElementById("tableWrapper");
     const statsBody = document.getElementById("statsBody");
 
+    
+    const tableWrapper = document.getElementById("tableWrapper"); // probably not needed anymore
     if(statsBody.childElementCount === 2){
       tableWrapper.classList.add("border-bottom");
     }
+
+
+    // thinker starts directly after button press
 
     startBrute.innerHTML = `
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
@@ -51,8 +60,18 @@ strengthInput.addEventListener("keypress",(e)=>{
     interval = setInterval(() => {
       thinker(startBrute);
     }, 2000);
-    fetchData();
+
+    // =============================
+
+
+    //  Api call to start brute force and get the result
+
+    callBruteForce();
   });
+
+
+
+  // ======== Api call end brute force and get the result
 
   stopBrute.addEventListener("click", () => {
     const url = `${baseUrl}stopBruteForce`;
@@ -70,8 +89,14 @@ strengthInput.addEventListener("keypress",(e)=>{
       });
   });
 
-  icon.addEventListener("click", () => {
-    const input = document.getElementById("userPwdInput");
+
+
+
+  // Icons switch for password visiblity, for  mojo and e
+  // probably refactor it
+
+  mojoIcon.addEventListener("click", () => {
+    const input = document.getElementById("bruteForceInput");
     const icon = document.getElementById("togglePassword");
     if (input.type === "password") {
       input.type = "text";
@@ -81,17 +106,20 @@ strengthInput.addEventListener("keypress",(e)=>{
       icon.className = "bi bi-eye";
     }
   });
-  icon2.addEventListener("click", () => {
-    const input = document.getElementById("strengthInput");
-    const icon2 = document.getElementById("togglePassword2");
+  excaliburIcon.addEventListener("click", () => {
+    const input = document.getElementById("excaliburInput");
+    const icon = document.getElementById("togglePassword2");
     if (input.type === "password") {
       input.type = "text";
-      icon2.className = "bi bi-eye-slash";
+      icon.className = "bi bi-eye-slash";
     } else {
       input.type = "password";
-      icon2.className = "bi bi-eye";
+      icon.className = "bi bi-eye";
     }
   });
+
+
+
 
 
   // for V2 security bot stuff ============================
@@ -110,17 +138,21 @@ strengthInput.addEventListener("keypress",(e)=>{
 
   //========================================================
 
-  const fetchData = () => {
+
+
+  // api call for brute force
+
+  const callBruteForce = () => {
     const bruteType = document.querySelector(
       'input[name="bruteMode"]:checked'
     ).id;
-    const pwd = document.getElementById("userPwdInput");
-    const [encodedPwd, key] = passwordEncoder(pwd.value);
+    const pwd = bruteForceInput.value
+    const [encodedPwd, key] = passwordEncoder(pwd); // encode the password
     const urlPara = `${baseUrl}bruteforce${bruteType}?pwd=${encodeURIComponent(
       encodedPwd
     )}&key=${key}`;
 
-    pwd.value = "";
+    bruteForceInput.value = "";
 
     let result = [pwd.value, "--", "--", "--"];
 
@@ -129,7 +161,6 @@ strengthInput.addEventListener("keypress",(e)=>{
         if (!response.ok) {
           throw new Error(response.statusText);
         }
-
         return response.json();
       })
       .then((data) => {
@@ -139,12 +170,16 @@ strengthInput.addEventListener("keypress",(e)=>{
         console.error("fetch data:", error);
       })
       .finally(() => {
-        clearInterval(interval);
-        updateAttempts(result);
-        startBrute.disabled = false;
-        startBrute.innerHTML = "Start";
+        clearInterval(interval);  // stop the thinker
+        updateAttempts(result);   // update the table
+        startBrute.disabled = true;
+        startBrute.innerHTML = "Nochmal?";
       });
   };
+
+
+
+  // update the table
 
   function updateAttempts(result) {
     const dataArr = result;
@@ -153,23 +188,27 @@ strengthInput.addEventListener("keypress",(e)=>{
 
     const stars = "******";
 
-    const icon = document.createElement("i");
-    icon.className = "bi bi-eye-slash";
+    const mojoIcon = document.createElement("i");
+    mojoIcon.className = "bi bi-eye";
 
     const rowCount = tBody.rows.length;
 
     const hideArr = [stars, dataArr[0]];
 
-    icon.addEventListener("click", () => {
+
+
+      // add icon to the table and add functionality to it
+
+    mojoIcon.addEventListener("click", () => {
       const target = document.getElementById(`td${rowCount}`);
       if (target.textContent === stars) {
         target.textContent = dataArr[0];
-        icon.classList.add("bi", "bi-eye","mb-1")
-        target.append(icon);
+        mojoIcon.className = "bi bi-eye-slash mb-1";
+        target.append(mojoIcon);
       } else {
         target.textContent = stars;
-        icon.className = "bi bi-eye-slash";
-        target.append(icon);
+        mojoIcon.className = "bi bi-eye mb-1";
+        target.append(mojoIcon);
       }
     });
 
@@ -180,7 +219,7 @@ strengthInput.addEventListener("keypress",(e)=>{
         td.textContent = hideArr[0];
         td.id = `td${rowCount}`
         td.classList.add("d-flex","justify-content-between","align-items-center");
-        td.append(icon);
+        td.append(mojoIcon);
       } else {
         td.textContent = item;
       }
@@ -192,48 +231,84 @@ strengthInput.addEventListener("keypress",(e)=>{
     tBody.append(tr, ...rows);
   }
 
-  calcStrengthBtn.addEventListener("click", async () => {
-    const bar = document.getElementById("progressBar");
-    const strengthInput = document.getElementById("strengthInput");
-    const value = strengthInput.value;
-    strengthInput.value =""
-    calcStrengthBtn.innerHTML = `
+  excaliburBtn.addEventListener("click", async () => {
+    excaliburBtn.innerHTML = `   
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
     <span role="status">${thinkWords[0]}</span>
     `;
-    calcStrengthBtn.disabled = true;
+    const bar = document.getElementById("progressBar");
+    const value = excaliburInput.value;
+    excaliburInput.value =""
 
-    interval = setInterval(() => {
-      thinker(calcStrengthBtn);
-    }, 2000);
 
+   //  ==   thinker function 
+     
+    excaliburBtn.disabled = true;
+   
+    bar.style.backgroundColor = "#ced4da";
+    const barAni = setInterval(() => {
+    const rdm = Math.floor(Math.random()*75) +1
+    bar.style.width = `${rdm}%` 
+
+  },600)
+
+
+  interval = setInterval(() => {
+    thinker(excaliburBtn);
+  }, 2000);
+
+
+
+    // ==   passwordStrength function call
+    let result;
     try {
-      const { result, points } = await newPwStrength(value);
-      bar.style.width = `${result}%`;
-      bar.style.backgroundColor = getColorFromStrength(result);
-      why.innerText = result === 100 ? "Dein Passwort ist sicher! Keine weiteren Anpassungen erforderlich." 
-                                     : "Schau dir diese Tipps an, um dein Passwort zu verbessern.";
-
-      if (result !== 100) {
-        why.style.textDecoration="underline";
-      }else{
-        why.style.textDecoration="none";
-      }
-      
-      showSuggestions(points);
+      // Asynchrone Operation ausführen
+      result = await newPwStrength(value);
+    
+      // Anzeige der Ergebnisse basierend auf dem Resultat
+      why.innerText = result.result === 100 
+        ? "Dein Passwort ist sicher! Keine weiteren Anpassungen erforderlich." 
+        : "Schau dir diese Tipps an, um dein Passwort zu verbessern.";
+    
+      showSuggestions(result.points,value);
     } catch (error) {
       console.log(error);
     } finally {
-      why.classList.remove("d-none"); 
+      if (result) {
+        // Ändere das Styling der Statusanzeige nach einer Verzögerung
+        setTimeout(() => {
+          bar.style.width = `${result.result}%`;
+          bar.style.backgroundColor = getColorFromStrength(result.result);
+          
+          why.style.textDecoration = result.result !== 100 ? "underline" : "none";
+          why.style.pointerEvents = result.result === 100 ? "none" : "auto";
+        }, 100);
+      }
+      
+      // Bereinige Intervalle und setze den Button zurück
+      why.classList.remove("d-none");
+      clearInterval(barAni);
       clearInterval(interval);
-      calcStrengthBtn.disabled = false;
-      calcStrengthBtn.innerHTML = "Testen!";
+      console.log(result.result)
+      excaliburBtn.disabled = true;
+      excaliburBtn.innerHTML = "Nochmal?";
     }
-  });
+})   
 
-  const showSuggestions = (points) => {
+
+/**
+ * Shows suggestions for password improvement based on the result of the password strength calculation
+ * @param {Object} points - an object with the result of the password strength calculation
+ * @property {boolean} value - the result of the check
+ * @property {string} textTrue - the text to show when the result is true
+ * @property {string} textFalse - the text to show when the result is false
+ */
+
+  const showSuggestions = (points,pwd) => {
     const sugg = document.getElementById("suggestions");
     const succ = document.getElementById("success");
+    const excaliburPwd = document.getElementById("excaliburPassword")
+    excaliburPwd.innerText = `"${pwd}"`
     sugg.innerHTML = "";
     succ.innerHTML = "";
     for (const key in points) {
@@ -245,10 +320,27 @@ strengthInput.addEventListener("keypress",(e)=>{
         li.textContent = "- " + points[key].textTrue;
         succ.append(li);
       } else {
+
         li.style.color = "red";
         li.textContent = "- " + points[key].textFalse;
         sugg.append(li);
       }
     }
   };
+
+                        // ======= KeyPress ===========
+
+bruteForceInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    startBrute.click();
+  }
+});
+
+excaliburInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    excaliburBtn.click();
+  }
+});
+
+
 });

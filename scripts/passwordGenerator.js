@@ -1,7 +1,6 @@
 import { rndNumInLen } from './encoder.js';
 
-
-//Durstenfeld shuffle. 
+// Durstenfeld shuffle.
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -10,121 +9,32 @@ function shuffleArray(array) {
   return array;
 }
 
-//Generates a password with user defined length.
-export function generatePassword (length) {
+// Generates a password with user-defined length.
+export function generatePassword(length) {
+  const lowerCaseArray = "abcdefghijklmnopqrstuvwxyz".split('');
+  const upperCaseArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+  const numberArray = "0123456789".split('');
+  const symbolArray = "!@#$%^&*()-_+=[]{},.<>?/|\\:\";`'".split('');
+  const arrays = [lowerCaseArray, upperCaseArray, numberArray, symbolArray];
+  
+  // Ensure that all types of characters are used at least once if length allows
+  let generatedPassword = [];
+  
+  // Add one character from each array if there is space
+  arrays.forEach(array => {
+    if (length > 0) {
+      generatedPassword.push(array[rndNumInLen(array)]);
+      length--;
+    }
+  });
 
-  const lowerCaseArray = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-  ];
-  const upperCaseArray = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-  ];
-  const numberArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-  const symbolArray = [
-    "!",
-    "@",
-    "#",
-    "$",
-    "%",
-    "^",
-    "&",
-    "*",
-    "(",
-    ")",
-    "-",
-    "_",
-    "=",
-    "+",
-    "{",
-    "}",
-    "[",
-    "]",
-    "|",
-    "\\",
-    ":",
-    ";",
-    '"',
-    "'",
-    "<",
-    ">",
-    ",",
-    ".",
-    "?",
-    "/",
-  ];
-  const parentArray = [lowerCaseArray, upperCaseArray, numberArray, symbolArray];
-
-  // Shuffle the parent array
-  const shuffledArrays = shuffleArray([...parentArray]);
-  let generatedPassword = "";
-
-  // Ensure each array is used at least once
-  for (let i = 0; i < 4; i++) {
-    const randomIndex = rndNumInLen(shuffledArrays[i]);
-    generatedPassword += shuffledArrays[i][randomIndex];
+  // Fill remaining length with random characters from the available arrays
+  while (length > 0) {
+    const randomArray = arrays[rndNumInLen(arrays)];
+    generatedPassword.push(randomArray[rndNumInLen(randomArray)]);
+    length--;
   }
 
-  // If the length is greater than 4, add additional random elements
-  while (generatedPassword.length < length) {
-    const randomArrayIndex = rndNumInLen(shuffledArrays);
-    const randomIndex = rndNumInLen(shuffledArrays[randomArrayIndex]);
-    generatedPassword += shuffledArrays[randomArrayIndex][randomIndex];
-  }
-
-  // Convert the generatedPassword string to an array to shuffle it, then back to a string
-  generatedPassword = shuffleArray(generatedPassword.split("")).join("");
-
-  return generatedPassword;
+  // Shuffle the final password to ensure randomness
+  return shuffleArray(generatedPassword).join('');
 }
-
-
