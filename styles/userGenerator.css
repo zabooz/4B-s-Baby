@@ -1,7 +1,6 @@
 * {
-  color: #212529
+  color: #212529;
 }
-
 
 .carousel-item {
   height: 300px;
@@ -24,12 +23,12 @@
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
-video{
+video {
   border: 2px solid #ea6954;
   margin-left: 1rem;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
 }
-.dropdown-menu{
+.dropdown-menu {
   left: -50px !important;
 }
 .input {
@@ -80,9 +79,17 @@ header {
   width: 25rem;
 }
 #wizardTextDiv {
-  width: 50%;
+  width: 60%;
   align-self: center;
   padding: 2rem;
+}
+#stats {
+  max-width: 90%;
+  min-width: 80%;
+  padding: 0px !important;
+}
+#pwGenDiv {
+  background-color: #f1f5f5;
 }
 /* Container Styling */
 #wizardDiv {
@@ -91,19 +98,25 @@ header {
   align-items: flex-start; /* Aligns items to the top */
   gap: 1rem; /* Adds space between the main groups */
   flex-wrap: wrap; /* Prevents items from wrapping on larger screens */
+  margin-bottom: 2rem;
 }
 #wizardInput1 {
-  width: 75%;
+  width: 80%;
 }
-/* Flex Item Styling - Input Groups */
+#wizardInput1 > *:nth-child(-n + 5) {
+  margin-bottom: 1rem;
+}
 #wizardInput5,
 #wizardInput6 {
   display: flex; /* Flexbox to align items within each group */
+  flex-direction: column;
   align-items: center; /* Centers content horizontally within each flex item */
   justify-content: center;
   width: 45%; /* Sets a minimum width for each group */
 }
-
+#wizardInput5 {
+  border-right: 1px solid grey;
+}
 /* Label Styling */
 #wizardDiv label {
   text-align: left; /* Aligns text to the left */
@@ -111,16 +124,28 @@ header {
   width: 100%; /* Ensures label takes the full width of its container */
 }
 
-/* Select and Button Styling */
-#wizardDiv select,
 #userGeneratorBtn {
-  width: 100%; /* Takes the full width of the parent container */
+  width: 100%;
+  margin-top: 1rem;
+}
+#deleteTableBtn {
+  width: 80%;
+  margin-top: 20px;
+}
+#stats tr:nth-child(even) {
+  font-weight: 500; /* Example style: set a light gray background color */
+}
+#stats tr:nth-child(odd) {
+  font-size: smaller;
+  font-weight: 300;
 }
 .table-cell-content {
   display: flex;
   justify-content: space-between; /* Pushes content to both sides */
   align-items: center; /* Vertically aligns items to center */
   width: 100%;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 /* Responsive Adjustments */
@@ -135,9 +160,6 @@ header {
   #wizardInput5,
   #wizardInput6 {
     flex-direction: column;
-  }
-  #userGeneratorBtn {
-    margin-top: 1rem;
   }
   #wizardInput1,
   #wizardInput2,
