@@ -23,13 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============= stuff ===== 
   let bruteThinkerInterval; // to stop the thinker function
   let excaliburThinkerInterval;
-  const baseUrl = "https://kgg8gggo0c08oc8wcw0oco00.coolify.machma.app/"; //  base url for api calls
+  const baseUrl = "https://bruteforce.coolify.machma.app/"; //  base url for api calls
 
   let isBruteActive = sessionStorage.getItem("isBruteActive") ? JSON.parse(sessionStorage.getItem("isBruteActive")) : false;
 
 
-  
-  
   
   
   
