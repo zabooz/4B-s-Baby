@@ -19,7 +19,9 @@
 main {
   min-height: 110vh;
 }
- 
+ header{
+  min-height: 90vh;
+ }
 main > section {
   width: 100%;
   padding: 1.2em;
@@ -34,9 +36,9 @@ main > section {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  font-size: clamp(2rem, 4vw, 10rem);
+  font-size: clamp(2rem, 3.5vw, 6rem);
   padding: 0;
-  line-height: clamp(2rem, 4vw, 10rem);
+  line-height: clamp(2rem, 3.5vw, 6rem);
   margin: 0;
   font-optical-sizing: auto;
 }
@@ -47,39 +49,35 @@ main > section {
   font-style: normal;
 }
 .leadFont {
-  font-size: clamp(1.1rem, 2.5vw, 5rem) ;
-  line-height: clamp(1.1rem, 3vw, 5rem) ;
+  font-size: clamp(1.1rem, 2.5vw, 3rem) ;
+  line-height: clamp(1.1rem, 2vw, 2.5rem) ;
 
   font-weight: 450;
   font-style: normal;
 
 }
-
-
 #landingLeftSide{
   padding-left: 7rem;
-  padding-right: 0rem;
-  min-height: 80vh;
-  width: 50%;
 }
 
-#landingRightSide{
-  width: 50%;
-}
 #siteName p{
   margin-bottom: 0;
 }
 #padlockLogo{
-  width: clamp(5rem, 40vw, 50rem);
+  width: clamp(5rem, 40vw, 40rem);
+  transform: rotate(10deg);
+}
+#padlockLogoTop{
+  width: clamp(5rem, 40vw, 40rem);
   transform: rotate(10deg);
 }
 .subText{
-  font-size: clamp(.9rem, 1.3vw, 4rem) !important;
+  font-size: clamp(.9rem, 1.5vw, 1.8rem) !important;
   font-weight: 400;
-  line-height: clamp(.9rem, 1.6vw, 4rem)
+  line-height: clamp(.9rem, 1.5vw, 1.8rem)
 }
 #exploreText{
-  font-size: clamp(1.1rem, 1.5vw, 3rem) !important;
+  font-size: clamp(.8rem, 1vw, 1.5rem) !important;
   text-align: center;
   border: 1px solid #ea6954;
   border-radius: 1rem;
@@ -168,6 +166,10 @@ main > section {
   main{
     height: 100%;
   }
+  #landingLeftSide{
+    padding-left:0 ;
 }
-
-
+  #exploreText{
+    padding: 1rem 1rem 1rem 1rem;
+  }
+}
