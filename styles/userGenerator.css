@@ -207,10 +207,10 @@ header {
 .card-title {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: calc(1.1rem + 0.5vw);
+  font-size: clamp(2.4em, 3vw, 4.2rem);
   font-family: "inria serif", sans-serif;
   letter-spacing: 0.3rem;
-  padding: 2rem;
+  padding: 1rem;
   margin: 0 0.2rem;
   background-color: #ffffff18;
 }
