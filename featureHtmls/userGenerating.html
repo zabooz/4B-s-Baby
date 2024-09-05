@@ -35,6 +35,7 @@
       crossorigin="anonymous"
     />
 
+
     <link rel="stylesheet" href="../styles/navBars.css" />
     <link rel="stylesheet" href="../styles/userGenerator.css" />
     <link rel="stylesheet" href="../styles/clipBoard.css" />
@@ -218,7 +219,7 @@
 
     </main>
     <footer class="p-5 d-flex justify-content-center flex-column align-items-center border">
-      <script src="../components/footer.js"></script>
+ 
     </footer>
     <div class="clipBoard"></div>
     <script type="module">
@@ -227,6 +228,8 @@
       import { createNav, configNav } from "../components/navBar.js";
       import { createAssistant } from "../components/aiAssistant.js";
       import { createQuickNav, configQuickNavFeature } from "../components/quickNav.js";
+            import {createFooter,configFooter,iconsFeatures} from "../components/footer.js";
+      createFooter(configFooter,iconsFeatures);
       createQuickNav("main",configQuickNavFeature)
       createAssistant("main");
       createNav(configNav);
