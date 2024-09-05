@@ -1,5 +1,6 @@
 * {
   color: #212529;
+  font-family: "Montserrat", sans-serif;
 }
 
 .carousel-item {
@@ -97,7 +98,6 @@ header {
 /* Container Styling */
 #wizardDiv {
   margin-top: auto;
-  gap: 1rem; /* Adds space between the main groups */
   background-color: #f1f5f5;
   max-height: 1000px;
   padding: 1rem 0rem;
