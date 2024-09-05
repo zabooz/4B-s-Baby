@@ -38,7 +38,7 @@ main > section {
   font-style: normal;
   font-size: clamp(2rem, 5vw, 6rem);
   padding: 0;
-  line-height: clamp(2rem, 3.5vw, 6rem);
+  line-height: clamp(2rem, 5vw, 6rem);
   margin: 0;
   font-optical-sizing: auto;
 }
