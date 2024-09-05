@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startBrute.addEventListener("click", (e) => {
     e.preventDefault();
-    
-    
+    console.log(stopBrute)
+    stopBrute.style.backgroundColor = "#626568";
     
     if(isBruteActive === false){
       const statsBody = document.getElementById("statsBody");
@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ======== Api call end brute force and get the result
 
   stopBrute.addEventListener("click", () => {
+    stopBrute.style.backgroundColor = "#ced4da"
     const url = `${baseUrl}stopBruteForce`;
     fetch(url)
       .then((response) => {
@@ -214,6 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateAttempts(result);   // update the table
         startBrute.disabled = true;
         startBrute.innerHTML = "Nochmal?";
+        stopBrute.style.backgroundColor = "#ced4da"
       });
   };
 
@@ -254,11 +256,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     dataArr.forEach((item, index) => {
       const td = document.createElement("td");
-
+      
       if (index === 0) {
         td.textContent = hideArr[0];
         td.id = `td${rowCount}`
-        td.classList.add("d-flex","justify-content-between","align-items-center");
         td.append(mojoIcon);
       } else {
         td.textContent = item;
