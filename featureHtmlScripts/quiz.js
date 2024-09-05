@@ -1,10 +1,10 @@
 const config = {
-  pic1: "../img/psyTest/quiz.svg",
-  pic2: "../img/psyTest/quiz1.svg",
-  pic3: "../img/psyTest/quiz2.svg",
-  pic4: "../img/psyTest/quiz3.svg",
-  pic5: "../img/psyTest/quiz4.svg",
-  pic6: "../img/psyTest/quiz5.svg",	
+  pic1: "../img/createName/psyTest/quiz.svg",
+  pic2: "../img/createName/psyTest/quiz1.svg",
+  pic3: "../img/createName/psyTest/quiz2.svg",
+  pic4: "../img/createName/psyTest/quiz3.svg",
+  pic5: "../img/createName/psyTest/quiz4.svg",
+  pic6: "../img/createName/psyTest/quiz5.svg",
 
   frage1: {
     frage: "Was ist dir am wichtigsten?",
@@ -50,7 +50,6 @@ const config = {
     frage: "Vielen Dank für deine Teilnahme!",
     antwort: "Bitte klick auf den Button, um deine Antworten zu senden.",
   },
-
 };
 
 const quiz = (config) => {
@@ -127,7 +126,7 @@ const quiz = (config) => {
           <span class="visually-hidden">Weiter</span>
       </button>
     </div>
-`
+`;
 };
 
 document.getElementById("quiz").innerHTML += quiz(config);

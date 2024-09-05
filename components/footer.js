@@ -1,14 +1,14 @@
-const configFooter = {
+export const configFooter = {
   companyName: "TGOC",
   companyText:
     "TGOC is a creative agency that brings a splash of fun to the world of digital solutions. We specialize in innovative design, development, and marketing strategies that make your brand stand out. Join us on our journey to add a little extra flavor to the digital space.",
   socialMedia: [
-    { name: "Facebook", link: "https://www.facebook.com" },
-    { name: "Twitter", link: "https://www.twitter.com" },
-    { name: "Google", link: "https://www.google.com" },
-    { name: "Instagram", link: "https://www.instagram.com" },
-    { name: "LinkedIn", link: "https://www.linkedin.com" },
-    { name: "GitHub", link: "https://www.github.com" },
+    { name: "facebook", link: "https://www.facebook.com" },
+    { name: "twitter", link: "https://www.twitter.com" },
+    { name: "google", link: "https://www.google.com" },
+    { name: "instagram", link: "https://www.instagram.com" },
+    { name: "linkedIn", link: "https://www.linkedin.com" },
+    { name: "gitHub", link: "https://www.github.com" },
   ],
   platforms: [
     {
@@ -33,7 +33,25 @@ const configFooter = {
   },
 };
 
-const createFooter = (configFooter) => {
+export const iconsIndex = {
+  facebook: "./img/footer/facebook-1-solid.svg",
+  twitter: "./img/footer/twitter.svg",
+  google: "./img/footer/google.svg",
+  instagram: "./img/footer/instagram.svg",
+  linkedIn: "./img/footer/linkedin-box.svg",
+  gitHub: "./img/footer/github.svg",
+}
+
+export const iconsFeatures = {
+  facebook: "../img/footer/facebook-1-solid.svg",
+  twitter: "../img/footer/twitter.svg",
+  google: "../img/footer/google.svg",
+  instagram: "../img/footer/instagram.svg",
+  linkedIn: "../img/footer/linkedin-box.svg",
+  gitHub: "../img/footer/github.svg",
+};
+
+const footer = (configFooter, icons) => {
   return `
         <hr class="my-4   w-100 mt-5 self-algin-center" />
         
@@ -46,7 +64,7 @@ const createFooter = (configFooter) => {
                   .map(
                     (social) => `
                     <a href="${social.link}" aria-label="${social.name}" class="me-4 text-reset">
-                        <i class="fab fa-${social.name.toLowerCase()}"></i>
+                        <img src="${icons[social.name]}" style="width:1.5rem"></img>
                     </a>
                 `
                   )
@@ -105,4 +123,10 @@ const createFooter = (configFooter) => {
         </div>`;
 };
 
-document.querySelector("footer").innerHTML = createFooter(configFooter);
+
+
+export  const createFooter = (configFooter, icons) => {
+  document.querySelector("footer").innerHTML = footer(configFooter,icons);
+  
+};
+
