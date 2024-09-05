@@ -67,6 +67,7 @@ td{
   margin-bottom: 1.2rem;
 }
 .labelCon {
+  cursor: pointer;
   position: absolute;
   display: flex;
   justify-content: center;
