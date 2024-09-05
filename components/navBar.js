@@ -25,7 +25,7 @@ export const configNav = {
     link: "../img/logo/logo.svg",
   },
   tools: {
-    text: `Tools <span>mehr...</span>`,
+    text: `Tools <span>verwenden</span>`,
     clippy: "Clippy",
     aiAssistant: "AI-Assistent",
   },
@@ -71,12 +71,13 @@ export const configNavIndex = {
     link: "./img/logo/logo.svg",
   },
   tools: {
-    text: `Tools <span>mehr...</span>`,
-    clippy: "Clipboard",
+    text: `Tools <span>verwenden</span>`,
+    clippy: "Clippy",
     aiAssistant: "AI-Assistent",
   },
+
   learnMore: {
-      text: "Erfahre <span>mehr...</span>",
+    text: `Erfahre <span>mehr...</span>`,
   },
   aboutUs: {
     link: "./aboutUs/aboutUs.html",
@@ -118,7 +119,7 @@ const createNavBar = (configNav) => {
           <li class="nav-item mx-2">
             <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
           </li>
-            <li class="nav-item mx-2">
+            <li class="nav-item ">
             <div class="dropdown position-relative  ">
             <a class="nav-link  " type="button" href"#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
                     ${configNav.tools.text}</a>

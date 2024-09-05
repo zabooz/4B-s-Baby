@@ -66,6 +66,9 @@ nav img {
   margin-top: .5rem;
 
 }
+ button p{
+  color: #f1f5f5;
+ }
 #quickNav button:hover {
   animation: moveBtn 0.5s forwards;
 }

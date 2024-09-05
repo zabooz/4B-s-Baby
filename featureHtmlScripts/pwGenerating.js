@@ -341,7 +341,7 @@ const glyphSelector = (storedGlyphArray) => {
 
     glyphRowsArr.push(tr);
   }
-  console.log(glyphRowsArr);
+
 
   // Add switch arrows to rows when more than 1 row
   let count = glyphRowsArr.length;
