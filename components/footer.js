@@ -53,9 +53,11 @@ export const iconsFeatures = {
 
 const footer = (configFooter, icons) => {
   return `
+
+        <div class="d-flex justify-content-center flex-column">
         <hr class="my-4   w-100 mt-5 self-algin-center" />
         
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 mt-5 text-black">
+        <section class="d-flex justify-content-center justify-content-lg-evenly  mt-5 text-black">
             <div class="me-5 d-none d-lg-block">
                 <span>Get connected with us on social networks:</span>
             </div>
@@ -120,7 +122,10 @@ const footer = (configFooter, icons) => {
             © 2021 Copyright:
             <a class="text-reset fw-bold" href="https://mdbootstrap.com/"  aria-label="MDBootstrap.com" >MDBootstrap.com</a>
             <a class="text-reset fw-bold mx-5" href="../legalStuff/impressum.html" aria-label="Impressum" >Impressum</a>
-        </div>`;
+        </div>
+        
+        </div
+        `;
 };
 
 

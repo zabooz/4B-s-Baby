@@ -15,69 +15,32 @@
 .bg-custom {
   background-color: #23bbb858;
 }
-header {
-  min-height: 90vh;
-}
+
 main {
   min-height: 110vh;
 }
- 
+ header{
+  min-height: 90vh;
+ }
 main > section {
   width: 100%;
   padding: 1.2em;
 }
 
+
 /* ================================================ LANDING PAGE HERO TEXT  ============================================= */
 
 
-
-#logoText {
-  font-family: "Montserrat" !important;
-}
 .montserrat-font-header {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
-  font-size: clamp(2rem, 5vw, 10rem);
+  font-size: clamp(2rem, 5vw, 6rem);
   padding: 0;
-  line-height: clamp(2rem, 5vw, 8rem);
+  line-height: clamp(2rem, 3.5vw, 6rem);
   margin: 0;
   font-optical-sizing: auto;
-}
-
-.playwrite-cz-font {
-  font-family: "Playwrite CZ", cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-#logoFirstLetter {
-  font-family: "Yellowtail", cursive ;
-  font-weight: bold;
-  font-size: clamp(5rem, 15vw, 18rem);
-  letter-spacing: clamp(-3.5rem ,-5vw,-1rem);
-  margin-left: -2rem
-}
-#logoFirstLetter font {
-  font-family: "Yellowtail", cursive ;
-}
-
-
-#padlockCon{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: clamp(6rem , 18vw,30rem);
-  position: relative;
-}
-#padlockPic {
-  width: clamp(6rem, 18vw, 25rem);
-  transform: rotate(5deg);
-
-
 }
 
 .inria-serif-regular {
@@ -86,27 +49,50 @@ main > section {
   font-style: normal;
 }
 .leadFont {
-  font-size: clamp(1.1rem, 1.5vw, 2rem) ;
-  text-transform: uppercase;
-  font-family: "INRIA Serif", serif;
-  font-weight: 400;
+  font-size: clamp(1.1rem, 2.5vw, 3rem) ;
+  line-height: clamp(1.1rem, 2vw, 2.5rem) ;
+
+  font-weight: 450;
   font-style: normal;
-  letter-spacing: .1rem;
 
 }
-.subText{
-  font-size: clamp(.9rem, 1vw, 1.3rem) !important;
-  font-weight: 400;
+#landingLeftSide{
+  padding-left: 7rem;
 }
+
+#siteName p:first-of-type{
+  margin-bottom: 0;
+}
+#padlockLogo{
+  width: clamp(5rem, 40vw, 40rem);
+  transform: rotate(10deg);
+}
+#padlockLogoTop{
+  width: clamp(5rem, 40vw, 40rem);
+  transform: rotate(10deg);
+}
+.subText{
+  font-size: clamp(.9rem, 1.5vw, 1.8rem) !important;
+  font-weight: 400;
+  line-height: clamp(.9rem, 1.5vw, 1.8rem)
+}
+#exploreText{
+  font-size: clamp(.8rem, 1vw, 1.5rem) !important;
+  text-align: center;
+  border: 1px solid #ea6954;
+  border-radius: 1rem;
+  padding: 2rem 1rem 2rem 1rem;
+  font-weight: 600;
+}
+
 #scrollArrow {
   transform: rotate(180deg);
   width: clamp(5rem, 5vw, 10rem);
   margin-top: auto;
   height: 10vh;
 }
-.bounce {
-  animation: bounce 1.2s ease;
-}
+
+
 
 /* ===================== Landing Page Cards =============================== */
 
@@ -179,5 +165,11 @@ main > section {
   }
   main{
     height: 100%;
+  }
+  #landingLeftSide{
+    padding-left:0 ;
+}
+  #exploreText{
+    padding: 1rem 1rem 1rem 1rem;
   }
 }

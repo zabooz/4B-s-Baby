@@ -9,9 +9,9 @@ const createClipBoard = () => {
     const value = storedClippy[i].value;
 
     if (storedClippy[i].type === "password") {
-      pw += `<li id="${clip}" class=" w-50 d-flex my-2 justify-content-between" >${value}</li>`;
+      pw += `<li id="${clip}" class=" w-75 d-flex my-2 justify-content-between" ><span>${value}</span></li>`;
     } else {
-      user += `<li id="${clip}" class=" w-50 my-2 d-flex justify-content-between" >${value}</li>`;
+      user += `<li id="${clip}" class=" w-75 my-2 d-flex justify-content-between" ><span>${value}</span></li>`;
     }
   }
 

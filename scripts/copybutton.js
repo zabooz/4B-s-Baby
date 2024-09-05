@@ -50,10 +50,13 @@ export const copyButton = (textId) => {
 
     }
 
-
+    console.log(textElement)
 
     if (textElement) {
-      let text = textElement.innerText.trim();
+
+        const span = textElement.querySelector("span");
+
+      let text = span.textContent.trim();
 
       navigator.clipboard.writeText(text).then(() => {
         confirmBubble.classList.add("fadeIn");
