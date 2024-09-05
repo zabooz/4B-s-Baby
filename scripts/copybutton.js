@@ -50,7 +50,6 @@ export const copyButton = (textId) => {
 
     }
 
-    console.log(textElement)
 
     if (textElement) {
 
@@ -77,7 +76,8 @@ export const copyButton = (textId) => {
       storedClippy = updatetClippy;
       sessionStorage.setItem("clippy", JSON.stringify(updatetClippy));
 
-      clipBoard(".clipBoard");
+      console.log()
+
     } else {
       console.warn(`Element with ID ${textId} not found.`);
     }
