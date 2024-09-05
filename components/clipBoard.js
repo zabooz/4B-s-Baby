@@ -76,7 +76,7 @@ export const clipBoard = (id) => {
   const passwordList = document.getElementById("passwordList");
 
 
-  passwordListBtn.addEventListener("click", () => {
+  passwordListBtn.addEventListener("mouseover", () => {
 
     passwordListBtn.style.backgroundColor = "#ea6854"
     passwordListBtn.style.zIndex ="2"
@@ -92,7 +92,7 @@ export const clipBoard = (id) => {
 
   })
 
-  userListBtn.addEventListener("click", () => {
+  userListBtn.addEventListener("mouseover", () => {
 
     passwordListBtn.style.backgroundColor = "#ea6854c5"
     passwordListBtn.style.zIndex ="2"
