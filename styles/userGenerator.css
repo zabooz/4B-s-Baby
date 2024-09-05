@@ -88,16 +88,20 @@ header {
   min-width: 80%;
   padding: 0px !important;
 }
-#pwGenDiv {
+#pwdGenDiv {
   background-color: #f1f5f5;
   padding: 0px;
+  margin-bottom: 10rem;
+  max-width: 1400px;
 }
 /* Container Styling */
 #wizardDiv {
   margin-top: auto;
   gap: 1rem; /* Adds space between the main groups */
-  padding: 1rem;
   background-color: #f1f5f5;
+  max-height: 1000px;
+  padding: 1rem 0rem;
+  width: 100%;
 }
 #wizardInput1 {
   width: 80%;
@@ -112,6 +116,7 @@ header {
   align-items: center; /* Centers content horizontally within each flex item */
   justify-content: center;
   width: 45%; /* Sets a minimum width for each group */
+  height: 20rem;
 }
 #wizardInput5 {
   border-right: 1px solid grey;
@@ -129,7 +134,8 @@ header {
 }
 #deleteTableBtn {
   width: 80%;
-  margin-top: 20px;
+  margin-top: auto;
+  margin-bottom: 26px;
 }
 #stats tr:nth-child(even) {
   font-weight: 500; /* Example style: set a light gray background color */
@@ -146,16 +152,23 @@ header {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-
+.card-img {
+  filter: opacity(15%);
+}
+.card-img-overlay {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 .imageContainer {
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
   min-height: 40rem;
-  background-image: url("/img/landingPage/username.jpg");
   background-size: cover;
-  filter: opacity(15%);
+  /* filter: opacity(15%); */
 }
 
 .imageContainer .h3Con {
@@ -181,29 +194,23 @@ header {
   align-self: center;
   padding: 1rem;
 }
-.textCon p {
-  width: 100%;
-  text-transform: uppercase;
-  text-align: start;
+.card-text {
   font-family: "inria serif", sans-serif;
   letter-spacing: 0.3rem;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  padding: 0.2rem 0.2rem;
+  padding: 1rem;
   margin: 0 0.2rem;
   background-color: #ffffff18;
+  font-size: clamp(0.8rem, 1vw, 1.4rem);
+  width: 60%;
+  justify-content: center;
 }
-.h3Con h3 {
-  width: 100%;
+.card-title {
   text-transform: uppercase;
-  text-align: start;
   font-weight: 600;
   font-size: calc(1.1rem + 0.5vw);
   font-family: "inria serif", sans-serif;
   letter-spacing: 0.3rem;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  padding: 0.2rem 0.2rem;
+  padding: 2rem;
   margin: 0 0.2rem;
   background-color: #ffffff18;
 }
@@ -330,6 +337,9 @@ main {
   .custom-img {
     width: 7rem;
     height: 5rem;
+  }
+  #wizardDiv {
+    flex-direction: column;
   }
 }
 @media (min-width: 992px) {
