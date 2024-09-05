@@ -107,11 +107,32 @@ main > section {
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
   
 }
+.card-header{
+  font-size: clamp(1.1rem, 2.5vw, 3rem) ;
+  line-height: clamp(1.1rem, 2vw, 2.5rem) ;
 
+  font-weight: 450;
+  font-style: normal;
+}
+.card-title,
 .card-title   font{
   font-family: "Inria Serif", serif;
+  font-size: clamp(1rem, 5vw, 2rem) !important	 ;
+  line-height: clamp(1.1rem, 3vw, 2.5rem) ;
+  letter-spacing: 0.1rem;
+  font-weight: 450;
+  font-style: normal
 }
-
+.card-subtitle{
+  font-size: clamp(0.9rem, 4vw, 1.5rem) !important;
+  font-weight: 400;
+  line-height: clamp(0.9rem, 1.5vw, 1.5rem)
+}
+.card-text{
+  font-size: clamp(0.9rem, 1.5vw, 1.3rem) !important;
+  font-weight: 400;
+  line-height: clamp(0.9rem, 3vw, 1.8rem) 
+}
 .card a{
   margin-top: calc(5rem + vw);
 }
