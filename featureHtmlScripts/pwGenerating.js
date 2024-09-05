@@ -11,21 +11,24 @@ const glyphRangeSlider = document.getElementById("sliderSorcery");
 const previewCon = document.getElementById("previewContainer");
 const leetInputField = document.getElementById("leetInput");
 
-// ==========================================================
-
-//               PICTURE MAGIC
-
-// =========================================================
 
 // shared variables between upload and converter functions
 
 let picturePath;
 let file;
 const pictureRowsArr = []; // variable  to save row dom elements
+let glyphRowsArr = []; // variable  to save row dom elements
 let pictureMagicArray =
-  JSON.parse(sessionStorage.getItem("pictureMagicArray")) || []; // variable to save row data
+JSON.parse(sessionStorage.getItem("pictureMagicArray")) || []; // variable to save row data
 let runeTranslatorArray =
-  JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
+JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
+let storedGlyphArray = JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; // variable to save GlyphPwd
+
+// ==========================================================
+
+//               PICTURE MAGIC
+
+// =========================================================
 
 //  click anywhere in the preview container to upload
 
@@ -278,21 +281,92 @@ glyphRangeSlider.addEventListener("input", () => {
   rdmPwdBtn.disabled = sliderValue > 5 ? false : true;
 });
 
+
+
+
+
 rdmPwdBtn.addEventListener("click", function () {
   // Create an array of password elements
-  const passwordElements = document.querySelectorAll(".rdmPassword");
+  const length = glyphRangeSlider.value
+  const password = generatePassword(length);
+    const pwId = `password${pictureRowsArr.length}`;
+    const lengthId = `length${pictureRowsArr.length}`;
 
-  // Generate a new password and update the first element
-  const pwLength = glyphRangeSlider.value;
-  document.getElementById("generatedPasswordLength0").innerText = pwLength;
-  const generatedPassword = generatePassword(pwLength);
+    const data = {
+      pwId: pwId,
+      lengthId: lengthId,
+      length: length ,
+      password: password,
+    };
 
-  const spanPwd = document.createElement("span");
-  spanPwd.classList.add("pwdSpan");
-  passwordElements[0].querySelector("button")?.remove();
-  spanPwd.innerText = `${generatedPassword}`;
+    storedGlyphArray.push(data)
+    glyphSelector(storedGlyphArray);
 
-  passwordElements[0].innerHTML = "";
-  passwordElements[0].append(copyButton("generatedPassword0"), spanPwd);
-  document.getElementById("generatedPasswordRow0").style.display = "";
+
 });
+const glyphSelector = (storedGlyphArray) => {
+  const tbody = document.getElementById("statsBodyPwGen");
+  tbody.innerHTML = "";
+
+  sessionStorage.setItem("storedGlyphArray", JSON.stringify(storedGlyphArray));
+
+  // Clear glyphRowsArr
+  glyphRowsArr = [];
+
+  // Generate rows from data array
+  for (let i = 0; i < storedGlyphArray.length; i++) {
+    const item = storedGlyphArray[i];
+
+    const picId = `pic${item.lengthId}`;
+    const pwId = `password${item.pwId}`;
+    const tdPw = document.createElement("td");
+    const tdPic = document.createElement("td");
+    const tdLeft = document.createElement("td");
+    const tdRight = document.createElement("td");
+    const spanPwd = document.createElement("span");
+
+    spanPwd.innerText = `${item.password}`;
+    spanPwd.classList.add("w-100", "pwdSpan");
+    tdPw.append(copyButton(pwId), spanPwd);
+    tdLeft.innerHTML = `<img src="../img/icons/arrow.svg" data-side="left" class="runeArrows d-none" style="transform: rotate(180deg); margin-top: -0.15rem; width: 2rem" alt="Arrow Left">`;
+    tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="runeArrows d-none" data-side="right" style="margin-top: -0.15rem; width: 2rem" alt="Arrow Right">`;
+    tdPic.id = picId;
+
+    tdPic.innerHTML = `<span>${item.length}</span>`;
+    tdPw.id = pwId;
+    tdPw.classList.add("d-flex", "p-0", "align-items-center", "gap-2");
+
+    const tr = document.createElement("tr");
+    tr.append(tdLeft, tdPw, tdPic, tdRight);
+
+    glyphRowsArr.push(tr);
+  }
+  console.log(glyphRowsArr);
+
+  // Add switch arrows to rows when more than 1 row
+  let count = glyphRowsArr.length;
+
+  if (count > 1) {
+    glyphRowsArr.forEach((element) => {
+      const arrows = element.querySelectorAll(".runeArrows");
+      arrows.forEach((arrow) => {
+        arrow.classList.remove("d-none");
+        arrow.addEventListener("click", () => {
+          tbody.innerHTML = "";
+          if (arrow.dataset.side === "left") {
+            count = (count - 1 + glyphRowsArr.length) % glyphRowsArr.length;
+          } else {
+            count = (count + 1) % glyphRowsArr.length;
+          }
+          tbody.append(glyphRowsArr[count]);
+        });
+      });
+    });
+  }
+
+  tbody.append(glyphRowsArr[glyphRowsArr.length - 1]);
+};
+
+if(storedGlyphArray.length > 0){
+  glyphSelector(storedGlyphArray);
+}
