@@ -71,10 +71,6 @@
       sizes="16x16"
       href="../img/favicon/favicon-16x16.png"
     />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      rel="stylesheet"
-    />
 
     <title>Erfinde Passwort</title>
   </head>
@@ -86,7 +82,7 @@
 
     <!-- ================= MAIN ================ -->
     <main class="w-100 mt-5">
-      <section class="row row-cols-1 row-cols-lg-3 g-5 mx-auto  px-md-5">
+      <section class="row row-cols-1 row-cols-lg-3 g-5 mx-auto px-md-5">
         <!-- ================= Rune Translator ================= -->
 
         <div class="col">
@@ -103,7 +99,6 @@
             </div>
             <div
               class="card-body d-flex flex-column align-items-center p-0 mt-4"
- 
             >
               <p class="mb-5">
                 <span
@@ -120,52 +115,68 @@
                 aus, welche Variante - von einfach bis stark verändert - du
                 bevorzugst.
               </p>
-            
-                <div class="d-flex flex-column w-100"  style="margin-bottom:2.5rem">
-                  <input
-                    type="text"
-                    id="leetInput"
-                    class="form-control mt-3"
-                    placeholder="Gib ein Passwort ein"
-                    required
-                    minlength="1"
-                    maxlength="12"
-                  />
-                  <p class="ps-3 mt-1">* Maximal 12 Zeichen</p>
-                </div>
-          
-                <table class="stats table mt-auto " id="stats2">
-                  <thead class="border-bottom">
-                    <tr>
-                      <th></th>
-                      <th scope="col" class="text-center py-2">Passwort</th>
-                      <th scope="col" class="text-center">Stärke</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    id="statsBody2"
-                    class="text-center border-top"
-                    
-                  >
-                    <tr style="display: none;">
-                      <td><img src="../img/icons/arrow.svg" data-side="left" class="leetArrows" style="transform: rotate(180deg);margin-top:-0.15rem;" alt="Arrow Left"></td>
-                      <td
-                        id="leetResult0"
-                        class="d-flex justify-content-between w-100 "
-                      ></td>
-                      <td id="leetVersion"></td>
-                      <td><img src="../img/icons/arrow.svg" id="arrowRight" class="leetArrows" data-side="right" style="margin-top:-0.15rem;" alt="Arrow Right"></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <button
-                  id="leetBtn"
-                  class="btn btn-primary w-100  mb-2"
-                  disabled="true"
-                >
-                  Los geht's
-                </button>
+
+              <div
+                class="d-flex flex-column w-100"
+                style="margin-bottom: 2.5rem"
+              >
+                <input
+                  type="text"
+                  id="leetInput"
+                  class="form-control mt-3"
+                  placeholder="Gib ein Passwort ein"
+                  required
+                  minlength="1"
+                  maxlength="12"
+                />
+                <p class="ps-3 mt-1">* Maximal 12 Zeichen</p>
+              </div>
+
+              <table class="stats table mt-auto" id="stats2">
+                <thead class="border-bottom">
+                  <tr>
+                    <th></th>
+                    <th scope="col" class="text-center py-2">Passwort</th>
+                    <th scope="col" class="text-center">Stärke</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="statsBody2" class="text-center border-top">
+                  <tr style="display: none">
+                    <td>
+                      <img
+                        src="../img/icons/arrow.svg"
+                        data-side="left"
+                        class="leetArrows"
+                        style="transform: rotate(180deg); margin-top: -0.15rem"
+                        alt="Arrow Left"
+                      />
+                    </td>
+                    <td
+                      id="leetResult0"
+                      class="d-flex justify-content-between w-100"
+                    ></td>
+                    <td id="leetVersion"></td>
+                    <td>
+                      <img
+                        src="../img/icons/arrow.svg"
+                        id="arrowRight"
+                        class="leetArrows"
+                        data-side="right"
+                        style="margin-top: -0.15rem"
+                        alt="Arrow Right"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button
+                id="leetBtn"
+                class="btn btn-primary w-100 mb-2"
+                disabled="true"
+              >
+                Los geht's
+              </button>
             </div>
           </div>
         </div>
@@ -191,17 +202,17 @@
                 Lade einfach ein Foto hoch, und unsere App verwandelt es in ein
                 sicheres Passwort.
               </p>
-              <div class="imageContainer d-flex mt-3 justify-content-center" id="previewContainer">
+              <div
+                class="imageContainer d-flex mt-3 justify-content-center"
+                id="previewContainer"
+              >
                 <img
                   id="previewImage"
                   src="../img/pwGen/upload.jpeg"
                   alt="runeTranslator"
                   class="border img-fluid"
-
                 />
-                <div class="labelCon "        
-                
-                >
+                <div class="labelCon">
                   <label id="uploadLabel" for="uploadFile"
                     >Foto hochladen!
                   </label>
@@ -216,31 +227,34 @@
                       value="value"
                       id="uploadFile"
                       accept=".jpg, .jpeg, .png, .webp, .bmp"
-                      
                       name="uploadFile"
                     />
                   </form>
                 </div>
               </div>
-              <table class="table mt-auto " style="margin-bottom: 1.15rem;" id="statsPicGen">
+              <table
+                class="table mt-auto"
+                style="margin-bottom: 1.15rem"
+                id="statsPicGen"
+              >
                 <thead>
                   <tr>
                     <th></th>
-                    <th scope="col" class="text-center ">Passwort</th>
+                    <th scope="col" class="text-center">Passwort</th>
                     <th scope="col" class="text-center">Bild</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody id="statsBodyPicGen" class="text-center"></tbody>
               </table>
-                  <button
-                    id="pictureMagicBtn"
-                    type="button"
-                    class="btn btn-primary mb-2 w-100"
-                    disabled="true"
-                  >
-                    Los geht's
-                  </button>
+              <button
+                id="pictureMagicBtn"
+                type="button"
+                class="btn btn-primary mb-2 w-100"
+                disabled="true"
+              >
+                Los geht's
+              </button>
             </div>
           </div>
         </div>
@@ -269,7 +283,10 @@
                 sichere Passwörter entsprechen.
               </p>
 
-              <div class="d-flex flex-column gap-3 w-100 " style="margin-bottom:3.4rem ;" >
+              <div
+                class="d-flex flex-column gap-3 w-100"
+                style="margin-bottom: 3.4rem"
+              >
                 <p class="mx-auto mb-0 fs-5">
                   Passwortlänge: <span id="sliderValue">6</span>
                 </p>
@@ -280,11 +297,9 @@
                   max="24"
                   value="6"
                   steps="1"
-                  
-                  
                 />
               </div>
-              <table class="table  mt-auto " id="statsPwGen">
+              <table class="table mt-auto" id="statsPwGen">
                 <thead>
                   <tr>
                     <th scope="col" class="text-center">Passwort</th>
@@ -297,11 +312,18 @@
                       id="generatedPassword0"
                       class="d-flex justify-content-between w-100 rdmPassword"
                     ></td>
-                    <td id="generatedPasswordLength0" class="text-center rdmPasswordLength"></td>
+                    <td
+                      id="generatedPasswordLength0"
+                      class="text-center rdmPasswordLength"
+                    ></td>
                   </tr>
                 </tbody>
               </table>
-              <button id="rdmPwdBtn" class="btn btn-primary w-100 mt-auto mb-2" disabled = "true">
+              <button
+                id="rdmPwdBtn"
+                class="btn btn-primary w-100 mt-auto mb-2"
+                disabled="true"
+              >
                 Los geht's
               </button>
             </div>
@@ -314,7 +336,7 @@
     <div class="clipBoard"></div>
     <div class="assistant"></div>
     <footer class="p-5 d-flex justify-content-center flex-column">
-      <script src="../components/footer.js"></script>
+   
     </footer>
 
     <!--======= Scripts =========== -->
@@ -330,6 +352,12 @@
         createQuickNav,
         configQuickNavFeature,
       } from "../components/quickNav.js";
+      import {
+        createFooter,
+        configFooter,
+        iconsFeatures,
+      } from "../components/footer.js";
+      createFooter(configFooter, iconsFeatures);
 
       createQuickNav("main", configQuickNavFeature);
       createAssistant("main");
@@ -348,12 +376,21 @@
       crossorigin="anonymous"
     ></script>
     <div id="google_translate_element"></div>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'de', includedLanguages: 'en,fr,es,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "de",
+            includedLanguages: "en,fr,es,it",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
   </body>
 </html>
