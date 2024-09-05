@@ -122,6 +122,7 @@ const footer = (configFooter, icons) => {
             © 2021 Copyright:
             <a class="text-reset fw-bold" href="https://mdbootstrap.com/"  aria-label="MDBootstrap.com" >MDBootstrap.com</a>
             <a class="text-reset fw-bold mx-5" href="../legalStuff/impressum.html" aria-label="Impressum" >Impressum</a>
+            <a class="text-reset fw-bold mx-5" href="../legalStuff/datenschutz.html" aria-label="Impressum" >Datenschutz</a>
         </div>
         
         </div
