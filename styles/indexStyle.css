@@ -36,7 +36,7 @@ main > section {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-  font-size: clamp(2rem, 3.5vw, 6rem);
+  font-size: clamp(2rem, 5vw, 6rem);
   padding: 0;
   line-height: clamp(2rem, 3.5vw, 6rem);
   margin: 0;
@@ -60,7 +60,7 @@ main > section {
   padding-left: 7rem;
 }
 
-#siteName p{
+#siteName p:first-of-type{
   margin-bottom: 0;
 }
 #padlockLogo{
