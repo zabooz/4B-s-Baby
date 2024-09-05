@@ -92,7 +92,7 @@ const createNavBar = (configNav) => {
             alt="logo"
           />
 
-          <p class="navbar-brand mb-0  ms-3">${configNav.logo.text}</p>
+          <p class="navbar-brand mb-0  ms-3 "><span class="notranslate">${configNav.logo.text}</span></p>
         </a>
       </div>
       

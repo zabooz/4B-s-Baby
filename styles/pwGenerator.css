@@ -154,7 +154,12 @@ td{
   margin: 0 0.2rem;
   background-color: #ffffff18;
 }
-
+h1 font{
+  font-family: "inria serif", sans-serif;
+}
+button font{
+  color: #f1f5f5;
+}
 .scale{
   animation: scale 2s ease-in-out;
 }
