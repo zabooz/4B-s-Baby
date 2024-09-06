@@ -64,7 +64,7 @@
     <nav id="navBar" class="sticky-top"></nav>
     <header class="d-flex justify-content-center"></header>
     <main>
-      <section class="d-flex justify-content-center flex-column p-5 pb-1 gap-5">
+      <section id="sectionContainer" class="d-flex justify-content-center flex-column p-5 pb-1 gap-5">
         <div
           id="pwdGenDiv"
           class="card">
@@ -87,8 +87,8 @@
             class="d-flex justify-content-center">
             <div id="wizardInput5">
             <div id="wizardInput1" class="gap-2">
-              <label class="fw-semibold">Wähle bis  zu zwei Eigenschaften...</label>
-              <select id="adjective1" class="form-control fw-semibold">
+              <label>Wähle bis  zu zwei Eigenschaften...</label>
+              <select id="adjective1" class="form-control">
                 <option value="random">Zufällig</option>
                 <option value="shapes">Form</option>
                 <option value="colors">Farbe</option>
@@ -105,7 +105,7 @@
                 <option value="weatherTypes">Wetter</option>
                 <option value="">-Keine-</option>
               </select>
-              <select id="adjective2" class="form-control fw-semibold">
+              <select id="adjective2" class="form-control">
                 <option value="random">Zufällig</option>
                 <option value="shapes">Form</option>
                 <option value="colors">Farbe</option>
@@ -122,8 +122,8 @@
                 <option value="weatherTypes">Wetter</option>
                 <option value="">-Keine-</option>
               </select>
-            <label class="fw-semibold">...und einen Begriff:</label>
-            <select name="pwdGen" id="noun" class="form-control fw-semibold">
+            <label>...und einen Begriff:</label>
+            <select name="pwdGen" id="noun" class="form-control">
               <option value="random">Zufällig</option>
               <option value="instruments">Instrument</option>
               <option value="fruits">Frucht</option>

@@ -1,4 +1,4 @@
- @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
@@ -201,7 +201,7 @@ header {
   padding: 1rem;
   margin: 0 0.2rem;
   background-color: #ffffff18;
-  font-size: clamp(0.6rem, 1vw, 1.4rem);
+  font-size: clamp(0.6rem, 1vw, 2rem);
   width: 60%;
   justify-content: center;
 }
@@ -237,28 +237,35 @@ header {
 }
 /* Responsive Adjustments */
 @media (max-width: 992px) {
+  #sectionContainer {
+    padding: 0rem !important;
+  }
   #wizardInput5,
   #wizardInput6 {
-    width: 100%; /* Each item takes the full width */
-    max-width: 25rem;
+    width: 75%; /* Each item takes the full width */
+  }
+  #wizardInput6 {
+    height: fit-content;
   }
   .card {
     height: 1000px;
   }
-  .card-img {
-    display: none;
+  .card-title {
+    margin-top: 45%;
+  }
+  .card-text {
+    letter-spacing: 0.4rem;
+  }
+}
+@media (max-width: 700px) {
+  #wizardDiv label {
+    text-wrap: wrap;
   }
 }
 @media (max-width: 580px) {
   #wizardInput5,
   #wizardInput6 {
     flex-direction: column;
-  }
-  #wizardInput1,
-  #wizardInput2,
-  #wizardInput3,
-  #wizardInput4 {
-    width: 75%;
   }
 }
 .custom-indicators button {
