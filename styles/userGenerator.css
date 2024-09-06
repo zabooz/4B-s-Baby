@@ -200,19 +200,39 @@ header {
   padding: 1rem;
   margin: 0 0.2rem;
   background-color: #ffffff18;
-  font-size: clamp(0.8rem, 1vw, 1.4rem);
+  font-size: clamp(0.6rem, 1vw, 1.4rem);
   width: 60%;
   justify-content: center;
 }
 .card-title {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: clamp(2.4em, 3vw, 4.2rem);
+  font-size: clamp(1em, 3vw, 4rem);
   font-family: "inria serif", sans-serif;
   letter-spacing: 0.3rem;
-  padding: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 3rem;
   margin: 0 0.2rem;
   background-color: #ffffff18;
+}
+
+@media (max-width: 1400px) {
+  .card {
+  }
+  #wizardDiv {
+    justify-content: center;
+    align-items: center;
+  }
+  #wizardInput5 {
+    border-right: none;
+  }
+  .card-text {
+    width: 95%;
+  }
+  .card-title {
+    justify-content: center;
+    align-items: center;
+  }
 }
 /* Responsive Adjustments */
 @media (max-width: 992px) {
@@ -220,6 +240,12 @@ header {
   #wizardInput6 {
     width: 100%; /* Each item takes the full width */
     max-width: 25rem;
+  }
+  .card {
+    height: 1000px;
+  }
+  .card-img {
+    display: none;
   }
 }
 @media (max-width: 580px) {
