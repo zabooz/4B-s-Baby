@@ -1,3 +1,5 @@
+import { clipBoard } from "./clipBoard.js";
+
 export const configQuickNavIndex = {
   ai: {
     img: "./img/quickNav/ai.webp",
@@ -42,6 +44,12 @@ const quickNav = (config) => {
 
 export const createQuickNav = (id, config) => {
   const target = document.querySelector(id);
-
   target.innerHTML += quickNav(config);
+
+  const clippyNav = document.getElementById("clippyNav");
+
+  clippyNav.addEventListener("click", () => {
+
+      clipBoard(".clipBoard")
+  })
 };

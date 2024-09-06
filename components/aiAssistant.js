@@ -21,7 +21,7 @@ const aiAssistant = () => {
   <div class="offcanvas-body">
   <div class="langBot d-flex">
   </div>
-  <textarea id="question" class="form-control my-3" placeholder="Hy, ich benatworte Fragen über Sicherheit im Internet!" ></textarea>
+  <textarea id="question" class="form-control my-3" placeholder="Hi, ich benatworte Fragen über Sicherheit im Internet!" ></textarea>
     <button id="submitQ" type="button" class="btn btn-primary"> Senden</button>
     <p id="aiAnswer" class=" mt-4 p-2"><p>
   </div>

@@ -15,7 +15,7 @@ nav {
   font-weight: 500;
 }
 nav img {
-  width: clamp(2.5rem, 5vw, 5rem);
+  width: clamp(3rem, 3vw, 4rem);
 }
 .nav-custom {
   background-color: #f1f5f5;
@@ -66,6 +66,9 @@ nav img {
   margin-top: .5rem;
 
 }
+ button p{
+  color: #f1f5f5;
+ }
 #quickNav button:hover {
   animation: moveBtn 0.5s forwards;
 }

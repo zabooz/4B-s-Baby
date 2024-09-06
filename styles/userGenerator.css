@@ -1,3 +1,6 @@
+ @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 * {
   color: #212529;
   font-family: "Montserrat", sans-serif;
@@ -74,9 +77,7 @@ video {
 nav {
   min-height: 64px;
 }
-nav img {
-  width: 3rem;
-}
+
 header {
   color: #151c19;
 }

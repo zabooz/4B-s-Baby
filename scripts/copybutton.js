@@ -51,9 +51,11 @@ export const copyButton = (textId) => {
     }
 
 
-
     if (textElement) {
-      let text = textElement.innerText.trim();
+
+        const span = textElement.querySelector("span");
+
+      let text = span.textContent.trim();
 
       navigator.clipboard.writeText(text).then(() => {
         confirmBubble.classList.add("fadeIn");
@@ -74,7 +76,8 @@ export const copyButton = (textId) => {
       storedClippy = updatetClippy;
       sessionStorage.setItem("clippy", JSON.stringify(updatetClippy));
 
-      clipBoard(".clipBoard");
+      console.log()
+
     } else {
       console.warn(`Element with ID ${textId} not found.`);
     }

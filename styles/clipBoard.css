@@ -7,7 +7,6 @@
     background-color: transparent;
     border: hidden;
 
-
     cursor: pointer;
 
 }
@@ -71,9 +70,11 @@ i::before{
 }
 .btnBox{
     display: flex;
-    gap:.5rem;
+    gap:.3rem;
 }
-
+.btnBox button{
+    padding: 0;
+}
 .fadeIn{
     display: flex;
     animation: fadeIn 2s forwards ;

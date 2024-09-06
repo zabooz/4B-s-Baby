@@ -9,9 +9,9 @@ const createClipBoard = () => {
     const value = storedClippy[i].value;
 
     if (storedClippy[i].type === "password") {
-      pw += `<li id="${clip}" class=" w-50 d-flex my-2 justify-content-between" >${value}</li>`;
+      pw += `<li id="${clip}" class=" w-75 d-flex my-2 justify-content-between" ><span>${value}</span></li>`;
     } else {
-      user += `<li id="${clip}" class=" w-50 my-2 d-flex justify-content-between" >${value}</li>`;
+      user += `<li id="${clip}" class=" w-75 my-2 d-flex justify-content-between" ><span>${value}</span></li>`;
     }
   }
 
@@ -55,7 +55,7 @@ export const clipBoard = (id) => {
     const clip = document.getElementById(elementId);
     const copyBtn = copyButton(elementId);
     const delBtn = deleteBtn(elementId);
-    copyBtn.setAttribute("data-bs-dismiss", "modal");
+    // copyBtn.setAttribute("data-bs-dismiss", "modal");
 
     const btnBox = document.createElement("div");
     btnBox.classList.add("btnBox");
@@ -76,7 +76,7 @@ export const clipBoard = (id) => {
   const passwordList = document.getElementById("passwordList");
 
 
-  passwordListBtn.addEventListener("click", () => {
+  passwordListBtn.addEventListener("mouseover", () => {
 
     passwordListBtn.style.backgroundColor = "#ea6854"
     passwordListBtn.style.zIndex ="2"
@@ -92,7 +92,7 @@ export const clipBoard = (id) => {
 
   })
 
-  userListBtn.addEventListener("click", () => {
+  userListBtn.addEventListener("mouseover", () => {
 
     passwordListBtn.style.backgroundColor = "#ea6854c5"
     passwordListBtn.style.zIndex ="2"
@@ -130,7 +130,7 @@ const deleteBtn = (id) => {
 
   btn.addEventListener("click", () => {
     const element = document.getElementById(id);
-    console.log(element.innerText, element.textContent);
+
     storedClippy.forEach((obj, index) => {
       if (element.textContent.includes(obj.value))
         storedClippy.splice(index, 1);

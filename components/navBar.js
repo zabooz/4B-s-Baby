@@ -24,11 +24,16 @@ export const configNav = {
     text: "Password Playground",
     link: "../img/logo/logo.svg",
   },
-  stuff: {
-    text: `ERFAHRE <span>mehr...</span>`,
+  tools: {
+    text: `Tools <span>verwenden</span>`,
     clippy: "Clippy",
     aiAssistant: "AI-Assistent",
   },
+
+  learnMore: {
+    text: `Erfahre <span>mehr...</span>`,
+  },
+
   aboutUs: {
     link: "../aboutUs/aboutUs.html",
     text: "Über uns",
@@ -65,10 +70,14 @@ export const configNavIndex = {
     text: "Password Playground",
     link: "./img/logo/logo.svg",
   },
-  stuff: {
-    text: `ERFAHRE <span>mehr...</span>`,
-    clippy: "Clipboard",
+  tools: {
+    text: `Tools <span>verwenden</span>`,
+    clippy: "Clippy",
     aiAssistant: "AI-Assistent",
+  },
+
+  learnMore: {
+    text: `Erfahre <span>mehr...</span>`,
   },
   aboutUs: {
     link: "./aboutUs/aboutUs.html",
@@ -92,7 +101,7 @@ const createNavBar = (configNav) => {
             alt="logo"
           />
 
-          <p class="navbar-brand mb-0  ms-3">${configNav.logo.text}</p>
+          <p class="navbar-brand mb-0  ms-3 "><span class="notranslate">${configNav.logo.text}</span></p>
         </a>
       </div>
       
@@ -110,12 +119,10 @@ const createNavBar = (configNav) => {
           <li class="nav-item mx-2">
             <a class="nav-link" href="${configNav.userGen.link}">${configNav.userGen.text}</a>
           </li>
-          <li class="nav-item mx-2">
+            <li class="nav-item ">
             <div class="dropdown position-relative  ">
             <a class="nav-link  " type="button" href"#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    ${configNav.stuff.text}
-                 
-            </a>
+                    ${configNav.tools.text}</a>
               <ul class="dropdown-menu position-absolute p-2 ">
               <li class="nav-item ">
               <a class="nav-link  " href="#" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy">Clipboard</a>
@@ -123,16 +130,24 @@ const createNavBar = (configNav) => {
             <li class="nav-item">
             <a class="nav-link " href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" >Ai-Assistant</a>
             </li>
+              </ul>
+              </div>
+          </li>
+          <li class="nav-item mx-2">
+            <div class="dropdown position-relative  ">
+            <a class="nav-link  " type="button" href"#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    ${configNav.learnMore.text}</a>
+              <ul class="dropdown-menu position-absolute p-2 ">
             <li class="nav-item">
             <a class="nav-link " href="${configNav.oldDesign.link}">${configNav.oldDesign.text}</a>
             </li>
                       <li class="nav-item">
             <a class="nav-link" href="${configNav.project.link}">${configNav.project.text}</a>
           </li>
-                    <li class="nav-item">
+            <li class="nav-item">
             <a class="nav-link" href="${configNav.aboutUs.link}">${configNav.aboutUs.text}</a>
           </li>
-                  </ul>
+              </ul>
               </div>
           </li>
         </ul>
@@ -145,4 +160,3 @@ const createNavBar = (configNav) => {
 export const createNav = (config) => {
   document.querySelector(config.targetId).innerHTML = createNavBar(config);
 };
-
