@@ -2,7 +2,7 @@ import { newPwStrength } from "./newStrengthCalc.js";
 import { passwordEncoder } from "../scripts/encoder.js";
 import { getColorFromStrength } from "../utilities/getColorFromStrength.js";
 import { thinkWords, thinker} from "../utilities/thinker.js";
-
+import { newTester } from "../components/newTester.js";
 document.addEventListener("DOMContentLoaded", () => {
 
 
@@ -281,6 +281,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const value = excaliburInput.value;
     excaliburInput.value =""
 
+
+
+
+     newTester (value)
 
    //  ==   thinker function 
      
