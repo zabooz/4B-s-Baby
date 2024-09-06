@@ -55,7 +55,7 @@ export const clipBoard = (id) => {
     const clip = document.getElementById(elementId);
     const copyBtn = copyButton(elementId);
     const delBtn = deleteBtn(elementId);
-    copyBtn.setAttribute("data-bs-dismiss", "modal");
+    // copyBtn.setAttribute("data-bs-dismiss", "modal");
 
     const btnBox = document.createElement("div");
     btnBox.classList.add("btnBox");
@@ -130,7 +130,7 @@ const deleteBtn = (id) => {
 
   btn.addEventListener("click", () => {
     const element = document.getElementById(id);
-    console.log(element.innerText, element.textContent);
+
     storedClippy.forEach((obj, index) => {
       if (element.textContent.includes(obj.value))
         storedClippy.splice(index, 1);

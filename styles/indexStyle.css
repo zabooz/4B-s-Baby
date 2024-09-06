@@ -27,6 +27,9 @@ main > section {
   padding: 1.2em;
 }
 
+.bounce {
+  animation: bounce 2s ;
+}
 
 /* ================================================ LANDING PAGE HERO TEXT  ============================================= */
 

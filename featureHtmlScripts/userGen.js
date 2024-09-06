@@ -8,6 +8,16 @@ import { thinker, thinkWords } from "../utilities/thinker.js";
 const userGenBtn = document.getElementById("userGeneratorBtn");
 const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 const userAiToggle = document.getElementById("germanAiToggle");
+const deleteTableBtn = document.getElementById("deleteTableBtn");
+
+deleteTableBtn.addEventListener("click", function () {
+  for (let i = 0; i < 4; i++) {
+    document.getElementById(`statsBodyArray${i}`).innerHTML = "";
+    document.getElementById(`statsBodyUsername${i}`).innerHTML = "";
+    document.getElementById(`statsBodyRow${i * 2}`).style.display = "none";
+    document.getElementById(`statsBodyRow${i * 2 + 1}`).style.display = "none";
+  }
+});
 
 window.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("germanAiToggle");

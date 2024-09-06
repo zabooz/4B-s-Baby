@@ -330,7 +330,6 @@ document.addEventListener("DOMContentLoaded", () => {
       why.classList.remove("d-none");
       clearInterval(barAni);
       clearInterval(excaliburThinkerInterval);
-      console.log(result.result)
       excaliburBtn.disabled = true;
       excaliburBtn.innerHTML = "Nochmal?";
     }
@@ -349,12 +348,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const sugg = document.getElementById("suggestions");
     const succ = document.getElementById("success");
     const excaliburPwd = document.getElementById("excaliburPassword")
-    excaliburPwd.innerText = `"${pwd}"`
+    excaliburPwd.classList.add("w-50","d-flex","justify-content-between");
+
+    const stars = "******"
+    const eyeIcon = document.createElement("i");
+    eyeIcon.className = "bi bi-eye";
+    eyeIcon.addEventListener("click", () => {
+      
+      if (excaliburPwd.textContent === stars) {
+        excaliburPwd.innerHTML = `<span class="w-75 text-center">"${pwd}"</span>`
+        eyeIcon.className = "bi bi-eye-slash";
+        excaliburPwd.append(eyeIcon);
+      } else {
+        excaliburPwd.innerHTML = `<span class="w-75 text-center">${stars}</span>`
+        excaliburPwd.append(eyeIcon);
+        eyeIcon.className = "bi bi-eye";
+      }
+
+    })
+
+    excaliburPwd.innerHTML = `<span class="w-75 text-center">${stars}</span>`
+    excaliburPwd.append(eyeIcon)
     sugg.innerHTML = "";
     succ.innerHTML = "";
     for (const key in points) {
       const li = document.createElement("li");
       li.className = "list-group-item";
+      li.style.height ="65px"
 
       if (points[key].value === true) {
         li.style.color = "green";
