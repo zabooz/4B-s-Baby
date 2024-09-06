@@ -12,17 +12,29 @@ const previewCon = document.getElementById("previewContainer");
 const leetInputField = document.getElementById("leetInput");
 
 
-// shared variables between upload and converter functions
 
 let picturePath;
 let file;
+
+
+
+
 const pictureRowsArr = []; // variable  to save row dom elements
 let glyphRowsArr = []; // variable  to save row dom elements
+let runeRowsArr = []; // variable to save row data
+
 let pictureMagicArray =
-JSON.parse(sessionStorage.getItem("pictureMagicArray")) || []; // variable to save row data
+  JSON.parse(sessionStorage.getItem("pictureMagicArray")) || []; // variable to save row data
 let runeTranslatorArray =
-JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
-let storedGlyphArray = JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; // variable to save GlyphPwd
+  JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
+let storedGlyphArray =
+  JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; // variable to save GlyphPwd
+
+
+
+
+
+
 
 // ==========================================================
 
@@ -30,13 +42,10 @@ let storedGlyphArray = JSON.parse(sessionStorage.getItem("storedGlyphArray")) ||
 
 // =========================================================
 
-//  click anywhere in the preview container to upload
 
-previewCon.addEventListener("click", () => {
-  uploadFile.click();
-});
 
-//
+
+
 
 uploadFile.addEventListener("input", () => {
   picMagicBtn.disabled = false;
@@ -76,85 +85,7 @@ uploadFile.addEventListener("input", () => {
   reader.readAsDataURL(file);
 });
 
-/**
- * pictureSelector
- *
- * This function takes an array of objects with the properties {picId, pwId, password, picturePath},
- * and creates a table row for each object in the array. The row contains a copy button with the
- * password, and an image with the given picturePath. The function also adds event listeners to
- * the arrows in the table row, so that when the user clicks on the left or right arrow, the
- * table row is replaced with the previous or next row in the array, respectively.
- *
- * @param {Array} pictureMagicArray - the array of objects to be rendered as table rows
- */
-const pictureSelector = (pictureMagicArray) => {
-  const tbody = document.getElementById("statsBodyPicGen");
-  tbody.innerHTML = "";
 
-  sessionStorage.setItem(
-    "pictureMagicArray",
-    JSON.stringify(pictureMagicArray)
-  );
-
-  // generate rows from data array
-
-  for (let i = 0; i < pictureMagicArray.length; i++) {
-    const item = pictureMagicArray[i];
-
-    const picId = `pic${item.picId}`;
-    const pwId = `pasword${item.pwId}`;
-    const tdPw = document.createElement("td");
-    const tdPic = document.createElement("td");
-    const tdLeft = document.createElement("td");
-    const tdRight = document.createElement("td");
-    const spanPwd = document.createElement("span");
-
-    spanPwd.innerText = `${item.password}`;
-    spanPwd.classList.add("w-100", "pwdSpan");
-    tdPw.append(copyButton(pwId), spanPwd);
-    tdLeft.innerHTML = `<img src="../img/icons/arrow.svg" data-side="left" class="magicArrows d-none" style="transform: rotate(180deg); margin-top: -0.15rem; width: 2rem" alt="Arrow Left">`;
-    tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="magicArrows d-none" data-side="right" style="margin-top: -0.15rem; width: 2rem" alt="Arrow Right">`;
-    tdPic.id = picId;
-    tdPic.classList.add("tablePics");
-    tdPic.innerHTML = `<img src="${item.picturePath}" id="${picId}" alt="Your Picture" class="imgTable" style="width:2rem">`;
-    tdPw.id = pwId;
-    tdPw.classList.add("d-flex", "p-0", "align-items-center", "gap-2");
-
-    const tr = document.createElement("tr");
-    tr.append(tdLeft, tdPw, tdPic, tdRight);
-
-    pictureRowsArr.push(tr);
-  }
-
-  // add switch arrows to rows when more than 1 row
-  let count = pictureRowsArr.length;
-
-  if (count > 1) {
-    pictureRowsArr.forEach((element) => {
-      const arrows = element.querySelectorAll(".magicArrows");
-      arrows.forEach((arrow) => {
-        arrow.classList.remove("d-none");
-        arrow.addEventListener("click", () => {
-          tbody.innerHTML = "";
-          if (arrow.dataset.side === "left") {
-            count = (count - 1 + pictureRowsArr.length) % pictureRowsArr.length;
-          } else {
-            count = (count + 1) % pictureRowsArr.length;
-          }
-          tbody.append(pictureRowsArr[count]);
-        });
-      });
-    });
-  }
-
-  tbody.append(pictureRowsArr[pictureRowsArr.length - 1]);
-};
-
-//  check if data is in session storage and render it
-
-if (pictureMagicArray.length > 0) {
-  pictureSelector(pictureMagicArray);
-}
 
 picMagicBtn.addEventListener("click", async (e) => {
   e.preventDefault();
@@ -164,9 +95,10 @@ picMagicBtn.addEventListener("click", async (e) => {
 
   const data = {
     pwId: pwId,
-    picId: picId,
-    picturePath: picturePath,
+    catchId: picId,
+    catch: picturePath,
     password: null,
+    app: "pictureMagic",
   };
 
   try {
@@ -175,12 +107,21 @@ picMagicBtn.addEventListener("click", async (e) => {
     data.password = result;
     pictureMagicArray.push(data);
 
-    pictureSelector(pictureMagicArray);
+    storeAndSwitch(
+      pictureRowsArr,
+      pictureMagicArray,
+      "pictureMagicArray",
+      "statsBodyPicGen"
+    );
     picMagicBtn.disabled = true;
   } catch (error) {
     console.error(error);
   }
 });
+
+
+
+
 
 //  ===============================================================
 
@@ -189,90 +130,55 @@ picMagicBtn.addEventListener("click", async (e) => {
 //  ==============================================================
 
 
-leetBtn.addEventListener("click", function () {
 
+
+
+leetBtn.addEventListener("click", function () {
   const leetInput = leetInputField.value;
   const newPasswordArray = tripleConverter(leetInput);
- 
+
+  runeTranslatorArray = []
+
+
+  for (let i = 0; i < newPasswordArray.length; i++) {
+    const pwId = `runeTranslator${i}`;
+    const catchId = `runeCatch${i}`;
+    const versionArray = ["Einfach", "Mittel", "Stark"];
+    const data = {
+      pwId: pwId,
+      catchId: catchId,
+      catch: versionArray[i],
+      password: newPasswordArray[i],
+      app: "runeTranslator",
+    };
+
+    runeTranslatorArray.push(data);
+  }
+
   sessionStorage.setItem(
     "runeTranslatorArray",
     JSON.stringify(newPasswordArray)
   );
-  runeSelector();
 
-});
-
-leetInputField.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault(); //
-    leetBtn.click();
-  }
-});
-
-//  toggle btn disable state
-
-leetInputField.addEventListener("input", () => {
-  leetBtn.disabled = leetInputField.value.length > 0 ? false : true;
-});
-/**
- * Gets the current runeTranslatorArray from session storage and
- * displays the first element of the array in the page.
- * Also sets up a click event listener on the leetArrow elements
- * to cycle through the array and update the displayed value.
- */
-const runeSelector = () => {
-  runeTranslatorArray = JSON.parse(
-    sessionStorage.getItem("runeTranslatorArray")
+  storeAndSwitch(
+    runeRowsArr,
+    runeTranslatorArray,
+    "runeTranslatorArray",
+    "statsBody2"
   );
 
-  document.querySelector("#statsBody2 tr").style.display = "";
+});
 
-  const td = document.getElementById("leetResult0");
-  td.innerHTML = "";
-  const versionArray = ["Einfach", "Mittel", "Stark"];
 
-  const spanPwd = document.createElement("span");
-  spanPwd.innerText = `${runeTranslatorArray[0]}`;
-  spanPwd.id = "leetPwd";
-  spanPwd.classList.add("w-100");
-
-  td.append(copyButton("leetResult0"), spanPwd);
-
-  let count = 0;
-
-  const versionText = `<span id="versionText" >${versionArray[0]}</span>`;
-  const versionTd = document.getElementById("leetVersion");
-  versionTd.innerHTML = versionText;
-
-  
-  document.querySelectorAll(".leetArrows").forEach((arrow) => {
-    arrow.addEventListener("click", () => {
-      const versionText = document.getElementById("versionText");
-      const spanPwd = document.getElementById("leetPwd");
-      spanPwd.classList.add("pwdSpan");
-      if (arrow.dataset.side === "left") {
-        count = (count - 1 + versionArray.length) % versionArray.length;
-      } else {
-        count = (count + 1) % versionArray.length;
-      }
-      spanPwd.innerText = `${runeTranslatorArray[count]}`;
-      versionText.innerText = `${versionArray[count]}`;
-    });
-  });
-
-  const body = document.getElementById("statsBody2");
-  body.style.display = "";
-};
-
-if (runeTranslatorArray.length > 0) {
-  runeSelector();
-}
 
 // ================================================================
 
 //                  Glyph Sorcery
 
 // ================================================================
+
+
+
 
 glyphRangeSlider.addEventListener("input", () => {
   const sliderValue = glyphRangeSlider.value;
@@ -281,92 +187,147 @@ glyphRangeSlider.addEventListener("input", () => {
   rdmPwdBtn.disabled = sliderValue > 5 ? false : true;
 });
 
-
-
-
-
 rdmPwdBtn.addEventListener("click", function () {
   // Create an array of password elements
-  const length = glyphRangeSlider.value
+  const length = glyphRangeSlider.value;
   const password = generatePassword(length);
-    const pwId = `password${pictureRowsArr.length}`;
-    const lengthId = `length${pictureRowsArr.length}`;
+  const pwId = `password${glyphRowsArr.length}`;
+  const lengthId = `length${glyphRowsArr.length}`;
+  const app = "glyphSorcery";
+  const data = {
+    pwId: pwId,
+    catchId: lengthId,
+    catch: length,
+    password: password,
+    app: app,
+  };
 
-    const data = {
-      pwId: pwId,
-      lengthId: lengthId,
-      length: length ,
-      password: password,
-    };
-
-    storedGlyphArray.push(data)
-    glyphSelector(storedGlyphArray);
-
-
+  storedGlyphArray.push(data);
+  storeAndSwitch(
+    glyphRowsArr,
+    storedGlyphArray,
+    "storedGlyphArray",
+    "statsBodyPwGen"
+  );
 });
-const glyphSelector = (storedGlyphArray) => {
-  const tbody = document.getElementById("statsBodyPwGen");
+
+
+
+
+
+/**
+ * Clears the table body, stores the data array in session storage
+ * and generates a new table body from the data array. If the array
+ * has more than one element, adds switch arrows to the table rows.
+ *
+ * @param {HTMLElement[]} DOMElementArr - The array of DOM elements to be cleared and refilled.
+ * @param {Object[]} storageArr - The array of objects to be stored in session storage.
+ * @param {string} storageName - The key for session storage.
+ * @param {string} target - The id of the table body to be cleared and refilled.
+ */
+const storeAndSwitch = (DOMElementArr, storageArr, storageName, target) => {
+  const tbody = document.getElementById(target);
   tbody.innerHTML = "";
 
-  sessionStorage.setItem("storedGlyphArray", JSON.stringify(storedGlyphArray));
+  sessionStorage.setItem(storageName, JSON.stringify(storageArr));
 
-  // Clear glyphRowsArr
-  glyphRowsArr = [];
+  DOMElementArr = [];
+  // generate rows from data array
 
-  // Generate rows from data array
-  for (let i = 0; i < storedGlyphArray.length; i++) {
-    const item = storedGlyphArray[i];
+  for (let i = 0; i < storageArr.length; i++) {
+    const item = storageArr[i];
 
-    const picId = `pic${item.lengthId}`;
-    const pwId = `password${item.pwId}`;
     const tdPw = document.createElement("td");
-    const tdPic = document.createElement("td");
+    const pwId = `${item.app}${item.pwId}`;
+
+    const tdCatch = document.createElement("td");
+    const catchId = `pic${item.catchId}`;
+
     const tdLeft = document.createElement("td");
     const tdRight = document.createElement("td");
+
     const spanPwd = document.createElement("span");
 
     spanPwd.innerText = `${item.password}`;
-    spanPwd.classList.add("w-100", "pwdSpan");
     tdPw.append(copyButton(pwId), spanPwd);
-    tdLeft.innerHTML = `<img src="../img/icons/arrow.svg" data-side="left" class="runeArrows d-none" style="transform: rotate(180deg); margin-top: -0.15rem; width: 2rem" alt="Arrow Left">`;
-    tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="runeArrows d-none" data-side="right" style="margin-top: -0.15rem; width: 2rem" alt="Arrow Right">`;
-    tdPic.id = picId;
+    spanPwd.classList.add("w-100", "pwdSpan");
 
-    tdPic.innerHTML = `<span>${item.length}</span>`;
+    tdLeft.innerHTML = `<img src="../img/icons/arrow.svg" data-side="left" class="${item.app} d-none" style="transform: rotate(180deg); margin-top: -0.15rem; width: 2rem" alt="Arrow Left">`;
+    tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="${item.app} d-none" data-side="right" style="margin-top: -0.15rem; width: 2rem" alt="Arrow Right">`;
+
+    tdCatch.id = catchId;
+    tdCatch.classList.add("tablePics");
+
+    if (item.app === "pictureMagic") {
+      tdCatch.innerHTML = `<img src="${item.catch}" id="${catchId}" alt="Your Picture" class="imgTable" style="width:2rem">`;
+    } else {
+      tdCatch.innerHTML = `<span>${item.catch}</span>`;
+    }
     tdPw.id = pwId;
     tdPw.classList.add("d-flex", "p-0", "align-items-center", "gap-2");
-
     const tr = document.createElement("tr");
-    tr.append(tdLeft, tdPw, tdPic, tdRight);
+    tr.append(tdLeft, tdPw, tdCatch, tdRight);
 
-    glyphRowsArr.push(tr);
+    DOMElementArr.push(tr);
   }
 
-
-  // Add switch arrows to rows when more than 1 row
-  let count = glyphRowsArr.length;
+  // add switch arrows to rows when more than 1 row
+  let count = DOMElementArr.length;
 
   if (count > 1) {
-    glyphRowsArr.forEach((element) => {
-      const arrows = element.querySelectorAll(".runeArrows");
+    DOMElementArr.forEach((element) => {
+      const arrows = element.querySelectorAll(`.${storageArr[0].app}`);
       arrows.forEach((arrow) => {
         arrow.classList.remove("d-none");
         arrow.addEventListener("click", () => {
           tbody.innerHTML = "";
           if (arrow.dataset.side === "left") {
-            count = (count - 1 + glyphRowsArr.length) % glyphRowsArr.length;
+            count = (count - 1 + DOMElementArr.length) % DOMElementArr.length;
           } else {
-            count = (count + 1) % glyphRowsArr.length;
+            count = (count + 1) % DOMElementArr.length;
           }
-          tbody.append(glyphRowsArr[count]);
+          tbody.append(DOMElementArr[count]);
         });
       });
     });
   }
 
-  tbody.append(glyphRowsArr[glyphRowsArr.length - 1]);
+  tbody.append(DOMElementArr[DOMElementArr.length - 1]);
 };
 
-if(storedGlyphArray.length > 0){
-  glyphSelector(storedGlyphArray);
+
+
+if (storedGlyphArray.length > 0) {
+  storeAndSwitch(
+    glyphRowsArr,
+    storedGlyphArray,
+    "storedGlyphArray",
+    "statsBodyPwGen"
+  );
 }
+if (pictureMagicArray.length > 0) {
+  storeAndSwitch(
+    pictureRowsArr,
+    pictureMagicArray,
+    "pictureMagicArray",
+    "statsBodyPicGen"
+  );
+}
+if (runeTranslatorArray.length > 0) {
+  storeAndSwitch(
+    runeRowsArr,
+    runeTranslatorArray,
+    "runeTranslatorArray",
+    "statsBody2"
+  );
+}
+leetInputField.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); //
+    leetBtn.click();
+  }
+});
+
+leetInputField.addEventListener("input", () => {
+  leetBtn.disabled = leetInputField.value.length > 0 ? false : true;
+});
