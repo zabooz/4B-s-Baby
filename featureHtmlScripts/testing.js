@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startBrute.addEventListener("click", (e) => {
     e.preventDefault();
-    
-    
+    console.log(stopBrute)
+    stopBrute.style.backgroundColor = "#626568";
     
     if(isBruteActive === false){
       const statsBody = document.getElementById("statsBody");
@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ======== Api call end brute force and get the result
 
   stopBrute.addEventListener("click", () => {
+    stopBrute.style.backgroundColor = "#ced4da"
     const url = `${baseUrl}stopBruteForce`;
     fetch(url)
       .then((response) => {
@@ -214,6 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateAttempts(result);   // update the table
         startBrute.disabled = true;
         startBrute.innerHTML = "Nochmal?";
+        stopBrute.style.backgroundColor = "#ced4da"
       });
   };
 
@@ -254,11 +256,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     dataArr.forEach((item, index) => {
       const td = document.createElement("td");
-
+      
       if (index === 0) {
         td.textContent = hideArr[0];
         td.id = `td${rowCount}`
-        td.classList.add("d-flex","justify-content-between","align-items-center");
         td.append(mojoIcon);
       } else {
         td.textContent = item;
@@ -329,7 +330,6 @@ document.addEventListener("DOMContentLoaded", () => {
       why.classList.remove("d-none");
       clearInterval(barAni);
       clearInterval(excaliburThinkerInterval);
-      console.log(result.result)
       excaliburBtn.disabled = true;
       excaliburBtn.innerHTML = "Nochmal?";
     }
@@ -348,12 +348,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const sugg = document.getElementById("suggestions");
     const succ = document.getElementById("success");
     const excaliburPwd = document.getElementById("excaliburPassword")
-    excaliburPwd.innerText = `"${pwd}"`
+    excaliburPwd.classList.add("w-50","d-flex","justify-content-between");
+
+    const stars = "******"
+    const eyeIcon = document.createElement("i");
+    eyeIcon.className = "bi bi-eye";
+    eyeIcon.addEventListener("click", () => {
+      
+      if (excaliburPwd.textContent === stars) {
+        excaliburPwd.innerHTML = `<span class="w-75 text-center">"${pwd}"</span>`
+        eyeIcon.className = "bi bi-eye-slash";
+        excaliburPwd.append(eyeIcon);
+      } else {
+        excaliburPwd.innerHTML = `<span class="w-75 text-center">${stars}</span>`
+        excaliburPwd.append(eyeIcon);
+        eyeIcon.className = "bi bi-eye";
+      }
+
+    })
+
+    excaliburPwd.innerHTML = `<span class="w-75 text-center">${stars}</span>`
+    excaliburPwd.append(eyeIcon)
     sugg.innerHTML = "";
     succ.innerHTML = "";
     for (const key in points) {
       const li = document.createElement("li");
       li.className = "list-group-item";
+      li.style.height ="65px"
 
       if (points[key].value === true) {
         li.style.color = "green";

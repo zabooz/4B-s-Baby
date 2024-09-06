@@ -68,6 +68,13 @@ main section{
   background-color: #ffffff18;
 }
 
+h1 font{
+  font-family: "inria serif", sans-serif;
+}
+button font {
+  color: #f1f5f5;
+}
+
 
 
 
@@ -118,7 +125,7 @@ button.btn {
 }
 
 #stopBrute{
-  background: #ced4da !important;
+  background: #ced4da;
 }
 
 @media(max-width: 500px){
