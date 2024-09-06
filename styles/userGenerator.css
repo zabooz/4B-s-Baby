@@ -208,7 +208,7 @@ header {
 .card-title {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: clamp(1em, 3vw, 4rem);
+  font-size: clamp(2em, 3vw, 4rem);
   font-family: "inria serif", sans-serif;
   letter-spacing: 0.3rem;
   padding-bottom: 1rem;
@@ -242,7 +242,7 @@ header {
   }
   #wizardInput5,
   #wizardInput6 {
-    width: 75%; /* Each item takes the full width */
+    width: 100%; /* Each item takes the full width */
   }
   #wizardInput6 {
     height: fit-content;
@@ -250,8 +250,8 @@ header {
   .card {
     height: 1000px;
   }
-  .card-title {
-    margin-top: 45%;
+  .card-text:first-of-type {
+    margin-top: 47%;
   }
   .card-text {
     letter-spacing: 0.4rem;
