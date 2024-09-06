@@ -90,14 +90,16 @@ header {
   min-width: 80%;
   padding: 0px !important;
 }
-#pwdGenDiv {
+#identityWizard,
+#mindMaestro {
   background-color: #f1f5f5;
   padding: 0px;
   margin-bottom: 10rem;
   max-width: 1400px;
 }
 /* Container Styling */
-#wizardDiv {
+#wizardDiv,
+#quiz {
   margin-top: auto;
   background-color: #f1f5f5;
   max-height: 1000px;
@@ -123,7 +125,8 @@ header {
   border-right: 1px solid grey;
 }
 /* Label Styling */
-#wizardDiv label {
+#wizardDiv,
+#quiz label {
   text-align: left; /* Aligns text to the left */
   text-wrap: nowrap;
   width: 100%; /* Ensures label takes the full width of its container */
@@ -160,7 +163,6 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
 }
 .imageContainer {
   display: flex;
@@ -220,13 +222,12 @@ header {
 @media (max-width: 1400px) {
   .card {
   }
-  #wizardDiv {
+  #wizardDiv,
+  #quiz {
     justify-content: center;
     align-items: center;
   }
-  #wizardInput5 {
-    border-right: none;
-  }
+
   .card-text {
     width: 95%;
   }
@@ -238,28 +239,29 @@ header {
 /* Responsive Adjustments */
 @media (max-width: 992px) {
   #sectionContainer {
-    padding: 0rem !important;
+    padding: 3rem 0rem !important;
   }
   #wizardInput5,
   #wizardInput6 {
-    width: 100%; /* Each item takes the full width */
+    width: 100%;
   }
   #wizardInput6 {
     height: fit-content;
   }
-  .card {
-    height: 1000px;
-  }
-  .card-text:first-of-type {
-    margin-top: 47%;
+  #wizardInput5 {
+    border-right: none;
   }
   .card-text {
     letter-spacing: 0.4rem;
   }
 }
 @media (max-width: 700px) {
-  #wizardDiv label {
+  #wizardDiv,
+  #quiz label {
     text-wrap: wrap;
+  }
+  .card-text:first-of-type {
+    margin-top: 47%;
   }
 }
 @media (max-width: 580px) {
@@ -372,7 +374,8 @@ main {
     width: 7rem;
     height: 5rem;
   }
-  #wizardDiv {
+  #wizardDiv,
+  #quiz {
     flex-direction: column;
   }
 }
