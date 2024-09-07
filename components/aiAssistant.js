@@ -5,6 +5,8 @@ const configAi = {
 };
 
 
+
+
 const imgSrc = "../img/icons/_sanchez.jpeg";
 
 const aiAssistant = () => {
