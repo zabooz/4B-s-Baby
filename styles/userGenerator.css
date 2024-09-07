@@ -220,8 +220,6 @@ header {
 }
 
 @media (max-width: 1400px) {
-  .card {
-  }
   #wizardDiv,
   #quiz {
     justify-content: center;
