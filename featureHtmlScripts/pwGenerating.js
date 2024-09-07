@@ -9,7 +9,7 @@ const picMagicBtn = document.getElementById("pictureMagicBtn");
 const leetBtn = document.getElementById("leetBtn");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
 const glyphRangeSlider = document.getElementById("sliderSorcery");
-
+const uploadContainer = document.querySelector(".labelCon")
 const leetInputField = document.getElementById("leetInput");
 
 
@@ -44,7 +44,9 @@ let storedGlyphArray =
 // =========================================================
 
 
-
+uploadContainer.addEventListener("click", () => {
+  uploadFile.click();
+});
 
 
 

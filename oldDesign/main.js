@@ -15,6 +15,7 @@ import { chaos } from "../scripts/chaos.js";
 import { tooltip } from "../scripts/tooltip.js";
 import { updateRecentInputs } from "../scripts/inputList.js";
 
+const baseUrl = "https://bruteforce.coolify.machma.app"
 document.addEventListener("DOMContentLoaded", async () => {
   await initTranslation();
 });
@@ -176,8 +177,7 @@ startBrute.addEventListener("click", (e) => {
   fetchData();
 });
 stopBrute.addEventListener("click", () => {
-  // const url = "https://e6f7-85-31-21-51.ngrok-free.app/stopBruteForce";
-  const url = "http://localhost:3001/stopBruteForce";
+  const url = `${baseUrl}/stopBruteForce`;
 
   fetch(url, { method: "GET", headers: { "ngrok-skip-browser-warning": true } })
     .then((response) => {
@@ -210,11 +210,10 @@ uploadFile.addEventListener("change", () => {
   label.textContent = "Picture Uploaded!";
 });
 
-const fetchData = (signal) => {
+const fetchData = () => {
   const bruteType = document.querySelector("#bruteMode").value;
-  const url = "http://localhost:3001/";
-  // const url = "https://e6f7-85-31-21-51.ngrok-free.app/";
 
+  const url = `${baseUrl}/`;
   const pwd = document.getElementById("userPwdInput");
   const [encodedPwd, key] = passwordEncoder(pwd.value);
   const urlPara = `${url}bruteforce${bruteType}?pwd=${encodeURIComponent(
