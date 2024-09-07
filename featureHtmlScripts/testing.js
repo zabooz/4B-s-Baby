@@ -4,9 +4,10 @@ import { getColorFromStrength } from "../utilities/getColorFromStrength.js";
 import { thinkWords, thinker} from "../utilities/thinker.js";
 import { newTester } from "../components/newTester.js";
 import { dataKraken } from "../utilities/dataKraken.js";
+
+const baseUrl = "https://bruteforce.coolify.machma.app"
 document.addEventListener("DOMContentLoaded", () => {
-
-
+  
   
 
   const startBrute = document.getElementById("startBrute");
@@ -24,8 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============= stuff ===== 
   let bruteThinkerInterval; // to stop the thinker function
   let excaliburThinkerInterval;
-  // const baseUrl = "https://bruteforce.coolify.machma.app/"; //  base url for api calls
-  const baseUrl = "http://localhost:3000/"; //  base url for api calls
+
 
 
   let isBruteActive = sessionStorage.getItem("isBruteActive") ? JSON.parse(sessionStorage.getItem("isBruteActive")) : false;
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const [encodedPwd, key] = passwordEncoder(password); // encode the password
-    const urlPara = `${baseUrl}bruteforce${bruteType}?pwd=${encodeURIComponent(
+    const urlPara = `${baseUrl}/bruteforce${bruteType}?pwd=${encodeURIComponent(
       encodedPwd
     )}&key=${key}`;
  
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isBruteActive = false;
         sessionStorage.setItem("isBruteActive", isBruteActive);
         result = data;
-        console.log(data)
+
       })
       .catch((error) => {
         console.error("fetch data:", error);
