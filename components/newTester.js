@@ -9,7 +9,6 @@ export const newTester = (password) => {
   };
   zxcvbnts.core.zxcvbnOptions.setOptions(options);
   const result = zxcvbnts.core.zxcvbn(password);
-  console.log(result);
   displayResult(result);
 };
 

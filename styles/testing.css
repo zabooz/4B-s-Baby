@@ -147,11 +147,6 @@ button.btn {
   border-bottom: none !important;
   
 }
-#statsBody{
-  overflow-y: auto;
-  max-height: 180px;
+table th {
+  font-weight: 500;
 }
-td {
-  border-bottom: none;
-}
-

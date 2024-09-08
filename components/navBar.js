@@ -1,4 +1,4 @@
-import { register,login,logoutFunc,deleteUser,fetchUserData } from "../utilities/registerLogIn.js";
+
 
 export const configNav = {
   targetId: "nav",
@@ -150,53 +150,11 @@ const createNavBar = (configNav) => {
           </ul>
         </div>
       </li>
-      <!-- Login Dropdown -->
-      <li class="nav-item" id="loggedOut">
-        <div class="dropdown position-relative">
-          <a  class="nav-link mx-2" type="button" href="#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
-            Login
-          </a>
-          <ul  class="dropdown-menu position-absolute p-2">
-            <div id="choose" class="d-flex">
-              <span id="hoverRegister" class="hoverForm">Register /</span>
-              <span id="hoverLogin" class="hoverForm">Login</span>
-            </div>
-            <form class="mt-3" id="registerForm">
-              <label for="usernameRegister">Username</label>
-              <input type="text" name="usernameRegister" id="usernameRegister" />
-              <label for="passwordRegister">Password</label>
-              <input type="password" name="passwordRegister" id="passwordRegister" />
-              <button type="submit">Register</button>
-            </form>
-            <form class="mt-3 d-none" id="loginForm">
-              <label for="usernameLogin">Username</label>
-              <input type="text" name="usernameLogin" id="usernameLogin" />
-              <label for="passwordLogin">Password</label>
-              <input type="password" name="passwordLogin" id="passwordLogin" />
-              <button type="submit">Login</button>
-            </form>
-          </ul>
-        </div>
-      </li>
-      <!-- Settings Dropdown -->
-      <li class="nav-item" id="loggedIn">
-        <div class="dropdown position-relative">
-          <a  id="loginText"class="nav-link mx-2" type="button" href="#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
-           Logged in
-          </a>
-          <ul id="settingsDropdown" class="dropdown-menu position-absolute p-2 ">
-            <li class="nav-item">
-              <a id="logout" class="nav-link" href="#">Logout</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Settings</a>
-            </li>
-            <li class="nav-item">
-              <a id="deleteAccount" class="nav-link" href="#">Lösch dich</a>
-            </li>
-          </ul>
-        </div>
-      </li>
+      <li class="nav-item mx-2">
+      <img  src="../img/icons/login.svg"   type="button" data-bs-toggle="modal" data-bs-target="#login">
+  
+        </img>
+      </li
     </ul>
   </div>
 </nav>
@@ -209,50 +167,7 @@ const createNavBar = (configNav) => {
 export const createNav = (config) => {
   document.querySelector(config.targetId).innerHTML = createNavBar(config);
 
-  const hoverForm = document.querySelectorAll(".hoverForm");
-  const forms = document.querySelectorAll("form");
 
-
-  // add event listener to hover forms
-
-  hoverForm.forEach((form) => {
-    form.addEventListener("mouseover", () => {
-      if(form.id === "hoverRegister"){
-        forms[1].classList.add("d-none");
-        forms[0].classList.remove("d-none");
-      }else if(form.id === "hoverLogin"){
-        forms[0].classList.add("d-none");
-        forms[1].classList.remove("d-none");
-      }
-    })
-  })
-
-  forms.forEach((form) => {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if(form.id === "registerForm"){
-      const username = document.getElementById("usernameRegister").value;
-      const password = document.getElementById("passwordRegister").value;
-      register(username, password);
-      }else if(form.id === "loginForm"){
-      const username = document.getElementById("usernameLogin").value;
-      const password = document.getElementById("passwordLogin").value;
-      login(username, password);
-
-      }
-    })
-  })  
-
-
-  const logout = document.getElementById("logout");
-  logout.addEventListener("click", logoutFunc);  
-
-  const deleteAccount = document.getElementById("deleteAccount");
-  deleteAccount.addEventListener("click", (e) => {
-
-    deleteUser()
-  
-  });
 
 
 
@@ -261,18 +176,4 @@ export const createNav = (config) => {
 
 
 };
-document.addEventListener('DOMContentLoaded', () => {
-  const token = localStorage.getItem('passwordplayground');
-  const loggedOut = document.getElementById('loggedOut');
-  const loggedIn = document.getElementById('loggedIn');
-  if (token) {
-    loggedOut.classList.add("d-none");
-    loggedIn.classList.remove("d-none");
-    fetchUserData(token,"loginText");
-  }else{
-    loggedOut.classList.remove("d-none");
-    loggedIn.classList.add("d-none");
-  }
-});
-
 
