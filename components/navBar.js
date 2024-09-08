@@ -150,11 +150,25 @@ const createNavBar = (configNav) => {
           </ul>
         </div>
       </li>
-      <li class="nav-item mx-2">
-      <img  src="../img/icons/login.svg"   type="button" data-bs-toggle="modal" data-bs-target="#login">
-  
-        </img>
-      </li
+      <li id="loginItem" class="nav-item mx-2 ">
+      <img  src="../img/icons/login.svg"   type="button" data-bs-toggle="modal" data-bs-target="#login"></img>
+      </li>
+        <li id="profile" class="nav-item mx-2 ">
+        <div class="dropdown position-relative">
+          <a  id="profileName" class="nav-link" type="button" href="#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">Hallo!</a>
+          <ul class="dropdown-menu position-absolute p-2">
+          <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+          </li>
+          <li class="nav-item">
+          <a id="logout" class="nav-link" href="#">Logout</a>
+          </li>
+          <li class="nav-item">
+          <a id="deleteAccount" class="nav-link" href="#">Lösch Dich</a>
+          </li>
+          </ul>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>

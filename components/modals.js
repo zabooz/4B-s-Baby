@@ -21,7 +21,7 @@ const modalLogin = () => {
         
         </div>
 <div id="loginBody" class="modal-body ">
-  <form  type="submit" class="row  g-3">
+  <form id="loginForm"  class="row  g-3">
 
   <div class="col-7">
     <label for="loginUsername" class="form-label">Username</label>
@@ -47,7 +47,7 @@ const modalLogin = () => {
 
 
 <div id="registerBody" class="modal-body d-none">
-  <form class="row  g-3">
+  <form  id="registerForm" class="row  g-3">
 
   <div class="col-12">
     <label for="validation01" class="form-label">Username</label>
@@ -124,70 +124,57 @@ export const createLogin = (id) => {
       })
     })
 
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach((form) => {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if(form.id === "registerForm"){
+        const username = document.getElementById("validationDefault01").value;
+        const password = document.getElementById("validationDefault05").value;
+        const email = document.getElementById("validationDefault02").value;
+        register(username, password,email);
+        }else if(form.id === "loginForm"){
+        const username = document.getElementById("loginUsername").value;
+        const password = document.getElementById("loginPassword").value;
+        login(username, password);
+  
+        }
+      })
+    })  
 
 
 
 
 
+    document.addEventListener('DOMContentLoaded', () => {
+
+    const token = localStorage.getItem('passwordplayground');
+    const loggedOut = document.getElementById('loginItem');
+    const loggedIn = document.getElementById('profile'); 
+    if (token) {
+      loggedOut.classList.add("d-none");
+      loggedIn.classList.remove("d-none");
+      fetchUserData(token,"profileName");
+    }else{
+      loggedOut.classList.remove("d-none");
+      loggedIn.classList.add("d-none");
+    }
+
+});
+
+    const logout = document.getElementById("logout");
+  logout.addEventListener("click", logoutFunc);  
+
+  const deleteAccount = document.getElementById("deleteAccount");
+  deleteAccount.addEventListener("click", (e) => {
+
+    deleteUser()
+
+
+
+
+
+})
 
 }
-
-  // hoverForm.forEach((form) => {
-  //   form.addEventListener("mouseover", () => {
-  //     if(form.id === "hoverRegister"){
-  //       forms[1].classList.add("d-none");
-  //       forms[0].classList.remove("d-none");
-  //     }else if(form.id === "hoverLogin"){
-  //       forms[0].classList.add("d-none");
-  //       forms[1].classList.remove("d-none");
-  //     }
-  //   })
-  // })
-
-  // forms.forEach((form) => {
-  //   form.addEventListener("submit", (e) => {
-  //     e.preventDefault();
-  //     if(form.id === "registerForm"){
-  //     const username = document.getElementById("usernameRegister").value;
-  //     const password = document.getElementById("passwordRegister").value;
-  //     register(username, password);
-  //     }else if(form.id === "loginForm"){
-  //     const username = document.getElementById("usernameLogin").value;
-  //     const password = document.getElementById("passwordLogin").value;
-  //     login(username, password);
-
-  //     }
-  //   })
-  // })  
-// document.addEventListener('DOMContentLoaded', () => {
-//   const token = localStorage.getItem('passwordplayground');
-//   const loggedOut = document.getElementById('loggedOut');
-//   const loggedIn = document.getElementById('loggedIn');
-//   if (token) {
-//     loggedOut.classList.add("d-none");
-//     loggedIn.classList.remove("d-none");
-//     fetchUserData(token,"loginText");
-//   }else{
-//     loggedOut.classList.remove("d-none");
-//     loggedIn.classList.add("d-none");
-//   }
-// });
-
-  // const hoverForm = document.querySelectorAll(".hoverForm");
-  // const forms = document.querySelectorAll("form");
-
-
-  // add event listener to hover forms
-
-
-
-
-  // const logout = document.getElementById("logout");
-  // logout.addEventListener("click", logoutFunc);  
-
-  // const deleteAccount = document.getElementById("deleteAccount");
-  // deleteAccount.addEventListener("click", (e) => {
-
-  //   deleteUser()
-  
-  // });

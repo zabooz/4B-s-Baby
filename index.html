@@ -224,12 +224,12 @@
       import { clipBoard } from "./components/clipBoard.js";
       import {createFooter,configFooter,iconsIndex} from "./components/footer.js";
       import {createLogin} from "./components/modals.js";
-      createLogin("modal");
+      createNav(configNavIndex);
       createFooter(configFooter,iconsIndex);
       clipBoard(".clipBoard");
       createAssistant("main");
       heroText();
-      createNav(configNavIndex);
+      createLogin("modal");
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
