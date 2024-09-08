@@ -143,10 +143,15 @@ button.btn {
 
 #tableWrapper{
 
-  height: 180px;
-  overflow-y: auto;
 
-
+  border-bottom: none !important;
+  
 }
-
+#statsBody{
+  overflow-y: auto;
+  max-height: 180px;
+}
+td {
+  border-bottom: none;
+}
 
