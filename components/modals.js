@@ -1,11 +1,14 @@
-import { register,login,logoutFunc,deleteUser,fetchUserData } from "../utilities/registerLogIn.js";
-
+import {
+  register,
+  login,
+  logoutFunc,
+  deleteUser,
+  fetchUserData,
+  addDynamicValidation
+} from "../utilities/registerLogIn.js";
 
 const modalLogin = () => {
-
-
-
-    return `
+  return `
 <div class="modal fade" id="login" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -96,87 +99,67 @@ const modalLogin = () => {
 
     </div>
   </div>
-</div>`
-
-
-
-
-}
+</div>`;
+};
 export const createLogin = (id) => {
-    
-    document.getElementById(id).innerHTML += modalLogin();
+  document.getElementById(id).innerHTML += modalLogin();
 
-    const titles = document.querySelectorAll(".modal-title");
+  const titles = document.querySelectorAll(".modal-title");
 
-    titles.forEach((title) => {
-      title.addEventListener("click", () => {
-        if(title.id === "loginH1"){
-            title.classList.remove("text-muted");
-            document.getElementById("registerH1").classList.add("text-muted");
-            document.getElementById("loginBody").classList.remove("d-none");
-            document.getElementById("registerBody").classList.add("d-none");
-        }else if(title.id === "registerH1"){
-          title.classList.remove("text-muted");
-          document.getElementById("loginH1").classList.add("text-muted");
-          document.getElementById("loginBody").classList.add("d-none");
-          document.getElementById("registerBody").classList.remove("d-none");
-        }
-      })
-    })
+  titles.forEach((title) => {
+    title.addEventListener("click", () => {
+      if (title.id === "loginH1") {
+        title.classList.remove("text-muted");
+        document.getElementById("registerH1").classList.add("text-muted");
+        document.getElementById("loginBody").classList.remove("d-none");
+        document.getElementById("registerBody").classList.add("d-none");
+      } else if (title.id === "registerH1") {
+        title.classList.remove("text-muted");
+        document.getElementById("loginH1").classList.add("text-muted");
+        document.getElementById("loginBody").classList.add("d-none");
+        document.getElementById("registerBody").classList.remove("d-none");
+      }
+    });
+  });
 
-    const forms = document.querySelectorAll("form");
+  const form = document.getElementById("loginForm");
 
-    forms.forEach((form) => {
-      form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+    login(username, password);
+  });
 
-
-        e.preventDefault();
-        if(form.id === "registerForm"){
-        const username = document.getElementById("validationDefault01").value;
-        const password = document.getElementById("validationDefault05").value;
-        const email = document.getElementById("validationDefault02").value;
-        register(username, password,email);
-        }else if(form.id === "loginForm"){
-        const username = document.getElementById("loginUsername").value;
-        const password = document.getElementById("loginPassword").value;
-        login(username, password);
-  
-        }
-      })
-    })  
-
-
-
-
-
-    document.addEventListener('DOMContentLoaded', () => {
-
-    const token = localStorage.getItem('passwordplayground');
-    const loggedOut = document.getElementById('loginItem');
-    const loggedIn = document.getElementById('profile'); 
+  document.addEventListener("DOMContentLoaded", () => {
+    const token = localStorage.getItem("passwordplayground");
+    const loggedOut = document.getElementById("loginItem");
+    const loggedIn = document.getElementById("profile");
     if (token) {
       loggedOut.classList.add("d-none");
       loggedIn.classList.remove("d-none");
-      fetchUserData(token,"profileName");
-    }else{
+      fetchUserData(token, "profileName");
+    } else {
       loggedOut.classList.remove("d-none");
       loggedIn.classList.add("d-none");
     }
+  });
 
-});
-
-    const logout = document.getElementById("logout");
-  logout.addEventListener("click", logoutFunc);  
+  const logout = document.getElementById("logout");
+  logout.addEventListener("click", logoutFunc);
 
   const deleteAccount = document.getElementById("deleteAccount");
   deleteAccount.addEventListener("click", (e) => {
+    deleteUser();
+  });
 
-    deleteUser()
+  // Rufe dynamische Validierung auf, wenn das Modal geladen wird
 
+  const email = document.getElementById("validationDefault02");
+  const confirmEmail = document.getElementById("validationDefault03");
+  const password = document.getElementById("validationDefault05");
+  const confirmPassword = document.getElementById("validationDefault04");
+  const registerForm = document.getElementById("registerForm");
 
-
-
-
-})
-
-}
+  addDynamicValidation(email, confirmEmail, password, confirmPassword,registerForm);
+};
