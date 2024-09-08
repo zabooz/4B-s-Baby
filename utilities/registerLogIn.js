@@ -6,7 +6,7 @@ const baseUrl = 'https://bruteforce.coolify.machma.app';
 export const register = async (username,password,email) => {
   console.log(234)
   try {
-    const response = await fetch(`${baseUrl}/register`, { // Lokale Server-URL
+    const response = await fetch(`${baseUrl}/register`, { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ export const register = async (username,password,email) => {
 }  
 
 export const login = (username, password) => {
-  fetch(`${baseUrl}/login`, { // Lokale Server-URL
+  fetch(`${baseUrl}/login`, { 
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

@@ -10,7 +10,7 @@ const modalLogin = () => {
   <div class="modal-dialog">
     <div class="modal-content">
     <button type="button" class="btn-close ms-auto p-2" data-bs-dismiss="modal" aria-label="Close"></button>
-    <div id="logReg" class="d-flex w-100  border-bottom">
+    <div id="logReg" class="d-flex justify-content-evenly border-bottom">
       <div class="modal-header border-0 w-25">
         <h1   class="modal-title fs-5" id="loginH1">Login</h1>
         </div>
@@ -21,7 +21,7 @@ const modalLogin = () => {
         
         </div>
 <div id="loginBody" class="modal-body ">
-  <form id="loginForm"  class="row  g-3">
+  <form id="loginForm"  class="row  g-3 d-flex flex-column align-items-center">
 
   <div class="col-7">
     <label for="loginUsername" class="form-label">Username</label>
@@ -37,8 +37,8 @@ const modalLogin = () => {
     </div>
   </div>
 
-  <div class="col-12">
-    <button class="btn btn-primary"  type="submit">Login</button>
+  <div class="col-12 d-flex justify-content-center">
+    <button class="btn btn-primary w-50"  type="submit">Login</button>
   </div>
 </form>
 </div>
@@ -47,9 +47,9 @@ const modalLogin = () => {
 
 
 <div id="registerBody" class="modal-body d-none">
-  <form  id="registerForm" class="row  g-3">
+  <form  id="registerForm" class="row  g-3 d-flex align-items-center">
 
-  <div class="col-12">
+  <div class="col-6 me-3">
     <label for="validation01" class="form-label">Username</label>
     <div class="input-group">
 
@@ -88,8 +88,8 @@ const modalLogin = () => {
       </label>
     </div>
   </div>
-  <div class="col-12">
-    <button class="btn btn-primary"  type="submit">Register</button>
+  <div class="col-12 d-flex justify-content-center">
+    <button class="btn btn-primary w-50"  type="submit">Register</button>
   </div>
 </form>
       </div>
@@ -128,6 +128,8 @@ export const createLogin = (id) => {
 
     forms.forEach((form) => {
       form.addEventListener("submit", (e) => {
+
+
         e.preventDefault();
         if(form.id === "registerForm"){
         const username = document.getElementById("validationDefault01").value;
