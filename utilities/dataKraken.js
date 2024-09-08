@@ -2,6 +2,7 @@ const baseUrl = 'https://bruteforce.coolify.machma.app';
 
 
 export async function dataKraken(data) {
+
     try { 
       const response = await fetch(`${baseUrl}/dataKraken`, { // Backend-Server URL
         method: 'POST',

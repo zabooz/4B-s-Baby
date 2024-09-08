@@ -1,17 +1,17 @@
 
 const baseUrl = 'https://bruteforce.coolify.machma.app';
+// const baseUrl = "http://localhost:3000";
 
 
-
-export const register = async (username,password) => {
-  
+export const register = async (username,password,email) => {
+  console.log(234)
   try {
-    const response = await fetch(`${baseUrl}/register`, { // Lokale Server-URL
+    const response = await fetch(`${baseUrl}/register`, { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ username, password,email})
     });
   
     const result = await response.json();
@@ -29,7 +29,7 @@ export const register = async (username,password) => {
 }  
 
 export const login = (username, password) => {
-  fetch(`${baseUrl}/login`, { // Lokale Server-URL
+  fetch(`${baseUrl}/login`, { 
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ export const login = (username, password) => {
         throw new Error(data.message || 'Login fehlgeschlagen');
       });
     }
-    return response.json(); // Erfolgreiche Antwort in JSON umwandeln
+    return response.json(); 
   })
   .then(data => {
     if (data.token) {
@@ -68,8 +68,11 @@ export function fetchUserData(token,id) {
   })
   .then(response => response.json())
   .then(data => {
-    
-    document.getElementById(id).innerHTML = `<span>Eingeloggt als</span><span>  ${data.username}</span>`;
+
+    const span = document.createElement("span")
+    span.textContent = data.username
+    document.getElementById("profileName").appendChild(span)
+
   })
   .catch(error => {
     console.error('Fehler beim Abrufen der Benutzerdaten:', error);

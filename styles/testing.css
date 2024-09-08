@@ -85,6 +85,7 @@ button font {
   max-width: 30rem;
   height: 100%;
   display: flex;
+  padding-bottom: 0!important;
   color: #212529;
   flex-direction: column;
   background-color: #f1f5f5;
@@ -128,6 +129,10 @@ button.btn {
   background: #ced4da;
 }
 
+.card-body a{
+  color: #e93232;
+}
+
 @media(max-width: 500px){
   #bruteInput{
     width: 100% !important;
@@ -138,10 +143,10 @@ button.btn {
 
 #tableWrapper{
 
-  height: 180px;
-  overflow-y: auto;
 
-
+  border-bottom: none !important;
+  
 }
-
-
+table th {
+  font-weight: 500;
+}
