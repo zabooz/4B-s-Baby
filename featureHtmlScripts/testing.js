@@ -204,7 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
         stopBrute.style.backgroundColor = "#ced4da"
         bruteResults.classList.remove("invisible");
         dataKraken({ password})
-        bruteResults.click()
       });
   };
 
@@ -215,6 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateAttempts(result) {
     const dataArr = result;
     const tBody = document.querySelector("#statsBody");
+    const displayBrute  = document.getElementById("displayBrute");
     const tr = document.createElement("tr");
 
     const stars = "******";
@@ -256,9 +256,15 @@ document.addEventListener("DOMContentLoaded", () => {
       tr.appendChild(td);
     });
 
+    
     let rows = Array.from(tBody.getElementsByTagName("tr"));
     tBody.innerHTML = "";
     tBody.append(tr, ...rows);
+
+    const displayTr = tBody.firstChild.cloneNode(true)
+    displayBrute.innerHTML =""
+    displayBrute.append(displayTr)
+
   }
 
   excaliburBtn.addEventListener("click", async () => {
