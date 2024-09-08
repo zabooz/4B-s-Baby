@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bruteForceInput = document.getElementById("bruteForceInput");
   const mojoIcon = document.getElementById("basic-addon1");
   const why = document.getElementById("why");
-
+  const bruteResults = document.getElementById("bruteResults");
 
 
   
@@ -202,7 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
         startBrute.disabled = true;
         startBrute.innerHTML = "Nochmal?";
         stopBrute.style.backgroundColor = "#ced4da"
-        dataKraken({password})
+        bruteResults.classList.remove("invisible");
+        dataKraken({ password})
       });
   };
 
@@ -318,11 +319,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       
       // Bereinige Intervalle und setze den Button zurück
-      why.classList.remove("d-none");
+      why.classList.remove("invsible");
       clearInterval(barAni);
       clearInterval(excaliburThinkerInterval);
       excaliburBtn.disabled = true;
       excaliburBtn.innerHTML = "Nochmal?";
+      console.log(password)
       dataKraken({ password})
     }
 })   
