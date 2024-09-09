@@ -220,9 +220,10 @@
     <footer>
  
     </footer>
+    <div id="modal"></div>
     <div class="clipBoard"></div>
     <script type="module">
-      import { quote } from "../components/quotes.js";
+      import {createLogin} from "../components/registerModal.js";
       import { clipBoard } from "../components/clipBoard.js";
       import { createNav, configNav } from "../components/navBar.js";
       import { createAssistant } from "../components/aiAssistant.js";
@@ -233,6 +234,7 @@
       createAssistant("main");
       createNav(configNav);
       clipBoard(".clipBoard");
+      createLogin("modal");
     </script>
     <script src="../featureHtmlScripts/userGen.js" type="module"></script>
     <script src="../featureHtmlScripts/quiz.js"></script>

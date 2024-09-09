@@ -455,13 +455,14 @@
         </div>
       </div>
     </div>
+    <div id="modal"></div>
   </body>
 
   <!-- ================= Scripts  ================= -->
 
   <script type="module">
     import { loadOffCanvas } from "../components/offCanvas.js";
-
+    import {createLogin} from "../components/registerModal.js";
     import { clipBoard } from "../components/clipBoard.js";
     import { createNav, configNav } from "../components/navBar.js";
     import { createAssistant } from "../components/aiAssistant.js";
@@ -481,6 +482,7 @@
     loadOffCanvas("header", "simple", "../data/text.json");
     clipBoard(".clipBoard");
     createNav(configNav);
+    createLogin("modal");
   </script>
   <script src="../featureHtmlScripts/testing.js" type="module"></script>
   <script type="text/javascript">
