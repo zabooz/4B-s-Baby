@@ -9,6 +9,8 @@ const userGenBtn = document.getElementById("userGeneratorBtn");
 const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 const userAiToggle = document.getElementById("germanAiToggle");
 const deleteTableBtn = document.getElementById("deleteTableBtn");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
 
 deleteTableBtn.addEventListener("click", function () {
   for (let i = 0; i < 4; i++) {
@@ -188,6 +190,9 @@ quizBtn.addEventListener("click", function (e) {
 
   captionH.innerText = "Dein neuer Username";
   captionP.innerText = testResult;
+
+  // Hide prev arrow
+  prevBtn.style.display = "none";
   // Hide the submit button
   quizBtn.style.display = "none";
 
@@ -222,7 +227,6 @@ function resetQuiz(captionH, captionP) {
 
   // Hide the "prev" button in the carousel and enable "next" button
   document.getElementById("prevBtn").style.display = "none";
-  document.getElementById("nextBtn").style.display = "";
 
   // Show the submit button again
   quizBtn.style.display = "inline-block";
@@ -236,18 +240,42 @@ function resetQuiz(captionH, captionP) {
 
 const carousel = document.querySelectorAll("#prevBtn,#nextBtn");
 
+const enableNextButton = () => {
+  const activeSlide = document.querySelector(".carousel-item.active");
+  const radioButtons = activeSlide.querySelectorAll('input[type="radio"]');
+
+  radioButtons.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      nextBtn.disabled = false; // Enable the "Next" button when a radio button is selected
+      nextBtn.style.display = "block";
+    });
+  });
+};
+
+enableNextButton();
+
 const arrowBtn = () => {
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const active = document.querySelector(".active");
-  if (active.getAttribute("aria-label") === "Slide 2") {
+  const active = document.querySelector(".carousel-item.active");
+  const slideIndex = [...active.parentElement.children].indexOf(active) + 1;
+
+  if (slideIndex === 2) {
     prevBtn.style.display = "block";
-  } else if (active.getAttribute("aria-label") === "Slide 6") {
+  } else if (slideIndex === 1) {
+    prevBtn.style.display = "none";
+  } else if (slideIndex === 6) {
     nextBtn.style.display = "none";
   } else {
     prevBtn.style.display = "block";
-    nextBtn.style.display = "block";
   }
+
+  // Disable the "Next" button until a radio button is selected
+  nextBtn.disabled = true;
+  nextBtn.style.display = "none";
+  enableNextButton();
 };
 
-carousel.forEach((btn) => btn.addEventListener("click", arrowBtn));
+[prevBtn, nextBtn].forEach((btn) => btn.addEventListener("click", arrowBtn));
+
+document
+  .getElementById("questionCarousel")
+  .addEventListener("slid.bs.carousel", arrowBtn);
