@@ -329,11 +329,11 @@
     <div class="clipBoard"></div>
     <div class="assistant"></div>
     <footer></footer>
-
+    <div id="modal"></div>
     <!--======= Scripts =========== -->
 
     <script type="module">
-
+      import {createLogin} from "../components/registerModal.js";
       import { loadOffCanvas } from "../components/offCanvas.js";
       import { clipBoard } from "../components/clipBoard.js";
       import { createNav, configNav } from "../components/navBar.js";
@@ -349,7 +349,7 @@
         iconsFeatures,
       } from "../components/footer.js";
       createFooter(configFooter, iconsFeatures);
-
+      createLogin("modal");
       createQuickNav("main", configQuickNavFeature);
       createAssistant("main");
       loadOffCanvas("header", "leetSpeak", "../data/text.json");
