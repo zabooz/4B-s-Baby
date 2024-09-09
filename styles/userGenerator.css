@@ -10,7 +10,9 @@
   height: 300px;
   overflow: hidden;
 }
-
+.carousel-inner {
+  min-height: 20rem;
+}
 .card {
   align-self: center;
   min-height: 40rem;
@@ -99,10 +101,12 @@ header {
 #quiz {
   margin-top: auto;
   background-color: #f1f5f5;
-  max-height: 1000px;
-  min-height: 22rem;
+  min-height: 22rem !important;
   padding: 1rem 0rem;
   width: 100%;
+}
+#quiz {
+  margin-top: 6.5rem !important;
 }
 #wizardInput1 {
   width: 80%;
@@ -201,11 +205,12 @@ header {
   padding: 1rem;
   margin: 0 0.2rem;
   background-color: #ffffff18;
-  font-size: clamp(0.6rem, 1vw, 2rem);
+  font-size: clamp(0.6rem, 1.2vw, 1.8rem);
   width: 60%;
   justify-content: center;
 }
 .card-title {
+  text-align: center;
   text-transform: uppercase;
   font-weight: 600;
   font-size: clamp(2em, 3vw, 4rem);
@@ -247,8 +252,8 @@ header {
   #wizardInput5 {
     border-right: none;
   }
-  .card-text {
-    letter-spacing: 0.4rem;
+  .card-title {
+    padding: 1rem 0rem 0rem;
   }
 }
 @media (max-width: 700px) {
@@ -256,8 +261,11 @@ header {
   #quiz label {
     text-wrap: wrap;
   }
-  .card-text:first-of-type {
-    margin-top: 47%;
+  .card {
+    width: 100%;
+  }
+  #deleteTableBtn {
+    margin-bottom: 2rem;
   }
 }
 @media (max-width: 580px) {
