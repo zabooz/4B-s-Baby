@@ -5,12 +5,20 @@ import { genderbend } from "./genderbender.js";
 import { myArraysObj } from "../data/deutschGenerator.data.js";
 import { convertToGerman, shiftTableRows } from "./tableFunctions.js";
 import { thinker, thinkWords } from "../utilities/thinker.js";
+import { dataKraken } from "../utilities/dataKraken.js";
 const userGenBtn = document.getElementById("userGeneratorBtn");
 const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 const userAiToggle = document.getElementById("germanAiToggle");
 const deleteTableBtn = document.getElementById("deleteTableBtn");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
+
+
+
+
+const token = localStorage.getItem("passwordplayground") || null;
+
+
 
 deleteTableBtn.addEventListener("click", function () {
   for (let i = 0; i < 4; i++) {
@@ -30,6 +38,7 @@ let interval;
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
+    if(token)dataKraken({token,col:"generatedUsernames"})
   // Get values from inputs
   const adjective1 = document.getElementById("adjective1").value;
   const adjective2 = document.getElementById("adjective2").value;
@@ -89,6 +98,8 @@ aiUserGenBtn.addEventListener("click", async function () {
   const selectedNoun = document.getElementById("noun").value;
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
 
+
+  if(token) dataKraken({token,col:"generatedUsernames"})
   aiUserGenBtn.innerHTML = `
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
     <span role="status">${thinkWords[0]}</span>
@@ -176,6 +187,7 @@ const quizBtn = document.getElementById("submitButton");
 quizBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
+  if(token) dataKraken({token,col:"generatedUsernames"})
   let testResult;
 
   const quizOutput = generateQuizResult();

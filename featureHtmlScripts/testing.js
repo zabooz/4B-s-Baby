@@ -5,8 +5,13 @@ import { thinkWords, thinker} from "../utilities/thinker.js";
 import { newTester } from "../components/newTester.js";
 import { dataKraken } from "../utilities/dataKraken.js";
 
-const baseUrl = "https://bruteforce.coolify.machma.app"
-// const baseUrl = "http://localhost:3000";
+// const baseUrl = "https://bruteforce.coolify.machma.app"
+const baseUrl = "http://localhost:3000";
+
+const token = localStorage.getItem("passwordplayground") || null;
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   
   
@@ -205,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
         startBrute.innerHTML = "Nochmal?";
         stopBrute.style.backgroundColor = "#ced4da"
         bruteResults.classList.remove("invisible");
-        dataKraken({ password})
+        if(token) dataKraken({ token,col:"testedPasswords"})
       });
   };
 
@@ -367,7 +372,10 @@ document.addEventListener("DOMContentLoaded", () => {
       excaliburBtn.disabled = true;
       excaliburBtn.innerHTML = "Nochmal?";
       
-      dataKraken({ password})
+
+      
+
+      if(token) dataKraken({ token,col:"testedPasswords"})
     }
 })   
 

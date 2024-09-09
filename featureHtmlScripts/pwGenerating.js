@@ -30,7 +30,7 @@ let runeTranslatorArray =
   JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
 let storedGlyphArray =
   JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; // variable to save GlyphPwd
-
+const token = localStorage.getItem("passwordplayground") || null;
 
 
 
@@ -117,6 +117,7 @@ picMagicBtn.addEventListener("click", async (e) => {
       "statsBodyPicGen"
     );
     picMagicBtn.disabled = true;
+    if(token) dataKraken({token,col:"generatedPasswords"})
   } catch (error) {
     console.error(error);
   }
@@ -142,7 +143,7 @@ leetBtn.addEventListener("click", function () {
 
   runeTranslatorArray = []
 
-  dataKraken({password: leetInput})
+  if(token) dataKraken({token,col:"generatedPasswords"})
 
   for (let i = 0; i < newPasswordArray.length; i++) {
     const pwId = `runeTranslator${i}`;
@@ -206,6 +207,7 @@ rdmPwdBtn.addEventListener("click", function () {
     app: app,
   };
 
+  if(token) dataKraken({token,col:"generatedPasswords"})
   storedGlyphArray.push(data);
   storeAndSwitch(
     glyphRowsArr,
