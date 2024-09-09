@@ -245,6 +245,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    const mojoIconDisplay = document.createElement("i");
+    mojoIconDisplay.className = "bi bi-eye";
+
+    mojoIconDisplay.addEventListener("click", () => {
+      const target = document.getElementById(`displayResult`);
+      if (target.textContent === stars) {
+        target.textContent = dataArr[0];
+        mojoIconDisplay.className = "bi bi-eye-slash mb-1";
+        target.append(mojoIconDisplay);
+      } else {
+        target.textContent = stars;
+        mojoIconDisplay.className = "bi bi-eye mb-1";
+        target.append(mojoIconDisplay);
+      }
+    });
+
+
     dataArr.forEach((item, index) => {
       const td = document.createElement("td");
       
@@ -264,10 +281,26 @@ document.addEventListener("DOMContentLoaded", () => {
     tBody.append(tr, ...rows);
 
     const displayTr = tBody.firstChild.cloneNode(true)
+    displayTr.firstChild.setAttribute("id","displayResult")
+    displayTr.firstChild.innerHTML = ""
+    displayTr.firstChild.textContent = stars
+    displayTr.firstChild.append(mojoIconDisplay)
+    console.log(displayTr)
     displayBrute.innerHTML =""
     displayBrute.append(displayTr)
 
   }
+
+// ====================================================0
+
+//                  EXCALIBUR 
+
+
+// ===================================================0
+
+
+
+
 
   excaliburBtn.addEventListener("click", async () => {
     excaliburBtn.innerHTML = `   
