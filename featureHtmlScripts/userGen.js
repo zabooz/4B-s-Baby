@@ -178,18 +178,17 @@ quizBtn.addEventListener("click", function (e) {
 
   let testResult;
 
-  for (let i = 0; i < 5; i++) {
-    const quizOutput = generateQuizResult();
-    const newQuizOutput = convertToGerman(quizOutput, myArraysObj);
-    console.log(newQuizOutput);
-    testResult = newQuizOutput[0];
-    // updateAttempts(newQuizOutput, "statsBody1");
-  }
+  const quizOutput = generateQuizResult();
+  const newQuizOutput = convertToGerman(quizOutput, myArraysObj);
+  console.log(newQuizOutput);
+  testResult = newQuizOutput[0];
+
   const captionH = document.getElementById("captionH");
   const captionP = document.getElementById("captionP");
 
   captionH.innerText = "Dein neuer Username";
   captionP.innerText = testResult;
+  captionP.append(copyButton("captionP"));
 
   // Hide prev arrow
   prevBtn.style.display = "none";
