@@ -2,18 +2,7 @@ import { storedClippy, copyButton } from "../scripts/copybutton.js";
 
 
 const createClipBoard = () => {
-  let pw = "";
-  let user = "";
-  for (let i = 0; i < storedClippy.length; i++) {
-    const clip = `${storedClippy[i].type}` + i;
-    const value = storedClippy[i].value;
-    console.log(storedClippy);
-    if (storedClippy[i].type === "password") {
-      pw += `<li id="${clip}" class=" w-75 d-flex my-2 justify-content-between" ><span>${value}</span></li>`;
-    } else {
-      user += `<li id="${clip}" class=" w-75 my-2 d-flex justify-content-between" ><span>${value}</span></li>`;
-    }
-  }
+
 
   return `
 <div class="offcanvas offcanvas-start border-0  " tabindex="-1" id="clippy" aria-labelledby="offcanvasExampleLabel">
@@ -34,10 +23,10 @@ const createClipBoard = () => {
        </div>
       </div>
       <ol id="passwordList" class="list-group list-group-flush  d-flex flex-column align-items-center mt-5" data-type="list" data-list="password">
-        ${pw}
+        
       </ol>
       <ol id="userList" class="list-group list-group-flush d-flex flex-column align-items-center mt-5 d-none" data-type="list" data-list="username" >
-        ${user}
+       
       </ol>
       
         <button class="btn  btn-primary btn-lg border-0 w-50 mx-auto mb-5 mt-auto" id="deleteAll">Alles löschen</button>
@@ -48,6 +37,7 @@ const createClipBoard = () => {
 export const clipBoard = (id) => {
   const target = document.querySelector(id);
   target.innerHTML = createClipBoard();
+  refresh()
 
   for (let i = 0; i < storedClippy.length; i++) {
     const elementId = storedClippy[i].type + i;
@@ -61,7 +51,6 @@ export const clipBoard = (id) => {
     btnBox.classList.add("btnBox");
     btnBox.append(copyBtn, delBtn);
     clip.append(btnBox);
-
   }
 
   const deleteAllBtn = document.getElementById("deleteAll");
@@ -168,7 +157,6 @@ export const refresh = () => {
     for (let i = 0; i < storedClippy.length; i++) {
       const clip = `${storedClippy[i].type}` + i;
       const value = storedClippy[i].value;
-      console.log(storedClippy);
       if (storedClippy[i].type === "password") {
         pw += `<li id="${clip}" class=" w-75 d-flex my-2 justify-content-between" ><span>${value}</span></li>`;
       } else {
