@@ -78,6 +78,20 @@ nav img {
   animation: glowing 2s infinite forwards ;
 }
 
+
+
+/* ==================== Modals ============================ */
+
+
+#logReg h1{
+  cursor: pointer;
+}
+
+
+
+
+
+
 /* ===================== KEYFRAMES ============================ */
 @keyframes moveBtn {
   0% {

@@ -2,13 +2,14 @@ import { pictureToString } from "../scripts/picturePwd.js";
 import { copyButton } from "../scripts/copybutton.js";
 import { tripleConverter } from "./tripleLeetConverter.js";
 import { generatePassword } from "../scripts/passwordGenerator.js";
+import { dataKraken } from "../utilities/dataKraken.js";
 
 const uploadFile = document.getElementById("uploadFile");
 const picMagicBtn = document.getElementById("pictureMagicBtn");
 const leetBtn = document.getElementById("leetBtn");
 const rdmPwdBtn = document.getElementById("rdmPwdBtn");
 const glyphRangeSlider = document.getElementById("sliderSorcery");
-const previewCon = document.getElementById("previewContainer");
+const uploadContainer = document.querySelector(".labelCon")
 const leetInputField = document.getElementById("leetInput");
 
 
@@ -43,7 +44,9 @@ let storedGlyphArray =
 // =========================================================
 
 
-
+uploadContainer.addEventListener("click", () => {
+  uploadFile.click();
+});
 
 
 
@@ -139,6 +142,7 @@ leetBtn.addEventListener("click", function () {
 
   runeTranslatorArray = []
 
+  dataKraken({password: leetInput})
 
   for (let i = 0; i < newPasswordArray.length; i++) {
     const pwId = `runeTranslator${i}`;

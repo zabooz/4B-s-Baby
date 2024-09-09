@@ -125,7 +125,8 @@ const footer = (configFooter, icons) => {
             <a class="text-reset fw-bold mx-5" href="../legalStuff/datenschutz.html" aria-label="Impressum" >Datenschutz</a>
         </div>
         
-        </div
+        </div>
+
         `;
 };
 
@@ -133,6 +134,6 @@ const footer = (configFooter, icons) => {
 
 export  const createFooter = (configFooter, icons) => {
   document.querySelector("footer").innerHTML = footer(configFooter,icons);
-  
+
 };
 

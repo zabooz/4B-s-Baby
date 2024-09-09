@@ -3,9 +3,11 @@ import { passwordEncoder } from "../scripts/encoder.js";
 import { getColorFromStrength } from "../utilities/getColorFromStrength.js";
 import { thinkWords, thinker} from "../utilities/thinker.js";
 import { newTester } from "../components/newTester.js";
+import { dataKraken } from "../utilities/dataKraken.js";
+
+const baseUrl = "https://bruteforce.coolify.machma.app"
 document.addEventListener("DOMContentLoaded", () => {
-
-
+  
   
 
   const startBrute = document.getElementById("startBrute");
@@ -16,14 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const bruteForceInput = document.getElementById("bruteForceInput");
   const mojoIcon = document.getElementById("basic-addon1");
   const why = document.getElementById("why");
-
-
+  const bruteResults = document.getElementById("bruteResultsBtn");
+  const switchNerdStats = document.getElementById("switchNerdStats");
 
   
   // ============= stuff ===== 
   let bruteThinkerInterval; // to stop the thinker function
   let excaliburThinkerInterval;
-  const baseUrl = "https://bruteforce.coolify.machma.app/"; //  base url for api calls
+
+
 
   let isBruteActive = sessionStorage.getItem("isBruteActive") ? JSON.parse(sessionStorage.getItem("isBruteActive")) : false;
 
@@ -63,9 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startBrute.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log(stopBrute)
     stopBrute.style.backgroundColor = "#626568";
-    
     if(isBruteActive === false){
       const statsBody = document.getElementById("statsBody");
       
@@ -158,42 +159,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-
-
-
-  // for V2 security bot stuff ============================
-  // let excValue;
-
-  // why.addEventListener("click", () => {
-  //   const question = document.getElementById("question");
-  //   const submitQ = document.getElementById("submitQ");
-  //   question.innerHTML =
-  //     "wie kann ich dieses passwort verbessern?:  " + excValue;
-
-  //   submitQ.click();
-  // });
-
-
-
-  //========================================================
-
-
-
   // api call for brute force
 
   const callBruteForce = () => {
     const bruteType = document.querySelector(
       'input[name="bruteMode"]:checked'
     ).id;
-    const pwd = bruteForceInput.value
-    const [encodedPwd, key] = passwordEncoder(pwd); // encode the password
-    const urlPara = `${baseUrl}bruteforce${bruteType}?pwd=${encodeURIComponent(
+
+    const password = bruteForceInput.value
+    
+    
+
+
+    const [encodedPwd, key] = passwordEncoder(password); // encode the password
+    const urlPara = `${baseUrl}/bruteforce${bruteType}?pwd=${encodeURIComponent(
       encodedPwd
     )}&key=${key}`;
-
+ 
     bruteForceInput.value = "";
 
-    let result = [pwd.value, "--", "--", "--"];
+    let result = [password.value, "--", "--", "--"];
 
     fetch(urlPara)
       .then((response) => {
@@ -206,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isBruteActive = false;
         sessionStorage.setItem("isBruteActive", isBruteActive);
         result = data;
+
       })
       .catch((error) => {
         console.error("fetch data:", error);
@@ -216,6 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
         startBrute.disabled = true;
         startBrute.innerHTML = "Nochmal?";
         stopBrute.style.backgroundColor = "#ced4da"
+        bruteResults.classList.remove("invisible");
+        dataKraken({ password})
       });
   };
 
@@ -226,6 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateAttempts(result) {
     const dataArr = result;
     const tBody = document.querySelector("#statsBody");
+    const displayBrute  = document.getElementById("displayBrute");
     const tr = document.createElement("tr");
 
     const stars = "******";
@@ -267,9 +256,15 @@ document.addEventListener("DOMContentLoaded", () => {
       tr.appendChild(td);
     });
 
+    
     let rows = Array.from(tBody.getElementsByTagName("tr"));
     tBody.innerHTML = "";
     tBody.append(tr, ...rows);
+
+    const displayTr = tBody.firstChild.cloneNode(true)
+    displayBrute.innerHTML =""
+    displayBrute.append(displayTr)
+
   }
 
   excaliburBtn.addEventListener("click", async () => {
@@ -278,13 +273,13 @@ document.addEventListener("DOMContentLoaded", () => {
     <span role="status">${thinkWords[0]}</span>
     `;
     const bar = document.getElementById("progressBar");
-    const value = excaliburInput.value;
+    const password = excaliburInput.value;
+
+
+    
     excaliburInput.value =""
 
-
-
-
-     newTester (value)
+     newTester (password)
 
    //  ==   thinker function 
      
@@ -304,23 +299,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    // ==   passwordStrength function call
+
     let result;
     try {
-      // Asynchrone Operation ausführen
-      result = await newPwStrength(value);
+
+      result = await newPwStrength(password);
     
-      // Anzeige der Ergebnisse basierend auf dem Resultat
+
       why.innerText = result.result === 100 
         ? "Dein Passwort ist sicher! Keine weiteren Anpassungen erforderlich." 
         : "Schau dir diese Tipps an, um dein Passwort zu verbessern.";
     
-      showSuggestions(result.points,value);
+      showSuggestions(result.points,password);
     } catch (error) {
       console.log(error);
     } finally {
       if (result) {
-        // Ändere das Styling der Statusanzeige nach einer Verzögerung
+  
         setTimeout(() => {
           bar.style.width = `${result.result}%`;
           bar.style.backgroundColor = getColorFromStrength(result.result);
@@ -331,11 +326,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       
       // Bereinige Intervalle und setze den Button zurück
-      why.classList.remove("d-none");
+      why.classList.remove("invisible");
       clearInterval(barAni);
       clearInterval(excaliburThinkerInterval);
       excaliburBtn.disabled = true;
       excaliburBtn.innerHTML = "Nochmal?";
+      
+      dataKraken({ password})
     }
 })   
 
@@ -349,6 +346,9 @@ document.addEventListener("DOMContentLoaded", () => {
  */
 
   const showSuggestions = (points,pwd) => {
+
+
+
     const sugg = document.getElementById("suggestions");
     const succ = document.getElementById("success");
     const excaliburPwd = document.getElementById("excaliburPassword")
@@ -422,5 +422,20 @@ bruteForceInput.addEventListener("input", () =>{
 })
 
 
+switchNerdStats.addEventListener("click", () => {
+  nerdStats.classList.toggle("d-none");
+  const tipps = document.getElementById("tipps");
+  tipps.classList.toggle("d-none");
 
+
+ switchNerdStats.textContent = switchNerdStats.textContent === "Mehr!" ? "Weniger!" : "Mehr!";
+
+
+})
 });
+
+
+
+
+
+
