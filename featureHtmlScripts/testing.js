@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  let isBruteActive = sessionStorage.getItem("isBruteActive") ? sessionStorage.getItem("isBruteActive") : false
-  let stopKey = sessionStorage.getItem("stopKey") ? (sessionStorage.getItem("stopKey")) : null;
+  let isBruteActive = sessionStorage.getItem("isBruteActive") || null
+ 
 
   
   
@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // =================================================================
 
-
+  console.log(isBruteActive)
 
   //  checks if brute force is already  active
-console.log(isBruteActive)
-  if(isBruteActive){
+
+  if(isBruteActive === "true"){
     const radioCheckSimple = document.getElementById("simple");
     radioCheckSimple.checked = true;
     console.log(234)
@@ -55,7 +55,7 @@ console.log(isBruteActive)
   `;
   startBrute.disabled = true;
   stopBrute.disabled = false
-  stopBrute.style.backgroundColor = "#ced4da";
+  stopBrute.style.backgroundColor = "#626568";
   bruteThinkerInterval = setInterval(() => {
   thinker(startBrute);
   }, 2000);
@@ -66,25 +66,19 @@ console.log(isBruteActive)
 
 
   startBrute.addEventListener("click", (e) => {
+   
     e.preventDefault();
     stopBrute.style.backgroundColor = "#626568";
-    if(isBruteActive === false){
+    if(isBruteActive === "false"){
       const statsBody = document.getElementById("statsBody");
-      
-      
-
-      // to get border bottom when scrollbar appears
 
       const tableWrapper = document.getElementById("tableWrapper"); // probably not needed anymore
       if(statsBody.childElementCount === 2){
         tableWrapper.classList.add("border-bottom");
       }
 
-
-      // setting brute status in sessionstore
-
       
-      sessionStorage.setItem("isBruteActive", true);
+      sessionStorage.setItem("isBruteActive", "true");
 
     // thinker starts directly after button press
       startBrute.innerHTML = `
@@ -98,8 +92,8 @@ console.log(isBruteActive)
     }, 2000);
     // =============================
     
-    
-    
+    isBruteActive =  sessionStorage.getItem("isBruteActive");
+    console.log(isBruteActive)
     
     callBruteForce();
   }
@@ -124,7 +118,7 @@ console.log(isBruteActive)
         }
         startBrute.innerHTML = "Start";
         startBrute.disabled = false;
-        isBruteActive = false;
+        isBruteActive = "false";
         sessionStorage.setItem("isBruteActive", isBruteActive);
         console.log("Brute force process stopped");
         clearInterval(bruteThinkerInterval);
@@ -196,7 +190,7 @@ console.log(isBruteActive)
         return response.json();
       })
       .then((data) => {
-        isBruteActive = false;
+        isBruteActive = "false";
         sessionStorage.setItem("isBruteActive", isBruteActive);
         result = data;
 
@@ -211,7 +205,6 @@ console.log(isBruteActive)
         startBrute.innerHTML = "Nochmal?";
         stopBrute.style.backgroundColor = "#ced4da"
         bruteResults.classList.remove("invisible");
-        sessionStorage.setItem("isBruteActive", false);
         dataKraken({ password})
       });
   };
@@ -425,8 +418,7 @@ excaliburInput.addEventListener("input", () =>{
 })
 
 bruteForceInput.addEventListener("input", () =>{
-
-  if(!isBruteActive) startBrute.disabled = bruteForceInput.value.length > 0 ? false : true;
+  if(isBruteActive === "false") startBrute.disabled = bruteForceInput.value.length > 0 ? false : true;
   
 })
 
