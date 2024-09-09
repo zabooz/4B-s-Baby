@@ -1,4 +1,4 @@
-import { clipBoard } from "../components/clipBoard.js";
+import { refresh }from "../components/clipBoard.js";
 
 export let storedClippy = JSON.parse(sessionStorage.getItem("clippy")) || [];
 
@@ -71,7 +71,7 @@ export const copyButton = (textId) => {
       storedClippy = updatetClippy;
       sessionStorage.setItem("clippy", JSON.stringify(updatetClippy));
 
-      console.log(sessionStorage.getItem("clippy"));
+      refresh()
 
     } else {
       console.warn(`Element with ID ${textId} not found.`);
