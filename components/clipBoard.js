@@ -7,7 +7,7 @@ const createClipBoard = () => {
   for (let i = 0; i < storedClippy.length; i++) {
     const clip = `${storedClippy[i].type}` + i;
     const value = storedClippy[i].value;
-
+    console.log(storedClippy);
     if (storedClippy[i].type === "password") {
       pw += `<li id="${clip}" class=" w-75 d-flex my-2 justify-content-between" ><span>${value}</span></li>`;
     } else {

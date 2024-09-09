@@ -5,7 +5,8 @@ import { thinkWords, thinker} from "../utilities/thinker.js";
 import { newTester } from "../components/newTester.js";
 import { dataKraken } from "../utilities/dataKraken.js";
 
-const baseUrl = "https://bruteforce.coolify.machma.app"
+// const baseUrl = "https://bruteforce.coolify.machma.app"
+const baseUrl = "http://localhost:3000";
 document.addEventListener("DOMContentLoaded", () => {
   
   
@@ -28,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  let isBruteActive = sessionStorage.getItem("isBruteActive") ? JSON.parse(sessionStorage.getItem("isBruteActive")) : false;
-
+  let isBruteActive = sessionStorage.getItem("isBruteActive") ? sessionStorage.getItem("isBruteActive") : false
+  let stopKey = sessionStorage.getItem("stopKey") ? (sessionStorage.getItem("stopKey")) : null;
 
   
   
@@ -42,19 +43,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
   //  checks if brute force is already  active
-
+console.log(isBruteActive)
   if(isBruteActive){
     const radioCheckSimple = document.getElementById("simple");
     radioCheckSimple.checked = true;
-
+    console.log(234)
   startBrute.innerHTML = `
   <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
   <span role="status">${thinkWords[0]}</span>
   `;
   startBrute.disabled = true;
-
+  stopBrute.disabled = false
+  stopBrute.style.backgroundColor = "#ced4da";
   bruteThinkerInterval = setInterval(() => {
   thinker(startBrute);
   }, 2000);
@@ -82,8 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // setting brute status in sessionstore
 
-      isBruteActive = true;
-      sessionStorage.setItem("isBruteActive", isBruteActive);
+      
+      sessionStorage.setItem("isBruteActive", true);
 
     // thinker starts directly after button press
       startBrute.innerHTML = `
@@ -109,9 +110,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ======== Api call end brute force and get the result
 
+
+  
+
   stopBrute.addEventListener("click", () => {
+    const  stopKey = sessionStorage.getItem("stopKey");
     stopBrute.style.backgroundColor = "#ced4da"
-    const url = `${baseUrl}/stopBruteForce`;
+    const url = `${baseUrl}/stopBruteForce?key=${stopKey}`;
     fetch(url)
       .then((response) => {
         if (!response.ok) {
@@ -171,7 +176,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
 
-    const [encodedPwd, key] = passwordEncoder(password); // encode the password
+    const [encodedPwd, key] = passwordEncoder(password);
+
+    sessionStorage.setItem("stopKey", encodedPwd);
+
     const urlPara = `${baseUrl}/bruteforce${bruteType}?pwd=${encodeURIComponent(
       encodedPwd
     )}&key=${key}`;
@@ -203,6 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
         startBrute.innerHTML = "Nochmal?";
         stopBrute.style.backgroundColor = "#ced4da"
         bruteResults.classList.remove("invisible");
+        sessionStorage.setItem("isBruteActive", false);
         dataKraken({ password})
       });
   };

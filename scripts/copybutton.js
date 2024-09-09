@@ -71,7 +71,8 @@ export const copyButton = (textId) => {
       storedClippy = updatetClippy;
       sessionStorage.setItem("clippy", JSON.stringify(updatetClippy));
 
-      console.log();
+      console.log(sessionStorage.getItem("clippy"));
+
     } else {
       console.warn(`Element with ID ${textId} not found.`);
     }
