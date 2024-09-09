@@ -184,11 +184,11 @@ quizBtn.addEventListener("click", function (e) {
   testResult = newQuizOutput[0];
 
   const captionH = document.getElementById("captionH");
-  const captionP = document.getElementById("captionP");
+  const captionP = document.getElementById("captionPUsername");
 
   captionH.innerText = "Dein neuer Username";
   captionP.innerText = testResult;
-  captionP.append(copyButton("captionP"));
+  captionP.append(copyButton("captionPUsername"));
 
   // Hide prev arrow
   prevBtn.style.display = "none";

@@ -101,7 +101,7 @@ const quiz = (config) => {
             <div class="carousel-item">
                 <div id="lastCaption" class="carousel-caption d-flex flex-column align-items-center">
                     <h5 id="captionH">${config.letzteFolie.frage}</h5>
-                    <p id="captionP">${config.letzteFolie.antwort}</p>
+                    <p id="captionPUsername">${config.letzteFolie.antwort}</p>
                     <button class="btn btn-primary mb-4" id="submitButton">Antworten absenden</button>
                 </div>
             </div>

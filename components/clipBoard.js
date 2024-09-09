@@ -37,21 +37,9 @@ const createClipBoard = () => {
 export const clipBoard = (id) => {
   const target = document.querySelector(id);
   target.innerHTML = createClipBoard();
-  refresh()
+  refreshList()
+  addButtons();
 
-  for (let i = 0; i < storedClippy.length; i++) {
-    const elementId = storedClippy[i].type + i;
-
-    const clip = document.getElementById(elementId);
-    const copyBtn = copyButton(elementId);
-    const delBtn = deleteBtn(elementId);
-    // copyBtn.setAttribute("data-bs-dismiss", "modal");
-
-    const btnBox = document.createElement("div");
-    btnBox.classList.add("btnBox");
-    btnBox.append(copyBtn, delBtn);
-    clip.append(btnBox);
-  }
 
   const deleteAllBtn = document.getElementById("deleteAll");
 
@@ -151,7 +139,7 @@ const deleteAll = () => {
   sessionStorage.setItem("clippy", JSON.stringify(storedClippy));
 };
 
-export const refresh = () => {
+export const refreshList = () => {
     let pw = "";
     let user = "";
     for (let i = 0; i < storedClippy.length; i++) {
@@ -166,4 +154,20 @@ export const refresh = () => {
 
     document.getElementById("passwordList").innerHTML = pw;
     document.getElementById("userList").innerHTML = user;
+}
+
+export const addButtons = () => {
+      for (let i = 0; i < storedClippy.length; i++) {
+        const elementId = storedClippy[i].type + i;
+        const clip = document.getElementById(elementId);
+        const copyBtn = copyButton(elementId);
+        const delBtn = deleteBtn(elementId);
+
+        console.log(clip);
+
+        const btnBox = document.createElement("div");
+        btnBox.classList.add("btnBox");
+        btnBox.append(copyBtn, delBtn);
+        clip.append(btnBox);
+      }
 }
