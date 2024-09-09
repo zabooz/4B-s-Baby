@@ -5,8 +5,8 @@ import { thinkWords, thinker} from "../utilities/thinker.js";
 import { newTester } from "../components/newTester.js";
 import { dataKraken } from "../utilities/dataKraken.js";
 
-// const baseUrl = "https://bruteforce.coolify.machma.app"
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://bruteforce.coolify.machma.app"
+// const baseUrl = "http://localhost:3000";
 document.addEventListener("DOMContentLoaded", () => {
   
   
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  let isBruteActive = sessionStorage.getItem("isBruteActive") || null
+  let isBruteActive = sessionStorage.getItem("isBruteActive") || "false"
  
 
   
@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // =================================================================
 
-  console.log(isBruteActive)
+
 
   //  checks if brute force is already  active
 
   if(isBruteActive === "true"){
     const radioCheckSimple = document.getElementById("simple");
     radioCheckSimple.checked = true;
-    console.log(234)
+
   startBrute.innerHTML = `
   <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
   <span role="status">${thinkWords[0]}</span>
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // =============================
     
     isBruteActive =  sessionStorage.getItem("isBruteActive");
-    console.log(isBruteActive)
+ 
     
     callBruteForce();
   }
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         startBrute.disabled = false;
         isBruteActive = "false";
         sessionStorage.setItem("isBruteActive", isBruteActive);
-        console.log("Brute force process stopped");
+
         clearInterval(bruteThinkerInterval);
       })
       .catch((error) => {

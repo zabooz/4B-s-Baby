@@ -46,7 +46,7 @@ export const copyButton = (textId) => {
     }
 
     if (textElement) {
-      console.log(textElement);
+   
 
       let text = textElement.trim();
 

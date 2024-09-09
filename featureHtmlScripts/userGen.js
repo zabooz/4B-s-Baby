@@ -139,7 +139,7 @@ userAiToggle.addEventListener("change", function () {
 
 function updateAttempts(result, table) {
   const dataArr = result.filter((x) => x !== "");
-  console.log(dataArr);
+
   const tBody = document.getElementById(table);
   const tr = document.createElement("tr");
 
@@ -180,7 +180,7 @@ quizBtn.addEventListener("click", function (e) {
 
   const quizOutput = generateQuizResult();
   const newQuizOutput = convertToGerman(quizOutput, myArraysObj);
-  console.log(newQuizOutput);
+
   testResult = newQuizOutput[0];
 
   const captionH = document.getElementById("captionH");
@@ -234,7 +234,7 @@ function resetQuiz(captionH, captionP) {
   const resetBtn = document.getElementById("resetButton");
   resetBtn.remove();
 
-  console.log("Quiz has been reset.");
+
 }
 
 const carousel = document.querySelectorAll("#prevBtn,#nextBtn");

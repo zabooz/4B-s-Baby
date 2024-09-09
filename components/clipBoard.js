@@ -163,7 +163,7 @@ export const addButtons = () => {
         const copyBtn = copyButton(elementId);
         const delBtn = deleteBtn(elementId);
 
-        console.log(clip);
+     
 
         const btnBox = document.createElement("div");
         btnBox.classList.add("btnBox");
