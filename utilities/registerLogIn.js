@@ -1,17 +1,17 @@
 
 const baseUrl = 'https://bruteforce.coolify.machma.app';
+// const baseUrl = "http://localhost:3000";
 
 
-
-export const register = async (username,password) => {
-  
+export const register = async (username,password,email) => {
+  console.log(234)
   try {
-    const response = await fetch(`${baseUrl}/register`, { // Lokale Server-URL
+    const response = await fetch(`${baseUrl}/register`, { 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ username, password,email})
     });
   
     const result = await response.json();
@@ -29,7 +29,7 @@ export const register = async (username,password) => {
 }  
 
 export const login = (username, password) => {
-  fetch(`${baseUrl}/login`, { // Lokale Server-URL
+  fetch(`${baseUrl}/login`, { 
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ export const login = (username, password) => {
         throw new Error(data.message || 'Login fehlgeschlagen');
       });
     }
-    return response.json(); // Erfolgreiche Antwort in JSON umwandeln
+    return response.json(); 
   })
   .then(data => {
     if (data.token) {
@@ -68,8 +68,11 @@ export function fetchUserData(token,id) {
   })
   .then(response => response.json())
   .then(data => {
-    
-    document.getElementById(id).innerHTML = `<span>Eingeloggt als</span><span>  ${data.username}</span>`;
+
+    const span = document.createElement("span")
+    span.textContent = data.username
+    document.getElementById("profileName").appendChild(span)
+
   })
   .catch(error => {
     console.error('Fehler beim Abrufen der Benutzerdaten:', error);
@@ -111,3 +114,74 @@ export const deleteUser = async () => {
    
   }
 };
+
+
+// ======================   VALdiation   ======================
+
+
+
+export const validateRegisterForm = () => {
+  const email = document.getElementById("validationDefault02");
+  const confirmEmail = document.getElementById("validationDefault03");
+  const password = document.getElementById("validationDefault05");
+  const confirmPassword = document.getElementById("validationDefault04");
+
+  let isValid = true;
+
+  // Überprüfung, ob E-Mail-Adressen übereinstimmen
+  if (email.value !== confirmEmail.value) {
+    confirmEmail.setCustomValidity("E-Mail-Adressen stimmen nicht überein.");
+    confirmEmail.classList.add("is-invalid");
+    isValid = false;
+  } else {
+    confirmEmail.setCustomValidity("");
+    confirmEmail.classList.remove("is-invalid");
+    confirmEmail.classList.add("is-valid");
+  }
+
+  // Überprüfung, ob Passwörter übereinstimmen
+  if (password.value !== confirmPassword.value || password.value === "") {
+    confirmPassword.setCustomValidity("Passwörter stimmen nicht überein.");
+    confirmPassword.classList.add("is-invalid");
+    isValid = false;
+  } else {
+    confirmPassword.setCustomValidity("");
+    confirmPassword.classList.remove("is-invalid");
+    confirmPassword.classList.add("is-valid");
+  }
+
+  return isValid;
+};
+
+
+
+  // Dynamische Überprüfung der Eingabefelder während des Tippens
+  export const addDynamicValidation = (email,confirmEmail,password,confirmPassword,registerForm) => {
+
+  
+    // Überprüfung der E-Mail Felder während der Eingabe
+    email.addEventListener("input", () => validateRegisterForm());
+    confirmEmail.addEventListener("input", () => validateRegisterForm());
+  
+    // Überprüfung der Passwort Felder während der Eingabe
+    password.addEventListener("input", () => validateRegisterForm());
+    confirmPassword.addEventListener("input", () => validateRegisterForm());
+
+  
+  // Event-Listener für Formular-Validierung
+  registerForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+  
+    // Rufe die Validierungsfunktion auf
+    if (validateRegisterForm()) {
+      const username = document.getElementById("validationDefault01").value;
+      const email = document.getElementById("validationDefault02").value;
+      const password = document.getElementById("validationDefault05").value;
+  
+      // Führe den Registrierungsvorgang durch, wenn die Validierung erfolgreich war
+      register(username, password, email);
+    }
+  });
+  
+};
+

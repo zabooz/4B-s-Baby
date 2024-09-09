@@ -18,6 +18,7 @@
 
 main {
   min-height: 110vh;
+  overflow: hidden;
 }
  header{
   min-height: 90vh;
