@@ -34,7 +34,7 @@ const quickNav = (config) => {
         <button type="button" class="btn btn-primary btn btn-primary d-md-flex d-none align-items-center gap-2" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy" id="clippyNav" >
                     <img src = ${config.clippy.img} alt="Clippy">
         <p class="mb-0">${config.clippy.text}
-        </button
+        </button>
 
     </div>
 
@@ -47,9 +47,9 @@ export const createQuickNav = (id, config) => {
   target.innerHTML += quickNav(config);
 
   const clippyNav = document.getElementById("clippyNav");
-
+  console.log(clippyNav)
   clippyNav.addEventListener("click", () => {
-
+      console.log(214)
       clipBoard(".clipBoard")
   })
 };
