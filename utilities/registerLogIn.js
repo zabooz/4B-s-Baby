@@ -68,13 +68,21 @@ export function fetchUserData(token,id) {
   })
   .then(response => response.json())
   .then(data => {
-
-    const span = document.createElement("span")
-    span.textContent = data.username
-    document.getElementById("profileName").appendChild(span)
+    if(data.username){
+      const span = document.createElement("span")
+      span.textContent = data.username
+      document.getElementById("profileName").appendChild(span)
+    }else{
+      const loginItem = document.getElementById("loginItem");
+      const profile = document.getElementById("profile");
+      loginItem.classList.remove("d-none");
+      profile.classList.add("d-none");
+    }
+   
 
   })
   .catch(error => {
+    
     console.error('Fehler beim Abrufen der Benutzerdaten:', error);
     localStorage.removeItem('authToken'); // Token löschen, wenn es ungültig ist
   });
