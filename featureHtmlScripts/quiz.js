@@ -46,7 +46,7 @@ const config = {
 };
 
 const quiz = (config) => {
-  return `<div id="questionCarousel" class="carousel slide w-100 border-4 border-dark">
+  return `<div id="questionCarousel" class="carousel slide w-100">
         <div class="carousel-inner d-flex">
             <!-- Erste Folie -->
             <div class="carousel-item firstSlide rounded active">

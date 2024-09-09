@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   stopBrute.addEventListener("click", () => {
     stopBrute.style.backgroundColor = "#ced4da"
-    const url = `${baseUrl}stopBruteForce`;
+    const url = `${baseUrl}/stopBruteForce`;
     fetch(url)
       .then((response) => {
         if (!response.ok) {
