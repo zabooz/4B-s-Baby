@@ -1,45 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-
 /* ==================  General Styling =============== */
 
-
-#basic-addon1,
-#basic-addon2 {
+#mainTesting #basic-addon1,
+#mainTesting #basic-addon2 {
   cursor: pointer;
 }
 
-*{
+#mainTesting * {
   font-family: "Montserrat", sans-serif;
-  
 }
-main section{
-  width: 100%;
 
+#mainTesting main section {
+  width: 100%;
 }
-.col{
+#mainTesting {
+  margin-top: 3rem;
+}
+
+#mainTesting .col {
   margin-top: 2rem;
 }
-.form-check-input:checked {
+
+#mainTesting .form-check-input:checked {
   background-color: #ea6954;
   border-color: #ea6954;
 }
 
 /* ====================  Cards Header =============== */
 
-.imageContainer{
+#mainTesting .imageContainer {
   position: relative;
   overflow: hidden;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
-.imageContainer img{
+
+#mainTesting .imageContainer img {
   aspect-ratio: 16/9;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   object-fit: cover;
   filter: blur(2px);
 }
-.imageContainer .h1Con{
+
+#mainTesting .imageContainer .h1Con {
   position: absolute;
   top: 0;
   display: flex;
@@ -47,45 +51,41 @@ main section{
   align-items: center;
   height: 100%;
   background-color: #ffffff7c;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   width: 100%;
   z-index: 1;
-  
-  
 }
-.h1Con h1{
+
+#mainTesting .h1Con h1 {
   width: 100%;
   text-transform: uppercase;
   text-align: center;
   font-weight: 600;
-  font-size: calc(1.1rem + .5vw);
+  font-size: calc(1.1rem + 0.5vw);
   font-family: "inria serif", sans-serif;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
-  padding: .2rem .2rem;
-  margin: 0 .2rem;
+  padding: 0.2rem 0.2rem;
+  margin: 0 0.2rem;
   background-color: #ffffff18;
 }
 
-h1 font{
+#mainTesting h1 font {
   font-family: "inria serif", sans-serif;
 }
-button font {
+
+#mainTesting button font {
   color: #f1f5f5;
 }
 
-
-
-
 /* ======= Card ======== */
 
-
-.card {
+#mainTesting .card {
   max-width: 30rem;
   height: 100%;
   display: flex;
-  padding-bottom: 0!important;
+  padding-bottom: 0 !important;
   color: #212529;
   flex-direction: column;
   background-color: #f1f5f5;
@@ -93,60 +93,66 @@ button font {
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
 }
-.card p{
-  font-size: clamp(.9rem, 3vw, 1rem);
+
+#mainTesting .card p {
+  font-size: clamp(0.9rem, 3vw, 1rem);
 }
-.card p span{
+
+#mainTesting .card p span {
   color: #e93232;
-  
 }
-.bg-card-custom {
+
+#mainTesting .bg-card-custom {
   background-color: #f1f5f5;
 }
-.text-custom {
+
+#mainTesting .text-custom {
   color: #ea6954;
 }
-.bg-custom {
+
+#mainTesting .bg-custom {
   background-color: #23bbb870;
 }
-button.btn {
+
+#mainTesting button.btn {
   background-color: #ea6954;
   color: white !important;
   border: none;
-} 
-.btn:hover {
+}
+
+#mainTesting .btn:hover {
   background: #56c5c3be;
   color: white;
 }
-.btn:active {
+
+#mainTesting .btn:active {
   background-color: #56c5c3 !important;
 }
-.btn:disabled{
+
+#mainTesting .btn:disabled {
   background-color: #eb6854;
 }
 
-#stopBrute{
+#mainTesting #stopBrute {
   background: #ced4da;
 }
 
-.card-body a{
+#mainTesting .card-body a {
   color: #e93232;
 }
 
-@media(max-width: 500px){
-  #bruteInput{
+@media (max-width: 500px) {
+  #mainTesting #bruteInput {
     width: 100% !important;
   }
 }
 
 /* ==================  Tables ===============  */
 
-#tableWrapper{
-
-
+#mainTesting #tableWrapper {
   border-bottom: none !important;
-  
 }
-table th {
+
+#mainTesting table th {
   font-weight: 500;
 }

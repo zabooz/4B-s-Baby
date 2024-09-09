@@ -16,7 +16,7 @@
   background-color: #23bbb858;
 }
 
-main {
+#landingPage  main {
   min-height: 110vh;
   overflow: hidden;
 }
