@@ -176,6 +176,10 @@ export const createUserGeneratingSite = () => {
 document.getElementById("contentBox").innerHTML = createUserGenerating()
 createQuiz()
 
+
+sessionStorage.setItem("content",document.getElementById("contentBox").innerHTML)
+
+
 const userGenBtn = document.getElementById("userGeneratorBtn");
 const aiUserGenBtn = document.getElementById("aiUserGenBtn");
 const userAiToggle = document.getElementById("germanAiToggle");

@@ -131,5 +131,7 @@ const  landingPage = () => {
 
 export const createLandingPage = () => {
 
+    sessionStorage.setItem("content", landingPage())
+
     document.getElementById("contentBox").innerHTML = landingPage()
 }

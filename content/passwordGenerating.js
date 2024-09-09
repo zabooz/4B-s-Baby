@@ -263,8 +263,9 @@ const createPWContent = () => {
 export const createPasswordGeneratingContent =()=>{
 
 
-    document.getElementById("contentBox").innerHTML = createPWContent();
 
+    sessionStorage.setItem("content",createPWContent())
+    document.getElementById("contentBox").innerHTML = createPWContent();
 
 
 const uploadFile = document.getElementById("uploadFile");

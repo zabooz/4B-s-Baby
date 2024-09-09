@@ -386,6 +386,9 @@ const createPasswordTesting = () => {
 
 export const createTestingPasswords = () => {
 
+
+sessionStorage.setItem("content", createPasswordTesting())
+
 document.getElementById('contentBox').innerHTML = createPasswordTesting()
 
 
