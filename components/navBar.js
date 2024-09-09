@@ -153,7 +153,7 @@ const createNavBar = (configNav) => {
       <li id="loginItem" class="nav-item mx-2 ">
       <img  src="../img/icons/login.svg"   type="button" data-bs-toggle="modal" data-bs-target="#login"></img>
       </li>
-        <li id="profile" class="nav-item mx-2 ">
+        <li id="profile" class="nav-item mx-2 d-none">
         <div class="dropdown position-relative">
           <a  id="profileName" class="nav-link" type="button" href="#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">Hallo!</a>
           <ul class="dropdown-menu position-absolute p-2">
@@ -180,14 +180,6 @@ const createNavBar = (configNav) => {
 
 export const createNav = (config) => {
   document.querySelector(config.targetId).innerHTML = createNavBar(config);
-
-
-
-
-
-
-
-
 
 };
 

@@ -25,9 +25,6 @@
 }
 
 .carousel-caption {
-  background-color: #1f1919bd;
-
-  text-shadow: 1px 1px 1px #000000;
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
@@ -103,6 +100,7 @@ header {
   margin-top: auto;
   background-color: #f1f5f5;
   max-height: 1000px;
+  min-height: 22rem;
   padding: 1rem 0rem;
   width: 100%;
 }
