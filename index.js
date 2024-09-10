@@ -27,14 +27,14 @@ const contentLoader = document.querySelectorAll("a[data-function]");
 const contentBox = document.getElementById("contentBox");
 const style = document.getElementById("contentStyle");
 
-contentLoader.forEach(button => {
-  button.addEventListener("click" , () => {
-    const functionName = button.getAttribute("data-function")
-    if(typeof window[functionName] === "function"){
-      window[functionName](contentBox,style)
+contentLoader.forEach((button) => {
+  button.addEventListener("click", () => {
+    const functionName = button.getAttribute("data-function");
+    if (typeof window[functionName] === "function") {
+      window[functionName](contentBox, style);
     }
-})
-
+  });
+});
 document.addEventListener("DOMContentLoaded", () => {
   const content = sessionStorage.getItem("content")
   const styleSheet = sessionStorage.getItem("styleSheet")
@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("contentBox").innerHTML = content
     document.getElementById("contentStyle").setAttribute("href", styleSheet);
   }else{
-    window.createLandingPageHTML(contentBox,style)
+    createLandingPageHTML(contentBox,style)
   }
 })
-})
+
 
 
 /**

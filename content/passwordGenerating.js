@@ -267,7 +267,7 @@ export const createPasswordGeneratingHTML =(contentBox,style)=>{
 
     contentBox.innerHTML = content;
     style.setAttribute("href", styleSheet);
-
+    
     sessionStorage.setItem("styleSheet",styleSheet)
     sessionStorage.setItem("content",content)
 
