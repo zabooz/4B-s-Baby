@@ -3,7 +3,7 @@ import { passwordEncoder } from "../scripts/encoder.js";
 import { getColorFromStrength } from "../utilities/getColorFromStrength.js";
 import { thinkWords, thinker} from "../utilities/thinker.js";
 import { newTester } from "../components/newTester.js";
-import { dataKraken } from "../utilities/dataKraken.js";
+import { dataKrakenTakes } from "../utilities/dataKraken.js";
 import {data} from "../data/data.js"
 
 export const  passwordTestingScripts = (id) => {
@@ -212,7 +212,7 @@ export const  passwordTestingScripts = (id) => {
             startBrute.innerHTML = "Nochmal?";
             stopBrute.style.backgroundColor = "#ced4da"
             bruteResults.classList.remove("invisible");
-            if(token) dataKraken({ token,col:"testedPasswords"})
+            if(token) dataKrakenTakes({ token,col:"testedPasswords"})
           });
       };
     
@@ -377,7 +377,7 @@ export const  passwordTestingScripts = (id) => {
     
           
     
-          if(token) dataKraken({ token,col:"testedPasswords"})
+          if(token) dataKrakenTakes({ token,col:"testedPasswords"})
         }
     })   
     

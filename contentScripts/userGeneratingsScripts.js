@@ -5,7 +5,7 @@ import { genderbend } from "../featureHtmlScripts/genderbender.js";
 import { myArraysObj } from "../data/deutschGenerator.data.js";
 import { convertToGerman, shiftTableRows } from "../featureHtmlScripts/tableFunctions.js";
 import { thinker, thinkWords } from "../utilities/thinker.js";
-import { dataKraken } from "../utilities/dataKraken.js";
+import { dataKrakenTakes } from "../utilities/dataKraken.js";
 
 
 
@@ -43,7 +43,7 @@ let interval;
 userGenBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
-    if(token)dataKraken({token,col:"generatedUsernames"})
+    if(token)dataKrakenTakes({token,col:"generatedUsernames"})
   // Get values from inputs
   const adjective1 = document.getElementById("adjective1").value;
   const adjective2 = document.getElementById("adjective2").value;
@@ -104,7 +104,7 @@ aiUserGenBtn.addEventListener("click", async function () {
   const userOutput = generateUser(adjective1, adjective2, selectedNoun);
 
 
-  if(token) dataKraken({token,col:"generatedUsernames"})
+  if(token) dataKrakenTakes({token,col:"generatedUsernames"})
   aiUserGenBtn.innerHTML = `
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
     <span role="status">${thinkWords[0]}</span>
@@ -192,7 +192,7 @@ const quizBtn = document.getElementById("submitButton");
 quizBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
-  if(token) dataKraken({token,col:"generatedUsernames"})
+  if(token) dataKrakenTakes({token,col:"generatedUsernames"})
   let testResult;
 
   const quizOutput = generateQuizResult();

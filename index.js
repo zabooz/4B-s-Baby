@@ -5,7 +5,7 @@ import { createPasswordGeneratingHTML } from "./content/passwordGenerating.js";
 import { createLandingPageHTML } from "./content/landingPage.js";
 import { createTestingPasswordHTML } from "./content/passwordTesting.js";
 import { createUserGeneratingHTML } from "./content/userGenerating.js";
-import { createSettingsHtml } from "./content/settings.js";
+import { createSettingsHTML} from "./content/settings.js";
 import { createAboutUsHTML } from "./content/aboutUs.js";
 import { createProjectHTML } from "./content/project.js";
 
@@ -14,7 +14,7 @@ const functionMap = {
   createLandingPageHTML,
   createTestingPasswordHTML,
   createUserGeneratingHTML,
-  createSettingsHtml,
+  createSettingsHTML,
   createAboutUsHTML,
   createProjectHTML,
 };
@@ -29,7 +29,6 @@ const style = document.getElementById("contentStyle");
 
 document.addEventListener("DOMContentLoaded", () => {
   const content = sessionStorage.getItem("content")
-  console.log(sessionStorage.getItem("content"))
   content ? window[content](contentBox,style) : createLandingPageHTML(contentBox,style)
 
   eventBinding()
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
 })
 export const eventBinding = () => {
-  console.log(234)
   const contentLoader = document.querySelectorAll("a[data-function]");
   contentLoader.forEach((button) => {
 

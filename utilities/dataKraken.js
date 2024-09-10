@@ -2,10 +2,10 @@ import {data} from "../data/data.js"
 
 const baseUrl = data.baseUrl
 
-export async function dataKraken(data) {
+export async function dataKrakenTakes(data) {
 
     try { 
-      const response = await fetch(`${baseUrl}/dataKrakenTakes`, { // Backend-Server URL
+      const response = await fetch(`${baseUrl}/dataKrakenTakes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -24,3 +24,35 @@ export async function dataKraken(data) {
       console.error('Fehler beim Senden der Anfrage:', error);
     }
   }
+
+  export async function dataKrakenGives() {
+
+    let data;
+    const token = localStorage.getItem("passwordplayground")
+
+    try{
+
+      const response = await fetch( `${baseUrl}/dataKrakenGives`,{
+
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      })
+
+
+      if(response.ok) {
+        data = await response.json();
+    
+      }
+
+
+    } catch (error) {
+        console.error('Fehler beim Senden der Anfrage:', error);
+    }
+
+
+    return data
+
+}  

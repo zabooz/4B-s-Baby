@@ -2,7 +2,7 @@ import { pictureToString } from "../scripts/picturePwd.js";
 import { copyButton } from "../scripts/copybutton.js";
 import { tripleConverter } from "../featureHtmlScripts/tripleLeetConverter.js";
 import { generatePassword } from "../scripts/passwordGenerator.js";
-import { dataKraken } from "../utilities/dataKraken.js";
+import { dataKrakenTakes } from "../utilities/dataKraken.js";
 export const  passwordGeneratingScripts = () => {
   
 
@@ -105,7 +105,7 @@ picMagicBtn.addEventListener("click", async (e) => {
       "statsBodyPicGen"
     );
     picMagicBtn.disabled = true;
-    if (token) dataKraken({ token, col: "generatedPasswords" });
+    if (token) dataKrakenTakes({ token, col: "generatedPasswords" });
   } catch (error) {
     console.error(error);
   }
@@ -123,7 +123,7 @@ leetBtn.addEventListener("click", function () {
 
   runeTranslatorArray = [];
 
-  if (token) dataKraken({ token, col: "generatedPasswords" });
+  if (token) dataKrakenTakes({ token, col: "generatedPasswords" });
 
   for (let i = 0; i < newPasswordArray.length; i++) {
     const pwId = `runeTranslator${i}`;
@@ -181,7 +181,7 @@ rdmPwdBtn.addEventListener("click", function () {
     app: app,
   };
 
-  if (token) dataKraken({ token, col: "generatedPasswords" });
+  if (token) dataKrakenTakes({ token, col: "generatedPasswords" });
   storedGlyphArray.push(data);
   storeAndSwitch(
     glyphRowsArr,

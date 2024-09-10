@@ -1,11 +1,9 @@
 
-import{dataKraken} from "./dataKraken.js"
+import{dataKrakenTakes} from "./dataKraken.js"
 import {data} from "../data/data.js"
 
 const baseUrl = data.baseUrl
 
-
-const token = localStorage.getItem("passwordplayground") || null;
 
 export const register = async ({username, password, email,visits,generatedPasswords,testedPasswords,generatedUsernames}) => {
   console.log(234)
@@ -52,7 +50,7 @@ export const login = (username, password) => {
     if (data.token) {
       localStorage.setItem('passwordplayground', data.token);
       console.log('Token erfolgreich gespeichert!');
-      dataKraken({token:data.token,col:"visits"})
+      dataKrakenTakes({token:data.token,col:"visits"})
       location.reload();
     } else {
       alert('Login fehlgeschlagen: ' + data.message);
@@ -65,6 +63,10 @@ export const login = (username, password) => {
 };
 
 export function fetchUserData() {
+
+  const token = localStorage.getItem('passwordplayground');
+
+
   fetch(`${baseUrl}/user`, {
     method: 'GET',
     headers: {
@@ -79,12 +81,15 @@ export function fetchUserData() {
       logoutFunc()
     }
     
-    
   })
   .catch(error => {
     localStorage.removeItem('passwordplayground'); // Token löschen, wenn es ungültig ist
     console.error('Fehler beim Abrufen der Benutzerdaten:', error);
   })
+
+
+
+
 }
 
 export const logoutFunc = () => {

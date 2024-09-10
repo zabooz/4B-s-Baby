@@ -1,5 +1,5 @@
 
-
+import { settingsScripts } from "../contentScripts/settingsScript.js";
 const createSettings = () => {
     return `    <main>
         
@@ -18,19 +18,19 @@ const createSettings = () => {
         
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade active show " id="home" role="tabpanel" aria-labelledby="home-tab">
-            <ul class="list-group ">
-                <li class="list-group-item ">Benutzername: <span id="overviewUsername"></span></li>
-                <li class="list-group-item">E-mail: <span id="overviewEmail"></span> </li>
-                <li class="list-group-item">Besuche: <span id="overviewVisits"></span></li>
-                <li class="list-group-item">Geteste Passwörter: <span id="overviewPasswords"></span></li>
-                <li class="list-group-item">Generierte Passwörter: <span id="overviewGeneratedPasswords"></span></li>
-                <li class="list-group-item">Generierte Benutzernamen: <span id="overviewGeneratedUsernames"></span></li>
+            <ul class="list-group overview ">
+                <li class="list-group-item ">Benutzername: <span id="username"></span></li>
+                <li class="list-group-item">Besuche: <span id="visits"></span></li>
+                <li class="list-group-item">Geteste Passwörter: <span id="testedPasswords"></span></li>
+                <li class="list-group-item">Generierte Passwörter: <span id="generatedPasswords"></span></li>
+                <li class="list-group-item">Generierte Benutzernamen: <span id="generatedUsernames"></span></li>
 
               </ul>
           </div>
           <div class="tab-pane fade " id="profileTab" role="tabpanel" aria-labelledby="profile-tab">
               <ul class="list-group">
                   <li class="list-group-item">Benutzernamen ändern: <span id="changeUsername"> Klick</span></li>
+                  <li class="list-group-item">E-mail: <span id="overviewEmail"></span> </li>
                 <li class="list-group-item">Avatar <img src="../img/profilePics/profile.jpeg" alt="" style="width: 2rem;"></li>
             </ul>
           </div>
@@ -51,15 +51,24 @@ const createSettings = () => {
 }
 
 
-export const  createSettingsHtml = (contentBox,style) => {
+export const  createSettingsHTML = (contentBox,style) => {
     
-    const content = createSettings();
-    const styleSheet = "../styles/settings.css";
+  const styleSheet = "../styles/settings.css";
+  style.setAttribute("href", styleSheet);
+  sessionStorage.setItem("content", "createSettingsHTML");
+   contentBox.innerHTML = createSettings();
+  // if(sessionStorage.getItem("settings")){
+  //   contentBox.innerHTML = sessionStorage.getItem("settings");
+  // }else{
+  //   contentBox.innerHTML = createSettings();
+  //   sessionStorage.setItem("settings", contentBox.innerHTML);
+  // }
 
-    contentBox.innerHTML = content;
-    style.setAttribute("href", styleSheet);
 
-    sessionStorage.setItem("styleSheet", styleSheet);
-    sessionStorage.setItem("content", content);
+settingsScripts()
+window.scrollTo({
+  top: 0,
+  behavior: 'smooth'
+});
 
 }
