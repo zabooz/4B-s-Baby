@@ -56,3 +56,35 @@ export async function dataKrakenTakes(data) {
     return data
 
 }  
+
+
+export async function  dataKrakenTrades(key,value){
+
+    let data;
+    const token = localStorage.getItem("passwordplayground")
+
+    try{
+        const response = await fetch( `${baseUrl}/dataKrakenTrades`,{
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({key:key,value:value})
+        })
+    
+
+        if(response.ok) {
+            data = await response.json();
+        
+        }
+    
+      } catch (error) {
+          console.error('Fehler beim Senden der Anfrage:', error);
+      }
+
+    return data
+
+
+}
+

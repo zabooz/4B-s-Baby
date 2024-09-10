@@ -20,6 +20,7 @@ const createSettings = () => {
           <div class="tab-pane fade active show " id="home" role="tabpanel" aria-labelledby="home-tab">
             <ul class="list-group overview ">
                 <li class="list-group-item ">Benutzername: <span id="username"></span></li>
+                <li class="list-group-item">E-mail: <span id="email"></span> </li>
                 <li class="list-group-item">Besuche: <span id="visits"></span></li>
                 <li class="list-group-item">Geteste Passwörter: <span id="testedPasswords"></span></li>
                 <li class="list-group-item">Generierte Passwörter: <span id="generatedPasswords"></span></li>
@@ -28,10 +29,10 @@ const createSettings = () => {
               </ul>
           </div>
           <div class="tab-pane fade " id="profileTab" role="tabpanel" aria-labelledby="profile-tab">
-              <ul class="list-group">
+              <ul class="list-group profile">
                   <li class="list-group-item">Benutzernamen ändern: <span id="changeUsername"> Klick</span></li>
-                  <li class="list-group-item">E-mail: <span id="overviewEmail"></span> </li>
-                <li class="list-group-item">Avatar <img src="../img/profilePics/profile.jpeg" alt="" style="width: 2rem;"></li>
+                  <li class="list-group-item">Passwort ändern: <span id="changePassword"> Klick</span></li>
+                <li class="list-group-item">Avatar ändern <img src="../img/profilePics/profile.jpeg" alt="" style="width: 2rem;" id="avatar"></li>
             </ul>
           </div>
           <div class="tab-pane fade" id="leaderBoard" role="tabpanel" aria-labelledby="contact-tab">
@@ -63,9 +64,9 @@ export const  createSettingsHTML = (contentBox,style) => {
   //   contentBox.innerHTML = createSettings();
   //   sessionStorage.setItem("settings", contentBox.innerHTML);
   // }
+  settingsScripts()
 
 
-settingsScripts()
 window.scrollTo({
   top: 0,
   behavior: 'smooth'
