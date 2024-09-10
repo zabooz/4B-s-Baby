@@ -1,9 +1,9 @@
 
 import { observer } from "./utilities/bounce.js";
-import {createPasswordGeneratingContent} from "./content/passwordGenerating.js";
-import { createLandingPage } from "./content/landingPage.js";
-import { createTestingPasswords } from "./content/passwordTesting.js";
-import { createUserGeneratingSite } from "./content/userGenerating.js";
+import {createPasswordGeneratingHTML} from "./content/passwordGenerating.js";
+import { createLandingPageHTML } from "./content/landingPage.js";
+import { createTestingPasswordHTML } from "./content/passwordTesting.js";
+import { createUserGeneratingHTML } from "./content/userGenerating.js";
 import { createSettingsHtml } from "./content/settings.js";
 import { createAboutUs } from "./content/aboutUs.js";
 import { createProjectHtml } from "./content/project.js";
@@ -18,27 +18,30 @@ const aboutUs = document.getElementById("aboutUs");
 
 document.addEventListener("DOMContentLoaded", () => {
   const content = sessionStorage.getItem("content")
+  const styleSheet = sessionStorage.getItem("styleSheet")
+
   if(content){
     document.getElementById("contentBox").innerHTML = content
+    document.getElementById("contentStyle").setAttribute("href", styleSheet);
   }
 })
 
 
-
-
+const contentBox =  document.getElementById("contentBox");
+const style = document.getElementById("contentStyle");
 pwGeneratingContent.addEventListener("click", () => {
-  createPasswordGeneratingContent()
+  createPasswordGeneratingHTML(contentBox,style)
 })
 landingPage.addEventListener("click", () => {
-  createLandingPage()
+  createLandingPageHTML(contentBox,style)
 })
 
 passwordTesting.addEventListener("click", () => {
-  createTestingPasswords()
+  createTestingPasswordHTML(contentBox,style)
 })
 
 userGenerating.addEventListener("click", () => {
-  createUserGeneratingSite()
+  createUserGeneratingHTML(contentBox,style)
 })
 
 settings.addEventListener("click", () => {

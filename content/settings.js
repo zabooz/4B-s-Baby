@@ -53,7 +53,13 @@ const createSettings = () => {
 
 export const  createSettingsHtml = () => {
     
-    const content = createSettings();
-    document.getElementById("contentBox").innerHTML = content
+    const content = landingPage();
+    const styleSheet = "../styles/indexStyle.css";
+
+    contentBox.innerHTML = content;
+    style.setAttribute("href", styleSheet);
+
+    sessionStorage.setItem("styleSheet", styleSheet);
     sessionStorage.setItem("content", content);
+
 }

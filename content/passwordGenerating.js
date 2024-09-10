@@ -5,7 +5,7 @@ import { generatePassword } from "../scripts/passwordGenerator.js";
 import { dataKraken } from "../utilities/dataKraken.js";
 
 
-const createPWContent = () => {
+const createPwContent = () => {
 
 
 
@@ -260,12 +260,16 @@ const createPWContent = () => {
 }
 
 
-export const createPasswordGeneratingContent =()=>{
+export const createPasswordGeneratingHTML =(contentBox,style)=>{
 
+    const content = createPwContent();
+    const styleSheet = "./styles/passwordGenerating.css"
 
+    contentBox.innerHTML = content;
+    style.setAttribute("href", styleSheet);
 
-    sessionStorage.setItem("content",createPWContent())
-    document.getElementById("contentBox").innerHTML = createPWContent();
+    sessionStorage.setItem("styleSheet",styleSheet)
+    sessionStorage.setItem("content",content)
 
 
 const uploadFile = document.getElementById("uploadFile");
