@@ -5,8 +5,7 @@ import { generatePassword } from "../scripts/passwordGenerator.js";
 import { dataKraken } from "../utilities/dataKraken.js";
 export const  passwordGeneratingScripts = () => {
   
-// const baseUrl = "https://bruteforce.coolify.machma.app"
-const baseUrl = "http://localhost:3000";
+
 
 const uploadFile = document.getElementById("uploadFile");
 const picMagicBtn = document.getElementById("pictureMagicBtn");

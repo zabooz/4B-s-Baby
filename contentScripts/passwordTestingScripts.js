@@ -4,11 +4,11 @@ import { getColorFromStrength } from "../utilities/getColorFromStrength.js";
 import { thinkWords, thinker} from "../utilities/thinker.js";
 import { newTester } from "../components/newTester.js";
 import { dataKraken } from "../utilities/dataKraken.js";
-
+import {data} from "../data/data.js"
 
 export const  passwordTestingScripts = (id) => {
 
-    const baseUrl = "http://localhost:3000";
+    const baseUrl = data.baseUrl
 
     const token = localStorage.getItem("passwordplayground") || null;
     
