@@ -336,6 +336,7 @@
 
         `
     </footer>
+    <div class="canvas"></div>
     <div class="assistant"></div>
     <div class="clipBoard"></div>
     <div id="modal"></div>
@@ -354,7 +355,9 @@
       createAssistant(".assistant");
       heroText();
       createLogin("modal");      
-      loadOffCanvas("header", "leetSpeak", "../data/text.json");
+      loadOffCanvas(".canvas", "leetSpeak", "../data/text.json");
+      loadOffCanvas(".canvas", "liste", "../data/text.json");
+      loadOffCanvas(".canvas", "simple", "../data/text.json");
       createQuickNav(".quickNav", configQuickNavFeature);
     </script>
 

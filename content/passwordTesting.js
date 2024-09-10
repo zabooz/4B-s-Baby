@@ -4,7 +4,8 @@ import { getColorFromStrength } from "../utilities/getColorFromStrength.js";
 import { thinkWords, thinker} from "../utilities/thinker.js";
 import { newTester } from "../components/newTester.js";
 import { dataKraken } from "../utilities/dataKraken.js";
-
+import { loadOffCanvas } from "../components/offCanvas.js";
+import { fetchText } from "../utilities/fetchText.js";
 
 
 const createPasswordTesting = () => {
@@ -390,7 +391,6 @@ export const createTestingPasswords = () => {
 sessionStorage.setItem("content", createPasswordTesting())
 
 document.getElementById('contentBox').innerHTML = createPasswordTesting()
-
 
 
 // const baseUrl = "https://bruteforce.coolify.machma.app"
