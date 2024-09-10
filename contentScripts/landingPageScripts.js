@@ -1,13 +1,24 @@
 
 
 
-export const landingPageScripts = (scrollBtnId,scrollTargetId) => {
+export const landingPageScripts = (scrollBtnId,scrollTargetId,contentBox,style) => {
 
     const scrollBtn = document.getElementById(scrollBtnId)
     scrollBtn.addEventListener("click", () => {
         scrollToElement(scrollTargetId);
       });
-}
+
+     
+    const btn =  document.querySelectorAll("button[data-function]")
+    
+    btn.forEach((button) => {
+        const funcName = button.dataset.function
+        button.addEventListener("click", () => {
+          window[funcName](contentBox,style)
+        }
+        
+      )}
+)}
 
 
 

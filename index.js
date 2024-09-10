@@ -29,7 +29,7 @@ const style = document.getElementById("contentStyle");
 
 document.addEventListener("DOMContentLoaded", () => {
   const content = sessionStorage.getItem("content")
-  
+  console.log(sessionStorage.getItem("content"))
   content ? window[content](contentBox,style) : createLandingPageHTML(contentBox,style)
 
   eventBinding()
@@ -38,7 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
 })
 export const eventBinding = () => {
-  const contentLoader = document.querySelectorAll("a[data-function],button[data-function]");
+  console.log(234)
+  const contentLoader = document.querySelectorAll("a[data-function]");
   contentLoader.forEach((button) => {
 
     button.addEventListener("click", (e) => {

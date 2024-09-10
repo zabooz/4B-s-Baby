@@ -109,7 +109,7 @@ const  landingPage = () => {
                   <span><b>Mind Maestro</b></span> erstellt kreative Namen durch
                   ein unterhaltsames Quiz.
                 </p>
-<Button class="btn btn-primary subText mt-auto mb-3 mx-auto btn-lg border-0 w-75"  data-function="createUserGeneratingHTML">Erstelle Username</Button>
+<button class="btn btn-primary subText mt-auto mb-3 mx-auto btn-lg border-0 w-75"  data-function="createUserGeneratingHTML">Erstelle Username</button>
 
                 
               </div>
@@ -137,5 +137,5 @@ export const createLandingPageHTML = (contentBox,style) => {
       sessionStorage.setItem("landingPage",contentBox.innerHTML)
     }
 
-    landingPageScripts("scrollIntoViewBtn","scrollIntoView")
+    landingPageScripts("scrollIntoViewBtn","scrollIntoView",contentBox,style)
 }

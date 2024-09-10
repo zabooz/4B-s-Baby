@@ -10,7 +10,7 @@ export async function aiApiCall(userContent,
     sysContent) {
   const [encodedPwd, key] = passwordEncoder(userContent);
   const content = sysContent;
-  const urlPara = `${baseUrl}apiCall?pwd=${encodedPwd}&key=${key}&sysContent=${content}`;
+  const urlPara = `${baseUrl}/apiCall?pwd=${encodedPwd}&key=${key}&sysContent=${content}`;
 
   try {
     const response = await fetch(urlPara);
