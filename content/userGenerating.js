@@ -7,7 +7,7 @@ import { convertToGerman, shiftTableRows } from "../featureHtmlScripts/tableFunc
 import { thinker, thinkWords } from "../utilities/thinker.js";
 import { dataKraken } from "../utilities/dataKraken.js";
 import {createQuiz} from "../featureHtmlScripts/quiz.js"
-
+import { createQuickNav } from "../components/quickNav.js";
 
 const createUserGenerating = () => {
 
@@ -166,8 +166,10 @@ const createUserGenerating = () => {
         </div>
       </section>
 
-    </main>`
-
+    </main>
+    <div class="quickNav"></div>
+  
+    `
 
 }
 
@@ -176,9 +178,9 @@ export const createUserGeneratingHTML = (contentBox,style) => {
 
 
     const content = (() => {
-
         contentBox.innerHTML = createUserGenerating()
         createQuiz()
+        createQuickNav(".quickNav");
         return contentBox.innerHTML
     })(contentBox)
     const styleSheet = "./styles/userGenerating.css";

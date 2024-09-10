@@ -23,18 +23,10 @@ Object.keys(functionMap).forEach((funcName) => {
   window[funcName] = functionMap[funcName];
 });
 
-const contentLoader = document.querySelectorAll("a[data-function]");
+
 const contentBox = document.getElementById("contentBox");
 const style = document.getElementById("contentStyle");
 
-contentLoader.forEach((button) => {
-  button.addEventListener("click", () => {
-    const functionName = button.getAttribute("data-function");
-    if (typeof window[functionName] === "function") {
-      window[functionName](contentBox, style);
-    }
-  });
-});
 document.addEventListener("DOMContentLoaded", () => {
   const content = sessionStorage.getItem("content")
   const styleSheet = sessionStorage.getItem("styleSheet")
@@ -45,6 +37,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }else{
     createLandingPageHTML(contentBox,style)
   }
+
+const contentLoader = document.querySelectorAll("a[data-function]");
+
+contentLoader.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault()
+    console.log(button)
+    const functionName = button.getAttribute("data-function");
+    if (typeof window[functionName] === "function") {
+      window[functionName](contentBox, style);
+    }
+  });
+});
+
+
 })
 
 

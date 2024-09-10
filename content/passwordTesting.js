@@ -5,7 +5,9 @@ import { thinkWords, thinker} from "../utilities/thinker.js";
 import { newTester } from "../components/newTester.js";
 import { dataKraken } from "../utilities/dataKraken.js";
 import { loadOffCanvas } from "../components/offCanvas.js";
-import { fetchText } from "../utilities/fetchText.js";
+import {createQuickNav,configQuickNavFeature,} from "../components/quickNav.js";
+
+      
 
 
 const createPasswordTesting = () => {
@@ -378,20 +380,41 @@ const createPasswordTesting = () => {
       </div>
     </div>
     <div id="modal"></div>
-    
-    
-    `
+    <div class="quickNav"></div>
+    <div class="canvas"></div>
+    `;
 }
 
 
 
 export const createTestingPasswordHTML = (contentBox,style) => {
 
-    const content = createPasswordTesting();
+    // const content = createPasswordTesting();
     const styleSheet = "./styles/passwordTesting.css";
+    style.setAttribute("href", styleSheet);
+    
+    const content = (() => {
+      contentBox.innerHTML = createPasswordTesting();
+      createQuickNav(".quickNav");
+      loadOffCanvas(".canvas", "liste", "../data/text.json");
+      loadOffCanvas(".canvas", "simple", "../data/text.json");
+      return contentBox.innerHTML;
+    })(contentBox);
 
     contentBox.innerHTML = content;
-    style.setAttribute("href", styleSheet);
+
+    const scriptUrls = [
+      "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/core@2.0.0/dist/zxcvbn-ts.js",
+      "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-common@2.0.0/dist/zxcvbn-ts.js",
+      "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-en@2.0.0/dist/zxcvbn-ts.js",
+    ];
+
+    scriptUrls.forEach((url) => {
+      const script = document.createElement("script");
+      script.src = url;
+      document.head.appendChild(script);
+    });
+
 
     sessionStorage.setItem("styleSheet", styleSheet);
     sessionStorage.setItem("content", content);

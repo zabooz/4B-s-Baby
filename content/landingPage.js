@@ -58,11 +58,8 @@ const  landingPage = () => {
                   <span><b>GlyphSorcery</b></span> erstellt zufällige, sichere
                   Passwörter.
                 </p>
-                <a
-                  class="btn btn-primary mt-auto mb-3 mx-auto subText border-0 w-75"
-                  href="./featureHtmls/pwGenerating.html"
-                  >Erstelle Passwort</a
-                >
+<a class="btn btn-primary mt-auto mb-3 mx-auto subText border-0 w-75" href="#" data-function="createPasswordGeneratingHTML">Erstelle Passwort</a>
+
               </div>
             </div>
           </div>
@@ -85,11 +82,8 @@ const  landingPage = () => {
                   >, um zu sehen, wie lange es dauern würde, bis dein Passwort
                   geknackt wird.
                 </p>
-                <a
-                  class="btn btn-primary subText mt-auto mb-3 mx-auto btn-lg border-0 w-75"
-                  href="./featureHtmls/testing.html"
-                  >Teste Passwort</a
-                >
+<a class="btn btn-primary subText mt-auto mb-3 mx-auto btn-lg border-0 w-75" href="#" data-function="createTestingPasswordHTML">Teste Passwort</a>
+
               </div>
             </div>
           </div>
@@ -112,11 +106,9 @@ const  landingPage = () => {
                   <span><b>Mind Maestro</b></span> erstellt kreative Namen durch
                   ein unterhaltsames Quiz.
                 </p>
-                <a
-                  class="btn btn-primary btn-lg mt-auto mt-3 subText mx-auto border-0 w-75"
-                  href="./featureHtmls/userGenerating.html"
-                  >Erfinde Namen</a
-                >
+<a class="btn btn-primary subText mt-auto mb-3 mx-auto btn-lg border-0 w-75" href="#" data-function="createTestingPasswordHTML">Teste Passwort</a>
+
+                
               </div>
 
             </div>
@@ -125,7 +117,7 @@ const  landingPage = () => {
       </section>
     </main>
                      
-            `
+            `;
 
 }
 

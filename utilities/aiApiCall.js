@@ -1,9 +1,9 @@
 import { passwordEncoder } from "../scripts/encoder.js";
-
+// const baseUrl = "https://bruteforce.coolify.machma.app/";
+const baseUrl = "http://localhost:3000/";
 
 export async function aiApiCall(userContent,
     sysContent) {
-  const baseUrl = "https://bruteforce.coolify.machma.app/";
   const [encodedPwd, key] = passwordEncoder(userContent);
   const content = sysContent;
   const urlPara = `${baseUrl}apiCall?pwd=${encodedPwd}&key=${key}&sysContent=${content}`;

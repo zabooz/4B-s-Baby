@@ -211,35 +211,24 @@
 
         `
     </footer>
-    <div class="canvas"></div>
     <div class="assistant"></div>
     <div class="clipBoard"></div>
     <div id="modal"></div>
-    <div class="quickNav"></div>
+
     <script type="module">
- 
-      import { loadOffCanvas } from "../components/offCanvas.js";
       import { createAssistant } from "./components/aiAssistant.js";
       import { clipBoard } from "./components/clipBoard.js";
       import {createLogin} from "./components/registerModal.js";
-      import {
-        createQuickNav,
-        configQuickNavFeature,
-      } from "../components/quickNav.js";
-      clipBoard(".clipBoard");
       createAssistant(".assistant");
       createLogin("modal");      
-      loadOffCanvas(".canvas", "leetSpeak", "../data/text.json");
-      loadOffCanvas(".canvas", "liste", "../data/text.json");
-      loadOffCanvas(".canvas", "simple", "../data/text.json");
-      createQuickNav(".quickNav", configQuickNavFeature);
+      clipBoard(".clipBoard");
     </script>
 
-    <script src="./components/aiAssistant.js" type="module" defer></script>
+    <script src="./components/aiAssistant.js" type="module" ></script>
     <script src="./index.js" type="module"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@zxcvbn-ts/core@2.0.0/dist/zxcvbn-ts.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@zxcvbn-ts/core@2.0.0/dist/zxcvbn-ts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-common@2.0.0/dist/zxcvbn-ts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-en@2.0.0/dist/zxcvbn-ts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-en@2.0.0/dist/zxcvbn-ts.js"></script> -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

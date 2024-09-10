@@ -1,6 +1,6 @@
-import { clipBoard } from "./clipBoard.js";
 
-export const configQuickNavIndex = {
+
+const config = {
   ai: {
     img: "./img/quickNav/ai.webp",
     text: "Ai-Assistant",
@@ -42,7 +42,7 @@ const quickNav = (config) => {
     `;
 };
 
-export const createQuickNav = (id, config) => {
+export const createQuickNav = (id) => {
   const target = document.querySelector(id);
   target.innerHTML += quickNav(config);
 };

@@ -3,8 +3,10 @@ import { copyButton } from "../scripts/copybutton.js";
 import { tripleConverter } from "../featureHtmlScripts/tripleLeetConverter.js";
 import { generatePassword } from "../scripts/passwordGenerator.js";
 import { dataKraken } from "../utilities/dataKraken.js";
-
-
+import { loadOffCanvas } from "../components/offCanvas.js";
+import {
+  createQuickNav,
+} from "../components/quickNav.js";
 const createPwContent = () => {
 
 
@@ -254,20 +256,31 @@ const createPwContent = () => {
         </div>
       </section>
     </main>
-            
-`
+    <div class="quickNav"></div>
+    <div class="canvas"></div>      
+`;
 
 }
 
 
 export const createPasswordGeneratingHTML =(contentBox,style)=>{
 
-    const content = createPwContent();
+
+
+    const content = (() => {
+      contentBox.innerHTML = createPwContent();
+      createQuickNav(".quickNav");
+      loadOffCanvas(".canvas", "leetSpeak", "../data/text.json");
+      return contentBox.innerHTML;
+    })(contentBox);
+
+
+
     const styleSheet = "./styles/passwordGenerating.css"
 
     contentBox.innerHTML = content;
     style.setAttribute("href", styleSheet);
-    
+    loadOffCanvas(".canvas", "leetSpeak", "../data/text.json");
     sessionStorage.setItem("styleSheet",styleSheet)
     sessionStorage.setItem("content",content)
 
