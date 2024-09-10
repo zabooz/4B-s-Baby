@@ -278,7 +278,7 @@ function addEndings(object) {
     return [neuterToMaleKeyResult, neuterToFemaleKeyResult, neuterKeyResult];
   }
 }
-function splitCamelCase(str) {
+export function splitCamelCase(str) {
   return str.match(/([A-Z][a-z]*)/g);
 }
 

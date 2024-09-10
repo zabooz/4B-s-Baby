@@ -4,6 +4,7 @@
 #userGenerating * {
   color: #212529;
   font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
 }
 
 #userGenerating .carousel-item {
@@ -28,8 +29,11 @@
   --bs-card-img-overlay-padding: 0px !important;
 }
 
-#userGenerating .carousel-caption {
-  border-radius: 1rem;
+#userGenerating .carousel-caption label {
+  font-size: 1.2rem !important;
+}
+#userGenerating .carousel-caption h5 {
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -114,10 +118,6 @@
   min-height: 22rem !important;
   padding: 1rem 0rem;
   width: 100%;
-}
-
-#userGenerating #quiz {
-  margin-top: 6.5rem !important;
 }
 
 #userGenerating #wizardInput1 {
@@ -247,7 +247,9 @@
   margin: 0 0.2rem;
   background-color: #ffffff18;
 }
-
+#captionP {
+  font-size: 1.5rem;
+}
 @media (max-width: 1400px) {
   #userGenerating #wizardDiv,
   #userGenerating #quiz {
@@ -320,7 +322,8 @@
 }
 
 #userGenerating .custom-arrow {
-  filter: invert(49%) sepia(69%) saturate(6785%) hue-rotate(355deg) brightness(104%) contrast(101%);
+  filter: invert(49%) sepia(69%) saturate(6785%) hue-rotate(355deg)
+    brightness(104%) contrast(101%);
 }
 
 #userGenerating .custom-img {
