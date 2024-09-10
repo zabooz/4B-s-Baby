@@ -2,21 +2,21 @@
 
 const config = {
   ai: {
-    img: "./img/quickNav/ai.webp",
-    text: "Ai-Assistant",
+    img: "../img/quickNav/_sanchez.jpeg",
+    text: "Sanchez",
   },
   clippy: {
-    img: "./img/quickNav/Clippy.jpeg",
+    img: "../img/quickNav/copyCat1.jpeg",
     text: "Clippy",
   },
 };
 export const configQuickNavFeature = {
   ai: {
-    img: "../img/icons/_sanchez.jpeg",
+    img: "./img/icons/_sanchez.jpeg",
     text: "Sanchez",
   },
   clippy: {
-    img: "../img/icons/copyCat1.jpeg",
+    img: "./img/icons/copyCat1.jpeg",
     text: "Clippy",
   },
 };

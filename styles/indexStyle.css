@@ -15,8 +15,7 @@
 .bg-custom {
   background-color: #23bbb858;
 }
-
-#landingPage  main {
+ main {
   min-height: 110vh;
   overflow: hidden;
 }
@@ -94,6 +93,10 @@ main > section {
   width: clamp(5rem, 5vw, 10rem);
   margin-top: auto;
   height: 10vh;
+}
+#scrollIntoViewBtn{
+  background-color: transparent;
+  border: none;
 }
 
 
