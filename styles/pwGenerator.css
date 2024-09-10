@@ -21,12 +21,16 @@
 #mainPwGen table {
   min-height: 88px;
 }
+#mainPwGen .form-check-input:checked {
+  background-color: #ea6954;
+  border-color: #ea6954;
+}
 
 #mainPwGen .pwdSpan,
 #mainPwGen #versionText,
 #mainPwGen #generatedPasswordLength0,
 #mainPwGen th {
-  font-size: clamp(.8rem, 1.5vw, 1rem);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
 #mainPwGen #leetPwd,
