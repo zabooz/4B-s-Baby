@@ -51,10 +51,10 @@ const createSettings = () => {
 }
 
 
-export const  createSettingsHtml = () => {
+export const  createSettingsHtml = (contentBox,style) => {
     
-    const content = landingPage();
-    const styleSheet = "../styles/indexStyle.css";
+    const content = createSettings();
+    const styleSheet = "../styles/settings.css";
 
     contentBox.innerHTML = content;
     style.setAttribute("href", styleSheet);

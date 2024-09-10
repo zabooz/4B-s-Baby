@@ -1,6 +1,7 @@
 
 import { observer } from "./utilities/bounce.js";
-import {createPasswordGeneratingHTML} from "./content/passwordGenerating.js";
+
+import { createPasswordGeneratingHTML } from "./content/passwordGenerating.js";
 import { createLandingPageHTML } from "./content/landingPage.js";
 import { createTestingPasswordHTML } from "./content/passwordTesting.js";
 import { createUserGeneratingHTML } from "./content/userGenerating.js";
@@ -8,13 +9,31 @@ import { createSettingsHtml } from "./content/settings.js";
 import { createAboutUsHTML } from "./content/aboutUs.js";
 import { createProjectHTML } from "./content/project.js";
 
-const project = document.getElementById("project");
-const pwGeneratingContent = document.getElementById("pwGenerating");
-const landingPage = document.getElementById("landingPage"); 
-const passwordTesting = document.getElementById("passwordTesting");
-const userGenerating = document.getElementById("usernameGenerator");
-const settings = document.getElementById("settings");
-const aboutUs = document.getElementById("aboutUs");
+const functionMap = {
+  createPasswordGeneratingHTML,
+  createLandingPageHTML,
+  createTestingPasswordHTML,
+  createUserGeneratingHTML,
+  createSettingsHtml,
+  createAboutUsHTML,
+  createProjectHTML,
+};
+
+Object.keys(functionMap).forEach((funcName) => {
+  window[funcName] = functionMap[funcName];
+});
+
+const contentLoader = document.querySelectorAll("a[data-function]");
+const contentBox = document.getElementById("contentBox");
+const style = document.getElementById("contentStyle");
+
+contentLoader.forEach(button => {
+  button.addEventListener("click" , () => {
+    const functionName = button.getAttribute("data-function")
+    if(typeof window[functionName] === "function"){
+      window[functionName](contentBox,style)
+    }
+})
 
 document.addEventListener("DOMContentLoaded", () => {
   const content = sessionStorage.getItem("content")
@@ -23,45 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if(content){
     document.getElementById("contentBox").innerHTML = content
     document.getElementById("contentStyle").setAttribute("href", styleSheet);
+  }else{
+    window.createLandingPageHTML(contentBox,style)
   }
 })
-
-
-const contentBox =  document.getElementById("contentBox");
-const style = document.getElementById("contentStyle");
-
-pwGeneratingContent.addEventListener("click", () => {
-  createPasswordGeneratingHTML(contentBox,style)
 })
-landingPage.addEventListener("click", () => {
-  createLandingPageHTML(contentBox,style)
-})
-
-passwordTesting.addEventListener("click", () => {
-  createTestingPasswordHTML(contentBox,style)
-})
-
-userGenerating.addEventListener("click", () => {
-  createUserGeneratingHTML(contentBox,style)
-})
-
-settings.addEventListener("click", () => {
-  createSettingsHtml()
-})
-
-aboutUs.addEventListener("click", () => {
-  createAboutUsHTML(contentBox,style)
-})
-
-project.addEventListener("click", () => {
-  createProjectHTML(contentBox,style) 
-})
-
-
-
-
-
-
 
 
 /**
