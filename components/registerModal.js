@@ -132,17 +132,9 @@ export const createLogin = (id) => {
   });
 
   document.addEventListener("DOMContentLoaded", () => {
-    const token = localStorage.getItem("passwordplayground");
-    const loggedOut = document.getElementById("loginItem");
-    const loggedIn = document.getElementById("profile");
-    if (token) {
-      loggedOut.classList.add("d-none");
-      loggedIn.classList.remove("d-none");
-      fetchUserData(token, "profileName");
-    } else {
-      loggedOut.classList.remove("d-none");
-      loggedIn.classList.add("d-none");
-    }
+
+      fetchUserData();
+    
   });
 
   const logout = document.getElementById("logout");

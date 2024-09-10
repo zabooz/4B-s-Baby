@@ -1,5 +1,55 @@
 
 import { observer } from "./utilities/bounce.js";
+import {createPasswordGeneratingContent} from "./content/passwordGenerating.js";
+import { createLandingPage } from "./content/landingPage.js";
+import { createTestingPasswords } from "./content/passwordTesting.js";
+import { createUserGeneratingSite } from "./content/userGenerating.js";
+
+
+
+const pwGeneratingContent = document.getElementById("pwGenerating");
+const landingPage = document.getElementById("landingPage"); 
+const passwordTesting = document.getElementById("passwordTesting");
+const userGenerating = document.getElementById("usernameGenerator");
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const content = sessionStorage.getItem("content")
+
+
+  if(content){
+    document.getElementById("contentBox").innerHTML = content
+  }
+
+
+})
+
+
+
+
+pwGeneratingContent.addEventListener("click", () => {
+  createPasswordGeneratingContent()
+})
+landingPage.addEventListener("click", () => {
+  createLandingPage()
+})
+
+passwordTesting.addEventListener("click", () => {
+  createTestingPasswords()
+})
+
+userGenerating.addEventListener("click", () => {
+  createUserGeneratingSite()
+})
+
+
+
+
+
+
+
+
 
 
 /**
@@ -25,4 +75,5 @@ export const heroText = () => {
       removeBounceClass()
   })
 }
+
 

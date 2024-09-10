@@ -38,6 +38,9 @@
     <link rel="stylesheet" href="./styles/indexStyle.css" />
     <link rel="stylesheet" href="./styles/aiAssistant.css" />
     <link rel="stylesheet" href="./styles/navBars.css" />
+    <link rel="stylesheet" href="./styles/pwGenerator.css" />
+    <link rel="stylesheet" href="./styles/testing.css">
+    <link rel="stylesheet" href="./styles/userGenerator.css">
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -59,7 +62,85 @@
     <title>Password Playground</title>
   </head>
   <body class="bg-custom">
-    <nav id="navBar" class="sticky-top"></nav>
+    <nav class="navbar navbar-expand-lg nav-custom p-0 text-black box-shadow">
+      <div>
+        <a href="#" class="d-flex align-items-center" style="text-decoration: none;" id="landingPage">
+          <img src="./img/logo/logo.svg" alt="logo" />
+          <p class="navbar-brand mb-0 ms-3"><span class="notranslate">Password Playground</span></p>
+        </a>
+      </div>
+    
+      <button class="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav d-flex justify-content-end align-items-lg-center w-100">
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#" id="pwGenerating">ERSTELLE<span>dein Passwort</span></a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#" id="passwordTesting">CHECKE<span>deine Sicherheit</span></a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#" id="usernameGenerator">ERFINDE<span>deinen Online-Namen</span></a>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown position-relative">
+              <a class="nav-link mx-2" type="button" href="#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
+                Tools <span>verwenden</span>
+              </a>
+              <ul class="dropdown-menu position-absolute p-2">
+                <li class="nav-item">
+                  <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#clippy" role="button" aria-controls="clippy">Clipboard</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Ai-Assistant</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item mx-2">
+            <div class="dropdown position-relative">
+              <a class="nav-link" type="button" href="#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
+                Erfahre <span>mehr...</span>
+              </a>
+              <ul class="dropdown-menu position-absolute p-2">
+                <li class="nav-item">
+                  <a class="nav-link" href="./oldDesign/index.html">Legacy Design</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./aboutUs/project.html">Projekt</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./aboutUs/aboutUs.html">Über uns</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li id="loginItem" class="nav-item mx-2 ">
+          <img  src="../img/icons/login.svg"   type="button" data-bs-toggle="modal" data-bs-target="#login"></img>
+          </li>
+            <li id="profile" class="nav-item mx-2 d-none">
+            <div class="dropdown position-relative">
+              <a  id="profileName" class="nav-link" type="button" href="#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">Hallo!</a>
+              <ul class="dropdown-menu position-absolute p-2">
+              <li class="nav-item">
+              <a class="nav-link" href="/featureHtmls/settings.html">Settings</a>
+              </li>
+              <li class="nav-item">
+              <a id="logout" class="nav-link" href="#">Logout</a>
+              </li>
+              <li class="nav-item">
+              <a id="deleteAccount" class="nav-link" href="#">Lösch Dich</a>
+              </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="contentBox">
     <header class="w-100 d-flex flex-column pt-0 pt-lg-3 justify-content-center align-items-center">
 
       <div id="landingPage" class="d-flex flex-column flex-lg-row pt-lg-5 pt-0 w-100 align-items-center justify-content-center">
@@ -85,35 +166,6 @@
       </a>
 
       </div>
-
-      <!-- <div id="jumbotron" class="d-flex flex-column  align-items-center  ">
-          
-          <div class="container-fluid d-flex justify-content-center flex-column pt-2 px-0">
-              <div id="logoContainer" class=" d-flex justify-content-center mt-4  ">
-                  
-                    <div class="mt-auto mb-4">
-                      <div class="montserrat-font-header notranslate "><span id="logoFirstLetter" class="notranslate">P</span>assword</div>
-                      <div class="montserrat-font-header notranslate">Playground</div>
-                    </div>
-                    <div id="padlockCon" class=" justify-content-end d-none d-sm-block ">
-                    <img id="padlockPic" src="./img/landingPage/padlock.svg" alt="padlock" class="img-fluid ">
-                    </div>
-                 
-              </div>
-              <div  class="   container-fluid d-flex justify-content-center ">
-                  <p class=" leadFont text-center">Mach Schluss mit langweiligen Passwörtern und Namen!</p>
-                  </div>
-                  <div class="container-fluid d-flex flex-column inria-serif-regular  align-items-center w-50"> 
-                  <p class="subText inria-serif-regular">Optimiere mit unseren Tools deine Passwörter und Benutzernamen. Teste ihre Stärke, erschaffe neue und sichere Optionen und finde den perfekten Online-Namen.</p>
-                  <p class="subText inria-serif-regular">Entdecke jetzt, wie einfach es ist deine Online-Sicherheit zu erhöhen!</p>
-              </div>
-              </div>
-          
-            </div>
-            <a href="#spanScroll" id="test" class="mt-auto">
-                <img id="scrollArrow" src="./img/landingPage/arrow-pointing.svg" alt="scrollArrow" class="img-fluid mb-4 ">
-            </a> -->
-
 
 
 
@@ -210,27 +262,109 @@
         </div>
       </section>
     </main>
-
+  </div>
     <footer >
-     
+      <div class="d-flex justify-content-center flex-column">
+        <hr class="my-4   w-100 mt-5 self-algin-center" />
+        
+        <section class="d-flex justify-content-center justify-content-lg-evenly  mt-5 text-black">
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <div class="social-media-icons">
+              <a href="https://www.facebook.com" aria-label="facebook" class="me-4 text-reset">
+                <img src="../img/footer/facebook-1-solid.svg" style="width:1.5rem" alt="facebook icon">
+              </a>
+              <a href="https://www.twitter.com" aria-label="twitter" class="me-4 text-reset">
+                <img src="../img/footer/twitter.svg" style="width:1.5rem" alt="twitter icon">
+              </a>
+              <a href="https://www.google.com" aria-label="google" class="me-4 text-reset">
+                <img src="../img/footer/google.svg" style="width:1.5rem" alt="google icon">
+              </a>
+              <a href="https://www.instagram.com" aria-label="instagram" class="me-4 text-reset">
+                <img src="../img/footer/instagram.svg" style="width:1.5rem" alt="instagram icon">
+              </a>
+              <a href="https://www.linkedin.com" aria-label="linkedIn" class="me-4 text-reset">
+                <img src="../img/footer/linkedin-box.svg" style="width:1.5rem" alt="linkedIn icon">
+              </a>
+              <a href="https://www.github.com" aria-label="gitHub" class="me-4 text-reset">
+                <img src="../img/footer/github.svg" style="width:1.5rem" alt="gitHub icon">
+              </a>
+            </div>
+            
+            <div id="google_translate_element"></div>
+        </section>
+        <section class="text-black">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h5 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>TGOC
+                        </h5>
+                        <p>
+                          TGOC is a creative agency that brings a splash of fun to the world of digital solutions. We specialize in innovative design, development, and marketing strategies that make your brand stand out. Join us on our journey to add a little extra flavor to the digital space.
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+                            <p><a href="https://github.com/Zappls/TSP-Project" aria-label="half baked backend" class="text-reset">half baked backend</a>
+                            </p>
+                            <p><a href="https://github.com/zabooz/tictactoe"" aria-label="Tic Tac Toe" class="text-reset">Tic Tac Toe</a>
+                            </p>                            <p><a href="https://github.com/zabooz/weatherWidget" aria-label="Weather Widget" class="text-reset">Weather Widget</a>
+                            </p>                            <p><a href="https://github.com/zabooz/codingschool-myCV" aria-label="Cv" class="text-reset">Cv</a>
+                            </p>
+   
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> Crossroads 3, The Barrens, Kalimdor</p>
+                        <p><i class="fas fa-envelope me-3"></i> hello@passwordplayground.com</p>
+                        <p><i class="fas fa-phone me-3"></i> +1 555-123-4567</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/"  aria-label="MDBootstrap.com" >MDBootstrap.com</a>
+            <a class="text-reset fw-bold mx-5" href="../legalStuff/impressum.html" aria-label="Impressum" >Impressum</a>
+            <a class="text-reset fw-bold mx-5" href="../legalStuff/datenschutz.html" aria-label="Impressum" >Datenschutz</a>
+        </div>
+        
+        </div>
+
+        `
     </footer>
+    <div class="canvas"></div>
+    <div class="assistant"></div>
     <div class="clipBoard"></div>
     <div id="modal"></div>
-  
+    <div class="quickNav"></div>
     <script type="module">
       import { heroText } from "./index.js";
-      import { createNav, configNavIndex } from "./components/navBar.js";
+      import { loadOffCanvas } from "../components/offCanvas.js";
       import { createAssistant } from "./components/aiAssistant.js";
       import { clipBoard } from "./components/clipBoard.js";
-      import {createFooter,configFooter,iconsIndex} from "./components/footer.js";
       import {createLogin} from "./components/registerModal.js";
-      createNav(configNavIndex);
-      createFooter(configFooter,iconsIndex);
+      import {
+        createQuickNav,
+        configQuickNavFeature,
+      } from "../components/quickNav.js";
       clipBoard(".clipBoard");
-      createAssistant("main");
+      createAssistant(".assistant");
       heroText();
-      createLogin("modal");
+      createLogin("modal");      
+      loadOffCanvas(".canvas", "leetSpeak", "../data/text.json");
+      loadOffCanvas(".canvas", "liste", "../data/text.json");
+      loadOffCanvas(".canvas", "simple", "../data/text.json");
+      createQuickNav(".quickNav", configQuickNavFeature);
     </script>
+
+    <script src="./components/aiAssistant.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@zxcvbn-ts/core@2.0.0/dist/zxcvbn-ts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-common@2.0.0/dist/zxcvbn-ts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-en@2.0.0/dist/zxcvbn-ts.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

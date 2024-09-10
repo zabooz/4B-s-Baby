@@ -1,20 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-* {
+#userGenerating * {
   color: #212529;
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
 }
 
-.carousel-item {
+#userGenerating .carousel-item {
   height: 300px;
   overflow: hidden;
 }
-.carousel-inner {
+
+#userGenerating .carousel-inner {
   min-height: 20rem;
 }
-.card {
+
+#userGenerating .card {
   align-self: center;
   min-height: 40rem;
   width: 80%;
@@ -27,7 +29,7 @@
   --bs-card-img-overlay-padding: 0px !important;
 }
 
-.carousel-caption {
+#userGenerating .carousel-caption {
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
@@ -35,37 +37,42 @@
   font-size: 1.2rem !important;
 }
 video {
+
+#userGenerating video {
   border: 2px solid #ea6954;
   margin-left: 1rem;
   border-radius: 0.3rem;
 }
-.dropdown-menu {
+
+#userGenerating .dropdown-menu {
   left: -50px !important;
 }
-.input {
+
+#userGenerating .input {
   width: 30%;
   padding: 0.2rem;
   border-radius: 0.5rem;
 }
-#quickNav {
+
+#userGenerating #quickNav {
   position: fixed;
   right: -7rem;
   top: 40%;
 }
 
-#quickNav img {
+#userGenerating #quickNav img {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
 }
 
-#quickNav button {
+#userGenerating #quickNav button {
   position: absolute;
   right: 1rem;
   position: relative;
 }
 
-#quickNav button:hover {
+#userGenerating #quickNav button:hover {
   animation: moveBtn 0.5s forwards;
 }
 
@@ -77,49 +84,57 @@ video {
     right: 6.5rem;
   }
 }
-nav {
+
+#userGenerating nav {
   min-height: 64px;
 }
 
-header {
+#userGenerating header {
   color: #151c19;
 }
-.description {
+
+#userGenerating .description {
   width: 25rem;
 }
 
-#stats {
+#userGenerating #stats {
   max-width: 90%;
   min-width: 80%;
   padding: 0px !important;
 }
-#identityWizard,
-#mindMaestro {
+
+#userGenerating #identityWizard,
+#userGenerating #mindMaestro {
   background-color: #f1f5f5;
   padding: 0px;
   margin-bottom: 10rem;
   max-width: 1400px;
 }
+
 /* Container Styling */
-#wizardDiv,
-#quiz {
+#userGenerating #wizardDiv,
+#userGenerating #quiz {
   margin-top: auto;
   background-color: #f1f5f5;
   min-height: 22rem !important;
   padding: 1rem 0rem;
   width: 100%;
 }
-#quiz {
+
+#userGenerating #quiz {
   margin-top: 6.5rem !important;
 }
-#wizardInput1 {
+
+#userGenerating #wizardInput1 {
   width: 80%;
 }
-#wizardInput1 > *:nth-child(-n + 5) {
+
+#userGenerating #wizardInput1 > *:nth-child(-n + 5) {
   margin-bottom: 1rem;
 }
-#wizardInput5,
-#wizardInput6 {
+
+#userGenerating #wizardInput5,
+#userGenerating #wizardInput6 {
   display: flex; /* Flexbox to align items within each group */
   flex-direction: column;
   align-items: center; /* Centers content horizontally within each flex item */
@@ -127,34 +142,40 @@ header {
   width: 45%; /* Sets a minimum width for each group */
   height: 20rem;
 }
-#wizardInput5 {
+
+#userGenerating #wizardInput5 {
   border-right: 1px solid grey;
 }
+
 /* Label Styling */
-#wizardDiv,
-#quiz label {
+#userGenerating #wizardDiv,
+#userGenerating #quiz label {
   text-align: left; /* Aligns text to the left */
   text-wrap: nowrap;
   width: 100%; /* Ensures label takes the full width of its container */
 }
 
-#userGeneratorBtn {
+#userGenerating #userGeneratorBtn {
   width: 100%;
   margin-top: 1rem;
 }
-#deleteTableBtn {
+
+#userGenerating #deleteTableBtn {
   width: 80%;
   margin-top: auto;
   margin-bottom: 26px;
 }
-#stats tr:nth-child(even) {
+
+#userGenerating #stats tr:nth-child(even) {
   font-weight: 500; /* Example style: set a light gray background color */
 }
-#stats tr:nth-child(odd) {
+
+#userGenerating #stats tr:nth-child(odd) {
   font-size: smaller;
   font-weight: 300;
 }
-.table-cell-content {
+
+#userGenerating .table-cell-content {
   display: flex;
   justify-content: space-between; /* Pushes content to both sides */
   align-items: center; /* Vertically aligns items to center */
@@ -162,15 +183,18 @@ header {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-.card-img {
+
+#userGenerating .card-img {
   filter: opacity(15%);
 }
-.card-img-overlay {
+
+#userGenerating .card-img-overlay {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.imageContainer {
+
+#userGenerating .imageContainer {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -180,7 +204,7 @@ header {
   /* filter: opacity(15%); */
 }
 
-.imageContainer .h3Con {
+#userGenerating .imageContainer .h3Con {
   position: relative;
   top: 0;
   display: flex;
@@ -190,7 +214,8 @@ header {
   width: 100%;
   z-index: 1;
 }
-.imageContainer .textCon {
+
+#userGenerating .imageContainer .textCon {
   top: 0;
   display: flex;
   justify-content: center;
@@ -203,7 +228,8 @@ header {
   align-self: center;
   padding: 1rem;
 }
-.card-text {
+
+#userGenerating .card-text {
   font-family: "inria serif", sans-serif;
   letter-spacing: 0.3rem;
   padding: 1rem;
@@ -213,7 +239,8 @@ header {
   width: 60%;
   justify-content: center;
 }
-.card-title {
+
+#userGenerating .card-title {
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
@@ -229,82 +256,98 @@ header {
   font-size: 1.5rem;
 }
 @media (max-width: 1400px) {
-  #wizardDiv,
-  #quiz {
+  #userGenerating #wizardDiv,
+  #userGenerating #quiz {
     justify-content: center;
     align-items: center;
   }
 
-  .card-text {
+  #userGenerating .card-text {
     width: 95%;
   }
-  .card-title {
+
+  #userGenerating .card-title {
     justify-content: center;
     align-items: center;
   }
 }
+
 /* Responsive Adjustments */
 @media (max-width: 992px) {
-  #sectionContainer {
+  #userGenerating #sectionContainer {
     padding: 3rem 0rem !important;
   }
-  #wizardInput5,
-  #wizardInput6 {
+
+  #userGenerating #wizardInput5,
+  #userGenerating #wizardInput6 {
     width: 100%;
   }
-  #wizardInput6 {
+
+  #userGenerating #wizardInput6 {
     height: fit-content;
   }
-  #wizardInput5 {
+
+  #userGenerating #wizardInput5 {
     border-right: none;
   }
-  .card-title {
+
+  #userGenerating .card-title {
     padding: 1rem 0rem 0rem;
   }
 }
+
 @media (max-width: 700px) {
-  #wizardDiv,
-  #quiz label {
+  #userGenerating #wizardDiv,
+  #userGenerating #quiz label {
     text-wrap: wrap;
   }
-  .card {
+
+  #userGenerating .card {
     width: 100%;
   }
-  #deleteTableBtn {
+
+  #userGenerating #deleteTableBtn {
     margin-bottom: 2rem;
   }
 }
+
 @media (max-width: 580px) {
-  #wizardInput5,
-  #wizardInput6 {
+  #userGenerating #wizardInput5,
+  #userGenerating #wizardInput6 {
     flex-direction: column;
   }
 }
-.custom-indicators button {
+
+#userGenerating .custom-indicators button {
   background-color: #4caf50;
 }
 
-.custom-indicators .active {
+#userGenerating .custom-indicators .active {
   background-color: #ff5722;
 }
-.custom-arrow {
-  filter: invert(49%) sepia(69%) saturate(6785%) hue-rotate(355deg)
-    brightness(104%) contrast(101%);
+
+#userGenerating .custom-arrow {
+  filter: invert(49%) sepia(69%) saturate(6785%) hue-rotate(355deg) brightness(104%) contrast(101%);
 }
-.custom-img {
+
+#userGenerating .custom-img {
   border-radius: 1rem;
 }
-.form-check-input:checked {
+
+#userGenerating .form-check-input:checked {
   background-color: #ff5722;
   border-color: #ff5722;
 }
-.border-custom {
+
+#userGenerating .border-custom {
   border-right: 5px solid #f1f5f5 !important;
 }
-main {
+
+#userGenerating main {
   display: flex;
   flex-direction: column;
 }
+
 @keyframes moveBtnAi {
   0% {
     right: -5rem;
@@ -313,88 +356,104 @@ main {
     right: -0.5rem;
   }
 }
-#picResult,
-.input {
+
+#userGenerating #picResult,
+#userGenerating .input {
   width: 30%;
   padding: 0.2rem;
   border-radius: 0.5rem;
 }
 
-.label {
+#userGenerating .label {
   border-radius: 5px;
 }
-#uploadLabel {
+
+#userGenerating #uploadLabel {
   color: white;
 }
-#previewImage {
+
+#userGenerating #previewImage {
   width: 10rem;
   height: 10rem;
 }
-.sectionDiv {
+
+#userGenerating .sectionDiv {
   width: 80%;
 }
-.text-custom {
+
+#userGenerating .text-custom {
   color: #ea6954;
 }
 
-.bg-custom {
+#userGenerating .bg-custom {
   background-color: #23bbb870;
 }
-.nav-custom {
+
+#userGenerating .nav-custom {
   background-color: #f1f5f5;
 }
-.btn {
+
+#userGenerating .btn {
   background-color: #ea6954;
   color: white;
   border: none;
 }
-.sectionDiv {
+
+#userGenerating .sectionDiv {
   width: 70%;
   background: #f1f5f5;
   border-radius: 1rem;
 }
-.hr-custom {
+
+#userGenerating .hr-custom {
   border: 2px solid black;
   opacity: 1;
 }
-#stats1 {
+
+#userGenerating #stats1 {
   margin-bottom: 2.5rem;
 }
-.btn:hover {
+
+#userGenerating .btn:hover {
   background: #56c5c3;
   color: white;
 }
-.custom-img {
+
+#userGenerating .custom-img {
   border-radius: 1rem;
 }
-#statsTableWrapper {
+
+#userGenerating #statsTableWrapper {
   height: 163.5px;
   margin-bottom: 2rem;
 }
-.tableWrapper {
-  height: 150px;
 
+#userGenerating .tableWrapper {
+  height: 150px;
   overflow-y: auto;
   overflow-x: auto;
   margin-bottom: 2rem;
 }
 
 @media (max-width: 991px) {
-  .custom-img {
+  #userGenerating .custom-img {
     width: 7rem;
     height: 5rem;
   }
-  #wizardDiv,
-  #quiz {
+
+  #userGenerating #wizardDiv,
+  #userGenerating #quiz {
     flex-direction: column;
   }
 }
+
 @media (min-width: 992px) {
-  .custom-img {
+  #userGenerating .custom-img {
     width: 7rem;
     height: 5rem;
   }
-  .heroText {
+
+  #userGenerating .heroText {
     width: 75%;
   }
 }

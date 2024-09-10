@@ -158,7 +158,7 @@ const createNavBar = (configNav) => {
           <a  id="profileName" class="nav-link" type="button" href="#" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">Hallo!</a>
           <ul class="dropdown-menu position-absolute p-2">
           <li class="nav-item">
-          <a class="nav-link" href="#">Settings</a>
+          <a class="nav-link" href="/featureHtmls/settings.html">Settings</a>
           </li>
           <li class="nav-item">
           <a id="logout" class="nav-link" href="#">Logout</a>

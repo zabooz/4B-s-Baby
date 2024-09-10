@@ -1,10 +1,10 @@
-const baseUrl = 'https://bruteforce.coolify.machma.app';
-
+// const baseUrl = 'https://bruteforce.coolify.machma.app';
+const baseUrl = 'http://localhost:3000';
 
 export async function dataKraken(data) {
 
     try { 
-      const response = await fetch(`${baseUrl}/dataKraken`, { // Backend-Server URL
+      const response = await fetch(`${baseUrl}/dataKrakenTakes`, { // Backend-Server URL
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -1,9 +1,12 @@
 
-const baseUrl = 'https://bruteforce.coolify.machma.app';
-// const baseUrl = "http://localhost:3000";
+import{dataKraken} from "./dataKraken.js"
+// const baseUrl = 'https://bruteforce.coolify.machma.app';
+const baseUrl = "http://localhost:3000";
 
 
-export const register = async (username,password,email) => {
+const token = localStorage.getItem("passwordplayground") || null;
+
+export const register = async ({username, password, email,visits,generatedPasswords,testedPasswords,generatedUsernames}) => {
   console.log(234)
   try {
     const response = await fetch(`${baseUrl}/register`, { 
@@ -11,7 +14,7 @@ export const register = async (username,password,email) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ username, password,email})
+      body: JSON.stringify({ username, password,email,visits,generatedPasswords,testedPasswords,generatedUsernames })
     });
   
     const result = await response.json();
@@ -48,6 +51,7 @@ export const login = (username, password) => {
     if (data.token) {
       localStorage.setItem('passwordplayground', data.token);
       console.log('Token erfolgreich gespeichert!');
+      dataKraken({token:data.token,col:"visits"})
       location.reload();
     } else {
       alert('Login fehlgeschlagen: ' + data.message);
@@ -59,7 +63,7 @@ export const login = (username, password) => {
   });
 };
 
-export function fetchUserData(token,id) {
+export function fetchUserData() {
   fetch(`${baseUrl}/user`, {
     method: 'GET',
     headers: {
@@ -69,31 +73,40 @@ export function fetchUserData(token,id) {
   .then(response => response.json())
   .then(data => {
     if(data.username){
-      const span = document.createElement("span")
-      span.textContent = data.username
-      document.getElementById("profileName").appendChild(span)
+      loginFunc(data.username)
     }else{
-      const loginItem = document.getElementById("loginItem");
-      const profile = document.getElementById("profile");
-      loginItem.classList.remove("d-none");
-      profile.classList.add("d-none");
+      logoutFunc()
     }
-   
-
+    
+    
   })
   .catch(error => {
-    
+    localStorage.removeItem('passwordplayground'); // Token löschen, wenn es ungültig ist
     console.error('Fehler beim Abrufen der Benutzerdaten:', error);
-    localStorage.removeItem('authToken'); // Token löschen, wenn es ungültig ist
-  });
+  })
 }
 
 export const logoutFunc = () => {
   localStorage.removeItem('passwordplayground');
-  location.reload();
+
+  const loginItem = document.getElementById("loginItem");
+  const profile = document.getElementById("profile");
+  loginItem.classList.remove("d-none");
+  profile.classList.add("d-none");
+
+  
 }
 
+const loginFunc = (username) => {
+  const loginItem = document.getElementById("loginItem");
+  const profile = document.getElementById("profile");
+  loginItem.classList.add("d-none");
+  profile.classList.remove("d-none");
+  const span = document.createElement("span")
+  span.textContent = username
+  document.getElementById("profileName").appendChild(span)
 
+}
 
 
 export const deleteUser = async () => {
@@ -187,7 +200,7 @@ export const validateRegisterForm = () => {
       const password = document.getElementById("validationDefault05").value;
   
       // Führe den Registrierungsvorgang durch, wenn die Validierung erfolgreich war
-      register(username, password, email);
+      register({username, password, email,visits:0,generatedPasswords:0,testedPasswords:0,generatedUsernames:0});
     }
   });
   
