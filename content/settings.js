@@ -42,7 +42,6 @@ const createSettings = () => {
                 <li class="list-group-item">Geteste Passwörter: <span id="overviewPasswords"></span></li>
                 <li class="list-group-item">Generierte Passwörter: <span id="overviewGeneratedPasswords"></span></li>
                 <li class="list-group-item">Generierte Benutzernamen: <span id="overviewGeneratedUsernames"></span></li>
-
               </ul>
           </div>
         </div>
@@ -53,6 +52,8 @@ const createSettings = () => {
 
 
 export const  createSettingsHtml = () => {
-
-    document.getElementById("main").innerHTML = createSettings();
+    
+    const content = createSettings();
+    document.getElementById("contentBox").innerHTML = content
+    sessionStorage.setItem("content", content);
 }

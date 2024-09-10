@@ -4,25 +4,23 @@ import {createPasswordGeneratingContent} from "./content/passwordGenerating.js";
 import { createLandingPage } from "./content/landingPage.js";
 import { createTestingPasswords } from "./content/passwordTesting.js";
 import { createUserGeneratingSite } from "./content/userGenerating.js";
+import { createSettingsHtml } from "./content/settings.js";
+import { createAboutUs } from "./content/aboutUs.js";
+import { createProjectHtml } from "./content/project.js";
 
-
-
+const project = document.getElementById("project");
 const pwGeneratingContent = document.getElementById("pwGenerating");
 const landingPage = document.getElementById("landingPage"); 
 const passwordTesting = document.getElementById("passwordTesting");
 const userGenerating = document.getElementById("usernameGenerator");
-
+const settings = document.getElementById("settings");
+const aboutUs = document.getElementById("aboutUs");
 
 document.addEventListener("DOMContentLoaded", () => {
-
   const content = sessionStorage.getItem("content")
-
-
   if(content){
     document.getElementById("contentBox").innerHTML = content
   }
-
-
 })
 
 
@@ -43,7 +41,17 @@ userGenerating.addEventListener("click", () => {
   createUserGeneratingSite()
 })
 
+settings.addEventListener("click", () => {
+  createSettingsHtml()
+})
 
+aboutUs.addEventListener("click", () => {
+  createAboutUs()
+})
+
+project.addEventListener("click", () => {
+  createProjectHtml() 
+})
 
 
 
