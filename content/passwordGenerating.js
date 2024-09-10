@@ -275,5 +275,8 @@ export const createPasswordGeneratingHTML =(contentBox,style)=>{
 
 
   passwordGeneratingScripts()
-
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 } 

@@ -48,5 +48,9 @@ export const  createAboutUsHTML = (contentBox,style) => {
         sessionStorage.setItem("aboutUs", contentBox.innerHTML);
 
     }
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
 
 }

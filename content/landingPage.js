@@ -1,3 +1,6 @@
+import { eventBinding } from "../index.js";
+import { landingPageScripts } from "../contentScripts/landingPageScripts.js";
+
 const  landingPage = () => {
 
 
@@ -23,9 +26,9 @@ const  landingPage = () => {
         </div>
       </div>
       <div id="scrollArrowBox" class="mt-3">
-        <a href="#spanScroll" id="test" >
+        <button  id="scrollIntoViewBtn" >
           <img id="scrollArrow" src="./img/landingPage/arrow-pointing.svg" alt="scrollArrow" class="img-fluid mb-4 ">
-      </a>
+      </button>
 
       </div>
 
@@ -33,7 +36,7 @@ const  landingPage = () => {
 
 
     </header>
-    <div id="spanScroll" ></div>
+    <div id="scrollIntoView" ></div>
 
     <main class="w-100 d-flex  pt-5 mt-5 pt-lg-0 mt-lg-0 justify-content-center align-items-center" id="langingPageMain">
       <section  class=" w-100 bounceScroll">
@@ -133,5 +136,6 @@ export const createLandingPageHTML = (contentBox,style) => {
       contentBox.innerHTML = landingPage()
       sessionStorage.setItem("landingPage",contentBox.innerHTML)
     }
-
+    eventBinding()
+    landingPageScripts("scrollIntoViewBtn","scrollIntoView")
 }

@@ -410,5 +410,8 @@ export const createTestingPasswordHTML = (contentBox,style) => {
     });
 
     passwordTestingScripts()
-
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
 }

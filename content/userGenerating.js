@@ -183,5 +183,9 @@ export const createUserGeneratingHTML = (contentBox,style) => {
         }
         
         userGeneratingScripts()
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
 }
 
