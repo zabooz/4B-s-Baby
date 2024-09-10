@@ -29,14 +29,13 @@
   --bs-card-img-overlay-padding: 0px !important;
 }
 
-#userGenerating .carousel-caption {
-  border-radius: 1rem;
-  margin-bottom: 2rem;
-}
-.carousel-caption label {
+#userGenerating .carousel-caption label {
   font-size: 1.2rem !important;
 }
-video {
+#userGenerating .carousel-caption h5 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
 
 #userGenerating video {
   border: 2px solid #ea6954;
@@ -119,10 +118,6 @@ video {
   min-height: 22rem !important;
   padding: 1rem 0rem;
   width: 100%;
-}
-
-#userGenerating #quiz {
-  margin-top: 6.5rem !important;
 }
 
 #userGenerating #wizardInput1 {
@@ -327,7 +322,8 @@ video {
 }
 
 #userGenerating .custom-arrow {
-  filter: invert(49%) sepia(69%) saturate(6785%) hue-rotate(355deg) brightness(104%) contrast(101%);
+  filter: invert(49%) sepia(69%) saturate(6785%) hue-rotate(355deg)
+    brightness(104%) contrast(101%);
 }
 
 #userGenerating .custom-img {
