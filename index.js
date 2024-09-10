@@ -30,7 +30,7 @@ const style = document.getElementById("contentStyle");
 document.addEventListener("DOMContentLoaded", () => {
   const content = sessionStorage.getItem("content")
   const styleSheet = sessionStorage.getItem("styleSheet")
-
+  console.log(content)
   if(content){
     document.getElementById("contentBox").innerHTML = content
     document.getElementById("contentStyle").setAttribute("href", styleSheet);
