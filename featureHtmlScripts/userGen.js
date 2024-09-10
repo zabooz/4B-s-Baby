@@ -186,7 +186,7 @@ quizBtn.addEventListener("click", function (e) {
   const captionH = document.getElementById("captionH");
   const captionP = document.getElementById("captionPUsername");
 
-  captionH.innerText = "Dein neuer Username";
+  captionH.innerText = `Hey, du scheinst dich für ${newQuizOutput[2]}, ${newQuizOutput[3]} und ${newQuizOutput[1]} zu interessieren! Weil es deine Einzigartigkeit unterstreicht, ist dein neuer Onlinename nun: `;
   captionP.innerText = testResult;
   captionP.append(copyButton("captionPUsername"));
 
@@ -233,8 +233,6 @@ function resetQuiz(captionH, captionP) {
   // Remove the reset button
   const resetBtn = document.getElementById("resetButton");
   resetBtn.remove();
-
-
 }
 
 const carousel = document.querySelectorAll("#prevBtn,#nextBtn");

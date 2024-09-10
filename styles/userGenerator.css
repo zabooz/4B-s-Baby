@@ -4,6 +4,7 @@
 * {
   color: #212529;
   font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
 }
 
 .carousel-item {
@@ -29,6 +30,9 @@
 .carousel-caption {
   border-radius: 1rem;
   margin-bottom: 2rem;
+}
+.carousel-caption label {
+  font-size: 1.2rem !important;
 }
 video {
   border: 2px solid #ea6954;
@@ -221,7 +225,9 @@ header {
   margin: 0 0.2rem;
   background-color: #ffffff18;
 }
-
+#captionP {
+  font-size: 1.5rem;
+}
 @media (max-width: 1400px) {
   #wizardDiv,
   #quiz {
