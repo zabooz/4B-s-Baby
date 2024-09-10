@@ -172,12 +172,21 @@ const createUserGenerating = () => {
 }
 
 
-export const createUserGeneratingSite = () => {
-document.getElementById("contentBox").innerHTML = createUserGenerating()
-createQuiz()
+export const createUserGeneratingHTML = (contentBox,style) => {
 
 
-sessionStorage.setItem("content",document.getElementById("contentBox").innerHTML)
+    const content = (() => {
+
+        contentBox.innerHTML = createUserGenerating()
+        createQuiz()
+        return contentBox.innerHTML
+    })(contentBox)
+    const styleSheet = "./styles/userGenerating.css";
+
+    style.setAttribute("href", styleSheet);
+
+    sessionStorage.setItem("styleSheet", styleSheet);
+    sessionStorage.setItem("content", content);
 
 
 const userGenBtn = document.getElementById("userGeneratorBtn");

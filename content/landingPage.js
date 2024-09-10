@@ -129,9 +129,14 @@ const  landingPage = () => {
 
 }
 
-export const createLandingPage = () => {
+export const createLandingPageHTML = (contentBox,style) => {
 
-    sessionStorage.setItem("content", landingPage())
+    const content = landingPage();
+    const styleSheet = "../styles/indexStyle.css";
 
-    document.getElementById("contentBox").innerHTML = landingPage()
+    contentBox.innerHTML = content;
+    style.setAttribute("href", styleSheet);
+
+    sessionStorage.setItem("styleSheet", styleSheet);
+    sessionStorage.setItem("content", content);
 }

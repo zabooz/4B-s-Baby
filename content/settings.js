@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-    crossorigin="anonymous"
-  />    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-/>
-<link rel="stylesheet" href="../styles/navBars.css" />    
-<link rel="stylesheet" href="../styles/aiAssistant.css" />
-<link rel="stylesheet" href="../styles/clipBoard.css" />
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="../featureHtmlScripts/settings.js" defer></script>
-</head>
-<body>
-    <nav></nav>
-    <header></header>
-    <main>
+
+
+const createSettings = () => {
+    return `    <main>
         
       
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -63,52 +42,24 @@
                 <li class="list-group-item">Geteste Passwörter: <span id="overviewPasswords"></span></li>
                 <li class="list-group-item">Generierte Passwörter: <span id="overviewGeneratedPasswords"></span></li>
                 <li class="list-group-item">Generierte Benutzernamen: <span id="overviewGeneratedUsernames"></span></li>
-
               </ul>
           </div>
         </div>
         
 
-    </main>
-    <footer></footer>
-    <div class="clipBoard"></div>
-    <div id="modal"></div>
-    <div class="canvas"></div>
-    <div class="assistant"></div>
-</body>
-<script type="module">
-    import { loadOffCanvas } from "../components/offCanvas.js";
-    import {createLogin} from "../components/registerModal.js";
-    import { clipBoard } from "../components/clipBoard.js";
-    import { createNav, configNav } from "../components/navBar.js";
-    import { createAssistant } from "../components/aiAssistant.js";
+    </main>`
+}
+
+
+export const  createSettingsHtml = (contentBox,style) => {
     
-    import {
-        createFooter,
-        configFooter,
-        iconsFeatures,
-    } from "../components/footer.js";
-    createNav(configNav);
-    createFooter(configFooter, iconsFeatures);
+    const content = createSettings();
+    const styleSheet = "../styles/settings.css";
 
-    createAssistant(".assistant");
-    loadOffCanvas("header", "liste", "../data/text.json");
-    loadOffCanvas("header", "simple", "../data/text.json");
-    clipBoard(".clipBoard");
-    createLogin("modal");
-  </script>  <script
-type="text/javascript"
-src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-></script>
+    contentBox.innerHTML = content;
+    style.setAttribute("href", styleSheet);
 
-<script
-src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-crossorigin="anonymous"
-></script>
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-crossorigin="anonymous"
-></script>
-</html>
+    sessionStorage.setItem("styleSheet", styleSheet);
+    sessionStorage.setItem("content", content);
+
+}

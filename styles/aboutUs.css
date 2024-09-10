@@ -9,13 +9,7 @@ body {
 }
 
 /* Styles für den Header im dunklen Modus */
-header {
-    background-color: #1f1f1f; /* Dunkler Hintergrund für den Header */
-    color: #e0e0e0; /* Helle Textfarbe für den Header */
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #333; /* Abgrenzungslinie unter dem Header */
-}
+
 
 /* Styles für den Hauptbereich im dunklen Modus */
 main {

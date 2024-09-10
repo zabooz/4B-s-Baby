@@ -1,32 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../styles/navBars.css">
-    <link rel="stylesheet" href="./project.css" />
-    <title>From Hero to Zero</title>
-  </head>
-  <body class="d-flex flex-column justify-content-center align-items-center">
-    <nav id="navBar" class="sticky-top"></nav>
-    <header class="d-flex align-items-center my-5" style="max-width: 1600px">
-        <img src="./projectFotos/image8.png" alt="" />
+const createProject =() => {
+
+    return `
+      <header class="d-flex align-items-center my-5" style="max-width: 1600px">
+        <img src="../img/projectFotos/image8.png" alt="" />
         <div class="mt-5 d-flex flex-column align-items-center p-5">
             
             <h1 class="mt-5">Ein BBRZ-IT-Projekt</h1>
             <h3>oder</h3>
             <h1>From Zero to Hero</h1>
         </div>
-        <img src="./projectFotos/image16.png" alt="" />
-        <img src="./projectFotos/34.png" class="w-25" style="transform:rotate(15deg) ; margin-top: 4rem;margin-left: 5rem;" alt="" />
+        <img src="../img/projectFotos/image16.png" alt="" />
+        <img src="../img/projectFotos/34.png" class="w-25" style="transform:rotate(15deg) ; margin-top: 4rem;margin-left: 5rem;" alt="" />
     </header>
-    <main  style="max-width: 1600px">
+    <main  style="max-width: 1600px" id="projectMain">
       <section class="d-flex p-5 ">
         <div class="text w-50">
           <p>
@@ -101,13 +87,13 @@
         <div class="pictures d-flex gap-5  w-50 justify-content-center">
           <div class="d-flex flex-column gap-5 me-5 firstRow">
          
-            <img src="./projectFotos/image11.png" alt="" />
-            <img src="./projectFotos/image9.png" alt="" />
-            <img src="./projectFotos/image3.png" alt="" />
+            <img src="../img/projectFotos/image11.png" alt="" />
+            <img src="../img/projectFotos/image9.png" alt="" />
+            <img src="../img/projectFotos/image3.png" alt="" />
           </div>
           <div class="d-flex flex-column gap-5 align-items-center justify-content-evenly seccondRow">
-            <img src="./projectFotos/image19.png" alt="" />
-            <img src="./projectFotos/image12.png" alt="" />
+            <img src="../img/projectFotos/image19.png" alt="" />
+            <img src="../img/projectFotos/image12.png" alt="" />
           </div>
         </div>
       </section>
@@ -152,7 +138,7 @@
           <p>Damit war das Fundament für Phase 2 gelegt.</p>
         </div>
         <div class="pictures section2 d-flex justify-content-center align-items-center w-50">
-          <img src="./projectFotos/image10.png" alt="" />
+          <img src="../img/projectFotos/image10.png" alt="" />
         </div>
       </section>
       <section class="d-flex  p- mb-5 flex-row-reverse">
@@ -290,15 +276,15 @@
         </div>
         <div class="pictures section3 w-50 d-flex position-relative p-5">
             <div class="firstCol d-flex flex-column justify-content-evenly">
-                <img src="./projectFotos/image18.png" class="position-absolute w-75" style="top: 80%;transform: rotate(-5deg);" alt="" />
-                <img src="./projectFotos/image5.png" class="position-absolute w-75" style="top: 39%;" alt="" />
-                <img src="./projectFotos/image17.png" class="position-absolute w-75" style="top: 60%;transform: rotate(3deg);" alt="" />
+                <img src="../img/projectFotos/image18.png" class="position-absolute w-75" style="top: 80%;transform: rotate(-5deg);" alt="" />
+                <img src="../img/projectFotos/image5.png" class="position-absolute w-75" style="top: 39%;" alt="" />
+                <img src="../img/projectFotos/image17.png" class="position-absolute w-75" style="top: 60%;transform: rotate(3deg);" alt="" />
             </div>
             <div class="secondCol d-flex flex-column justify-content-around">
-                <img src="./projectFotos/image14.png"  class="position-absolute w-75%" style="top: 10%;left: 10%;" alt="" />
+                <img src="../img/projectFotos/image14.png"  class="position-absolute w-75%" style="top: 10%;left: 10%;" alt="" />
                 
                 
-                <img src="./projectFotos/image1.png" class="position-absolute w-75" style="top: 5%;left:4rem;transform:rotate(30deg);"   alt="" />
+                <img src="../img/projectFotos/image1.png" class="position-absolute w-75" style="top: 5%;left:4rem;transform:rotate(30deg);"   alt="" />
             </div>
         </div>
       </section>
@@ -360,10 +346,10 @@
         <div class="picture d-flex justify-content-evenly section3 w-50 ">
 
             <div class="d-flex flex-column align-items-center justify-content-center section3">
-                <img src="./projectFotos/image6.png" alt="" />
-                <img src="./projectFotos/image15.png" alt="" />
+                <img src="../img/projectFotos/image6.png" alt="" />
+                <img src="../img/projectFotos/image15.png" alt="" />
                 
-                <img src="./projectFotos/image7.png" alt="" />
+                <img src="../img/projectFotos/image7.png" alt="" />
 
             </div >
  
@@ -420,33 +406,32 @@
         <div class="d-flex flex-column align-items-center justify-content-center mt-5 gap-4 section3">
             <div class="w-75 row g-5">
             <div class="col ">
-                <img src="./projectFotos/image13.png"  class="img-fluid my-5" />
-                <img src="./projectFotos/image4.png"  class="img-fluid"alt="" />
+                <img src="../img/projectFotos/image13.png"  class="img-fluid my-5" />
+                <img src="../img/projectFotos/image4.png"  class="img-fluid"alt="" />
 
             </div>
             <div class="col">
 
-                <img src="./projectFotos/image20.png" class="img-fluid mb-5" alt="" />
-                <img src="./projectFotos/image2.png" class="img-fluid" alt="" />
+                <img src="../img/projectFotos/image20.png" class="img-fluid mb-5" alt="" />
+                <img src="../img/projectFotos/image2.png" class="img-fluid" alt="" />
             </div>
           </div>
         </div>
       </section>
     </main>
-        <script type="module">
-        import { createNav, configNav } from "../components/navBar.js";
-        createNav(configNav);
+    
+    `;
 
-    </script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+}
+
+
+export const createProjectHTML = (contentBox,style) => {
+    const content = createProject();
+    const styleSheet = "./styles/project.css";
+
+    contentBox.innerHTML = content;
+    style.setAttribute("href", styleSheet);
+
+    sessionStorage.setItem("styleSheet", styleSheet);
+    sessionStorage.setItem("content", content);
+}

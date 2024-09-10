@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über Uns</title>
-        <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./aboutUs.css">
-    <link rel="stylesheet" href="../styles/navBars.css">
-</head>
-<body>
-    <nav id="navBar" class="sticky-top"></nav>
-    <header>
-        <h1>Über Uns</h1>
-    </header>
-    <main>
+const aboutUs = () => {
+    
+
+    return `
+    <main id="aboutUsMain">
+
         <section class="intro">
+        <h1>Über Uns</h1>
             <h2>Willkommen auf unserer Reise in die Welt der Webentwicklung!</h2>
             <p>Wir sind <strong>[Dein Name]</strong> und <strong>[Name deines Partners]</strong>, zwei Quereinsteiger, die ihre Leidenschaft für Technologie und Kreativität entdeckt haben. Unser Abenteuer in der Webentwicklung begann vor einigen Monaten im Rahmen eines Projekts des BBRZ (Berufliches Bildungs- und Rehabilitationszentrum). Aus dem Wunsch heraus, uns beruflich neu zu orientieren und dabei unsere Fähigkeiten weiterzuentwickeln, entstand die Idee zu diesem Projekt, das nun unsere erste, eigene Website hervorgebracht hat.</p>
         </section>
@@ -44,24 +30,20 @@
             <h2>Unsere Mission</h2>
             <p>Unsere Mission ist es, aus jedem neuen Projekt eine Möglichkeit zu machen, weiter zu wachsen und zu lernen. Das BBRZ-Projekt war der Startpunkt, aber wir sind fest entschlossen, unsere Fähigkeiten weiter auszubauen und immer bessere und kreativere Lösungen für unsere Kunden zu entwickeln.</p>
         </section>
-    </main>
-    <footer>
-        <p>Wir freuen uns darauf, gemeinsam mit unseren Kunden spannende und innovative Webprojekte umzusetzen und unsere Reise in der Webentwicklung fortzusetzen.</p>
-    </footer>
-    <script type="module">
-        import { createNav, configNav } from "../components/navBar.js";
-        createNav(configNav);
+    </main>`;
+}
 
-    </script>
-      <script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-    crossorigin="anonymous"
-  ></script>
-</body>
-</html>
+
+
+export const  createAboutUsHTML = (contentBox,style) => {
+
+    const content = aboutUs();
+    const styleSheet = "./styles/aboutUs.css";
+
+    contentBox.innerHTML = content;
+    style.setAttribute("href", styleSheet);
+
+    sessionStorage.setItem("styleSheet", styleSheet);
+    sessionStorage.setItem("content", content);
+    
+}

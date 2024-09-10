@@ -385,12 +385,16 @@ const createPasswordTesting = () => {
 
 
 
-export const createTestingPasswords = () => {
+export const createTestingPasswordHTML = (contentBox,style) => {
 
+    const content = createPasswordTesting();
+    const styleSheet = "./styles/passwordTesting.css";
 
-sessionStorage.setItem("content", createPasswordTesting())
+    contentBox.innerHTML = content;
+    style.setAttribute("href", styleSheet);
 
-document.getElementById('contentBox').innerHTML = createPasswordTesting()
+    sessionStorage.setItem("styleSheet", styleSheet);
+    sessionStorage.setItem("content", content);
 
 
 // const baseUrl = "https://bruteforce.coolify.machma.app"
