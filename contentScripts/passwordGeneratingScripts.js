@@ -1,3 +1,13 @@
+import { pictureToString } from "../scripts/picturePwd.js";
+import { copyButton } from "../scripts/copybutton.js";
+import { tripleConverter } from "../featureHtmlScripts/tripleLeetConverter.js";
+import { generatePassword } from "../scripts/passwordGenerator.js";
+import { dataKraken } from "../utilities/dataKraken.js";
+export const  passwordGeneratingScripts = () => {
+  
+// const baseUrl = "https://bruteforce.coolify.machma.app"
+const baseUrl = "http://localhost:3000";
+
 const uploadFile = document.getElementById("uploadFile");
 const picMagicBtn = document.getElementById("pictureMagicBtn");
 const leetBtn = document.getElementById("leetBtn");
@@ -296,3 +306,5 @@ leetInputField.addEventListener("keypress", function (event) {
 leetInputField.addEventListener("input", () => {
   leetBtn.disabled = leetInputField.value.length > 0 ? false : true;
 });
+
+}

@@ -426,12 +426,21 @@ const createProject =() => {
 
 
 export const createProjectHTML = (contentBox,style) => {
-    const content = createProject();
+
     const styleSheet = "./styles/project.css";
-
-    contentBox.innerHTML = content;
     style.setAttribute("href", styleSheet);
+    sessionStorage.setItem("content", "createProjectHTML");
+    
+    if(sessionStorage.getItem("project")){
+        contentBox.innerHTML = sessionStorage.getItem("project");
+    }else{
+        contentBox.innerHTML = createProject();
+        sessionStorage.setItem("aboutUs", contentBox.innerHTML);
+    
+    }
 
-    sessionStorage.setItem("styleSheet", styleSheet);
-    sessionStorage.setItem("content", content);
+
 }
+
+
+

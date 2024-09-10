@@ -37,13 +37,16 @@ const aboutUs = () => {
 
 export const  createAboutUsHTML = (contentBox,style) => {
 
-    const content = aboutUs();
     const styleSheet = "./styles/aboutUs.css";
-
-    contentBox.innerHTML = content;
     style.setAttribute("href", styleSheet);
-
-    sessionStorage.setItem("styleSheet", styleSheet);
-    sessionStorage.setItem("content", content);
+    sessionStorage.setItem("content", "createAboutUsHTML");
     
+    if(sessionStorage.getItem("aboutUs")){
+        contentBox.innerHTML = sessionStorage.getItem("aboutUs");
+    }else{
+        contentBox.innerHTML = aboutUs();
+        sessionStorage.setItem("aboutUs", contentBox.innerHTML);
+
+    }
+
 }
