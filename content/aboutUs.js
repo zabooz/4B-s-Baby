@@ -35,12 +35,15 @@ const aboutUs = () => {
 
 
 
-export const  createAboutUs = () => {
+export const  createAboutUsHTML = (contentBox,style) => {
 
-    const content = aboutUs()
+    const content = aboutUs();
+    const styleSheet = "./styles/aboutUs.css";
 
-    document.getElementById("contentBox").innerHTML = content
+    contentBox.innerHTML = content;
+    style.setAttribute("href", styleSheet);
 
+    sessionStorage.setItem("styleSheet", styleSheet);
     sessionStorage.setItem("content", content);
     
 }

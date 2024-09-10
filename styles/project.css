@@ -1,43 +1,43 @@
-#projectMain img{
+img{
     border: 3px solid rgb(203, 190, 190);
     border-radius: 1rem;
 }
 
-#projectMain .picture .firstRow img{
+.picture .firstRow img{
    width: clamp(10rem, 15rem, 20rem); 
 }
 
-#projectMain .seccondRow img{
+.seccondRow img{
    width: clamp(10rem, 20rem, 25rem); 
 }
 
-#projectMain .pictures .seccondRow img:first-child{
+.pictures .seccondRow img:first-child{
    transform: rotate(8deg);
 }
 
-#projectMain .pictures .seccondRow img:last-child{
+.pictures .seccondRow img:last-child{
    transform: rotate(-4deg);
 }
 
-#projectMain h2, #projectMain h3{
+h2, h3{
     margin: 3rem 0;
 }
 
-#projectMain .section2 img{
+.section2 img{
     border-radius: 50%;
     width: clamp(10rem, 15rem, 20rem);
     animation: logo 3s infinite;
 }
 
-#projectMain .firstCol img{
+.firstCol img{
     width: clamp(10rem, 40vw, 25rem);
 }
 
-#projectMain .secondCol img{
+.secondCol img{
     width: clamp(10rem, 15rem, 20rem);
 }
 
-#projectMain .picture .section3 img{
+.picture .section3 img{
     width: clamp(10rem, 25rem, 30rem);
 }
 
@@ -53,12 +53,12 @@
     }
 }
 
-#projectMain .logo {
+.logo {
     animation: logo 3s linear infinite;
 }
 
 /* Allgemeine Styles für Zitate in einem p-Tag */
-#projectMain .zitat {
+.zitat {
     position: relative; /* Positionierung für das Design des Zitats */
     padding: 20px;
     margin: 20px 0;

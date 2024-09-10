@@ -425,8 +425,13 @@ const createProject =() => {
 }
 
 
-export const createProjectHtml = () => {
+export const createProjectHTML = (contentBox,style) => {
     const content = createProject();
+    const styleSheet = "./styles/project.css";
+
+    contentBox.innerHTML = content;
+    style.setAttribute("href", styleSheet);
+
+    sessionStorage.setItem("styleSheet", styleSheet);
     sessionStorage.setItem("content", content);
-    document.getElementById("contentBox").innerHTML = content;
 }

@@ -5,8 +5,8 @@ import { createLandingPageHTML } from "./content/landingPage.js";
 import { createTestingPasswordHTML } from "./content/passwordTesting.js";
 import { createUserGeneratingHTML } from "./content/userGenerating.js";
 import { createSettingsHtml } from "./content/settings.js";
-import { createAboutUs } from "./content/aboutUs.js";
-import { createProjectHtml } from "./content/project.js";
+import { createAboutUsHTML } from "./content/aboutUs.js";
+import { createProjectHTML } from "./content/project.js";
 
 const project = document.getElementById("project");
 const pwGeneratingContent = document.getElementById("pwGenerating");
@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const contentBox =  document.getElementById("contentBox");
 const style = document.getElementById("contentStyle");
+
 pwGeneratingContent.addEventListener("click", () => {
   createPasswordGeneratingHTML(contentBox,style)
 })
@@ -49,11 +50,11 @@ settings.addEventListener("click", () => {
 })
 
 aboutUs.addEventListener("click", () => {
-  createAboutUs()
+  createAboutUsHTML(contentBox,style)
 })
 
 project.addEventListener("click", () => {
-  createProjectHtml() 
+  createProjectHTML(contentBox,style) 
 })
 
 
