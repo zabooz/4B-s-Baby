@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 export const eventBinding = () => {
   const contentLoader = document.querySelectorAll("a[data-function],button[data-function]");
   contentLoader.forEach((button) => {
-    console.log()
+
     button.addEventListener("click", (e) => {
       e.preventDefault();
       const functionName = button.getAttribute("data-function");
@@ -50,3 +50,4 @@ export const eventBinding = () => {
     });
   });
 }
+

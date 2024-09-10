@@ -136,6 +136,6 @@ export const createLandingPageHTML = (contentBox,style) => {
       contentBox.innerHTML = landingPage()
       sessionStorage.setItem("landingPage",contentBox.innerHTML)
     }
-    eventBinding()
+
     landingPageScripts("scrollIntoViewBtn","scrollIntoView")
 }
