@@ -8,6 +8,7 @@ export async function dataKrakenTakes(data) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "authorization": `Bearer ${localStorage.getItem("passwordplayground")}`,
       },
       body: JSON.stringify(data),
     });
@@ -25,14 +26,14 @@ export async function dataKrakenTakes(data) {
 
 export async function dataKrakenGives() {
   let data;
-  const token = localStorage.getItem("passwordplayground");
+
 
   try {
     const response = await fetch(`${baseUrl}/dataKrakenGives`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${localStorage.getItem("passwordplayground")}`,
       }
     });
 
@@ -48,14 +49,14 @@ export async function dataKrakenGives() {
 
 export async function dataKrakenTrades(key, value,) {
   let data;
-  const token = localStorage.getItem("passwordplayground");
+
 
   try {
     const response = await fetch(`${baseUrl}/dataKrakenTrades`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${localStorage.getItem("passwordplayground")}`,
       },
       body: JSON.stringify({ key: key, value: value }),
     });
@@ -71,13 +72,13 @@ export async function dataKrakenTrades(key, value,) {
 }
 
 export const dataKrakenBestow = async () => {
-  const token = localStorage.getItem("passwordplayground");
+
   try {
     const response = await fetch(`${baseUrl}/dataKrakenBestow`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "authorization": `Bearer ${token}`,
+        "authorization": `Bearer ${localStorage.getItem("passwordplayground")}`,
       }
     });
 

@@ -2,7 +2,6 @@
 
 export const sortTables = () => {
     const table = document.querySelectorAll("table");
-    console.log(table.length);
     for (let i = 0; i < table.length; i++) {
         table[i].addEventListener("click", (event) => {
             const target = event.target;

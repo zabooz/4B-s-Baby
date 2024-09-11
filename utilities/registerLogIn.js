@@ -65,8 +65,7 @@ export const login = (username, password) => {
     .then((data) => {
       if (data.token) {
         localStorage.setItem("passwordplayground", data.token);
-        console.log("Token erfolgreich gespeichert!");
-        dataKrakenTakes({ token: data.token, col: "visits" });
+        dataKrakenTakes({ col: "visits" });
         fetchUserData();
       } else {
         alert("Login fehlgeschlagen: " + data.message);
@@ -79,12 +78,12 @@ export const login = (username, password) => {
 };
 
 export function fetchUserData() {
-  const token = localStorage.getItem("passwordplayground");
+
 
   fetch(`${baseUrl}/user`, {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${localStorage.getItem("passwordplayground")}`,
     },
   })
     .then((response) => response.json())
@@ -124,13 +123,13 @@ const loginFunc = (username, avatar) => {
 
 export const deleteUser = async () => {
   try {
-    const token = localStorage.getItem("passwordplayground");
+  
 
     const response = await fetch(`${baseUrl}/deleteUser`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${localStorage.getItem("passwordplayground")}`,
       },
     });
 

@@ -26,7 +26,7 @@ export const passwordGeneratingScripts = () => {
     JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
   let storedGlyphArray =
     JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; // variable to save GlyphPwd
-  const token = localStorage.getItem("passwordplayground") || null;
+
 
   // ==========================================================
 
@@ -104,7 +104,7 @@ export const passwordGeneratingScripts = () => {
         "statsBodyPicGen"
       );
       picMagicBtn.disabled = true;
-      if (token) dataKrakenTakes({ token, col: "generatedPasswords" });
+      dataKrakenTakes({  col: "generated_passwords" });
     } catch (error) {
       console.error(error);
     }
@@ -122,7 +122,7 @@ export const passwordGeneratingScripts = () => {
 
     runeTranslatorArray = [];
 
-    if (token) dataKrakenTakes({ token, col: "generatedPasswords" });
+   dataKrakenTakes({  col: "generatedPasswords" });
 
     for (let i = 0; i < newPasswordArray.length; i++) {
       const pwId = `runeTranslator${i}`;
@@ -185,7 +185,7 @@ export const passwordGeneratingScripts = () => {
       app: app,
     };
 
-    if (token) dataKrakenTakes({ token, col: "generatedPasswords" });
+    dataKrakenTakes({  col: "generatedPasswords" });
     storedGlyphArray.push(data);
     storeAndSwitch(
       glyphRowsArr,
