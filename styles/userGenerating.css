@@ -30,9 +30,10 @@
 
 .carousel-caption {
   border-radius: 1rem;
-  margin-bottom: 2rem;
 }
-
+.carousel-caption h5 {
+  margin-bottom: 1rem;
+}
 video {
   border: 2px solid #ea6954;
   margin-left: 1rem;
@@ -229,7 +230,6 @@ header {
   letter-spacing: 0.3rem;
   padding: 1rem;
   margin: 0 0.2rem;
-  background-color: #ffffff18;
   font-size: clamp(0.6rem, 1.2vw, 1.8rem);
   width: 60%;
   justify-content: center;
@@ -245,7 +245,6 @@ header {
   padding-bottom: 1rem;
   padding-top: 3rem;
   margin: 0 0.2rem;
-  background-color: #ffffff18;
 }
 
 @media (max-width: 1400px) {
@@ -310,7 +309,11 @@ header {
     flex-direction: column;
   }
 }
-
+.lastSlide {
+  font-weight: 400 !important;
+  margin-bottom: 1rem !important;
+  font-size: 1.2rem !important;
+}
 .custom-indicators button {
   background-color: #4caf50;
 }
@@ -322,8 +325,14 @@ header {
 .custom-arrow {
   filter: invert(49%) sepia(69%) saturate(6785%) hue-rotate(355deg)
     brightness(104%) contrast(101%);
-}
 
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  height: 50%;
+  width: 50%;
+
+}
 .custom-img {
   border-radius: 1rem;
 }
