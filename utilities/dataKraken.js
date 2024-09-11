@@ -8,6 +8,7 @@ export async function dataKrakenTakes(data) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "authorization": `Bearer ${localStorage.getItem("passwordplayground")}`,
       },
       body: JSON.stringify(data),
     });
@@ -23,17 +24,17 @@ export async function dataKrakenTakes(data) {
   }
 }
 
-export async function dataKrakenGives() {
+export async function dataKrakenGives(col) {
   let data;
-  const token = localStorage.getItem("passwordplayground");
+
 
   try {
-    const response = await fetch(`${baseUrl}/dataKrakenGives`, {
+    const response = await fetch(`${baseUrl}/dataKrakenGives?col=${col}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
+        "authorization": `Bearer ${localStorage.getItem("passwordplayground")}`,
+      }
     });
 
     if (response.ok) {
@@ -46,16 +47,16 @@ export async function dataKrakenGives() {
   return data;
 }
 
-export async function dataKrakenTrades(key, value) {
+export async function dataKrakenTrades(key, value,) {
   let data;
-  const token = localStorage.getItem("passwordplayground");
+
 
   try {
     const response = await fetch(`${baseUrl}/dataKrakenTrades`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${localStorage.getItem("passwordplayground")}`,
       },
       body: JSON.stringify({ key: key, value: value }),
     });
@@ -69,3 +70,28 @@ export async function dataKrakenTrades(key, value) {
 
   return data;
 }
+
+export const dataKrakenBestow = async (col) => {
+
+  try {
+    const response = await fetch(`${baseUrl}/dataKrakenBestow?col=${col}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "authorization": `Bearer ${localStorage.getItem("passwordplayground")}`,
+      }
+    });
+
+
+    if (response.ok) {
+      const result = await response.json();
+      return result
+    } else {
+      console.error("Fehler beim Senden der Daten:", await response.text());
+    }
+
+  } catch (error) {
+    console.error("Fehler beim Senden der Anfrage:", error);
+  }
+
+};

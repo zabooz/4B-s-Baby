@@ -9,8 +9,6 @@ import { data } from "../data/data.js";
 export const passwordTestingScripts = (id) => {
   const baseUrl = data.baseUrl;
 
-  const token = localStorage.getItem("passwordplayground") || null;
-
   const startBrute = document.getElementById("startBrute");
   const stopBrute = document.getElementById("stopBrute");
   const excaliburBtn = document.getElementById("excaliburBtn");
@@ -175,7 +173,7 @@ export const passwordTestingScripts = (id) => {
         startBrute.innerHTML = "Nochmal?";
         stopBrute.style.backgroundColor = "#ced4da";
         bruteResults.classList.remove("invisible");
-        if (token) dataKrakenTakes({ token, col: "testedPasswords" });
+        dataKrakenTakes({col: "tested_passwords" });
       });
   };
 
@@ -317,7 +315,7 @@ export const passwordTestingScripts = (id) => {
       excaliburBtn.disabled = true;
       excaliburBtn.innerHTML = "Nochmal?";
 
-      if (token) dataKrakenTakes({ token, col: "testedPasswords" });
+       dataKrakenTakes({ col: "tested_passwords" });
     }
   });
 

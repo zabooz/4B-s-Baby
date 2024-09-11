@@ -18,7 +18,7 @@ export const userGeneratingScripts = () => {
   const nextBtn = document.getElementById("nextBtn");
   const prevBtn = document.getElementById("prevBtn");
 
-  const token = localStorage.getItem("passwordplayground") || null;
+
 
   deleteTableBtn.addEventListener("click", function () {
     for (let i = 0; i < 4; i++) {
@@ -38,7 +38,7 @@ export const userGeneratingScripts = () => {
   userGenBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
-    if (token) dataKrakenTakes({ token, col: "generatedUsernames" });
+    dataKrakenTakes({ col: "generatedUsernames" });
     // Get values from inputs
     const adjective1 = document.getElementById("adjective1").value;
     const adjective2 = document.getElementById("adjective2").value;
@@ -98,7 +98,7 @@ export const userGeneratingScripts = () => {
     const selectedNoun = document.getElementById("noun").value;
     const userOutput = generateUser(adjective1, adjective2, selectedNoun);
 
-    if (token) dataKrakenTakes({ token, col: "generatedUsernames" });
+   dataKrakenTakes({ col: "generatedUsernames" });
     aiUserGenBtn.innerHTML = `
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
     <span role="status">${thinkWords[0]}</span>
@@ -186,7 +186,7 @@ export const userGeneratingScripts = () => {
   quizBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
-    if (token) dataKrakenTakes({ token, col: "generatedUsernames" });
+   dataKrakenTakes({col: "generatedUsernames" });
     let testResult;
 
     const quizOutput = generateQuizResult();
@@ -196,7 +196,8 @@ export const userGeneratingScripts = () => {
 
     const captionH = document.getElementById("captionH");
     const captionP = document.getElementById("captionPUsername");
-
+    captionH.classList.add("lastSlide");
+    captionP.classList.add("lastSlide");
     captionH.innerText = `Hey, du scheinst dich für ${newQuizOutput[2]}, ${newQuizOutput[3]} und ${newQuizOutput[1]} zu interessieren! Weil es deine Einzigartigkeit unterstreicht, ist dein neuer Onlinename nun: `;
     captionP.innerText = testResult;
     captionP.append(copyButton("captionPUsername"));
@@ -217,6 +218,8 @@ export const userGeneratingScripts = () => {
     // Add event listener to the reset button
     resetBtn.addEventListener("click", function () {
       resetQuiz(captionH, captionP);
+      captionH.classList.remove("lastSlide");
+      captionP.classList.remove("lastSlide");
     });
   });
 

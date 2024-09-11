@@ -1,25 +1,32 @@
-import { dataKrakenGives, dataKrakenTrades } from "../utilities/dataKraken.js";
-
+import { dataKrakenGives, dataKrakenTrades} from "../utilities/dataKraken.js";
+import { leaderBoards } from "../featureHtmlScripts/leaderBoards.js";
 export const settingsScripts = async () => {
-  const overviewListItems = document.querySelectorAll(".overview  span");
+    const overviewListItems = document.querySelectorAll("span[data-key]");
   const changeUsername = document.getElementById("changeUsername");
-
   const changePassword = document.getElementById("changePassword");
-  const chooseProfilePic = document.getElementById("chooseProfilePic");
+  const changeProfilePic = document.getElementById("chooseProfilePic");
+  const changeEmail = document.getElementById("changeEmail");
   const profilePicSrc = document.querySelectorAll(".img img");
-  let data;
 
-  const getUserStats = async () => {
+
+  const data = await (async () => {
     try {
       const response = await dataKrakenGives();
 
-      data = response.data[0];
+      return  response.data[0];
     } catch (error) {
       console.error(error);
     }
-  };
+  })();
 
-  await getUserStats();
+
+
+
+  if (data) {
+    overviewListItems.forEach((item) => {
+      item.innerText = data[item.dataset.key] || "N/A";
+    });
+  }
 
   const updateProfile = async (key, value) => {
     try {
@@ -47,6 +54,16 @@ export const settingsScripts = async () => {
     }
   });
 
+  changeEmail.addEventListener("click", async () => {
+    const email = prompt("Enter new email:");
+    if (email) {
+      await updateProfile("email", email);
+    }
+  });
+
+
+
+
   let avatarSrc = "";
 
   profilePicSrc.forEach((item) => {
@@ -58,7 +75,8 @@ export const settingsScripts = async () => {
     });
   });
 
-  chooseProfilePic.addEventListener("click", async () => {
+
+  changeProfilePic.addEventListener("click", async () => {
     const profilePictureNav = document.getElementById("profilePictureNav");
     const avatar = document.getElementById("avatar");
 
@@ -69,9 +87,13 @@ export const settingsScripts = async () => {
     }
   });
 
-  if (data) {
-    overviewListItems.forEach((item) => {
-      item.innerText = data[item.id] || "N/A"; // Fallback if no data is available
-    });
-  }
+  const leaderBoardTab = document.getElementById("leaderBoardTab");
+
+  leaderBoardTab.addEventListener("click", async () => {    
+        leaderBoards();
+        
+  });
+
+
+
 };

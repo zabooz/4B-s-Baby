@@ -1,7 +1,6 @@
 import { pictureToString } from "../scripts/picturePwd.js";
 import { copyButton } from "../scripts/copybutton.js";
 import { tripleConverter } from "../featureHtmlScripts/tripleLeetConverter.js";
-import { generatePassword } from "../scripts/passwordGenerator.js";
 import { generateEzPw } from "../featureHtmlScripts/pwSandbox.js";
 import { dataKrakenTakes } from "../utilities/dataKraken.js";
 
@@ -14,10 +13,8 @@ export const passwordGeneratingScripts = () => {
   const uploadContainer = document.querySelector(".labelCon");
   const leetInputField = document.getElementById("leetInput");
 
-
   let picturePath;
   let file;
-
 
   const pictureRowsArr = []; // variable  to save row dom elements
   let glyphRowsArr = []; // variable  to save row dom elements
@@ -29,8 +26,6 @@ export const passwordGeneratingScripts = () => {
     JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
   let storedGlyphArray =
     JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; // variable to save GlyphPwd
-  const token = localStorage.getItem("passwordplayground") || null;
-
 
 
   // ==========================================================
@@ -43,8 +38,6 @@ export const passwordGeneratingScripts = () => {
     uploadFile.click();
   });
 
-
-
   uploadFile.addEventListener("input", () => {
     picMagicBtn.disabled = false;
     const label = document.getElementById("uploadLabel");
@@ -54,12 +47,9 @@ export const passwordGeneratingScripts = () => {
 
     // check if file is valid & and handle if user abort upload
 
-
     if (input.files[0]) file = input.files[0];
 
     const validTypes = ["image/jpeg", "image/png", "image/webp", "image/bmp"];
-
-
 
     if (file === undefined) {
       return;
@@ -67,7 +57,6 @@ export const passwordGeneratingScripts = () => {
       alert("Only image files are allowed.");
       return;
     }
-
 
     const reader = new FileReader();
     reader.onload = function (e) {
@@ -83,17 +72,13 @@ export const passwordGeneratingScripts = () => {
         previewCon.classList.remove("scale");
       }, 2000);
     };
-      //  upload effect
-
-
+    //  upload effect
 
     reader.readAsDataURL(file);
   });
 
-
   picMagicBtn.addEventListener("click", async (e) => {
     e.preventDefault();
-
 
     const pwId = `pasword${pictureRowsArr.length}`;
     const picId = `pic${pictureRowsArr.length}`;
@@ -106,14 +91,11 @@ export const passwordGeneratingScripts = () => {
       app: "pictureMagic",
     };
 
-
-
     try {
       const result = await pictureToString(file);
 
       data.password = result;
       pictureMagicArray.push(data);
-
 
       storeAndSwitch(
         pictureRowsArr,
@@ -122,14 +104,11 @@ export const passwordGeneratingScripts = () => {
         "statsBodyPicGen"
       );
       picMagicBtn.disabled = true;
-      if (token) dataKrakenTakes({ token, col: "generatedPasswords" });
+      dataKrakenTakes({  col: "generated_passwords" });
     } catch (error) {
       console.error(error);
     }
   });
-
-
-
 
   //  ===============================================================
 
@@ -137,15 +116,13 @@ export const passwordGeneratingScripts = () => {
 
   //  ==============================================================
 
-
   leetBtn.addEventListener("click", function () {
     const leetInput = leetInputField.value;
     const newPasswordArray = tripleConverter(leetInput);
 
-
     runeTranslatorArray = [];
 
-    if (token) dataKrakenTakes({ token, col: "generatedPasswords" });
+   dataKrakenTakes({  col: "generatedPasswords" });
 
     for (let i = 0; i < newPasswordArray.length; i++) {
       const pwId = `runeTranslator${i}`;
@@ -159,16 +136,13 @@ export const passwordGeneratingScripts = () => {
         app: "runeTranslator",
       };
 
-
       runeTranslatorArray.push(data);
     }
-
 
     sessionStorage.setItem(
       "runeTranslatorArray",
       JSON.stringify(newPasswordArray)
     );
-
 
     storeAndSwitch(
       runeRowsArr,
@@ -177,7 +151,6 @@ export const passwordGeneratingScripts = () => {
       "statsBody2"
     );
   });
-
 
   // ================================================================
   // ================================================================
@@ -192,10 +165,7 @@ export const passwordGeneratingScripts = () => {
     const sliderValue = glyphRangeSlider.value;
     const sliderValueDisplay = document.getElementById("sliderValue");
     sliderValueDisplay.textContent = sliderValue;
-    rdmPwdBtn.disabled = sliderValue > 5 ? false : true;
   });
-
-
 
   rdmPwdBtn.addEventListener("click", function () {
     const selectedLanguage = document.querySelector(
@@ -215,7 +185,7 @@ export const passwordGeneratingScripts = () => {
       app: app,
     };
 
-    if (token) dataKrakenTakes({ token, col: "generatedPasswords" });
+    dataKrakenTakes({  col: "generatedPasswords" });
     storedGlyphArray.push(data);
     storeAndSwitch(
       glyphRowsArr,
@@ -224,7 +194,6 @@ export const passwordGeneratingScripts = () => {
       "statsBodyPwGen"
     );
   });
-
 
   /**
    * Clears the table body, stores the data array in session storage
@@ -248,25 +217,19 @@ export const passwordGeneratingScripts = () => {
     DOMElementArr = [];
     // generate rows from data array
 
-
     for (let i = 0; i < storageArr.length; i++) {
       const item = storageArr[i];
-
 
       const tdPw = document.createElement("td");
       const pwId = `${item.app}${item.pwId}`;
 
-
       const tdCatch = document.createElement("td");
       const catchId = `pic${item.catchId}`;
-
 
       const tdLeft = document.createElement("td");
       const tdRight = document.createElement("td");
 
       const spanPwd = document.createElement("span");
-
-
 
       spanPwd.innerText = `${item.password}`;
       tdPw.append(copyButton(pwId), spanPwd);
@@ -274,8 +237,6 @@ export const passwordGeneratingScripts = () => {
 
       tdLeft.innerHTML = `<img src="../img/icons/arrow.svg" data-side="left" class="${item.app} d-none" style="transform: rotate(180deg); margin-top: -0.15rem; width: 2rem" alt="Arrow Left">`;
       tdRight.innerHTML = `<img src="../img/icons/arrow.svg" id="arrowRight" class="${item.app} d-none" data-side="right" style="margin-top: -0.15rem; width: 2rem" alt="Arrow Right">`;
-
-
 
       tdCatch.id = catchId;
       tdCatch.classList.add("tablePics");
@@ -295,15 +256,11 @@ export const passwordGeneratingScripts = () => {
         tdCatch.innerHTML = `<span>${item.catch}</span>`;
       }
 
-
-
       DOMElementArr.push(tr);
     }
 
-
     // add switch arrows to rows when more than 1 row
     let count = DOMElementArr.length;
-
 
     if (count > 1) {
       DOMElementArr.forEach((element) => {
@@ -323,10 +280,8 @@ export const passwordGeneratingScripts = () => {
       });
     }
 
-
     tbody.append(DOMElementArr[DOMElementArr.length - 1]);
   };
-
 
   if (storedGlyphArray.length > 0) {
     storeAndSwitch(
@@ -359,9 +314,7 @@ export const passwordGeneratingScripts = () => {
     }
   });
 
-
   leetInputField.addEventListener("input", () => {
     leetBtn.disabled = leetInputField.value.length > 0 ? false : true;
   });
 };
-
