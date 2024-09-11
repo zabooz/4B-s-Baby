@@ -107,7 +107,7 @@ const landingPage = () => {
                   <span><b>Mind Maestro</b></span> erstellt kreative Namen durch
                   ein unterhaltsames Quiz.
                 </p>
-<button class="btn btn-primary subText mt-auto mb-3 mx-auto btn-lg border-0 w-75"  data-function="createUserGeneratingHTML">Erstelle Username</button>
+<button class="btn btn-primary subText mt-auto mx-auto btn-lg border-0 w-75"  data-function="createUserGeneratingHTML">Erstelle Username</button>
 
                 
               </div>
