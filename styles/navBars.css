@@ -5,9 +5,7 @@
 nav {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
-  font-size: clamp(1rem, 1vw, 1.2rem);
   z-index: 123;
 }
 .navbar-brand {
