@@ -60,8 +60,14 @@ const createPasswordTesting = () => {
                     id="bruteForceInput"
                   />
                   <span class="input-group-text" id="basic-addon1"
-                    ><i class="bi bi-eye" id="togglePassword"></i
-                  ></span>
+                    >
+                    
+                    <img id="togglePassword" src="../img/icons/eye.svg" alt="eye">
+
+            
+                    
+                    
+                    </span>
                 </div>
 
                 <div class="d-flex justify-content-evenly my-4">
@@ -162,9 +168,9 @@ const createPasswordTesting = () => {
                     aria-describedby="basic-addon2"
                     id="excaliburInput"
                   />
-                  <span class="input-group-text" id="basic-addon2"
-                    ><i class="bi bi-eye" id="togglePassword2"></i
-                  ></span>
+                  <span class="input-group-text" id="basic-addon2">
+                  <img src="../img/icons/eye-slash.svg" alt="eye-slash" id="togglePassword2">
+                  </span>
                 </div>
                 <div id="strengthBarDiv" class="mt-3">
                   <div

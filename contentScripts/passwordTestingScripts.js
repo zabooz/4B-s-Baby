@@ -187,8 +187,8 @@ export const passwordTestingScripts = (id) => {
 
     const stars = "******";
 
-    const mojoIcon = document.createElement("i");
-    mojoIcon.className = "bi bi-eye";
+    const mojoIcon = document.createElement("img");
+    mojoIcon.src="../img/icons/eye.svg" 
 
     const rowCount = tBody.rows.length;
 
@@ -200,17 +200,17 @@ export const passwordTestingScripts = (id) => {
       const target = document.getElementById(`td${rowCount}`);
       if (target.textContent === stars) {
         target.textContent = dataArr[0];
-        mojoIcon.className = "bi bi-eye-slash mb-1";
+        mojoIcon.src="../img/icons/eye-slash.svg" 
         target.append(mojoIcon);
       } else {
         target.textContent = stars;
-        mojoIcon.className = "bi bi-eye mb-1";
+        mojoIcon.src="../img/icons/eye.svg" 
         target.append(mojoIcon);
       }
     });
 
-    const mojoIconDisplay = document.createElement("i");
-    mojoIconDisplay.className = "bi bi-eye";
+    const mojoIconDisplay = document.createElement("img");
+    mojoIconDisplay.src="../img/icons/eye.svg" 
 
     mojoIconDisplay.addEventListener("click", () => {
       const target = document.getElementById(`displayResult`);
@@ -334,17 +334,17 @@ export const passwordTestingScripts = (id) => {
     excaliburPwd.classList.add("w-50", "d-flex", "justify-content-between");
 
     const stars = "******";
-    const eyeIcon = document.createElement("i");
-    eyeIcon.className = "bi bi-eye";
+    const eyeIcon = document.createElement("img");
+    eyeIcon.src="../img/icons/eye.svg" 
     eyeIcon.addEventListener("click", () => {
       if (excaliburPwd.textContent === stars) {
         excaliburPwd.innerHTML = `<span class="w-75 text-center">"${pwd}"</span>`;
-        eyeIcon.className = "bi bi-eye-slash";
+        eyeIcon.src="../img/icons/eye-slash.svg" 
         excaliburPwd.append(eyeIcon);
       } else {
         excaliburPwd.innerHTML = `<span class="w-75 text-center">${stars}</span>`;
         excaliburPwd.append(eyeIcon);
-        eyeIcon.className = "bi bi-eye";
+        eyeIcon.src="../img/icons/eye.svg" 
       }
     });
 

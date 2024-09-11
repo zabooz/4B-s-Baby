@@ -32,7 +32,9 @@ nav img {
   color: black;
   font-size: 14px;
 }
-
+.btn:active{
+  background-color: #56c5c3 !important;
+}
 @media (max-width: 992px) {
   .dropdown-menu {
     left: 0 !important;
