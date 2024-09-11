@@ -71,18 +71,17 @@ export const settingsScripts = async () => {
 
   if (data) {
     overviewListItems.forEach((item) => {
-      item.innerText = data[item.id] || "N/A"; // Fallback if no data is available
+      item.innerText = data[item.id] || "N/A";
     });
   }
-
 
   const leaderBoardTab = document.getElementById("leaderBoardTab");
 
   leaderBoardTab.addEventListener("click", async () => {
-    const response = await dataKrakenBestow();
-    if(response.success === true) {
+      const response = await dataKrakenBestow();
+      if (response.data)
         leaderBoards(response.data);
-    }
+    
   });
 
 

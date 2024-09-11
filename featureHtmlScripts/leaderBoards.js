@@ -1,7 +1,10 @@
+import { sortTables } from "../utilities/sortTables.js";
+
+
 export const leaderBoards = (data) => {
 
     const leaderBoardTable = document.getElementById("leaderBoardTable");
-
+    sortTables()
     leaderBoardTable.innerHTML = "";
 
     data.forEach((item, index) => {
