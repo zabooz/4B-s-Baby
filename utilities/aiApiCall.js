@@ -1,12 +1,16 @@
 import { passwordEncoder } from "../scripts/encoder.js";
+import {data} from "../data/data.js"
+
+
+
+const baseUrl = data.baseUrl
 
 
 export async function aiApiCall(userContent,
     sysContent) {
-  const baseUrl = "https://bruteforce.coolify.machma.app/";
   const [encodedPwd, key] = passwordEncoder(userContent);
   const content = sysContent;
-  const urlPara = `${baseUrl}apiCall?pwd=${encodedPwd}&key=${key}&sysContent=${content}`;
+  const urlPara = `${baseUrl}/apiCall?pwd=${encodedPwd}&key=${key}&sysContent=${content}`;
 
   try {
     const response = await fetch(urlPara);

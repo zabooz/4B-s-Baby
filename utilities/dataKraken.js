@@ -1,10 +1,11 @@
-// const baseUrl = 'https://bruteforce.coolify.machma.app';
-const baseUrl = 'http://localhost:3000';
+import {data} from "../data/data.js"
 
-export async function dataKraken(data) {
+const baseUrl = data.baseUrl
+
+export async function dataKrakenTakes(data) {
 
     try { 
-      const response = await fetch(`${baseUrl}/dataKrakenTakes`, { // Backend-Server URL
+      const response = await fetch(`${baseUrl}/dataKrakenTakes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -23,3 +24,67 @@ export async function dataKraken(data) {
       console.error('Fehler beim Senden der Anfrage:', error);
     }
   }
+
+  export async function dataKrakenGives() {
+
+    let data;
+    const token = localStorage.getItem("passwordplayground")
+
+    try{
+
+      const response = await fetch( `${baseUrl}/dataKrakenGives`,{
+
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      })
+
+
+      if(response.ok) {
+        data = await response.json();
+    
+      }
+
+
+    } catch (error) {
+        console.error('Fehler beim Senden der Anfrage:', error);
+    }
+
+
+    return data
+
+}  
+
+
+export async function  dataKrakenTrades(key,value){
+
+    let data;
+    const token = localStorage.getItem("passwordplayground")
+
+    try{
+        const response = await fetch( `${baseUrl}/dataKrakenTrades`,{
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({key:key,value:value})
+        })
+    
+
+        if(response.ok) {
+            data = await response.json();
+        
+        }
+    
+      } catch (error) {
+          console.error('Fehler beim Senden der Anfrage:', error);
+      }
+
+    return data
+
+
+}
+

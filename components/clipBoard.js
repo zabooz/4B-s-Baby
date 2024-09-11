@@ -3,6 +3,8 @@ import { storedClippy, copyButton } from "../scripts/copybutton.js";
 
 const createClipBoard = () => {
 
+  const imgSrc ="../img/quickNav/copyCat1.jpeg"
+
 
   return `
 <div class="offcanvas offcanvas-start border-0  " tabindex="-1" id="clippy" aria-labelledby="offcanvasExampleLabel">
@@ -10,7 +12,7 @@ const createClipBoard = () => {
 <button type="button" class="btn-close m-2 ms-auto " data-bs-dismiss="offcanvas" aria-label="Close"></button>
 </div>
 <div class="bg-header d-flex flex-column  ">
-<img src="../img/icons/copyCat1.jpeg">
+<img src=${imgSrc}>
 <h5 class="offcanvas-title montserrat-font-clippy  p-3 pb-4  d-flex justify-content-evenly"  id="clippy">  CLIPBOARD </h5>
 </div>
     <div class="offcanvas-body p-0 border-0 d-flex  flex-column ">
