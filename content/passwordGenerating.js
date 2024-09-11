@@ -447,7 +447,6 @@ export const createPasswordGeneratingContent = () => {
     );
     const length = Number(glyphRangeSlider.value);
     let password = generateEzPw(length, selectedLanguage.id);
-    console.log(password, selectedLanguage.id);
     const pwId = `password${glyphRowsArr.length}`;
     const lengthId = `length${glyphRowsArr.length}`;
     const app = "glyphSorcery";

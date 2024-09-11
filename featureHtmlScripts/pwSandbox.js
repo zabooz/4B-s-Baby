@@ -3,6 +3,7 @@ import { passwordConverter } from "../scripts/passwordConverter.js";
 import { shuffleArray } from "../scripts/passwordGenerator.js";
 import { allNouns as allNounsGerman } from "../data/deutschGenerator.data.js";
 import { allNouns as allNounsEnglish } from "../data/englishGenerator.data.js";
+import { capitalizeFirstLetter } from "./newUserGenerator.js";
 
 function filterWordsByLength(words, length) {
   // Use the filter method to filter words based on the specified length
@@ -49,8 +50,13 @@ export function generateEzPw(length, language) {
   let allNouns = languageSelect(language);
   let filteredArray = filterWordsByLength(allNouns, length);
   let chosenWord = filteredArray[rndNumInLen(filteredArray)];
+  const firstChar = chosenWord.slice(0, 1);
+  const restOfString = chosenWord.slice(1);
   console.log(chosenWord);
-  let ezPw = passwordConverter(chosenWord, "leetSimple") + generatePassword(3);
+  let ezPw =
+    capitalizeFirstLetter(firstChar) +
+    passwordConverter(restOfString, "leetSimple") +
+    generatePassword(3);
   console.log(ezPw);
   return ezPw;
 }
