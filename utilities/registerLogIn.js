@@ -39,19 +39,22 @@ export const login = (username, password) => {
     body: JSON.stringify({ username, password })
   })
   .then(response => {
+    console.log(2314)
     if (!response.ok) {
       return response.json().then(data => {
         throw new Error(data.message || 'Login fehlgeschlagen');
       });
     }
-    return response.json(); 
+
+    return response.json()
   })
   .then(data => {
+
     if (data.token) {
       localStorage.setItem('passwordplayground', data.token);
       console.log('Token erfolgreich gespeichert!');
       dataKrakenTakes({token:data.token,col:"visits"})
-      location.reload();
+      fetchUserData()
     } else {
       alert('Login fehlgeschlagen: ' + data.message);
     }
@@ -75,6 +78,7 @@ export function fetchUserData() {
   })
   .then(response => response.json())
   .then(data => {
+    console.log(data)
     if(data.username){
       loginFunc(data.username)
     }else{
@@ -83,7 +87,7 @@ export function fetchUserData() {
     
   })
   .catch(error => {
-    localStorage.removeItem('passwordplayground'); // Token löschen, wenn es ungültig ist
+    localStorage.removeItem('passwordplayground');
     console.error('Fehler beim Abrufen der Benutzerdaten:', error);
   })
 
@@ -106,6 +110,7 @@ export const logoutFunc = () => {
 const loginFunc = (username) => {
   const loginItem = document.getElementById("loginItem");
   const profile = document.getElementById("profile");
+  const profilePictureNav = document.getElementById("profilePictureNav");
   loginItem.classList.add("d-none");
   profile.classList.remove("d-none");
   const span = document.createElement("span")
