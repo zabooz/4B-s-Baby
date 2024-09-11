@@ -4,7 +4,7 @@ import {
   logoutFunc,
   deleteUser,
   fetchUserData,
-  addDynamicValidation
+  addDynamicValidation,
 } from "../utilities/registerLogIn.js";
 
 const modalLogin = () => {
@@ -41,7 +41,7 @@ const modalLogin = () => {
   </div>
 
   <div class="col-12 d-flex justify-content-center">
-    <button class="btn btn-primary w-50"  type="submit">Login</button>
+    <button class="btn btn-primary w-50" data-bs-dismiss="modal" type="submit">Login</button>
   </div>
 </form>
 </div>
@@ -92,7 +92,7 @@ const modalLogin = () => {
     </div>
   </div>
   <div class="col-12 d-flex justify-content-center">
-    <button class="btn btn-primary w-50"  type="submit">Register</button>
+    <button class="btn btn-primary w-50"  data-bs-dismiss="modal" type="submit">Register</button>
   </div>
 </form>
       </div>
@@ -128,21 +128,12 @@ export const createLogin = (id) => {
     e.preventDefault();
     const username = document.getElementById("loginUsername").value;
     const password = document.getElementById("loginPassword").value;
+
     login(username, password);
   });
 
   document.addEventListener("DOMContentLoaded", () => {
-    const token = localStorage.getItem("passwordplayground");
-    const loggedOut = document.getElementById("loginItem");
-    const loggedIn = document.getElementById("profile");
-    if (token) {
-      loggedOut.classList.add("d-none");
-      loggedIn.classList.remove("d-none");
-      fetchUserData(token, "profileName");
-    } else {
-      loggedOut.classList.remove("d-none");
-      loggedIn.classList.add("d-none");
-    }
+    fetchUserData();
   });
 
   const logout = document.getElementById("logout");
@@ -161,5 +152,11 @@ export const createLogin = (id) => {
   const confirmPassword = document.getElementById("validationDefault04");
   const registerForm = document.getElementById("registerForm");
 
-  addDynamicValidation(email, confirmEmail, password, confirmPassword,registerForm);
+  addDynamicValidation(
+    email,
+    confirmEmail,
+    password,
+    confirmPassword,
+    registerForm
+  );
 };

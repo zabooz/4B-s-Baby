@@ -1,87 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="Password Playground" />
-    <meta
-      property="og:description"
-      content="Generate secure passwords easily with our free tool."
-    />
-    <meta
-      property="og:image"
-      content="https://passwordplayground.com/images/og-image.jpg"
-    />
-    <meta property="og:url" content="https://passwordplayground.com" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Password Playground: Secure, Random Password Generator & Validator"
-    />
-    <meta
-      name="twitter:description"
-      content="Generate secure passwords easily with our free tool."
-    />
-    <meta
-      name="twitter:image"
-      content="https://passwordplayground.com/images/twitter-card.jpg"
-    />
-
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Password Playground",
-        "url": "https://passwordplayground.com",
-        "description": "Password Playground offers a free, secure tool to generate and validate strong passwords.",
-        "applicationCategory": "Utilities",
-        "operatingSystem": "All"
-      }
-    </script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../styles/aiAssistant.css" />
-    <link rel="stylesheet" href="../styles/clipBoard.css" />
-    <link rel="stylesheet" href="../styles/navBars.css" />
-    <link rel="stylesheet" href="../styles/clipBoard.css" />
-    <link rel="stylesheet" href="../styles/pwGenerator.css" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../img/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../img/favicon/favicon-16x16.png"
-    />
-
-    <title>Erfinde Passwort</title>
-  </head>
-  <body class="bg-custom">
-    <!-- ================ NAV BAR ================ -->
-
-    <nav id="navBar" class="sticky-top"></nav>
-    <header class="d-flex justify-content-center"></header>
-
-    <!-- ================= MAIN ================ -->
-    <main class="w-100 mt-5">
+import { loadOffCanvas } from "../components/offCanvas.js";
+import { createQuickNav } from "../components/quickNav.js";
+import { passwordGeneratingScripts } from "../contentScripts/passwordGeneratingScripts.js";
+const createPwContent = () => {
+  return `
+            
+    <main class="w-100 mt-5" id="mainPwGen">
       <section class="row row-cols-1 row-cols-lg-3 g-5 mx-auto px-md-5">
         <!-- ================= Rune Translator ================= -->
 
@@ -285,20 +208,45 @@
 
               <div
                 class="d-flex flex-column gap-3 w-100"
-                style="margin-bottom: 3.4rem"
               >
                 <p class="mx-auto mb-0 fs-5">
-                  Passwortlänge: <span id="sliderValue">6</span>
+                  Passwortlänge: <span id="sliderValue">9</span>
                 </p>
                 <input
                   type="range"
                   id="sliderSorcery"
-                  min="6"
-                  max="24"
-                  value="6"
+                  min="2"
+                  max="16"
+                  value="9"
                   steps="1"
                 />
               </div>
+                              <div class="d-flex justify-content-evenly my-4 w-100">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="languageSelect"
+                      id="deutsch"
+                      checked
+                    />
+                    <label class="form-check-label" for="deutsch">
+                      Deutsch
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="languageSelect"
+                      id="english"
+                      
+                    />
+                    <label class="form-check-label" for="english">
+                      Englisch
+                    </label>
+                  </div>
+                </div>
               <table class="table mt-auto" id="statsPwGen">
                 <thead>
                   <tr>
@@ -315,7 +263,6 @@
               <button
                 id="rdmPwdBtn"
                 class="btn btn-primary w-100 mt-auto mb-2"
-                disabled="true"
               >
                 Los geht's
               </button>
@@ -324,64 +271,28 @@
         </div>
       </section>
     </main>
+    <div class="quickNav"></div>
+    <div class="canvas"></div>      
+`;
+};
 
-    <!-- ============= footer & clipBoard ============ -->
-    <div class="clipBoard"></div>
-    <div class="assistant"></div>
-    <footer></footer>
+export const createPasswordGeneratingHTML = (contentBox, style) => {
+  const styleSheet = "./styles/passwordGenerating.css";
+  style.setAttribute("href", styleSheet);
+  sessionStorage.setItem("content", "createPasswordGeneratingHTML");
 
-    <!--======= Scripts =========== -->
+  if (sessionStorage.getItem("passwordGenerating")) {
+    contentBox.innerHTML = sessionStorage.getItem("passwordGenerating");
+  } else {
+    contentBox.innerHTML = createPwContent();
+    loadOffCanvas(".canvas", "leetSpeak", "../data/text.json");
+    createQuickNav(".quickNav");
+    sessionStorage.setItem("passwordGenerating", contentBox.innerHTML);
+  }
 
-    <script type="module">
-
-      import { loadOffCanvas } from "../components/offCanvas.js";
-      import { clipBoard } from "../components/clipBoard.js";
-      import { createNav, configNav } from "../components/navBar.js";
-      createNav(configNav);
-      import { createAssistant } from "../components/aiAssistant.js";
-      import {
-        createQuickNav,
-        configQuickNavFeature,
-      } from "../components/quickNav.js";
-      import {
-        createFooter,
-        configFooter,
-        iconsFeatures,
-      } from "../components/footer.js";
-      createFooter(configFooter, iconsFeatures);
-
-      createQuickNav("main", configQuickNavFeature);
-      createAssistant("main");
-      loadOffCanvas("header", "leetSpeak", "../data/text.json");
-      clipBoard(".clipBoard");
-    </script>
-    <script src="../featureHtmlScripts/pwGenerating.js" type="module"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-      crossorigin="anonymous"
-    ></script>
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          {
-            pageLanguage: "de",
-            includedLanguages: "en,fr,es,it",
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          },
-          "google_translate_element"
-        );
-      }
-    </script>
-    <script
-      type="text/javascript"
-      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    ></script>
-  </body>
-</html>
+  passwordGeneratingScripts();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};

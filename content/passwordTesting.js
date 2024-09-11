@@ -1,97 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="Password Playground" />
-    <meta
-      property="og:description"
-      content="Generate secure passwords easily with our free tool."
-    />
-    <meta
-      property="og:image"
-      content="https://passwordplayground.com/images/og-image.jpg"
-    />
-    <meta property="og:url" content="https://passwordplayground.com" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Password Playground: Secure, Random Password Generator & Validator"
-    />
-    <meta
-      name="twitter:description"
-      content="Generate secure passwords easily with our free tool."
-    />
-    <meta
-      name="twitter:image"
-      content="https://passwordplayground.com/images/twitter-card.jpg"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@zxcvbn-ts/core@2.0.0/dist/zxcvbn-ts.js"></script>
-
-    </script> 
-    <script src="https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-common@2.0.0/dist/zxcvbn-ts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-en@2.0.0/dist/zxcvbn-ts.js"></script>
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Password Playground",
-        "url": "https://passwordplayground.com",
-        "description": "Password Playground offers a free, secure tool to generate and validate strong passwords.",
-        "applicationCategory": "Utilities",
-        "operatingSystem": "All"
-      }
-    </script>
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="../styles/testing.css" />
-    <link rel="stylesheet" href="../styles/aiAssistant.css" />
-    <link rel="stylesheet" href="../styles/clipBoard.css" />
-    <link rel="stylesheet" href="../styles/navBars.css" />
-
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../img/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../img/favicon/favicon-16x16.png"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Checke Passwort</title>
-  </head>
-  <body class="bg-custom">
-    <!-- ================== Navbar  &  Header ================ -->
-
-    <nav id="navBar" class="sticky-top"></nav>
-    <header class="mb-5 d-flex justify-content-center"></header>
-
-    <!-- =========== MOJO ================= -->
-
-    <main class="d-flex justify-content-center">
+import { loadOffCanvas } from "../components/offCanvas.js";
+import {
+  createQuickNav,
+  configQuickNavFeature,
+} from "../components/quickNav.js";
+import { passwordTestingScripts } from "../contentScripts/passwordTestingScripts.js";
+const createPasswordTesting = () => {
+  return `
+    
+    <main class="d-flex justify-content-center" id="mainTesting">
       <section class="row row-cols-1 row-cols-lg-2 g-5 mx-0 mx-md-5">
         <div class="col">
           <div id="bruteForceApp" class="card p-4 mx-auto">
@@ -455,59 +371,42 @@
         </div>
       </div>
     </div>
-  </body>
+    <div id="modal"></div>
+    <div class="quickNav"></div>
+    <div class="canvas"></div>
+    `;
+};
 
-  <!-- ================= Scripts  ================= -->
+export const createTestingPasswordHTML = (contentBox, style) => {
+  // const content = createPasswordTesting();
+  const styleSheet = "./styles/passwordTesting.css";
+  style.setAttribute("href", styleSheet);
+  sessionStorage.setItem("content", "createTestingPasswordHTML");
 
-  <script type="module">
-    import { loadOffCanvas } from "../components/offCanvas.js";
+  if (sessionStorage.getItem("passwordTesting")) {
+    contentBox.innerHTML = sessionStorage.getItem("passwordTesting");
+  } else {
+    contentBox.innerHTML = createPasswordTesting();
+    createQuickNav(".quickNav");
+    loadOffCanvas(".canvas", "liste", "../data/text.json");
+    loadOffCanvas(".canvas", "simple", "../data/text.json");
+    sessionStorage.setItem("passwordTesting", contentBox.innerHTML);
+  }
+  const scriptUrls = [
+    "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/core@2.0.0/dist/zxcvbn-ts.js",
+    "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-common@2.0.0/dist/zxcvbn-ts.js",
+    "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-en@2.0.0/dist/zxcvbn-ts.js",
+  ];
 
-    import { clipBoard } from "../components/clipBoard.js";
-    import { createNav, configNav } from "../components/navBar.js";
-    import { createAssistant } from "../components/aiAssistant.js";
-    import {
-      createQuickNav,
-      configQuickNavFeature,
-    } from "../components/quickNav.js";
-    import {
-      createFooter,
-      configFooter,
-      iconsFeatures,
-    } from "../components/footer.js";
-    createFooter(configFooter, iconsFeatures);
-    createQuickNav("main", configQuickNavFeature);
-    createAssistant("main");
-    loadOffCanvas("header", "liste", "../data/text.json");
-    loadOffCanvas("header", "simple", "../data/text.json");
-    clipBoard(".clipBoard");
-    createNav(configNav);
-  </script>
-  <script src="../featureHtmlScripts/testing.js" type="module"></script>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        {
-          pageLanguage: "de",
-          includedLanguages: "en,fr,es,it",
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        },
-        "google_translate_element"
-      );
-    }
-  </script>
-  <script
-    type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-  ></script>
+  scriptUrls.forEach((url) => {
+    const script = document.createElement("script");
+    script.src = url;
+    document.head.appendChild(script);
+  });
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-    crossorigin="anonymous"
-  ></script>
-</html>
+  passwordTestingScripts();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};

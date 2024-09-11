@@ -1,0 +1,72 @@
+img {
+  border: 3px solid rgb(203, 190, 190);
+  border-radius: 1rem;
+}
+
+.picture .firstRow img {
+  width: clamp(10rem, 15rem, 20rem);
+}
+
+.seccondRow img {
+  width: clamp(10rem, 20rem, 25rem);
+}
+
+.pictures .seccondRow img:first-child {
+  transform: rotate(8deg);
+}
+
+.pictures .seccondRow img:last-child {
+  transform: rotate(-4deg);
+}
+
+h2,
+h3 {
+  margin: 3rem 0;
+}
+
+.section2 img {
+  border-radius: 50%;
+  width: clamp(10rem, 15rem, 20rem);
+  animation: logo 3s infinite;
+}
+
+.firstCol img {
+  width: clamp(10rem, 40vw, 25rem);
+}
+
+.secondCol img {
+  width: clamp(10rem, 15rem, 20rem);
+}
+
+.picture .section3 img {
+  width: clamp(10rem, 25rem, 30rem);
+}
+
+@keyframes logo {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.logo {
+  animation: logo 3s linear infinite;
+}
+
+/* Allgemeine Styles für Zitate in einem p-Tag */
+.zitat {
+  position: relative; /* Positionierung für das Design des Zitats */
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 4px solid #007bff; /* Linke Linie zur Hervorhebung des Zitats */
+  background-color: #f9f9f9; /* Heller Hintergrund für das Zitat */
+  color: #333; /* Dunkle Textfarbe für das Zitat */
+  font-style: italic; /* Kursivschrift für den Zitat-Text */
+  border-radius: 8px; /* Abgerundete Ecken für das Zitat */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für mehr Tiefe */
+}

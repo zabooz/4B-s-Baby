@@ -1,69 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- Open Graph Meta Tags for Social Media -->
-        <meta property="og:title" content="Password Playground">
-        <meta property="og:description" content="Generate secure passwords easily with our free tool.">
-        <meta property="og:image" content="https://passwordplayground.com/images/og-image.jpg">
-        <meta property="og:url" content="https://passwordplayground.com">
-        <meta property="og:type" content="website">
-    
-        <!-- Twitter Card Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Password Playground: Secure, Random Password Generator & Validator">
-        <meta name="twitter:description" content="Generate secure passwords easily with our free tool.">
-        <meta name="twitter:image" content="https://passwordplayground.com/images/twitter-card.jpg">
-        
-        <!-- Structured Data for SEO -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Password Playground",
-          "url": "https://passwordplayground.com",
-          "description": "Password Playground offers a free, secure tool to generate and validate strong passwords.",
-          "applicationCategory": "Utilities",
-          "operatingSystem": "All"
-        }
-        </script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+
+import {createQuiz} from "../featureHtmlScripts/quiz.js"
+import { createQuickNav } from "../components/quickNav.js";
+import { userGeneratingScripts } from "../contentScripts/userGeneratingsScripts.js";
+const createUserGenerating = () => {
 
 
-    <link rel="stylesheet" href="../styles/navBars.css" />
-    <link rel="stylesheet" href="../styles/userGenerator.css" />
-    <link rel="stylesheet" href="../styles/clipBoard.css" />
-    <link rel="stylesheet" href="../styles/aiAssistant.css" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../img/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../img/favicon/favicon-16x16.png"
-    />
 
-    <title>Erfinde Name</title>
-  </head>
-  <body class="bg-custom">
-    <nav id="navBar" class="sticky-top"></nav>
-    <header class="d-flex justify-content-center"></header>
-    <main>
+    return ` <main id="userGenerating">
       <section id="sectionContainer" class="d-flex justify-content-center flex-column p-5 pb-1 gap-5">
         <div
           id="identityWizard"
@@ -217,42 +160,32 @@
       </section>
 
     </main>
-    <footer>
- 
-    </footer>
-    <div class="clipBoard"></div>
-    <script type="module">
-      import { quote } from "../components/quotes.js";
-      import { clipBoard } from "../components/clipBoard.js";
-      import { createNav, configNav } from "../components/navBar.js";
-      import { createAssistant } from "../components/aiAssistant.js";
-      import { createQuickNav, configQuickNavFeature } from "../components/quickNav.js";
-            import {createFooter,configFooter,iconsFeatures} from "../components/footer.js";
-      createFooter(configFooter,iconsFeatures);
-      createQuickNav("main",configQuickNavFeature)
-      createAssistant("main");
-      createNav(configNav);
-      clipBoard(".clipBoard");
-    </script>
-    <script src="../featureHtmlScripts/userGen.js" type="module"></script>
-    <script src="../featureHtmlScripts/quiz.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'de', includedLanguages: 'en,fr,es,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-      }
-      </script>
-      <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-      
-        </body>
-  </body>
-</html>
+    <div class="quickNav"></div>
+  
+    `
+
+}
+
+export const createUserGeneratingHTML = (contentBox,style) => {
+
+        const styleSheet = "./styles/userGenerating.css";
+        style.setAttribute("href", styleSheet);
+        sessionStorage.setItem("content","createUserGeneratingHTML")
+
+
+        if(sessionStorage.getItem("userGenerating")){
+          contentBox.innerHTML = sessionStorage.getItem("userGenerating");
+        }else{
+          contentBox.innerHTML = createUserGenerating()
+          createQuiz()
+          createQuickNav(".quickNav");
+          sessionStorage.setItem("userGenerating", contentBox.innerHTML);
+        }
+        
+        userGeneratingScripts()
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+}
+

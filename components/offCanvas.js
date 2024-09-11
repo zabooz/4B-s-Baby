@@ -1,10 +1,7 @@
 import { fetchText } from "../utilities/fetchText.js";
 
-
 const createOffCanvas = (content) => {
-
-
-    return `
+  return `
           <div
         class="offcanvas offcanvas-start"
         tabindex="-1"
@@ -32,21 +29,13 @@ const createOffCanvas = (content) => {
             </script>
           </div>
         </div>
-      </div>`
-}
+      </div>`;
+};
 
-export const loadOffCanvas  = (id,text,path) => {
-    
-    fetchText(path).then(data => {
-
-        const content =  data[text]
-        const target = document.querySelector(id)
-
-        target.innerHTML += createOffCanvas(content)
-
-    });
-
-
-
-}
-
+export const loadOffCanvas = (id, text, path) => {
+  fetchText(path).then((data) => {
+    const content = data[text];
+    const target = document.querySelector(id);
+    target.innerHTML += createOffCanvas(content);
+  });
+};

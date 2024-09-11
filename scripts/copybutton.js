@@ -1,4 +1,4 @@
-import { clipBoard } from "../components/clipBoard.js";
+import { refreshList,addButtons }from "../components/clipBoard.js";
 
 export let storedClippy = JSON.parse(sessionStorage.getItem("clippy")) || [];
 
@@ -25,37 +25,30 @@ export const copyButton = (textId) => {
     button.append(img, confirmBubble);
   } else {
     const i = document.createElement("img");
-    i.src ="../img/icons/clipboard-12-regular_.png"
-    i.style.width = "20px"
-    i.style.height = "20px"
-    i.style.marginBottom = "5px"
+    i.src = "../img/icons/clipboard-12-regular_.png";
+    i.style.width = "20px";
+    i.style.height = "20px";
+    i.style.marginBottom = "5px";
     button.append(i, confirmBubble);
   }
 
   button.addEventListener("click", () => {
-    const textElement = document.getElementById(textId);
+    const textElement = document.getElementById(textId).innerText;
 
     const clippyQuickNav = document.getElementById("clippyNav");
 
     if (clippyQuickNav) {
-      
       clippyQuickNav.classList.add("noticeMeSenpai");
 
       setTimeout(() => {
         clippyQuickNav.classList.remove("noticeMeSenpai");
       }, 3000);
-
-
-
-
     }
 
-
     if (textElement) {
+   
 
-        const span = textElement.querySelector("span");
-
-      let text = span.textContent.trim();
+      let text = textElement.trim();
 
       navigator.clipboard.writeText(text).then(() => {
         confirmBubble.classList.add("fadeIn");
@@ -63,7 +56,9 @@ export const copyButton = (textId) => {
           confirmBubble.classList.remove("fadeIn");
         }, 2000);
       });
-      const type = textId.toLowerCase().includes("username") ? "username" : "password";
+      const type = textId.toLowerCase().includes("username")
+        ? "username"
+        : "password";
 
       const textObj = { type: type, value: text };
 
@@ -76,7 +71,8 @@ export const copyButton = (textId) => {
       storedClippy = updatetClippy;
       sessionStorage.setItem("clippy", JSON.stringify(updatetClippy));
 
-      console.log()
+      refreshList()
+      addButtons()
 
     } else {
       console.warn(`Element with ID ${textId} not found.`);

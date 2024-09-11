@@ -1,0 +1,61 @@
+/* Allgemeine Styles für den Body der About Us-Seite im dunklen Modus */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #e0e0e0; /* Helle Textfarbe für den dunklen Hintergrund */
+  background-color: #121212; /* Dunkler Hintergrund für den gesamten Body */
+}
+
+/* Styles für den Header im dunklen Modus */
+
+/* Styles für den Hauptbereich im dunklen Modus */
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #1e1e1e; /* Dunkler Hintergrund für den Hauptbereich */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Intensiverer Schatten für mehr Tiefe */
+}
+
+/* Styles für jede Sektion innerhalb des Main-Bereichs im dunklen Modus */
+section {
+  margin-bottom: 20px;
+}
+
+section h2 {
+  font-size: 1.5em;
+  color: #ffffff; /* Helle Textfarbe für die Überschriften */
+  border-bottom: 2px solid #007bff; /* Farbe der unteren Linie */
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+section p {
+  margin: 0 0 15px;
+  line-height: 1.8;
+}
+
+/* Styles für den Footer im dunklen Modus */
+footer {
+  background-color: #1f1f1f; /* Dunkler Hintergrund für den Footer */
+  color: #e0e0e0; /* Helle Textfarbe für den Footer */
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #333; /* Abgrenzungslinie über dem Footer */
+  position: relative;
+  bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
+
+  section h2 {
+    font-size: 1.2em;
+  }
+}
