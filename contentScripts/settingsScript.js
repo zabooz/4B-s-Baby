@@ -3,7 +3,7 @@ import { dataKrakenGives, dataKrakenTrades } from "../utilities/dataKraken.js";
 export const settingsScripts = async () => {
   const overviewListItems = document.querySelectorAll(".overview  span");
   const changeUsername = document.getElementById("changeUsername");
-  const avatar = document.getElementById("avatar");
+
   const changePassword = document.getElementById("changePassword");
   const chooseProfilePic = document.getElementById("chooseProfilePic");
   const profilePicSrc = document.querySelectorAll(".img img");
@@ -24,8 +24,8 @@ export const settingsScripts = async () => {
   const updateProfile = async (key, value) => {
     try {
       const response = await dataKrakenTrades(key, value);
-      if (response.message) {
-        alert(response.message);
+      if (response.message && key !== "avatar") {
+        alert(response.message + " : " + key);
       } else {
         console.log("error");
       }
@@ -49,23 +49,25 @@ export const settingsScripts = async () => {
 
   let avatarSrc = "";
 
-  profilePicSrc.forEach((item) => { 
+  profilePicSrc.forEach((item) => {
     item.addEventListener("click", () => {
+      document.querySelector(".choosen")?.classList.remove("choosen");
+
+      item.classList.toggle("choosen");
       avatarSrc = item.src;
     });
   });
 
-
   chooseProfilePic.addEventListener("click", async () => {
-    console.log(avatarSrc);
+    const profilePictureNav = document.getElementById("profilePictureNav");
+    const avatar = document.getElementById("avatar");
+
     if (avatarSrc) {
+      avatar.src = avatarSrc;
+      profilePictureNav.src = avatarSrc;
       await updateProfile("avatar", avatarSrc);
     }
-
   });
-
-
-
 
   if (data) {
     overviewListItems.forEach((item) => {

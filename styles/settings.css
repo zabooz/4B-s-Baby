@@ -1,7 +1,10 @@
 .offcanvas-body img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.offcanvas-body img:hover{
-transform: scale(1.2);
+.offcanvas-body img:hover {
+  transform: scale(1.2);
+}
+.choosen {
+  border: 4px solid #ea6954 !important;
 }
