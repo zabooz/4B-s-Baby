@@ -1,6 +1,4 @@
-
 import { settingsScripts } from "../contentScripts/settingsScript.js";
-
 
 const profilePics = [
   "../img/profilePics/profile.jpeg",
@@ -29,22 +27,16 @@ const profilePics = [
   "../img/profilePics/profile24.jpeg",
 ];
 
-
-
-
-
 const createSettings = () => {
-
-    let htmlContent =""
-    let rowContent =""
+  let htmlContent = "";
+  let rowContent = "";
 
   profilePics.forEach((pic, index) => {
-
     rowContent += `<div class="col img "><img src="${pic}" class="border border-3" alt="Profile Picture" style="width: 3rem;" id="avatar"></div>`;
 
     if ((index + 1) % 5 === 0) {
       htmlContent += `<div class="row g-2 mb-2">${rowContent}</div>`;
-      rowContent = ""; 
+      rowContent = "";
     }
   });
 
@@ -52,10 +44,7 @@ const createSettings = () => {
     htmlContent += `<div class="row">${rowContent}</div>`;
   }
 
-
-
-
-    return `    <main>
+  return `    <main>
         
       
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -87,8 +76,8 @@ const createSettings = () => {
                   <li class="list-group-item">Benutzernamen ändern: <span id="changeUsername"> Klick</span></li>
                   <li class="list-group-item">Passwort ändern: <span id="changePassword"> Klick</span></li>
                 <li class="list-group-item">Avatar ändern 
-                <a class="btn btn-primary " data-bs-toggle="offcanvas" href="#profilePicsChoosery" role="button" aria-controls="profilePicsChoosery">
-                <img src="../img/profilePics/profile.jpeg" alt="" style="width: 2rem;" class="avatar"></a></li>
+                <a  data-bs-toggle="offcanvas" href="#profilePicsChoosery" role="button" aria-controls="profilePicsChoosery">
+                <img id="avatar" src="../img/profilePics/profile.jpeg" alt="" style="width: 2rem;"></a></li>
                 
             </ul>
           </div>
@@ -125,27 +114,23 @@ const createSettings = () => {
 </div
 
     </main>`;
-}
+};
 
-
-export const  createSettingsHTML = (contentBox,style) => {
-    
+export const createSettingsHTML = (contentBox, style) => {
   const styleSheet = "../styles/settings.css";
   style.setAttribute("href", styleSheet);
   sessionStorage.setItem("content", "createSettingsHTML");
-   contentBox.innerHTML = createSettings();
+  contentBox.innerHTML = createSettings();
   // if(sessionStorage.getItem("settings")){
   //   contentBox.innerHTML = sessionStorage.getItem("settings");
   // }else{
   //   contentBox.innerHTML = createSettings();
   //   sessionStorage.setItem("settings", contentBox.innerHTML);
   // }
-  settingsScripts()
+  settingsScripts();
 
-
-window.scrollTo({
-  top: 0,
-  behavior: 'smooth'
-});
-
-}
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};

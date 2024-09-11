@@ -1,5 +1,3 @@
-
-
 export const configNav = {
   targetId: "nav",
 
@@ -44,7 +42,6 @@ export const configNav = {
     link: "../aboutUs/project.html",
     text: "Projekt",
   },
-
 };
 
 export const configNavIndex = {
@@ -180,6 +177,4 @@ const createNavBar = (configNav) => {
 
 export const createNav = (config) => {
   document.querySelector(config.targetId).innerHTML = createNavBar(config);
-
 };
-

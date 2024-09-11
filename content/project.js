@@ -1,6 +1,5 @@
-const createProject =() => {
-
-    return `
+const createProject = () => {
+  return `
       <header class="d-flex align-items-center my-5" style="max-width: 1600px">
         <img src="../img/projectFotos/image8.png" alt="" />
         <div class="mt-5 d-flex flex-column align-items-center p-5">
@@ -421,29 +420,21 @@ const createProject =() => {
     </main>
     
     `;
+};
 
-}
+export const createProjectHTML = (contentBox, style) => {
+  const styleSheet = "./styles/project.css";
+  style.setAttribute("href", styleSheet);
+  sessionStorage.setItem("content", "createProjectHTML");
 
-
-export const createProjectHTML = (contentBox,style) => {
-
-    const styleSheet = "./styles/project.css";
-    style.setAttribute("href", styleSheet);
-    sessionStorage.setItem("content", "createProjectHTML");
-    
-    if(sessionStorage.getItem("project")){
-        contentBox.innerHTML = sessionStorage.getItem("project");
-    }else{
-        contentBox.innerHTML = createProject();
-        sessionStorage.setItem("aboutUs", contentBox.innerHTML);
-    
-    }
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-
-}
-
-
-
+  if (sessionStorage.getItem("project")) {
+    contentBox.innerHTML = sessionStorage.getItem("project");
+  } else {
+    contentBox.innerHTML = createProject();
+    sessionStorage.setItem("aboutUs", contentBox.innerHTML);
+  }
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};

@@ -40,7 +40,7 @@ export const iconsIndex = {
   instagram: "./img/footer/instagram.svg",
   linkedIn: "./img/footer/linkedin-box.svg",
   gitHub: "./img/footer/github.svg",
-}
+};
 
 export const iconsFeatures = {
   facebook: "../img/footer/facebook-1-solid.svg",
@@ -65,8 +65,12 @@ const footer = (configFooter, icons) => {
                 ${configFooter.socialMedia
                   .map(
                     (social) => `
-                    <a href="${social.link}" aria-label="${social.name}" class="me-4 text-reset">
-                        <img src="${icons[social.name]}" style="width:1.5rem"></img>
+                    <a href="${social.link}" aria-label="${
+                      social.name
+                    }" class="me-4 text-reset">
+                        <img src="${
+                          icons[social.name]
+                        }" style="width:1.5rem"></img>
                     </a>
                 `
                   )
@@ -130,10 +134,6 @@ const footer = (configFooter, icons) => {
         `;
 };
 
-
-
-export  const createFooter = (configFooter, icons) => {
-  document.querySelector("footer").innerHTML = footer(configFooter,icons);
-
+export const createFooter = (configFooter, icons) => {
+  document.querySelector("footer").innerHTML = footer(configFooter, icons);
 };
-

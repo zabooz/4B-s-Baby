@@ -120,8 +120,5 @@ const quiz = (config) => {
 };
 
 export const createQuiz = () => {
-
-
-document.getElementById("quiz").innerHTML += quiz(config);
-
-}
+  document.getElementById("quiz").innerHTML += quiz(config);
+};

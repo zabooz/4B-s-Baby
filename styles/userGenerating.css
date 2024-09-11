@@ -320,7 +320,8 @@ header {
 }
 
 .custom-arrow {
-  filter: invert(49%) sepia(69%) saturate(6785%) hue-rotate(355deg) brightness(104%) contrast(101%);
+  filter: invert(49%) sepia(69%) saturate(6785%) hue-rotate(355deg)
+    brightness(104%) contrast(101%);
 }
 
 .custom-img {

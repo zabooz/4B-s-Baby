@@ -9,7 +9,6 @@ nav {
   font-style: normal;
   font-size: clamp(1rem, 1vw, 1.2rem);
   z-index: 123;
-
 }
 .navbar-brand {
   font-size: clamp(1.3rem, 3vw, 3rem);
@@ -31,20 +30,16 @@ nav img {
 .nav-link span {
   display: block;
   font-weight: 300;
-  margin-top: .3rem;
+  margin-top: 0.3rem;
   color: black;
   font-size: 14px;
 }
 
-
-
-@media(max-width: 992px) {
+@media (max-width: 992px) {
   .dropdown-menu {
     left: 0 !important;
   }
-
 }
-
 
 /* =================== QuickNav ================== */
 
@@ -64,36 +59,27 @@ nav img {
   border: none;
   position: relative;
   right: 1rem;
-  margin-top: .5rem;
-  
+  margin-top: 0.5rem;
 }
-button p{
+button p {
   color: #f1f5f5;
   width: 100%;
   text-align: center;
- }
+}
 #quickNav button:hover {
   animation: moveBtn 0.5s forwards;
 }
 
 .noticeMeSenpai {
   will-change: box-shadow, border-color;
-  animation: glowing 2s infinite forwards ;
+  animation: glowing 2s infinite forwards;
 }
-
-
 
 /* ==================== Modals ============================ */
 
-
-#logReg h1{
+#logReg h1 {
   cursor: pointer;
 }
-
-
-
-
-
 
 /* ===================== KEYFRAMES ============================ */
 @keyframes moveBtn {
@@ -104,7 +90,6 @@ button p{
     right: 5.8rem;
   }
 }
-
 
 @keyframes glowing {
   0% {
@@ -118,5 +103,3 @@ button p{
     transform: rotate(-3600deg) scale(1); /* Vollständige Rotation zurück zur ursprünglichen Größe */
   }
 }
-
-

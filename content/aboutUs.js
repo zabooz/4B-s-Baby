@@ -1,7 +1,5 @@
 const aboutUs = () => {
-    
-
-    return `
+  return `
     <main id="aboutUsMain">
 
         <section class="intro">
@@ -31,26 +29,21 @@ const aboutUs = () => {
             <p>Unsere Mission ist es, aus jedem neuen Projekt eine Möglichkeit zu machen, weiter zu wachsen und zu lernen. Das BBRZ-Projekt war der Startpunkt, aber wir sind fest entschlossen, unsere Fähigkeiten weiter auszubauen und immer bessere und kreativere Lösungen für unsere Kunden zu entwickeln.</p>
         </section>
     </main>`;
-}
+};
 
+export const createAboutUsHTML = (contentBox, style) => {
+  const styleSheet = "./styles/aboutUs.css";
+  style.setAttribute("href", styleSheet);
+  sessionStorage.setItem("content", "createAboutUsHTML");
 
-
-export const  createAboutUsHTML = (contentBox,style) => {
-
-    const styleSheet = "./styles/aboutUs.css";
-    style.setAttribute("href", styleSheet);
-    sessionStorage.setItem("content", "createAboutUsHTML");
-    
-    if(sessionStorage.getItem("aboutUs")){
-        contentBox.innerHTML = sessionStorage.getItem("aboutUs");
-    }else{
-        contentBox.innerHTML = aboutUs();
-        sessionStorage.setItem("aboutUs", contentBox.innerHTML);
-
-    }
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-
-}
+  if (sessionStorage.getItem("aboutUs")) {
+    contentBox.innerHTML = sessionStorage.getItem("aboutUs");
+  } else {
+    contentBox.innerHTML = aboutUs();
+    sessionStorage.setItem("aboutUs", contentBox.innerHTML);
+  }
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
