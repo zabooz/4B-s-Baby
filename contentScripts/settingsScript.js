@@ -1,5 +1,5 @@
-import { dataKrakenGives, dataKrakenTrades } from "../utilities/dataKraken.js";
-
+import { dataKrakenGives, dataKrakenTrades,dataKrakenBestow } from "../utilities/dataKraken.js";
+import { leaderBoards } from "../featureHtmlScripts/leaderBoards.js";
 export const settingsScripts = async () => {
   const overviewListItems = document.querySelectorAll(".overview  span");
   const changeUsername = document.getElementById("changeUsername");
@@ -74,4 +74,17 @@ export const settingsScripts = async () => {
       item.innerText = data[item.id] || "N/A"; // Fallback if no data is available
     });
   }
+
+
+  const leaderBoardTab = document.getElementById("leaderBoardTab");
+
+  leaderBoardTab.addEventListener("click", async () => {
+    const response = await dataKrakenBestow();
+    if(response.success === true) {
+        leaderBoards(response.data);
+    }
+  });
+
+
+
 };

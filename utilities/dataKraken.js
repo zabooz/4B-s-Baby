@@ -33,7 +33,7 @@ export async function dataKrakenGives() {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
-      },
+      }
     });
 
     if (response.ok) {
@@ -46,7 +46,7 @@ export async function dataKrakenGives() {
   return data;
 }
 
-export async function dataKrakenTrades(key, value) {
+export async function dataKrakenTrades(key, value,) {
   let data;
   const token = localStorage.getItem("passwordplayground");
 
@@ -69,3 +69,28 @@ export async function dataKrakenTrades(key, value) {
 
   return data;
 }
+
+export const dataKrakenBestow = async () => {
+  const token = localStorage.getItem("passwordplayground");
+  try {
+    const response = await fetch(`${baseUrl}/dataKrakenBestow`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "authorization": `Bearer ${token}`,
+      }
+    });
+
+
+    if (response.ok) {
+      const result = await response.json();
+      return result
+    } else {
+      console.error("Fehler beim Senden der Daten:", await response.text());
+    }
+
+  } catch (error) {
+    console.error("Fehler beim Senden der Anfrage:", error);
+  }
+
+};

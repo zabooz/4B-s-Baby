@@ -8,9 +8,9 @@ export const register = async ({
   password,
   email,
   visits,
-  generatedPasswords,
-  testedPasswords,
-  generatedUsernames,
+  generated_passwords,
+  tested_passwords,
+  generated_usernames,
 }) => {
   console.log(234);
   try {
@@ -24,9 +24,9 @@ export const register = async ({
         password,
         email,
         visits,
-        generatedPasswords,
-        testedPasswords,
-        generatedUsernames,
+        generated_passwords,
+        tested_passwords,
+        generated_usernames,
       }),
     });
 
@@ -214,10 +214,15 @@ export const addDynamicValidation = (
         password,
         email,
         visits: 0,
-        generatedPasswords: 0,
-        testedPasswords: 0,
-        generatedUsernames: 0,
+        generated_passwords: 0,
+        testet_passwords: 0,
+        generated_usernames: 0,
       });
     }
   });
+
+
+
+
+  
 };
