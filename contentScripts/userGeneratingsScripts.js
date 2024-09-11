@@ -196,7 +196,8 @@ export const userGeneratingScripts = () => {
 
     const captionH = document.getElementById("captionH");
     const captionP = document.getElementById("captionPUsername");
-
+    captionH.classList.add("lastSlide");
+    captionP.classList.add("lastSlide");
     captionH.innerText = `Hey, du scheinst dich für ${newQuizOutput[2]}, ${newQuizOutput[3]} und ${newQuizOutput[1]} zu interessieren! Weil es deine Einzigartigkeit unterstreicht, ist dein neuer Onlinename nun: `;
     captionP.innerText = testResult;
     captionP.append(copyButton("captionPUsername"));
@@ -217,6 +218,8 @@ export const userGeneratingScripts = () => {
     // Add event listener to the reset button
     resetBtn.addEventListener("click", function () {
       resetQuiz(captionH, captionP);
+      captionH.classList.remove("lastSlide");
+      captionP.classList.remove("lastSlide");
     });
   });
 

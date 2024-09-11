@@ -30,9 +30,10 @@
 
 .carousel-caption {
   border-radius: 1rem;
-  margin-bottom: 2rem;
 }
-
+.carousel-caption h5 {
+  margin-bottom: 1rem;
+}
 video {
   border: 2px solid #ea6954;
   margin-left: 1rem;
@@ -310,7 +311,11 @@ header {
     flex-direction: column;
   }
 }
-
+.lastSlide {
+  font-weight: 400 !important;
+  margin-bottom: 1rem !important;
+  font-size: 1.2rem !important;
+}
 .custom-indicators button {
   background-color: #4caf50;
 }
@@ -322,8 +327,14 @@ header {
 .custom-arrow {
   filter: invert(49%) sepia(69%) saturate(6785%) hue-rotate(355deg)
     brightness(104%) contrast(101%);
-}
 
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  height: 50%;
+  width: 50%;
+
+}
 .custom-img {
   border-radius: 1rem;
 }
