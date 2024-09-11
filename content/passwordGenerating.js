@@ -1,12 +1,8 @@
-
 import { loadOffCanvas } from "../components/offCanvas.js";
-import {createQuickNav} from "../components/quickNav.js";
+import { createQuickNav } from "../components/quickNav.js";
 import { passwordGeneratingScripts } from "../contentScripts/passwordGeneratingScripts.js";
 const createPwContent = () => {
-
-
-
-            return `
+  return `
             
     <main class="w-100 mt-5" id="mainPwGen">
       <section class="row row-cols-1 row-cols-lg-3 g-5 mx-auto px-md-5">
@@ -278,28 +274,25 @@ const createPwContent = () => {
     <div class="quickNav"></div>
     <div class="canvas"></div>      
 `;
+};
 
-}
-
-
-export const createPasswordGeneratingHTML =(contentBox,style)=>{
-
-  const styleSheet = "./styles/passwordGenerating.css"
+export const createPasswordGeneratingHTML = (contentBox, style) => {
+  const styleSheet = "./styles/passwordGenerating.css";
   style.setAttribute("href", styleSheet);
-  sessionStorage.setItem("content","createPasswordGeneratingHTML")
+  sessionStorage.setItem("content", "createPasswordGeneratingHTML");
 
-  if(sessionStorage.getItem("passwordGenerating")){
-    contentBox.innerHTML = sessionStorage.getItem("passwordGenerating")
-  }else{
+  if (sessionStorage.getItem("passwordGenerating")) {
+    contentBox.innerHTML = sessionStorage.getItem("passwordGenerating");
+  } else {
     contentBox.innerHTML = createPwContent();
     loadOffCanvas(".canvas", "leetSpeak", "../data/text.json");
     createQuickNav(".quickNav");
-    sessionStorage.setItem("passwordGenerating",contentBox.innerHTML)
-  } 
+    sessionStorage.setItem("passwordGenerating", contentBox.innerHTML);
+  }
 
-  passwordGeneratingScripts()
+  passwordGeneratingScripts();
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
-} 
+};

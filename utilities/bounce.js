@@ -1,6 +1,5 @@
-
 export const observer = () => {
-   const elements = document.querySelectorAll(".bounceScroll");
+  const elements = document.querySelectorAll(".bounceScroll");
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -17,4 +16,4 @@ export const observer = () => {
   elements.forEach((element) => {
     observer.observe(element);
   });
-}
+};

@@ -1,156 +1,153 @@
+import { dataKrakenTakes } from "./dataKraken.js";
+import { data } from "../data/data.js";
 
-import{dataKrakenTakes} from "./dataKraken.js"
-import {data} from "../data/data.js"
+const baseUrl = data.baseUrl;
 
-const baseUrl = data.baseUrl
-
-
-export const register = async ({username, password, email,visits,generatedPasswords,testedPasswords,generatedUsernames}) => {
-  console.log(234)
+export const register = async ({
+  username,
+  password,
+  email,
+  visits,
+  generatedPasswords,
+  testedPasswords,
+  generatedUsernames,
+}) => {
+  console.log(234);
   try {
-    const response = await fetch(`${baseUrl}/register`, { 
-      method: 'POST',
+    const response = await fetch(`${baseUrl}/register`, {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password,email,visits,generatedPasswords,testedPasswords,generatedUsernames })
+      body: JSON.stringify({
+        username,
+        password,
+        email,
+        visits,
+        generatedPasswords,
+        testedPasswords,
+        generatedUsernames,
+      }),
     });
-  
+
     const result = await response.json();
-  
+
     if (response.ok) {
-      alert('Registrierung erfolgreich!');
+      alert("Registrierung erfolgreich!");
     } else {
-      alert('Registrierung fehlgeschlagen: ' + result.message);
+      alert("Registrierung fehlgeschlagen: " + result.message);
     }
   } catch (error) {
-    console.error('Fehler bei der Registrierung:', error);
-    alert('Fehler bei der Registrierung. Bitte versuche es später noch einmal.');
+    console.error("Fehler bei der Registrierung:", error);
+    alert(
+      "Fehler bei der Registrierung. Bitte versuche es später noch einmal."
+    );
   }
-
-}  
+};
 
 export const login = (username, password) => {
-  fetch(`${baseUrl}/login`, { 
-    method: 'POST',
+  fetch(`${baseUrl}/login`, {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({ username, password })
+    body: JSON.stringify({ username, password }),
   })
-  .then(response => {
-    console.log(2314)
-    if (!response.ok) {
-      return response.json().then(data => {
-        throw new Error(data.message || 'Login fehlgeschlagen');
-      });
-    }
+    .then((response) => {
+      if (!response.ok) {
+        return response.json().then((data) => {
+          throw new Error(data.message || "Login fehlgeschlagen");
+        });
+      }
 
-    return response.json()
-  })
-  .then(data => {
-
-    if (data.token) {
-      localStorage.setItem('passwordplayground', data.token);
-      console.log('Token erfolgreich gespeichert!');
-      dataKrakenTakes({token:data.token,col:"visits"})
-      fetchUserData()
-    } else {
-      alert('Login fehlgeschlagen: ' + data.message);
-    }
-  })
-  .catch(error => {
-    console.error('Fehler beim Login:', error);
-    alert('Fehler beim Login.' + error.message);
-  });
+      return response.json();
+    })
+    .then((data) => {
+      if (data.token) {
+        localStorage.setItem("passwordplayground", data.token);
+        console.log("Token erfolgreich gespeichert!");
+        dataKrakenTakes({ token: data.token, col: "visits" });
+        fetchUserData();
+      } else {
+        alert("Login fehlgeschlagen: " + data.message);
+      }
+    })
+    .catch((error) => {
+      console.error("Fehler beim Login:", error);
+      alert("Fehler beim Login." + error.message);
+    });
 };
 
 export function fetchUserData() {
-
-  const token = localStorage.getItem('passwordplayground');
-
+  const token = localStorage.getItem("passwordplayground");
 
   fetch(`${baseUrl}/user`, {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'Authorization': `Bearer ${token}`
-    }
+      Authorization: `Bearer ${token}`,
+    },
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
-    if(data.username){
-      loginFunc(data.username)
-    }else{
-      logoutFunc()
-    }
-    
-  })
-  .catch(error => {
-    localStorage.removeItem('passwordplayground');
-    console.error('Fehler beim Abrufen der Benutzerdaten:', error);
-  })
-
-
-
-
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.username) {
+        loginFunc(data.username, data.avatar);
+      } else {
+        logoutFunc();
+      }
+    })
+    .catch((error) => {
+      localStorage.removeItem("passwordplayground");
+      console.error("Fehler beim Abrufen der Benutzerdaten:", error);
+    });
 }
 
 export const logoutFunc = () => {
-  localStorage.removeItem('passwordplayground');
+  localStorage.removeItem("passwordplayground");
 
   const loginItem = document.getElementById("loginItem");
   const profile = document.getElementById("profile");
   loginItem.classList.remove("d-none");
   profile.classList.add("d-none");
+};
 
-  
-}
-
-const loginFunc = (username) => {
+const loginFunc = (username, avatar) => {
   const loginItem = document.getElementById("loginItem");
   const profile = document.getElementById("profile");
   const profilePictureNav = document.getElementById("profilePictureNav");
   loginItem.classList.add("d-none");
   profile.classList.remove("d-none");
-  const span = document.createElement("span")
-  span.textContent = username
-  document.getElementById("profileName").appendChild(span)
-
-}
-
+  profilePictureNav.src = avatar;
+  const span = document.createElement("span");
+  span.textContent = username;
+  document.getElementById("profileName").appendChild(span);
+};
 
 export const deleteUser = async () => {
   try {
-    const token = localStorage.getItem('passwordplayground');
-    
+    const token = localStorage.getItem("passwordplayground");
+
     const response = await fetch(`${baseUrl}/deleteUser`, {
-      method: 'DELETE',
+      method: "DELETE",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     });
 
     const data = await response.json();
-    console.log(data)
+    console.log(data);
     if (response.ok) {
-      alert('Benutzer erfolgreich gelöscht');
+      alert("Benutzer erfolgreich gelöscht");
       localStorage.removeItem("passwordplayground");
-        window.location.reload();
+      window.location.reload();
     } else {
-      
     }
   } catch (error) {
-    console.error('Fehler beim Löschen des Benutzers:', error);
-   
+    console.error("Fehler beim Löschen des Benutzers:", error);
   }
 };
 
-
 // ======================   VALdiation   ======================
-
-
 
 export const validateRegisterForm = () => {
   const email = document.getElementById("validationDefault02");
@@ -185,35 +182,42 @@ export const validateRegisterForm = () => {
   return isValid;
 };
 
+// Dynamische Überprüfung der Eingabefelder während des Tippens
+export const addDynamicValidation = (
+  email,
+  confirmEmail,
+  password,
+  confirmPassword,
+  registerForm
+) => {
+  // Überprüfung der E-Mail Felder während der Eingabe
+  email.addEventListener("input", () => validateRegisterForm());
+  confirmEmail.addEventListener("input", () => validateRegisterForm());
 
+  // Überprüfung der Passwort Felder während der Eingabe
+  password.addEventListener("input", () => validateRegisterForm());
+  confirmPassword.addEventListener("input", () => validateRegisterForm());
 
-  // Dynamische Überprüfung der Eingabefelder während des Tippens
-  export const addDynamicValidation = (email,confirmEmail,password,confirmPassword,registerForm) => {
-
-  
-    // Überprüfung der E-Mail Felder während der Eingabe
-    email.addEventListener("input", () => validateRegisterForm());
-    confirmEmail.addEventListener("input", () => validateRegisterForm());
-  
-    // Überprüfung der Passwort Felder während der Eingabe
-    password.addEventListener("input", () => validateRegisterForm());
-    confirmPassword.addEventListener("input", () => validateRegisterForm());
-
-  
   // Event-Listener für Formular-Validierung
   registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
-  
+
     // Rufe die Validierungsfunktion auf
     if (validateRegisterForm()) {
       const username = document.getElementById("validationDefault01").value;
       const email = document.getElementById("validationDefault02").value;
       const password = document.getElementById("validationDefault05").value;
-  
+
       // Führe den Registrierungsvorgang durch, wenn die Validierung erfolgreich war
-      register({username, password, email,visits:0,generatedPasswords:0,testedPasswords:0,generatedUsernames:0});
+      register({
+        username,
+        password,
+        email,
+        visits: 0,
+        generatedPasswords: 0,
+        testedPasswords: 0,
+        generatedUsernames: 0,
+      });
     }
   });
-  
 };
-

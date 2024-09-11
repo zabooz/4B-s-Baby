@@ -1,5 +1,3 @@
-
-
 const config = {
   ai: {
     img: "../img/quickNav/_sanchez.jpeg",

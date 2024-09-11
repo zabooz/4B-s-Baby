@@ -2,20 +2,20 @@ export function getColorFromStrength(strength) {
   // Begrenzungen für den Stärke-Wert
   const minStrength = 0; // Minimum Stärke-Wert
   const maxStrength = 100; // Maximum Stärke-Wert
-  
+
   // Berechne den Prozentsatz
   const percentage = (strength - minStrength) / (maxStrength - minStrength);
-  
+
   // Stelle sicher, dass der Prozentsatz im Bereich von 0 bis 1 liegt
   const clampedPercentage = Math.max(0, Math.min(1, percentage));
 
   // Definiere die Farben in der Reihenfolge des Farbverlaufs
   const colors = [
-      { r: 91, g: 0, b: 25 },   // #5b0019
-      { r: 115, g: 51, b: 12 },  // #73330c
-      { r: 120, g: 97, b: 10 },  // #78610a
-      { r: 105, g: 142, b: 55 }, // #698e37
-      { r: 50, g: 186, b: 128 }  // #32ba80
+    { r: 91, g: 0, b: 25 }, // #5b0019
+    { r: 115, g: 51, b: 12 }, // #73330c
+    { r: 120, g: 97, b: 10 }, // #78610a
+    { r: 105, g: 142, b: 55 }, // #698e37
+    { r: 50, g: 186, b: 128 }, // #32ba80
   ];
 
   // Berechne den Index der aktuellen Farbbereiche
@@ -25,8 +25,8 @@ export function getColorFromStrength(strength) {
 
   // Wenn genau am Anfang oder Ende, gib die entsprechende Farbe zurück
   if (lowerIndex === upperIndex) {
-      const color = colors[lowerIndex];
-      return `rgb(${color.r}, ${color.g}, ${color.b})`;
+    const color = colors[lowerIndex];
+    return `rgb(${color.r}, ${color.g}, ${color.b})`;
   }
 
   // Interpoliere die Farben zwischen den beiden Indizes

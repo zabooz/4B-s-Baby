@@ -1,10 +1,7 @@
 import { storedClippy, copyButton } from "../scripts/copybutton.js";
 
-
 const createClipBoard = () => {
-
-  const imgSrc ="../img/quickNav/copyCat1.jpeg"
-
+  const imgSrc = "../img/quickNav/copyCat1.jpeg";
 
   return `
 <div class="offcanvas offcanvas-start border-0  " tabindex="-1" id="clippy" aria-labelledby="offcanvasExampleLabel">
@@ -39,9 +36,8 @@ const createClipBoard = () => {
 export const clipBoard = (id) => {
   const target = document.querySelector(id);
   target.innerHTML = createClipBoard();
-  refreshList()
+  refreshList();
   addButtons();
-
 
   const deleteAllBtn = document.getElementById("deleteAll");
 
@@ -54,56 +50,45 @@ export const clipBoard = (id) => {
   const userList = document.getElementById("userList");
   const passwordList = document.getElementById("passwordList");
 
-
   passwordListBtn.addEventListener("mouseover", () => {
+    passwordListBtn.style.backgroundColor = "#ea6854";
+    passwordListBtn.style.zIndex = "2";
 
-    passwordListBtn.style.backgroundColor = "#ea6854"
-    passwordListBtn.style.zIndex ="2"
+    userList.classList.add("d-none");
+    userList.classList.remove("d-flex");
+    passwordList.classList.remove("d-none");
+    passwordList.classList.add("d-flex");
 
-    userList.classList.add("d-none")
-    userList.classList.remove("d-flex")
-    passwordList.classList.remove("d-none")
-    passwordList.classList.add("d-flex")
-
- 
-    userListBtn.style.backgroundColor = "#ea6854c5"
-    userListBtn.style.zIndex ="3"
-
-  })
+    userListBtn.style.backgroundColor = "#ea6854c5";
+    userListBtn.style.zIndex = "3";
+  });
 
   userListBtn.addEventListener("mouseover", () => {
+    passwordListBtn.style.backgroundColor = "#ea6854c5";
+    passwordListBtn.style.zIndex = "2";
 
-    passwordListBtn.style.backgroundColor = "#ea6854c5"
-    passwordListBtn.style.zIndex ="2"
+    userList.classList.add("d-flex");
+    userList.classList.remove("d-none");
+    passwordList.classList.add("d-none");
+    passwordList.classList.remove("d-flex");
 
-    userList.classList.add("d-flex")
-    userList.classList.remove("d-none")
-    passwordList.classList.add("d-none")
-    passwordList.classList.remove("d-flex")
-
-
-
-    userListBtn.style.backgroundColor = "#ea6854"
-    userListBtn.style.zIndex ="3"
-  })
-
-
-
+    userListBtn.style.backgroundColor = "#ea6854";
+    userListBtn.style.zIndex = "3";
+  });
 };
 
 const deleteBtn = (id) => {
   const btn = document.createElement("button");
 
   const i = document.createElement("img");
-  i.src ="../img/icons/trash_.png"
-  i.style.width = "20px"
-  i.style.height = "20px"
-  i.style.marginBottom = "5px"
+  i.src = "../img/icons/trash_.png";
+  i.style.width = "20px";
+  i.style.height = "20px";
+  i.style.marginBottom = "5px";
 
   btn.style.border = "none";
   btn.style.backgroundColor = "transparent";
   btn.id = "btn" + id;
-
 
   btn.append(i);
 
@@ -142,34 +127,32 @@ const deleteAll = () => {
 };
 
 export const refreshList = () => {
-    let pw = "";
-    let user = "";
-    for (let i = 0; i < storedClippy.length; i++) {
-      const clip = `${storedClippy[i].type}` + i;
-      const value = storedClippy[i].value;
-      if (storedClippy[i].type === "password") {
-        pw += `<li id="${clip}" class=" w-75 d-flex my-2 justify-content-between" ><span>${value}</span></li>`;
-      } else {
-        user += `<li id="${clip}" class=" w-75 my-2 d-flex justify-content-between" ><span>${value}</span></li>`;
-      }
+  let pw = "";
+  let user = "";
+  for (let i = 0; i < storedClippy.length; i++) {
+    const clip = `${storedClippy[i].type}` + i;
+    const value = storedClippy[i].value;
+    if (storedClippy[i].type === "password") {
+      pw += `<li id="${clip}" class=" w-75 d-flex my-2 justify-content-between" ><span>${value}</span></li>`;
+    } else {
+      user += `<li id="${clip}" class=" w-75 my-2 d-flex justify-content-between" ><span>${value}</span></li>`;
     }
+  }
 
-    document.getElementById("passwordList").innerHTML = pw;
-    document.getElementById("userList").innerHTML = user;
-}
+  document.getElementById("passwordList").innerHTML = pw;
+  document.getElementById("userList").innerHTML = user;
+};
 
 export const addButtons = () => {
-      for (let i = 0; i < storedClippy.length; i++) {
-        const elementId = storedClippy[i].type + i;
-        const clip = document.getElementById(elementId);
-        const copyBtn = copyButton(elementId);
-        const delBtn = deleteBtn(elementId);
+  for (let i = 0; i < storedClippy.length; i++) {
+    const elementId = storedClippy[i].type + i;
+    const clip = document.getElementById(elementId);
+    const copyBtn = copyButton(elementId);
+    const delBtn = deleteBtn(elementId);
 
-     
-
-        const btnBox = document.createElement("div");
-        btnBox.classList.add("btnBox");
-        btnBox.append(copyBtn, delBtn);
-        clip.append(btnBox);
-      }
-}
+    const btnBox = document.createElement("div");
+    btnBox.classList.add("btnBox");
+    btnBox.append(copyBtn, delBtn);
+    clip.append(btnBox);
+  }
+};

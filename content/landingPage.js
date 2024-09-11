@@ -1,10 +1,8 @@
 import { eventBinding } from "../index.js";
 import { landingPageScripts } from "../contentScripts/landingPageScripts.js";
 
-const  landingPage = () => {
-
-
-            return `
+const landingPage = () => {
+  return `
             
     <header class="w-100 d-flex flex-column pt-0 pt-lg-3 justify-content-center align-items-center">
 
@@ -121,21 +119,19 @@ const  landingPage = () => {
     </main>
                      
             `;
+};
 
-}
+export const createLandingPageHTML = (contentBox, style) => {
+  const styleSheet = "../styles/indexStyle.css";
+  style.setAttribute("href", styleSheet);
+  sessionStorage.setItem("content", "createLandingPageHTML");
 
-export const createLandingPageHTML = (contentBox,style) => {
+  if (sessionStorage.getItem("landingPage")) {
+    contentBox.innerHTML = sessionStorage.getItem("landingPage");
+  } else {
+    contentBox.innerHTML = landingPage();
+    sessionStorage.setItem("landingPage", contentBox.innerHTML);
+  }
 
-    const styleSheet = "../styles/indexStyle.css";
-    style.setAttribute("href", styleSheet);
-    sessionStorage.setItem("content","createLandingPageHTML")
-
-    if(sessionStorage.getItem("landingPage")){
-      contentBox.innerHTML = sessionStorage.getItem("landingPage")
-    }else{
-      contentBox.innerHTML = landingPage()
-      sessionStorage.setItem("landingPage",contentBox.innerHTML)
-    }
-
-    landingPageScripts("scrollIntoViewBtn","scrollIntoView",contentBox,style)
-}
+  landingPageScripts("scrollIntoViewBtn", "scrollIntoView", contentBox, style);
+};

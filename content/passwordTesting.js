@@ -1,11 +1,11 @@
-
 import { loadOffCanvas } from "../components/offCanvas.js";
-import {createQuickNav,configQuickNavFeature,} from "../components/quickNav.js";
+import {
+  createQuickNav,
+  configQuickNavFeature,
+} from "../components/quickNav.js";
 import { passwordTestingScripts } from "../contentScripts/passwordTestingScripts.js";
 const createPasswordTesting = () => {
-    
-
-    return `
+  return `
     
     <main class="d-flex justify-content-center" id="mainTesting">
       <section class="row row-cols-1 row-cols-lg-2 g-5 mx-0 mx-md-5">
@@ -375,43 +375,38 @@ const createPasswordTesting = () => {
     <div class="quickNav"></div>
     <div class="canvas"></div>
     `;
-}
+};
 
+export const createTestingPasswordHTML = (contentBox, style) => {
+  // const content = createPasswordTesting();
+  const styleSheet = "./styles/passwordTesting.css";
+  style.setAttribute("href", styleSheet);
+  sessionStorage.setItem("content", "createTestingPasswordHTML");
 
+  if (sessionStorage.getItem("passwordTesting")) {
+    contentBox.innerHTML = sessionStorage.getItem("passwordTesting");
+  } else {
+    contentBox.innerHTML = createPasswordTesting();
+    createQuickNav(".quickNav");
+    loadOffCanvas(".canvas", "liste", "../data/text.json");
+    loadOffCanvas(".canvas", "simple", "../data/text.json");
+    sessionStorage.setItem("passwordTesting", contentBox.innerHTML);
+  }
+  const scriptUrls = [
+    "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/core@2.0.0/dist/zxcvbn-ts.js",
+    "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-common@2.0.0/dist/zxcvbn-ts.js",
+    "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-en@2.0.0/dist/zxcvbn-ts.js",
+  ];
 
-export const createTestingPasswordHTML = (contentBox,style) => {
+  scriptUrls.forEach((url) => {
+    const script = document.createElement("script");
+    script.src = url;
+    document.head.appendChild(script);
+  });
 
-    // const content = createPasswordTesting();
-    const styleSheet = "./styles/passwordTesting.css";
-    style.setAttribute("href", styleSheet);
-    sessionStorage.setItem("content","createTestingPasswordHTML");
-
-
-
-    if(sessionStorage.getItem("passwordTesting")){
-      contentBox.innerHTML = sessionStorage.getItem("passwordTesting");
-    }else{
-      contentBox.innerHTML = createPasswordTesting();
-      createQuickNav(".quickNav");
-      loadOffCanvas(".canvas", "liste", "../data/text.json");
-      loadOffCanvas(".canvas", "simple", "../data/text.json");
-      sessionStorage.setItem("passwordTesting", contentBox.innerHTML);
-    }
-    const scriptUrls = [
-      "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/core@2.0.0/dist/zxcvbn-ts.js",
-      "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-common@2.0.0/dist/zxcvbn-ts.js",
-      "https://cdn.jsdelivr.net/npm/@zxcvbn-ts/language-en@2.0.0/dist/zxcvbn-ts.js",
-    ];
-
-    scriptUrls.forEach((url) => {
-      const script = document.createElement("script");
-      script.src = url;
-      document.head.appendChild(script);
-    });
-
-    passwordTestingScripts()
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-}
+  passwordTestingScripts();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};

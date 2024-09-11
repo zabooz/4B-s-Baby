@@ -4,35 +4,31 @@
 
 /* ================================================ Other Stuff =======================================*/
 
-
 * {
   color: #212529;
   font-family: "Montserrat", sans-serif;
 }
 
-
-
 .bg-custom {
   background-color: #23bbb858;
 }
- main {
+main {
   min-height: 110vh;
   overflow: hidden;
 }
- header{
+header {
   min-height: 90vh;
- }
+}
 main > section {
   width: 100%;
   padding: 1.2em;
 }
 
 .bounce {
-  animation: bounce 2s ;
+  animation: bounce 2s;
 }
 
 /* ================================================ LANDING PAGE HERO TEXT  ============================================= */
-
 
 .montserrat-font-header {
   font-family: "Montserrat", sans-serif;
@@ -52,35 +48,34 @@ main > section {
   font-style: normal;
 }
 .leadFont {
-  font-size: clamp(1.1rem, 2.5vw, 3rem) ;
-  line-height: clamp(1.1rem, 2vw, 2.5rem) ;
+  font-size: clamp(1.1rem, 2.5vw, 3rem);
+  line-height: clamp(1.1rem, 2vw, 2.5rem);
 
   font-weight: 450;
   font-style: normal;
-
 }
-#landingLeftSide{
+#landingLeftSide {
   padding-left: 7rem;
 }
 
-#siteName p:first-of-type{
+#siteName p:first-of-type {
   margin-bottom: 0;
 }
-#padlockLogo{
+#padlockLogo {
   width: clamp(5rem, 40vw, 40rem);
   transform: rotate(10deg);
 }
-#padlockLogoTop{
+#padlockLogoTop {
   width: clamp(5rem, 40vw, 40rem);
   transform: rotate(10deg);
 }
-.subText{
-  font-size: clamp(.9rem, 1.5vw, 1.8rem) !important;
+.subText {
+  font-size: clamp(0.9rem, 1.5vw, 1.8rem) !important;
   font-weight: 400;
-  line-height: clamp(.9rem, 1.5vw, 1.8rem)
+  line-height: clamp(0.9rem, 1.5vw, 1.8rem);
 }
-#exploreText{
-  font-size: clamp(.8rem, 1vw, 1.5rem) !important;
+#exploreText {
+  font-size: clamp(0.8rem, 1vw, 1.5rem) !important;
   text-align: center;
   border: 1px solid #ea6954;
   border-radius: 1rem;
@@ -94,60 +89,55 @@ main > section {
   margin-top: auto;
   height: 10vh;
 }
-#scrollIntoViewBtn{
+#scrollIntoViewBtn {
   background-color: transparent;
   border: none;
 }
 
-
-
 /* ===================== Landing Page Cards =============================== */
 
-
-
-.card{
+.card {
   min-height: 100%;
   max-width: 35rem;
   background-color: #f1f5f5;
   -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
   -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
   box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
-  
 }
-.card-header{
-  font-size: clamp(1.1rem, 2.5vw, 3rem) ;
-  line-height: clamp(1.1rem, 2vw, 2.5rem) ;
+.card-header {
+  font-size: clamp(1.1rem, 2.5vw, 3rem);
+  line-height: clamp(1.1rem, 2vw, 2.5rem);
 
   font-weight: 450;
   font-style: normal;
 }
 .card-title,
-.card-title   font{
+.card-title font {
   font-family: "Inria Serif", serif;
   font-size: clamp(1rem, 5vw, 2rem) !important	 ;
-  line-height: clamp(1.1rem, 3vw, 2.5rem) ;
+  line-height: clamp(1.1rem, 3vw, 2.5rem);
   letter-spacing: 0.1rem;
   font-weight: 450;
-  font-style: normal
+  font-style: normal;
 }
-.card-subtitle{
+.card-subtitle {
   font-size: clamp(0.9rem, 4vw, 1.5rem) !important;
   font-weight: 400;
-  line-height: clamp(0.9rem, 1.5vw, 1.5rem)
+  line-height: clamp(0.9rem, 1.5vw, 1.5rem);
 }
-.card-text{
+.card-text {
   font-size: clamp(0.9rem, 1.5vw, 1.3rem) !important;
   font-weight: 400;
-  line-height: clamp(0.9rem, 3vw, 1.8rem) 
+  line-height: clamp(0.9rem, 3vw, 1.8rem);
 }
-.card a{
+.card a {
   margin-top: calc(5rem + vw);
 }
 .btn {
   background-color: #ea6954;
   color: #f1f5f5;
 }
-.btn font{
+.btn font {
   color: #f1f5f5;
 }
 
@@ -191,13 +181,13 @@ main > section {
   .w-50 {
     width: 90% !important;
   }
-  main{
+  main {
     height: 100%;
   }
-  #landingLeftSide{
-    padding-left:0 ;
-}
-  #exploreText{
+  #landingLeftSide {
+    padding-left: 0;
+  }
+  #exploreText {
     padding: 1rem 1rem 1rem 1rem;
   }
 }
