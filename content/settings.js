@@ -62,20 +62,20 @@ const createSettings = () => {
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade active show " id="home" role="tabpanel" aria-labelledby="home-tab">
             <ul class="list-group overview ">
-                <li class="list-group-item ">Benutzername: <span id="username"></span></li>
-                <li class="list-group-item">E-mail: <span id="email"></span> </li>
-                <li class="list-group-item">Besuche: <span id="visits"></span></li>
-                <li class="list-group-item">Geteste Passwörter: <span id="tested_passwords""></span></li>
-                <li class="list-group-item">Generierte Passwörter: <span id="generated_passwords"></span></li>
-                <li class="list-group-item">Generierte Benutzernamen: <span id="generated_usernames"></span></li>
-
-              </ul>
-          </div>
-          <div class="tab-pane fade " id="profileTab" role="tabpanel" aria-labelledby="profile-tab">
-              <ul class="list-group profile">
-                  <li class="list-group-item">Benutzernamen ändern: <span id="changeUsername"> Klick</span></li>
-                  <li class="list-group-item">Passwort ändern: <span id="changePassword"> Klick</span></li>
-                <li class="list-group-item">Avatar ändern 
+                <li class="list-group-item ">Benutzername: <span data-key="username"></span></li>
+                <li class="list-group-item ">Besuche: <span data-key="visits"></span></li>
+                <li class="list-group-item ">Geteste Passwörter: <span data-key="tested_passwords"></span></li>
+                <li class="list-group-item ">Generierte Passwörter: <span data-key="generated_passwords"></span></li>
+                <li class="list-group-item ">Generierte Benutzernamen: <span data-key="generated_usernames"></span></li>
+                
+                </ul>
+                </div>
+                <div class="tab-pane fade " id="profileTab" role="tabpanel" aria-labelledby="profile-tab">
+                <ul class="list-group profile">
+                <li class="list-group-item">Benutzername:<span  data-key="username"> </span> <a id="changeUsername" href="#"> ändern</a></li>
+                <li class="list-group-item ">E-mail: <span data-key="email"></span><a id="changeEmail"  href="#"> ändern</a> </li>
+                <li class="list-group-item">Passwort  <a id="changePassword" href="#" > ändern</a></li>
+                <li class="list-group-item">Avatar
                 <a  data-bs-toggle="offcanvas" href="#profilePicsChoosery" role="button" aria-controls="profilePicsChoosery">
                 ändern </a></li>
                 
@@ -85,12 +85,12 @@ const createSettings = () => {
               <table class="table table-dark table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Visits</th>
-                    <th scope="col">Tested Passwords</th>
-                    <th scope="col">Generated Passwords</th>
-                    <th scope="col">Generated Usernames</th>
+                    <th scope="col" data-key="place">#</th>
+                    <th scope="col" data-key="username">Name</th>
+                    <th scope="col" data-key="visits">Visits</th>
+                    <th scope="col" data-key="tested_passwords">Tested Passwords</th>
+                    <th scope="col" data-key="generated_passwords">Generated Passwords</th>
+                    <th scope="col" data-key="generated_usernames">Generated Usernames</th>
                   </tr>
                 </thead>
                 <tbody id="leaderBoardTable">

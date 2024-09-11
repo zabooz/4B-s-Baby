@@ -1,32 +1,68 @@
+import { dataKrakenGives } from "../utilities/dataKraken.js";
+import { setWithExpiry,getWithExpiry } from "./expireToken.js";
+export const sortTables = async () => {
+  const table = document.querySelector("table");
+
+    let data;
 
 
-export const sortTables = () => {
-    const table = document.querySelectorAll("table");
-    for (let i = 0; i < table.length; i++) {
-        table[i].addEventListener("click", (event) => {
-            const target = event.target;
-            if (target.tagName === "TH" && target.cellIndex > 0) {
-                const table = target.closest("table");
-                const tbody = table.querySelector("tbody");
-                const rows = Array.from(tbody.querySelectorAll("tr"));
-                const sortedRows = rows.sort((a, b) => {
-                    const cellA = a.querySelector(`td:nth-child(${target.cellIndex + 1})`).textContent.trim();
-                    const cellB = b.querySelector(`td:nth-child(${target.cellIndex + 1})`).textContent.trim();
-                    const valueA = isNaN(cellA) ? cellA : Number(cellA);
-                    const valueB = isNaN(cellB) ? cellB : Number(cellB);
-                    if (typeof valueA === "number" && typeof valueB === "number") {
-                        return valueB-valueA  ;
-                    } else {
-                        return valueB.localeCompare(valueA);
-                    }
-                });
-                tbody.innerHTML = "";
-                sortedRows.forEach((row, index) => {
-                    row.firstChild.innerText = index + 1
-                    tbody.appendChild(row)
-                });
-            }    
-        });
-    }
+
+
+  table.addEventListener("click",async (event) => {
+    const target = event.target;
+
+    if (target.tagName === "TH" && target.cellIndex > 1) {
+
+
+        const col = target.dataset.key
+
+
+        try{
+
+            if(getWithExpiry(col)) {
+                data = getWithExpiry(col);
+            }else{
+                const response = await dataKrakenGives(col);
+                data = response.data
+                setWithExpiry(col, data, 180000);
+            }
+
+            const leaderBoardTable = document.getElementById("leaderBoardTable");
+            leaderBoardTable.innerHTML = "";
+            data.forEach((item, index) => {
+                const row = document.createElement("tr");
+                const place = document.createElement("td");
+                const name = document.createElement("td");
+                const testPw = document.createElement("td");
+                const genPw = document.createElement("td");
+                const genUser = document.createElement("td");
+                const visits = document.createElement("td");
+                if(item.user) {
+
+                    place.innerText = item.rank
+                    item = item.user
+                }else{
+                    place.innerText = index + 1
+                }
+                name.innerText = item.username;
+                testPw.innerText = item.tested_passwords
+                genPw.innerText = item.generated_passwords
+                genUser.innerText = item.generated_usernames
+                visits.innerText = item.visits
+                row.append(place,name, visits ,testPw, genPw, genUser)
+                leaderBoardTable.append(row)
+            })
+        
+        } catch(err) {
+            console.log(err)
+        }
+        }
+  });
+
+
+
+
+
+
 }
 

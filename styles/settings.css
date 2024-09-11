@@ -8,3 +8,9 @@
 .choosen {
   border: 4px solid #ea6954 !important;
 }
+#userRow td{
+  color : red !important;
+}
+table{
+  text-align: center !important;
+}

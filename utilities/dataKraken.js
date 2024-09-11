@@ -24,16 +24,16 @@ export async function dataKrakenTakes(data) {
   }
 }
 
-export async function dataKrakenGives() {
+export async function dataKrakenGives(col) {
   let data;
 
 
   try {
-    const response = await fetch(`${baseUrl}/dataKrakenGives`, {
+    const response = await fetch(`${baseUrl}/dataKrakenGives?col=${col}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("passwordplayground")}`,
+        "authorization": `Bearer ${localStorage.getItem("passwordplayground")}`,
       }
     });
 
@@ -71,10 +71,10 @@ export async function dataKrakenTrades(key, value,) {
   return data;
 }
 
-export const dataKrakenBestow = async () => {
+export const dataKrakenBestow = async (col) => {
 
   try {
-    const response = await fetch(`${baseUrl}/dataKrakenBestow`, {
+    const response = await fetch(`${baseUrl}/dataKrakenBestow?col=${col}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
