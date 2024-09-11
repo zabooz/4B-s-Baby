@@ -41,7 +41,6 @@ export const loadOffCanvas  = (id,text,path) => {
 
         const content =  data[text]
         const target = document.querySelector(id)
-
         target.innerHTML += createOffCanvas(content)
 
     });

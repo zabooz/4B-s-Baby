@@ -1,10 +1,9 @@
 
-import{dataKraken} from "./dataKraken.js"
-// const baseUrl = 'https://bruteforce.coolify.machma.app';
-const baseUrl = "http://localhost:3000";
+import{dataKrakenTakes} from "./dataKraken.js"
+import {data} from "../data/data.js"
 
+const baseUrl = data.baseUrl
 
-const token = localStorage.getItem("passwordplayground") || null;
 
 export const register = async ({username, password, email,visits,generatedPasswords,testedPasswords,generatedUsernames}) => {
   console.log(234)
@@ -40,19 +39,22 @@ export const login = (username, password) => {
     body: JSON.stringify({ username, password })
   })
   .then(response => {
+    console.log(2314)
     if (!response.ok) {
       return response.json().then(data => {
         throw new Error(data.message || 'Login fehlgeschlagen');
       });
     }
-    return response.json(); 
+
+    return response.json()
   })
   .then(data => {
+
     if (data.token) {
       localStorage.setItem('passwordplayground', data.token);
       console.log('Token erfolgreich gespeichert!');
-      dataKraken({token:data.token,col:"visits"})
-      location.reload();
+      dataKrakenTakes({token:data.token,col:"visits"})
+      fetchUserData()
     } else {
       alert('Login fehlgeschlagen: ' + data.message);
     }
@@ -64,6 +66,10 @@ export const login = (username, password) => {
 };
 
 export function fetchUserData() {
+
+  const token = localStorage.getItem('passwordplayground');
+
+
   fetch(`${baseUrl}/user`, {
     method: 'GET',
     headers: {
@@ -72,18 +78,22 @@ export function fetchUserData() {
   })
   .then(response => response.json())
   .then(data => {
+    console.log(data)
     if(data.username){
       loginFunc(data.username)
     }else{
       logoutFunc()
     }
     
-    
   })
   .catch(error => {
-    localStorage.removeItem('passwordplayground'); // Token löschen, wenn es ungültig ist
+    localStorage.removeItem('passwordplayground');
     console.error('Fehler beim Abrufen der Benutzerdaten:', error);
   })
+
+
+
+
 }
 
 export const logoutFunc = () => {
@@ -100,6 +110,7 @@ export const logoutFunc = () => {
 const loginFunc = (username) => {
   const loginItem = document.getElementById("loginItem");
   const profile = document.getElementById("profile");
+  const profilePictureNav = document.getElementById("profilePictureNav");
   loginItem.classList.add("d-none");
   profile.classList.remove("d-none");
   const span = document.createElement("span")
