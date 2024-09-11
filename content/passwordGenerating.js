@@ -297,7 +297,6 @@ export const createPasswordGeneratingHTML =(contentBox,style)=>{
     sessionStorage.setItem("passwordGenerating",contentBox.innerHTML)
   } 
 
-
   passwordGeneratingScripts()
   window.scrollTo({
     top: 0,
