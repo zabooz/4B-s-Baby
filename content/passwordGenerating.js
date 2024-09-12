@@ -48,7 +48,6 @@ const createPwContent = () => {
                   id="leetInput"
                   class="form-control mt-3"
                   placeholder="Gib ein Passwort ein"
-                  required
                   minlength="1"
                   maxlength="12"
                 />
@@ -96,7 +95,6 @@ const createPwContent = () => {
               <button
                 id="leetBtn"
                 class="btn btn-primary w-100 mb-2"
-                disabled="true"
               >
                 Los geht's
               </button>
@@ -174,7 +172,6 @@ const createPwContent = () => {
                 id="pictureMagicBtn"
                 type="button"
                 class="btn btn-primary mb-2 w-100"
-                disabled="true"
               >
                 Los geht's
               </button>
@@ -182,7 +179,7 @@ const createPwContent = () => {
           </div>
         </div>
 
-        <!-- ================= Glyph Sourcery ================= -->
+        <!-- ================= Glyph Sorcery ================= -->
 
         <div class="col">
           <div class="card p-3 mx-auto">
