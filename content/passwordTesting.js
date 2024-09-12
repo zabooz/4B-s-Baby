@@ -104,7 +104,6 @@ const createPasswordTesting = () => {
                     class="btn btn-primary w-100 startBtn"
                     type="button"
                     id="startBrute"
-                    disabled="true"
                   >
                     Los geht's!
                   </button>
@@ -196,7 +195,6 @@ const createPasswordTesting = () => {
                 <button
                   id="excaliburBtn"
                   class="btn btn-primary mx-auto w-50 mt-3"
-                  disabled="true"
                 >
                   Los geht's!
                 </button>
