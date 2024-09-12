@@ -216,7 +216,7 @@ export const addDynamicValidation = (
         generated_passwords: 0,
         tested_passwords: 0,
         generated_usernames: 0,
-        avatar: "./img/profilePics/defaultProfile.jpeg",
+        avatar: "../img/profilePics/defaultProfile.jpeg",
       });
     }
   });
