@@ -127,18 +127,7 @@ main > section {
 .card a {
   margin-top: calc(5rem + vw);
 }
-.btn {
-  background-color: #ea6954;
-  color: #f1f5f5;
-}
-.btn font {
-  color: #f1f5f5;
-}
 
-.btn:hover {
-  background: #56c5c3;
-  color: #f1f5f5;
-}
 
 /* ====================== Keyframes ===================== */
 

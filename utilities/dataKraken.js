@@ -15,7 +15,6 @@ export async function dataKrakenTakes(data) {
 
     if (response.ok) {
       const result = await response.json();
-      console.log("Daten erfolgreich gesendet:", result);
     } else {
       console.error("Fehler beim Senden der Daten:", await response.text());
     }

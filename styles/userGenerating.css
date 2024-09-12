@@ -395,11 +395,7 @@ main {
   background-color: #f1f5f5;
 }
 
-.btn {
-  background-color: #ea6954;
-  color: white;
-  border: none;
-}
+
 
 .sectionDiv {
   width: 70%;
@@ -416,10 +412,6 @@ main {
   margin-bottom: 2.5rem;
 }
 
-.btn:hover {
-  background: #56c5c3;
-  color: white;
-}
 
 .custom-img {
   border-radius: 1rem;

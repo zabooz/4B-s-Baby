@@ -41,6 +41,19 @@ nav img {
   }
 }
 
+.btn {
+  background-color: #ea6954 !important;
+  color: #f1f5f5 !important;
+  border: none !important;
+}
+
+.btn:hover {
+  background: #56c5c3 !important;
+
+}
+.btn:active {
+  background-color: #56c5c3 !important;
+}
 /* =================== QuickNav ================== */
 
 #quickNav {

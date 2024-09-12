@@ -47,8 +47,8 @@ export const register = async ({
   }
 };
 
-export const login = (username, password) => {
-  fetch(`${baseUrl}/login`, {
+export const login =  (username, password) => {
+   fetch(`${baseUrl}/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -65,10 +65,12 @@ export const login = (username, password) => {
       return response.json();
     })
     .then((data) => {
+
       if (data.token) {
         localStorage.setItem("passwordplayground", data.token);
         dataKrakenTakes({ col: "visits" });
         fetchUserData();
+
       } else {
         alert("Login fehlgeschlagen: " + data.message);
       }
@@ -77,6 +79,9 @@ export const login = (username, password) => {
       console.error("Fehler beim Login:", error);
       alert("Fehler beim Login." + error.message);
     });
+
+
+
 };
 
 export function fetchUserData() {
@@ -118,9 +123,7 @@ const loginFunc = (username, avatar) => {
   loginItem.classList.add("d-none");
   profile.classList.remove("d-none");
   profilePictureNav.src = avatar;
-  const span = document.createElement("span");
-  span.textContent = username;
-  document.getElementById("profileName").appendChild(span);
+  document.getElementById("profileName").textContent = username
 };
 
 export const deleteUser = async () => {
