@@ -26,15 +26,15 @@ const leaderBoard = () => {
 
 
 export const createLeaderBoardHTML = (contentBox, style) => {
-    // const styleSheet = "../styles/leaderBoard.css";
-    // style.setAttribute("href", styleSheet);
+    const styleSheet = "../styles/leaderBoard.css";
+    style.setAttribute("href", styleSheet);
     sessionStorage.setItem("content", "createLeaderBoardHTML");
     contentBox.innerHTML = leaderBoard();
-    // if(sessionStorage.getItem("leaderBoard")){
-    //     contentBox.innerHTML = sessionStorage.getItem("leaderBoard");
-    // }else{
-    //     contentBox.innerHTML = leaderBoard();
-    //     sessionStorage.setItem("leaderBoard", contentBox.innerHTML);
-    // }
+    if(sessionStorage.getItem("leaderBoard")){
+        contentBox.innerHTML = sessionStorage.getItem("leaderBoard");
+    }else{
+        contentBox.innerHTML = leaderBoard();
+        sessionStorage.setItem("leaderBoard", contentBox.innerHTML);
+    }
     leaderBoardScripts();
 }
