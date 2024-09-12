@@ -7,6 +7,7 @@ import { createUserGeneratingHTML } from "./content/userGenerating.js";
 import { createSettingsHTML } from "./content/settings.js";
 import { createAboutUsHTML } from "./content/aboutUs.js";
 import { createProjectHTML } from "./content/project.js";
+import { createLeaderBoardHTML } from "./content/leaderBoard.js";
 
 const functionMap = {
   createPasswordGeneratingHTML,
@@ -16,6 +17,7 @@ const functionMap = {
   createSettingsHTML,
   createAboutUsHTML,
   createProjectHTML,
+  createLeaderBoardHTML
 };
 
 Object.keys(functionMap).forEach((funcName) => {
@@ -27,6 +29,7 @@ const style = document.getElementById("contentStyle");
 
 document.addEventListener("DOMContentLoaded", () => {
   const content = sessionStorage.getItem("content");
+  console.log(content)
   content
     ? window[content](contentBox, style)
     : createLandingPageHTML(contentBox, style);

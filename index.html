@@ -34,6 +34,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
       />
+      <link rel="preload" href="./img/landingPage/padlock.svg" as="image">
       <link rel="stylesheet" href="./styles/indexStyle.css" id="contentStyle"/>
       <link rel="stylesheet" href="./styles/clipBoard.css" />
       <link rel="stylesheet" href="./styles/aiAssistant.css" />
@@ -115,7 +116,7 @@
             </div>
           </li>
           <li id="loginItem" class="nav-item mx-2 ">
-          <img  src="../img/icons/login.svg"   type="button" data-bs-toggle="modal" data-bs-target="#login"></img>
+          <img  src="./img/icons/login.svg"   type="button" data-bs-toggle="modal" data-bs-target="#login"></img>
           </li>
             <li id="profile" class="nav-item mx-2 d-none">
             <div class="dropdown position-relative">
@@ -123,15 +124,15 @@
                 <img id="profilePictureNav" src="./img/profilePics/defaultProfile.jpeg" alt="profilePicture">
               </a>
               <ul class="dropdown-menu position-absolute p-2">
-                <p id="profileName">Hallo </p>
+              <p id="profileName">Hallo </p>
+              <li class="nav-item">
+              <a id="leaderBoardLink" class="nav-link" href="#" data-function="createLeaderBoardHTML">Leaderboard</a>
+              </li>
               <li class="nav-item">
               <a class="nav-link" href="#" data-function="createSettingsHTML">Settings</a>
               </li>
               <li class="nav-item">
-              <a id="logout" class="nav-link" href="#">Logout</a>
-              </li>
-              <li class="nav-item">
-              <a id="deleteAccount" class="nav-link" href="#">Lösch Dich</a>
+              <a id="logout" class="nav-link" href="#" data-function="createLeaderBoardHTML">Logout</a>
               </li>
               </ul>
             </div>

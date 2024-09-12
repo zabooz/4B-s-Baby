@@ -1,11 +1,13 @@
 import { dataKrakenGives, dataKrakenTrades} from "../utilities/dataKraken.js";
-import { leaderBoards } from "../featureHtmlScripts/leaderBoards.js";
+
+import { deleteUser } from "../utilities/registerLogIn.js";
 export const settingsScripts = async () => {
     const overviewListItems = document.querySelectorAll("span[data-key]");
   const changeUsername = document.getElementById("changeUsername");
   const changePassword = document.getElementById("changePassword");
   const changeProfilePic = document.getElementById("chooseProfilePic");
   const changeEmail = document.getElementById("changeEmail");
+  const deleteAccount = document.getElementById("deleteAccount");
   const profilePicSrc = document.querySelectorAll(".img img");
 
 
@@ -61,6 +63,10 @@ export const settingsScripts = async () => {
     }
   });
 
+  deleteAccount.addEventListener("click", async () => {
+    console.log(214)
+      deleteUser()
+  })
 
 
 
@@ -86,14 +92,4 @@ export const settingsScripts = async () => {
       await updateProfile("avatar", avatarSrc);
     }
   });
-
-  const leaderBoardTab = document.getElementById("leaderBoardTab");
-
-  leaderBoardTab.addEventListener("click", async () => {    
-        leaderBoards();
-        
-  });
-
-
-
 };

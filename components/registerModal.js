@@ -2,7 +2,6 @@ import {
   register,
   login,
   logoutFunc,
-  deleteUser,
   fetchUserData,
   addDynamicValidation,
 } from "../utilities/registerLogIn.js";
@@ -139,10 +138,6 @@ export const createLogin = (id) => {
   const logout = document.getElementById("logout");
   logout.addEventListener("click", logoutFunc);
 
-  const deleteAccount = document.getElementById("deleteAccount");
-  deleteAccount.addEventListener("click", (e) => {
-    deleteUser();
-  });
 
   // Rufe dynamische Validierung auf, wenn das Modal geladen wird
 

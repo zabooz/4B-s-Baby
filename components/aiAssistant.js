@@ -14,7 +14,7 @@ const aiAssistant = () => {
   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="imgCon">
-  <img src="${imgSrc}">
+  <img loading="lazy" src="${imgSrc}">
   </div>
   <h5 class="offcanvas-title"  id="offcanvasExampleLabel">Sanchez Bot </h5>
   <div class="offcanvas-body">

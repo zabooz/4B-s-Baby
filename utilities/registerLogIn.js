@@ -214,8 +214,9 @@ export const addDynamicValidation = (
         email,
         visits: 0,
         generated_passwords: 0,
-        testet_passwords: 0,
+        tested_passwords: 0,
         generated_usernames: 0,
+        avatar: "./img/profilePics/defaultProfile.jpeg",
       });
     }
   });

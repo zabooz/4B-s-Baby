@@ -78,6 +78,7 @@ const createSettings = () => {
                 <li class="list-group-item">Avatar
                 <a  data-bs-toggle="offcanvas" href="#profilePicsChoosery" role="button" aria-controls="profilePicsChoosery">
                 ändern </a></li>
+                <li class="list-group-item"><a id="deleteAccount"  href="#">Account löschen</a></li>
                 
             </ul>
           </div>
