@@ -29,7 +29,6 @@ const style = document.getElementById("contentStyle");
 
 document.addEventListener("DOMContentLoaded", () => {
   const content = sessionStorage.getItem("content");
-  console.log(content)
   content
     ? window[content](contentBox, style)
     : createLandingPageHTML(contentBox, style);

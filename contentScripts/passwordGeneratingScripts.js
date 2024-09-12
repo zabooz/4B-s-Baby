@@ -13,26 +13,26 @@ export const passwordGeneratingScripts = () => {
   const uploadContainer = document.querySelector(".labelCon");
   const leetInputField = document.getElementById("leetInput");
 
-  let picturePath;
-  let file;
-
+  
   const pictureRowsArr = []; // variable  to save row dom elements
   let glyphRowsArr = []; // variable  to save row dom elements
   let runeRowsArr = []; // variable to save row data
-
+  
   let pictureMagicArray =
-    JSON.parse(sessionStorage.getItem("pictureMagicArray")) || []; // variable to save row data
+  JSON.parse(sessionStorage.getItem("pictureMagicArray")) || []; // variable to save row data
   let runeTranslatorArray =
-    JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
+  JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
   let storedGlyphArray =
-    JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; // variable to save GlyphPwd
-
-
+  JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; // variable to save GlyphPwd
+  
+  
   // ==========================================================
-
+  
   //               PICTURE MAGIC
-
+  
   // =========================================================
+  let picturePath;
+  let file;
 
   uploadContainer.addEventListener("click", () => {
     uploadFile.click();
