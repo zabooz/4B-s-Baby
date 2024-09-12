@@ -11,6 +11,7 @@ export const register = async ({
   generated_passwords,
   tested_passwords,
   generated_usernames,
+  avatar,
 }) => {
   console.log(234);
   try {
@@ -27,6 +28,7 @@ export const register = async ({
         generated_passwords,
         tested_passwords,
         generated_usernames,
+        avatar
       }),
     });
 
