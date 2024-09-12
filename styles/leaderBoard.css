@@ -1,6 +1,27 @@
 #userRow td{
   color : red !important;
 }
+#contentBox{
+    width: 100%;
+}
+#tableDiv{
+margin: 5rem auto;
+width: 80% !important;
+border-radius: 1rem;
+-webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
+-moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
+box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
+
+}
 table{
   text-align: center !important;
+   margin-bottom: 0 !important;
+   position: relative;
+   overflow-x: scroll;
+}
+h2{
+    margin-top: 3rem;
+    font-family: "inria serif", serif;
+    letter-spacing: .1rem;
+    font-weight: 600;
 }

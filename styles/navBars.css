@@ -1,9 +1,14 @@
 
 
 /* =================== Navbar ================== */
+body{
+  background-color: #56c5c3;
+}
 
-nav {
+* {
   font-family: "Montserrat", sans-serif;
+}
+nav {
   font-optical-sizing: auto;
   font-style: normal;
   z-index: 123;

@@ -3,8 +3,9 @@ import {leaderBoardScripts} from "../contentScripts/leaderBoardScripts.js"
 const leaderBoard = () => {
     
     return `
-    
-                <table class="table table-dark table-striped">
+                <h2 class="text-center">Leaderboard</h2>
+                <div id="tableDiv" class="table-responsive">
+                <table class="table table-success table-striped  table-hover">
                 <thead>
                   <tr>
                     <th scope="col" data-key="place">#</th>
@@ -15,10 +16,10 @@ const leaderBoard = () => {
                     <th scope="col" data-key="generated_usernames">Generated Usernames</th>
                   </tr>
                 </thead>
-                <tbody id="leaderBoardTable">
+                <tbody id="leaderBoardTable" class="table-group-divider">
                 </tbody>
               </table>
-    
+            </div>
     
     
     `;
