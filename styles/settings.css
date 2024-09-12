@@ -8,3 +8,15 @@
 .choosen {
   border: 4px solid #ea6954 !important;
 }
+.nav-tabs a{
+  color:black
+}
+.nav-tabs li .active{
+  color: #ea6965 !important;
+  
+
+}
+
+.tab-content li a{
+  color: #ea6965 !important;
+}

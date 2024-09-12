@@ -48,14 +48,11 @@ const createSettings = () => {
         
       
         <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
+            <li class="nav-item bg-light" role="presentation">
               <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Overview</a>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item bg-light  " role="presentation">
               <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profileTab" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="leaderBoardTab" data-bs-toggle="tab" href="#leaderBoard" role="tab" aria-controls="contact" aria-selected="false">Leaderboard</a>
             </li>
         </ul>
         

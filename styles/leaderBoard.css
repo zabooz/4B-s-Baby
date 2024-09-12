@@ -4,10 +4,14 @@
 #contentBox{
     width: 100%;
 }
+
+
+
 #tableDiv{
 margin: 5rem auto;
 width: 80% !important;
-border-radius: 1rem;
+max-width: 1000px;
+border-radius: .5rem;
 -webkit-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.45);
 -moz-box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.461);
 box-shadow: -1px 3px 35px 0px rgba(130, 127, 130, 0.457);
