@@ -3,6 +3,7 @@ import { copyButton } from "../scripts/copybutton.js";
 import { tripleConverter } from "../featureHtmlScripts/tripleLeetConverter.js";
 import { generateEzPw } from "../featureHtmlScripts/pwSandbox.js";
 import { dataKrakenTakes } from "../utilities/dataKraken.js";
+import { failPopUp } from "../scripts/failMsg.js";
 
 export const passwordGeneratingScripts = () => {
   const uploadFile = document.getElementById("uploadFile");
@@ -14,7 +15,7 @@ export const passwordGeneratingScripts = () => {
   const leetInputField = document.getElementById("leetInput");
 
   let picturePath;
-  let file;
+  let pictureFile;
 
   const pictureRowsArr = []; // variable  to save row dom elements
   let glyphRowsArr = []; // variable  to save row dom elements
@@ -26,7 +27,6 @@ export const passwordGeneratingScripts = () => {
     JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
   let storedGlyphArray =
     JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; // variable to save GlyphPwd
-
 
   // ==========================================================
 
@@ -47,13 +47,13 @@ export const passwordGeneratingScripts = () => {
 
     // check if file is valid & and handle if user abort upload
 
-    if (input.files[0]) file = input.files[0];
+    if (input.files[0]) pictureFile = input.files[0];
 
     const validTypes = ["image/jpeg", "image/png", "image/webp", "image/bmp"];
 
-    if (file === undefined) {
+    if (pictureFile === undefined) {
       return;
-    } else if (!validTypes.includes(file.type)) {
+    } else if (!validTypes.includes(pictureFile.type)) {
       alert("Only image files are allowed.");
       return;
     }
@@ -74,15 +74,16 @@ export const passwordGeneratingScripts = () => {
     };
     //  upload effect
 
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(pictureFile);
   });
 
   picMagicBtn.addEventListener("click", async (e) => {
     e.preventDefault();
 
-    const pwId = `pasword${pictureRowsArr.length}`;
+    const pwId = `password_${pictureRowsArr.length}`;
     const picId = `pic${pictureRowsArr.length}`;
-
+    console.log(pictureFile);
+    failPopUp("uploadFile", "pictureMagicBtn", "Lad zuerst ein Bild hoch!");
     const data = {
       pwId: pwId,
       catchId: picId,
@@ -92,7 +93,7 @@ export const passwordGeneratingScripts = () => {
     };
 
     try {
-      const result = await pictureToString(file);
+      const result = await pictureToString(pictureFile);
 
       data.password = result;
       pictureMagicArray.push(data);
@@ -103,8 +104,7 @@ export const passwordGeneratingScripts = () => {
         "pictureMagicArray",
         "statsBodyPicGen"
       );
-      picMagicBtn.disabled = true;
-      dataKrakenTakes({  col: "generated_passwords" });
+      dataKrakenTakes({ col: "generated_passwords" });
     } catch (error) {
       console.error(error);
     }
@@ -118,11 +118,12 @@ export const passwordGeneratingScripts = () => {
 
   leetBtn.addEventListener("click", function () {
     const leetInput = leetInputField.value;
+    failPopUp("leetInput", "leetBtn", "Gib zuerst ein Passwort ein!");
     const newPasswordArray = tripleConverter(leetInput);
 
     runeTranslatorArray = [];
 
-   dataKrakenTakes({  col: "generatedPasswords" });
+    dataKrakenTakes({ col: "generatedPasswords" });
 
     for (let i = 0; i < newPasswordArray.length; i++) {
       const pwId = `runeTranslator${i}`;
@@ -185,7 +186,7 @@ export const passwordGeneratingScripts = () => {
       app: app,
     };
 
-    dataKrakenTakes({  col: "generatedPasswords" });
+    dataKrakenTakes({ col: "generatedPasswords" });
     storedGlyphArray.push(data);
     storeAndSwitch(
       glyphRowsArr,

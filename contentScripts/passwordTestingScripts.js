@@ -5,6 +5,7 @@ import { thinkWords, thinker } from "../utilities/thinker.js";
 import { newTester } from "../components/newTester.js";
 import { dataKrakenTakes } from "../utilities/dataKraken.js";
 import { data } from "../data/data.js";
+import { failPopUp } from "../scripts/failMsg.js";
 
 export const passwordTestingScripts = (id) => {
   const baseUrl = data.baseUrl;
@@ -52,6 +53,7 @@ export const passwordTestingScripts = (id) => {
 
   startBrute.addEventListener("click", (e) => {
     e.preventDefault();
+    failPopUp("bruteForceInput", "startBrute", "Gib zuerst ein Passwort ein!");
     stopBrute.style.backgroundColor = "#626568";
     if (isBruteActive === "false") {
       const statsBody = document.getElementById("statsBody");
@@ -68,7 +70,6 @@ export const passwordTestingScripts = (id) => {
         <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
         <span role="status">${thinkWords[0]}</span>
         `;
-      startBrute.disabled = true;
 
       bruteThinkerInterval = setInterval(() => {
         thinker(startBrute);
@@ -169,11 +170,10 @@ export const passwordTestingScripts = (id) => {
       .finally(() => {
         clearInterval(bruteThinkerInterval); // stop the thinker
         updateAttempts(result); // update the table
-        startBrute.disabled = true;
         startBrute.innerHTML = "Nochmal?";
         stopBrute.style.backgroundColor = "#ced4da";
         bruteResults.classList.remove("invisible");
-        dataKrakenTakes({col: "tested_passwords" });
+        dataKrakenTakes({ col: "tested_passwords" });
       });
   };
 
@@ -188,7 +188,7 @@ export const passwordTestingScripts = (id) => {
     const stars = "******";
 
     const mojoIcon = document.createElement("img");
-    mojoIcon.src="../img/icons/eye.svg" 
+    mojoIcon.src = "../img/icons/eye.svg";
 
     const rowCount = tBody.rows.length;
 
@@ -200,17 +200,17 @@ export const passwordTestingScripts = (id) => {
       const target = document.getElementById(`td${rowCount}`);
       if (target.textContent === stars) {
         target.textContent = dataArr[0];
-        mojoIcon.src="../img/icons/eye-slash.svg" 
+        mojoIcon.src = "../img/icons/eye-slash.svg";
         target.append(mojoIcon);
       } else {
         target.textContent = stars;
-        mojoIcon.src="../img/icons/eye.svg" 
+        mojoIcon.src = "../img/icons/eye.svg";
         target.append(mojoIcon);
       }
     });
 
     const mojoIconDisplay = document.createElement("img");
-    mojoIconDisplay.src="../img/icons/eye.svg" 
+    mojoIconDisplay.src = "../img/icons/eye.svg";
 
     mojoIconDisplay.addEventListener("click", () => {
       const target = document.getElementById(`displayResult`);
@@ -265,57 +265,62 @@ export const passwordTestingScripts = (id) => {
         `;
     const bar = document.getElementById("progressBar");
     const password = excaliburInput.value;
+    if (
+      failPopUp(
+        "excaliburInput",
+        "excaliburBtn",
+        "Gib zuerst ein Passwort ein!"
+      )
+    ) {
+      excaliburInput.value = "";
 
-    excaliburInput.value = "";
+      newTester(password);
 
-    newTester(password);
+      //  ==   thinker function
 
-    //  ==   thinker function
+      bar.style.backgroundColor = "#ced4da";
+      const barAni = setInterval(() => {
+        const rdm = Math.floor(Math.random() * 75) + 1;
+        bar.style.width = `${rdm}%`;
+      }, 600);
 
-    excaliburBtn.disabled = true;
+      excaliburThinkerInterval = setInterval(() => {
+        thinker(excaliburBtn);
+      }, 2000);
 
-    bar.style.backgroundColor = "#ced4da";
-    const barAni = setInterval(() => {
-      const rdm = Math.floor(Math.random() * 75) + 1;
-      bar.style.width = `${rdm}%`;
-    }, 600);
+      let result;
+      try {
+        result = await newPwStrength(password);
 
-    excaliburThinkerInterval = setInterval(() => {
-      thinker(excaliburBtn);
-    }, 2000);
+        why.innerText =
+          result.result === 100
+            ? "Dein Passwort ist sicher! Keine weiteren Anpassungen erforderlich."
+            : "Schau dir diese Tipps an, um dein Passwort zu verbessern.";
 
-    let result;
-    try {
-      result = await newPwStrength(password);
+        showSuggestions(result.points, password);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        if (result) {
+          setTimeout(() => {
+            bar.style.width = `${result.result}%`;
+            bar.style.backgroundColor = getColorFromStrength(result.result);
 
-      why.innerText =
-        result.result === 100
-          ? "Dein Passwort ist sicher! Keine weiteren Anpassungen erforderlich."
-          : "Schau dir diese Tipps an, um dein Passwort zu verbessern.";
+            why.style.textDecoration =
+              result.result !== 100 ? "underline" : "none";
+            why.style.pointerEvents = result.result === 100 ? "none" : "auto";
+          }, 100);
+        }
 
-      showSuggestions(result.points, password);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      if (result) {
-        setTimeout(() => {
-          bar.style.width = `${result.result}%`;
-          bar.style.backgroundColor = getColorFromStrength(result.result);
+        // Bereinige Intervalle und setze den Button zurück
+        why.classList.remove("invisible");
+        clearInterval(barAni);
+        clearInterval(excaliburThinkerInterval);
+        excaliburBtn.disabled = true;
+        excaliburBtn.innerHTML = "Nochmal?";
 
-          why.style.textDecoration =
-            result.result !== 100 ? "underline" : "none";
-          why.style.pointerEvents = result.result === 100 ? "none" : "auto";
-        }, 100);
+        dataKrakenTakes({ col: "tested_passwords" });
       }
-
-      // Bereinige Intervalle und setze den Button zurück
-      why.classList.remove("invisible");
-      clearInterval(barAni);
-      clearInterval(excaliburThinkerInterval);
-      excaliburBtn.disabled = true;
-      excaliburBtn.innerHTML = "Nochmal?";
-
-       dataKrakenTakes({ col: "tested_passwords" });
     }
   });
 
@@ -335,16 +340,16 @@ export const passwordTestingScripts = (id) => {
 
     const stars = "******";
     const eyeIcon = document.createElement("img");
-    eyeIcon.src="../img/icons/eye.svg" 
+    eyeIcon.src = "../img/icons/eye.svg";
     eyeIcon.addEventListener("click", () => {
       if (excaliburPwd.textContent === stars) {
         excaliburPwd.innerHTML = `<span class="w-75 text-center">"${pwd}"</span>`;
-        eyeIcon.src="../img/icons/eye-slash.svg" 
+        eyeIcon.src = "../img/icons/eye-slash.svg";
         excaliburPwd.append(eyeIcon);
       } else {
         excaliburPwd.innerHTML = `<span class="w-75 text-center">${stars}</span>`;
         excaliburPwd.append(eyeIcon);
-        eyeIcon.src="../img/icons/eye.svg" 
+        eyeIcon.src = "../img/icons/eye.svg";
       }
     });
 
