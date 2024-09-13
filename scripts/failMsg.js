@@ -33,7 +33,7 @@ export function failPopUp(inputElementId, buttonId, msg) {
     // Position the popup above the button
     const buttonRect = buttonElement.getBoundingClientRect();
     failBubble.style.position = "absolute";
-    failBubble.style.top = `${buttonRect.top - 52}px`; // 10px above the button
+    failBubble.style.top = `${buttonRect.top - 52}px`; // 52px above the button
     failBubble.style.left = `${buttonRect.left}px`;
 
     // Show the popup

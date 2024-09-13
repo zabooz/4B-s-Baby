@@ -52,11 +52,11 @@ export function generateEzPw(length, language) {
   let chosenWord = filteredArray[rndNumInLen(filteredArray)];
   const firstChar = chosenWord.slice(0, 1);
   const restOfString = chosenWord.slice(1);
-  console.log(chosenWord);
+
   let ezPw =
     capitalizeFirstLetter(firstChar) +
     passwordConverter(restOfString, "leetSimple") +
     generatePassword(3);
-  console.log(ezPw);
+
   return ezPw;
 }

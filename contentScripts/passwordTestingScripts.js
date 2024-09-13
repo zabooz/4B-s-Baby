@@ -53,32 +53,35 @@ export const passwordTestingScripts = (id) => {
 
   startBrute.addEventListener("click", (e) => {
     e.preventDefault();
-    failPopUp("bruteForceInput", "startBrute", "Gib zuerst ein Passwort ein!");
-    stopBrute.style.backgroundColor = "#626568";
-    if (isBruteActive === "false") {
-      const statsBody = document.getElementById("statsBody");
+    if (
+      failPopUp("bruteForceInput", "startBrute", "Gib zuerst ein Passwort ein!")
+    ) {
+      stopBrute.style.backgroundColor = "#626568";
+      if (isBruteActive === "false") {
+        const statsBody = document.getElementById("statsBody");
 
-      const tableWrapper = document.getElementById("tableWrapper"); // probably not needed anymore
-      if (statsBody.childElementCount === 2) {
-        tableWrapper.classList.add("border-bottom");
-      }
+        const tableWrapper = document.getElementById("tableWrapper"); // probably not needed anymore
+        if (statsBody.childElementCount === 2) {
+          tableWrapper.classList.add("border-bottom");
+        }
 
-      sessionStorage.setItem("isBruteActive", "true");
+        sessionStorage.setItem("isBruteActive", "true");
 
-      // thinker starts directly after button press
-      startBrute.innerHTML = `
+        // thinker starts directly after button press
+        startBrute.innerHTML = `
         <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
         <span role="status">${thinkWords[0]}</span>
         `;
 
-      bruteThinkerInterval = setInterval(() => {
-        thinker(startBrute);
-      }, 2000);
-      // =============================
+        bruteThinkerInterval = setInterval(() => {
+          thinker(startBrute);
+        }, 2000);
+        // =============================
 
-      isBruteActive = sessionStorage.getItem("isBruteActive");
+        isBruteActive = sessionStorage.getItem("isBruteActive");
 
-      callBruteForce();
+        callBruteForce();
+      }
     }
   });
 
@@ -259,12 +262,6 @@ export const passwordTestingScripts = (id) => {
   // ===================================================0
 
   excaliburBtn.addEventListener("click", async () => {
-    excaliburBtn.innerHTML = `   
-        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-        <span role="status">${thinkWords[0]}</span>
-        `;
-    const bar = document.getElementById("progressBar");
-    const password = excaliburInput.value;
     if (
       failPopUp(
         "excaliburInput",
@@ -272,6 +269,12 @@ export const passwordTestingScripts = (id) => {
         "Gib zuerst ein Passwort ein!"
       )
     ) {
+      excaliburBtn.innerHTML = `   
+          <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+          <span role="status">${thinkWords[0]}</span>
+          `;
+      const bar = document.getElementById("progressBar");
+      const password = excaliburInput.value;
       excaliburInput.value = "";
 
       newTester(password);

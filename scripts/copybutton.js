@@ -33,7 +33,9 @@ export const copyButton = (textId) => {
   }
 
   button.addEventListener("click", () => {
-    const textElement = document.getElementById(textId).innerText;
+      const textElement = document.querySelector(`#${textId} span`).textContent;
+
+    // console.log(textElement,document.getElementById(textId))
 
     const clippyQuickNav = document.getElementById("clippyNav");
 

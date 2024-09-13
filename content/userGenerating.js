@@ -1,13 +1,9 @@
-
-import {createQuiz} from "../featureHtmlScripts/quiz.js"
+import { createQuiz } from "../featureHtmlScripts/quiz.js";
 import { createQuickNav } from "../components/quickNav.js";
 import { userGeneratingScripts } from "../contentScripts/userGeneratingsScripts.js";
 const createUserGenerating = () => {
-
-
-
-    return ` <main id="userGenerating">
-      <section id="sectionContainer" class="d-flex justify-content-center flex-column p-5 pb-1 gap-5">
+  return ` <main id="userGenerating">
+      <section id="sectionContainer" class="d-flex justify-content-center flex-column p-5 pb-1">
         <div
           id="identityWizard"
           class="card">
@@ -162,30 +158,26 @@ const createUserGenerating = () => {
     </main>
     <div class="quickNav"></div>
   
-    `
+    `;
+};
 
-}
+export const createUserGeneratingHTML = (contentBox, style) => {
+  const styleSheet = "./styles/userGenerating.css";
+  style.setAttribute("href", styleSheet);
+  sessionStorage.setItem("content", "createUserGeneratingHTML");
 
-export const createUserGeneratingHTML = (contentBox,style) => {
+  if (sessionStorage.getItem("userGenerating")) {
+    contentBox.innerHTML = sessionStorage.getItem("userGenerating");
+  } else {
+    contentBox.innerHTML = createUserGenerating();
+    createQuiz();
+    createQuickNav(".quickNav");
+    sessionStorage.setItem("userGenerating", contentBox.innerHTML);
+  }
 
-        const styleSheet = "./styles/userGenerating.css";
-        style.setAttribute("href", styleSheet);
-        sessionStorage.setItem("content","createUserGeneratingHTML")
-
-
-        if(sessionStorage.getItem("userGenerating")){
-          contentBox.innerHTML = sessionStorage.getItem("userGenerating");
-        }else{
-          contentBox.innerHTML = createUserGenerating()
-          createQuiz()
-          createQuickNav(".quickNav");
-          sessionStorage.setItem("userGenerating", contentBox.innerHTML);
-        }
-        
-        userGeneratingScripts()
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-}
-
+  userGeneratingScripts();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
