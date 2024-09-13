@@ -33,7 +33,7 @@ export const passwordGeneratingScripts = () => {
   
   // =========================================================
   let picturePath;
-  let file;
+  let pictureFile;
 
   uploadContainer.addEventListener("click", () => {
     uploadFile.click();
@@ -83,7 +83,7 @@ export const passwordGeneratingScripts = () => {
 
     const pwId = `password_${pictureRowsArr.length}`;
     const picId = `pic${pictureRowsArr.length}`;
-    console.log(pictureFile);
+
     failPopUp("uploadFile", "pictureMagicBtn", "Lad zuerst ein Bild hoch!");
     const data = {
       pwId: pwId,
@@ -175,7 +175,7 @@ export const passwordGeneratingScripts = () => {
     );
     const length = Number(glyphRangeSlider.value);
     let password = generateEzPw(length, selectedLanguage.id);
-    console.log(password, selectedLanguage.id);
+
     const pwId = `password${glyphRowsArr.length}`;
     const lengthId = `length${glyphRowsArr.length}`;
     const app = "glyphSorcery";
