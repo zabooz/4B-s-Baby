@@ -38,7 +38,7 @@ export const userGeneratingScripts = () => {
   userGenBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
-    dataKrakenTakes({ col: "generatedUsernames" });
+    dataKrakenTakes({ col: "generated_usernames" });
     // Get values from inputs
     const adjective1 = document.getElementById("adjective1").value;
     const adjective2 = document.getElementById("adjective2").value;
@@ -98,7 +98,7 @@ export const userGeneratingScripts = () => {
     const selectedNoun = document.getElementById("noun").value;
     const userOutput = generateUser(adjective1, adjective2, selectedNoun);
 
-   dataKrakenTakes({ col: "generatedUsernames" });
+   dataKrakenTakes({ col: "generated_usernames" });
     aiUserGenBtn.innerHTML = `
     <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
     <span role="status">${thinkWords[0]}</span>
@@ -186,7 +186,7 @@ export const userGeneratingScripts = () => {
   quizBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
-   dataKrakenTakes({col: "generatedUsernames" });
+   dataKrakenTakes({col: "generated_usernames" });
     let testResult;
 
     const quizOutput = generateQuizResult();
