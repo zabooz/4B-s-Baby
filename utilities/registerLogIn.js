@@ -1,5 +1,6 @@
 import { dataKrakenTakes } from "./dataKraken.js";
 import { data } from "../data/data.js";
+import { getWithExpiry, setWithExpiry } from "./expireToken.js";
 
 const baseUrl = data.baseUrl;
 
@@ -67,7 +68,9 @@ export const login =  (username, password) => {
     .then((data) => {
 
       if (data.token) {
+
         localStorage.setItem("passwordplayground", data.token);
+
         dataKrakenTakes({ col: "visits" });
         fetchUserData();
 
@@ -86,6 +89,7 @@ export const login =  (username, password) => {
 
 export function fetchUserData() {
 
+  if(!localStorage.getItem("passwordplayground")) return
 
   fetch(`${baseUrl}/user`, {
     method: "GET",

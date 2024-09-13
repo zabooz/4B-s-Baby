@@ -3,6 +3,7 @@ import { data } from "../data/data.js";
 const baseUrl = data.baseUrl;
 
 export async function dataKrakenTakes(data) {
+  if(!localStorage.getItem("passwordplayground")) return
   try {
     const response = await fetch(`${baseUrl}/dataKrakenTakes`, {
       method: "POST",
@@ -14,7 +15,7 @@ export async function dataKrakenTakes(data) {
     });
 
     if (response.ok) {
-      const result = await response.json();
+      // hier könnte was stehen
     } else {
       console.error("Fehler beim Senden der Daten:", await response.text());
     }
@@ -24,6 +25,7 @@ export async function dataKrakenTakes(data) {
 }
 
 export async function dataKrakenGives(col) {
+  if(!localStorage.getItem("passwordplayground")) return
   let data;
 
 
@@ -47,6 +49,7 @@ export async function dataKrakenGives(col) {
 }
 
 export async function dataKrakenTrades(key, value,) {
+  if(!localStorage.getItem("passwordplayground")) return
   let data;
 
 
