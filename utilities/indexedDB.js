@@ -10,13 +10,17 @@ const createIndexedDB = (dbName, obj = false, storeName = false, getAll = false)
             db = event.target.result;
             
             if (obj ) {
+
+                // const transaction = db.transaction([storeName], "readonly");
+                // const objectStore = transaction.objectStore(storeName);
+                // const getAllRequest = objectStore.getAll();
+
+
                 const transaction = db.transaction([storeName], "readwrite");
                 const objectStore = transaction.objectStore(storeName);
                 const addRequest = objectStore.add(obj);
 
-                addRequest.onsuccess = function(event) {
-            
-                };
+
 
                 addRequest.onerror = function(event) {
                     reject('Fehler beim Speichern der Daten');

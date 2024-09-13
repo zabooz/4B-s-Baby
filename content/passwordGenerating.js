@@ -5,7 +5,7 @@ const createPwContent = () => {
   return `
             
     <main class="w-100 mt-5" id="mainPwGen">
-      <section class="row row-cols-1 row-cols-lg-3 g-5 mx-auto px-md-5">
+      <section class="row row-cols-1 row-cols-lg-2 row-cols-xxl-3 g-5 mx-auto px-md-5">
         <!-- ================= Rune Translator ================= -->
 
         <div class="col">

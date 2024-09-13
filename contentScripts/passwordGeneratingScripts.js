@@ -15,17 +15,12 @@ export const passwordGeneratingScripts = () => {
   const leetInputField = document.getElementById("leetInput");
 
   
-  const pictureRowsArr = []; // variable  to save row dom elements
-  let glyphRowsArr = []; // variable  to save row dom elements
-  let runeRowsArr = []; // variable to save row data
+
+
+
   
-  indexedDB("pictureMagic");
-  let pictureMagicArray =  indexedDB("pictureMagic",false,false,true);
-  let runeTranslatorArray =
-  JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
-  let storedGlyphArray =
-  JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; // variable to save GlyphPwd
-  
+
+
   
   // ==========================================================
   
@@ -34,6 +29,7 @@ export const passwordGeneratingScripts = () => {
   // =========================================================
   let picturePath;
   let pictureFile;
+  let pictureMagicArray =   indexedDB("pictureMagic",false,false,true);
 
   uploadContainer.addEventListener("click", () => {
     uploadFile.click();
@@ -81,8 +77,8 @@ export const passwordGeneratingScripts = () => {
   picMagicBtn.addEventListener("click", async (e) => {
     e.preventDefault();
 
-    const pwId = `password_${pictureRowsArr.length}`;
-    const picId = `pic${pictureRowsArr.length}`;
+    const pwId = `password_${pictureMagicArray.length}`;
+    const picId = `pic${pictureMagicArray.length}`;
 
     failPopUp("uploadFile", "pictureMagicBtn", "Lad zuerst ein Bild hoch!");
     const data = {
@@ -102,7 +98,7 @@ export const passwordGeneratingScripts = () => {
        const pictureMagicArray = await indexedDB("pictureMagic",data,false,true)
 
       storeAndSwitch(
-        pictureRowsArr,
+
         pictureMagicArray,
         "indexedDb",
         "statsBodyPicGen"
@@ -118,6 +114,14 @@ export const passwordGeneratingScripts = () => {
   //                           RUNE TRANSLATOR
 
   //  ==============================================================
+
+
+  let runeTranslatorArray =
+  JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; 
+
+
+
+
 
   leetBtn.addEventListener("click", function () {
     const leetInput = leetInputField.value;
@@ -149,7 +153,6 @@ export const passwordGeneratingScripts = () => {
     );
 
     storeAndSwitch(
-      runeRowsArr,
       runeTranslatorArray,
       "runeTranslatorArray",
       "statsBody2"
@@ -162,6 +165,15 @@ export const passwordGeneratingScripts = () => {
   //                  Glyph Sorcery
 
   // ================================================================
+
+
+
+
+  let storedGlyphArray =
+  JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; 
+  
+
+
 
   glyphRangeSlider.addEventListener("input", () => {
     const sliderValue = glyphRangeSlider.value;
@@ -176,8 +188,8 @@ export const passwordGeneratingScripts = () => {
     const length = Number(glyphRangeSlider.value);
     let password = generateEzPw(length, selectedLanguage.id);
 
-    const pwId = `password${glyphRowsArr.length}`;
-    const lengthId = `length${glyphRowsArr.length}`;
+    const pwId = `password${storedGlyphArray.length}`;
+    const lengthId = `length${storedGlyphArray.length}`;
     const app = "glyphSorcery";
     const data = {
       pwId: pwId,
@@ -190,7 +202,6 @@ export const passwordGeneratingScripts = () => {
     dataKrakenTakes({ col: "generated_passwords" });
     storedGlyphArray.push(data);
     storeAndSwitch(
-      glyphRowsArr,
       storedGlyphArray,
       "storedGlyphArray",
       "statsBodyPwGen"
@@ -207,14 +218,14 @@ export const passwordGeneratingScripts = () => {
    * @param {string} storageName - The key for session storage.
    * @param {string} target - The id of the table body to be cleared and refilled.
    */
-  const storeAndSwitch = (DOMElementArr, storageArr, storageName, target) => {
+  const storeAndSwitch = ( storageArr, storageName, target) => {
     const tbody = document.getElementById(target);
     tbody.innerHTML = "";
 
     if(storageName !== "indexedDb") sessionStorage.setItem(storageName, JSON.stringify(storageArr));
 
 
-    DOMElementArr = [];
+    const DOMElementArr = [];
     // generate rows from data array
 
 
@@ -282,7 +293,6 @@ export const passwordGeneratingScripts = () => {
 
   if (storedGlyphArray.length > 0) {
     storeAndSwitch(
-      glyphRowsArr,
       storedGlyphArray,
       "storedGlyphArray",
       "statsBodyPwGen"
@@ -290,7 +300,6 @@ export const passwordGeneratingScripts = () => {
   }
   if (pictureMagicArray.length > 0) {
     storeAndSwitch(
-      pictureRowsArr,
       pictureMagicArray,
       "pictureMagicArray",
       "statsBodyPicGen"
@@ -298,7 +307,6 @@ export const passwordGeneratingScripts = () => {
   }
   if (runeTranslatorArray.length > 0) {
     storeAndSwitch(
-      runeRowsArr,
       runeTranslatorArray,
       "runeTranslatorArray",
       "statsBody2"
