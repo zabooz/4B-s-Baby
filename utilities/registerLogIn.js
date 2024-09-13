@@ -127,7 +127,7 @@ const loginFunc = (username, avatar) => {
   loginItem.classList.add("d-none");
   profile.classList.remove("d-none");
   profilePictureNav.src = avatar;
-  document.getElementById("profileName").textContent = `Hallo ${username}`;
+  document.getElementById("profileName").textContent = `Hallo ${username}!`;
 };
 
 export const deleteUser = async () => {

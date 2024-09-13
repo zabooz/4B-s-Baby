@@ -44,14 +44,16 @@ const createSettings = () => {
     htmlContent += `<div class="row">${rowContent}</div>`;
   }
 
-  return `    <main>
+  return `    <main class="m-4">
         
       
+        <h2 class="pt-5">Settings</h2>  
+
         <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item bg-light" role="presentation">
+            <li class="nav-item bg-light  mt-5" role="presentation">
               <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Overview</a>
             </li>
-            <li class="nav-item bg-light  " role="presentation">
+            <li class="nav-item bg-light mt-5 " role="presentation">
               <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profileTab" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
             </li>
         </ul>

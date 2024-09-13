@@ -20,3 +20,6 @@
 .tab-content li a{
   color: #ea6965 !important;
 }
+#contentBox{
+  min-height: 20vh !important;
+}

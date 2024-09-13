@@ -4,7 +4,7 @@ import { tripleConverter } from "../featureHtmlScripts/tripleLeetConverter.js";
 import { generateEzPw } from "../featureHtmlScripts/pwSandbox.js";
 import { dataKrakenTakes } from "../utilities/dataKraken.js";
 import { failPopUp } from "../scripts/failMsg.js";
-
+import { indexedDB } from "../utilities/indexedDB.js";
 export const passwordGeneratingScripts = () => {
   const uploadFile = document.getElementById("uploadFile");
   const picMagicBtn = document.getElementById("pictureMagicBtn");
@@ -19,8 +19,8 @@ export const passwordGeneratingScripts = () => {
   let glyphRowsArr = []; // variable  to save row dom elements
   let runeRowsArr = []; // variable to save row data
   
-  let pictureMagicArray =
-  JSON.parse(sessionStorage.getItem("pictureMagicArray")) || []; // variable to save row data
+  indexedDB("pictureMagic");
+  let pictureMagicArray =  indexedDB("pictureMagic",false,false,true);
   let runeTranslatorArray =
   JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; // variable to save RunePwd
   let storedGlyphArray =
@@ -97,20 +97,22 @@ export const passwordGeneratingScripts = () => {
       const result = await pictureToString(pictureFile);
 
       data.password = result;
-      pictureMagicArray.push(data);
+
+
+       const pictureMagicArray = await indexedDB("pictureMagic",data,false,true)
 
       storeAndSwitch(
         pictureRowsArr,
         pictureMagicArray,
-        "pictureMagicArray",
+        "indexedDb",
         "statsBodyPicGen"
       );
       dataKrakenTakes({ col: "generated_passwords" });
     } catch (error) {
       console.error(error);
     }
-  });
 
+  });
   //  ===============================================================
 
   //                           RUNE TRANSLATOR
@@ -155,12 +157,10 @@ export const passwordGeneratingScripts = () => {
   });
 
   // ================================================================
-  // ================================================================
+
 
   //                  Glyph Sorcery
-  //                  Glyph Sorcery
 
-  // ================================================================
   // ================================================================
 
   glyphRangeSlider.addEventListener("input", () => {
@@ -211,13 +211,12 @@ export const passwordGeneratingScripts = () => {
     const tbody = document.getElementById(target);
     tbody.innerHTML = "";
 
-    sessionStorage.setItem(storageName, JSON.stringify(storageArr));
-    sessionStorage.setItem(storageName, JSON.stringify(storageArr));
+    if(storageName !== "indexedDb") sessionStorage.setItem(storageName, JSON.stringify(storageArr));
+
 
     DOMElementArr = [];
     // generate rows from data array
-    DOMElementArr = [];
-    // generate rows from data array
+
 
     for (let i = 0; i < storageArr.length; i++) {
       const item = storageArr[i];
@@ -252,11 +251,7 @@ export const passwordGeneratingScripts = () => {
       tdPw.classList.add("d-flex", "p-0", "align-items-center", "gap-2");
       const tr = document.createElement("tr");
       tr.append(tdLeft, tdPw, tdCatch, tdRight);
-      if (item.app === "pictureMagic") {
-        tdCatch.innerHTML = `<img src="${item.catch}" id="${catchId}" alt="Your Picture" class="imgTable" style="width:2rem">`;
-      } else {
-        tdCatch.innerHTML = `<span>${item.catch}</span>`;
-      }
+
 
       DOMElementArr.push(tr);
     }
