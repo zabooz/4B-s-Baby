@@ -124,7 +124,7 @@ export const passwordGeneratingScripts = () => {
 
     runeTranslatorArray = [];
 
-    dataKrakenTakes({ col: "generatedPasswords" });
+    dataKrakenTakes({ col: "generated_passwords" });
 
     for (let i = 0; i < newPasswordArray.length; i++) {
       const pwId = `runeTranslator${i}`;
@@ -187,7 +187,7 @@ export const passwordGeneratingScripts = () => {
       app: app,
     };
 
-    dataKrakenTakes({ col: "generatedPasswords" });
+    dataKrakenTakes({ col: "generated_passwords" });
     storedGlyphArray.push(data);
     storeAndSwitch(
       glyphRowsArr,
