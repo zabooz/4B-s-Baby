@@ -29,3 +29,7 @@ h2{
     letter-spacing: .1rem;
     font-weight: 600;
 }
+thead :nth-last-child(-n+4):hover {
+  cursor: pointer;
+  background-color: #adb3b0;
+}
