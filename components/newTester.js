@@ -1,3 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+
 export const newTester = (password) => {
   const options = {
     translations: zxcvbnts["language-en"].translations,

@@ -13,11 +13,11 @@ jobs:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: ${{ secrets.BASE_FTP_URL }}       # z.B. ssh.passwordplayground.com
-        username: ${{ secrets.FTP_USERNAME }} # Dein SSH-Benutzername
-        password: ${{ secrets.FTP_PASSWORD }} # Dein SSH-Passwort
+        host: ${{ secrets.HOST }}       # z.B. ssh.passwordplayground.com
+        username: ${{ secrets.USERNAME }} # Dein SSH-Benutzername
+        password: ${{ secrets.PASSWORD }} # Dein SSH-Passwort
         port: 22                               # SSH-Port
         script: |
-          cd /staging.passwordplayground.com/httpdocs/
-          git pull origin main
+          cd /react.passwordplayground.com/httpdocs/
+          git pull origin staging
  

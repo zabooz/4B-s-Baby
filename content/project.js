@@ -140,6 +140,18 @@ const createProject = () => {
           <img src="../img/projectFotos/image10.png" alt="" />
         </div>
       </section>
+
+
+
+
+
+
+
+
+
+
+
+      
       <section class="d-flex  p- mb-5 flex-row-reverse">
         <div class="text w-50">
           <h2>Phase 2, ungeführe Dauer: 3-4 Wochen</h2>
