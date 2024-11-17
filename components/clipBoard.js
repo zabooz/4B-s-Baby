@@ -2,7 +2,7 @@ import { storedClippy, copyButton } from "../scripts/copybutton.js";
 
 const createClipBoard = () => {
   const imgSrc = "../img/quickNav/copyCat1.jpeg";
-
+//asdfsdf
   return `
 <div class="offcanvas offcanvas-start border-0  " tabindex="-1" id="clippy" aria-labelledby="offcanvasExampleLabel">
 <div class="offcanvas-header bg-header p-0">
