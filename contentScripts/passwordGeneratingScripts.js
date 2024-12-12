@@ -14,22 +14,14 @@ export const passwordGeneratingScripts = () => {
   const uploadContainer = document.querySelector(".labelCon");
   const leetInputField = document.getElementById("leetInput");
 
-  
-
-
-
-  
-
-
-  
   // ==========================================================
-  
+
   //               PICTURE MAGIC
-  
+
   // =========================================================
   let picturePath;
   let pictureFile;
-  let pictureMagicArray =   indexedDB("pictureMagic",false,false,true);
+  let pictureMagicArray = indexedDB("pictureMagic", false, false, true);
 
   uploadContainer.addEventListener("click", () => {
     uploadFile.click();
@@ -94,20 +86,18 @@ export const passwordGeneratingScripts = () => {
 
       data.password = result;
 
-
-       const pictureMagicArray = await indexedDB("pictureMagic",data,false,true)
-
-      storeAndSwitch(
-
-        pictureMagicArray,
-        "indexedDb",
-        "statsBodyPicGen"
+      const pictureMagicArray = await indexedDB(
+        "pictureMagic",
+        data,
+        false,
+        true
       );
+
+      storeAndSwitch(pictureMagicArray, "indexedDb", "statsBodyPicGen");
       dataKrakenTakes({ col: "generated_passwords" });
     } catch (error) {
       console.error(error);
     }
-
   });
   //  ===============================================================
 
@@ -115,13 +105,8 @@ export const passwordGeneratingScripts = () => {
 
   //  ==============================================================
 
-
   let runeTranslatorArray =
-  JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || []; 
-
-
-
-
+    JSON.parse(sessionStorage.getItem("runeTranslatorArray")) || [];
 
   leetBtn.addEventListener("click", function () {
     const leetInput = leetInputField.value;
@@ -152,28 +137,17 @@ export const passwordGeneratingScripts = () => {
       JSON.stringify(newPasswordArray)
     );
 
-    storeAndSwitch(
-      runeTranslatorArray,
-      "runeTranslatorArray",
-      "statsBody2"
-    );
+    storeAndSwitch(runeTranslatorArray, "runeTranslatorArray", "statsBody2");
   });
 
   // ================================================================
-
 
   //                  Glyph Sorcery
 
   // ================================================================
 
-
-
-
   let storedGlyphArray =
-  JSON.parse(sessionStorage.getItem("storedGlyphArray")) || []; 
-  
-
-
+    JSON.parse(sessionStorage.getItem("storedGlyphArray")) || [];
 
   glyphRangeSlider.addEventListener("input", () => {
     const sliderValue = glyphRangeSlider.value;
@@ -201,11 +175,7 @@ export const passwordGeneratingScripts = () => {
 
     dataKrakenTakes({ col: "generated_passwords" });
     storedGlyphArray.push(data);
-    storeAndSwitch(
-      storedGlyphArray,
-      "storedGlyphArray",
-      "statsBodyPwGen"
-    );
+    storeAndSwitch(storedGlyphArray, "storedGlyphArray", "statsBodyPwGen");
   });
 
   /**
@@ -218,16 +188,15 @@ export const passwordGeneratingScripts = () => {
    * @param {string} storageName - The key for session storage.
    * @param {string} target - The id of the table body to be cleared and refilled.
    */
-  const storeAndSwitch = ( storageArr, storageName, target) => {
+  const storeAndSwitch = (storageArr, storageName, target) => {
     const tbody = document.getElementById(target);
     tbody.innerHTML = "";
 
-    if(storageName !== "indexedDb") sessionStorage.setItem(storageName, JSON.stringify(storageArr));
-
+    if (storageName !== "indexedDb")
+      sessionStorage.setItem(storageName, JSON.stringify(storageArr));
 
     const DOMElementArr = [];
     // generate rows from data array
-
 
     for (let i = 0; i < storageArr.length; i++) {
       const item = storageArr[i];
@@ -263,7 +232,6 @@ export const passwordGeneratingScripts = () => {
       const tr = document.createElement("tr");
       tr.append(tdLeft, tdPw, tdCatch, tdRight);
 
-
       DOMElementArr.push(tr);
     }
 
@@ -292,25 +260,13 @@ export const passwordGeneratingScripts = () => {
   };
 
   if (storedGlyphArray.length > 0) {
-    storeAndSwitch(
-      storedGlyphArray,
-      "storedGlyphArray",
-      "statsBodyPwGen"
-    );
+    storeAndSwitch(storedGlyphArray, "storedGlyphArray", "statsBodyPwGen");
   }
   if (pictureMagicArray.length > 0) {
-    storeAndSwitch(
-      pictureMagicArray,
-      "pictureMagicArray",
-      "statsBodyPicGen"
-    );
+    storeAndSwitch(pictureMagicArray, "pictureMagicArray", "statsBodyPicGen");
   }
   if (runeTranslatorArray.length > 0) {
-    storeAndSwitch(
-      runeTranslatorArray,
-      "runeTranslatorArray",
-      "statsBody2"
-    );
+    storeAndSwitch(runeTranslatorArray, "runeTranslatorArray", "statsBody2");
   }
   leetInputField.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
